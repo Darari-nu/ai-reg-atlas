@@ -1,0 +1,108 @@
+---
+import LightLayout from '../layouts/LightLayout.astro';
+import { getCountries, AXIS_KEYS, AXIS_LABELS, DIFF_LABELS, withBase } from '../lib/data';
+
+const countries = getCountries();
+
+// セル分類はシードデータ（regulations/*.json の diff_vs_eu）から人手で導出した初期値。
+// 差分変化の自動再計算は Phase 3（§13）。更新時は data と一緒にここも見直す。
+type Cell = 'baseline' | 'stricter' | 'looser' | 'absent' | 'unique';
+const MATRIX: Record<string, Record<(typeof AXIS_KEYS)[number], Cell>> = {
+  eu: {
+    risk_classification: 'baseline', prohibited_uses: 'baseline', gpai_obligations: 'baseline',
+    transparency: 'baseline', penalties: 'baseline', enforcement_body: 'baseline',
+  },
+  jp: {
+    risk_classification: 'looser', prohibited_uses: 'absent', gpai_obligations: 'absent',
+    transparency: 'absent', penalties: 'absent', enforcement_body: 'looser',
+  },
+  us: {
+    risk_classification: 'unique', prohibited_uses: 'absent', gpai_obligations: 'looser',
+    transparency: 'looser', penalties: 'looser', enforcement_body: 'absent',
+  },
+  uk: {
+    risk_classification: 'looser', prohibited_uses: 'absent', gpai_obligations: 'looser',
+    transparency: 'unique', penalties: 'absent', enforcement_body: 'looser',
+  },
+  cn: {
+    risk_classification: 'looser', prohibited_uses: 'unique', gpai_obligations: 'stricter',
+    transparency: 'stricter', penalties: 'looser', enforcement_body: 'stricter',
+  },
+  kr: {
+    risk_classification: 'looser', prohibited_uses: 'absent', gpai_obligations: 'looser',
+    transparency: 'looser', penalties: 'looser', enforcement_body: 'stricter',
+  },
+};
+
+const cellClass: Record<Cell, string> = {
+  baseline: 'bg-star-gold/20 text-ink',
+  stricter: 'bg-diff-stricter/15 text-diff-stricter',
+  looser: 'bg-diff-looser/15 text-diff-looser',
+  absent: 'bg-diff-absent/15 text-diff-absent',
+  unique: 'bg-diff-unique/15 text-diff-unique',
+};
+const cellShort: Record<Cell, string> = {
+  baseline: '基準', stricter: '厳', looser: '緩', absent: '無', unique: '独',
+};
+
+// EUを基準行として最上段固定
+const ordered = [...countries].sort((a, b) => (a.code === 'eu' ? -1 : b.code === 'eu' ? 1 : 0));
+---
+
+<LightLayout title="比較表 — 6カ国×7軸ヒートマップ | AI Reg Atlas">
+  <main class="mx-auto max-w-6xl px-5 py-8">
+    <h1 class="font-display text-2xl font-semibold">比較表</h1>
+    <p class="mt-2 text-sm text-ink/70">
+      EU AI Actを基準（最上段）に、各国の規制を6軸で分類。セルをクリックすると国別ページの該当軸へ。
+    </p>
+
+    <div class="mt-4 flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs">
+      {(['stricter', 'looser', 'absent', 'unique'] as const).map((k) => (
+        <span class="flex items-center gap-1.5">
+          <span class={`inline-block h-3 w-3 bg-diff-${k}`} />{DIFF_LABELS[k]}
+        </span>
+      ))}
+    </div>
+
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full min-w-[760px] border-collapse text-sm">
+        <thead>
+          <tr>
+            <th class="sticky left-0 z-10 border-b border-ink/20 bg-paper p-2 text-left font-mono text-xs text-ink/50">国 \ 軸</th>
+            {AXIS_KEYS.map((k) => (
+              <th class="border-b border-ink/20 p-2 text-left text-xs font-bold">{AXIS_LABELS[k]}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {ordered.map((c) => (
+            <tr class={c.code === 'eu' ? 'border-b-2 border-star-gold/60' : 'border-b border-ink/10'}>
+              <th class="sticky left-0 z-10 bg-paper p-2 text-left">
+                <a href={withBase(`/country/${c.code}/`)} class="flex items-center gap-2 no-underline hover:underline">
+                  <span>{c.flag}</span>
+                  <span class="text-xs font-medium">{c.name_ja}</span>
+                </a>
+              </th>
+              {AXIS_KEYS.map((k) => {
+                const cell = MATRIX[c.code][k];
+                return (
+                  <td class="p-1">
+                    <a
+                      href={withBase(`/country/${c.code}/#axis-${k}`)}
+                      class={`block px-2 py-2 text-center font-mono text-xs no-underline transition-opacity hover:opacity-70 ${cellClass[cell]}`}
+                      title={`${c.name_ja} × ${AXIS_LABELS[k]}`}
+                    >{cellShort[cell]}</a>
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-4 text-xs text-ink/50">
+      ※分類はシードデータからの初期値（人間レビュー運用）。詳細・根拠は各国ページの差分リストと出典を参照。
+    </p>
+  </main>
+</LightLayout>

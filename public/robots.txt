@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://darari-nu.github.io/ai-reg-atlas/sitemap-index.xml

@@ -1,0 +1,74 @@
+---
+import DarkLayout from '../layouts/DarkLayout.astro';
+import Globe from '../components/Globe.tsx';
+import UpdateCard from '../components/UpdateCard.astro';
+import StatusBar from '../components/StatusBar.astro';
+import {
+  getCountries,
+  getRegulation,
+  getUpdates,
+  isRecent,
+  withBase,
+  type Regulation,
+} from '../lib/data';
+
+const countries = getCountries();
+const regulations: Record<string, Regulation> = {};
+for (const c of countries) regulations[c.code] = getRegulation(c.code);
+const countryMap = Object.fromEntries(countries.map((c) => [c.code, c]));
+
+const news = getUpdates().slice(0, 3);
+const markers = countries.map((c) => ({
+  lat: c.lat,
+  lng: c.lng,
+  recent: isRecent(regulations[c.code].last_changed, 7),
+}));
+---
+
+<DarkLayout title="AI Reg Atlas — 世界のAI規制を、EU基準の「差分」で読む">
+  <main class="mx-auto max-w-6xl px-5">
+    <!-- ヒーロー: 地球儀(左7割) + NEW(右3割)。地球儀まわりは余白広め（§6-4） -->
+    <section class="grid items-center gap-10 py-10 md:grid-cols-[7fr_3fr] md:py-16">
+      <div class="relative hidden md:block">
+        <Globe client:only="react" markers={markers} />
+        <div class="pointer-events-none absolute bottom-6 left-2">
+          <h1 class="font-display text-3xl font-semibold leading-snug tracking-wide">
+            世界のAI規制を、<br />EU基準の「差分」で読む。
+          </h1>
+          <p class="mt-3 font-mono text-xs text-paper/50">
+            6 jurisdictions / daily sweep / primary sources only
+          </p>
+        </div>
+      </div>
+
+      <!-- スマホ: 地球儀なしフォールバック（タグライン→NEW→6カ国） -->
+      <div class="md:hidden">
+        <h1 class="font-display text-2xl font-semibold leading-snug tracking-wide">
+          世界のAI規制を、<br />EU基準の「差分」で読む。
+        </h1>
+        <p class="mt-3 font-mono text-xs text-paper/50">6 jurisdictions / daily sweep</p>
+      </div>
+
+      <aside aria-label="直近の更新">
+        <h2 class="mb-3 flex items-baseline gap-2">
+          <span class="bg-star-gold px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-widest text-navy-deep">NEW</span>
+          <span class="text-sm text-paper/60">直近の更新</span>
+        </h2>
+        <div class="space-y-3">
+          {news.map((u, i) => (
+            <UpdateCard update={u} country={countryMap[u.country]} theme="dark" big={i === 0} />
+          ))}
+        </div>
+        <a
+          href={withBase('/updates/')}
+          class="mt-4 inline-block font-mono text-xs text-star-gold hover:underline"
+        >すべての更新を見る →</a>
+      </aside>
+    </section>
+
+    <!-- 6カ国ステータスバー -->
+    <section aria-label="監視対象国" class="border-t border-white/10 py-8">
+      <StatusBar countries={countries} regulations={regulations} />
+    </section>
+  </main>
+</DarkLayout>

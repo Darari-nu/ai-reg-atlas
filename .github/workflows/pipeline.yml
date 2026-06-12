@@ -1,0 +1,83 @@
+name: daily-pipeline
+on:
+  schedule:
+    - cron: "0 21 * * *" # JST朝6時
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  sweep-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: collect
+        run: node scripts/collect.mjs
+
+      - name: triage
+        run: node scripts/triage.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: summarize
+        run: node scripts/summarize.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: validate
+        run: node scripts/validate.mjs
+
+      - name: commit data
+        run: |
+          git config user.name "atlas-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore(data): sweep $(date -u +%F)"
+          git push
+
+      - name: file issues (diff-change / needs-review)
+        if: ${{ hashFiles('/tmp/pipeline_issues.json') != '' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let issues = [];
+            try { issues = JSON.parse(fs.readFileSync('/tmp/pipeline_issues.json', 'utf8')); } catch {}
+            for (const i of issues) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: i.title,
+                body: i.body,
+                labels: i.labels ?? [],
+              });
+            }
+
+      # ビルド〜デプロイは同一ワークフロー内（GITHUB_TOKENのpushは他workflowを起動しない §15-2）
+      - run: npx astro build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

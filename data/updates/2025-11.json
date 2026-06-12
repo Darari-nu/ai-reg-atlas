@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2025-11-19-eu-001",
+    "date": "2025-11-19",
+    "country": "eu",
+    "axis": "timeline",
+    "change_type": "deadline_change",
+    "title": "Digital OmnibusでハイリスクAI義務の適用を延期する修正案を採択",
+    "summary": {
+      "what": "欧州委員会がAI Actの適用時期等を修正するDigital Omnibusパッケージを採択",
+      "who": "ハイリスクAI（Annex I/III）の提供者・利用企業",
+      "when_impact": "Annex III系は2027-12-02、Annex I系は2028-08-02へ適用延期"
+    },
+    "detail": "デジタル規制の簡素化を目的とするDigital Omnibusパッケージの一部としてAI Actの的を絞った修正が提案・進行。ハイリスクAIへの義務適用が当初の2026-08-02/2027-08-02から後ろ倒しとなり、企業の準備期間が延長された。禁止行為・GPAI義務など既に適用済みの規定には影響しない。",
+    "so_what": "ハイリスク対応のコンプライアンス期限が約1年半延びた。ただし禁止行為と透明性義務は予定どおりで、準備を止める理由にはならない。",
+    "impact": { "diff_changed": false, "diff_note": "EU内部の期限変更であり各国差分の構造には影響しない" },
+    "sources": ["https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"],
+    "country_anchor": "/country/eu/#tl-2027-12-02"
+  }
+]

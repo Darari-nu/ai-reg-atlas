@@ -1,0 +1,44 @@
+---
+import type { Regulation } from '../lib/data';
+import { DIFF_KEYS, DIFF_LABELS, DIFF_READING } from '../lib/data';
+
+interface Props {
+  regulation: Regulation;
+}
+const { regulation } = Astro.props;
+const diff = regulation.diff_vs_eu!;
+---
+
+<section aria-label="EU差分サマリー" class="grid grid-cols-2 gap-3 md:grid-cols-4">
+  {DIFF_KEYS.map((k) => (
+    <a
+      href={`#diff-${k}`}
+      class={`block border-2 bg-white p-4 no-underline shadow-[0_1px_2px_rgba(26,34,51,0.05)] border-diff-${k}`}
+    >
+      <span class={`font-mono text-3xl font-medium countup text-diff-${k}`} data-count={diff[k].length}>
+        {diff[k].length}
+      </span>
+      <span class="mt-1 block text-sm font-medium text-ink">{DIFF_LABELS[k]}</span>
+      <span class="mt-0.5 block text-xs text-ink/55">{DIFF_READING[k]}</span>
+    </a>
+  ))}
+</section>
+
+<script>
+  // 差分件数カウントアップ（600ms・初回表示時のみ §6-4）
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced) {
+    document.querySelectorAll<HTMLElement>('.countup[data-count]').forEach((el) => {
+      const target = Number(el.dataset.count ?? 0);
+      if (target === 0) return;
+      const start = performance.now();
+      const tick = (now: number) => {
+        const t = Math.min((now - start) / 600, 1);
+        el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      el.textContent = '0';
+      requestAnimationFrame(tick);
+    });
+  }
+</script>

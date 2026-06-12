@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A1024"/>
+  <circle cx="940" cy="315" r="200" fill="none" stroke="#FFC700" stroke-width="2" opacity="0.8"/>
+  <ellipse cx="940" cy="315" rx="200" ry="74" fill="none" stroke="#FFC700" stroke-width="1.2" opacity="0.45"/>
+  <ellipse cx="940" cy="315" rx="74" ry="200" fill="none" stroke="#FFC700" stroke-width="1.2" opacity="0.45"/>
+  <circle cx="868" cy="218" r="7" fill="#FFC700"/>
+  <circle cx="1063" cy="270" r="5" fill="#FFC700" opacity="0.85"/>
+  <circle cx="918" cy="402" r="5" fill="#FFC700" opacity="0.85"/>
+  <circle cx="990" cy="160" r="4" fill="#FFC700" opacity="0.7"/>
+  <circle cx="800" cy="330" r="4" fill="#FFC700" opacity="0.7"/>
+  <circle cx="1010" cy="455" r="4" fill="#FFC700" opacity="0.7"/>
+  <text x="90" y="270" font-family="'Hiragino Mincho ProN', 'Shippori Mincho', serif" font-size="64" font-weight="600" fill="#FAFAF7">AI Reg Atlas</text>
+  <text x="92" y="340" font-family="'Hiragino Kaku Gothic ProN', 'Zen Kaku Gothic New', sans-serif" font-size="30" fill="#FAFAF7" opacity="0.85">世界のAI規制を、EU基準の「差分」で読む。</text>
+  <text x="92" y="430" font-family="'IBM Plex Mono', Menlo, monospace" font-size="20" fill="#FFC700" letter-spacing="2">6 JURISDICTIONS / DAILY SWEEP / PRIMARY SOURCES</text>
+  <rect x="92" y="372" width="56" height="3" fill="#FFC700"/>
+</svg>

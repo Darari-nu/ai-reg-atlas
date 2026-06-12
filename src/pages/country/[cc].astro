@@ -1,0 +1,136 @@
+---
+import LightLayout from '../../layouts/LightLayout.astro';
+import DiffSummary from '../../components/DiffSummary.astro';
+import AxisAccordion from '../../components/AxisAccordion.astro';
+import CopyButton from '../../components/CopyButton.astro';
+import {
+  getCountries,
+  getRegulation,
+  STATUS_LABELS,
+  APPROACH_LABELS,
+  DIFF_KEYS,
+  DIFF_LABELS,
+  fmtDate,
+  withBase,
+} from '../../lib/data';
+
+export function getStaticPaths() {
+  return getCountries().map((c) => ({ params: { cc: c.code }, props: { country: c } }));
+}
+
+const { country } = Astro.props;
+const r = getRegulation(country.code);
+const isBaseline = !!r.is_baseline;
+const pageUrl = new URL(withBase(`/country/${country.code}/`), Astro.site).toString();
+
+const allSources = new Set<string>();
+for (const k of ['risk_classification', 'prohibited_uses', 'gpai_obligations', 'transparency', 'penalties', 'enforcement_body'] as const) {
+  for (const s of r.axes[k].sources) allSources.add(s);
+}
+for (const t of r.axes.timeline) allSources.add(t.source);
+if (r.diff_vs_eu) for (const k of DIFF_KEYS) for (const d of r.diff_vs_eu[k]) allSources.add(d.source);
+
+const timeline = [...r.axes.timeline].sort((a, b) => (a.date < b.date ? 1 : -1));
+---
+
+<LightLayout title={`${country.name_ja}のAI規制の現状とEU AI Actとの差分 | AI Reg Atlas`}>
+  <main class="mx-auto max-w-4xl px-5 py-8">
+    <nav class="font-mono text-xs text-ink/50" aria-label="パンくず">
+      <a href={withBase('/')} class="hover:underline">AI Reg Atlas</a>
+      <span class="mx-1">›</span>
+      <span>{country.name_ja}</span>
+    </nav>
+
+    <header class="mt-4 flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <h1 class="flex items-center gap-3 font-display text-2xl font-semibold">
+          <span class="text-3xl">{country.flag}</span>
+          {country.name_ja}
+        </h1>
+        <p class="mt-2 text-sm text-ink/75">{r.regulation_name}</p>
+        <p class="mt-2 flex flex-wrap gap-2 font-mono text-xs">
+          <span class="border border-ink/25 px-2 py-0.5">{STATUS_LABELS[r.status]}</span>
+          <span class="border border-ink/25 px-2 py-0.5">{APPROACH_LABELS[r.approach]}</span>
+          <span class="px-2 py-0.5 text-ink/50">最終確認 {fmtDate(r.last_checked)} / 最終変更 {fmtDate(r.last_changed)}</span>
+        </p>
+      </div>
+      {!isBaseline && <CopyButton regulation={r} country={country} pageUrl={pageUrl} />}
+    </header>
+
+    <!-- EU差分サマリー（ファーストビュー必須 §6-3） -->
+    <div class="mt-8">
+      {isBaseline ? (
+        <div class="border-2 border-star-gold bg-white p-5">
+          <span class="font-mono text-sm font-medium tracking-widest text-ink">BASELINE</span>
+          <p class="mt-1 text-sm text-ink/75">
+            このサイトの差分の基準。各国ページは本規制（EU AI Act）との差分を4分類で表示する。
+          </p>
+        </div>
+      ) : (
+        <DiffSummary regulation={r} />
+      )}
+    </div>
+
+    <!-- 7軸詳細 -->
+    <h2 class="mb-3 mt-12 font-display text-lg font-semibold">7軸詳細</h2>
+    <AxisAccordion regulation={r} />
+
+    <!-- 差分リスト -->
+    {!isBaseline && (
+      <section class="mt-12">
+        <h2 class="mb-3 font-display text-lg font-semibold">EU AI Actとの差分</h2>
+        <div class="space-y-6">
+          {DIFF_KEYS.map((k) => (
+            <div id={`diff-${k}`}>
+              <h3 class={`mb-2 flex items-center gap-2 text-sm font-bold`}>
+                <span class={`inline-block h-3 w-3 bg-diff-${k}`} />
+                {DIFF_LABELS[k]}
+                <span class="font-mono text-xs text-ink/45">{r.diff_vs_eu![k].length}件</span>
+              </h3>
+              {r.diff_vs_eu![k].length === 0 ? (
+                <p class="text-sm text-ink/50">該当なし</p>
+              ) : (
+                <ul class="space-y-2">
+                  {r.diff_vs_eu![k].map((d) => (
+                    <li class={`border-l-2 bg-white py-2 pl-4 pr-3 text-sm leading-relaxed border-diff-${k}`}>
+                      <span class="font-medium">{d.topic}</span>
+                      <span class="text-ink/70"> — {d.note}</span>
+                      <a href={d.source} rel="noopener" target="_blank" class="ml-2 font-mono text-xs underline underline-offset-2">出典 ↗</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- タイムライン -->
+    <section class="mt-12">
+      <h2 class="mb-3 font-display text-lg font-semibold">タイムライン</h2>
+      <ol class="border-l border-ink/20">
+        {timeline.map((t) => (
+          <li id={`tl-${t.date}`} class="relative mb-5 pl-6">
+            <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-paper bg-ink" />
+            <time class="font-mono text-xs text-ink/55">{t.date}</time>
+            <p class="mt-0.5 text-sm leading-relaxed">
+              {t.event}
+              <a href={t.source} rel="noopener" target="_blank" class="ml-2 font-mono text-xs underline underline-offset-2">出典 ↗</a>
+            </p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- 出典一覧 -->
+    <section class="mt-12">
+      <h2 class="mb-3 font-display text-lg font-semibold">出典一覧</h2>
+      <ul class="space-y-1 font-mono text-xs">
+        {[...allSources].map((s) => (
+          <li><a href={s} rel="noopener" target="_blank" class="break-all underline underline-offset-2">{s}</a></li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</LightLayout>

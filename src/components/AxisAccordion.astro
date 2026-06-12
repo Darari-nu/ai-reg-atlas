@@ -1,0 +1,50 @@
+---
+import type { Regulation } from '../lib/data';
+import { AXIS_KEYS, AXIS_LABELS } from '../lib/data';
+
+interface Props {
+  regulation: Regulation;
+}
+const { regulation } = Astro.props;
+
+// unique差分が言及している軸を推定してタグ付け（topic文字列に依存しない簡易版: 全uniqueを軸非依存で表示）
+const uniqueTopics = regulation.diff_vs_eu?.unique.map((u) => u.topic) ?? [];
+---
+
+<section aria-label="7軸詳細" class="divide-y divide-ink/10 border border-ink/15 bg-white">
+  {AXIS_KEYS.map((k, i) => {
+    const axis = regulation.axes[k];
+    return (
+      <details class="card-expand group" id={`axis-${k}`} open={i === 0}>
+        <summary class="flex items-start gap-3 p-4">
+          <span class="mt-0.5 w-7 shrink-0 font-mono text-[10px] tracking-widest text-ink/35">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-sm font-bold">{AXIS_LABELS[k]}</span>
+            <span class="mt-0.5 block text-sm leading-relaxed text-ink/75">{axis.summary || '—'}</span>
+          </span>
+          <span class="mt-1 shrink-0 font-mono text-xs text-ink/40 transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+        </summary>
+        <div class="expand-body">
+          <div class="space-y-3 px-4 pb-4 pl-14 text-sm leading-relaxed text-ink/80">
+            {axis.detail && <p>{axis.detail}</p>}
+            {axis.sources.length > 0 && (
+              <p class="flex flex-wrap gap-x-4 font-mono text-xs">
+                {axis.sources.map((s) => (
+                  <a href={s} rel="noopener" target="_blank" class="text-ink underline underline-offset-2">一次ソース ↗</a>
+                ))}
+              </p>
+            )}
+          </div>
+        </div>
+      </details>
+    );
+  })}
+  {uniqueTopics.length > 0 && (
+    <p class="bg-diff-unique/10 px-4 py-2 text-xs text-ink/70">
+      <span class="mr-2 font-mono text-diff-unique">UNIQUE</span>
+      独自規定あり: {uniqueTopics.join(' / ')}（下の差分リスト参照）
+    </p>
+  )}
+</section>

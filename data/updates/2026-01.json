@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2026-01-22-kr-001",
+    "date": "2026-01-22",
+    "country": "kr",
+    "axis": "risk_classification",
+    "change_type": "status_change",
+    "title": "韓国AI基本法が施行（アジア初の包括AI法）",
+    "summary": {
+      "what": "AI基本法と施行令が同時に施行され、高影響AI・生成AI表示等の義務が発動",
+      "who": "韓国でAIサービスを提供する内外の事業者（一定規模以上は国内代理人必須）",
+      "when_impact": "即日適用。EU比で義務は軽いが国内代理人指定が独自要件"
+    },
+    "detail": "2025-01-21公布のAI基本法が1年の準備期間を経て施行。高影響AIの該当性検討・リスク管理、生成AIの事前告知・生成物表示、高性能AI（学習計算量10^26 FLOP以上）の安全体制構築・当局報告が義務化された。過怠料は最大3,000万ウォン。",
+    "so_what": "EU準拠の社内規定があれば大半はカバーされるが、国内代理人の指定と生成物表示の韓国語要件は個別確認が必要。",
+    "impact": { "diff_changed": true, "diff_note": "韓国がproposed→in_forceへ。stricter項目（国内代理人）が有効化" },
+    "sources": ["https://www.msit.go.kr/"],
+    "country_anchor": "/country/kr/#tl-2026-01-22"
+  }
+]

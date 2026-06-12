@@ -1,0 +1,48 @@
+---
+import LightLayout from '../layouts/LightLayout.astro';
+import { getCountries, getRegulation, withBase } from '../lib/data';
+
+const countries = getCountries();
+type Ev = { date: string; event: string; source: string; cc: string; flag: string; name: string; future: boolean };
+const today = new Date().toISOString().slice(0, 10);
+
+const events: Ev[] = [];
+for (const c of countries) {
+  const r = getRegulation(c.code);
+  for (const t of r.axes.timeline) {
+    events.push({ ...t, cc: c.code, flag: c.flag, name: c.name_ja, future: t.date > today });
+  }
+}
+events.sort((a, b) => (a.date < b.date ? 1 : -1));
+
+const years = [...new Set(events.map((e) => e.date.slice(0, 4)))];
+---
+
+<LightLayout title="タイムライン — 施行日・延期の年表 | AI Reg Atlas">
+  <main class="mx-auto max-w-4xl px-5 py-8">
+    <h1 class="font-display text-2xl font-semibold">タイムライン</h1>
+    <p class="mt-2 text-sm text-ink/70">6カ国の施行日・延期・主要文書を1本の年表に。未来の日付は予定。</p>
+
+    {years.map((y) => (
+      <section class="mt-10">
+        <h2 class="font-mono text-lg font-medium text-ink/40">{y}</h2>
+        <ol class="mt-3 border-l border-ink/20">
+          {events.filter((e) => e.date.startsWith(y)).map((e) => (
+            <li class="relative mb-5 pl-6">
+              <span class={`absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-paper ${e.future ? 'bg-star-gold' : 'bg-ink'}`} />
+              <p class="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                <time class="font-mono text-xs text-ink/55">{e.date}</time>
+                <a href={withBase(`/country/${e.cc}/#tl-${e.date}`)} class="text-xs no-underline hover:underline">{e.flag} {e.name}</a>
+                {e.future && <span class="border border-star-gold px-1 font-mono text-[10px] text-ink/70">予定</span>}
+              </p>
+              <p class="mt-0.5 text-sm leading-relaxed">
+                {e.event}
+                <a href={e.source} rel="noopener" target="_blank" class="ml-2 font-mono text-xs underline underline-offset-2">出典 ↗</a>
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </main>
+</LightLayout>

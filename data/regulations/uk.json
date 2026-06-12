@@ -1,0 +1,62 @@
+{
+  "jurisdiction": "uk",
+  "regulation_name": "横断法なし（プロイノベーション原則＋既存規制当局による分野別適用）",
+  "status": "consultation",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "法定のリスク分類はない。2023年白書の5原則を既存規制当局が分野ごとに適用。",
+      "detail": "「プロイノベーション」白書（2023-03）が安全性・透明性・公平性・アカウンタビリティ・救済可能性の5原則を提示し、ICO（データ保護）・CMA（競争）・FCA(金融)等の既存当局が自分野でAIに適用する非法定アプローチ。フロンティアAIへの的を絞った立法は検討が続くが、横断的なリスク分類法は未制定。",
+      "sources": ["https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach"]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の横断的禁止リストはない。既存法（データ保護法・オンライン安全法等）で個別対応。",
+      "detail": "EU第5条相当の禁止規定なし。非同意の性的ディープフェイク作成はOnline Safety Act関連の刑事規定で対応。リアルタイム顔認識は警察の運用ガイダンスとデータ保護法の枠内。",
+      "sources": ["https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach"]
+    },
+    "gpai_obligations": {
+      "summary": "法的義務なし。AI Security Instituteによる任意のモデル評価枠組み。",
+      "detail": "フロンティアモデル開発者への法的義務はなく、AI Safety Institute（2025-02にAI Security Instituteへ改称）が主要開発者と任意の協定でモデル評価を実施。フロンティアAI法案は2025年の政府方針で予告されたが提出時期は流動的。",
+      "sources": ["https://www.gov.uk/government/organisations/ai-security-institute"]
+    },
+    "transparency": {
+      "summary": "合成コンテンツの横断的表示義務はない。選挙・性的コンテンツ等の個別領域のみ。",
+      "detail": "EU第50条相当のラベリング義務なし。公共部門にはAlgorithmic Transparency Recording Standard（アルゴリズム透明性記録基準）の適用が中央政府機関に必須化されている点が特徴。",
+      "sources": ["https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub"]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則体系はない。既存法（UK GDPR等）の制裁が間接適用。",
+      "detail": "AI固有の制裁はなく、ICOによるUK GDPR制裁（最大1,750万ポンドまたは全世界売上4%）等が実質的な上限として機能する。",
+      "sources": ["https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/"]
+    },
+    "enforcement_body": {
+      "summary": "単一のAI監督機関はない。ICO・CMA・FCA等の既存当局＋DSIT（政策調整）。",
+      "detail": "科学・イノベーション・技術省（DSIT）が政策の中心。規制はICO、CMA、FCA、Ofcom等が分野別に実施し、Digital Regulation Cooperation Forum（DRCF）が当局間を調整。AI Security Instituteは評価・研究機関であり規制権限を持たない。",
+      "sources": ["https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology"]
+    },
+    "timeline": [
+      { "date": "2023-03-29", "event": "AI規制白書「プロイノベーション・アプローチ」公表", "source": "https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach" },
+      { "date": "2023-11-02", "event": "AI安全サミット（ブレッチリー宣言）", "source": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration" },
+      { "date": "2025-02-14", "event": "AI Safety InstituteをAI Security Instituteへ改称", "source": "https://www.gov.uk/government/organisations/ai-security-institute" },
+      { "date": "2026-01-20", "event": "フロンティアAIへの的を絞った立法の検討継続（横断法は採らない方針を維持）", "source": "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology" }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      { "topic": "法的拘束力", "note": "原則ベースの非法定アプローチ。EUの包括的義務体系に対し大幅に軽い", "source": "https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach" },
+      { "topic": "GPAI義務", "note": "任意のモデル評価のみ。法的義務なし", "source": "https://www.gov.uk/government/organisations/ai-security-institute" }
+    ],
+    "absent": [
+      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし", "source": "https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach" },
+      { "topic": "合成コンテンツ表示義務", "note": "EU第50条相当のラベリング義務なし", "source": "https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach" },
+      { "topic": "AI専属監督機関", "note": "AI Office相当の執行機関なし（既存当局の分担）", "source": "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology" }
+    ],
+    "unique": [
+      { "topic": "公共部門アルゴリズム透明性基準", "note": "中央政府機関にアルゴリズム利用の記録・公表を必須化（ATRS）。EUにない公共部門特化の透明性制度", "source": "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub" },
+      { "topic": "AI Security Instituteの任意評価", "note": "国家機関がフロンティアモデルを開発者協定ベースで直接評価する枠組み", "source": "https://www.gov.uk/government/organisations/ai-security-institute" }
+    ]
+  },
+  "last_checked": "2026-06-12T03:00:00Z",
+  "last_changed": "2026-01-20T00:00:00Z"
+}

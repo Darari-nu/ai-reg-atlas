@@ -1,0 +1,31 @@
+---
+import { getMeta, fmtDateTime, withBase } from '../lib/data';
+
+interface Props {
+  theme: 'dark' | 'light';
+}
+const { theme } = Astro.props;
+const dark = theme === 'dark';
+const meta = getMeta();
+---
+
+<footer
+  class={`mt-16 border-t px-5 py-8 font-body text-xs leading-relaxed ${
+    dark ? 'border-white/10 text-paper/60' : 'border-ink/10 text-ink/60'
+  }`}
+>
+  <div class="mx-auto max-w-6xl space-y-3">
+    <p>
+      本サイトはAIによる自動要約を含む情報提供であり、法的助言ではありません。実務判断は必ず原文と専門家の確認を。
+    </p>
+    <p>要約生成: Gemini API（自動生成・人間による週次レビュー運用）</p>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono">
+      <span>
+        LAST SWEEP <span class={dark ? 'text-star-gold' : 'text-ink'}>{fmtDateTime(meta.last_sweep)}</span>
+        {meta.status !== 'ok' && <span class="ml-2 text-diff-stricter">[{meta.status}]</span>}
+      </span>
+      <a href={withBase('/about/')} class="hover:underline">About</a>
+      <a href="https://github.com/Darari-nu/ai-reg-atlas" class="hover:underline">GitHub</a>
+    </div>
+  </div>
+</footer>

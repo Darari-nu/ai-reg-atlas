@@ -1,0 +1,74 @@
+---
+import type { UpdateRecord, Country } from '../lib/data';
+import { AXIS_LABELS, CHANGE_TYPE_LABELS, withBase } from '../lib/data';
+
+interface Props {
+  update: UpdateRecord;
+  country: Country;
+  theme: 'dark' | 'light';
+  big?: boolean; // 1件目のみ視覚的に大きく（均一カードの繰り返し回避 §6-4）
+}
+const { update: u, country, theme, big = false } = Astro.props;
+const dark = theme === 'dark';
+---
+
+<details
+  class={`card-expand group ${
+    dark
+      ? 'dark-rule bg-navy-soft/60'
+      : 'border border-ink/15 bg-white shadow-[0_1px_2px_rgba(26,34,51,0.06)]'
+  } ${big ? 'p-5' : 'p-4'}`}
+  data-country={u.country}
+  data-axis={u.axis}
+  data-type={u.change_type}
+  data-text={`${u.title} ${u.summary.what} ${u.summary.who} ${u.summary.when_impact}`}
+>
+  <summary class="flex items-start gap-3">
+    <span class={big ? 'text-2xl leading-none' : 'text-lg leading-none'}>{country.flag}</span>
+    <span class="min-w-0 flex-1">
+      <span class={`flex flex-wrap items-center gap-x-3 gap-y-1 font-mono ${big ? 'text-sm' : 'text-xs'}`}>
+        <time class={dark ? 'text-star-gold' : 'text-ink/60'}>{u.date}</time>
+        <span class={dark ? 'text-paper/50' : 'text-ink/50'}>{country.name_ja}</span>
+        <span
+          class={`px-1.5 py-0.5 text-[10px] tracking-wide ${
+            dark ? 'border border-white/20 text-paper/70' : 'border border-ink/20 text-ink/60'
+          }`}
+        >{CHANGE_TYPE_LABELS[u.change_type] ?? u.change_type}</span>
+        {u.impact.diff_changed && (
+          <span class="bg-diff-unique px-1.5 py-0.5 text-[10px] tracking-wide text-white">差分変化</span>
+        )}
+      </span>
+      <span class={`mt-1 block font-medium leading-snug ${big ? 'text-lg' : 'text-sm'}`}>{u.title}</span>
+    </span>
+    <span
+      class={`mt-1 shrink-0 font-mono text-xs transition-transform group-open:rotate-90 ${
+        dark ? 'text-paper/40' : 'text-ink/40'
+      }`}
+      aria-hidden="true"
+    >▸</span>
+  </summary>
+
+  <div class="expand-body">
+    <div class={`mt-4 space-y-3 border-t pt-4 text-sm leading-relaxed ${dark ? 'border-white/10' : 'border-ink/10'}`}>
+      <ul class="space-y-1">
+        <li><span class={`mr-2 font-mono text-[10px] ${dark ? 'text-paper/40' : 'text-ink/40'}`}>WHAT</span>{u.summary.what}</li>
+        <li><span class={`mr-2 font-mono text-[10px] ${dark ? 'text-paper/40' : 'text-ink/40'}`}>WHO</span>{u.summary.who}</li>
+        <li><span class={`mr-2 font-mono text-[10px] ${dark ? 'text-paper/40' : 'text-ink/40'}`}>WHEN</span>{u.summary.when_impact}</li>
+      </ul>
+      {u.detail && <p class={dark ? 'text-paper/70' : 'text-ink/70'}>{u.detail}</p>}
+      <p class={`border-l-2 pl-3 ${dark ? 'border-star-gold text-paper/90' : 'border-star-gold text-ink/90'}`}>
+        <span class={`mr-2 font-mono text-[10px] ${dark ? 'text-paper/40' : 'text-ink/40'}`}>SO WHAT</span>{u.so_what}
+      </p>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-1 font-mono text-xs">
+        {u.sources.map((s) => (
+          <a href={s} rel="noopener" target="_blank" class={`underline underline-offset-2 ${dark ? 'text-star-gold' : 'text-ink'}`}>
+            一次ソース ↗
+          </a>
+        ))}
+        <a href={withBase(u.country_anchor)} class={dark ? 'text-paper/60 hover:text-paper' : 'text-ink/60 hover:text-ink'}>
+          国別ページで見る → {AXIS_LABELS[u.axis] ?? u.axis}
+        </a>
+      </div>
+    </div>
+  </div>
+</details>

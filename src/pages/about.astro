@@ -1,0 +1,62 @@
+---
+import LightLayout from '../layouts/LightLayout.astro';
+import { withBase } from '../lib/data';
+---
+
+<LightLayout title="About | AI Reg Atlas">
+  <main class="mx-auto max-w-3xl px-5 py-8 text-sm leading-relaxed">
+    <h1 class="font-display text-2xl font-semibold">About</h1>
+
+    <section class="mt-8 space-y-3">
+      <h2 class="font-display text-lg font-semibold">このサイトについて</h2>
+      <p>
+        AI Reg Atlas は、世界のAI規制を <strong>EU AI Act を基準とした「差分」</strong> で読むための定点観測サイト。
+        企業のAIガバナンス担当者が「最も厳しいEUに合わせ、他国は差分だけ見る」という実務の読み方を、そのまま画面にした。
+      </p>
+      <ul class="list-disc space-y-1 pl-5">
+        <li><strong>一次ソース主義</strong> — すべての要約に原文リンクを添える。3クリック以内に原文へ。</li>
+        <li><strong>差分主義</strong> — 全文ではなく「EUと何が違うか」を4分類（厳しい・緩い・規定なし・独自）で示す。</li>
+        <li><strong>完全自動</strong> — 日次の巡回・要約・更新は GitHub Actions と Gemini API による自動運用。人間は週次レビューのみ。</li>
+      </ul>
+    </section>
+
+    <section class="mt-10 space-y-3">
+      <h2 class="font-display text-lg font-semibold">免責事項</h2>
+      <p class="border-l-2 border-diff-stricter bg-white p-4">
+        本サイトはAIによる自動要約を含む情報提供であり、<strong>法的助言ではありません</strong>。
+        内容の正確性・最新性は保証されません。実務判断は必ず一次ソース（原文）と専門家の確認を経てください。
+      </p>
+    </section>
+
+    <section class="mt-10 space-y-3">
+      <h2 class="font-display text-lg font-semibold">AI利用の透明性</h2>
+      <p>
+        更新フィードの要約は Gemini API により自動生成され、JSON Schemaによる構造検証と人間の週次レビューを経て公開される。
+        出典のない要約はデータに反映しない。巡回は robots.txt を尊重し、日次1回のみ。
+      </p>
+    </section>
+
+    <section class="mt-10 space-y-3">
+      <h2 class="font-display text-lg font-semibold">データとライセンス</h2>
+      <p>
+        全データは <a href="https://github.com/Darari-nu/ai-reg-atlas" class="underline underline-offset-2">GitHubリポジトリ</a> で公開
+        （コード: MIT / データ: CC BY 4.0）。修正提案はPRで受け付ける。
+      </p>
+      <p class="font-mono text-xs text-ink/60">
+        対象: EU・日本・米国・英国・中国・韓国（国の追加は countries.yaml に1ブロック）
+      </p>
+    </section>
+
+    <section class="mt-10 space-y-3">
+      <h2 class="font-display text-lg font-semibold">運営者</h2>
+      <p>
+        企業でAIガバナンス・社内規定整備に携わる個人が運営。
+        運営ノウハウや解説記事は今後 note / Substack で発信予定。
+      </p>
+      <p>
+        <a href={withBase('/updates/')} class="underline underline-offset-2">更新アーカイブ</a> /
+        <a href={withBase('/matrix/')} class="underline underline-offset-2">比較表</a>
+      </p>
+    </section>
+  </main>
+</LightLayout>

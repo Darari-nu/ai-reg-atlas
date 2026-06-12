@@ -1,0 +1,65 @@
+{
+  "jurisdiction": "jp",
+  "regulation_name": "AI推進法（人工知能関連技術の研究開発及び活用の推進に関する法律）",
+  "status": "in_force",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "法的拘束力のあるリスク分類制度はない。AI事業者ガイドライン（経産省・総務省）がリスクベースの自主対応を推奨。",
+      "detail": "AI推進法は研究開発・活用の「推進」を目的とする基本法であり、EUのようなリスク階層に応じた義務体系を持たない。実務上はAI事業者ガイドライン（2024-04公表、以後改訂）がリスクに応じたガバナンス体制の構築を事業者の自主的取組として求める構造。",
+      "sources": [
+        "https://www8.cao.go.jp/cstp/ai/index.html",
+        "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/index.html"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AIの用途を直接禁止する横断的規定はない。個別法（個人情報保護法・刑法等）で対応。",
+      "detail": "EU AI Act第5条に相当する禁止リストは存在しない。社会的スコアリングや遠隔生体識別等も、AI固有の横断規制ではなく個人情報保護法等の既存法の枠内で評価される。",
+      "sources": ["https://www8.cao.go.jp/cstp/ai/index.html"]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデルへの法的義務はない。広島AIプロセスの国際行動規範への自主的コミットを推奨。",
+      "detail": "基盤モデル提供者への技術文書・学習データ開示等の法的義務は存在しない。広島AIプロセス（G7）の高度なAIシステム開発者向け国際行動規範に基づく自主的取組が事実上の参照点。",
+      "sources": ["https://www.soumu.go.jp/hiroshimaaiprocess/"]
+    },
+    "transparency": {
+      "summary": "AI生成コンテンツの表示義務はない。ディープフェイク対策は検討段階。",
+      "detail": "EU第50条に相当する合成コンテンツのラベリング義務はない。選挙・性的ディープフェイク等の個別領域で法改正の議論はあるが、横断的な表示義務は未制定。",
+      "sources": ["https://www8.cao.go.jp/cstp/ai/index.html"]
+    },
+    "penalties": {
+      "summary": "罰則なし。AI推進法は理念法であり、制裁ではなく協力義務ベース。",
+      "detail": "AI推進法に罰則規定はない。国民・事業者には国の施策への協力の努力義務が課されるのみ。悪質事案には政府が調査を行い、指導・助言、事業者名の公表で対応する運用が想定される。",
+      "sources": ["https://www8.cao.go.jp/cstp/ai/index.html"]
+    },
+    "enforcement_body": {
+      "summary": "内閣にAI戦略本部（全閣僚構成）を設置。専属の規制監督官庁はない。",
+      "detail": "AI推進法に基づき内閣総理大臣を本部長とするAI戦略本部を設置し、AI基本計画を策定。EUのAI Officeのような許認可・執行権限を持つ監督機関ではなく、司令塔機能に留まる。",
+      "sources": ["https://www8.cao.go.jp/cstp/ai/index.html"]
+    },
+    "timeline": [
+      { "date": "2024-04-19", "event": "AI事業者ガイドライン第1.0版公表（経産省・総務省）", "source": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/index.html" },
+      { "date": "2025-05-28", "event": "AI推進法が国会で成立", "source": "https://www8.cao.go.jp/cstp/ai/index.html" },
+      { "date": "2025-06-04", "event": "AI推進法公布（一部即日施行）", "source": "https://www8.cao.go.jp/cstp/ai/index.html" },
+      { "date": "2025-09-01", "event": "AI戦略本部設置・AI基本計画の策定作業開始", "source": "https://www8.cao.go.jp/cstp/ai/index.html" }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      { "topic": "拘束力", "note": "推進目的の理念法で罰則なし。EUの義務・制裁体系に対し全面的にソフトロー", "source": "https://www8.cao.go.jp/cstp/ai/index.html" },
+      { "topic": "リスク分類", "note": "法的なリスク階層なし。ガイドラインによる自主対応のみ", "source": "https://www8.cao.go.jp/cstp/ai/index.html" }
+    ],
+    "absent": [
+      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし。個別法で対応", "source": "https://www8.cao.go.jp/cstp/ai/index.html" },
+      { "topic": "GPAI義務", "note": "基盤モデルへの法的義務なし（国際行動規範への自主コミットのみ）", "source": "https://www.soumu.go.jp/hiroshimaaiprocess/" },
+      { "topic": "合成コンテンツ表示義務", "note": "EU第50条相当のラベリング義務なし", "source": "https://www8.cao.go.jp/cstp/ai/index.html" }
+    ],
+    "unique": [
+      { "topic": "政府の調査・名称公表", "note": "悪質事案への国の調査と事業者名公表という、制裁によらない独自の実効性確保手段", "source": "https://www8.cao.go.jp/cstp/ai/index.html" },
+      { "topic": "AI戦略本部・AI基本計画", "note": "全閣僚構成の司令塔と国家計画で推進と安全を一体運用する構造", "source": "https://www8.cao.go.jp/cstp/ai/index.html" }
+    ]
+  },
+  "last_checked": "2026-06-12T03:00:00Z",
+  "last_changed": "2025-09-01T00:00:00Z"
+}

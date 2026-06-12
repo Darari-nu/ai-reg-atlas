@@ -1,0 +1,51 @@
+---
+import type { Country, Regulation } from '../lib/data';
+import { STATUS_LABELS, fmtDate } from '../lib/data';
+
+interface Props {
+  regulation: Regulation;
+  country: Country;
+  pageUrl: string;
+}
+const { regulation: r, country, pageUrl } = Astro.props;
+
+const diff = r.diff_vs_eu!;
+const list = (items: { topic: string }[]) => (items.length ? items.map((i) => i.topic).join('、') : 'なし');
+const sources = new Set<string>();
+for (const k of ['stricter', 'looser', 'absent', 'unique'] as const) {
+  for (const i of diff[k]) sources.add(i.source);
+}
+
+// §6-5 のプレーンテキスト形式（変更禁止）
+const copyText = `【${country.name_ja}のAI規制とEU AI Actの差分】${fmtDate(r.last_checked)}時点
+規制名: ${r.regulation_name}（状態: ${STATUS_LABELS[r.status]}）
+■ EUより厳しい: ${list(diff.stricter)}
+■ EUより緩い: ${list(diff.looser)}
+■ 規定なし: ${list(diff.absent)}
+■ 独自規定: ${list(diff.unique)}
+出典: ${[...sources].join(' ')}
+※AI Reg Atlas（AI自動要約・法的助言ではありません） ${pageUrl}`;
+---
+
+<button
+  type="button"
+  class="copy-diff border border-ink/25 bg-white px-3 py-1.5 font-mono text-xs text-ink transition-colors hover:border-ink/60"
+  data-copy={copyText}
+>
+  差分をコピー
+</button>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('button.copy-diff').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+        const orig = btn.textContent;
+        btn.textContent = 'コピーした ✓';
+        setTimeout(() => (btn.textContent = orig), 1600);
+      } catch {
+        btn.textContent = 'コピー失敗';
+      }
+    });
+  });
+</script>

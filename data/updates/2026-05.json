@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2026-05-19-eu-001",
+    "date": "2026-05-19",
+    "country": "eu",
+    "axis": "risk_classification",
+    "change_type": "guideline_draft",
+    "title": "ハイリスクAI分類のドラフトガイドライン公表",
+    "summary": {
+      "what": "欧州委員会がハイリスクAI（第6条）分類の実務ガイドライン案を公表",
+      "who": "自社AIがハイリスク該当か判定する必要のある提供者・利用企業",
+      "when_impact": "意見募集を経て確定へ。Annex III系適用（2027-12-02）前の判定基準になる"
+    },
+    "detail": "ハイリスク該当性の判定手順、Annex IIIの分野解釈、第6条3項の適用除外（狭い手続的タスク等）の具体例を示すドラフト。確定版はハイリスク義務適用開始前の実務準備の中心文書となる見込み。",
+    "so_what": "ハイリスク該当性の社内アセスメントはこのドラフトの判定フローで仮組みしておくと、確定後の手戻りが小さい。",
+    "impact": { "diff_changed": false, "diff_note": "" },
+    "sources": ["https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"],
+    "country_anchor": "/country/eu/#tl-2026-05-19"
+  }
+]

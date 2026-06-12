@@ -1,0 +1,58 @@
+# 監視対象国の定義。国の追加はここに1ブロック追記 → 翌日から自動監視（§9）
+# URLは2026-06-12時点。月次で死活確認すること
+countries:
+  - code: eu
+    name_ja: EU
+    name_en: European Union
+    flag: "🇪🇺"
+    lat: 50.85
+    lng: 4.35
+    official_sources:
+      - { url: "https://digital-strategy.ec.europa.eu/en/related-content?topic=119&type=news&format=rss", type: rss }
+    news_queries: ["EU AI Act", "EU AI Act guidelines"]
+  - code: jp
+    name_ja: 日本
+    name_en: Japan
+    flag: "🇯🇵"
+    lat: 36.20
+    lng: 138.25
+    official_sources:
+      - { url: "https://www8.cao.go.jp/cstp/ai/index.html", type: scrape_hash }
+      - { url: "https://www.soumu.go.jp/menu_news/s-news/index.html", type: scrape_hash }
+    news_queries: ["日本 AI 規制 法律", "AI推進法"]
+  - code: us
+    name_ja: 米国
+    name_en: United States
+    flag: "🇺🇸"
+    lat: 38.90
+    lng: -77.04
+    official_sources:
+      - { url: "https://www.nist.gov/news-events/news/rss.xml", type: rss }
+    news_queries: ["US AI regulation law", "state AI law enacted"]
+  - code: uk
+    name_ja: 英国
+    name_en: United Kingdom
+    flag: "🇬🇧"
+    lat: 51.50
+    lng: -0.12
+    official_sources:
+      - { url: "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=department-for-science-innovation-and-technology", type: rss }
+    news_queries: ["UK AI regulation"]
+  - code: cn
+    name_ja: 中国
+    name_en: China
+    flag: "🇨🇳"
+    lat: 39.90
+    lng: 116.40
+    official_sources:
+      - { url: "https://www.cac.gov.cn/zcwj/index.htm", type: scrape_hash }
+    news_queries: ["China AI regulation CAC", "中国 AI 規制"]
+  - code: kr
+    name_ja: 韓国
+    name_en: South Korea
+    flag: "🇰🇷"
+    lat: 37.57
+    lng: 126.98
+    official_sources:
+      - { url: "https://www.msit.go.kr", type: scrape_hash }
+    news_queries: ["Korea AI Basic Act", "韓国 AI基本法"]

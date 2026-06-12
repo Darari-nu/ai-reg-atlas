@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "regulation.schema.json",
+  "title": "Regulation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["jurisdiction", "regulation_name", "status", "approach", "axes", "last_checked", "last_changed"],
+  "properties": {
+    "jurisdiction": { "type": "string", "pattern": "^[a-z]{2}$" },
+    "regulation_name": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["proposed", "draft", "consultation", "enacted", "in_force"] },
+    "approach": { "enum": ["risk_based", "sectoral", "soft_law"] },
+    "is_baseline": { "type": "boolean" },
+    "axes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["risk_classification", "prohibited_uses", "gpai_obligations", "transparency", "penalties", "enforcement_body", "timeline"],
+      "properties": {
+        "risk_classification": { "$ref": "#/definitions/axis" },
+        "prohibited_uses": { "$ref": "#/definitions/axis" },
+        "gpai_obligations": { "$ref": "#/definitions/axis" },
+        "transparency": { "$ref": "#/definitions/axis" },
+        "penalties": { "$ref": "#/definitions/axis" },
+        "enforcement_body": { "$ref": "#/definitions/axis" },
+        "timeline": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["date", "event", "source"],
+            "properties": {
+              "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+              "event": { "type": "string", "minLength": 1 },
+              "source": { "type": "string", "format": "uri" }
+            }
+          }
+        }
+      }
+    },
+    "diff_vs_eu": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stricter", "looser", "absent", "unique"],
+      "properties": {
+        "stricter": { "$ref": "#/definitions/diffList" },
+        "looser": { "$ref": "#/definitions/diffList" },
+        "absent": { "$ref": "#/definitions/diffList" },
+        "unique": { "$ref": "#/definitions/diffList" }
+      }
+    },
+    "last_checked": { "type": "string", "format": "date-time" },
+    "last_changed": { "type": "string", "format": "date-time" }
+  },
+  "oneOf": [
+    { "required": ["is_baseline"], "not": { "required": ["diff_vs_eu"] } },
+    { "required": ["diff_vs_eu"], "not": { "required": ["is_baseline"] } }
+  ],
+  "definitions": {
+    "axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "detail", "sources"],
+      "properties": {
+        "summary": { "type": "string" },
+        "detail": { "type": "string" },
+        "sources": { "type": "array", "items": { "type": "string", "format": "uri" } }
+      }
+    },
+    "diffList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["topic", "note", "source"],
+        "properties": {
+          "topic": { "type": "string", "minLength": 1 },
+          "note": { "type": "string" },
+          "source": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  }
+}

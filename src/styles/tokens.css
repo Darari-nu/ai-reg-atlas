@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Reg Atlas デザイントークン（§6-4が正） */
+:root {
+  --navy-deep: #0a1024;
+  --navy-soft: #141b36;
+  --star-gold: #ffc700;
+  --paper: #fafaf7;
+  --ink: #1a2233;
+  --diff-stricter: #d64550;
+  --diff-looser: #2e9e6b;
+  --diff-absent: #8a94a6;
+  --diff-unique: #7c5ce0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ダーク面は罫線基調（角丸シャドウの既定値禁止 §6-4） */
+.dark-rule {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* 金パルス（更新7日以内の国マーカー用） */
+@keyframes gold-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0.55); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 199, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0); }
+}
+.pulse-gold {
+  animation: gold-pulse 2.4s ease-out infinite;
+}
+
+/* NEWカード展開: details の高さアニメーション（200ms ease-out） */
+details.card-expand > div.expand-body {
+  overflow: hidden;
+  interpolate-size: allow-keywords;
+}
+details.card-expand summary {
+  cursor: pointer;
+  list-style: none;
+}
+details.card-expand summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 差分件数カウントアップは JS（600ms）。ここでは初期透明のみ */
+.countup {
+  font-variant-numeric: tabular-nums;
+}
+
+/* reduced-motion: 全アニメーション停止（§6-4） */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}

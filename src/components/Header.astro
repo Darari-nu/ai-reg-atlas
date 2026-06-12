@@ -1,0 +1,37 @@
+---
+import { withBase } from '../lib/data';
+
+interface Props {
+  theme: 'dark' | 'light';
+}
+const { theme } = Astro.props;
+const dark = theme === 'dark';
+
+const nav = [
+  { href: '/matrix/', label: '比較表' },
+  { href: '/timeline/', label: 'タイムライン' },
+  { href: '/updates/', label: '更新' },
+  { href: '/about/', label: 'About' },
+];
+---
+
+<header
+  class={dark
+    ? 'border-b border-white/10 text-paper'
+    : 'border-b border-ink/10 bg-paper text-ink'}
+>
+  <div class="mx-auto flex max-w-6xl items-baseline justify-between gap-4 px-5 py-4">
+    <a href={withBase('/')} class="flex items-baseline gap-2 no-underline">
+      <span class={`font-mono text-xs tracking-widest ${dark ? 'text-star-gold' : 'text-ink/50'}`}>◆</span>
+      <span class="font-display text-lg font-semibold tracking-wide">AI Reg Atlas</span>
+    </a>
+    <nav class="flex gap-5 font-body text-sm">
+      {nav.map((n) => (
+        <a
+          href={withBase(n.href)}
+          class={dark ? 'text-paper/80 hover:text-star-gold' : 'text-ink/70 hover:text-ink underline-offset-4 hover:underline'}
+        >{n.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>

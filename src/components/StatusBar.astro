@@ -1,0 +1,41 @@
+---
+import type { Country, Regulation } from '../lib/data';
+import { STATUS_LABELS, isRecent, withBase } from '../lib/data';
+
+interface Props {
+  countries: Country[];
+  regulations: Record<string, Regulation>;
+}
+const { countries, regulations } = Astro.props;
+
+const statusTone: Record<string, string> = {
+  in_force: 'border-diff-looser text-diff-looser',
+  enacted: 'border-star-gold text-star-gold',
+  consultation: 'border-diff-unique text-diff-unique',
+  draft: 'border-paper/40 text-paper/70',
+  proposed: 'border-paper/40 text-paper/70',
+};
+---
+
+<div class="flex flex-wrap gap-2">
+  {countries.map((c) => {
+    const r = regulations[c.code];
+    return (
+      <a
+        href={withBase(`/country/${c.code}/`)}
+        class="dark-rule group flex items-center gap-2 bg-navy-soft/40 px-3 py-2 no-underline transition-colors hover:border-star-gold/60"
+      >
+        <span class="relative text-base leading-none">
+          {c.flag}
+          {isRecent(r.last_changed, 7) && (
+            <span class="pulse-gold absolute -right-1 -top-1 h-1.5 w-1.5 rounded-full bg-star-gold" />
+          )}
+        </span>
+        <span class="max-w-[16rem] truncate text-xs text-paper/80 group-hover:text-paper">{r.regulation_name}</span>
+        <span class={`border px-1.5 py-0.5 font-mono text-[10px] ${statusTone[r.status] ?? 'border-paper/40 text-paper/70'}`}>
+          {STATUS_LABELS[r.status]}
+        </span>
+      </a>
+    );
+  })}
+</div>

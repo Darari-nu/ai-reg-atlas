@@ -32,6 +32,34 @@ const MATRIX: Record<string, Record<(typeof AXIS_KEYS)[number], Cell>> = {
     risk_classification: 'looser', prohibited_uses: 'absent', gpai_obligations: 'looser',
     transparency: 'looser', penalties: 'looser', enforcement_body: 'stricter',
   },
+  sg: {
+    risk_classification: 'looser', prohibited_uses: 'absent', gpai_obligations: 'unique',
+    transparency: 'looser', penalties: 'absent', enforcement_body: 'looser',
+  },
+  ca: {
+    risk_classification: 'absent', prohibited_uses: 'absent', gpai_obligations: 'looser',
+    transparency: 'unique', penalties: 'absent', enforcement_body: 'absent',
+  },
+  br: {
+    risk_classification: 'absent', prohibited_uses: 'absent', gpai_obligations: 'absent',
+    transparency: 'unique', penalties: 'absent', enforcement_body: 'absent',
+  },
+  in: {
+    risk_classification: 'absent', prohibited_uses: 'absent', gpai_obligations: 'absent',
+    transparency: 'absent', penalties: 'absent', enforcement_body: 'unique',
+  },
+  au: {
+    risk_classification: 'looser', prohibited_uses: 'absent', gpai_obligations: 'looser',
+    transparency: 'unique', penalties: 'absent', enforcement_body: 'looser',
+  },
+  tw: {
+    risk_classification: 'looser', prohibited_uses: 'absent', gpai_obligations: 'absent',
+    transparency: 'looser', penalties: 'absent', enforcement_body: 'looser',
+  },
+  kh: {
+    risk_classification: 'absent', prohibited_uses: 'absent', gpai_obligations: 'absent',
+    transparency: 'absent', penalties: 'absent', enforcement_body: 'absent',
+  },
 };
 
 const cellClass: Record<Cell, string> = {
@@ -49,7 +77,7 @@ const cellShort: Record<Cell, string> = {
 const ordered = [...countries].sort((a, b) => (a.code === 'eu' ? -1 : b.code === 'eu' ? 1 : 0));
 ---
 
-<LightLayout title="比較表 — 6カ国×7軸ヒートマップ | AI Reg Atlas">
+<LightLayout title={`比較表 — ${countries.length}カ国×7軸ヒートマップ | AI Reg Atlas`}>
   <main class="mx-auto max-w-6xl px-5 py-8">
     <h1 class="font-display text-2xl font-semibold">比較表</h1>
     <p class="mt-2 text-sm text-ink/70">

@@ -56,3 +56,67 @@ countries:
     official_sources:
       - { url: "https://www.msit.go.kr", type: scrape_hash }
     news_queries: ["Korea AI Basic Act", "韓国 AI基本法"]
+  - code: sg
+    name_ja: シンガポール
+    name_en: Singapore
+    flag: "🇸🇬"
+    lat: 1.35
+    lng: 103.82
+    official_sources:
+      - { url: "https://www.imda.gov.sg/", type: scrape_hash }
+      - { url: "https://www.pdpc.gov.sg/", type: scrape_hash }
+    news_queries: ["Singapore AI governance IMDA", "Singapore Model AI Governance Framework"]
+  - code: ca
+    name_ja: カナダ
+    name_en: Canada
+    flag: "🇨🇦"
+    lat: 45.42
+    lng: -75.70
+    official_sources:
+      - { url: "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act", type: scrape_hash }
+    news_queries: ["Canada AI regulation AIDA", "Canada artificial intelligence law"]
+  - code: br
+    name_ja: ブラジル
+    name_en: Brazil
+    flag: "🇧🇷"
+    lat: -15.79
+    lng: -47.88
+    official_sources:
+      - { url: "https://www.gov.br/anpd/pt-br", type: scrape_hash }
+    news_queries: ["Brazil AI bill PL 2338", "Brasil inteligência artificial regulação"]
+  - code: in
+    name_ja: インド
+    name_en: India
+    flag: "🇮🇳"
+    lat: 28.61
+    lng: 77.21
+    official_sources:
+      - { url: "https://www.meity.gov.in/", type: scrape_hash }
+    news_queries: ["India AI regulation MeitY", "India AI governance guidelines"]
+  - code: au
+    name_ja: 豪州
+    name_en: Australia
+    flag: "🇦🇺"
+    lat: -35.28
+    lng: 149.13
+    official_sources:
+      - { url: "https://www.industry.gov.au/science-technology-and-innovation/technology/artificial-intelligence", type: scrape_hash }
+    news_queries: ["Australia AI mandatory guardrails", "Australia AI regulation"]
+  - code: tw
+    name_ja: 台湾
+    name_en: Taiwan
+    flag: "🇹🇼"
+    lat: 25.04
+    lng: 121.56
+    official_sources:
+      - { url: "https://www.nstc.gov.tw/", type: scrape_hash }
+    news_queries: ["Taiwan AI Basic Act", "台湾 AI基本法"]
+  - code: kh
+    name_ja: カンボジア
+    name_en: Cambodia
+    flag: "🇰🇭"
+    lat: 11.56
+    lng: 104.92
+    official_sources:
+      - { url: "https://mptc.gov.kh/en/", type: scrape_hash }
+    news_queries: ["Cambodia AI strategy regulation", "Cambodia artificial intelligence policy"]

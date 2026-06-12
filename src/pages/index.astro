@@ -36,7 +36,7 @@ const markers = countries.map((c) => ({
             世界のAI規制を、<br />EU基準の「差分」で読む。
           </h1>
           <p class="mt-3 font-mono text-xs text-paper/50">
-            6 jurisdictions / daily sweep / primary sources only
+            {countries.length} jurisdictions / daily sweep / primary sources only
           </p>
         </div>
       </div>
@@ -50,7 +50,7 @@ const markers = countries.map((c) => ({
           <h1 class="font-display text-2xl font-semibold leading-snug tracking-wide [text-shadow:0_2px_12px_rgba(10,16,36,0.9)]">
             世界のAI規制を、<br />EU基準の「差分」で読む。
           </h1>
-          <p class="mt-3 font-mono text-xs text-paper/60">6 jurisdictions / daily sweep</p>
+          <p class="mt-3 font-mono text-xs text-paper/60">{countries.length} jurisdictions / daily sweep</p>
         </div>
         <div class="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-b from-transparent to-navy-deep"></div>
       </div>

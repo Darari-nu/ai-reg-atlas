@@ -1,0 +1,60 @@
+{
+  "jurisdiction": "ca",
+  "regulation_name": "横断法なし（AI・データ法案AIDAは2025年議会解散で廃案。自主行動規範で運用）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "法定のリスク分類はない。廃案となったAIDAは「高インパクトAI」概念を持っていた。",
+      "detail": "AI・データ法（AIDA、Bill C-27の一部）は高インパクトAIへの義務を定める予定だったが、2025-01の議会プロロゲーション（閉会）で廃案。新政権はAI担当大臣を新設し規制方針を再検討中で、再立法の形は未確定。",
+      "sources": ["https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act"]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の横断的禁止リストはない。刑法・人権法等の既存法で対応。",
+      "detail": "EU第5条相当の禁止規定なし。AIDAにはAIによる重大な損害を罰する刑事規定案が含まれていたが廃案。",
+      "sources": ["https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act"]
+    },
+    "gpai_obligations": {
+      "summary": "法的義務なし。先進生成AIシステムの自主行動規範（2023）への署名ベース。",
+      "detail": "Voluntary Code of Conduct on the Responsible Development and Management of Advanced Generative AI Systems（2023-09）に主要企業が署名。安全性評価・出力識別・リスク開示等を約束するが拘束力はない。",
+      "sources": ["https://ised-isde.canada.ca/site/ised/en/voluntary-code-conduct-responsible-development-and-management-advanced-generative-ai-systems"]
+    },
+    "transparency": {
+      "summary": "合成コンテンツの表示義務はない。自主行動規範が出力識別を推奨。",
+      "detail": "EU第50条相当の義務なし。公共部門には自動意思決定指令（Directive on Automated Decision-Making）がアルゴリズム影響評価と通知を義務付けており、連邦政府機関に限れば拘束力がある。",
+      "sources": ["https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592"]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない（AIDAの罰則案は廃案）。既存法（PIPEDA等）の制裁が間接適用。",
+      "detail": "AIDAは全世界売上3%等の行政制裁金と刑事罰を予定していたが廃案。現状はプライバシー法・競争法・人権法の枠内。",
+      "sources": ["https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act"]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。ISED（イノベーション科学経済開発省）が政策、2025年からAI担当大臣を新設。",
+      "detail": "AIDA下ではAI・データコミッショナーを置く予定だったが廃案。現在はISEDが政策主導、プライバシーコミッショナーが既存権限で対応。2025-05にAI・デジタルイノベーション担当大臣が新設された。",
+      "sources": ["https://ised-isde.canada.ca/"]
+    },
+    "timeline": [
+      { "date": "2022-06-16", "event": "Bill C-27（AIDA含む）提出", "source": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27" },
+      { "date": "2023-09-27", "event": "先進生成AIの自主行動規範公表", "source": "https://ised-isde.canada.ca/site/ised/en/voluntary-code-conduct-responsible-development-and-management-advanced-generative-ai-systems" },
+      { "date": "2025-01-06", "event": "議会プロロゲーションによりBill C-27（AIDA）廃案", "source": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27" },
+      { "date": "2025-05-13", "event": "AI・デジタルイノベーション担当大臣を新設（規制方針を再検討）", "source": "https://www.pm.gc.ca/" }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      { "topic": "拘束力", "note": "横断法が廃案となり自主行動規範のみ。EUの義務体系に対し全面的にソフトロー", "source": "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act" }
+    ],
+    "absent": [
+      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし", "source": "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act" },
+      { "topic": "GPAI法的義務", "note": "基盤モデルへの拘束的義務なし（署名ベースの行動規範のみ）", "source": "https://ised-isde.canada.ca/site/ised/en/voluntary-code-conduct-responsible-development-and-management-advanced-generative-ai-systems" }
+    ],
+    "unique": [
+      { "topic": "横断法案の廃案という前例", "note": "G7で唯一「包括AI法を作ろうとして議会日程で失敗した」国。再立法の設計が注目点", "source": "https://www.parl.ca/legisinfo/en/bill/44-1/c-27" },
+      { "topic": "公共部門の自動意思決定指令", "note": "連邦政府機関にアルゴリズム影響評価（AIA）を義務付け。公共部門限定の拘束的制度", "source": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592" }
+    ]
+  },
+  "last_checked": "2026-06-12T07:00:00Z",
+  "last_changed": "2025-05-13T00:00:00Z"
+}

@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "br",
+  "regulation_name": "AI法案 PL 2338/2023（上院可決・下院審議中。EU型リスクベース）",
+  "status": "draft",
+  "approach": "risk_based",
+  "axes": {
+    "risk_classification": {
+      "summary": "現行の拘束的リスク分類はない。PL 2338/2023が過度リスク（禁止）と高リスクの2層＋一般義務を規定する見込み。",
+      "detail": "2024-12に連邦上院がPL 2338/2023を可決し下院へ送付。EU AI Actに近い構造で、過度リスク（risco excessivo）の禁止、高リスクAIへのアルゴリズム影響評価・ガバナンス措置、被影響者の権利（説明・異議・人間再審査）を規定する案。成立・施行はまだ先。",
+      "sources": ["https://www25.senado.leg.br/web/atividade/materias/-/materia/157233"]
+    },
+    "prohibited_uses": {
+      "summary": "現行の禁止リストはない。法案は社会的スコアリングや自律型致死兵器等の禁止を予定。",
+      "detail": "PL 2338は公権力による社会的スコアリング、脆弱性悪用、特定の予測的治安維持等を「過度リスク」として禁止する案。現時点では拘束力なし。",
+      "sources": ["https://www25.senado.leg.br/web/atividade/materias/-/materia/157233"]
+    },
+    "gpai_obligations": {
+      "summary": "現行義務なし。法案は汎用・生成AIへのリスク評価とガバナンス義務を予定。",
+      "detail": "PL 2338は汎用AI・生成AIシステムの提供前リスク評価、学習データに関する透明性、システミックリスク管理を規定する案。",
+      "sources": ["https://www25.senado.leg.br/web/atividade/materias/-/materia/157233"]
+    },
+    "transparency": {
+      "summary": "現行の表示義務はない。法案はAIとの対話の明示・合成コンテンツ識別を予定。",
+      "detail": "PL 2338はAIシステムとの対話であることの事前明示、合成コンテンツの識別子付与を規定する案。選挙関連では選挙高等裁判所（TSE）が2024年にディープフェイクの選挙利用を制限する決議を出しており、こちらは既に拘束力がある。",
+      "sources": ["https://www.tse.jus.br/"]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はまだない。法案は最大5,000万レアルまたは売上2%の制裁金を予定。",
+      "detail": "PL 2338は違反1件あたり最大5,000万レアル（約15億円）または企業グループのブラジル国内売上の2%の行政制裁金、活動停止等を規定する案。現行はLGPD（データ保護法）の制裁が間接適用。",
+      "sources": ["https://www25.senado.leg.br/web/atividade/materias/-/materia/157233"]
+    },
+    "enforcement_body": {
+      "summary": "法案はANPD（国家データ保護庁）を中心とするSIA（AI規制・ガバナンス体系）を予定。",
+      "detail": "PL 2338はANPDをコーディネーターとし、分野別規制当局が参加するSIA（Sistema Nacional de Regulação e Governança de IA)を設ける案。現行ではANPDがデータ保護の権限でAI事案（例: Meta学習データ問題）に対応した実績がある。",
+      "sources": ["https://www.gov.br/anpd/pt-br"]
+    },
+    "timeline": [
+      { "date": "2023-05-03", "event": "PL 2338/2023 上院提出（法律家委員会案ベース）", "source": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" },
+      { "date": "2024-12-10", "event": "上院本会議がPL 2338を可決、下院へ送付", "source": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" },
+      { "date": "2025-06-01", "event": "下院で審議継続（特別委員会・公聴会）", "source": "https://www.camara.leg.br/" }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      { "topic": "現行拘束力", "note": "法案段階で現行義務はほぼなし。施行後はEUに近い体系になる見込み", "source": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" }
+    ],
+    "absent": [
+      { "topic": "施行済みの横断義務", "note": "リスク分類・GPAI義務・表示義務はいずれも未施行（法案のみ）", "source": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" }
+    ],
+    "unique": [
+      { "topic": "学習データの著作権報酬請求権", "note": "法案はAI学習に使われた著作物の権利者への報酬（remuneração）規定を含む。EUのオプトアウト方式より踏み込んだ独自設計", "source": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" },
+      { "topic": "選挙ディープフェイクのTSE決議", "note": "選挙裁判所の決議で選挙AI利用を直接規制（既に拘束力あり）。司法機関主導はEUにない経路", "source": "https://www.tse.jus.br/" }
+    ]
+  },
+  "last_checked": "2026-06-12T07:00:00Z",
+  "last_changed": "2025-06-01T00:00:00Z"
+}

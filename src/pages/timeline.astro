@@ -21,7 +21,7 @@ const years = [...new Set(events.map((e) => e.date.slice(0, 4)))];
 <LightLayout title="タイムライン — 施行日・延期の年表 | AI Reg Atlas">
   <main class="mx-auto max-w-4xl px-5 py-8">
     <h1 class="font-display text-2xl font-semibold">タイムライン</h1>
-    <p class="mt-2 text-sm text-ink/70">6カ国の施行日・延期・主要文書を1本の年表に。未来の日付は予定。</p>
+    <p class="mt-2 text-sm text-ink/70">{countries.length}カ国の施行日・延期・主要文書を1本の年表に。未来の日付は予定。</p>
 
     {years.map((y) => (
       <section class="mt-10">

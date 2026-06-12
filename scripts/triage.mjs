@@ -1,12 +1,16 @@
 // 日次パイプライン Step2: 選別。新着全件を1プロンプトに束ねて Flash-Lite へ（§5-2, §14-4）
 import fs from 'node:fs';
 import path from 'node:path';
+import yaml from 'js-yaml';
 import { geminiJSONWithRetry, hasApiKey, MODEL_TRIAGE } from './lib/gemini.mjs';
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/candidates.json';
 const OUT_FILE = '/tmp/triaged.json';
-const TARGET_COUNTRIES = ['eu', 'jp', 'us', 'uk', 'cn', 'kr'];
+// 対象国はcountries.yamlが単一の正（国追加でここを触らない）
+const TARGET_COUNTRIES = yaml
+  .load(fs.readFileSync(path.join(ROOT, 'config/countries.yaml'), 'utf8'))
+  .countries.map((c) => c.code);
 
 function loadCandidates() {
   try {

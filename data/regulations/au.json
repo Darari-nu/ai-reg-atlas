@@ -1,0 +1,59 @@
+{
+  "jurisdiction": "au",
+  "regulation_name": "横断法なし（任意AI安全基準＋高リスクAIへの義務的ガードレール検討中）",
+  "status": "consultation",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "法定のリスク分類はない。「高リスクAI」への義務的ガードレール導入を政府が検討中。",
+      "detail": "2024-09の政府提案ペーパーが高リスクAIの定義と10の義務的ガードレール（説明責任・テスト・人間監督・記録等）を提示し意見募集を実施。導入方法（既存法改正か新法か）は引き続き検討中で、現時点の拘束力はない。",
+      "sources": ["https://www.industry.gov.au/science-technology-and-innovation/technology/artificial-intelligence"]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の横断的禁止リストはない。非同意ディープフェイク性的素材は刑事化済み。",
+      "detail": "EU第5条相当の禁止規定なし。2024年の刑法改正で非同意のディープフェイク性的素材の共有を犯罪化。その他は既存法（プライバシー法・消費者法）で対応。",
+      "sources": ["https://www.ag.gov.au/"]
+    },
+    "gpai_obligations": {
+      "summary": "法的義務なし。任意AI安全基準（Voluntary AI Safety Standard、2024-09）が10ガードレールを提示。",
+      "detail": "任意基準が組織向けに10のガードレール（ガバナンス・リスク管理・データガバナンス・テスト・人間監督・透明性・異議申立て・サプライチェーン・記録・ステークホルダー関与）を提供。拘束力はないが、将来の義務的ガードレールと整合する設計。",
+      "sources": ["https://www.industry.gov.au/publications/voluntary-ai-safety-standard"]
+    },
+    "transparency": {
+      "summary": "民間への表示義務はない。政府機関にはAI利用の透明性声明を義務付け。",
+      "detail": "EU第50条相当の民間義務なし。連邦政府機関向けのAI利用ポリシー（2024-09）がAI透明性声明の公表とアカウンタブル・オフィサー設置を必須化しており、公共部門限定で拘束力がある。",
+      "sources": ["https://www.digital.gov.au/policy/ai/policy"]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。プライバシー法・消費者法の制裁が間接適用。",
+      "detail": "AI固有の制裁体系なし。プライバシー法は最大5,000万AUDまたは売上30%等の制裁金（2022年強化）で、AI事案にも届きうる。",
+      "sources": ["https://www.oaic.gov.au/"]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。産業科学資源省（DISR）が政策、既存当局が分野別に対応。",
+      "detail": "DISRがAI政策と国家AI能力計画を主導。OAIC（プライバシー）、ACCC（消費者・競争）、eSafety Commissioner（オンライン安全）が既存権限で対応。AI Safety Institute相当として2025年にAI安全関連機能の整備が進む。",
+      "sources": ["https://www.industry.gov.au/science-technology-and-innovation/technology/artificial-intelligence"]
+    },
+    "timeline": [
+      { "date": "2024-09-05", "event": "任意AI安全基準＋高リスクAI義務的ガードレール提案ペーパー公表", "source": "https://www.industry.gov.au/publications/voluntary-ai-safety-standard" },
+      { "date": "2024-09-01", "event": "連邦政府機関向けAI利用ポリシー施行（透明性声明必須）", "source": "https://www.digital.gov.au/policy/ai/policy" },
+      { "date": "2025-12-01", "event": "国家AI能力計画の策定作業（規制アプローチの方向性整理）", "source": "https://www.industry.gov.au/science-technology-and-innovation/technology/artificial-intelligence" }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      { "topic": "拘束力", "note": "任意基準＋検討中の義務化案。現時点で横断的義務なし", "source": "https://www.industry.gov.au/publications/voluntary-ai-safety-standard" }
+    ],
+    "absent": [
+      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし（ディープフェイク性的素材の刑事化のみ）", "source": "https://www.ag.gov.au/" },
+      { "topic": "GPAI法的義務", "note": "基盤モデルへの拘束的義務なし", "source": "https://www.industry.gov.au/publications/voluntary-ai-safety-standard" }
+    ],
+    "unique": [
+      { "topic": "公共部門AI透明性声明", "note": "連邦政府機関にAI利用の透明性声明・責任者設置を必須化。英国ATRSと並ぶ公共部門特化制度", "source": "https://www.digital.gov.au/policy/ai/policy" },
+      { "topic": "任意→義務の二段構え設計", "note": "任意基準と将来の義務的ガードレールを同じ10項目で設計し、移行コストを下げる独自アプローチ", "source": "https://www.industry.gov.au/publications/voluntary-ai-safety-standard" }
+    ]
+  },
+  "last_checked": "2026-06-12T07:00:00Z",
+  "last_changed": "2025-12-01T00:00:00Z"
+}

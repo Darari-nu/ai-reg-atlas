@@ -1,0 +1,15 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# pipeline cache (生データは保存しない)
+data/.cache/
+
+# build
+node_modules/
+dist/
+.astro/
+
+# os
+.DS_Store

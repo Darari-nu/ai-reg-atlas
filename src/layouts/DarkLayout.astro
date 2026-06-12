@@ -2,6 +2,7 @@
 import '../styles/tokens.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import TabBar from '../components/TabBar.astro';
 import { withBase } from '../lib/data';
 
 interface Props {
@@ -31,9 +32,10 @@ const { title, description = '世界のAI規制を、EU基準の「差分」で�
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen bg-navy-deep font-body text-paper">
+  <body class="min-h-screen bg-navy-deep pb-16 font-body text-paper md:pb-0">
     <Header theme="dark" />
     <slot />
     <Footer theme="dark" />
+    <TabBar />
   </body>
 </html>

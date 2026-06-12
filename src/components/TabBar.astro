@@ -1,0 +1,37 @@
+---
+// スマホ専用の下部固定タブバー（仕様書v2.1 §6-3）。md以上では非表示。
+import { withBase } from '../lib/data';
+
+const items = [
+  { href: '/', symbol: '◍', label: 'トップ' },
+  { href: '/matrix/', symbol: '▦', label: '比較表' },
+  { href: '/timeline/', symbol: '≡', label: '年表' },
+  { href: '/updates/', symbol: '⚡', label: '更新' },
+];
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const current = Astro.url.pathname.replace(base, '') || '/';
+const isActive = (href: string) => (href === '/' ? current === '/' : current.startsWith(href));
+---
+
+<nav
+  aria-label="モバイルナビゲーション"
+  class="fixed inset-x-0 bottom-0 z-50 border-t border-white/15 bg-navy-deep/95 backdrop-blur md:hidden"
+  style="padding-bottom: env(safe-area-inset-bottom)"
+>
+  <div class="grid grid-cols-4">
+    {items.map((item) => (
+      <a
+        href={withBase(item.href)}
+        class={`flex flex-col items-center gap-0.5 py-2.5 no-underline ${
+          isActive(item.href) ? 'text-star-gold' : 'text-paper/55'
+        }`}
+        aria-current={isActive(item.href) ? 'page' : undefined}
+      >
+        <span class="font-mono text-base leading-none" aria-hidden="true">{item.symbol}</span>
+        <span class="text-[10px] tracking-wide">{item.label}</span>
+        {isActive(item.href) && <span class="mt-0.5 h-0.5 w-6 bg-star-gold" />}
+      </a>
+    ))}
+  </div>
+</nav>

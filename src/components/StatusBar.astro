@@ -15,9 +15,17 @@ const statusTone: Record<string, string> = {
   draft: 'border-paper/40 text-paper/70',
   proposed: 'border-paper/40 text-paper/70',
 };
+const dotTone: Record<string, string> = {
+  in_force: 'bg-diff-looser',
+  enacted: 'bg-star-gold',
+  consultation: 'bg-diff-unique',
+  draft: 'bg-diff-absent',
+  proposed: 'bg-diff-absent',
+};
 ---
 
-<div class="flex flex-wrap gap-2">
+<!-- PC: 横一列チップ -->
+<div class="hidden flex-wrap gap-2 md:flex">
   {countries.map((c) => {
     const r = regulations[c.code];
     return (
@@ -32,9 +40,32 @@ const statusTone: Record<string, string> = {
           )}
         </span>
         <span class="max-w-[16rem] truncate text-xs text-paper/80 group-hover:text-paper">{r.regulation_name}</span>
-        <span class={`border px-1.5 py-0.5 font-mono text-[10px] ${statusTone[r.status] ?? 'border-paper/40 text-paper/70'}`}>
+        <span class={`whitespace-nowrap border px-1.5 py-0.5 font-mono text-[10px] ${statusTone[r.status] ?? 'border-paper/40 text-paper/70'}`}>
           {STATUS_LABELS[r.status]}
         </span>
+      </a>
+    );
+  })}
+</div>
+
+<!-- スマホ: 2列グリッドカード（国旗大きく・状態は色ドット） -->
+<div class="grid grid-cols-2 gap-2.5 md:hidden">
+  {countries.map((c) => {
+    const r = regulations[c.code];
+    return (
+      <a
+        href={withBase(`/country/${c.code}/`)}
+        class="dark-rule block bg-navy-soft/50 p-3.5 no-underline active:bg-navy-soft"
+      >
+        <span class="flex items-center justify-between">
+          <span class="text-3xl leading-none">{c.flag}</span>
+          <span class="flex items-center gap-1.5">
+            <span class={`relative inline-block h-2 w-2 rounded-full ${dotTone[r.status] ?? 'bg-diff-absent'} ${isRecent(r.last_changed, 7) ? 'pulse-gold' : ''}`} />
+            <span class="whitespace-nowrap font-mono text-[10px] text-paper/60">{STATUS_LABELS[r.status]}</span>
+          </span>
+        </span>
+        <span class="mt-2 block text-sm font-medium text-paper">{c.name_ja}</span>
+        <span class="mt-0.5 block truncate text-[11px] leading-snug text-paper/50">{r.regulation_name}</span>
       </a>
     );
   })}

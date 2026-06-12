@@ -2,6 +2,7 @@
 import '../styles/tokens.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import TabBar from '../components/TabBar.astro';
 import { withBase } from '../lib/data';
 
 interface Props {
@@ -31,7 +32,7 @@ const { title, description = '世界のAI規制を、EU基準の「差分」で�
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen bg-paper font-body text-ink" style="animation: fadein 300ms ease-out;">
+  <body class="min-h-screen bg-paper pb-16 font-body text-ink md:pb-0" style="animation: fadein 300ms ease-out;">
     <style>
       @keyframes fadein {
         from { opacity: 0.6; }
@@ -41,5 +42,6 @@ const { title, description = '世界のAI規制を、EU基準の「差分」で�
     <Header theme="light" />
     <slot />
     <Footer theme="light" />
+    <TabBar />
   </body>
 </html>

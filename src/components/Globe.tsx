@@ -3,12 +3,14 @@ import createGlobe from 'cobe';
 
 type MarkerInput = { lat: number; lng: number; recent: boolean };
 
-export default function Globe({ markers }: { markers: MarkerInput[] }) {
+export default function Globe({ markers, media }: { markers: MarkerInput[]; media?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    // PC用/スマホ用の2インスタンスが同居するため、表示されない側はWebGLを起こさない
+    if (media && !window.matchMedia(media).matches) return;
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let width = 0;

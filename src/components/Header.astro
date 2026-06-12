@@ -21,11 +21,12 @@ const nav = [
     : 'border-b border-ink/10 bg-paper text-ink'}
 >
   <div class="mx-auto flex max-w-6xl items-baseline justify-between gap-4 px-5 py-4">
-    <a href={withBase('/')} class="flex items-baseline gap-2 no-underline">
+    <a href={withBase('/')} class="flex items-baseline gap-2 whitespace-nowrap no-underline">
       <span class={`font-mono text-xs tracking-widest ${dark ? 'text-star-gold' : 'text-ink/50'}`}>◆</span>
       <span class="font-display text-lg font-semibold tracking-wide">AI Reg Atlas</span>
     </a>
-    <nav class="flex gap-5 font-body text-sm">
+    <!-- PC: フルナビ / スマホ: Aboutのみ（主要4導線は下タブバーが担う） -->
+    <nav class="hidden gap-5 font-body text-sm md:flex">
       {nav.map((n) => (
         <a
           href={withBase(n.href)}
@@ -33,5 +34,9 @@ const nav = [
         >{n.label}</a>
       ))}
     </nav>
+    <a
+      href={withBase('/about/')}
+      class={`font-body text-sm md:hidden ${dark ? 'text-paper/70' : 'text-ink/70'}`}
+    >About</a>
   </div>
 </header>

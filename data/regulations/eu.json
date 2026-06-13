@@ -16,7 +16,9 @@
     "prohibited_uses": {
       "summary": "第5条で社会的スコアリング、無差別な顔画像収集、職場・教育での感情認識等を禁止（2025-02-02から適用）。",
       "detail": "禁止対象：サブリミナル等の操作的手法、脆弱性の悪用、公的・私的な社会的スコアリング、個人の犯罪リスク予測（プロファイリングのみに基づくもの）、顔認識DB構築のための無差別スクレイピング、職場・教育機関での感情推定、センシティブ属性を推測する生体分類、法執行目的の公共空間でのリアルタイム遠隔生体識別（限定例外あり）。",
-      "sources": ["https://eur-lex.europa.eu/eli/reg/2024/1689/oj"]
+      "sources": [
+        "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+      ]
     },
     "gpai_obligations": {
       "summary": "汎用AI（GPAI）モデルに技術文書・下流提供者への情報提供・著作権方針・学習データ概要の公表を義務化（2025-08-02から適用）。",
@@ -29,27 +31,57 @@
     "transparency": {
       "summary": "第50条でAIとの対話の開示、合成コンテンツ（ディープフェイク）の機械可読な表示・ラベリングを義務化。",
       "detail": "チャットボット等はAIであることの開示、合成音声・画像・映像・テキストは機械可読形式でのマーキング、ディープフェイクはその旨の明示が必要。雇用・教育等での感情認識・生体分類システムは対象者への通知義務。適用は2026-08-02（本則の一般適用日）。",
-      "sources": ["https://eur-lex.europa.eu/eli/reg/2024/1689/oj"]
+      "sources": [
+        "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+      ]
     },
     "penalties": {
       "summary": "最大3,500万ユーロまたは全世界売上高7%（禁止行為違反）。義務違反は1,500万ユーロ/3%。",
       "detail": "第99条。禁止行為（第5条）違反：最大3,500万ユーロまたは前会計年度全世界売上高の7%のいずれか高い方。その他の義務違反：1,500万ユーロ/3%。当局への不正確な情報提供：750万ユーロ/1%。中小企業には低い方を適用する配慮規定あり。",
-      "sources": ["https://eur-lex.europa.eu/eli/reg/2024/1689/oj"]
+      "sources": [
+        "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+      ]
     },
     "enforcement_body": {
       "summary": "欧州委員会内のAI Office（GPAI監督）＋各加盟国の市場監視当局の二層構造。",
       "detail": "AI OfficeがGPAIモデルを直接監督し、実践規範を策定。各加盟国は2025-08-02までに市場監視当局・通知当局を指定。European AI Board（加盟国代表）が一貫適用を調整。科学パネルがシステミックリスク評価を支援。",
-      "sources": ["https://digital-strategy.ec.europa.eu/en/policies/ai-office"]
+      "sources": [
+        "https://digital-strategy.ec.europa.eu/en/policies/ai-office"
+      ]
     },
     "timeline": [
-      { "date": "2024-08-01", "event": "AI Act発効", "source": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
-      { "date": "2025-02-02", "event": "禁止行為（第5条）・AIリテラシー義務の適用開始", "source": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
-      { "date": "2025-08-02", "event": "GPAI義務・ガバナンス規定・罰則の適用開始", "source": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
-      { "date": "2026-05-19", "event": "ハイリスクAI分類のドラフトガイドライン公表", "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
-      { "date": "2027-12-02", "event": "Annex III系ハイリスク義務の適用開始（Digital Omnibusで延期後）", "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
-      { "date": "2028-08-02", "event": "Annex I系ハイリスク義務の適用開始（Digital Omnibusで延期後）", "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" }
+      {
+        "date": "2024-08-01",
+        "event": "AI Act発効",
+        "source": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+      },
+      {
+        "date": "2025-02-02",
+        "event": "禁止行為（第5条）・AIリテラシー義務の適用開始",
+        "source": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+      },
+      {
+        "date": "2025-08-02",
+        "event": "GPAI義務・ガバナンス規定・罰則の適用開始",
+        "source": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+      },
+      {
+        "date": "2026-05-19",
+        "event": "ハイリスクAI分類のドラフトガイドライン公表",
+        "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      },
+      {
+        "date": "2027-12-02",
+        "event": "Annex III系ハイリスク義務の適用開始（Digital Omnibusで延期後）",
+        "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      },
+      {
+        "date": "2028-08-02",
+        "event": "Annex I系ハイリスク義務の適用開始（Digital Omnibusで延期後）",
+        "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      }
     ]
   },
-  "last_checked": "2026-06-12T03:00:00Z",
+  "last_checked": "2026-06-13T00:31:36Z",
   "last_changed": "2026-05-19T00:00:00Z"
 }

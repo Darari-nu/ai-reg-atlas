@@ -7,53 +7,97 @@
     "risk_classification": {
       "summary": "法定のリスク分類はない。AIガバナンスは省庁勧告（advisory）ベース。",
       "detail": "横断的AI法は存在せず、電子情報技術省（MeitY）が必要に応じて勧告を発出する運用。AIガバナンス・ガイドライン策定の検討は続くが、拘束的なリスク分類は未制定。デジタルインディア法（DPDP法に続くIT法置き換え）は停滞中。",
-      "sources": ["https://www.meity.gov.in/"]
+      "sources": [
+        "https://www.meity.gov.in/"
+      ]
     },
     "prohibited_uses": {
       "summary": "AI固有の横断的禁止リストはない。IT法・刑法・選挙規則で個別対応。",
       "detail": "EU第5条相当の禁止規定なし。ディープフェイクはIT法の仲介者責任ルール（due diligence）と削除要請で対応。",
-      "sources": ["https://www.meity.gov.in/"]
+      "sources": [
+        "https://www.meity.gov.in/"
+      ]
     },
     "gpai_obligations": {
       "summary": "法的義務なし。2024年のMeitY勧告が「信頼性の低いAI」へのラベル付け等を求めたが拘束力は曖昧。",
       "detail": "2024-03のMeitY勧告は未検証AIモデルの公開に政府許可を求める内容で物議を醸し、すぐに緩和版へ差し替えられた（ラベリング推奨へ）。法的義務としてのGPAI規制はない。",
-      "sources": ["https://www.meity.gov.in/"]
+      "sources": [
+        "https://www.meity.gov.in/"
+      ]
     },
     "transparency": {
       "summary": "合成コンテンツの法定表示義務はない。仲介者向けデューデリジェンスでディープフェイク対応。",
       "detail": "EU第50条相当の義務なし。IT Rules 2021のデューデリジェンス義務を通じ、プラットフォームにディープフェイク削除・ユーザー告知を要請する運用。",
-      "sources": ["https://www.meity.gov.in/"]
+      "sources": [
+        "https://www.meity.gov.in/"
+      ]
     },
     "penalties": {
       "summary": "AI固有の罰則はない。IT法・DPDP法（最大250億ルピー）の制裁が間接適用。",
       "detail": "AI固有の制裁体系なし。データ関連はDPDP法2023（施行準備中）の制裁金が将来の実効手段。",
-      "sources": ["https://www.meity.gov.in/"]
+      "sources": [
+        "https://www.meity.gov.in/"
+      ]
     },
     "enforcement_body": {
       "summary": "AI専属の監督機関はない。MeitYが政策・勧告、IndiaAIミッションが振興を主導。",
       "detail": "MeitYが政策の中心。IndiaAIミッション（2024-03閣議承認、約1.03兆ルピー）が計算資源・人材・スタートアップ支援を推進。規制機関ではなく振興機関が主役という構図。",
-      "sources": ["https://indiaai.gov.in/"]
+      "sources": [
+        "https://indiaai.gov.in/"
+      ]
     },
     "timeline": [
-      { "date": "2023-08-11", "event": "DPDP法（デジタル個人データ保護法）成立", "source": "https://www.meity.gov.in/" },
-      { "date": "2024-03-07", "event": "IndiaAIミッション閣議承認（計算資源・人材へ大型投資）", "source": "https://indiaai.gov.in/" },
-      { "date": "2024-03-15", "event": "MeitYのAIモデル勧告（許可制→ラベリング推奨へ緩和）", "source": "https://www.meity.gov.in/" }
+      {
+        "date": "2023-08-11",
+        "event": "DPDP法（デジタル個人データ保護法）成立",
+        "source": "https://www.meity.gov.in/"
+      },
+      {
+        "date": "2024-03-07",
+        "event": "IndiaAIミッション閣議承認（計算資源・人材へ大型投資）",
+        "source": "https://indiaai.gov.in/"
+      },
+      {
+        "date": "2024-03-15",
+        "event": "MeitYのAIモデル勧告（許可制→ラベリング推奨へ緩和）",
+        "source": "https://www.meity.gov.in/"
+      }
     ]
   },
   "diff_vs_eu": {
     "stricter": [],
     "looser": [
-      { "topic": "拘束力", "note": "勧告ベースで横断法なし。振興優先のスタンスを公言", "source": "https://www.meity.gov.in/" }
+      {
+        "topic": "拘束力",
+        "note": "勧告ベースで横断法なし。振興優先のスタンスを公言",
+        "source": "https://www.meity.gov.in/"
+      }
     ],
     "absent": [
-      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし", "source": "https://www.meity.gov.in/" },
-      { "topic": "リスク分類・GPAI義務・表示義務", "note": "いずれも法定制度なし", "source": "https://www.meity.gov.in/" }
+      {
+        "topic": "禁止用途リスト",
+        "note": "EU第5条相当の横断的禁止規定なし",
+        "source": "https://www.meity.gov.in/"
+      },
+      {
+        "topic": "リスク分類・GPAI義務・表示義務",
+        "note": "いずれも法定制度なし",
+        "source": "https://www.meity.gov.in/"
+      }
     ],
     "unique": [
-      { "topic": "勧告（advisory）による機動的介入", "note": "法改正なしで省庁勧告を出し、反発があれば差し替える運用。予見可能性は低いが速い", "source": "https://www.meity.gov.in/" },
-      { "topic": "IndiaAIミッションの公共計算資源", "note": "GPU共同調達・公共データセット等、規制でなくインフラ供給で主導権を取る設計", "source": "https://indiaai.gov.in/" }
+      {
+        "topic": "勧告（advisory）による機動的介入",
+        "note": "法改正なしで省庁勧告を出し、反発があれば差し替える運用。予見可能性は低いが速い",
+        "source": "https://www.meity.gov.in/"
+      },
+      {
+        "topic": "IndiaAIミッションの公共計算資源",
+        "note": "GPU共同調達・公共データセット等、規制でなくインフラ供給で主導権を取る設計",
+        "source": "https://indiaai.gov.in/"
+      }
     ]
   },
-  "last_checked": "2026-06-12T07:00:00Z",
+  "last_checked": "2026-06-13T00:31:36Z",
   "last_changed": "2024-03-15T00:00:00Z"
 }

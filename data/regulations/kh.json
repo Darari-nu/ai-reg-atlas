@@ -7,51 +7,89 @@
     "risk_classification": {
       "summary": "法定のリスク分類はない。国家AI戦略2025–2030が倫理的・責任あるAIを戦略柱の一つとして掲げる段階。",
       "detail": "郵電省（MPTC）主導の国家AI戦略2025–2030が、人材育成・データとインフラ・分野別導入・倫理的で責任あるAI・研究協力の戦略優先分野を設定。拘束的なリスク分類や事業者義務はなく、デジタル政府委員会と省庁横断AIワーキンググループが実施を監督する。",
-      "sources": ["https://mptc.gov.kh/en/", "https://oecd.ai/en/dashboards/policy-initiatives/national-artificial-intelligence-strategy-2025-2030"]
+      "sources": [
+        "https://mptc.gov.kh/en/",
+        "https://oecd.ai/en/dashboards/policy-initiatives/national-artificial-intelligence-strategy-2025-2030"
+      ]
     },
     "prohibited_uses": {
       "summary": "AI固有の禁止規定はない。既存の刑法・通信法制で個別対応。",
       "detail": "EU第5条相当の禁止規定なし。AI固有の用途規制は未整備で、オンライン上の有害コンテンツ等は既存法の枠内で対応。",
-      "sources": ["https://mptc.gov.kh/en/"]
+      "sources": [
+        "https://mptc.gov.kh/en/"
+      ]
     },
     "gpai_obligations": {
       "summary": "法的義務なし。AI倫理原則・ガイドラインの整備が検討段階。",
       "detail": "基盤モデル・生成AIへの義務はない。2026-04に産業科学技術革新省（MISTI）がUN-ESCAPと共同で「AI: Empowering Innovation, Ethics and Inclusion in Cambodia」レポートを公表し、倫理・包摂を軸としたガバナンス枠組みの方向性を示した。",
-      "sources": ["https://www.unesco.org/en/articles/cambodia-launches-ai-readiness-assessment-report-guide-ethical-and-inclusive-digital-transformation"]
+      "sources": [
+        "https://www.unesco.org/en/articles/cambodia-launches-ai-readiness-assessment-report-guide-ethical-and-inclusive-digital-transformation"
+      ]
     },
     "transparency": {
       "summary": "合成コンテンツの表示義務はない。",
       "detail": "EU第50条相当の義務なし。AI生成コンテンツのラベリング制度は未整備。",
-      "sources": ["https://mptc.gov.kh/en/"]
+      "sources": [
+        "https://mptc.gov.kh/en/"
+      ]
     },
     "penalties": {
       "summary": "AI固有の罰則はない。",
       "detail": "AI固有の制裁体系なし。データ保護法制自体も整備途上で、既存の刑法・電気通信法が間接的な受け皿。",
-      "sources": ["https://mptc.gov.kh/en/"]
+      "sources": [
+        "https://mptc.gov.kh/en/"
+      ]
     },
     "enforcement_body": {
       "summary": "AI専属の監督機関はない。MPTC（戦略）・MISTI（倫理枠組み）・デジタル政府委員会（実施監督）の分担。",
       "detail": "国家AI戦略の実施はデジタル政府委員会が監督し、省庁横断AIワーキンググループが支える。UNESCOのAI準備度評価（RAM）を活用した制度設計が進行中。",
-      "sources": ["https://mptc.gov.kh/en/", "https://www.unesco.org/ethics-ai/en/cambodia"]
+      "sources": [
+        "https://mptc.gov.kh/en/",
+        "https://www.unesco.org/ethics-ai/en/cambodia"
+      ]
     },
     "timeline": [
-      { "date": "2025-06-30", "event": "国家AI戦略2025–2030を策定（MPTC）", "source": "https://oecd.ai/en/dashboards/policy-initiatives/national-artificial-intelligence-strategy-2025-2030" },
-      { "date": "2026-02-11", "event": "世界政府サミットで国家AI戦略とデジタル政府の進捗を発表", "source": "https://mptc.gov.kh/en/2026/02/h-e-seng-sopheap-participates-in-the-world-governments-summit-in-dubai-to-present-cambodias-national-ai-strategy-and-digital-government-progress/" },
-      { "date": "2026-04-07", "event": "AI準備度評価レポート「AI: Empowering Innovation, Ethics and Inclusion」公表（MISTI×UN-ESCAP）", "source": "https://www.unesco.org/en/articles/cambodia-launches-ai-readiness-assessment-report-guide-ethical-and-inclusive-digital-transformation" }
+      {
+        "date": "2025-06-30",
+        "event": "国家AI戦略2025–2030を策定（MPTC）",
+        "source": "https://oecd.ai/en/dashboards/policy-initiatives/national-artificial-intelligence-strategy-2025-2030"
+      },
+      {
+        "date": "2026-02-11",
+        "event": "世界政府サミットで国家AI戦略とデジタル政府の進捗を発表",
+        "source": "https://mptc.gov.kh/en/2026/02/h-e-seng-sopheap-participates-in-the-world-governments-summit-in-dubai-to-present-cambodias-national-ai-strategy-and-digital-government-progress/"
+      },
+      {
+        "date": "2026-04-07",
+        "event": "AI準備度評価レポート「AI: Empowering Innovation, Ethics and Inclusion」公表（MISTI×UN-ESCAP）",
+        "source": "https://www.unesco.org/en/articles/cambodia-launches-ai-readiness-assessment-report-guide-ethical-and-inclusive-digital-transformation"
+      }
     ]
   },
   "diff_vs_eu": {
     "stricter": [],
     "looser": [
-      { "topic": "拘束力", "note": "戦略・レポート段階で事業者義務は一切ない", "source": "https://mptc.gov.kh/en/" }
+      {
+        "topic": "拘束力",
+        "note": "戦略・レポート段階で事業者義務は一切ない",
+        "source": "https://mptc.gov.kh/en/"
+      }
     ],
     "absent": [
-      { "topic": "横断的規制全般", "note": "リスク分類・禁止用途・GPAI義務・表示義務・罰則のいずれも未整備", "source": "https://mptc.gov.kh/en/" }
+      {
+        "topic": "横断的規制全般",
+        "note": "リスク分類・禁止用途・GPAI義務・表示義務・罰則のいずれも未整備",
+        "source": "https://mptc.gov.kh/en/"
+      }
     ],
     "unique": [
-      { "topic": "UNESCO準備度評価（RAM）主導の制度設計", "note": "国際機関の評価フレームを入口に倫理ガバナンスを構築する後発国モデル。ASEAN発展途上国の標準的経路として観測価値が高い", "source": "https://www.unesco.org/en/articles/cambodia-launches-ai-readiness-assessment-report-guide-ethical-and-inclusive-digital-transformation" }
+      {
+        "topic": "UNESCO準備度評価（RAM）主導の制度設計",
+        "note": "国際機関の評価フレームを入口に倫理ガバナンスを構築する後発国モデル。ASEAN発展途上国の標準的経路として観測価値が高い",
+        "source": "https://www.unesco.org/en/articles/cambodia-launches-ai-readiness-assessment-report-guide-ethical-and-inclusive-digital-transformation"
+      }
     ]
   },
-  "last_checked": "2026-06-12T07:00:00Z",
+  "last_checked": "2026-06-13T00:31:36Z",
   "last_changed": "2026-04-07T00:00:00Z"
 }

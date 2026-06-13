@@ -7,54 +7,105 @@
     "risk_classification": {
       "summary": "法定のリスク分類はない。Model AI Governance Frameworkがリスクに応じた人間関与レベルの自主設計を推奨。",
       "detail": "IMDA・PDPCのModel AI Governance Framework（2019初版・2020第2版）が、リスクの重大性に応じてhuman-in/over/out-of-the-loopを選ぶ意思決定マトリクスを提示。2024-05には生成AI向けのModel AI Governance Framework for Generative AI（9次元）を公表。いずれも拘束力のない実務枠組み。",
-      "sources": ["https://www.imda.gov.sg/", "https://aiverifyfoundation.sg/"]
+      "sources": [
+        "https://www.imda.gov.sg/",
+        "https://aiverifyfoundation.sg/"
+      ]
     },
     "prohibited_uses": {
       "summary": "AI固有の横断的禁止リストはない。既存法（PDPA・オンライン安全法等）で個別対応。",
       "detail": "EU第5条相当の禁止規定なし。ディープフェイクは選挙(integrity of online advertising)関連の個別立法やOnline Criminal Harms Actで部分対応。",
-      "sources": ["https://www.pdpc.gov.sg/"]
+      "sources": [
+        "https://www.pdpc.gov.sg/"
+      ]
     },
     "gpai_obligations": {
       "summary": "法的義務なし。生成AI向けフレームワークとAI Verifyテストが任意の実務標準。",
       "detail": "基盤モデル提供者への拘束的義務はない。AI Verify Foundationのテストツールキット（プロセスチェック＋技術テスト）とGenAI向け9次元枠組み（説明責任・データ・信頼できる開発と展開・インシデント報告・テストと保証・セキュリティ・コンテンツ来歴・安全研究・公共善）が参照点。",
-      "sources": ["https://aiverifyfoundation.sg/", "https://www.imda.gov.sg/"]
+      "sources": [
+        "https://aiverifyfoundation.sg/",
+        "https://www.imda.gov.sg/"
+      ]
     },
     "transparency": {
       "summary": "合成コンテンツの横断的表示義務はない。GenAI枠組みがコンテンツ来歴（provenance）を推奨。",
       "detail": "EU第50条相当の義務なし。GenAI枠組みがデジタル透かし・来歴技術の採用を推奨し、選挙関連のディープフェイク表示は個別立法で対応。",
-      "sources": ["https://www.imda.gov.sg/"]
+      "sources": [
+        "https://www.imda.gov.sg/"
+      ]
     },
     "penalties": {
       "summary": "AI固有の罰則体系はない。PDPA（個人情報）等の既存制裁が間接適用。",
       "detail": "AI固有の制裁なし。PDPA違反は最大100万SGDまたは年間売上10%の制裁金。",
-      "sources": ["https://www.pdpc.gov.sg/"]
+      "sources": [
+        "https://www.pdpc.gov.sg/"
+      ]
     },
     "enforcement_body": {
       "summary": "IMDA（情報通信メディア開発庁）とPDPC（個人情報保護委員会）が政策・ガイダンスを主導。",
       "detail": "AI専属の監督機関はない。IMDAがAI政策とAI Verify Foundationを推進し、PDPCがデータ関連を所管。金融分野はMASのFEAT原則・Veritasが補完。",
-      "sources": ["https://www.imda.gov.sg/", "https://www.pdpc.gov.sg/"]
+      "sources": [
+        "https://www.imda.gov.sg/",
+        "https://www.pdpc.gov.sg/"
+      ]
     },
     "timeline": [
-      { "date": "2019-01-23", "event": "Model AI Governance Framework 初版公表", "source": "https://www.pdpc.gov.sg/" },
-      { "date": "2020-01-21", "event": "Model AI Governance Framework 第2版公表", "source": "https://www.pdpc.gov.sg/" },
-      { "date": "2023-06-07", "event": "AI Verify Foundation設立・テストツールキット公開", "source": "https://aiverifyfoundation.sg/" },
-      { "date": "2024-05-30", "event": "生成AI向けModel AI Governance Framework公表", "source": "https://aiverifyfoundation.sg/" }
+      {
+        "date": "2019-01-23",
+        "event": "Model AI Governance Framework 初版公表",
+        "source": "https://www.pdpc.gov.sg/"
+      },
+      {
+        "date": "2020-01-21",
+        "event": "Model AI Governance Framework 第2版公表",
+        "source": "https://www.pdpc.gov.sg/"
+      },
+      {
+        "date": "2023-06-07",
+        "event": "AI Verify Foundation設立・テストツールキット公開",
+        "source": "https://aiverifyfoundation.sg/"
+      },
+      {
+        "date": "2024-05-30",
+        "event": "生成AI向けModel AI Governance Framework公表",
+        "source": "https://aiverifyfoundation.sg/"
+      }
     ]
   },
   "diff_vs_eu": {
     "stricter": [],
     "looser": [
-      { "topic": "拘束力", "note": "全体が任意の枠組み。EUの義務・制裁体系に対し全面的にソフトロー", "source": "https://www.imda.gov.sg/" }
+      {
+        "topic": "拘束力",
+        "note": "全体が任意の枠組み。EUの義務・制裁体系に対し全面的にソフトロー",
+        "source": "https://www.imda.gov.sg/"
+      }
     ],
     "absent": [
-      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし", "source": "https://www.pdpc.gov.sg/" },
-      { "topic": "AI固有の罰則", "note": "AI固有の制裁体系なし（PDPA等で間接対応）", "source": "https://www.pdpc.gov.sg/" }
+      {
+        "topic": "禁止用途リスト",
+        "note": "EU第5条相当の横断的禁止規定なし",
+        "source": "https://www.pdpc.gov.sg/"
+      },
+      {
+        "topic": "AI固有の罰則",
+        "note": "AI固有の制裁体系なし（PDPA等で間接対応）",
+        "source": "https://www.pdpc.gov.sg/"
+      }
     ],
     "unique": [
-      { "topic": "AI Verify（テスト・保証ツールキット）", "note": "政府主導のオープンなAIテストフレームワーク＋財団方式。「規制でなくテストで信頼を作る」独自路線", "source": "https://aiverifyfoundation.sg/" },
-      { "topic": "GenAI 9次元フレームワーク", "note": "生成AI特化の実務枠組みを世界に先駆けて整備。APAC企業の事実上の参照標準", "source": "https://aiverifyfoundation.sg/" }
+      {
+        "topic": "AI Verify（テスト・保証ツールキット）",
+        "note": "政府主導のオープンなAIテストフレームワーク＋財団方式。「規制でなくテストで信頼を作る」独自路線",
+        "source": "https://aiverifyfoundation.sg/"
+      },
+      {
+        "topic": "GenAI 9次元フレームワーク",
+        "note": "生成AI特化の実務枠組みを世界に先駆けて整備。APAC企業の事実上の参照標準",
+        "source": "https://aiverifyfoundation.sg/"
+      }
     ]
   },
-  "last_checked": "2026-06-12T07:00:00Z",
+  "last_checked": "2026-06-13T00:31:36Z",
   "last_changed": "2024-05-30T00:00:00Z"
 }

@@ -15,7 +15,9 @@
     "prohibited_uses": {
       "summary": "連邦の横断的禁止リストはない。州法が個別領域（ディープフェイク選挙広告等）を規制。",
       "detail": "EU第5条相当の禁止規定は連邦に存在しない。多数の州が選挙ディープフェイク、非同意の性的ディープフェイク、生体情報（イリノイ州BIPA）等を個別に規制するパッチワーク状態。",
-      "sources": ["https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation"]
+      "sources": [
+        "https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation"
+      ]
     },
     "gpai_obligations": {
       "summary": "連邦義務なし。カリフォルニア州SB53がフロンティアモデル開発者に安全枠組みの公表を義務化。",
@@ -28,41 +30,96 @@
     "transparency": {
       "summary": "連邦の合成コンテンツ表示義務はない。州法（カリフォルニアAI透明性法等）が部分的にカバー。",
       "detail": "カリフォルニア州AI透明性法（SB942）は大規模生成AIプロバイダにAI検出ツール提供と来歴表示を義務付け。連邦ではTAKE IT DOWN法（2025-05成立）が非同意の性的合成画像の削除義務を規定するが、横断的なラベリング義務はない。",
-      "sources": ["https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB942"]
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB942"
+      ]
     },
     "penalties": {
       "summary": "連邦横断的なAI罰則体系はない。州法ごとに民事制裁・州司法長官の執行権限を規定。",
       "detail": "コロラド州AI法は州司法長官による執行（消費者保護法違反として扱う）。カリフォルニア州SB53は民事罰。FTCは既存の不公正・欺瞞的行為の権限でAI関連の執行を実施。",
-      "sources": ["https://www.ftc.gov/business-guidance/blog"]
+      "sources": [
+        "https://www.ftc.gov/business-guidance/blog"
+      ]
     },
     "enforcement_body": {
       "summary": "単一のAI監督機関はない。FTC・各州司法長官・分野別規制当局が分担。",
       "detail": "連邦ではFTC（消費者保護）、EEOC（雇用）、CFPB（金融）等が既存権限でAIを扱う。州レベルでは各州司法長官が州AI法を執行。ホワイトハウスOSTPとAI担当は政策調整役。",
-      "sources": ["https://www.ftc.gov/business-guidance/blog"]
+      "sources": [
+        "https://www.ftc.gov/business-guidance/blog"
+      ]
     },
     "timeline": [
-      { "date": "2023-01-26", "event": "NIST AI RMF 1.0公表", "source": "https://www.nist.gov/itl/ai-risk-management-framework" },
-      { "date": "2024-05-17", "event": "コロラド州AI法（SB24-205）成立", "source": "https://leg.colorado.gov/bills/sb24-205" },
-      { "date": "2025-01-23", "event": "大統領令14179署名（前政権AI大統領令を撤回、規制緩和へ転換）", "source": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence" },
-      { "date": "2025-09-29", "event": "カリフォルニア州SB53（フロンティアAI透明性法）成立", "source": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53" },
-      { "date": "2026-01-01", "event": "テキサス州TRAIGA（責任あるAIガバナンス法）施行", "source": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149" }
+      {
+        "date": "2023-01-26",
+        "event": "NIST AI RMF 1.0公表",
+        "source": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "date": "2024-05-17",
+        "event": "コロラド州AI法（SB24-205）成立",
+        "source": "https://leg.colorado.gov/bills/sb24-205"
+      },
+      {
+        "date": "2025-01-23",
+        "event": "大統領令14179署名（前政権AI大統領令を撤回、規制緩和へ転換）",
+        "source": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence"
+      },
+      {
+        "date": "2025-09-29",
+        "event": "カリフォルニア州SB53（フロンティアAI透明性法）成立",
+        "source": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53"
+      },
+      {
+        "date": "2026-01-01",
+        "event": "テキサス州TRAIGA（責任あるAIガバナンス法）施行",
+        "source": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149"
+      },
+      {
+        "date": "2024-09-29",
+        "event": "ニューサム知事がSB 1047に拒否権を行使し、法案は不成立",
+        "source": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUUZGeEhTS3ZNelpxME4yVWUxcmxpRkhEdk9ZMU92dFNwbG8tZW5wQkJPblI0NjBmcDY5OGxDVEFHS0VMMzVLWEFrYThOc3FNeUN5VndrbnZ6dzdaMS1JS2o5NHE4Z2lnbHJKRTFVMU9jU2ZmdGN4eGlUcHBkanJPeUVUeGNlWkg1?oc=5"
+      }
     ]
   },
   "diff_vs_eu": {
     "stricter": [],
     "looser": [
-      { "topic": "連邦規制の不在", "note": "横断的なAI法がなく、連邦は規制緩和方針。EUの包括義務体系と対照的", "source": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence" },
-      { "topic": "GPAI義務", "note": "連邦義務なし。州法（CA SB53）も公表義務中心でEUより軽い", "source": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53" }
+      {
+        "topic": "連邦規制の不在",
+        "note": "横断的なAI法がなく、連邦は規制緩和方針。EUの包括義務体系と対照的",
+        "source": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence"
+      },
+      {
+        "topic": "GPAI義務",
+        "note": "連邦義務なし。州法（CA SB53）も公表義務中心でEUより軽い",
+        "source": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53"
+      }
     ],
     "absent": [
-      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし", "source": "https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation" },
-      { "topic": "統一監督機関", "note": "AI Office相当の専属監督機関なし", "source": "https://www.ftc.gov/business-guidance/blog" }
+      {
+        "topic": "禁止用途リスト",
+        "note": "EU第5条相当の横断的禁止規定なし",
+        "source": "https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation"
+      },
+      {
+        "topic": "統一監督機関",
+        "note": "AI Office相当の専属監督機関なし",
+        "source": "https://www.ftc.gov/business-guidance/blog"
+      }
     ],
     "unique": [
-      { "topic": "州法パッチワーク", "note": "コロラド・カリフォルニア・テキサス等、州ごとに異なる義務。多州展開企業は州別対応が必要", "source": "https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation" },
-      { "topic": "内部告発者保護（CA SB53）", "note": "フロンティアAI開発企業の従業員保護というEUにない切り口", "source": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53" }
+      {
+        "topic": "州法パッチワーク",
+        "note": "コロラド・カリフォルニア・テキサス等、州ごとに異なる義務。多州展開企業は州別対応が必要",
+        "source": "https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation"
+      },
+      {
+        "topic": "内部告発者保護（CA SB53）",
+        "note": "フロンティアAI開発企業の従業員保護というEUにない切り口",
+        "source": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53"
+      }
     ]
   },
-  "last_checked": "2026-06-12T03:00:00Z",
-  "last_changed": "2026-01-01T00:00:00Z"
+  "last_checked": "2026-06-13T00:31:36Z",
+  "last_changed": "2026-06-13T00:31:36Z"
 }

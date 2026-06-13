@@ -7,53 +7,103 @@
     "risk_classification": {
       "summary": "法定のリスク分類はまだない。基本法草案はリスクベースの枠組み整備を政府に求める構造。",
       "detail": "国家科学技術委員会（NSTC）が2024-07に人工智慧基本法草案を公告し意見募集。草案は基本原則（人間中心・プライバシー・透明性等）と政府の責務を定める基本法型で、具体的なリスク分類・義務は各分野の主管機関による下位法令・ガイドラインに委ねる設計。行政院での審査・立法院提出が続く段階。",
-      "sources": ["https://www.nstc.gov.tw/"]
+      "sources": [
+        "https://www.nstc.gov.tw/"
+      ]
     },
     "prohibited_uses": {
       "summary": "AI固有の横断的禁止リストはない。ディープフェイク性的素材等は刑法改正で対応済み。",
       "detail": "EU第5条相当の禁止規定なし。2023年の刑法改正でディープフェイク性的映像の作成・流布を犯罪化。選挙関連の深偽広告は選挙法制で対応。",
-      "sources": ["https://www.moj.gov.tw/"]
+      "sources": [
+        "https://www.moj.gov.tw/"
+      ]
     },
     "gpai_obligations": {
       "summary": "法的義務なし。行政院の生成AI利用ガイドライン（公務部門向け）等の運用ルールが先行。",
       "detail": "基盤モデルへの拘束的義務はない。公務機関の生成AI利用指針（2023）が機密情報の入力禁止等を規定。金融・医療等は主管機関のガイドラインが先行。",
-      "sources": ["https://www.ey.gov.tw/"]
+      "sources": [
+        "https://www.ey.gov.tw/"
+      ]
     },
     "transparency": {
       "summary": "合成コンテンツの横断的表示義務はない。基本法草案は透明性・ラベリングの原則を含む。",
       "detail": "EU第50条相当の義務なし。草案はAI生成コンテンツの識別可能性を原則として掲げ、具体制度は下位法令に委任する構造。",
-      "sources": ["https://www.nstc.gov.tw/"]
+      "sources": [
+        "https://www.nstc.gov.tw/"
+      ]
     },
     "penalties": {
       "summary": "AI固有の罰則はない。個人資料保護法等の既存制裁が間接適用。",
       "detail": "基本法草案自体は罰則を持たない設計。個人資料保護法の制裁強化（独立監督機関の設置準備）が進行中で、AI事案にも影響する。",
-      "sources": ["https://www.moda.gov.tw/"]
+      "sources": [
+        "https://www.moda.gov.tw/"
+      ]
     },
     "enforcement_body": {
       "summary": "AI専属の監督機関はない。NSTC（政策）とデジタル発展部（moda）が中心、分野は各主管機関方式。",
       "detail": "NSTCが基本法草案と研究開発政策を主導し、デジタル発展部が産業・データ面を担当。基本法は「各目的事業主管機関」が自分野のAIを所管する分散型を想定。",
-      "sources": ["https://www.nstc.gov.tw/", "https://www.moda.gov.tw/"]
+      "sources": [
+        "https://www.nstc.gov.tw/",
+        "https://www.moda.gov.tw/"
+      ]
     },
     "timeline": [
-      { "date": "2023-08-31", "event": "行政院・公務機関の生成AI利用指針を公表", "source": "https://www.ey.gov.tw/" },
-      { "date": "2024-07-15", "event": "NSTCがAI基本法草案を公告・意見募集", "source": "https://www.nstc.gov.tw/" },
-      { "date": "2025-06-01", "event": "行政院で草案審査継続（立法院提出待ち）", "source": "https://www.ey.gov.tw/" }
+      {
+        "date": "2023-08-31",
+        "event": "行政院・公務機関の生成AI利用指針を公表",
+        "source": "https://www.ey.gov.tw/"
+      },
+      {
+        "date": "2024-07-15",
+        "event": "NSTCがAI基本法草案を公告・意見募集",
+        "source": "https://www.nstc.gov.tw/"
+      },
+      {
+        "date": "2025-06-01",
+        "event": "行政院で草案審査継続（立法院提出待ち）",
+        "source": "https://www.ey.gov.tw/"
+      },
+      {
+        "date": "2024-07-15",
+        "event": "国家科学及技術委員会（国科会）が「人工智慧基本法」草案を公表",
+        "source": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wQTRkTjhwLXBrN3NZNGJmMVJJQjZKQUF2NXluMEJmZF9rMHBmcEVrbHl6V3p0SnhUZ0dFaWwwbFcxRThoTnFMVU5yTm5hU1lMMFNCZ1dLZlhDRXk0MnN5WVgzMjN0MkQwRG40WXFGT09TT3pjUGlqUllaUHh2dE0?oc=5"
+      }
     ]
   },
   "diff_vs_eu": {
     "stricter": [],
     "looser": [
-      { "topic": "拘束力", "note": "基本法（原則＋政府責務）型で、EUのような直接の事業者義務を持たない", "source": "https://www.nstc.gov.tw/" }
+      {
+        "topic": "拘束力",
+        "note": "基本法（原則＋政府責務）型で、EUのような直接の事業者義務を持たない",
+        "source": "https://www.nstc.gov.tw/"
+      }
     ],
     "absent": [
-      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし", "source": "https://www.nstc.gov.tw/" },
-      { "topic": "GPAI法的義務", "note": "基盤モデルへの拘束的義務なし", "source": "https://www.nstc.gov.tw/" }
+      {
+        "topic": "禁止用途リスト",
+        "note": "EU第5条相当の横断的禁止規定なし",
+        "source": "https://www.nstc.gov.tw/"
+      },
+      {
+        "topic": "GPAI法的義務",
+        "note": "基盤モデルへの拘束的義務なし",
+        "source": "https://www.nstc.gov.tw/"
+      }
     ],
     "unique": [
-      { "topic": "基本法＋分野別主管機関の分散型", "note": "日本のAI推進法に近い「推進と原則の基本法」を志向しつつ、執行は各分野当局に分散させる設計", "source": "https://www.nstc.gov.tw/" },
-      { "topic": "公務部門の生成AI利用指針が先行", "note": "民間規制より先に政府自身の利用ルールを整備した順序", "source": "https://www.ey.gov.tw/" }
+      {
+        "topic": "基本法＋分野別主管機関の分散型",
+        "note": "日本のAI推進法に近い「推進と原則の基本法」を志向しつつ、執行は各分野当局に分散させる設計",
+        "source": "https://www.nstc.gov.tw/"
+      },
+      {
+        "topic": "公務部門の生成AI利用指針が先行",
+        "note": "民間規制より先に政府自身の利用ルールを整備した順序",
+        "source": "https://www.ey.gov.tw/"
+      }
     ]
   },
-  "last_checked": "2026-06-12T07:00:00Z",
-  "last_changed": "2025-06-01T00:00:00Z"
+  "last_checked": "2026-06-13T00:31:36Z",
+  "last_changed": "2026-06-13T00:31:36Z"
 }

@@ -7,55 +7,103 @@
     "risk_classification": {
       "summary": "「高影響AI」（生命・安全・基本権に重大な影響を及ぼす分野のAI）を中核概念とする軽量リスクベース。",
       "detail": "エネルギー・医療・原子力・採用・貸付審査等の分野で利用されるAIを「高影響AI」と定義し、事業者に高影響該当性の事前検討、リスク管理方策、安全性確保措置、利用者保護を義務付け。EUのような4階層ではなく「高影響か否か」の実質2分類で、義務の深さもEUのハイリスク義務より軽い。",
-      "sources": ["https://www.msit.go.kr/"]
+      "sources": [
+        "https://www.msit.go.kr/"
+      ]
     },
     "prohibited_uses": {
       "summary": "EU第5条相当の禁止用途リストはない。",
       "detail": "AI基本法は特定用途の全面禁止を規定しない。生体識別や社会的スコアリング等への横断禁止は存在せず、個人情報保護法等の既存法で個別評価される。",
-      "sources": ["https://www.msit.go.kr/"]
+      "sources": [
+        "https://www.msit.go.kr/"
+      ]
     },
     "gpai_obligations": {
       "summary": "一定計算量以上の高性能AI（フロンティア型）に安全性確保義務。学習計算量基準は大統領令で規定。",
       "detail": "累積学習計算量が大統領令の定める基準（10^26 FLOP）以上のAIシステムに、リスクの識別・評価・軽減、安全事故の監視・対応体制の構築と科学技術情報通信部への結果提出を義務付け。EUのGPAI義務（技術文書・著作権方針・学習データ要約）とは構成が異なり、安全管理偏重。",
-      "sources": ["https://www.msit.go.kr/"]
+      "sources": [
+        "https://www.msit.go.kr/"
+      ]
     },
     "transparency": {
       "summary": "生成AIサービスの事前告知と、生成物への表示義務を規定。ディープフェイク的コンテンツは明確表示。",
       "detail": "生成AIを利用したサービスは利用者への事前告知が必要。生成AIによる生成物には生成AI由来である旨の表示義務、実在と区別困難な仮想の音声・画像・映像（ディープフェイク型）は明確に認知できる方式での告知義務。EU第50条と方向は同じだが運用詳細は下位法令に委任。",
-      "sources": ["https://www.msit.go.kr/"]
+      "sources": [
+        "https://www.msit.go.kr/"
+      ]
     },
     "penalties": {
       "summary": "過怠料は最大3,000万ウォン。EUの制裁水準とは桁が大きく異なる。",
       "detail": "是正命令違反・表示義務違反等への過怠料は最大3,000万ウォン（約330万円）。EU AI Actの最大3,500万ユーロ/売上7%と比べ著しく低く、実効性は行政指導・是正命令と併用で確保する設計。",
-      "sources": ["https://www.msit.go.kr/"]
+      "sources": [
+        "https://www.msit.go.kr/"
+      ]
     },
     "enforcement_body": {
       "summary": "科学技術情報通信部（MSIT)が主管。国家AI委員会が政策審議、AI安全研究所が安全評価を担当。",
       "detail": "MSITが基本計画策定・実態調査・是正命令を所管。大統領直属の国家AI委員会が主要政策を審議し、AI安全研究所（AISI、2024-11設立）がフロンティアAIの安全研究・評価を担う。",
-      "sources": ["https://www.msit.go.kr/"]
+      "sources": [
+        "https://www.msit.go.kr/"
+      ]
     },
     "timeline": [
-      { "date": "2024-12-26", "event": "AI基本法が国会本会議で可決", "source": "https://www.msit.go.kr/" },
-      { "date": "2025-01-21", "event": "AI基本法公布", "source": "https://www.msit.go.kr/" },
-      { "date": "2026-01-22", "event": "AI基本法施行（施行令と同時）", "source": "https://www.msit.go.kr/" }
+      {
+        "date": "2024-12-26",
+        "event": "AI基本法が国会本会議で可決",
+        "source": "https://www.msit.go.kr/"
+      },
+      {
+        "date": "2025-01-21",
+        "event": "AI基本法公布",
+        "source": "https://www.msit.go.kr/"
+      },
+      {
+        "date": "2026-01-22",
+        "event": "AI基本法施行（施行令と同時）",
+        "source": "https://www.msit.go.kr/"
+      }
     ]
   },
   "diff_vs_eu": {
     "stricter": [
-      { "topic": "国内代理人指定", "note": "一定規模以上の海外事業者に国内代理人の指定を義務化。EUの授権代理人制度より適用範囲の運用が広いとされる", "source": "https://www.msit.go.kr/" }
+      {
+        "topic": "国内代理人指定",
+        "note": "一定規模以上の海外事業者に国内代理人の指定を義務化。EUの授権代理人制度より適用範囲の運用が広いとされる",
+        "source": "https://www.msit.go.kr/"
+      }
     ],
     "looser": [
-      { "topic": "制裁水準", "note": "過怠料最大3,000万ウォンで、EUの最大3,500万ユーロ/売上7%と桁違いに低い", "source": "https://www.msit.go.kr/" },
-      { "topic": "リスク分類", "note": "高影響AIの実質2分類で、EUの4階層＋Annex列挙より単純・軽量", "source": "https://www.msit.go.kr/" }
+      {
+        "topic": "制裁水準",
+        "note": "過怠料最大3,000万ウォンで、EUの最大3,500万ユーロ/売上7%と桁違いに低い",
+        "source": "https://www.msit.go.kr/"
+      },
+      {
+        "topic": "リスク分類",
+        "note": "高影響AIの実質2分類で、EUの4階層＋Annex列挙より単純・軽量",
+        "source": "https://www.msit.go.kr/"
+      }
     ],
     "absent": [
-      { "topic": "禁止用途リスト", "note": "EU第5条相当の横断的禁止規定なし", "source": "https://www.msit.go.kr/" }
+      {
+        "topic": "禁止用途リスト",
+        "note": "EU第5条相当の横断的禁止規定なし",
+        "source": "https://www.msit.go.kr/"
+      }
     ],
     "unique": [
-      { "topic": "高性能AIの計算量基準", "note": "学習計算量10^26 FLOP基準（EUのシステミックリスク推定基準10^25 FLOPの10倍）で対象を絞る独自設計", "source": "https://www.msit.go.kr/" },
-      { "topic": "AI産業振興と規制の一体立法", "note": "基本法の中に産業振興策（人材・クラスター・標準化）と安全規制を同居させる構造", "source": "https://www.msit.go.kr/" }
+      {
+        "topic": "高性能AIの計算量基準",
+        "note": "学習計算量10^26 FLOP基準（EUのシステミックリスク推定基準10^25 FLOPの10倍）で対象を絞る独自設計",
+        "source": "https://www.msit.go.kr/"
+      },
+      {
+        "topic": "AI産業振興と規制の一体立法",
+        "note": "基本法の中に産業振興策（人材・クラスター・標準化）と安全規制を同居させる構造",
+        "source": "https://www.msit.go.kr/"
+      }
     ]
   },
-  "last_checked": "2026-06-12T03:00:00Z",
+  "last_checked": "2026-06-13T00:31:36Z",
   "last_changed": "2026-01-22T00:00:00Z"
 }

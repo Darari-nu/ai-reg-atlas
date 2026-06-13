@@ -159,5 +159,74 @@
       "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9tVVl1MG53UENCSTZySThWQ1BZajlVLTdCSkRFcUZYMHE5c2VMRTNwa3Zva3ZBQmJQR19GUm8yVmZ2RlZqWnhlaGN1eTI2YkNMTG1VV21jY01sNEhwLXRv?oc=5"
     ],
     "country_anchor": "/country/cn/#axis-transparency"
+  },
+  {
+    "id": "2026-06-13-us-002",
+    "date": "2026-06-13",
+    "country": "us",
+    "axis": "general",
+    "change_type": "other",
+    "title": "提供情報の不足による更新レコード生成不可",
+    "summary": {
+      "what": "提供された本文が媒体名のみで具体的な規制情報が不足していること",
+      "who": "情報提供者およびアナリスト",
+      "when_impact": "現時点で影響評価不可"
+    },
+    "detail": "提供された一次ソース本文が「Google News」という文字列のみであり、具体的な法規制の名称、国、内容、施行日などの情報が一切含まれていないため、AI法規制の更新レコードを生成することができません。",
+    "so_what": "提供された一次情報に具体的な規制の更新内容が含まれていないため、実務への影響は評価できません。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1WZlZYNEViTC1oQ2tqd0U5UWdBME5iUkNKa2tRMHNLb2NkODlQWnZfUlM1NzhWWHJ0bk5nN09PTUZDcWZkWnhfaTZvVERfSkRWUU8yRXJyMFoxRVVCUXhSclZsV0lMakpk?oc=5"
+    ],
+    "country_anchor": "/country/us/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-13-tw-002",
+    "date": "2026-06-13",
+    "country": "tw",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "台湾が「人工智慧基本法」草案を公表",
+    "summary": {
+      "what": "AI開発の7大原則やリスク分類基準の策定を定めた基本法草案の公表",
+      "who": "台湾政府（国家科学及技術委員会）および台湾国内のAI関連事業者",
+      "when_impact": "草案段階のため未定。今後行政院の審査を経て立法院に送付される見込み"
+    },
+    "detail": "台湾の国家科学及技術委員会（国科会）は2024年7月15日、「人工智慧基本法」草案を公表した。本草案は、永続的発展、人間本位、プライバシー保護、安全・信頼性、透明性・説明可能性、非差別、説明責任の7大原則を掲げている。また、政府に対してAIのリスク分類基準を策定することを義務付けており、イノベーション推進とリスク管理のバランスを図る内容となっている。今後は行政院での審査を経て、立法院（国会）に送られて審議される予定である。",
+    "so_what": "台湾でビジネスを展開する企業は、今後策定されるリスク分類基準や7大原則に沿ったAIガバナンス体制の構築準備が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Actが詳細な義務と罰則を規定するハードローであるのに対し、台湾の草案は基本原則と政府の責務を定める基本法（ソフトロー寄り）であり、現時点ではEUよりも緩やかなアプローチ（looser）を維持している。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb3JiWXdlX3YyQnlmTFpiWlE2SzQyTUNPTzVZU2hmNWcwaldLU3pPRHFHaXU2UVFpSk5pTUdCQ0pkMVZGWjJGSXRjUW5BQjBMVFZSdXRRenlqYnN0N1JMU0FvelpnUV9PTnNZVEtBNjRtZ2xidkhfNnVmQnJsYWZVTHBlakdVVmxkWmMwNXF5a004T3V5UEpqSm1VZVYwV29sVzN6cVFVMVFVM0k?oc=5"
+    ],
+    "country_anchor": "/country/tw/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-13-ca-002",
+    "date": "2026-06-13",
+    "country": "ca",
+    "axis": "general",
+    "change_type": "status_change",
+    "title": "カナダAI・データ法案（AIDA）の議会解散に伴う廃案",
+    "summary": {
+      "what": "AI・データ法案（AIDA）が議会解散により廃案",
+      "who": "カナダでAI事業を展開する企業",
+      "when_impact": "2025年の議会解散時"
+    },
+    "detail": "カナダにおいて審議されていた「AI・データ法案（AIDA）」は、2025年の議会解散に伴い廃案となりました。これにより、同国におけるAI規制は法的な義務化から、自主的な行動規範（Voluntary Code of Conduct）を中心としたソフトローによる運用が継続される見込みです。",
+    "so_what": "カナダでの法制化は見送られ、当面は自主行動規範への準拠が求められるため、ガバナンス方針の調整が必要です。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actが法的義務を課すのに対し、カナダは自主的規範にとどまるため、規制水準は大幅に緩和（looser）されます。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMif0FVX3lxTE1xenZKZldCekF3LUhBSnl2RUlyXy1zcVM1aEhPaTZGcFFuZlhtbi1TMTNLcUVCTmltVDlLSkhZN21xcHdlaFB2dHk1eFBueHNOR1BZbWNxckxGNzNmQUZkYl95S2ZiQmp5UUpWODA0NHZWcjVTZjhTMVVZY2x2RU0?oc=5"
+    ],
+    "country_anchor": "/country/ca/#axis-risk_classification"
   }
 ]

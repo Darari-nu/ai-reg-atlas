@@ -228,5 +228,51 @@
       "https://news.google.com/rss/articles/CBMif0FVX3lxTE1xenZKZldCekF3LUhBSnl2RUlyXy1zcVM1aEhPaTZGcFFuZlhtbi1TMTNLcUVCTmltVDlLSkhZN21xcHdlaFB2dHk1eFBueHNOR1BZbWNxckxGNzNmQUZkYl95S2ZiQmp5UUpWODA0NHZWcjVTZjhTMVVZY2x2RU0?oc=5"
     ],
     "country_anchor": "/country/ca/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-15-uk-001",
+    "date": "2026-06-15",
+    "country": "uk",
+    "axis": "prohibited_uses",
+    "change_type": "new_regulation",
+    "title": "英国政府、16歳未満のSNS禁止およびAI恋愛チャットボットの18歳未満利用禁止方針を発表",
+    "summary": {
+      "what": "16歳未満のSNS禁止に加え、AI恋愛チャットボットの18歳未満利用禁止や親密な機能の制限を行う規制方針。",
+      "who": "SNS事業者、AIチャットボット（恋愛・親密な対話機能）を提供するテック企業。",
+      "when_impact": "2026年クリスマス前に議会提出、2027年春に最初の規制が施行される見込み。"
+    },
+    "detail": "英国政府は、16歳未満のソーシャルメディア利用禁止に加え、ユーザーと性的な関係やロールプレイをシミュレートするよう設計された、いわゆるAI「ロマンティック・コンパニオン」チャットボットについて、18歳以上の年齢制限を義務付ける方針を発表しました。また、より広範なAIチャットボットにおける同様の親密な機能も18歳未満に対して制限されます。政府はオーストラリアのモデルを参考に、子供が回避しにくい「高度に効果的な年齢確認（HEAA）」措置を導入する予定で、Ofcomが有効な年齢確認方法についての迅速な調査を行います。この規制は、Children's Wellbeing and Schools Actに基づく二次立法を用いて迅速に導入され、2026年クリスマス前に議会へ提出、2027年春に施行される見込みです。",
+    "so_what": "英国向けにAIチャットボットや対話型サービスを提供する企業は、厳格な年齢確認（HEAA）の導入や、18歳未満への親密な機能の制限に対応する必要があります。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI ActではAIチャットボットに対して透明性義務（AIであることの開示）を課しているが、特定の年齢制限（恋愛チャットボットの18歳未満禁止など）は規定しておらず、英国のこの方針はEU基準と比較して「stricter（より厳格）」かつ「unique（独自）」な規制アプローチとなります。"
+    },
+    "sources": [
+      "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back"
+    ],
+    "country_anchor": "/country/uk/#axis-prohibited_uses"
+  },
+  {
+    "id": "2026-06-15-uk-002",
+    "date": "2026-06-15",
+    "country": "uk",
+    "axis": "general",
+    "change_type": "other",
+    "title": "DSIT大臣からOfcomへのオンライン環境に関する対応策についての書簡公表",
+    "summary": {
+      "what": "オンライン環境に関するコンサルテーションへの対応策パッケージについての進捗書簡の送付",
+      "who": "英国科学・技術・イノベーション大臣（DSIT）およびOfcom",
+      "when_impact": "2026年6月15日（書簡公表日）"
+    },
+    "detail": "2026年6月15日、英国の科学・技術・イノベーション大臣（DSIT）であるリズ・ケンダル氏が、Ofcom（通信・メディア規制当局）の会長およびCEOに対し、今年初めに開始された「Growing up in the Online World」コンサルテーションへの対応策パッケージに関する進捗状況を伝える書簡を送付した。",
+    "so_what": "英国におけるオンライン環境やメディア規制の動向に関与する企業は、Ofcomの今後の対応策パッケージの具体化を注視する必要があります。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Actとの直接的な関連性や、AI規制への具体的な影響についての記述は本文中に存在しないため、差分への影響はなしと判断。"
+    },
+    "sources": [
+      "https://www.gov.uk/government/publications/june-progress-statement-letter-from-dsit-secretary-of-state-to-ofcom-chair-and-ceo"
+    ],
+    "country_anchor": "/country/uk/#axis-risk_classification"
   }
 ]

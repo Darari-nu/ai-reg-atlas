@@ -274,5 +274,74 @@
       "https://www.gov.uk/government/publications/june-progress-statement-letter-from-dsit-secretary-of-state-to-ofcom-chair-and-ceo"
     ],
     "country_anchor": "/country/uk/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-16-us-001",
+    "date": "2026-06-16",
+    "country": "us",
+    "axis": "general",
+    "change_type": "other",
+    "title": "提供ソースの本文不在による詳細不明",
+    "summary": {
+      "what": "提供された一次ソース本文が「Google News」のみで詳細な規制内容が不明な状態",
+      "who": "企業のAIガバナンス担当者",
+      "when_impact": "現時点で影響なし"
+    },
+    "detail": "提供された一次ソース本文が「Google News」という文字列のみであり、具体的な法規制の更新情報や詳細が記載されていませんでした。",
+    "so_what": "提供された一次ソースに具体的な規制の更新内容が含まれていないため、現時点での実務への影響はありません。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMijAFBVV95cUxQbnFxMGtmWVAwRXNqS1I5RDRmTnl4dmNJQmJQVHBTZ29oMHhsLW9ua2FtbzFZaGhpT2xVbWNYY05BTG1WS1d6UWVtZlgwd2lSRWRERkVHemZxMS1DckNndGV3OVBhcUFweE5KU2gwS0g2dmpCX3BrWk0yWWpOejFFaVhCdWJnUTVYa1U0Mw?oc=5"
+    ],
+    "country_anchor": "/country/us/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-16-us-002",
+    "date": "2026-06-16",
+    "country": "us",
+    "axis": "general",
+    "change_type": "new_regulation",
+    "title": "米国、AIの軍事・安全保障利用に関する初の国家安全保障メモランダムを発表",
+    "summary": {
+      "what": "国防・情報機関でのAI導入加速と安全基準策定を指示する初の国家安全保障メモランダムの発表",
+      "who": "米国の国防・情報機関、および安全保障関連のAI技術を開発する民間企業",
+      "when_impact": "2024年10月24日の発表と同時に即時発効、各機関への指示は今後順次実施"
+    },
+    "detail": "バイデン米大統領は2024年10月24日、AIの軍事および安全保障分野での利用に関する初の国家安全保障メモランダム（NSM）を発表した。国防総省や情報機関に対してAIの導入を加速するよう指示する一方、AIの誤用や暴走を防ぐための安全基準の策定を求めている。また、民間企業が開発する最先端AIモデルの安全性評価を政府機関（AI安全研究所など）が行う枠組みの強化も盛り込まれている。",
+    "so_what": "米国政府や国防・情報機関向けにAI技術を提供する企業は、今後策定される厳格な安全性評価やセキュリティ基準への準拠が必要となる。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actでは軍事・国防目的のAIシステムが適用除外（absent）とされているのに対し、本メモランダムは国防・安全保障分野におけるAIの利用促進と安全確保を直接規定しており、この領域において米国独自の（unique）アプローチを示している。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5RNUxYVTVpSWs3aFNxUzRTZ0MzRmtTdFNYM0tTalhjNnVjcE9aS1U1Nmg0WERWNlFDQ3lrd0k0QXlwa0plOVZPMEwzR1VYa0Nnczl3djNSWHBjcV9ybWxr?oc=5"
+    ],
+    "country_anchor": "/country/us/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-16-jp-001",
+    "date": "2026-06-16",
+    "country": "jp",
+    "axis": "general",
+    "change_type": "other",
+    "title": "日本AISIと米国OpenAI社のMOC（協力覚書）締結",
+    "summary": {
+      "what": "日本AISIと米国OpenAI社によるMOC（協力覚書）の締結",
+      "who": "日本のAIセーフティ・インスティテュート（AISI）および米国OpenAI社",
+      "when_impact": "2026年5月29日の締結以降、両者間での連携が開始される見込み"
+    },
+    "detail": "内閣府のAI戦略トピックスにおいて、2026年5月29日に米国OpenAI社と日本AIセーフティ・インスティテュート（AISI）の間でMOC（協力覚書）が締結されたことが公表されました。具体的な協力内容の詳細は本文に記載されていませんが、AIの安全性確保に向けた連携が進むものとみられます。",
+    "so_what": "OpenAI社との連携強化により、同社製AIモデルの安全性評価や技術協力が国内で進展する見込みです。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI ActではAI OfficeがGPAIモデルの監督や評価を行いますが、日本ではAISIが民間企業（OpenAI等）と個別に協力覚書（MOC）を締結するアプローチをとっており、ソフトロー中心の体制に変化はありません。"
+    },
+    "sources": [
+      "https://www8.cao.go.jp/cstp/ai/index.html"
+    ],
+    "country_anchor": "/country/jp/#axis-risk_classification"
   }
 ]

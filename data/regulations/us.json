@@ -1,7 +1,7 @@
 {
   "jurisdiction": "us",
   "regulation_name": "連邦横断法なし（大統領令＋NIST AI RMF＋州法パッチワーク）",
-  "status": "enacted",
+  "status": "in_force",
   "approach": "sectoral",
   "axes": {
     "risk_classification": {
@@ -78,6 +78,11 @@
         "date": "2024-09-29",
         "event": "ニューサム知事がSB 1047に拒否権を行使し、法案は不成立",
         "source": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUUZGeEhTS3ZNelpxME4yVWUxcmxpRkhEdk9ZMU92dFNwbG8tZW5wQkJPblI0NjBmcDY5OGxDVEFHS0VMMzVLWEFrYThOc3FNeUN5VndrbnZ6dzdaMS1JS2o5NHE4Z2lnbHJKRTFVMU9jU2ZmdGN4eGlUcHBkanJPeUVUeGNlWkg1?oc=5"
+      },
+      {
+        "date": "2024-10-24",
+        "event": "AIの軍事・安全保障利用に関する初の国家安全保障メモランダム（NSM）を発表",
+        "source": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5RNUxYVTVpSWs3aFNxUzRTZ0MzRmtTdFNYM0tTalhjNnVjcE9aS1U1Nmg0WERWNlFDQ3lrd0k0QXlwa0plOVZPMEwzR1VYa0Nnczl3djNSWHBjcV9ybWxr?oc=5"
       }
     ]
   },
@@ -120,6 +125,6 @@
       }
     ]
   },
-  "last_checked": "2026-06-15T23:06:25Z",
-  "last_changed": "2026-06-13T00:31:36Z"
+  "last_checked": "2026-06-16T22:55:33Z",
+  "last_changed": "2026-06-16T22:55:33Z"
 }

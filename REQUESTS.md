@@ -156,12 +156,18 @@ countries:
         type: rss               # rss | scrape_hash
       - url: https://example.go.jp/ai-policy/
         type: scrape_hash
+    watch_feeds:                # 任意。非Googleの良質RSS（検知＋出典可）
+      - url: https://example.org/ai-policy/rss
+        type: rss
     news_queries:               # 二次ソース（検知用→Google News RSSに展開）
       - "日本 AI 規制"
       - "Japan AI regulation law"
 ```
 
 - `news_queries` は `https://news.google.com/rss/search?q={URLエンコード済みクエリ}&hl=ja&gl=JP&ceid=JP:ja` に展開
+- ソース種別は3つに整理する。`official_sources`は権威ソース、`watch_feeds`は非Googleの良質RSS、`news_queries`はGoogle News検知専用
+- `news.google.com`およびGoogle系ニュースURLは更新レコードの`sources`に採用しない。本文取得前の機械ゲートでdropし、`/tmp/dropped.json`に理由を残す
+- 国やソースの追加は原則として`countries.yaml`の1ブロック追記で完結させ、コードに媒体別分岐を足さない
 - 初期6カ国の定義は §14-5 に記載（URLは実装時に死活確認すること）
 
 ## 4-4. 国別データ（regulations/{cc}.json）

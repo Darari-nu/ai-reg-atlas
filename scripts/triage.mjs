@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 import { geminiJSONWithRetry, hasApiKey, MODEL_TRIAGE } from './lib/gemini.mjs';
+import { dedupeByEvent, existingEventKeys, loadJSON, normalizeEventLabel, writeJSON } from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/candidates.json';
@@ -13,11 +14,7 @@ const TARGET_COUNTRIES = yaml
   .countries.map((c) => c.code);
 
 function loadCandidates() {
-  try {
-    return JSON.parse(fs.readFileSync(IN_FILE, 'utf8'));
-  } catch {
-    return [];
-  }
+  return loadJSON(IN_FILE, []);
 }
 
 function existingFeedList() {
@@ -26,7 +23,7 @@ function existingFeedList() {
   const list = [];
   for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
     for (const u of JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))) {
-      if (u.date >= cutoff) list.push({ id: u.id, title: u.title });
+      if (u.date >= cutoff) list.push({ id: u.id, title: u.title, canonical_event: u.canonical_event || normalizeEventLabel(u.title) });
     }
   }
   return list;
@@ -42,20 +39,21 @@ const RESPONSE_SCHEMA = {
       country: { type: 'ARRAY', items: { type: 'STRING' } },
       duplicate: { type: 'BOOLEAN' },
       priority: { type: 'STRING', enum: ['high', 'low'] },
+      canonical_event: { type: 'STRING' },
     },
-    required: ['index', 'relevant', 'country', 'duplicate', 'priority'],
+    required: ['index', 'relevant', 'country', 'duplicate', 'priority', 'canonical_event'],
   },
 };
 
 async function main() {
   const candidates = loadCandidates();
   if (candidates.length === 0) {
-    fs.writeFileSync(OUT_FILE, '[]');
+    writeJSON(OUT_FILE, []);
     console.log('[triage] no candidates, skip');
     return;
   }
   if (!hasApiKey()) {
-    fs.writeFileSync(OUT_FILE, '[]');
+    writeJSON(OUT_FILE, []);
     console.log('[triage] GEMINI_API_KEY not set, skip (safe no-op)');
     return;
   }
@@ -69,6 +67,7 @@ async function main() {
 - country: 対象国コード（複数可・対象外なら除外）
 - duplicate: 既存フィードと同一事象か
 - priority: high（法令・公式文書の発行/変更） / low（動向解説）
+- canonical_event: 同一事象を短く正規化したラベル（例: "EU AI Act GPAI guidelines published"）。媒体名やURLは含めない
 
 候補: ${JSON.stringify(candidates.map((c, i) => ({ index: i, title: c.title, snippet: c.snippet, country_hint: c.country_hint })))}`;
 
@@ -77,10 +76,10 @@ async function main() {
     verdicts = await geminiJSONWithRetry({ model: MODEL_TRIAGE, prompt, schema: RESPONSE_SCHEMA });
   } catch (e) {
     console.error(`[triage] gemini failed after retry: ${e.message}`);
-    fs.writeFileSync(OUT_FILE, '[]');
-    fs.writeFileSync('/tmp/pipeline_issues.json', JSON.stringify([
+    writeJSON(OUT_FILE, []);
+    writeJSON('/tmp/pipeline_issues.json', [
       { title: 'triage失敗（GeminiのJSONが2回連続で不正）', body: `候補${candidates.length}件の選別をスキップした。Actionsログを確認。`, labels: ['needs-review'] },
-    ]));
+    ]);
     return; // 個別失敗はパイプラインを止めない
   }
 
@@ -91,11 +90,12 @@ async function main() {
     if (!cand) continue;
     const ccs = (v.country ?? []).filter((c) => TARGET_COUNTRIES.includes(c));
     if (ccs.length === 0) continue;
-    triaged.push({ ...cand, countries: ccs, priority: v.priority });
+    triaged.push({ ...cand, countries: ccs, priority: v.priority, canonical_event: v.canonical_event });
   }
 
-  fs.writeFileSync(OUT_FILE, JSON.stringify(triaged, null, 2));
-  console.log(`[triage] in=${candidates.length} relevant=${triaged.length}`);
+  const deduped = dedupeByEvent(triaged, existingEventKeys({ days: 90 }));
+  writeJSON(OUT_FILE, deduped);
+  console.log(`[triage] in=${candidates.length} relevant=${triaged.length} deduped=${deduped.length}`);
 }
 
 main().catch((e) => {

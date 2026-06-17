@@ -1,0 +1,301 @@
+[
+  {
+    "id": "2026-06-13-tw-001",
+    "date": "2026-06-13",
+    "country": "tw",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "台湾「人工智慧基本法」草案の公表",
+    "summary": {
+      "what": "AI開発の基本原則やリスクに応じた段階的管理方針を定めた基本法草案の公表",
+      "who": "台湾国内でAIの研究開発やサービス提供を行う事業者および政府機関",
+      "when_impact": "草案段階であり今後の立法プロセスを経て施行される見込み"
+    },
+    "detail": "台湾の国家科学及技術委員会（国科会）はAIの健全な発展とリスク管理のバランスを図るため「人工智慧基本法」草案を公表した。草案ではプライバシー保護、データガバナンス、透明性などの基本原則を掲げ、リスクに応じた段階的な管理アプローチを導入する方針が示されている。具体的な規制やガイドラインは今後各主管機関が策定する見込みである。",
+    "so_what": "台湾でAIビジネスを展開する企業は基本法が定める透明性やプライバシー保護などの原則に沿ったガバナンス構築の準備が必要です。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actが詳細な義務や厳格な罰則を直接規定しているのに対し、台湾の草案は政府の基本方針や原則を定めるフレームワーク法にとどまり、現時点ではEU基準よりも緩やか（looser）な内容となっている。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wQTRkTjhwLXBrN3NZNGJmMVJJQjZKQUF2NXluMEJmZF9rMHBmcEVrbHl6V3p0SnhUZ0dFaWwwbFcxRThoTnFMVU5yTm5hU1lMMFNCZ1dLZlhDRXk0MnN5WVgzMjN0MkQwRG40WXFGT09TT3pjUGlqUllaUHh2dE0?oc=5"
+    ],
+    "country_anchor": "/country/tw/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-13-ca-001",
+    "date": "2026-06-13",
+    "country": "ca",
+    "axis": "general",
+    "change_type": "status_change",
+    "title": "カナダAI・データ法案（AIDA）の廃案と自主行動規範による運用継続",
+    "summary": {
+      "what": "議会解散に伴うAI・データ法案（AIDA）の廃案と自主行動規範の継続",
+      "who": "カナダ国内でAIビジネスを展開する企業",
+      "when_impact": "2025年の議会解散以降、当面の間"
+    },
+    "detail": "カナダで審議されていた「AI・データ法案（AIDA）」は、2025年の議会解散に伴い廃案となった。これにより、カナダにおけるAI規制は横断的な法制化が見送られ、当面は政府が提示する自主行動規範（Voluntary Code of Conduct）に基づくソフトローによる運用が継続される。",
+    "so_what": "法制化が白紙化されたため、企業は強制的な法対応ではなく、政府の自主行動規範への適合を軸としたガバナンス体制を維持すべきです。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actが厳格な法的義務と罰則を課すのに対し、カナダは法案が廃案となり自主行動規範による運用にとどまるため、規制の強制力において大幅に緩い（looser）状況となった。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMif0FVX3lxTE1xenZKZldCekF3LUhBSnl2RUlyXy1zcVM1aEhPaTZGcFFuZlhtbi1TMTNLcUVCTmltVDlLSkhZN21xcHdlaFB2dHk1eFBueHNOR1BZbWNxckxGNzNmQUZkYl95S2ZiQmp5UUpWODA0NHZWcjVTZjhTMVVZY2x2RU0?oc=5"
+    ],
+    "country_anchor": "/country/ca/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-13-us-001",
+    "date": "2026-06-13",
+    "country": "us",
+    "axis": "gpai_obligations",
+    "change_type": "status_change",
+    "title": "カリフォルニア州AI安全法案（SB 1047）に対する知事の拒否権行使",
+    "summary": {
+      "what": "カリフォルニア州AI安全法案（SB 1047）への拒否権行使",
+      "who": "カリフォルニア州のギャビン・ニューサム知事",
+      "when_impact": "2024年9月29日の拒否権行使により法案は不成立"
+    },
+    "detail": "カリフォルニア州のギャビン・ニューサム知事は、大規模AIモデルの開発者に安全テストや「キルスイッチ」の搭載を義務付ける法案「SB 1047」に対し、拒否権を行使しました。知事は、同法案がAIの実際の危険性ではなくモデルの規模のみに基づいて一律に規制を行う点や、イノベーションを阻害する懸念がある点を理由に挙げています。これにより、同法案は廃案となりました。",
+    "so_what": "米国で最も厳格とされたAI安全法案が不成立となったため、開発企業は当面、同法案に基づく急激な規制対応を免れることになります。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI ActのGPAI（汎用AI）規制と比較して、カリフォルニア州独自の厳しい安全義務（キルスイッチ等）を課す「unique」な規制となる予定でしたが、拒否権行使により不成立となったため、EU基準よりも大幅に緩い（absent）現状が維持されることになります。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUUZGeEhTS3ZNelpxME4yVWUxcmxpRkhEdk9ZMU92dFNwbG8tZW5wQkJPblI0NjBmcDY5OGxDVEFHS0VMMzVLWEFrYThOc3FNeUN5VndrbnZ6dzdaMS1JS2o5NHE4Z2lnbHJKRTFVMU9jU2ZmdGN4eGlUcHBkanJPeUVUeGNlWkg1?oc=5"
+    ],
+    "country_anchor": "/country/us/#axis-gpai_obligations"
+  },
+  {
+    "id": "2026-06-13-eu-001",
+    "date": "2026-06-13",
+    "country": "eu",
+    "axis": "general",
+    "change_type": "other",
+    "title": "提供情報の不足による判定不能",
+    "summary": {
+      "what": "提供された一次ソース本文がGoogle Newsのみで詳細不明",
+      "who": "該当なし",
+      "when_impact": "該当なし"
+    },
+    "detail": "提供された一次ソース本文が「Google News」という文字列のみであり、具体的な法規制の更新内容や詳細が記載されていないため、情報の抽出および分析が不可能です。",
+    "so_what": "提供された一次ソースの本文に具体的な規制情報が含まれていないため、実務への影響は評価できません。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMibEFVX3lxTE96UzR5RXRuZmllTTBKdEw3MzdjanZVeS1BX3JBbHpFMThZckVCVTI0RWJtRDNVd2tZaGJZRURhX09SM3JUS3p5cnFEVnhEc1RfYWdZMjhUWEtMMVFQcHVpd2dja2pLYTdlLXFqZg?oc=5"
+    ],
+    "country_anchor": "/country/eu/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-13-eu-002",
+    "date": "2026-06-13",
+    "country": "eu",
+    "axis": "general",
+    "change_type": "other",
+    "title": "提供されたソースに具体的な規制更新情報が含まれていません",
+    "summary": {
+      "what": "提供されたソースから具体的な規制更新情報を特定できないこと",
+      "who": "該当なし",
+      "when_impact": "影響なし"
+    },
+    "detail": "一次ソース本文が「Google News」とのみ記載されており、具体的なニュース記事の本文や規制の更新内容が含まれていないため、規制情報の更新レコードを生成できません。",
+    "so_what": "提供されたソースからは具体的な規制の変更や更新が確認できないため、現時点で追加の実務対応は不要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9USmVpdUJYVTRIUnVleVV6VWF3UXJTNDdBMW93U3lxWHZaUWJ2V0JVdWhEU2ZZc3l5aVdqejJCZGJtbHNVNHpsdUZyeFdNTnIzbm51RWRMU3M5a294RFpv?oc=5"
+    ],
+    "country_anchor": "/country/eu/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-13-eu-003",
+    "date": "2026-06-13",
+    "country": "eu",
+    "axis": "prohibited_uses",
+    "change_type": "status_change",
+    "title": "EU AI Actの禁止規定（第5条）が正式に適用開始",
+    "summary": {
+      "what": "EU AI Act第5条に基づく一部のAI利用禁止規定の適用開始",
+      "who": "EU市場でAIシステムを提供する、または利用するすべての事業者",
+      "when_impact": "2025年2月2日より適用開始"
+    },
+    "detail": "EU AI Act（人工知能法）の第5条に規定された、許容できないリスクをもたらすAIシステムの禁止規定が2025年2月2日に正式に適用開始されました。禁止対象には、職場や教育機関での感情認識、社会的スコアリング、無差別な顔画像スクレイピング、サブリミナル技術による行動操作などが含まれます。これに違反した場合、最大3,500万ユーロまたは全世界売上高の7%のいずれか高い方の罰金が科される可能性があります。",
+    "so_what": "2025年2月2日より、職場での感情認識や社会的スコアリングなどの禁止対象AIの利用が違法となり、最大3,500万ユーロの罰金リスクが生じるため、自社システムが該当しないか直ちに確認が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMibEFVX3lxTE5CMWFoOTFtYU84RUxCWFBaOVhvbzR1TWJkUXNEdV9PMzdPeWZfbWtFVUpDbWxadWNqMnBGa1NMTW96Z19qd3Y5eHJsZTFMUTJ2S1k2a1UzdXU0cWVManZPdU5rOWpKaUxTWFhEdA?oc=5"
+    ],
+    "country_anchor": "/country/eu/#axis-prohibited_uses"
+  },
+  {
+    "id": "2026-06-13-cn-001",
+    "date": "2026-06-13",
+    "country": "cn",
+    "axis": "transparency",
+    "change_type": "new_regulation",
+    "title": "中国：AI生成コンテンツ標識に関する強制国家基準（GB 44855-2024）の公表",
+    "summary": {
+      "what": "AI生成コンテンツへの明示的・暗黙的標識の付与義務化",
+      "who": "中国国内でAI生成コンテンツサービスを提供する事業者",
+      "when_impact": "2025年7月1日の施行（の見込み）"
+    },
+    "detail": "中国国家標準化管理委員会は、強制国家基準「サイバーセキュリティ技術 AI生成コンテンツ標識方法」（GB 44855-2024）を公表した。本基準は、テキスト、画像、音声、動画などのAI生成コンテンツに対し、視覚・聴覚的な明示的標識、およびメタデータへの識別情報埋め込みなどの暗黙的標識を義務付けるものである。2025年7月1日より正式に施行される見込み。",
+    "so_what": "中国向けにAIサービスを提供する企業は、強制国家基準に準拠したメタデータ埋め込み等の技術的対応が必要となる。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actの第50条（透明性義務）と比較して、中国の基準は「強制国家基準（GB）」として具体的な技術仕様（メタデータのフォーマットや埋め込み位置など）を規定しており、実務上の対応においてEU基準よりも技術的に厳格（stricter）な対応が求められる。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9tVVl1MG53UENCSTZySThWQ1BZajlVLTdCSkRFcUZYMHE5c2VMRTNwa3Zva3ZBQmJQR19GUm8yVmZ2RlZqWnhlaGN1eTI2YkNMTG1VV21jY01sNEhwLXRv?oc=5"
+    ],
+    "country_anchor": "/country/cn/#axis-transparency"
+  },
+  {
+    "id": "2026-06-13-us-002",
+    "date": "2026-06-13",
+    "country": "us",
+    "axis": "general",
+    "change_type": "other",
+    "title": "提供情報の不足による更新レコード生成不可",
+    "summary": {
+      "what": "提供された本文が媒体名のみで具体的な規制情報が不足していること",
+      "who": "情報提供者およびアナリスト",
+      "when_impact": "現時点で影響評価不可"
+    },
+    "detail": "提供された一次ソース本文が「Google News」という文字列のみであり、具体的な法規制の名称、国、内容、施行日などの情報が一切含まれていないため、AI法規制の更新レコードを生成することができません。",
+    "so_what": "提供された一次情報に具体的な規制の更新内容が含まれていないため、実務への影響は評価できません。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1WZlZYNEViTC1oQ2tqd0U5UWdBME5iUkNKa2tRMHNLb2NkODlQWnZfUlM1NzhWWHJ0bk5nN09PTUZDcWZkWnhfaTZvVERfSkRWUU8yRXJyMFoxRVVCUXhSclZsV0lMakpk?oc=5"
+    ],
+    "country_anchor": "/country/us/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-13-tw-002",
+    "date": "2026-06-13",
+    "country": "tw",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "台湾が「人工智慧基本法」草案を公表",
+    "summary": {
+      "what": "AI開発の7大原則やリスク分類基準の策定を定めた基本法草案の公表",
+      "who": "台湾政府（国家科学及技術委員会）および台湾国内のAI関連事業者",
+      "when_impact": "草案段階のため未定。今後行政院の審査を経て立法院に送付される見込み"
+    },
+    "detail": "台湾の国家科学及技術委員会（国科会）は2024年7月15日、「人工智慧基本法」草案を公表した。本草案は、永続的発展、人間本位、プライバシー保護、安全・信頼性、透明性・説明可能性、非差別、説明責任の7大原則を掲げている。また、政府に対してAIのリスク分類基準を策定することを義務付けており、イノベーション推進とリスク管理のバランスを図る内容となっている。今後は行政院での審査を経て、立法院（国会）に送られて審議される予定である。",
+    "so_what": "台湾でビジネスを展開する企業は、今後策定されるリスク分類基準や7大原則に沿ったAIガバナンス体制の構築準備が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Actが詳細な義務と罰則を規定するハードローであるのに対し、台湾の草案は基本原則と政府の責務を定める基本法（ソフトロー寄り）であり、現時点ではEUよりも緩やかなアプローチ（looser）を維持している。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb3JiWXdlX3YyQnlmTFpiWlE2SzQyTUNPTzVZU2hmNWcwaldLU3pPRHFHaXU2UVFpSk5pTUdCQ0pkMVZGWjJGSXRjUW5BQjBMVFZSdXRRenlqYnN0N1JMU0FvelpnUV9PTnNZVEtBNjRtZ2xidkhfNnVmQnJsYWZVTHBlakdVVmxkWmMwNXF5a004T3V5UEpqSm1VZVYwV29sVzN6cVFVMVFVM0k?oc=5"
+    ],
+    "country_anchor": "/country/tw/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-13-ca-002",
+    "date": "2026-06-13",
+    "country": "ca",
+    "axis": "general",
+    "change_type": "status_change",
+    "title": "カナダAI・データ法案（AIDA）の議会解散に伴う廃案",
+    "summary": {
+      "what": "AI・データ法案（AIDA）が議会解散により廃案",
+      "who": "カナダでAI事業を展開する企業",
+      "when_impact": "2025年の議会解散時"
+    },
+    "detail": "カナダにおいて審議されていた「AI・データ法案（AIDA）」は、2025年の議会解散に伴い廃案となりました。これにより、同国におけるAI規制は法的な義務化から、自主的な行動規範（Voluntary Code of Conduct）を中心としたソフトローによる運用が継続される見込みです。",
+    "so_what": "カナダでの法制化は見送られ、当面は自主行動規範への準拠が求められるため、ガバナンス方針の調整が必要です。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actが法的義務を課すのに対し、カナダは自主的規範にとどまるため、規制水準は大幅に緩和（looser）されます。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMif0FVX3lxTE1xenZKZldCekF3LUhBSnl2RUlyXy1zcVM1aEhPaTZGcFFuZlhtbi1TMTNLcUVCTmltVDlLSkhZN21xcHdlaFB2dHk1eFBueHNOR1BZbWNxckxGNzNmQUZkYl95S2ZiQmp5UUpWODA0NHZWcjVTZjhTMVVZY2x2RU0?oc=5"
+    ],
+    "country_anchor": "/country/ca/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-16-us-001",
+    "date": "2026-06-16",
+    "country": "us",
+    "axis": "general",
+    "change_type": "other",
+    "title": "提供ソースの本文不在による詳細不明",
+    "summary": {
+      "what": "提供された一次ソース本文が「Google News」のみで詳細な規制内容が不明な状態",
+      "who": "企業のAIガバナンス担当者",
+      "when_impact": "現時点で影響なし"
+    },
+    "detail": "提供された一次ソース本文が「Google News」という文字列のみであり、具体的な法規制の更新情報や詳細が記載されていませんでした。",
+    "so_what": "提供された一次ソースに具体的な規制の更新内容が含まれていないため、現時点での実務への影響はありません。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMijAFBVV95cUxQbnFxMGtmWVAwRXNqS1I5RDRmTnl4dmNJQmJQVHBTZ29oMHhsLW9ua2FtbzFZaGhpT2xVbWNYY05BTG1WS1d6UWVtZlgwd2lSRWRERkVHemZxMS1DckNndGV3OVBhcUFweE5KU2gwS0g2dmpCX3BrWk0yWWpOejFFaVhCdWJnUTVYa1U0Mw?oc=5"
+    ],
+    "country_anchor": "/country/us/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-16-us-002",
+    "date": "2026-06-16",
+    "country": "us",
+    "axis": "general",
+    "change_type": "new_regulation",
+    "title": "米国、AIの軍事・安全保障利用に関する初の国家安全保障メモランダムを発表",
+    "summary": {
+      "what": "国防・情報機関でのAI導入加速と安全基準策定を指示する初の国家安全保障メモランダムの発表",
+      "who": "米国の国防・情報機関、および安全保障関連のAI技術を開発する民間企業",
+      "when_impact": "2024年10月24日の発表と同時に即時発効、各機関への指示は今後順次実施"
+    },
+    "detail": "バイデン米大統領は2024年10月24日、AIの軍事および安全保障分野での利用に関する初の国家安全保障メモランダム（NSM）を発表した。国防総省や情報機関に対してAIの導入を加速するよう指示する一方、AIの誤用や暴走を防ぐための安全基準の策定を求めている。また、民間企業が開発する最先端AIモデルの安全性評価を政府機関（AI安全研究所など）が行う枠組みの強化も盛り込まれている。",
+    "so_what": "米国政府や国防・情報機関向けにAI技術を提供する企業は、今後策定される厳格な安全性評価やセキュリティ基準への準拠が必要となる。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actでは軍事・国防目的のAIシステムが適用除外（absent）とされているのに対し、本メモランダムは国防・安全保障分野におけるAIの利用促進と安全確保を直接規定しており、この領域において米国独自の（unique）アプローチを示している。"
+    },
+    "sources": [
+      "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5RNUxYVTVpSWs3aFNxUzRTZ0MzRmtTdFNYM0tTalhjNnVjcE9aS1U1Nmg0WERWNlFDQ3lrd0k0QXlwa0plOVZPMEwzR1VYa0Nnczl3djNSWHBjcV9ybWxr?oc=5"
+    ],
+    "country_anchor": "/country/us/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-16-jp-001",
+    "date": "2026-06-16",
+    "country": "jp",
+    "axis": "general",
+    "change_type": "other",
+    "title": "日本AISIと米国OpenAI社のMOC（協力覚書）締結",
+    "summary": {
+      "what": "日本AISIと米国OpenAI社によるMOC（協力覚書）の締結",
+      "who": "日本のAIセーフティ・インスティテュート（AISI）および米国OpenAI社",
+      "when_impact": "2026年5月29日の締結以降、両者間での連携が開始される見込み"
+    },
+    "detail": "内閣府のAI戦略トピックスにおいて、2026年5月29日に米国OpenAI社と日本AIセーフティ・インスティテュート（AISI）の間でMOC（協力覚書）が締結されたことが公表されました。具体的な協力内容の詳細は本文に記載されていませんが、AIの安全性確保に向けた連携が進むものとみられます。",
+    "so_what": "OpenAI社との連携強化により、同社製AIモデルの安全性評価や技術協力が国内で進展する見込みです。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI ActではAI OfficeがGPAIモデルの監督や評価を行いますが、日本ではAISIが民間企業（OpenAI等）と個別に協力覚書（MOC）を締結するアプローチをとっており、ソフトロー中心の体制に変化はありません。"
+    },
+    "sources": [
+      "https://www8.cao.go.jp/cstp/ai/index.html"
+    ],
+    "country_anchor": "/country/jp/#axis-risk_classification"
+  }
+]

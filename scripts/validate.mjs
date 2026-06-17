@@ -3,8 +3,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import { isDryRun } from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
+const DATA_ROOT = isDryRun() ? '/tmp/dry/data' : path.join(ROOT, 'data');
 const ajv = new Ajv({ allErrors: true });
 addFormats(ajv);
 
@@ -26,19 +28,19 @@ function check(name, ok, validator) {
 }
 
 // regulations + eu_baseline
-for (const f of ['data/eu_baseline.json', ...fs.readdirSync(path.join(ROOT, 'data/regulations')).map((f) => `data/regulations/${f}`)]) {
-  const data = JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+for (const f of ['eu_baseline.json', ...fs.readdirSync(path.join(DATA_ROOT, 'regulations')).map((f) => `regulations/${f}`)]) {
+  const data = JSON.parse(fs.readFileSync(path.join(DATA_ROOT, f), 'utf8'));
   check(f, validateRegulation(data), validateRegulation);
 }
 
 // updates
-for (const f of fs.readdirSync(path.join(ROOT, 'data/updates')).filter((f) => f.endsWith('.json'))) {
-  const data = JSON.parse(fs.readFileSync(path.join(ROOT, `data/updates/${f}`), 'utf8'));
-  check(`data/updates/${f}`, validateUpdates(data), validateUpdates);
+for (const f of fs.readdirSync(path.join(DATA_ROOT, 'updates')).filter((f) => f.endsWith('.json'))) {
+  const data = JSON.parse(fs.readFileSync(path.join(DATA_ROOT, `updates/${f}`), 'utf8'));
+  check(`updates/${f}`, validateUpdates(data), validateUpdates);
 }
 
 // meta
-const meta = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/meta.json'), 'utf8'));
+const meta = JSON.parse(fs.readFileSync(path.join(DATA_ROOT, 'meta.json'), 'utf8'));
 const metaOk = typeof meta.last_sweep === 'string' && ['ok', 'partial', 'failed'].includes(meta.status);
 check('data/meta.json', metaOk, { errors: [] });
 

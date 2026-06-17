@@ -247,6 +247,16 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
   }
 
   writeMeta(failCount > 0 && okCount === 0 ? 'partial' : 'ok');
+  // drop理由の内訳をログに出す（observability。/tmp/dropped.json は collect/triage/summarize 全段の累積）
+  try {
+    const drops = JSON.parse(fs.readFileSync('/tmp/dropped.json', 'utf8'));
+    const hist = {};
+    for (const d of drops) hist[d.reason] = (hist[d.reason] || 0) + 1;
+    console.log(`[summarize] drops total=${drops.length} by_reason=${JSON.stringify(hist)}`);
+    for (const d of drops.slice(0, 12)) console.log(`[summarize]   drop ${d.reason} | ${(d.url || '').slice(0, 80)}`);
+  } catch {
+    console.log('[summarize] no drop log');
+  }
   console.log(`[summarize] done ok=${okCount} failed=${failCount}`);
 }
 

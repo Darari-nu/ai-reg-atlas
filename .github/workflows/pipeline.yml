@@ -2,7 +2,12 @@ name: daily-pipeline
 on:
   schedule:
     - cron: "0 21 * * *" # JST朝6時
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      first_run_window_days:
+        description: "初回遡り日数（バックフィル用。通常は3）"
+        required: false
+        default: "3"
 
 permissions:
   contents: write
@@ -32,6 +37,8 @@ jobs:
 
       - name: collect
         run: node scripts/collect.mjs
+        env:
+          FIRST_RUN_WINDOW_DAYS: ${{ github.event.inputs.first_run_window_days || '3' }}
 
       - name: triage
         run: node scripts/triage.mjs

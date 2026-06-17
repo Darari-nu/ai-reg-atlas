@@ -15,7 +15,7 @@ const OUT_FILE = '/tmp/candidates.json';
 const ISSUES_FILE = '/tmp/pipeline_issues.json';
 const TIMEOUT_MS = 15_000;
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
-const FIRST_RUN_WINDOW_DAYS = 3; // キャッシュなし初回はフィード全件でなく直近3日のみ
+const FIRST_RUN_WINDOW_DAYS = Number(process.env.FIRST_RUN_WINDOW_DAYS || 3); // 既定3日。バックフィル時は環境変数で拡大
 
 const parser = new Parser({ timeout: TIMEOUT_MS, headers: { 'User-Agent': USER_AGENT } });
 

@@ -3,6 +3,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { geminiJSONWithRetry, hasApiKey, MODEL_SUMMARIZE } from './lib/gemini.mjs';
+import {
+  RECENCY_DAYS,
+  appendDrop,
+  buildUpdateRecord,
+  dedupeByEvent,
+  existingEventKeys,
+  isGoogleNewsUrl,
+  loadJSON,
+  mechanicalGate,
+  publicationDateGate,
+  readDataJSON,
+  writeDataJSON,
+  writeJSON,
+} from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/triaged.json';
@@ -12,28 +26,17 @@ const TIMEOUT_MS = 15_000;
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
 const STATUS_ORDER = ['proposed', 'draft', 'consultation', 'enacted', 'in_force'];
 
-const today = new Date().toISOString().slice(0, 10);
+const today = process.env.SWEEP_DATE || new Date().toISOString().slice(0, 10);
 const nowIso = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
-
-function loadJSON(file, fallback) {
-  try {
-    return JSON.parse(fs.readFileSync(file, 'utf8'));
-  } catch {
-    return fallback;
-  }
-}
 
 function pushIssue(issue) {
   const issues = loadJSON(ISSUES_FILE, []);
   issues.push(issue);
-  fs.writeFileSync(ISSUES_FILE, JSON.stringify(issues, null, 2));
+  writeJSON(ISSUES_FILE, issues);
 }
 
 function writeMeta(status) {
-  fs.writeFileSync(
-    path.join(ROOT, 'data/meta.json'),
-    JSON.stringify({ last_sweep: nowIso, status }, null, 2) + '\n'
-  );
+  writeDataJSON(['meta.json'], { last_sweep: nowIso, status });
 }
 
 async function fetchArticleText(url) {
@@ -80,6 +83,10 @@ const RESPONSE_SCHEMA = {
     so_what: { type: 'STRING' },
     diff_changed: { type: 'BOOLEAN' },
     diff_note: { type: 'STRING' },
+    usable: { type: 'BOOLEAN' },
+    publication_date: { type: 'STRING', nullable: true },
+    effective_date: { type: 'STRING', nullable: true },
+    deadline_date: { type: 'STRING', nullable: true },
     regulation_patch: {
       type: 'OBJECT',
       nullable: true,
@@ -100,13 +107,27 @@ const RESPONSE_SCHEMA = {
       },
     },
   },
-  required: ['axis', 'change_type', 'title', 'summary', 'so_what', 'diff_changed'],
+  required: ['axis', 'change_type', 'title', 'summary', 'so_what', 'diff_changed', 'usable', 'publication_date', 'effective_date', 'deadline_date'],
 };
 
-function nextId(updates, cc) {
-  const prefix = `${today}-${cc}-`;
-  const nums = updates.filter((u) => u.id.startsWith(prefix)).map((u) => Number(u.id.slice(-3)));
-  return `${prefix}${String((nums.length ? Math.max(...nums) : 0) + 1).padStart(3, '0')}`;
+async function prepareItems(triaged) {
+  const gated = [];
+  for (const item of triaged) {
+    let articleText = '';
+    try {
+      articleText = await fetchArticleText(item.url);
+    } catch (e) {
+      appendDrop({ ...item, reason: `fetch-failed:${e.message}` });
+      continue;
+    }
+    const gate = mechanicalGate(item, articleText);
+    if (!gate.ok) {
+      appendDrop({ ...item, reason: gate.reason });
+      continue;
+    }
+    gated.push({ ...item, articleText });
+  }
+  return dedupeByEvent(gated, existingEventKeys({ days: RECENCY_DAYS }));
 }
 
 async function main() {
@@ -117,8 +138,9 @@ async function main() {
     return;
   }
 
-  const euBaseline = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eu_baseline.json'), 'utf8'));
-  const items = triaged.sort((a, b) => (a.priority === b.priority ? 0 : a.priority === 'high' ? -1 : 1)).slice(0, MAX_PER_RUN);
+  const euBaseline = readDataJSON(['eu_baseline.json'], {});
+  const prepared = await prepareItems(triaged);
+  const items = prepared.sort((a, b) => (a.priority === b.priority ? 0 : a.priority === 'high' ? -1 : 1)).slice(0, MAX_PER_RUN);
 
   let okCount = 0;
   let failCount = 0;
@@ -126,13 +148,19 @@ async function main() {
   for (const item of items) {
     const cc = item.countries[0];
     try {
-      const articleText = await fetchArticleText(item.url); // 確証: 一次ソースfetch（§5-2 Step3）
-      const regFile = path.join(ROOT, `data/regulations/${cc}.json`);
-      const current = JSON.parse(fs.readFileSync(regFile, 'utf8'));
+      if (isGoogleNewsUrl(item.url)) {
+        appendDrop({ ...item, reason: 'google-news-source' });
+        continue;
+      }
+      const articleText = item.articleText; // 確証: 実URLfetch済み本文（§5-2 Step3）
+      const current = readDataJSON(['regulations', `${cc}.json`], {});
 
       const prompt = `あなたはAI法規制の専門アナリストです。以下の一次ソース本文から、更新レコードを生成してください。事実のみを書き、推測には「〜の見込み」と明記。
 
 制約:
+- usable=false は、本文がAI規制の新着更新として使えない場合、または出典本文から日付・事象を確認できない場合
+- publication_date は公表日・発表日。YYYY-MM-DDで本文から抽出し、不明なら null
+- effective_date は施行日、deadline_date は期限日。本文に無ければ null
 - summary.what / who / when_impact は各60文字以内・体言止め可
 - so_what は企業のAIガバナンス担当者向けの実務インパクト1文
 - EU AI Act基準（添付のeu_baseline.json）と比較し、diff_vs_euへの影響を stricter/looser/absent/unique の観点で判定。影響なしなら diff_changed=false
@@ -145,30 +173,22 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
 一次ソース本文: ${articleText}`;
 
       const rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA });
+      if (rec.usable === false) {
+        appendDrop({ ...item, country: cc, reason: 'gemini-unusable' });
+        continue;
+      }
+      const pubGate = publicationDateGate(rec.publication_date, today);
+      if (!pubGate.ok) {
+        appendDrop({ ...item, country: cc, reason: pubGate.reason });
+        continue;
+      }
 
       // 反映: updates/{YYYY-MM}.json へ追記
-      const monthFile = path.join(ROOT, `data/updates/${today.slice(0, 7)}.json`);
-      const updates = loadJSON(monthFile, []);
-      const record = {
-        id: nextId(updates, cc),
-        date: today,
-        country: cc,
-        axis: rec.axis,
-        change_type: rec.change_type,
-        title: rec.title.slice(0, 120),
-        summary: {
-          what: rec.summary.what.slice(0, 120),
-          who: rec.summary.who.slice(0, 120),
-          when_impact: rec.summary.when_impact.slice(0, 120),
-        },
-        ...(rec.detail ? { detail: rec.detail } : {}),
-        so_what: rec.so_what,
-        impact: { diff_changed: rec.diff_changed, diff_note: rec.diff_note ?? '' },
-        sources: [item.url], // collectが実際にfetchしたURLのみ（インジェクション対策 §8-3）
-        country_anchor: `/country/${cc}/#axis-${rec.axis === 'timeline' || rec.axis === 'general' ? 'risk_classification' : rec.axis}`,
-      };
+      const month = rec.publication_date.slice(0, 7);
+      const updates = readDataJSON(['updates', `${month}.json`], []);
+      const record = buildUpdateRecord({ updates, country: cc, item, rec }); // sourcesはcollectがfetchしたURLのみ
       updates.push(record);
-      fs.writeFileSync(monthFile, JSON.stringify(updates, null, 2) + '\n');
+      writeDataJSON(['updates', `${month}.json`], updates);
 
       // regulation_patch: 矛盾チェック付き適用（§5-4）
       let changed = false;
@@ -195,7 +215,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       }
       current.last_checked = nowIso;
       if (changed) current.last_changed = nowIso;
-      fs.writeFileSync(regFile, JSON.stringify(current, null, 2) + '\n');
+      writeDataJSON(['regulations', `${cc}.json`], current);
 
       if (rec.diff_changed) {
         pushIssue({
@@ -219,11 +239,10 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
 
   // 巡回していない国も last_checked を更新
   for (const f of fs.readdirSync(path.join(ROOT, 'data/regulations'))) {
-    const file = path.join(ROOT, 'data/regulations', f);
-    const reg = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const reg = readDataJSON(['regulations', f], {});
     if (reg.last_checked < nowIso) {
       reg.last_checked = nowIso;
-      fs.writeFileSync(file, JSON.stringify(reg, null, 2) + '\n');
+      writeDataJSON(['regulations', f], reg);
     }
   }
 

@@ -7,8 +7,7 @@ countries:
     flag: "🇪🇺"
     lat: 50.85
     lng: 4.35
-    official_sources:
-      - { url: "https://digital-strategy.ec.europa.eu/en/related-content?topic=119&type=news&format=rss", type: rss }
+    official_sources: []   # 旧EC related-content RSSは破損(Attribute without value)のため削除。EU AI Actトラッカー等のwatch_feedsで代替
     watch_feeds:
       - { url: "https://artificialintelligenceact.eu/feed/", type: rss }   # EU AI Act専門トラッカー
       - { url: "https://edpb.europa.eu/feed/news_en", type: rss }          # 欧州データ保護会議(EDPB)

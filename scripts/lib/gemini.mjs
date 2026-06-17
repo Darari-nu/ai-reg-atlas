@@ -40,8 +40,9 @@ export async function geminiJSON({ model, prompt, schema, maxOutputTokens = 8192
       body: JSON.stringify(body),
     });
 
-    if (res.status === 429 && attempt < backoffs.length) {
-      console.warn(`[gemini] 429 received, backoff ${backoffs[attempt] / 1000}s (attempt ${attempt + 1})`);
+    // 429(レート制限)＋5xx(503等のモデル過負荷/一時障害)はバックオフして再試行
+    if ((res.status === 429 || res.status >= 500) && attempt < backoffs.length) {
+      console.warn(`[gemini] HTTP ${res.status}, backoff ${backoffs[attempt] / 1000}s (attempt ${attempt + 1})`);
       await sleep(backoffs[attempt]);
       continue;
     }

@@ -5,7 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import yaml from 'js-yaml';
 import Parser from 'rss-parser';
-import { dataPath, loadJSON, writeJSON } from './lib/pipeline.mjs';
+import { dataPath, loadJSON, writeJSON, isGoogleNewsUrl } from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
 const CACHE_DIR = dataPath('.cache');
@@ -191,11 +191,13 @@ async function main() {
     }
   }
 
-  // URL正規化済みの重複排除
+  // URL正規化済みの重複排除＋Google News除外（出典になれないので早期に落としtriage/Gemini枠を本物に回す）
   const seen = new Set();
+  let googleDropped = 0;
   const deduped = candidates.filter((c) => {
     if (!c.url || seen.has(c.url)) return false;
     seen.add(c.url);
+    if (isGoogleNewsUrl(c.url)) { googleDropped++; return false; }
     return true;
   });
 
@@ -203,7 +205,7 @@ async function main() {
   writeJSON(HASHES_FILE, hashes);
   writeJSON(OUT_FILE, deduped);
 
-  console.log(`[collect] sources ok=${okCount} failed=${failCount} candidates=${deduped.length}`);
+  console.log(`[collect] sources ok=${okCount} failed=${failCount} candidates=${deduped.length} google_dropped=${googleDropped}`);
   if (failCount > 0 && okCount === 0) process.exitCode = 1; // 全滅のみ失敗扱い
 }
 

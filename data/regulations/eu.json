@@ -79,9 +79,14 @@
         "date": "2028-08-02",
         "event": "Annex I系ハイリスク義務の適用開始（Digital Omnibusで延期後）",
         "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      },
+      {
+        "date": "2026-06-01",
+        "event": "欧州委員会が諮問フォーラム（Advisory Forum）のメンバー174名を任命・発表",
+        "source": "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
       }
     ]
   },
-  "last_checked": "2026-06-18T22:59:41Z",
-  "last_changed": "2026-05-19T00:00:00Z"
+  "last_checked": "2026-06-19T22:11:54Z",
+  "last_changed": "2026-06-19T22:11:54Z"
 }

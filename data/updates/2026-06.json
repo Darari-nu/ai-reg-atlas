@@ -44,5 +44,32 @@
       "https://www.gov.uk/government/publications/june-progress-statement-letter-from-dsit-secretary-of-state-to-ofcom-chair-and-ceo"
     ],
     "country_anchor": "/country/uk/#axis-risk_classification"
+  },
+  {
+    "id": "2026-06-19-eu-001",
+    "date": "2026-06-19",
+    "country": "eu",
+    "axis": "enforcement_body",
+    "change_type": "other",
+    "title": "欧州委員会、EU AI Actに基づく諮問フォーラムのメンバー174名を任命",
+    "summary": {
+      "what": "EU AI Actに基づき、欧州委員会とAIボードに技術的助言を行う諮問フォーラムのメンバー174名の任命を発表。",
+      "who": "欧州委員会、AIボード、選出された産業界・スタートアップ・中小企業・市民社会・学術界の代表者ら。",
+      "when_impact": "2026年6月1日の任命発表以降、標準化要求や実施策定における技術的専門知識の提供を通じて影響。"
+    },
+    "detail": "欧州委員会は2026年6月1日、EU AI Act第67条に基づき設置される「諮問フォーラム（Advisory Forum）」のメンバー174名を発表しました。このフォーラムは、欧州委員会およびAIボードに対して技術的専門知識を提供し、AI Actの実施や適用について助言を行う機関です。メンバーは700以上の応募から、産業界、スタートアップ、中小企業、市民社会、学術界のバランスを考慮して選出されました。また、基本権機関（FRA）、欧州サイバーセキュリティ機関（ENISA）、および3つの欧州標準化団体（CEN、CENELEC、ETSI）の5機関が常任メンバーとして参加します。任期は2年で、1回に限り再任可能です。フォーラムは年2回以上開催され、活動に関する年次報告書を公開する予定です。",
+    "so_what": "諮問フォーラムには産業界や中小企業も多数参画するため、標準化や実施ガイドラインの策定プロセスにおける業界意見の反映状況を注視する必要があります。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Act自体のガバナンス体制の具体化に関する動きであり、EU基準との差分を生じさせるものではありません。"
+    },
+    "canonical_event": "EU AI Act Advisory Forum role and function overview",
+    "publication_date": "2026-06-19",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
+    ],
+    "country_anchor": "/country/eu/#axis-enforcement_body"
   }
 ]

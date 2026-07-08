@@ -1,0 +1,29 @@
+[
+  {
+    "id": "2026-07-08-eu-001",
+    "date": "2026-07-08",
+    "country": "eu",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "EDPB、生成AI向けのデータ匿名化およびウェブスクレイピングに関するガイドライン草案を採択",
+    "summary": {
+      "what": "生成AI向けのデータ匿名化およびウェブスクレイピングに関するGDPR準拠ガイドライン草案の採択",
+      "who": "欧州データ保護ボード（EDPB）が、生成AI開発者やデータ管理者向けに",
+      "when_impact": "2026年7月8日に公表され、同年10月30日までパブリックコンサルテーションを実施"
+    },
+    "detail": "欧州データ保護ボード（EDPB）は、生成AIの文脈におけるデータの匿名化およびウェブスクレイピングに関するガイドライン草案を採択しました。匿名化ガイドラインでは、データが匿名であるかを判断するための3つの基準（レコードの孤立化がないこと、リンクがないこと、推論がないこと）を提示し、コンテキストアプローチと簡易アプローチの2つのフレームワークを提供しています。ウェブスクレイピングガイドラインでは、AIトレーニングにおけるGDPR準拠（目的制限、透明性、データ最小化、適法な根拠など）について解説し、信頼できるソースからのスクレイピング、タイムスタンプの記録、データの検証を推奨しています。また、特別なカテゴリの個人データの処理は原則禁止であり、厳格な例外要件が必要であることを再確認しています。これらのガイドラインは2026年10月30日までパブリックコンサルテーションに付されます。",
+    "so_what": "生成AIの学習データ収集におけるウェブスクレイピングや匿名化処理において、GDPR準拠のための具体的な判断基準や推奨策に対応する必要があります。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "EDPB adopts guidelines on anonymisation and web scraping for generative AI",
+    "publication_date": "2026-07-08",
+    "effective_date": null,
+    "deadline_date": "2026-10-30",
+    "sources": [
+      "https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en"
+    ],
+    "country_anchor": "/country/eu/#axis-risk_classification"
+  }
+]

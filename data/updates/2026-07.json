@@ -25,5 +25,32 @@
       "https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en"
     ],
     "country_anchor": "/country/eu/#axis-risk_classification"
+  },
+  {
+    "id": "2026-07-17-eu-001",
+    "date": "2026-07-17",
+    "country": "eu",
+    "axis": "enforcement_body",
+    "change_type": "other",
+    "title": "EDPB、規制当局間での情報共有を可能にする法的根拠の整備を欧州委員会に要請",
+    "summary": {
+      "what": "異なる権限を持つ規制当局間での情報共有を可能にする法的根拠の整備要請。",
+      "who": "欧州データ保護会議（EDPB）",
+      "when_impact": "提言段階のため、現時点で企業への直接的な影響時期は未定。"
+    },
+    "detail": "欧州データ保護会議（EDPB）は、AIの利用増加等に伴う苦情の複雑化に対応するため、異なる権限を持つ規制当局（データ保護当局やその他のデジタル規制当局）間で機密情報を含む情報を共有できる明確な法的根拠を提案するよう欧州委員会に求めた。これにより、規制をまたぐ効果的な協力と一貫した法執行を目指す。",
+    "so_what": "今後、データ保護とAI規制の当局間で機密情報を含む情報共有が進む可能性があり、企業は複数規制を横断したガバナンス体制の構築が求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Act自体への直接的な変更はないが、AI法とGDPRの執行当局間の連携を強化するための法的枠組みを求めており、今後の執行体制に影響を与える可能性がある。"
+    },
+    "canonical_event": "EDPB calls for legal basis for cross-regulatory information sharing",
+    "publication_date": "2026-07-17",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.edpb.europa.eu/news/edpb-calls-for-legal-basis-for-cross-regulatory-information-sharing_en"
+    ],
+    "country_anchor": "/country/eu/#axis-enforcement_body"
   }
 ]

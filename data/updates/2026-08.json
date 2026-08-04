@@ -1,0 +1,29 @@
+[
+  {
+    "id": "2026-08-04-us-001",
+    "date": "2026-08-04",
+    "country": "us",
+    "axis": "general",
+    "change_type": "other",
+    "title": "NISTとDOE、AI革新加速に向けたGenesis Missionでの連携MOUを締結",
+    "summary": {
+      "what": "Genesis MissionにおけるAI革新加速に向けたMOU締結",
+      "who": "NIST（米国立標準技術研究所）、DOE（米エネルギー省）",
+      "when_impact": "2026年8月4日のMOU締結以降"
+    },
+    "detail": "NISTと米国エネルギー省（DOE）科学局は、ホワイトハウス科学技術政策局（OSTP）が主導する「Genesis Mission」の一環として、AIを活用した科学イノベーションの加速に関するMOUを締結した。製造業の生産性向上や電力網・医療等の重要インフラにおけるサイバー脅威検知・対処に向け、MITREとの官民パートナーシップを通じてAIエージェント開発を推進する2年間のスプリントプロジェクトが含まれる。",
+    "so_what": "製造業や重要インフラ向けAIエージェント等の開発・標準化動向を把握し、米国での技術適用に向けた準備を進める必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "NIST joins National Genesis Mission to accelerate AI innovation",
+    "publication_date": "2026-08-04",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+    ],
+    "country_anchor": "/country/us/#axis-risk_classification"
+  }
+]

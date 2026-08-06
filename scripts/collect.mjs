@@ -69,13 +69,24 @@ function textFromHtmlFragment(fragment) {
 function extractDatedLinks(html, baseUrl, countryHint) {
   const items = [];
   const seen = new Set();
-  const datePattern = /(?:20\d{2}[-/.年]\s?\d{1,2}[-/.月]\s?\d{1,2}日?|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s+20\d{2})/i;
-  const anchorRe = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+  // 米国式(Jul 22, 2026)、日→月式(22 July 2026、豪州・シンガポール等)、dd/mm/yyyy式(ブラジル・欧州圏)を許容
+  const datePattern = /(?:20\d{2}[-/.年]\s?\d{1,2}[-/.月]\s?\d{1,2}日?|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s+20\d{2}|\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*,?\s+20\d{2}|\d{1,2}\/\d{1,2}\/20\d{2})/i;
+  // href前後の属性も個別に捕捉: タイトルが空のアンカー(aria-labelのみ)や、日付が兄弟要素にあるカード型レイアウトに対応するため
+  const anchorRe = /<a\b([^>]*)href=["']([^"']+)["']([^>]*)>([\s\S]*?)<\/a>/gi;
+  const CONTEXT_WINDOW = 400; // アンカー自身に日付が無くても周辺の兄弟要素(日付div等)を見る
   for (const match of html.matchAll(anchorRe)) {
-    const href = match[1];
-    const title = textFromHtmlFragment(match[2]);
-    const context = `${title} ${href}`;
-    if (!title || !datePattern.test(context)) continue;
+    const attrs = `${match[1]} ${match[3]}`;
+    const href = match[2];
+    let title = textFromHtmlFragment(match[4]);
+    if (!title) {
+      const ariaMatch = attrs.match(/aria-label=["']([^"']+)["']/i);
+      if (ariaMatch) title = textFromHtmlFragment(ariaMatch[1]);
+    }
+    if (!title) continue;
+    const start = Math.max(0, match.index - CONTEXT_WINDOW);
+    const end = Math.min(html.length, match.index + match[0].length + CONTEXT_WINDOW);
+    const context = `${title} ${href} ${html.slice(start, end)}`;
+    if (!datePattern.test(context)) continue;
     let absolute;
     try {
       absolute = normalizeUrl(new URL(href, baseUrl).toString());

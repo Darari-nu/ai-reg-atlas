@@ -50,8 +50,10 @@ countries:
     flag: "🇨🇳"
     lat: 39.90
     lng: 116.40
-    official_sources:
-      - { url: "https://www.cac.gov.cn/zcwj/index.htm", type: scrape_hash }
+    official_sources:   # 旧zcwj/index.htmはCMS移行で404のため2026-08に差し替え
+      - { url: "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm", type: scrape_hash }        # CAC 网信发布(速報)
+      - { url: "https://www.cac.gov.cn/wxzw/zcfg/gfxwj/A09370305index_1.htm", type: scrape_hash } # CAC 规范性文件(行政上の規範性文書。個別文書の法的性質は要確認)
+      - { url: "https://www.tc260.org.cn/", type: scrape_hash }                                   # TC260 全国网络安全标准化技术委員会(AI安全標準の先行指標)
     news_queries: ["China AI regulation CAC", "中国 AI 規制"]
   - code: kr
     name_ja: 韓国
@@ -59,8 +61,10 @@ countries:
     flag: "🇰🇷"
     lat: 37.57
     lng: 126.98
-    official_sources:
-      - { url: "https://www.msit.go.kr", type: scrape_hash }
+    official_sources:   # トップページはJS描画SPAで本文が空(ハッシュ固定)のため2026-08に差し替え
+      - { url: "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=94", type: rss }   # MSIT 보도자료(公式RSS)
+      - { url: "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=84", type: rss }   # MSIT 입법행정예고(法令改正手続きRSS)
+      - { url: "https://www.pipc.go.kr/np/cop/bbs/selectBoardList.do?bbsId=BS074&mCode=C020010000", type: scrape_hash }  # 個人情報保護委員会 報道資料(AI学習データ・越境移転等を含む)
     news_queries: ["Korea AI Basic Act", "韓国 AI基本法"]
   - code: sg
     name_ja: シンガポール
@@ -68,9 +72,10 @@ countries:
     flag: "🇸🇬"
     lat: 1.35
     lng: 103.82
-    official_sources:
-      - { url: "https://www.imda.gov.sg/", type: scrape_hash }
-      - { url: "https://www.pdpc.gov.sg/", type: scrape_hash }
+    official_sources:   # トップページはNext.js SPAで本文が空(ハッシュ固定)のため2026-08に差し替え。pdpc.gov.sgは代替ページも常に空だったため削除
+      - { url: "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches", type: scrape_hash }  # IMDA報道発表
+      - { url: "https://www.mddi.gov.sg/newsroom/", type: scrape_hash }                                         # MDDI(IMDA/PDPC上位省庁)ニュースルーム
+      - { url: "https://aiverifyfoundation.sg/news/", type: scrape_hash }                                       # AI Verify Foundation(政府非公式。IMDAとGenAI版Model AI Governance Framework等を共同策定)
     news_queries: ["Singapore AI governance IMDA", "Singapore Model AI Governance Framework"]
   - code: ca
     name_ja: カナダ
@@ -78,8 +83,11 @@ countries:
     flag: "🇨🇦"
     lat: 45.42
     lng: -75.70
-    official_sources:
-      - { url: "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act", type: scrape_hash }
+    official_sources:   # 既存AIDAページは日付付きリンクが0件で実質機能せず、2026-08に3本追加
+      - { url: "https://api.io.canada.ca/io-server/gc/news/en/v2?type=newsreleases&dept=departmentofindustry&sort=publishedDate&orderBy=desc&publishedDate%3E=2021-07-23&pick=50&format=atom", type: rss }  # ISED(産業省)報道発表 公式Atom
+      - { url: "https://www.priv.gc.ca/en/rss/news/", type: rss }   # OPC(連邦プライバシーコミッショナー)ニュース公式RSS
+      - { url: "https://www.priv.gc.ca/en/rss/sc/", type: rss }     # OPC 協議への意見書(AI戦略・法案への当局見解)
+      - { url: "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act", type: scrape_hash }  # 旧Bill C-27/AIDAのアーカイブ(廃案。現行動向はISED/OPCの上2本を参照)
     news_queries: ["Canada AI regulation AIDA", "Canada artificial intelligence law"]
   - code: br
     name_ja: ブラジル
@@ -87,8 +95,11 @@ countries:
     flag: "🇧🇷"
     lat: -15.79
     lng: -47.88
-    official_sources:
-      - { url: "https://www.gov.br/anpd/pt-br", type: scrape_hash }
+    official_sources:   # 旧ANPDトップは日付なしで抽出0件のため2026-08に差し替え
+      - { url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", type: scrape_hash }  # 上院 PL2338議案ドシエ
+      - { url: "https://www.camara.leg.br/noticias/rss/dinamico/CIENCIA-E-TECNOLOGIA", type: rss }         # 下院 科学技術ニュース公式RSS
+    watch_feeds:
+      - { url: "https://www.dataprivacybr.org/feed/", type: rss }   # Data Privacy Brasil(LGPD/ANPD/PL2338専門トラッカー)
     news_queries: ["Brazil AI bill PL 2338", "Brasil inteligência artificial regulação"]
   - code: in
     name_ja: インド
@@ -96,8 +107,12 @@ countries:
     flag: "🇮🇳"
     lat: 28.61
     lng: 77.21
-    official_sources:
-      - { url: "https://www.meity.gov.in/", type: scrape_hash }
+    official_sources:   # meity.gov.in/pib.gov.inはBot UAで403＋SPA化のため2026-08に差し替え。TRAIは通信規制庁でAI直結率は低いが唯一取得できた政府公式RSS。
+                        # MeitY自体のAI Governance Guidelines等は現状取得手段なし(UA変更等の別対応が必要、既知の穴として残す)
+      - { url: "https://www.trai.gov.in/rss.xml", type: rss }
+    watch_feeds:
+      - { url: "https://www.medianama.com/tag/meity/feed/", type: rss }                # MeitY動向専門トラッカー
+      - { url: "https://www.medianama.com/tag/artificial-intelligence/feed/", type: rss } # AI政策トラッカー(インド限定ではなく海外AIニュースも混在。ノイズ多め)
     news_queries: ["India AI regulation MeitY", "India AI governance guidelines"]
   - code: au
     name_ja: 豪州
@@ -105,8 +120,10 @@ countries:
     flag: "🇦🇺"
     lat: -35.28
     lng: 149.13
-    official_sources:
-      - { url: "https://www.industry.gov.au/science-technology-and-innovation/technology/artificial-intelligence", type: scrape_hash }
+    official_sources:   # industry.gov.auはドメイン自体がAU外から到達不能のため2026-08に差し替え
+      - { url: "https://www.oaic.gov.au/news", type: scrape_hash }   # 情報プライバシー委員会(AIガイダンス一次発信元)
+    watch_feeds:
+      - { url: "https://www.pm.gov.au/rss.xml", type: rss }         # 首相府(National AI Plan等の閣僚級発表。ノイズ多めなのでtriage前提)
     news_queries: ["Australia AI mandatory guardrails", "Australia AI regulation"]
   - code: tw
     name_ja: 台湾
@@ -114,8 +131,10 @@ countries:
     flag: "🇹🇼"
     lat: 25.04
     lng: 121.56
-    official_sources:
-      - { url: "https://www.nstc.gov.tw/", type: scrape_hash }
+    official_sources:   # 旧トップページは日付付きリンク0件で実質機能せず、2026-08に差し替え
+      - { url: "https://www.nstc.gov.tw/nstc/rss/newsdata", type: rss }        # NSTC(国家科学及技術委員会)新聞資料 公式RSS
+      - { url: "https://moda.gov.tw/press/press-releases/372", type: scrape_hash }  # 數位發展部(MODA)新聞發布
+      - { url: "https://www.ey.gov.tw/RSS_Content.aspx?ModuleType=3", type: rss }   # 行政院 本院新聞 公式RSS
     news_queries: ["Taiwan AI Basic Act", "台湾 AI基本法"]
   - code: kh
     name_ja: カンボジア
@@ -123,6 +142,9 @@ countries:
     flag: "🇰🇭"
     lat: 11.56
     lng: 104.92
-    official_sources:
-      - { url: "https://mptc.gov.kh/en/", type: scrape_hash }
+    official_sources:   # 2026-08に強化。MPTCは既存(健全)＋公式RSSを追加
+      - { url: "https://mptc.gov.kh/en/feed/", type: rss }    # MPTC(郵電通信省)英語版 公式RSS
+      - { url: "https://mptc.gov.kh/en/", type: scrape_hash } # MPTC既存(取りこぼし防止のバックアップ)
+    watch_feeds:
+      - { url: "https://opendevelopmentcambodia.net/tag/artificial-intelligence-ai/feed/", type: rss }  # Open Development Cambodia AIタグ限定フィード(政府機関ではない現地NGOの集約サイト)
     news_queries: ["Cambodia AI strategy regulation", "Cambodia artificial intelligence policy"]

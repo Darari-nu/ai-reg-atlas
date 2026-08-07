@@ -79,5 +79,32 @@
       "https://www.tc260.org.cn/portal/article/1/0efe73df0f234fa5a4fce766173b5678"
     ],
     "country_anchor": "/country/cn/#axis-risk_classification"
+  },
+  {
+    "id": "2026-07-16-kh-001",
+    "date": "2026-07-16",
+    "country": "kh",
+    "axis": "general",
+    "change_type": "other",
+    "title": "カンボジアが世界人工知能協力機構（WAICO）設立協定に署名",
+    "summary": {
+      "what": "世界人工知能協力機構（WAICO）の設立協定への署名",
+      "who": "カンボジア郵政通信省（Chea Vandeth大臣）",
+      "when_impact": "2026年7月16日の署名時点から"
+    },
+    "detail": "2026年7月16日、カンボジア郵政通信省のChea Vandeth大臣はカンボジア政府の承認を受け、世界人工知能協力機構（WAICO）の設立協定に署名した。本署名には29カ国の代表および国連事務総長等の国際機関代表が参加した。WAICOはAIのイノベーション・開発・展開・利用の促進、国際協力の拡大、AI格差の是正、ならびにAI関連リスクや課題の共同軽減を目的としている。",
+    "so_what": "国際協力やAI格差是正を目的とした枠組みへの参加であり、企業に対する直接的な法的義務や規制の変更は直ちには生じない。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "国際協力枠組みへの署名に関する報道であり、ハードローによる義務付けを行うEU AI Act基準と比較した差分変更はない。"
+    },
+    "canonical_event": "Cambodia signs agreement on the establishment of the World Artificial Intelligence Cooperation Organization",
+    "publication_date": "2026-07-16",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://mptc.gov.kh/en/2026/07/minister-chea-vandeth-represents-cambodia-as-a-signatory-to-the-agreement-on-the-establishment-of-the-world-artificial-intelligence-cooperation-organization/"
+    ],
+    "country_anchor": "/country/kh/#axis-risk_classification"
   }
 ]

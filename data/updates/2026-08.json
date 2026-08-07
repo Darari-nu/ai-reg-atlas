@@ -106,5 +106,86 @@
       "https://www.camara.leg.br/noticias/1295008-deputado-defende-projeto-que-regulamenta-venda-e-uso-de-oculos-inteligentes-assista-a-entrevista"
     ],
     "country_anchor": "/country/br/#axis-prohibited_uses"
+  },
+  {
+    "id": "2026-08-07-br-001",
+    "date": "2026-08-07",
+    "country": "br",
+    "axis": "penalties",
+    "change_type": "new_regulation",
+    "title": "ブラジルで児童・青少年のデジタル性暴力およびAI・ディープフェイク悪用に対する厳罰化法（Lei 15.487/26）が成立",
+    "summary": {
+      "what": "AIやディープフェイクを悪用した児童性暴力犯罪等の厳罰化および凶悪犯罪指定",
+      "who": "ブラジルでAIサービスを提供する事業者およびユーザー",
+      "when_impact": "2026年8月7日の官報公布日より適用"
+    },
+    "detail": "ブラジルのルーラ大統領は、児童および青少年に対するデジタル性暴力犯罪を厳罰化する法律（Lei 15.487/26）に署名し、2026年8月7日付の官報で公布された。本法は児童生徒に対する性暴力関連犯罪を凶悪犯罪（crimes hediondos）に指定するとともに、犯罪の実行や身元隠蔽にAI、ディープフェイク、偽プロフィール等を使用した際のカジュー処罰を規定している。また、公開デジタル環境での巡回捜査権限や緊急時におけるデータ請求権限を捜査機関に与えている。",
+    "so_what": "AI生成コンテンツやディープフェイク悪用に対する刑事罰が加重されるため、サービス提供者には悪用防止機能や監視体制の強化が求められます。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本法はAI包括規制法案（PL 2338/2023）ではなく独立した刑法改正法であり、EU AI Actの規制枠組みとの直接的な差分修正には該当しない。"
+    },
+    "canonical_event": "Brazilian law increases penalties for digital sexual violence and reinforces AI misuse provisions",
+    "publication_date": "2026-08-07",
+    "effective_date": "2026-08-07",
+    "deadline_date": null,
+    "sources": [
+      "https://www.camara.leg.br/noticias/1295754-lei-aumenta-penas-para-violencia-sexual-digital-contra-criancas-e-adolescentes-e-endurece-punicoes"
+    ],
+    "country_anchor": "/country/br/#axis-penalties"
+  },
+  {
+    "id": "2026-08-07-br-002",
+    "date": "2026-08-07",
+    "country": "br",
+    "axis": "general",
+    "change_type": "new_regulation",
+    "title": "ブラジル下院にデジタル経済枠組み法案（PL 5960/25）が提出、ハイリスクAI認証等を規定",
+    "summary": {
+      "what": "ブラジル下院でデジタル経済育成とAI利用ルールを定める法案PL 5960/25の審議が開始",
+      "who": "Jadyel Alencar下院議員／ブラジル下院",
+      "when_impact": "法案可決・施行後"
+    },
+    "detail": "ブラジル下院で審議が始まったPL 5960/25は、デジタル経済育成ファンドの創設やデータ公開に加え、AI利用におけるアルゴリズム透明性、自動応答識別、著作権保護対象コンテンツの利用に対する適正な補償・ライセンス規定を提示。また、ハイリスクAIシステムに対して義務的認証を行う「国家AI認証システム」の整備や、国家AI安全・イノベーション研究所の設立、警告・過料・事業停止などの行政罰を定めている。",
+    "so_what": "ブラジル市場でAIを展開する企業は、ハイリスクAIシステム向け国家認証の取得や著作権対価還元メカニズムへの対応が必要になる見込み。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actが厳格なリスク階層に基づく禁止・義務規定を中心に据えるのに対し、本法案は著作権者への対価還元制度や国家認証システムによる品質・安全証明、デジタル経済育成ファンドなど、産業振興と権利者保護を組み合わせた独自の枠組み（unique）を含む点に特徴がある。"
+    },
+    "canonical_event": "Brazilian bill proposed to define Digital Economy Framework and AI rules",
+    "publication_date": "2026-08-07",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.camara.leg.br/noticias/1295796-projeto-cria-marco-da-economia-digital-e-define-regras-para-uso-de-ia-no-brasil"
+    ],
+    "country_anchor": "/country/br/#axis-risk_classification"
+  },
+  {
+    "id": "2026-08-07-eu-001",
+    "date": "2026-08-07",
+    "country": "eu",
+    "axis": "risk_classification",
+    "change_type": "other",
+    "title": "EU AI Actにおけるセラピー・精神的サポートAIの規制適用に関するガイド",
+    "summary": {
+      "what": "セラピー・精神的サポート用AIおよびGPAIモデルへのEU AI Act適用整理ガイドの公表",
+      "who": "セラピー用AIおよびGPAIモデルの提供者・開発事業者",
+      "when_impact": "既に一部適用済、透明性義務および欧州委員会の執行政権は2026年8月2日より適用"
+    },
+    "detail": "2026年8月7日、FLIはセラピーおよび感情的サポート目的で利用されるAIシステムならびにGPAIモデルへのEU AI Act適用に関する解説を公表した。利用者の脆弱性を悪用して著しい危害を与えるAIは第5条(1)(b)により全面禁止される。医療機器規制（MDR）に基づき第三者適合性評価を要する精神疾患等の管理・治療AIはハイリスクに分類され（2028年8月2日適用）、直接対話するAIシステムには第50条の透明性開示義務が課される（2026年8月2日適用）。またシステミックリスクを持つGPAIモデルの提供者はメンタルヘルスへの危害防止措置や重大インシデント報告が義務付けられる。",
+    "so_what": "メンタルヘルスやセラピー目的のAIを提供する企業は、禁止行為の不該当確認、医療機器分類によるハイリスク義務、透明性表示、GPAIにおける精神危害インシデント報告の体制整備が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "EU AI Act overview and obligations for GPAI systems used for therapy and emotional support",
+    "publication_date": "2026-08-07",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://artificialintelligenceact.eu/ai-therapy-under-the-eu-ai-act/"
+    ],
+    "country_anchor": "/country/eu/#axis-risk_classification"
   }
 ]

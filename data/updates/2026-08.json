@@ -25,5 +25,86 @@
       "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
     ],
     "country_anchor": "/country/us/#axis-risk_classification"
+  },
+  {
+    "id": "2026-08-05-sg-001",
+    "date": "2026-08-05",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "title": "シンガポールMDDI、自律型AI（Agentic AI）のガバナンス枠組み等に関する議会質問に回答",
+    "summary": {
+      "what": "自律型AIに関するガバナンス枠組みおよび規制方針についての答弁",
+      "who": "シンガポールで自律型AIシステムを開発・導入する事業者",
+      "when_impact": "2026年1月公表の枠組みに基づき継続的に対応"
+    },
+    "detail": "シンガポール情報通信省（MDDI）は2026年8月5日の議会答弁において、自律型AI（Agentic AI）のガバナンス方針に関する質問に回答した。2026年1月に公表された「Model Governance Framework for Agentic AI」で開発者向けガイダンスを示しており、自律性やリスクに応じたリスク管理措置や人間の説明責任確保が必要である旨を強調した。高リスク運用の義務化検討については過去の回答を参照するよう言及した。",
+    "so_what": "シンガポールで自律型AIを展開する企業は、システムの自律性とリスクレベルに応じた人間による説明責任とリスク管理体制の構築が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "シンガポールは自律型AIに対してもボランタリーなModel Governance Frameworkによるソフトローアプローチを維持しており、包括的な法的義務を課すEU AI Actと比較して緩やかな規制環境（looser）を保っている。"
+    },
+    "canonical_event": "MDDI response on extending Model AI Governance Framework and AI Verify to Agentic AI",
+    "publication_date": "2026-08-05",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-extending-model-ai-governance-framework-and-ai-verify-to-cover-agentic-ai-systems/"
+    ],
+    "country_anchor": "/country/sg/#axis-risk_classification"
+  },
+  {
+    "id": "2026-08-05-sg-002",
+    "date": "2026-08-05",
+    "country": "sg",
+    "axis": "transparency",
+    "change_type": "other",
+    "title": "シンガポール政府、AI生成コンテンツのラベリング義務化について国際動向と技術標準を注視し評価する方針を表明",
+    "summary": {
+      "what": "AI生成コンテンツの義務的ラベリング導入に関する政府見解",
+      "who": "シンガポールデジタル開発情報省（MDDI）",
+      "when_impact": "即時の義務化は見送り、継続的なモニタリング・評価を実施"
+    },
+    "detail": "シンガポール国会において、EU AI Act第50条に類似したAI生成コンテンツへの義務的ラベリング導入の必要性について問われたのに対し、MDDIは既存のオンライン安全に関する行動規範やGenAIチャットボット向け透明性ガイドライン（自主的）に言及した。その上で、ウォーターマーキングやデジタル由来情報等の技術標準の成熟度や国際動向を注視し、義務化すべきか否かを今後も評価していくと回答した。",
+    "so_what": "シンガポールではEU AI ActのようなAI生成コンテンツのラベリング義務化は即時導入されず、既存の自主ガイドラインやオンライン安全規範での運用が継続されます。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Act第50条が合成コンテンツの表示・ラベリングを義務化しているのに対し、シンガポールは現時点で自主的なガイドライン等のソフトローを中心とした運用にとどまり、義務化の可否については継続検討の立場をとっている。"
+    },
+    "canonical_event": "MDDI response on mandatory labelling for AI-generated and digitally manipulated content",
+    "publication_date": "2026-08-05",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-mandatory-labelling-for-ai-generated-and-digitally-manipulated-content-to-align-with-code-of-practice-for-online-safety-and-genai-transparency-guidelines/"
+    ],
+    "country_anchor": "/country/sg/#axis-transparency"
+  },
+  {
+    "id": "2026-08-04-br-001",
+    "date": "2026-08-04",
+    "country": "br",
+    "axis": "prohibited_uses",
+    "change_type": "new_regulation",
+    "title": "ブラジル下院、AI搭載スマートグラスの使用および販売を規制する法案（PL 19/26）を審議",
+    "summary": {
+      "what": "AI搭載スマートグラスの録画明示義務や顔認識・特定場所での使用禁止を規定する法案の審議",
+      "who": "ブラジル下院およびAI搭載ウェアラブル機器の製造・販売事業者",
+      "when_impact": "法案成立および施行後"
+    },
+    "detail": "ブラジル下院において、AIおよび視覚・音声センサーを搭載したスマートグラスの販売と使用を規制する法案（PL 19/26）が審議されています。同法案は交通委員会で承認され、今後は科学技術委員会および憲法司法委員会で審議される予定です。法案では、録画状態を示す視覚または音響シグナルの常時表示を要求し、デフォルトでの顔認識や生体識別を禁止するほか、トイレ、病院、教室、宗教施設などプライバシーが求められる場所での使用禁止を規定しています。",
+    "so_what": "ブラジル市場向けにAI搭載スマートグラス等のウェアラブル端末を提供する企業は、録画表示機能の実装や顔認識機能の制限など、製品仕様および利用ルールの見直しが必要となる可能性があります。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actがリスク分類や透明性表示を包括的に規定しているのに対し、ブラジルの本法案（PL 19/26）はAI搭載スマートグラスという特定のハードウェア製品に対し、録画表示の物理的・機能的要件、顔認識のデフォルト禁止、特定施設での使用制限など、より具体的かつ個別の製品レベルの規制を定めている点が特徴的です（unique/stricter）。"
+    },
+    "canonical_event": "Brazilian bill proposed to regulate smart glasses and data protection compliance",
+    "publication_date": "2026-08-04",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.camara.leg.br/noticias/1295008-deputado-defende-projeto-que-regulamenta-venda-e-uso-de-oculos-inteligentes-assista-a-entrevista"
+    ],
+    "country_anchor": "/country/br/#axis-prohibited_uses"
   }
 ]

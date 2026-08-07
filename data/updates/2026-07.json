@@ -52,5 +52,32 @@
       "https://www.edpb.europa.eu/news/edpb-calls-for-legal-basis-for-cross-regulatory-information-sharing_en"
     ],
     "country_anchor": "/country/eu/#axis-enforcement_body"
+  },
+  {
+    "id": "2026-07-21-cn-001",
+    "date": "2026-07-21",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "中国TC260によるAIコード生成安全要求や未成年者保護等に関するAI安全国家標準計画およびガイドライン草案の公表",
+    "summary": {
+      "what": "AIコード生成安全要求等の国家標準計画下達および教育・医療向けAI安全ガイドライン草案等の意見募集",
+      "who": "TC260、AIコード生成サービス事業者、教育・医療分野等でAIを提供する事業者",
+      "when_impact": "2026年6月より順次策定および意見募集手続きを開始"
+    },
+    "detail": "2026年6月、中国の全国ネットワーク安全標準化技術委員会（TC260）は『ネットワーク安全標準化工作月報（2026年第6期）』を公表した。推奨性国家標準計画として『ネットワーク安全技術 人工知能コード生成サービス安全要求』や『ネットワーク安全技術 人工知能安全能力成熟度評価方法』などの3項目が下達された。また、推奨性国家標準草案『ネットワーク安全技術 人工知能技術関連未成年者応用安全指南』の意見募集（60日間）、および標準実践指南草案『人工知能応用安全指引 教育業界』『人工知能応用安全指引 衛生健康』の意見募集が実施された。",
+    "so_what": "中国でAIサービスや特定分野向けAIを提供する企業は、技術・分野別の詳細な国家標準やガイドラインの策定動向に沿った適合評価とガバナンス構築が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Actが横断的なリスク分類に基づく法的義務を課すのに対し、中国はセクター別・技術別の国家標準および実践指南を個別に策定・運用するアプローチをとっている。"
+    },
+    "canonical_event": "Cybersecurity standardization monthly report published",
+    "publication_date": "2026-07-21",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.tc260.org.cn/portal/article/1/0efe73df0f234fa5a4fce766173b5678"
+    ],
+    "country_anchor": "/country/cn/#axis-risk_classification"
   }
 ]

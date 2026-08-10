@@ -61,6 +61,11 @@
         "date": "2026-01-22",
         "event": "AI基本法施行（施行令と同時）",
         "source": "https://www.msit.go.kr/"
+      },
+      {
+        "date": "2026-08-06",
+        "event": "AI時代の個人정보制度革新に向けた意見募集を開始",
+        "source": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12361"
       }
     ]
   },
@@ -104,6 +109,6 @@
       }
     ]
   },
-  "last_checked": "2026-08-07T21:45:58Z",
-  "last_changed": "2026-01-22T00:00:00Z"
+  "last_checked": "2026-08-10T21:49:49Z",
+  "last_changed": "2026-08-10T21:49:49Z"
 }

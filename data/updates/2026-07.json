@@ -106,5 +106,59 @@
       "https://mptc.gov.kh/en/2026/07/minister-chea-vandeth-represents-cambodia-as-a-signatory-to-the-agreement-on-the-establishment-of-the-world-artificial-intelligence-cooperation-organization/"
     ],
     "country_anchor": "/country/kh/#axis-risk_classification"
+  },
+  {
+    "id": "2026-07-23-kr-001",
+    "date": "2026-07-23",
+    "country": "kr",
+    "axis": "penalties",
+    "change_type": "other",
+    "title": "韓国個人情報保護委員会、TikTokとAppleに計105億ウォン超の過徴金等処分",
+    "summary": {
+      "what": "TikTokの行動情報収集やAppleのSiriデータ利用等に対する制裁決定",
+      "who": "韓国個人情報保護委員会（PIPC）、TikTok、Apple",
+      "when_impact": "2026年7月22日の全体会議での決定以降"
+    },
+    "detail": "韓国の個人情報保護委員会は、2026年7月22日の第14回全体会議において、適法な根拠なく利用者の個人情報やSiri等のデータを収集・利用し国外出送したTikTokおよびAppleに対し、総額105億5,800万ウォンの過徴金算定および是正・公表命令を決定した。",
+    "so_what": "AIサービスの改善や行動追跡に利用するデータについて、明示的な同意取得と国外出送手続の徹底が求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea PIPC sanctions TikTok and Apple for unlawful personal information collection",
+    "publication_date": "2026-07-23",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12330"
+    ],
+    "country_anchor": "/country/kr/#axis-penalties"
+  },
+  {
+    "id": "2026-07-21-cn-002",
+    "date": "2026-07-21",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "中国TC260、AIコード生成・未成年者保護・分野別（教育・医療）AI安全標準案を公開",
+    "summary": {
+      "what": "AIコード生成や未成年者保護、教育・医療向けAI安全指針等の標準化文書案を提示",
+      "who": "全国ネットワーク安全標準化技術委員会（TC260）、AI事業者",
+      "when_impact": "2026年6月以降順次意見募集および策定を推進"
+    },
+    "detail": "全国ネットワーク安全標準化技術委員会（TC260）は2026年6月の標準化月報にて、AI関連の標準計画および各種指針案を発表した。推薦性国家標準計画として『AI安全能力成熟度評価方法』『AIコード生成サービス安全要求』などを下達。さらに国家標準案『AI技術における未成年者利用安全ガイドライン』や、実践指南案『AI応用安全ガイドライン 教育分野』『AI応用安全ガイドライン 衛生健康』などのパブリックコメントを実施した。",
+    "so_what": "中国市場でAIコード生成や教育・医療等の特定分野向けAIを提供する事業者は、今後の技術標準・ガイドラインへの適応準備が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Actとの明確な相違点の変化はなく、分野別標準化の具体化が進む動向であるため差分影響なし。"
+    },
+    "canonical_event": "China cybersecurity standardization monthly report published",
+    "publication_date": "2026-07-21",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.tc260.org.cn/portal/article/1/0efe73df0f234fa5a4fce766173b5678"
+    ],
+    "country_anchor": "/country/cn/#axis-risk_classification"
   }
 ]

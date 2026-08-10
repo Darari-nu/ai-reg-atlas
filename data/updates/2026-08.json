@@ -187,5 +187,59 @@
       "https://artificialintelligenceact.eu/ai-therapy-under-the-eu-ai-act/"
     ],
     "country_anchor": "/country/eu/#axis-risk_classification"
+  },
+  {
+    "id": "2026-08-04-br-002",
+    "date": "2026-08-04",
+    "country": "br",
+    "axis": "prohibited_uses",
+    "change_type": "other",
+    "title": "ブラジルANPD、パラナ州公立学校での出席管理用顔認識システムの即時停止を命令",
+    "summary": {
+      "what": "公立学校での出席管理目的における顔認識データ処理の即時停止命令",
+      "who": "ブラジル国家データ保護庁（ANPD）",
+      "when_impact": "2026年8月4日の決定発出より即時適用"
+    },
+    "detail": "2026年8月4日、ブラジル国家データ保護庁（ANPD）の監察局は決定Despacho Decisório nº 2/2026/SFIを発出し、パラナ州の公立学校で運用されていた出席管理システムにおける生徒の顔認識（生体）データ処理を即時停止するよう命じた。ANPDは手動確認等の代替手段が存在する中で生体データを一律収集することは必要性・比例性の原則を満たさず、LGPD第11条および第14条（子の最善の利益）に違反すると判断した。",
+    "so_what": "学校や事業所での安易な顔認識AI・生体認証導入は必要性・比例性の観点から行政処分を受けるリスクが高いため代替手段の検証が必須となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Brazil ANPD suspends facial recognition in public schools in Paraná",
+    "publication_date": "2026-08-04",
+    "effective_date": "2026-08-04",
+    "deadline_date": null,
+    "sources": [
+      "https://www.dataprivacybr.org/anpd-suspende-o-uso-de-reconhecimento-facial-em-escolas-publicas-do-parana/"
+    ],
+    "country_anchor": "/country/br/#axis-prohibited_uses"
+  },
+  {
+    "id": "2026-08-05-kr-001",
+    "date": "2026-08-05",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "title": "韓国PIPC、AI時代の個人情報制度革新に向けた国民意見募集を開始",
+    "summary": {
+      "what": "AI環境に対応した個人情報保護制度の革新に向けた意見募集の実施",
+      "who": "韓国個人情報保護委員会（PIPC）",
+      "when_impact": "2026年8月6日〜8月31日に提案受付、年内に革新方向を発表"
+    },
+    "detail": "韓国の個人情報保護委員会（PIPC）は2026年7月30日に「個人情報制度革新TF」を構成し、8月6日から31日までAI環境に対応した個人情報制度革新のための国民意見募集を実施する。形式化した個人情報同意手続き、AIエージェントの利用、実物AI（フィジカルAI）などの新技術環境における法的課題を検証し、収集した意見を基に年内に制度革新の方向性を公表する予定である。",
+    "so_what": "韓国でAI関連サービスを展開する企業は、同意依存規制の見直し等を含む将来の個人情報保護法制の改定動向を注視する必要があります。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本件は意見募集および方針検討の着手発表であり、現時点でEU AI Actとの直接的な規制の差分変更を生じさせるものではない。"
+    },
+    "canonical_event": "South Korea personal information system innovation in the AI era",
+    "publication_date": "2026-08-05",
+    "effective_date": null,
+    "deadline_date": "2026-08-31",
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12361"
+    ],
+    "country_anchor": "/country/kr/#axis-risk_classification"
   }
 ]

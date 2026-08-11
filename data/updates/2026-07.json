@@ -160,5 +160,32 @@
       "https://www.tc260.org.cn/portal/article/1/0efe73df0f234fa5a4fce766173b5678"
     ],
     "country_anchor": "/country/cn/#axis-risk_classification"
+  },
+  {
+    "id": "2026-07-22-kr-001",
+    "date": "2026-07-22",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "韓国個人情報保護委員会、「公共AXプライバシー保護ガイドライン」を公開",
+    "summary": {
+      "what": "公共部門のAI転換（AX）に向けたプライバシー保護ガイドラインの公表",
+      "who": "韓国個人情報保護委員会（PIPC）および行政・公共機関",
+      "when_impact": "2026年7月23日の公開時より"
+    },
+    "detail": "韓国の個人情報保護委員会（PIPC）は、公共部門のAI転換（AX）においてプライバシーを保護し安全な活用を推進するための「公共AXプライバシー保護ガイドライン」を公表した。本ガイドラインでは、事前設計・開発構築・適用管理の3段階における10大核心点検項目を整理するとともに、活用方式とリスクに応じて「基礎業務補助」「情報連携・分析・推薦」「選別・判断」の3タイプに区分し、差等化された安全対策を規定している。",
+    "so_what": "韓国の公共分野向けにAIシステムを提供する企業は、活用タイプに応じた個人情報安全措置や10大点検項目への適合が求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "韓国国内の公共部門における個人情報保護法遵守に関する実務ガイドラインであり、EU AI Actの規制構造への直接的な影響はない。"
+    },
+    "canonical_event": "South Korea public AI transition supported by privacy protection",
+    "publication_date": "2026-07-22",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12307"
+    ],
+    "country_anchor": "/country/kr/#axis-risk_classification"
   }
 ]

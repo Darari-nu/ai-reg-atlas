@@ -187,5 +187,32 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12307"
     ],
     "country_anchor": "/country/kr/#axis-risk_classification"
+  },
+  {
+    "id": "2026-07-23-kr-002",
+    "date": "2026-07-23",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "韓国政府、エージェンティックAIイニシアティブおよび公共AXプライバシー案内書を審議・議決",
+    "summary": {
+      "what": "エージェントAIの安全性指針策定や公共AXプライバシー案内書を決定。",
+      "who": "韓国政府（過企情通部・個人情報保護委員会等）およびAI開発・導入事業者",
+      "when_impact": "2026年7月23日の長官会議での議決以降、順次推進の見込み。"
+    },
+    "detail": "韓国政府は第11回科学技術関係長官会議を開催し、「エージェンティックAIイニシアティブ」および「公共AXプライバシー保護案内書」等を審議・議決した。エージェントAIの自律的実行に伴うリスクに対応するため、安全・信頼ガイドラインの策定、評価・検証基盤の構築、責任所在の検討を推進する。また、公共機関のAI転換（AX）における10大点検事項（適法根拠の確認、プライバシー設計、安全措置、透明性確保等）やリスク水準に応じた点検基準を提示した。",
+    "so_what": "自律型エージェントAIを開発・提供する事業者や公共向けAXソリューションを扱う企業は、策定予定の安全・信頼性ガイドラインや個人情報点検基準への適合準備が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "韓国国内におけるエージェント型AI施策および公共AIプライバシー指針の推進であり、EU AI Actとの規制アプローチ比較における差分影響はない。"
+    },
+    "canonical_event": "South Korea strategy for AI ecosystem development and growth",
+    "publication_date": "2026-07-23",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12308"
+    ],
+    "country_anchor": "/country/kr/#axis-risk_classification"
   }
 ]

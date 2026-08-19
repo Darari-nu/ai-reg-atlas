@@ -42,6 +42,26 @@ async function fetchWithTimeout(url) {
   }
 }
 
+// 日本の官公庁サイトはShift_JIS配信が残っているため、HTTPヘッダ→<meta charset>の順で検出しデコードする（§8-2: 生HTMLは保存せず即テキスト化）
+function detectCharset(contentTypeHeader, headBytes) {
+  const headerMatch = /charset=([\w-]+)/i.exec(contentTypeHeader || '');
+  if (headerMatch) return headerMatch[1].toLowerCase();
+  const headSample = Buffer.from(headBytes).toString('latin1');
+  const metaMatch = /<meta[^>]+charset=["']?([\w-]+)/i.exec(headSample);
+  if (metaMatch) return metaMatch[1].toLowerCase();
+  return 'utf-8';
+}
+
+async function decodeHtmlResponse(res) {
+  const buf = Buffer.from(await res.arrayBuffer());
+  const charset = detectCharset(res.headers.get('content-type'), buf.subarray(0, 2000));
+  try {
+    return new TextDecoder(charset).decode(buf);
+  } catch {
+    return new TextDecoder('utf-8').decode(buf); // 未知のcharset値はUTF-8にフォールバック
+  }
+}
+
 function newsRssUrl(query) {
   const q = encodeURIComponent(query);
   return `https://news.google.com/rss/search?q=${q}&hl=ja&gl=JP&ceid=JP:ja`;
@@ -135,7 +155,7 @@ async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
 async function collectScrapeHash(url, countryHint, hashes) {
   const res = await fetchWithTimeout(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const html = await res.text();
+  const html = await decodeHtmlResponse(res);
   // 正規化: script/style除去 → タグ除去 → 空白圧縮（生HTMLは保存しない §4-1）
   const text = stripHtml(html);
   const hash = crypto.createHash('sha256').update(text).digest('hex');

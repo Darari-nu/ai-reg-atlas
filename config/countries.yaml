@@ -18,9 +18,9 @@ countries:
     flag: "🇯🇵"
     lat: 36.20
     lng: 138.25
-    official_sources:
+    official_sources:   # 2026-08-19: index.htmlのhashが「AI基本計画（第Ⅱ期）」7/14改定を検知した直後(旧date-extractionバグで抽出失敗)のまま固着し、8/6のバグ修正後も再抽出されていなかった。data/hashes.jsonの当該キーを無効化して再抽出を強制済み
       - { url: "https://www8.cao.go.jp/cstp/ai/index.html", type: scrape_hash }
-      - { url: "https://www.soumu.go.jp/menu_news/s-news/index.html", type: scrape_hash }
+      - { url: "https://www.soumu.go.jp/menu_news/s-news/index.html", type: scrape_hash } # 2026-08-19判明(未修正): ページがShift_JIS配信でcollect.mjsがUTF-8決め打ちでres.text()しているため抽出タイトルが文字化けする。件数検知(hash差分)自体は機能するが、抽出結果の可読性に影響。別issueとして要対応
     watch_feeds:
       - { url: "https://www.soumu.go.jp/news.rdf", type: rss }             # 総務省 報道資料(公式RSS)
     news_queries: ["日本 AI 規制 法律", "AI推進法"]
@@ -50,7 +50,7 @@ countries:
     flag: "🇨🇳"
     lat: 39.90
     lng: 116.40
-    official_sources:   # 旧zcwj/index.htmはCMS移行で404のため2026-08に差し替え
+    official_sources:   # 旧zcwj/index.htmはCMS移行で404のため2026-08に差し替え。2026-08-19時点: 下2本はローカルからは200だがGitHub Actions上で連日fetch failed→CI実行環境(GH Actionsランナー)のIPが政府サイト側でブロックされている疑い濃厚(2026-08-06の差し替え後もまだ発生=URL個別の問題ではなく構造的)。tc260.org.cnが実質バックアップとして機能中
       - { url: "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm", type: scrape_hash }        # CAC 网信发布(速報)
       - { url: "https://www.cac.gov.cn/wxzw/zcfg/gfxwj/A09370305index_1.htm", type: scrape_hash } # CAC 规范性文件(行政上の規範性文書。個別文書の法的性質は要確認)
       - { url: "https://www.tc260.org.cn/", type: scrape_hash }                                   # TC260 全国网络安全标准化技术委員会(AI安全標準の先行指標)
@@ -61,7 +61,7 @@ countries:
     flag: "🇰🇷"
     lat: 37.57
     lng: 126.98
-    official_sources:   # トップページはJS描画SPAで本文が空(ハッシュ固定)のため2026-08に差し替え
+    official_sources:   # トップページはJS描画SPAで本文が空(ハッシュ固定)のため2026-08に差し替え。2026-08-19時点: 3本ともローカルからは200だがGitHub Actions上で連日timeout/fetch failed→CI環境IPブロック疑い(同上、8/6差し替え後もまだ発生)。韓国は現状official_sourcesが3本とも実質死んでおりnews_queries頼み
       - { url: "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=94", type: rss }   # MSIT 보도자료(公式RSS)
       - { url: "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=84", type: rss }   # MSIT 입법행정예고(法令改正手続きRSS)
       - { url: "https://www.pipc.go.kr/np/cop/bbs/selectBoardList.do?bbsId=BS074&mCode=C020010000", type: scrape_hash }  # 個人情報保護委員会 報道資料(AI学習データ・越境移転等を含む)
@@ -97,7 +97,7 @@ countries:
     lng: -47.88
     official_sources:   # 旧ANPDトップは日付なしで抽出0件のため2026-08に差し替え
       - { url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", type: scrape_hash }  # 上院 PL2338議案ドシエ
-      - { url: "https://www.camara.leg.br/noticias/rss/dinamico/CIENCIA-E-TECNOLOGIA", type: rss }         # 下院 科学技術ニュース公式RSS
+      - { url: "https://www.camara.leg.br/noticias/rss/dinamico/CIENCIA-E-TECNOLOGIA", type: rss }         # 下院 科学技術ニュース公式RSS。2026-08-19時点: ローカルからは200だがGitHub Actions上で連日timeout→CI環境IPブロック疑い(同上)。上院ソース+watch_feedsは生存中
     watch_feeds:
       - { url: "https://www.dataprivacybr.org/feed/", type: rss }   # Data Privacy Brasil(LGPD/ANPD/PL2338専門トラッカー)
     news_queries: ["Brazil AI bill PL 2338", "Brasil inteligência artificial regulação"]
@@ -110,7 +110,7 @@ countries:
     official_sources:   # meity.gov.in/pib.gov.inはBot UAで403＋SPA化のため2026-08に差し替え。TRAIは通信規制庁でAI直結率は低いが唯一取得できた政府公式RSS。
                         # MeitY自体のAI Governance Guidelines等は現状取得手段なし(UA変更等の別対応が必要、既知の穴として残す)
       - { url: "https://www.trai.gov.in/rss.xml", type: rss }
-    watch_feeds:
+    watch_feeds:   # 2026-08-19時点: 下2本はローカルからは200だがGitHub Actions上で連日403→CI環境IPブロック疑い(同上)
       - { url: "https://www.medianama.com/tag/meity/feed/", type: rss }                # MeitY動向専門トラッカー
       - { url: "https://www.medianama.com/tag/artificial-intelligence/feed/", type: rss } # AI政策トラッカー(インド限定ではなく海外AIニュースも混在。ノイズ多め)
     news_queries: ["India AI regulation MeitY", "India AI governance guidelines"]

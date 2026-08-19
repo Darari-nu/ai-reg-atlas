@@ -67,6 +67,11 @@
         "date": "2025-09-01",
         "event": "AI戦略本部設置・AI基本計画の策定作業開始",
         "source": "https://www8.cao.go.jp/cstp/ai/index.html"
+      },
+      {
+        "date": "2026-07-14",
+        "event": "人工知能基本計画の閣議決定",
+        "source": "https://www8.cao.go.jp/cstp/ai/ai_plan/ai_plan.html"
       }
     ]
   },
@@ -114,6 +119,6 @@
       }
     ]
   },
-  "last_checked": "2026-08-18T21:31:39Z",
-  "last_changed": "2025-09-01T00:00:00Z"
+  "last_checked": "2026-08-19T19:49:18Z",
+  "last_changed": "2026-08-19T19:49:18Z"
 }

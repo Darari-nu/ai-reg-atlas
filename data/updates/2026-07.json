@@ -214,5 +214,32 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12308"
     ],
     "country_anchor": "/country/kr/#axis-risk_classification"
+  },
+  {
+    "id": "2026-07-14-jp-001",
+    "date": "2026-07-14",
+    "country": "jp",
+    "axis": "general",
+    "change_type": "other",
+    "title": "内閣府、人工知能基本計画の閣議決定・資料を公表",
+    "summary": {
+      "what": "人工知能基本計画の閣議決定および本文・概要の公表",
+      "who": "日本政府（内閣府）、AI研究開発・活用事業者",
+      "when_impact": "2026年7月14日閣議決定"
+    },
+    "detail": "内閣府は、令和8年（2026年）7月14日に閣議決定された「人工知能基本計画」の本文および概要資料（英訳含む）を公表した。",
+    "so_what": "政府の新たなAI基本計画が決定されたため、今後の国の施策方針およびガイドライン等の動向確認が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "基本計画の公表であり、EU AI Actとの法規制差分（ソフトロー中心の枠組み）に直接的な変更は確認されない。"
+    },
+    "canonical_event": "Japan Artificial Intelligence Basic Plan Phase 2 adopted",
+    "publication_date": "2026-07-14",
+    "effective_date": "2026-07-14",
+    "deadline_date": null,
+    "sources": [
+      "https://www8.cao.go.jp/cstp/ai/ai_plan/ai_plan.html"
+    ],
+    "country_anchor": "/country/jp/#axis-risk_classification"
   }
 ]

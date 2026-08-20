@@ -241,5 +241,32 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12361"
     ],
     "country_anchor": "/country/kr/#axis-risk_classification"
+  },
+  {
+    "id": "2026-08-20-cn-001",
+    "date": "2026-08-20",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "中国TC260、コックピットデータ処理安全要件の実践指針（意見募集稿）を公開",
+    "summary": {
+      "what": "コックピットデータ処理安全要件実践指針案の意見公募開始",
+      "who": "車載コックピットデータを処理する関連事業者",
+      "when_impact": "2026年9月3日まで意見公募を実施"
+    },
+    "detail": "全国サイバーセキュリティ標準化技術委員会（TC260）秘書処は、コックピットデータ処理者の活動規範化および個人情報主体の権益保護を目的とした『サイバーセキュリティ標準実践指針——座席・コックピットデータ処理安全要件（征求意見稿）』を公表し、2026年9月3日までの意見公募を開始した。",
+    "so_what": "車載スマートキャビン等の車載データやセンシングデータを扱う事業者は、指針案のセキュリティ・個人情報保護要件の確認と対応準備が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "車載・コックピット分野に特化したセクター別技術指針（実践指針案）であり、EU AI Actとの基本構造上の差異変更はない。"
+    },
+    "canonical_event": "China public comment on smart cabin data processing security requirements",
+    "publication_date": "2026-08-20",
+    "effective_date": null,
+    "deadline_date": "2026-09-03",
+    "sources": [
+      "https://www.tc260.org.cn/portal/article/2/66ab0e249d404f0583bc420b6106f899"
+    ],
+    "country_anchor": "/country/cn/#axis-risk_classification"
   }
 ]

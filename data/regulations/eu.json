@@ -7,10 +7,11 @@
   "axes": {
     "risk_classification": {
       "summary": "リスクベース4階層（許容不能・ハイリスク・限定リスク・最小リスク）で義務を段階化。",
-      "detail": "許容不能リスクは全面禁止（第5条）。ハイリスクはAnnex I（規制対象製品の安全部品）とAnnex III（雇用・教育・法執行等の分野列挙）の2系統で指定され、リスク管理・データガバナンス・技術文書・人間による監督・適合性評価が義務付けられる。2026-05-19にハイリスク分類のドラフトガイドラインが公表され、Digital Omnibusによる修正でAnnex III系の適用は2027-12-02、Annex I系は2028-08-02へ延期された。",
+      "detail": "許容不能リスクは全面禁止（第5条）。ハイリスクはAnnex I（規制対象製品の安全部品）とAnnex III（雇用・教育・法執行等の分野列挙）の2系統で指定され、リスク管理・データガバナンス・技術文書・人間による監督・適合性評価が義務付けられる。2026-05-19にハイリスク分類のドラフトガイドラインが公表され、Digital Omnibus（Regulation (EU) 2026/1744、2026-07-27発効）による修正でAnnex III系の適用は2027-12-02、Annex I系は2028-08-02へ延期された。この延期により、Annex III系が本来適用されるはずだった2026-08-02の一般適用日には実質的にハイリスク義務は発効していない。",
       "sources": [
         "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
-        "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+        "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/"
       ]
     },
     "prohibited_uses": {
@@ -30,9 +31,11 @@
     },
     "transparency": {
       "summary": "第50条でAIとの対話の開示、合成コンテンツ（ディープフェイク）の機械可読な表示・ラベリングを義務化。",
-      "detail": "チャットボット等はAIであることの開示、合成音声・画像・映像・テキストは機械可読形式でのマーキング、ディープフェイクはその旨の明示が必要。雇用・教育等での感情認識・生体分類システムは対象者への通知義務。適用は2026-08-02（本則の一般適用日）。",
+      "detail": "チャットボット等はAIであることの開示、合成音声・画像・映像・テキストは機械可読形式でのマーキング、ディープフェイクはその旨の明示が必要。雇用・教育等での感情認識・生体分類システムは対象者への通知義務。適用は2026-08-02（第113条により、個別の適用日指定がない条項に自動的に適用される「本則の一般適用日」）。この日にはAnnex IIIハイリスク義務も本来同じ一般適用日で発効する予定だったが、Digital Omnibus（Regulation (EU) 2026/1744、2026-07-27発効）で2027-12-02へ個別延期されたため、2026-08-02に予定通り実際に発効した実質的な義務は第50条の透明性義務が中心となっている。",
       "sources": [
-        "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "https://artificialintelligenceact.eu/article/113/",
+        "https://artificialintelligenceact.eu/transparency-rules-article-50/"
       ]
     },
     "penalties": {
@@ -84,6 +87,16 @@
         "date": "2026-06-01",
         "event": "欧州委員会が諮問フォーラム（Advisory Forum）のメンバー174名を任命・発表",
         "source": "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
+      },
+      {
+        "date": "2026-07-27",
+        "event": "Digital Omnibus（Regulation (EU) 2026/1744）発効。Annex IIIハイリスク義務の延期（2027-12-02）が正式に確定",
+        "source": "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/"
+      },
+      {
+        "date": "2026-08-02",
+        "event": "本則の一般適用日。第50条の透明性義務（AI開示・合成コンテンツ表示・ディープフェイク明示）が発効。同日発効予定だったAnnex IIIハイリスク義務はDigital Omnibusで既に延期済みのため対象外",
+        "source": "https://artificialintelligenceact.eu/article/113/"
       }
     ]
   },

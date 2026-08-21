@@ -268,5 +268,59 @@
       "https://www.tc260.org.cn/portal/article/2/66ab0e249d404f0583bc420b6106f899"
     ],
     "country_anchor": "/country/cn/#axis-risk_classification"
+  },
+  {
+    "id": "2026-08-20-kr-001",
+    "date": "2026-08-20",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "new_regulation",
+    "title": "韓国国会、AI開発のための個人情報活用特例を新設する個人情報保護法改正案を可決",
+    "summary": {
+      "what": "AI開発向けの個人情報活用特例を新設する保護法改正案が本会議可決",
+      "who": "韓国国内でAI技術開発を行う企業および機関",
+      "when_impact": "国務会議経由の公布から6か月後に施行される見込み"
+    },
+    "detail": "2026年8月20日、韓国個人情報保護委員会（PIPC）は、AI技術開発のための個人情報活用特例を盛り込んだ「個人情報保護法」改正案が国会本会議を通過したと発表した。本改正により、仮名・匿名情報ではAI開発が困難で公益的・社会的重要性が認められる場合に限り、強化された安全措置とPIPCの審議・議決を前提として適法に収集された個人情報をAI開発に利用できる。また、機微情報等の処理に伴う事前リスク評価や処理方針の公開等の安全措置が義務付けられる一方、類似のAI技術・サービスに対する審議簡素化も盛り込まれた。本改正法は公布後6か月を経て施行される。",
+    "so_what": "韓国でAI開発を行う企業は、厳格な安全措置と個人情報保護委員会の審議・議決等を前提に、公益目的等のAI学習データとして個人情報を活用する特例が利用可能となります。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI ActはAIシステムのリスク分類やGPAI規律を中心とするのに対し、本法改正は個人情報保護法制の中でAIモデル学習・開発のためのデータ利用特例およびガバナンス審査手続きを新設する韓国独自の枠組み（unique）。"
+    },
+    "canonical_event": "South Korea passes personal information protection act amendment for safe AI development",
+    "publication_date": "2026-08-20",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12391"
+    ],
+    "country_anchor": "/country/kr/#axis-risk_classification"
+  },
+  {
+    "id": "2026-08-20-br-001",
+    "date": "2026-08-20",
+    "country": "br",
+    "axis": "prohibited_uses",
+    "change_type": "status_change",
+    "title": "ブラジル下院、公共空間での顔認識監視を認める法案PL 1.828/2023を可決し上院へ送付",
+    "summary": {
+      "what": "下院が公共交通や公道等での顔認識監視を容認するPL 1.828/2023修正案を可決",
+      "who": "顔認識AIシステムを提供するベンダー企業および監視システムを導入・運用する公的機関",
+      "when_impact": "2026年8月12日に下院で可決され、今後は上院で審議される見込み"
+    },
+    "detail": "ブラジル下院は2026年8月12日、駅やバスターミナル、公道、公共機関等での顔認識監視システムの設置を認める法案「PL 1.828/2023」の修正案（Substitutivo）を可決し、上院へ送付した。修正案には、子どもの生体データ処理の原則禁止、無差別な大量監視の禁止、権利制限措置前の人的検証の義務付け、データ保護影響評価（RIPD）の実施と要約公表、監査ログの保持、精度およびバイアステストの実施、ベンダー企業の責任強化、ANPD（国家データ保護庁）の監督権限拡大が盛り込まれている。",
+    "so_what": "ブラジルで公共空間向け生体認証・顔認識システムを提供する企業は、人的検証義務、データ保護影響評価（RIPD）の公表、バイアステスト等のガバナンス要件への対応準備が求められる。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actでは公共空間における法執行目的のリアルタイム遠隔生体識別が原則禁止（第5条、厳格な例外あり）されているのに対し、本法案は公共交通機関や公道への顔認識システム設置を広く許容しガバナンス要件（人的検証やRIPD）を課すアプローチを採っており、EU基準と比較して緩やか（looser）。"
+    },
+    "canonical_event": "Brazilian Chamber of Deputies approves facial recognition surveillance bill PL 1828/2023",
+    "publication_date": "2026-08-20",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.dataprivacybr.org/camara-aprova-o-pl-1-828-2023-e-abre-caminho-para-a-expansao-da-vigilancia-facial-no-brasil/"
+    ],
+    "country_anchor": "/country/br/#axis-prohibited_uses"
   }
 ]

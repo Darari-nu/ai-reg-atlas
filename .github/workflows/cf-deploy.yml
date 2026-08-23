@@ -61,4 +61,13 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: 2d979f189135188782792170c8faa73c
         run: |
           echo "token length: ${#CLOUDFLARE_API_TOKEN}"
+          case "$CLOUDFLARE_API_TOKEN" in
+            *[!A-Za-z0-9_-]*) echo "charset: UNEXPECTED — 空白/改行/記号が混入している" ;;
+            *) echo "charset: ok" ;;
+          esac
+          echo "--- token verify ---"
+          curl -s https://api.cloudflare.com/client/v4/user/tokens/verify \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" | head -c 400
+          echo
+          echo "--- end verify ---"
           npx --yes wrangler@4 pages deploy deploy_atlas --project-name=ai-reg-atlas --branch=main --commit-dirty=true

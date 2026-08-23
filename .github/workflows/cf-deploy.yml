@@ -60,14 +60,11 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 2d979f189135188782792170c8faa73c
         run: |
-          echo "token length: ${#CLOUDFLARE_API_TOKEN}"
+          # トークンに空白や改行が混じると Authorization ヘッダが不正になり、
+          # Cloudflare側は「ヘッダ無し」扱いの 9106 を返す（原因が分かりにくいので事前に弾く）
           case "$CLOUDFLARE_API_TOKEN" in
-            *[!A-Za-z0-9_-]*) echo "charset: UNEXPECTED — 空白/改行/記号が混入している" ;;
-            *) echo "charset: ok" ;;
+            *[!A-Za-z0-9_-]*)
+              echo "::error::CLOUDFLARE_API_TOKEN に空白/改行/記号が混入している（長さ ${#CLOUDFLARE_API_TOKEN}）"
+              exit 1 ;;
           esac
-          echo "--- token verify ---"
-          curl -s https://api.cloudflare.com/client/v4/user/tokens/verify \
-            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" | head -c 400
-          echo
-          echo "--- end verify ---"
           npx --yes wrangler@4 pages deploy deploy_atlas --project-name=ai-reg-atlas --branch=main --commit-dirty=true

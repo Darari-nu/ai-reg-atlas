@@ -1,0 +1,60 @@
+# darari-nu.com/atlas (Cloudflare Pages) への自動デプロイ。
+#
+# daily-pipeline から切り離してある理由:
+#   - pipeline は collect/triage/summarize が Gemini 無料枠の 429 で落ちることがあり、
+#     同一ジョブに載せるとデプロイまで到達しない（データは commit 済みなのに反映されない）
+#   - workflow_run は pipeline の成否に関わらず発火するので、最後に commit された
+#     data/ の内容が必ず公開される
+#
+# ⚠️ Astro の base 設定は HTML 内リンクの表記だけを書き換え、ビルド出力の物理ディレクトリ
+# 構造は変えない。dist/ をそのままデプロイすると /atlas/ 配下に実ファイルが存在せず
+# CSS/JS が全滅する（過去にスタイル崩壊した実績あり）。必ず atlas/ に移してからデプロイする。
+name: cf-deploy
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["daily-pipeline"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cf-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # pipeline が data/ を push した後の main を取りに行く
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: build for Cloudflare (darari-nu.com/atlas)
+        run: npx astro build
+        env:
+          ASTRO_SITE: https://darari-nu.com
+          ASTRO_BASE: /atlas
+
+      - name: restructure into atlas/ subfolder
+        run: |
+          rm -rf deploy_atlas
+          mkdir -p deploy_atlas/atlas
+          cp -r dist/. deploy_atlas/atlas/
+
+      - name: deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 2d979f189135188782792170c8faa73c
+          command: pages deploy deploy_atlas --project-name=ai-reg-atlas --branch=main --commit-dirty=true

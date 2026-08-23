@@ -89,28 +89,4 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v5
 
-      # --- Cloudflare Pages (darari-nu.com/atlas) ---
-      # AstroのbaseはHTML内リンクの表記だけを書き換え、ビルド出力の物理ディレクトリ構造は
-      # 変えない。dist/をそのままデプロイすると/atlas/配下に実ファイルが存在せずCSS/JSが
-      # 全滅する（過去にスタイル崩壊した実績あり）。必ずatlas/に移してからデプロイすること。
-      # ローカルの scripts/deploy-cloudflare.sh と同じ手順をCI側に持ってきたもの。
-      - name: build for Cloudflare (darari-nu.com/atlas)
-        run: |
-          rm -rf dist
-          npx astro build
-        env:
-          ASTRO_SITE: https://darari-nu.com
-          ASTRO_BASE: /atlas
-
-      - name: restructure into atlas/ subfolder
-        run: |
-          rm -rf deploy_atlas
-          mkdir -p deploy_atlas/atlas
-          cp -r dist/. deploy_atlas/atlas/
-
-      - name: deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 2d979f189135188782792170c8faa73c
-          command: pages deploy deploy_atlas --project-name=ai-reg-atlas --branch=main --commit-dirty=true
+      # darari-nu.com/atlas への反映は cf-deploy.yml が workflow_run で引き継ぐ

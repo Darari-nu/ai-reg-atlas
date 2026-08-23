@@ -52,9 +52,13 @@ jobs:
           mkdir -p deploy_atlas/atlas
           cp -r dist/. deploy_atlas/atlas/
 
+      # wrangler-action@v3 は古い wrangler 3.90.0 を入れた上に APIトークンを渡し損ねて
+      # 9106(認証ヘッダ無し)で落ちたため、ローカルの scripts/deploy-cloudflare.sh と同じく
+      # 素の npx wrangler を直接叩く。
       - name: deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 2d979f189135188782792170c8faa73c
-          command: pages deploy deploy_atlas --project-name=ai-reg-atlas --branch=main --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 2d979f189135188782792170c8faa73c
+        run: |
+          echo "token length: ${#CLOUDFLARE_API_TOKEN}"
+          npx --yes wrangler@4 pages deploy deploy_atlas --project-name=ai-reg-atlas --branch=main --commit-dirty=true

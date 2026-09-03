@@ -53,6 +53,12 @@ jobs:
       - name: validate
         run: node scripts/validate.mjs
 
+      # L2条文全文。ソースのsha256が同じなら何も書き換えないので、改正が入った日だけ差分が立つ。
+      # EUR-Lexやe-Govが落ちていても日次パイプライン全体は止めない（ニュース収集のほうが本業）。
+      - name: fulltext
+        run: node scripts/fetch-fulltext.mjs
+        continue-on-error: true
+
       - name: commit data
         run: |
           git config user.name "atlas-bot"
@@ -62,13 +68,16 @@ jobs:
           git push
 
       - name: file issues (diff-change / needs-review)
-        if: ${{ hashFiles('/tmp/pipeline_issues.json') != '' }}
+        # hashFiles()はGITHUB_WORKSPACE配下しか解決できず、/tmp配下だと常に空文字列になり
+        # このステップ自体が永久にスキップされていた(2ヶ月間needs-review Issueが0件だった実障害)。
+        # ワークスペース内の.pipeline-cache/に変更(scripts/lib/pipeline.mjsのISSUES_FILEと一致させる)。
+        if: ${{ hashFiles('.pipeline-cache/pipeline_issues.json') != '' }}
         uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
             let issues = [];
-            try { issues = JSON.parse(fs.readFileSync('/tmp/pipeline_issues.json', 'utf8')); } catch {}
+            try { issues = JSON.parse(fs.readFileSync('.pipeline-cache/pipeline_issues.json', 'utf8')); } catch {}
             for (const i of issues) {
               await github.rest.issues.create({
                 owner: context.repo.owner,

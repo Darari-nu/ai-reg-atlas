@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 import { geminiJSONWithRetry, hasApiKey, MODEL_TRIAGE } from './lib/gemini.mjs';
-import { dedupeByEvent, existingEventKeys, loadJSON, normalizeEventLabel, writeJSON } from './lib/pipeline.mjs';
+import { dedupeByEvent, existingEventKeys, ISSUES_FILE, loadJSON, normalizeEventLabel, writeJSON } from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/candidates.json';
@@ -77,7 +77,7 @@ async function main() {
   } catch (e) {
     console.error(`[triage] gemini failed after retry: ${e.message}`);
     writeJSON(OUT_FILE, []);
-    writeJSON('/tmp/pipeline_issues.json', [
+    writeJSON(ISSUES_FILE, [
       { title: 'triage失敗（GeminiのJSONが2回連続で不正）', body: `候補${candidates.length}件の選別をスキップした。Actionsログを確認。`, labels: ['needs-review'] },
     ]);
     return; // 個別失敗はパイプラインを止めない

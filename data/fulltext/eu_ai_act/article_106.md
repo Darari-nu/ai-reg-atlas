@@ -1,0 +1,18 @@
+---
+source: EUR-Lex (Cellar)
+celex: 32024R1689
+language: eng
+reference_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689"
+license: "© European Union, https://eur-lex.europa.eu, 1998-2026. Reuse authorised under Commission Decision 2011/833/EU, provided the source is acknowledged."
+kind: article
+article: Article 106
+title: Amendment to Directive (EU) 2016/797
+chapter: CHAPTER XIII — FINAL PROVISIONS
+anchor: art_106
+---
+
+# Article 106 — Amendment to Directive (EU) 2016/797
+
+In Article 5 of Directive (EU) 2016/797, the following paragraph is added:
+
+‘12. When adopting delegated acts pursuant to paragraph 1 and implementing acts pursuant to paragraph 11 concerning Artificial Intelligence systems which are safety components within the meaning of Regulation (EU) 2024/1689 of the European Parliament and of the Council (*), the requirements set out in Chapter III, Section 2, of that Regulation shall be taken into account.

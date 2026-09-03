@@ -14,7 +14,8 @@
     "summarize": "node scripts/summarize.mjs",
     "validate": "node scripts/validate.mjs",
     "bootstrap": "node scripts/bootstrap.mjs",
-    "sweep": "npm run collect && npm run triage && npm run summarize && npm run validate"
+    "sweep": "npm run collect && npm run triage && npm run summarize && npm run validate",
+    "fulltext": "node scripts/fetch-fulltext.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",

@@ -4,6 +4,9 @@ import path from 'node:path';
 export const ROOT = process.cwd();
 export const DRY_ROOT = '/tmp/dry';
 export const DROPPED_FILE = '/tmp/dropped.json';
+// GitHub Actionsのhashfiles()はGITHUB_WORKSPACE配下しか解決できず、/tmp配下だと常に空文字列を返し
+// needs-review Issue起票ステップが永久にスキップされる(2ヶ月間無検知だった実障害)。ワークスペース内に置く。
+export const ISSUES_FILE = path.join(ROOT, '.pipeline-cache', 'pipeline_issues.json');
 
 export const MIN_BODY_CHARS = Number(process.env.MIN_BODY_CHARS || 600);
 export const RECENCY_DAYS = Number(process.env.RECENCY_DAYS || 90);
@@ -15,6 +18,29 @@ export const AI_REG_KEYWORDS = (
   .split(',')
   .map((s) => s.trim())
   .filter(Boolean);
+
+// Content-Typeヘッダにcharsetが無いShift_JIS等の官公庁サイト向け。res.text()のUTF-8決め打ちで文字化けし、
+// 日付正規表現が一致しなくなる(§日本総務省で実際に発生・2ヶ月間無検知だった)ため、charsetを検出して明示デコードする
+export function detectCharset(contentType, bytes) {
+  const headerMatch = /charset=["']?([a-z0-9_-]+)/i.exec(contentType || '');
+  if (headerMatch) return headerMatch[1].toLowerCase();
+  const sniff = Buffer.from(bytes.slice(0, 2048)).toString('latin1');
+  const metaMatch = /<meta[^>]+charset=["']?\s*([a-z0-9_-]+)/i.exec(sniff);
+  if (metaMatch) return metaMatch[1].toLowerCase();
+  const xmlMatch = /<\?xml[^>]+encoding=["']([a-z0-9_-]+)["']/i.exec(sniff);
+  if (xmlMatch) return xmlMatch[1].toLowerCase();
+  return 'utf-8';
+}
+
+export async function decodeResponseText(res) {
+  const buf = new Uint8Array(await res.arrayBuffer());
+  const charset = detectCharset(res.headers.get('content-type'), buf);
+  try {
+    return new TextDecoder(charset).decode(buf);
+  } catch {
+    return new TextDecoder('utf-8').decode(buf);
+  }
+}
 
 export function isDryRun() {
   return /^(1|true|yes)$/i.test(process.env.DRY_RUN || '');
@@ -80,6 +106,10 @@ export function looksLikeBlockedPage(text) {
   const lower = body.toLowerCase();
   if (lower.includes('enable javascript') || lower.includes('please enable javascript')) return true;
   if (lower.includes('cookie consent') || lower.includes('accept all cookies')) return true;
+  // アンチスクレイピング壁がHTTP 200のまま返す案内文(federalregister.gov等で実際に発生)。
+  // 本文長・キーワードは通過するため、これが無いとGeminiに空の本文が渡り静かにdropされる
+  if (lower.includes('request access') && lower.includes('automated')) return true;
+  if (lower.includes('complete the captcha') || lower.includes('verify you are a human')) return true;
   const functionCount = (body.match(/function\s*\(\)\s*\{/g) || []).length;
   return functionCount >= 20;
 }

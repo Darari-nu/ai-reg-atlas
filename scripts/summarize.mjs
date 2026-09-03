@@ -7,9 +7,11 @@ import {
   RECENCY_DAYS,
   appendDrop,
   buildUpdateRecord,
+  decodeResponseText,
   dedupeByEvent,
   existingEventKeys,
   isGoogleNewsUrl,
+  ISSUES_FILE,
   loadJSON,
   mechanicalGate,
   publicationDateGate,
@@ -20,7 +22,6 @@ import {
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/triaged.json';
-const ISSUES_FILE = '/tmp/pipeline_issues.json';
 const MAX_PER_RUN = 8; // バッチ原則・無料枠保護（§5-3）
 const TIMEOUT_MS = 15_000;
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
@@ -45,7 +46,7 @@ async function fetchArticleText(url) {
   try {
     const res = await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': USER_AGENT } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const html = await res.text();
+    const html = await decodeResponseText(res); // charset未指定のShift_JIS等を文字化けさせない
     return html
       .replace(/<script[\s\S]*?<\/script>/gi, '')
       .replace(/<style[\s\S]*?<\/style>/gi, '')

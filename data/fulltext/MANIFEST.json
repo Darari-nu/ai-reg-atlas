@@ -1,0 +1,60 @@
+{
+  "sources": {
+    "eu_ai_act": {
+      "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+      "region": "eu",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      "license": "© European Union, https://eur-lex.europa.eu, 1998-2026. Reuse authorised under Commission Decision 2011/833/EU, provided the source is acknowledged.",
+      "source_sha256": "8f0b656302f9864cc87e040c371f209a9d65ae1a6cecc25ca5eb737e872d721a",
+      "counts": {
+        "articles": 113,
+        "recitals": 180,
+        "annexes": 13
+      },
+      "fetched_at": "2026-08-24T21:01:15.093Z",
+      "last_changed": "2026-08-24T21:01:15.094Z"
+    },
+    "ai_suishin_hou": {
+      "title": "人工知能関連技術の研究開発及び活用の推進に関する法律（AI推進法）",
+      "region": "jp",
+      "reference_url": "https://laws.e-gov.go.jp/law/507AC0000000053",
+      "license": "著作権法13条により権利の目的とならない（e-Gov法令検索を出典として明示）",
+      "source_sha256": "3c7a6c257330cacc1ff07827cf88504a910a0725be754ef377b7b2ef29bd92a4",
+      "counts": {
+        "articles": 28
+      },
+      "fetched_at": "2026-08-24T21:00:32.235Z",
+      "last_changed": "2026-08-24T21:00:32.235Z"
+    },
+    "kojin_jouhou_hogo": {
+      "title": "個人情報の保護に関する法律",
+      "region": "jp",
+      "reference_url": "https://laws.e-gov.go.jp/law/415AC0000000057",
+      "license": "著作権法13条により権利の目的とならない（e-Gov法令検索を出典として明示）",
+      "source_sha256": "3f4d715993c7ade73ad61ec710c90526377a4936514b77886e6315b3a49c9b17",
+      "counts": {
+        "articles": 185
+      },
+      "fetched_at": "2026-08-24T21:00:32.418Z",
+      "last_changed": "2026-08-24T21:00:32.418Z"
+    },
+    "ai_jigyousha_guideline": {
+      "title": "AI事業者ガイドライン（第1.2版）",
+      "region": "jp",
+      "kind": "guideline",
+      "version": "第1.2版",
+      "published": "2026-03-31",
+      "reference_url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html",
+      "license": "政府標準利用規約に基づく二次利用（出典明示が条件）。出典: 総務省・経済産業省「AI事業者ガイドライン（第1.2版）」",
+      "source_sha256": {
+        "honpen": "64dff6280a873c76e6adb824a57ce770272cef8a2354ba59db3c04888f60f55d",
+        "besshi": "407bacacc830d1e895ae0b2d71bdd2715b0b13f32509d6f9d5e0d19a921b46ff",
+        "checklist": "510907c552bec0202c0c0dbc139406c92012ea6e4e87be01a27e46f5c7b172a0"
+      },
+      "fetched_at": "2026-08-25T20:59:27.410Z",
+      "ingest": "手動（PDF。新版は新URLで出るため自動取得しない）。見張りは --check"
+    }
+  },
+  "generated_at": "2026-08-24T21:01:15.094Z",
+  "note": "L2条文全文コーパス。サイトにはビルドしない。収録の線引きは config/fulltext-sources.yaml を見ること。"
+}

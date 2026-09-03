@@ -1,0 +1,34 @@
+---
+source: EUR-Lex (Cellar)
+celex: 32024R1689
+language: eng
+reference_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689"
+license: "© European Union, https://eur-lex.europa.eu, 1998-2026. Reuse authorised under Commission Decision 2011/833/EU, provided the source is acknowledged."
+kind: article
+article: Article 67
+title: Advisory forum
+chapter: CHAPTER VII — GOVERNANCE
+anchor: art_67
+---
+
+# Article 67 — Advisory forum
+
+1. An advisory forum shall be established to provide technical expertise and advise the Board and the Commission, and to contribute to their tasks under this Regulation.
+
+2. The membership of the advisory forum shall represent a balanced selection of stakeholders, including industry, start-ups, SMEs, civil society and academia. The membership of the advisory forum shall be balanced with regard to commercial and non-commercial interests and, within the category of commercial interests, with regard to SMEs and other undertakings.
+
+3. The Commission shall appoint the members of the advisory forum, in accordance with the criteria set out in paragraph 2, from amongst stakeholders with recognised expertise in the field of AI.
+
+4. The term of office of the members of the advisory forum shall be two years, which may be extended by up to no more than four years.
+
+5. The Fundamental Rights Agency, ENISA, the European Committee for Standardization (CEN), the European Committee for Electrotechnical Standardization (CENELEC), and the European Telecommunications Standards Institute (ETSI) shall be permanent members of the advisory forum.
+
+6. The advisory forum shall draw up its rules of procedure. It shall elect two co-chairs from among its members, in accordance with criteria set out in paragraph 2. The term of office of the co-chairs shall be two years, renewable once.
+
+7. The advisory forum shall hold meetings at least twice a year. The advisory forum may invite experts and other stakeholders to its meetings.
+
+8. The advisory forum may prepare opinions, recommendations and written contributions at the request of the Board or the Commission.
+
+9. The advisory forum may establish standing or temporary sub-groups as appropriate for the purpose of examining specific questions related to the objectives of this Regulation.
+
+10. The advisory forum shall prepare an annual report on its activities. That report shall be made publicly available.

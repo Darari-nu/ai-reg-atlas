@@ -5,14 +5,13 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import yaml from 'js-yaml';
 import Parser from 'rss-parser';
-import { dataPath, loadJSON, writeJSON, isGoogleNewsUrl } from './lib/pipeline.mjs';
+import { dataPath, loadJSON, writeJSON, isGoogleNewsUrl, decodeResponseText, ISSUES_FILE } from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
 const CACHE_DIR = dataPath('.cache');
 const LAST_SEEN_FILE = path.join(CACHE_DIR, 'last_seen.json');
 const HASHES_FILE = dataPath('hashes.json');
 const OUT_FILE = '/tmp/candidates.json';
-const ISSUES_FILE = '/tmp/pipeline_issues.json';
 const TIMEOUT_MS = 15_000;
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
 const FIRST_RUN_WINDOW_DAYS = Number(process.env.FIRST_RUN_WINDOW_DAYS || 3); // 既定3日。バックフィル時は環境変数で拡大
@@ -108,7 +107,10 @@ function extractDatedLinks(html, baseUrl, countryHint) {
 }
 
 async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
-  const feed = await parser.parseURL(url);
+  const res = await fetchWithTimeout(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const xml = await decodeResponseText(res); // parseURL任せだとcharset未指定XML(Shift_JIS等)が文字化けするため自前デコード
+  const feed = await parser.parseString(xml);
   const prev = lastSeen[url] ? new Date(lastSeen[url]) : null;
   const windowStart = new Date(Date.now() - FIRST_RUN_WINDOW_DAYS * 86_400_000);
   const threshold = prev ?? windowStart;
@@ -135,7 +137,7 @@ async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
 async function collectScrapeHash(url, countryHint, hashes) {
   const res = await fetchWithTimeout(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const html = await res.text();
+  const html = await decodeResponseText(res); // charset未指定のShift_JIS等を文字化けさせない
   // 正規化: script/style除去 → タグ除去 → 空白圧縮（生HTMLは保存しない §4-1）
   const text = stripHtml(html);
   const hash = crypto.createHash('sha256').update(text).digest('hex');

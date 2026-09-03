@@ -18,11 +18,15 @@ countries:
     flag: "🇯🇵"
     lat: 36.20
     lng: 138.25
-    official_sources:
-      - { url: "https://www8.cao.go.jp/cstp/ai/index.html", type: scrape_hash }
+    official_sources:   # 旧cao index.htmlは常設ハブURLしか抽出できず実質機能せず、2026-08にai_topics.htmlへ差替+aisi.go.jp追加。
+                        # soumu index.html/news.rdfはcharset未指定Shift_JIS文字化けで日付が一致せず抽出0件だったが、
+                        # collect.mjs側のcharset自動判定修正(§lib/pipeline.mjs decodeResponseText)で解消したため維持
+      - { url: "https://www8.cao.go.jp/cstp/ai/ai_topics/ai_topics.html", type: scrape_hash }  # 内閣府CSTP AI戦略トピックス(日付付き記事22件)
       - { url: "https://www.soumu.go.jp/menu_news/s-news/index.html", type: scrape_hash }
+      - { url: "https://aisi.go.jp/", type: scrape_hash }   # AIセーフティ・インスティテュート(政府機関、AI専業で日付付き記事URLを吐く)
     watch_feeds:
       - { url: "https://www.soumu.go.jp/news.rdf", type: rss }             # 総務省 報道資料(公式RSS)
+      - { url: "https://www.digital.go.jp/rss/news.xml", type: rss }       # デジタル庁 公式RSS(charset明示・保持期間が長く安定)
     news_queries: ["日本 AI 規制 法律", "AI推進法"]
   - code: us
     name_ja: 米国
@@ -32,8 +36,11 @@ countries:
     lng: -77.04
     official_sources:
       - { url: "https://www.nist.gov/news-events/news/rss.xml", type: rss }
-    watch_feeds:
+    watch_feeds:   # 連邦官報RSSは本文取得がbot UAでアンチスクレイピング壁に阻まれ機械ゲートは通るがGeminiに実質空の本文が渡り毎回drop(要別対応、2026-08時点で未解消)。
+                    # 州法・大統領令の取りこぼしを埋めるため2026-08に2本追加(いずれも現行bot UAのまま取得確認済み)
       - { url: "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=artificial%20intelligence&per_page=20", type: rss }  # 米国官報 AI検索
+      - { url: "https://www.transparencycoalition.ai/news?format=rss", type: rss }   # 州レベルAI立法トラッカー(アドボカシー団体、法案番号・成立状況を明記)
+      - { url: "https://www.whitehouse.gov/presidential-actions/feed/", type: rss }  # 大統領令・布告(密度は低いが影響最大級の一次ソース)
     news_queries: ["US AI regulation law", "state AI law enacted"]
   - code: uk
     name_ja: 英国
@@ -43,6 +50,9 @@ countries:
     lng: -0.12
     official_sources:
       - { url: "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=department-for-science-innovation-and-technology", type: rss }
+      - { url: "https://www.gov.uk/search/all.atom?organisations%5B%5D=ai-security-institute", type: rss }  # AI Security Institute(AI関連密度100%、意見公募含む)
+    watch_feeds:
+      - { url: "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml", type: rss }  # NCSC(gov.ukと別ホストでSPOF対策、AI関連密度約30%)
     news_queries: ["UK AI regulation"]
   - code: cn
     name_ja: 中国

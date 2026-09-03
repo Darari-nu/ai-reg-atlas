@@ -1,0 +1,36 @@
+# L2 条文全文コーパスの取得元。scripts/fetch-fulltext.mjs が読む。
+#
+# 収録の線引き（2026-08-25 決定）:
+#   - 収録するのは「法令そのもの」だけ。法令は著作権の目的にならない
+#     （日本=著作権法13条 / EU=Decision 2011/833/EU により出典明示で再利用可）
+#   - 他人の日本語仮訳・解説記事は入れない（翻訳には翻訳者の著作権が発生する）
+#   - ガイドライン・告示の類は利用規約の確認が済むまで入れない（下部のTODO参照）
+#   - data/fulltext/ はサイトにビルドしない。データとして持つだけ
+
+eu:
+  - key: eu_ai_act
+    title: Regulation (EU) 2024/1689 (Artificial Intelligence Act)
+    celex: 32024R1689
+    language: eng
+    license: >-
+      © European Union, https://eur-lex.europa.eu, 1998-2026.
+      Reuse authorised under Commission Decision 2011/833/EU, provided the source is acknowledged.
+    reference_url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689
+
+jp:
+  - key: ai_suishin_hou
+    title: 人工知能関連技術の研究開発及び活用の推進に関する法律（AI推進法）
+    law_id: 507AC0000000053
+    license: 著作権法13条により権利の目的とならない（e-Gov法令検索を出典として明示）
+    reference_url: https://laws.e-gov.go.jp/law/507AC0000000053
+
+  - key: kojin_jouhou_hogo
+    title: 個人情報の保護に関する法律
+    law_id: 415AC0000000057
+    license: 著作権法13条により権利の目的とならない（e-Gov法令検索を出典として明示）
+    reference_url: https://laws.e-gov.go.jp/law/415AC0000000057
+
+# TODO（未収録・意図的に外している）
+#   AI事業者ガイドライン（経産省・総務省）
+#     法令ではないため著作権法13条の対象外。政府標準利用規約(第2.0版)の適用可否を
+#     確認してから収録を判断する。それまでは L1 の sources に URL を持つだけに留める。

@@ -5,6 +5,7 @@
 
 # pipeline cache (生データは保存しない)
 data/.cache/
+.pipeline-cache/
 
 # build
 node_modules/

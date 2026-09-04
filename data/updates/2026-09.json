@@ -1,0 +1,29 @@
+[
+  {
+    "id": "2026-09-03-br-001",
+    "date": "2026-09-03",
+    "country": "br",
+    "axis": "general",
+    "change_type": "other",
+    "title": "ブラジル下院委員会、AI支援発明の特許帰属を資金・技術提供者とする法案（PL 303/24）を可決",
+    "summary": {
+      "what": "AI支援発明の特許を資金・リソース提供者に帰属させる法案可決",
+      "who": "AIを活用して発明や研究開発を行う企業および技術者",
+      "when_impact": "下院CCJ委員会および上下両院での可決を経て成立・施行の見込み"
+    },
+    "detail": "ブラジル下院の産業・商業・サービス委員会は、AIを活用した発明の特許権を、計算能力や資金などの技術的・財務的リソースを提供した個人または企業に帰属させる法案（PL 303/24代替案）を承認した。AI自身を発明者・特許権者と認める当初規定は削除され、技術開発に寄与した技術者の共同作成者としての記載を容認する内容。今後は憲法司法市民権委員会（CCJ）等で審議される。",
+    "so_what": "ブラジルにおけるAI支援発明の特許帰属が投資・リソース提供企業等へ明確化される見込みであり、現地の知財・R&D戦略に影響する。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI Actは特許権やAI発明者資格を対象外としており（absent）、産業財産法（LPI）の直接改正を目指すブラジル独自の知財法制化の動きである。"
+    },
+    "canonical_event": "Brazilian commission approves rules for AI-generated patents",
+    "publication_date": "2026-09-03",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.camara.leg.br/noticias/1302597-comissao-aprova-regras-para-patentes-criadas-com-auxilio-de-inteligencia-artificial"
+    ],
+    "country_anchor": "/country/br/#axis-risk_classification"
+  }
+]

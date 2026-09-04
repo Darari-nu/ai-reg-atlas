@@ -55,6 +55,23 @@ EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中�
 ① が Gemini の 429 等で途中失敗しても、最後に commit された `data/` は
 必ず Cloudflare 側に反映される（デプロイをパイプラインから切り離した理由がこれ）。
 
+### なぜ2箇所に出したままなのか（2026-09-04 判断）
+
+GitHub Pages 側を止めるか検討したが、**止めない**と決めた。
+
+- 止めても本番(Cloudflare)は無事。`cf-deploy` は独立しているので影響しない
+- 止める理由は「同じ内容が2ドメインで検索インデックスされる」ことだが、
+  デメリットはその程度
+- 一方、止めると `darari-nu.github.io/ai-reg-atlas/` に**古い内容が残り続ける**。
+  外部に出したリンクもそこを指したまま古い情報を見せることになる。これが一番悪い
+- 中途半端に止めるくらいなら、両方最新である状態を維持するほうが安全
+
+**将来やるなら**、止めるだけで済ませず次のどちらかまでセットで行うこと。
+
+- GitHub Pages を無効化して 404 にする（外部リンクは切れる）
+- 両方の build に `<link rel="canonical">` を入れて darari-nu.com/atlas に寄せる
+  （現状 canonical タグは無い。外部リンクは生かしたまま重複を解消できる）
+
 ### 触るときの注意
 
 - **`atlas/` サブフォルダへの詰め替えは必須。** Astro の `base` は HTML 内リンクの表記を
@@ -168,6 +185,7 @@ DRY_RUN=1 npm run validate
 | 2026-08-23 | darari-nu.com/atlas（Cloudflare Pages）を追加。当初は Mac の LaunchAgent + `scripts/deploy-cloudflare.sh` で運用 |
 | 2026-08-23 | デプロイを `cf-deploy.yml`（GitHub Actions）へ移行。LaunchAgent は停止 |
 | 2026-09-03 | README を実物に合わせて全面更新（Cloudflare 経路が未記載のままだった）。`ci.yml` とワークフロー対応表を追記、「6カ国」→「13カ国・地域」を訂正。この改訂履歴を新設 |
+| 2026-09-04 | GitHub Pages を止めるか検討し、**止めない**と決定（理由はデプロイ節）。構成変更なし |
 
 ## ライセンス
 

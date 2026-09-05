@@ -25,5 +25,32 @@
       "https://www.camara.leg.br/noticias/1302597-comissao-aprova-regras-para-patentes-criadas-com-auxilio-de-inteligencia-artificial"
     ],
     "country_anchor": "/country/br/#axis-risk_classification"
+  },
+  {
+    "id": "2026-09-03-ca-001",
+    "date": "2026-09-03",
+    "country": "ca",
+    "axis": "general",
+    "change_type": "other",
+    "title": "カナダ政府、AI等を支える「責任あるデータセンター開発原則」を発表",
+    "summary": {
+      "what": "責任あるデータセンター開発原則の策定・公表",
+      "who": "連邦政府、自治体連盟、データセンター・AI・クラウド事業者",
+      "when_impact": "2026年9月3日公表。今後の施設開発や投資計画に順次影響"
+    },
+    "detail": "カナダのAI・デジタルイノベーション大臣およびカナダ自治体連盟（FCM）は、「責任あるデータセンター開発原則」を発表しました。本原則は、AIやデジタル経済を支える国内インフラの拡充に向け、電力料金へのコスト転嫁防止、水資源利用や環境影響の最小化、持続的な地域利益の創出、地域影響の透明性、カナダへの戦略的価値の提供という5つの期待事項を設定しています。AWS、Anthropic、Google、Meta、Microsoft、OpenAI、Cohereなどの主要AI・クラウド事業者が署名しています。",
+    "so_what": "カナダ国内でAIコンピュート基盤やデータセンターの設置・拡張を行う事業者は、電力や水利用等の環境負荷抑制および地域への透明性確保に関する共通基準への対応が求められます。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI ActはAIシステムおよびGPAIモデルのリスクと透明性を直接規律しており、データセンター開発における電力・水使用や地域影響に関する包括的なインフラ原則は含まれないため、EU基準との差異判定への直接の影響はありません。"
+    },
+    "canonical_event": "Government of Canada launches Responsible Data Centre Development Principles",
+    "publication_date": "2026-09-03",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-launches-canadas-responsible-data-centre-development-principles.html"
+    ],
+    "country_anchor": "/country/ca/#axis-risk_classification"
   }
 ]

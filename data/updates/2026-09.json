@@ -52,5 +52,32 @@
       "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-launches-canadas-responsible-data-centre-development-principles.html"
     ],
     "country_anchor": "/country/ca/#axis-risk_classification"
+  },
+  {
+    "id": "2026-09-09-au-001",
+    "date": "2026-09-09",
+    "country": "au",
+    "axis": "general",
+    "change_type": "new_regulation",
+    "title": "豪首相、アルゴリズムのオプトアウト等を認めるデジタル注意義務法案の草案公表に言及",
+    "summary": {
+      "what": "中毒性アルゴリズムのオプトアウト等を認めるデジタル注意義務法案の公開草案発表",
+      "who": "大手テック企業、SNSやAIチャットボット等のサービス提供事業者",
+      "when_impact": "公開草案公表段階であり今後の議会審議を経て施行される見込み"
+    },
+    "detail": "豪アルバニージー首相はテレビインタビューにて、前日に「デジタル注意義務（Digital Duty of Care）」法案の公開草案を公表したと述べた。同法案は消費者が中毒性のあるアルゴリズムをオプトアウトできる仕組み（My Feed, My Way計画）の導入や、極端なカロリー制限を助言し摂食障害を誘発するようなAIチャットボットによる危険で不健全な有害挙動の防止を目的としている。有害コンテンツの定義権限をめぐる野党からの批判に対し、通信大臣のみの判断ではなく議会のコントロール下に置かれると説明した。",
+    "so_what": "オーストラリアで推薦アルゴリズムやチャットボットを提供する企業は、利用者のオプトアウト権利保障や健康被害を招く出力の防止義務化に向けた動向を注視する必要がある。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI ActがAIシステム全般に対してリスクベースの横断的包括規制を敷いているのに対し、オーストラリアはデジタル注意義務の枠組みの中でアルゴリズムのオプトアウトやチャットボット危害に対処する独自（unique）のアプローチを進めている。"
+    },
+    "canonical_event": "Australia draft Digital Duty of Care bill allows users to opt out of addictive algorithms",
+    "publication_date": "2026-09-09",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pm.gov.au/media/television-interview-today-13"
+    ],
+    "country_anchor": "/country/au/#axis-risk_classification"
   }
 ]

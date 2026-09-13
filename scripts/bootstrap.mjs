@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
-import { geminiJSONWithRetry, hasApiKey, MODEL_SUMMARIZE } from './lib/gemini.mjs';
+import { FALLBACK_SUMMARIZE, geminiJSONWithRetry, hasApiKey, MODEL_SUMMARIZE } from './lib/gemini.mjs';
 
 const ROOT = process.cwd();
 const cc = (process.argv.find((a) => a.startsWith('--country=')) ?? '').split('=')[1];
@@ -75,7 +75,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}`;
     required: ['regulation_name', 'status', 'approach'],
   };
 
-  const head = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema });
+  const head = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema, fallbackModels: FALLBACK_SUMMARIZE });
   const draft = { ...skeleton, ...head };
   fs.writeFileSync(outFile, JSON.stringify(draft, null, 2) + '\n');
   console.log(`[bootstrap] draft generated: ${outFile}`);

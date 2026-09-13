@@ -195,3 +195,56 @@ export function buildUpdateRecord({ updates = [], country, item, rec }) {
     country_anchor: `/country/${country}/#axis-${rec.axis === 'timeline' || rec.axis === 'general' ? 'risk_classification' : rec.axis}`,
   };
 }
+
+export const ISSUES_FILE = '/tmp/pipeline_issues.json';
+
+/** 起票予定Issueを追記する（上書きしない。collect/triage/summarize で共有） */
+export function pushIssue(issue) {
+  const issues = loadJSON(ISSUES_FILE, []);
+  issues.push(issue);
+  writeJSON(ISSUES_FILE, issues);
+}
+
+/** RSSの<link>が相対パスのとき、取得に使ったフィードURLを基準に絶対化する。http(s)にならなければ '' */
+export function resolveFeedLink(link, feedUrl) {
+  if (!link) return '';
+  try {
+    const url = new URL(link, feedUrl);
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.toString() : '';
+  } catch {
+    return '';
+  }
+}
+
+// triage のバッチ分割（出力が maxOutputTokens で切れて全滅するのを防ぐ）
+export const SOURCE_GROUP_ORDER = { official_sources: 0, watch_feeds: 1, news_queries: 2 };
+
+export function chunk(arr, size) {
+  const out = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+}
+
+/** 公式ソースを先に処理する（後半バッチが失敗しても一次情報は拾えているように）。安定ソート */
+export function sortForTriage(candidates) {
+  return [...candidates].sort((a, b) => (SOURCE_GROUP_ORDER[a.source_group] ?? 9) - (SOURCE_GROUP_ORDER[b.source_group] ?? 9));
+}
+
+/** バッチ内ローカルindexでverdictを候補に結び付ける。不正・重複indexは捨てて件数を返す */
+export function applyTriageVerdicts(batch, verdicts, targetCountries) {
+  const picked = [];
+  const seen = new Set();
+  let bad = 0;
+  for (const v of verdicts ?? []) {
+    if (!Number.isInteger(v?.index) || v.index < 0 || v.index >= batch.length || seen.has(v.index)) {
+      bad++;
+      continue;
+    }
+    seen.add(v.index);
+    if (!v.relevant || v.duplicate) continue;
+    const ccs = (v.country ?? []).filter((c) => targetCountries.includes(c));
+    if (ccs.length === 0) continue;
+    picked.push({ ...batch[v.index], countries: ccs, priority: v.priority, canonical_event: v.canonical_event });
+  }
+  return { picked, bad, answered: seen.size };
+}

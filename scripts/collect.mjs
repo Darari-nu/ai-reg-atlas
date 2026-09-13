@@ -5,7 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import yaml from 'js-yaml';
 import Parser from 'rss-parser';
-import { dataPath, loadJSON, writeJSON, isGoogleNewsUrl } from './lib/pipeline.mjs';
+import { dataPath, loadJSON, writeJSON, isGoogleNewsUrl, resolveFeedLink } from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
 const CACHE_DIR = dataPath('.cache');
@@ -197,9 +197,15 @@ async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
     const pub = item.isoDate ? new Date(item.isoDate) : null;
     if (pub && (!newest || pub > newest)) newest = pub;
     if (!pub || pub <= threshold) continue;
+    // 相対リンク（priv.gc.ca 等）はフィードURLを基準に絶対化。channel の link は http のことがあるので使わない
+    const link = resolveFeedLink(item.link, url);
+    if (!link) {
+      console.warn(`[collect] skip item with unresolvable link: ${(item.title ?? '').slice(0, 60)}`);
+      continue;
+    }
     items.push({
       title: item.title ?? '',
-      url: normalizeUrl(item.link ?? ''),
+      url: normalizeUrl(link),
       snippet: (item.contentSnippet ?? '').slice(0, 300),
       country_hint: countryHint,
       source_type: sourceType,

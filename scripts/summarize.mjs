@@ -2,7 +2,7 @@
 // 新着ゼロ・キー未設定でも meta.json は必ず更新する（60日無活動停止の防止 §15-3）
 import fs from 'node:fs';
 import path from 'node:path';
-import { geminiJSONWithRetry, hasApiKey, MODEL_SUMMARIZE } from './lib/gemini.mjs';
+import { FALLBACK_SUMMARIZE, geminiJSONWithRetry, geminiStats, hasApiKey, isGeminiStop, MODEL_SUMMARIZE } from './lib/gemini.mjs';
 import {
   RECENCY_DAYS,
   appendDrop,
@@ -13,14 +13,13 @@ import {
   loadJSON,
   mechanicalGate,
   publicationDateGate,
+  pushIssue,
   readDataJSON,
   writeDataJSON,
-  writeJSON,
 } from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/triaged.json';
-const ISSUES_FILE = '/tmp/pipeline_issues.json';
 const MAX_PER_RUN = 8; // バッチ原則・無料枠保護（§5-3）
 const TIMEOUT_MS = 15_000;
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
@@ -28,12 +27,6 @@ const STATUS_ORDER = ['proposed', 'draft', 'consultation', 'enacted', 'in_force'
 
 const today = process.env.SWEEP_DATE || new Date().toISOString().slice(0, 10);
 const nowIso = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
-
-function pushIssue(issue) {
-  const issues = loadJSON(ISSUES_FILE, []);
-  issues.push(issue);
-  writeJSON(ISSUES_FILE, issues);
-}
 
 function writeMeta(status) {
   writeDataJSON(['meta.json'], { last_sweep: nowIso, status });
@@ -113,6 +106,12 @@ const RESPONSE_SCHEMA = {
 async function prepareItems(triaged) {
   const gated = [];
   for (const item of triaged) {
+    try {
+      new URL(item.url);
+    } catch {
+      appendDrop({ ...item, reason: 'invalid-url' });
+      continue;
+    }
     let articleText = '';
     try {
       articleText = await fetchArticleText(item.url);
@@ -145,7 +144,7 @@ async function main() {
   let okCount = 0;
   let failCount = 0;
 
-  for (const item of items) {
+  for (const [idx, item] of items.entries()) {
     const cc = item.countries[0];
     try {
       if (isGoogleNewsUrl(item.url)) {
@@ -172,7 +171,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
 記事URL: ${item.url}
 一次ソース本文: ${articleText}`;
 
-      const rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA });
+      const rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA, fallbackModels: FALLBACK_SUMMARIZE });
       if (rec.usable === false) {
         appendDrop({ ...item, country: cc, reason: 'gemini-unusable' });
         continue;
@@ -227,6 +226,19 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       okCount++;
       console.log(`[summarize] ok ${record.id} (${item.url})`);
     } catch (e) {
+      if (isGeminiStop(e)) {
+        // 待ち予算切れ・全モデル枯渇: 残りは呼んでも無駄。件別Issueを積まず1件にまとめて打ち切る
+        const rest = items.slice(idx);
+        for (const r of rest) appendDrop({ ...r, country: r.countries[0], reason: 'gemini-unavailable' });
+        failCount += rest.length;
+        console.warn(`[summarize] stop: ${e.message} (remaining ${rest.length} items dropped as gemini-unavailable)`);
+        pushIssue({
+          title: `needs-review: Gemini利用不可で要約を打ち切り（${rest.length}件）`,
+          body: `理由: ${e.message}\n\n未処理URL:\n${rest.map((r) => `- ${r.url}`).join('\n')}`,
+          labels: ['needs-review'],
+        });
+        break;
+      }
       failCount++;
       console.warn(`[summarize] skip ${item.url} (${e.message})`);
       pushIssue({
@@ -257,6 +269,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
   } catch {
     console.log('[summarize] no drop log');
   }
+  console.log(`[summarize] gemini ${JSON.stringify(geminiStats())}`);
   console.log(`[summarize] done ok=${okCount} failed=${failCount}`);
 }
 

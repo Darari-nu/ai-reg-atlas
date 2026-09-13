@@ -14,8 +14,9 @@ EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中�
 ```
 ① pipeline.yml  [ワークフロー名: daily-pipeline]  (cron 21:00 UTC = JST 6:00)
   collect.mjs    countries.yaml の全ソース巡回（official_sources / watch_feeds / news_queries）
-  triage.mjs     新着を1リクエストに束ねて Gemini Flash-Lite で選別・事象dedupe
+  triage.mjs     新着を40件ずつ束ねて Gemini Flash-Lite で選別・事象dedupe（一部バッチ失敗でも続行）
   summarize.mjs  実URL本文を機械ゲート → Gemini Flash が3行要約＋差分影響を生成
+                 （503/枠切れは予備モデルへ切替。待ち時間は1ステップ累計600秒で打ち切り）
   validate.mjs   JSON Schema検証（失敗ならcommitしない）
   → data/ をcommit&push → 同一ワークフロー内で Astroビルド → GitHub Pages デプロイ
   → diff_changed / needs-review は Issue 自動起票
@@ -27,7 +28,7 @@ EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中�
   → darari-nu.com/atlas/ で公開（ai-kaizen-hub 側の Pages Function が中継）
 
 ③ ci.yml  (pull_request / push to main)
-  gitleaks でシークレット混入をブロック → validate.mjs → astro build
+  gitleaks でシークレット混入をブロック → npm test → validate.mjs → astro build
 ```
 
 - DBなし。`data/` のJSONがデータベース（履歴はGit）
@@ -98,7 +99,7 @@ npm install
 npm run dev       # http://localhost:4321/ai-reg-atlas/
 npm run build     # dist/ に静的出力
 npm run validate  # data/ 全JSONのスキーマ検証
-npm test          # 実APIを使わないパイプライン品質ゲートのテスト
+npm test          # 実APIを使わないテスト（品質ゲート・triage分割・Geminiのリトライ/フォールバック）
 ```
 
 ### Gemini APIキー（人間がやること）
@@ -128,6 +129,24 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 
 `triage.mjs` / `summarize.mjs` はキー未設定を検知すると安全にスキップし、
 `meta.json` の更新だけ行う（scheduled workflow の60日停止対策も兼ねる）。
+
+### Gemini のモデルと待ち時間（Repository Variables で差し替え可）
+
+コードを触らずに、GitHub の Settings → Secrets and variables → Actions → **Variables** で変えられる。
+未設定ならコードの既定値が使われる。`-latest` エイリアスは指す先が予告なく変わり、混雑・無料枠が読めないので既定にしない
+（2026-09 時点で `gemini-flash-latest` の中身は最新の 3.8-flash で、503 が連日続いていた）。2.5 系は新規キーでは 404（提供終了）。
+
+| 名前 | 既定値 | 意味 |
+|---|---|---|
+| `GEMINI_MODEL_TRIAGE` | `gemini-3.5-flash-lite` | triage の主モデル |
+| `GEMINI_FALLBACK_TRIAGE` | `gemini-3.1-flash-lite` | 主モデルが 503 続き・日次枠切れ・404 のとき使う（カンマ区切り可） |
+| `GEMINI_MODEL_SUMMARIZE` | `gemini-3.6-flash` | summarize / bootstrap の主モデル |
+| `GEMINI_FALLBACK_SUMMARIZE` | `gemini-3.5-flash,gemini-3.5-flash-lite` | 同上のフォールバック |
+| `GEMINI_WAIT_BUDGET_SEC` | `600` | 1ステップでバックオフに使ってよい待ち時間の累計。超えたら残りを打ち切る |
+| `TRIAGE_BATCH_SIZE` | `40` | triage 1リクエストあたりの候補数（出力が 8192 トークンで切れないように） |
+
+失敗時のログは `[gemini] HTTP 429 model=... kind=quota-daily quota=GenerateRequestsPerDay...` の形で出る。
+`kind=quota-daily` なら日次無料枠切れ（その日はそのモデルを使わない）、`http-retryable` なら一時的な混雑。
 
 ## 国の追加
 
@@ -186,6 +205,7 @@ DRY_RUN=1 npm run validate
 | 2026-08-23 | デプロイを `cf-deploy.yml`（GitHub Actions）へ移行。LaunchAgent は停止 |
 | 2026-09-03 | README を実物に合わせて全面更新（Cloudflare 経路が未記載のままだった）。`ci.yml` とワークフロー対応表を追記、「6カ国」→「13カ国・地域」を訂正。この改訂履歴を新設 |
 | 2026-09-04 | GitHub Pages を止めるか検討し、**止めない**と決定（理由はデプロイ節）。構成変更なし |
+| 2026-09-13 | Gemini 障害対策。既定モデルを `-latest` から固定名へ（予備モデルへの自動切替つき）、429/503 のエラー本文をログに出す、待ち時間に累計上限、triage を40件ずつ分割、RSS の相対リンクを絶対化、`pipeline.yml` に `timeout-minutes: 90`、`ci.yml` で `npm test` を実行 |
 
 ## ライセンス
 

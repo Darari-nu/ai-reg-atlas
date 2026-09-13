@@ -22,6 +22,7 @@ concurrency:
 jobs:
   sweep-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 90 # Gemini待ち予算(600s×2ステップ)+巡回+buildに対して十分。既定の360分まで走らせない
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -44,11 +45,19 @@ jobs:
         run: node scripts/triage.mjs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # 以下は Repository Variables。未設定なら空文字→コードの既定値
+          GEMINI_MODEL_TRIAGE: ${{ vars.GEMINI_MODEL_TRIAGE }}
+          GEMINI_FALLBACK_TRIAGE: ${{ vars.GEMINI_FALLBACK_TRIAGE }}
+          GEMINI_WAIT_BUDGET_SEC: ${{ vars.GEMINI_WAIT_BUDGET_SEC }}
+          TRIAGE_BATCH_SIZE: ${{ vars.TRIAGE_BATCH_SIZE }}
 
       - name: summarize
         run: node scripts/summarize.mjs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL_SUMMARIZE: ${{ vars.GEMINI_MODEL_SUMMARIZE }}
+          GEMINI_FALLBACK_SUMMARIZE: ${{ vars.GEMINI_FALLBACK_SUMMARIZE }}
+          GEMINI_WAIT_BUDGET_SEC: ${{ vars.GEMINI_WAIT_BUDGET_SEC }}
 
       - name: validate
         run: node scripts/validate.mjs

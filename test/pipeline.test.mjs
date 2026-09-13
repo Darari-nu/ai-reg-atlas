@@ -2,10 +2,14 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { beforeEach, describe, it } from 'node:test';
 import {
+  applyTriageVerdicts,
   buildUpdateRecord,
+  chunk,
   dedupeByEvent,
   mechanicalGate,
   publicationDateGate,
+  resolveFeedLink,
+  sortForTriage,
 } from '../scripts/lib/pipeline.mjs';
 
 const longAiRegText = `
@@ -93,5 +97,67 @@ describe('pipeline quality gates', () => {
     assert.equal(deduped.length, 2);
     assert.equal(deduped.find((item) => item.countries[0] === 'eu').url, 'https://official.example/guideline');
     assert.equal(deduped.find((item) => item.countries[0] === 'us').url, 'https://official.example/guideline-us');
+  });
+});
+
+describe('collect: RSSリンクの絶対化', () => {
+  const feed = 'https://www.priv.gc.ca/en/rss/news/';
+  it('相対パスはフィードURLを基準に解決する', () => {
+    assert.equal(resolveFeedLink('/en/opc-news/news-and-announcements/2026/nr-c_260910/', feed), 'https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_260910/');
+  });
+  it('絶対URLはそのまま', () => {
+    assert.equal(resolveFeedLink('https://example.gov/a?b=1', feed), 'https://example.gov/a?b=1');
+  });
+  it('空・http(s)以外は空文字', () => {
+    assert.equal(resolveFeedLink('', feed), '');
+    assert.equal(resolveFeedLink(undefined, feed), '');
+    assert.equal(resolveFeedLink('javascript:void(0)', feed), '');
+    assert.equal(resolveFeedLink('mailto:a@b.c', feed), '');
+  });
+});
+
+describe('triage: バッチ分割', () => {
+  it('chunk は指定件数ずつ切る', () => {
+    const arr = Array.from({ length: 150 }, (_, i) => i);
+    assert.deepEqual(chunk(arr, 40).map((b) => b.length), [40, 40, 40, 30]);
+    assert.deepEqual(chunk([], 40), []);
+  });
+
+  it('sortForTriage は公式→watch→newsの順、同順位は元の並びを保つ', () => {
+    const c = [
+      { id: 1, source_group: 'news_queries' },
+      { id: 2, source_group: 'official_sources' },
+      { id: 3, source_group: 'watch_feeds' },
+      { id: 4, source_group: 'official_sources' },
+      { id: 5 },
+    ];
+    assert.deepEqual(sortForTriage(c).map((x) => x.id), [2, 4, 3, 1, 5]);
+    assert.deepEqual(c.map((x) => x.id), [1, 2, 3, 4, 5]); // 元配列は変えない
+  });
+
+  it('applyTriageVerdicts はバッチ内indexで結び付け、不正indexを捨てる', () => {
+    const batch = [{ url: 'a' }, { url: 'b' }, { url: 'c' }];
+    const v = (index, extra = {}) => ({ index, relevant: true, duplicate: false, country: ['jp'], priority: 'high', canonical_event: `e${index}`, ...extra });
+    const { picked, bad, answered } = applyTriageVerdicts(
+      batch,
+      [v(0), v(1, { relevant: false }), v(2, { duplicate: true }), v(3), v(-1), v(1.5), v(0), v(1, { country: ['zz'] })],
+      ['jp', 'us'],
+    );
+    assert.deepEqual(picked.map((p) => p.url), ['a']);
+    assert.deepEqual(picked[0].countries, ['jp']);
+    assert.equal(picked[0].canonical_event, 'e0');
+    assert.equal(bad, 5); // 3, -1, 1.5, 重複0, 重複1
+    assert.equal(answered, 3);
+  });
+
+  it('対象外の国コードは落とし、対象国が残らなければ除外する', () => {
+    const batch = [{ url: 'a' }, { url: 'b' }];
+    const base = { relevant: true, duplicate: false, priority: 'low', canonical_event: 'x' };
+    const { picked } = applyTriageVerdicts(batch, [{ ...base, index: 0, country: ['zz', 'us'] }, { ...base, index: 1, country: ['zz'] }], ['jp', 'us']);
+    assert.deepEqual(picked.map((p) => [p.url, p.countries]), [['a', ['us']]]);
+  });
+
+  it('verdicts が null でも落ちない', () => {
+    assert.deepEqual(applyTriageVerdicts([{ url: 'a' }], null, ['jp']), { picked: [], bad: 0, answered: 0 });
   });
 });

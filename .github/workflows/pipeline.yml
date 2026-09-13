@@ -77,23 +77,33 @@ jobs:
           done
           git push
 
+      # hashFiles() はワークスペース外(/tmp)を見られず常にスキップされていたので、存在確認はスクリプト内で行う（2026-09-13）
       - name: file issues (diff-change / needs-review)
-        if: ${{ hashFiles('/tmp/pipeline_issues.json') != '' }}
+        continue-on-error: true # 起票失敗でビルド・デプロイを止めない
         uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
+            const file = '/tmp/pipeline_issues.json';
+            if (!fs.existsSync(file)) { core.info('no issues to file'); return; }
             let issues = [];
-            try { issues = JSON.parse(fs.readFileSync('/tmp/pipeline_issues.json', 'utf8')); } catch {}
+            try { issues = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { core.warning(`unreadable ${file}: ${e.message}`); return; }
+            const { owner, repo } = context.repo;
+            // 同じタイトルの Issue が開いていれば重ねて立てない（毎日同じ失敗で埋まらないように）
+            const open = await github.paginate(github.rest.issues.listForRepo, { owner, repo, state: 'open', per_page: 100 });
+            const openTitles = new Set(open.map((i) => i.title));
+            let created = 0;
             for (const i of issues) {
-              await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: i.title,
-                body: i.body,
-                labels: i.labels ?? [],
-              });
+              if (openTitles.has(i.title)) { core.info(`skip (already open): ${i.title}`); continue; }
+              try {
+                await github.rest.issues.create({ owner, repo, title: i.title, body: i.body, labels: i.labels ?? [] });
+                openTitles.add(i.title);
+                created++;
+              } catch (e) {
+                core.warning(`failed to file "${i.title}": ${e.message}`);
+              }
             }
+            core.info(`filed ${created}/${issues.length} issues`);
 
       # ビルド〜デプロイは同一ワークフロー内（GITHUB_TOKENのpushは他workflowを起動しない §15-2）
       - run: npx astro build

@@ -6,7 +6,12 @@ import {
   buildUpdateRecord,
   chunk,
   dedupeByEvent,
+  isStaleListing,
+  listingDate,
   mechanicalGate,
+  nearestDate,
+  parseLooseDate,
+  readerBody,
   publicationDateGate,
   resolveFeedLink,
   sortForTriage,
@@ -159,5 +164,43 @@ describe('triage: バッチ分割', () => {
 
   it('verdicts が null でも落ちない', () => {
     assert.deepEqual(applyTriageVerdicts([{ url: 'a' }], null, ['jp']), { picked: [], bad: 0, answered: 0 });
+  });
+});
+
+describe('collect: 一覧リンクの日付と古いリンクの除外', () => {
+  it('parseLooseDate は各形式を YYYY-MM-DD にする', () => {
+    assert.equal(parseLooseDate('https://www.cac.gov.cn/2026-08/20/c_1788889498173657.htm'), '2026-08-20');
+    assert.equal(parseLooseDate('https://www.federalregister.gov/documents/2026/09/14/2026-18646/x'), '2026-09-14');
+    assert.equal(parseLooseDate('2026年8月20日 施行'), '2026-08-20');
+    assert.equal(parseLooseDate('Jul 22, 2026'), '2026-07-22');
+    assert.equal(parseLooseDate('22 July 2026'), '2026-07-22');
+    assert.equal(parseLooseDate('22/07/2026'), '2026-07-22');
+    assert.equal(parseLooseDate('c_1788889498173657'), null);
+    assert.equal(parseLooseDate(undefined), null);
+  });
+
+  it('nearestDate はアンカーに一番近い日付を選ぶ', () => {
+    const t = '<li><span>2025-01-01</span> ………………………… </li><li><a href="/x">A</a><span>2026-09-10</span></li>';
+    const start = t.indexOf('<a');
+    assert.equal(nearestDate(t, start, t.indexOf('</a>') + 4), '2026-09-10');
+  });
+
+  it('listingDate は URL → タイトル → 周辺 の順', () => {
+    assert.equal(listingDate({ href: 'https://a/2026-08/20/x.htm', title: '2025年1月1日', text: '2024-01-01', start: 0, end: 1 }), '2026-08-20');
+    assert.equal(listingDate({ href: 'https://a/x.htm', title: '2025年1月1日 通知', text: '2024-01-01', start: 0, end: 1 }), '2025-01-01');
+    assert.equal(listingDate({ href: 'https://a/x.htm', title: '通知' }), null);
+  });
+
+  it('isStaleListing は日付が分かり上限より古いときだけ true', () => {
+    assert.equal(isStaleListing('2022-12-14', '2026-09-13', 30), true);
+    assert.equal(isStaleListing('2026-08-20', '2026-09-13', 30), false);
+    assert.equal(isStaleListing(null, '2026-09-13', 30), false);
+    assert.equal(isStaleListing('2026-10-01', '2026-09-13', 30), false); // 未来日付は落とさない
+  });
+
+  it('readerBody は jina の前置きと取得日時の行を除く', () => {
+    const raw = 'Title: t\n\nURL Source: https://x\n\nMarkdown Content:\n2026年09月13日 星期日\n\n# 本文見出し\n本文';
+    assert.equal(readerBody(raw), '\n# 本文見出し\n本文');
+    assert.equal(readerBody('前置きなし'), '前置きなし');
   });
 });

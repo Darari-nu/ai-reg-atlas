@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { FALLBACK_SUMMARIZE, geminiJSONWithRetry, geminiStats, hasApiKey, isGeminiStop, MODEL_SUMMARIZE } from './lib/gemini.mjs';
 import {
+  JINA_READER_PREFIX,
   RECENCY_DAYS,
   appendDrop,
   buildUpdateRecord,
@@ -15,6 +16,7 @@ import {
   publicationDateGate,
   pushIssue,
   readDataJSON,
+  readerBody,
   writeDataJSON,
 } from './lib/pipeline.mjs';
 
@@ -22,6 +24,7 @@ const ROOT = process.cwd();
 const IN_FILE = '/tmp/triaged.json';
 const MAX_PER_RUN = 8; // バッチ原則・無料枠保護（§5-3）
 const TIMEOUT_MS = 15_000;
+const JINA_TIMEOUT_MS = 30_000; // 中継は本体取得＋変換で遅い
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
 const STATUS_ORDER = ['proposed', 'draft', 'consultation', 'enacted', 'in_force'];
 
@@ -32,13 +35,22 @@ function writeMeta(status) {
   writeDataJSON(['meta.json'], { last_sweep: nowIso, status });
 }
 
-async function fetchArticleText(url) {
+async function fetchText(url, timeoutMs = TIMEOUT_MS) {
   const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  const t = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
     const res = await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': USER_AGENT } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const html = await res.text();
+    return await res.text();
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+// 直接取れないときだけ r.jina.ai 経由で読む（cac.gov.cn 等は Actions ランナーの IP を弾く。collect の scrape_hash と同じ対策）
+async function fetchArticleText(url) {
+  try {
+    const html = await fetchText(url);
     return html
       .replace(/<script[\s\S]*?<\/script>/gi, '')
       .replace(/<style[\s\S]*?<\/style>/gi, '')
@@ -46,8 +58,18 @@ async function fetchArticleText(url) {
       .replace(/\s+/g, ' ')
       .trim()
       .slice(0, 20_000);
-  } finally {
-    clearTimeout(t);
+  } catch (directErr) {
+    try {
+      const text = readerBody(await fetchText(JINA_READER_PREFIX + url, JINA_TIMEOUT_MS))
+        .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ') // 画像リンクは本文ではないので落とす
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 20_000);
+      console.warn(`[summarize] fetched via jina proxy (direct: ${directErr.message}): ${url}`);
+      return text;
+    } catch {
+      throw directErr; // 直接fetchのエラーの方が原因診断に有用
+    }
   }
 }
 

@@ -5,7 +5,17 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import yaml from 'js-yaml';
 import Parser from 'rss-parser';
-import { dataPath, loadJSON, writeJSON, isGoogleNewsUrl, resolveFeedLink } from './lib/pipeline.mjs';
+import {
+  JINA_READER_PREFIX,
+  dataPath,
+  isGoogleNewsUrl,
+  isStaleListing,
+  listingDate,
+  loadJSON,
+  readerBody,
+  resolveFeedLink,
+  writeJSON,
+} from './lib/pipeline.mjs';
 
 const ROOT = process.cwd();
 const CACHE_DIR = dataPath('.cache');
@@ -15,8 +25,11 @@ const OUT_FILE = '/tmp/candidates.json';
 const ISSUES_FILE = '/tmp/pipeline_issues.json';
 const TIMEOUT_MS = 15_000;
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
-const JINA_READER_PREFIX = 'https://r.jina.ai/'; // GitHub Actionsランナー特有のIPブロック回避フォールバック（2026-08-19導入、scrape_hash専用）
 const FIRST_RUN_WINDOW_DAYS = Number(process.env.FIRST_RUN_WINDOW_DAYS || 3); // 既定3日。バックフィル時は環境変数で拡大
+// scrape_hash は一覧ページの変化で全リンクを拾うため、数年前の記事まで候補になる。日付の分かる古いリンクはここで落とす
+const SCRAPE_HASH_MAX_AGE_DAYS = Number(process.env.SCRAPE_HASH_MAX_AGE_DAYS || 30);
+const MAX_LINKS_PER_PAGE = 20;
+const TODAY = new Date().toISOString().slice(0, 10);
 
 const parser = new Parser({ timeout: TIMEOUT_MS, headers: { 'User-Agent': USER_AGENT } });
 
@@ -123,9 +136,10 @@ function extractDatedLinks(html, baseUrl, countryHint) {
       country_hint: countryHint,
       source_type: 'scrape_hash',
       source_group: 'official_sources',
+      listing_date: listingDate({ href: absolute, title, text: html, start: match.index, end: match.index + match[0].length }),
     });
   }
-  return items.slice(0, 20);
+  return items;
 }
 
 // r.jina.ai Reader経由のフォールバック時はMarkdown（[text](url)形式）で返るため、HTML用extractDatedLinksとは別にリンク抽出する
@@ -159,9 +173,10 @@ function extractDatedLinksMarkdown(text, baseUrl, countryHint) {
       country_hint: countryHint,
       source_type: 'scrape_hash',
       source_group: 'official_sources',
+      listing_date: listingDate({ href: absolute, title, text, start: match.index, end: match.index + match[0].length }),
     });
   }
-  return items.slice(0, 20);
+  return items;
 }
 
 // 直接fetchが失敗した場合のみr.jina.ai Reader経由で再試行する（GitHub Actionsランナー特有のIPブロック対策）
@@ -174,11 +189,8 @@ async function fetchScrapeHashContent(url) {
     try {
       const proxied = await fetchWithTimeout(JINA_READER_PREFIX + url);
       if (!proxied.ok) throw new Error(`HTTP ${proxied.status}`);
-      const raw = await decodeHtmlResponse(proxied);
       // jinaの前置きヘッダ(Title:/URL Source:/直後のページ取得日時)を除去。取得日時が全リンクの文脈窓に誤って入り込むのを防ぐ
-      const body = raw.split(/\nMarkdown Content:\n/)[1] ?? raw;
-      const cleaned = body.replace(/^\s*(?:20\d{2}[-/.年]\s?\d{1,2}[-/.月]\s?\d{1,2}日?)[^\n]*\n/, '');
-      return { text: cleaned, viaProxy: true };
+      return { text: readerBody(await decodeHtmlResponse(proxied)), viaProxy: true };
     } catch {
       throw directErr; // 直接fetchのエラーの方が原因診断に有用なのでそちらを報告
     }
@@ -237,7 +249,11 @@ async function collectScrapeHash(url, countryHint, hashes) {
       labels: ['needs-review'],
     });
   }
-  return extracted;
+  const fresh = extracted.filter((c) => !isStaleListing(c.listing_date, TODAY, SCRAPE_HASH_MAX_AGE_DAYS));
+  if (fresh.length < extracted.length) {
+    console.log(`[collect] scrape_hash ${url}: dropped ${extracted.length - fresh.length}/${extracted.length} links older than ${SCRAPE_HASH_MAX_AGE_DAYS}d`);
+  }
+  return fresh.slice(0, MAX_LINKS_PER_PAGE); // 古いリンクを落としてから上限をかける（古いものに枠を取られないように）
 }
 
 async function main() {

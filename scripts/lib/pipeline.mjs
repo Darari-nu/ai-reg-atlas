@@ -248,3 +248,74 @@ export function applyTriageVerdicts(batch, verdicts, targetCountries) {
   }
   return { picked, bad, answered: seen.size };
 }
+
+// GitHub Actionsランナーの IP を弾くサイト（cac.gov.cn 等）向けの中継。collect と summarize で共有
+export const JINA_READER_PREFIX = 'https://r.jina.ai/';
+
+/** r.jina.ai の応答から前置き(Title:/URL Source:)と、本文先頭のページ取得日時の行を除く */
+export function readerBody(raw) {
+  const body = String(raw).split(/\nMarkdown Content:\n/)[1] ?? String(raw);
+  // 取得日時（例: 2026年09月13日 星期日）が全リンクの文脈窓や本文日付に紛れ込むのを防ぐ
+  return body.replace(/^\s*(?:20\d{2}[-/.年]\s?\d{1,2}[-/.月]\s?\d{1,2}日?)[^\n]*\n/, '');
+}
+
+// 一覧ページのリンクの日付（scrape_hash の古い記事を collect 段で落とすため）
+const MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+const DATE_RE = new RegExp(
+  [
+    '(20\\d{2})[-/.年]\\s?(\\d{1,2})[-/.月]\\s?(\\d{1,2})', // 2026-08-20 / 2026-08/20（URL）/ 2026年8月20日
+    '(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\.?\\s+(\\d{1,2}),?\\s+(20\\d{2})', // Jul 22, 2026
+    '(\\d{1,2})\\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\.?,?\\s+(20\\d{2})', // 22 July 2026
+    '(\\d{1,2})/(\\d{1,2})/(20\\d{2})', // 22/07/2026（dd/mm。13以上なら入れ替え）
+  ].join('|'),
+  'gi',
+);
+
+function toYmd(y, m, d) {
+  if (m > 12 && d <= 12) [m, d] = [d, m];
+  if (m < 1 || m > 12 || d < 1 || d > 31) return null;
+  return `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+}
+
+function matchToYmd(g) {
+  if (g[1]) return toYmd(+g[1], +g[2], +g[3]);
+  if (g[4]) return toYmd(+g[6], MONTHS[g[4].slice(0, 3).toLowerCase()], +g[5]);
+  if (g[7]) return toYmd(+g[9], MONTHS[g[8].slice(0, 3).toLowerCase()], +g[7]);
+  if (g[10]) return toYmd(+g[12], +g[11], +g[10]);
+  return null;
+}
+
+/** 文字列中の最初の日付を YYYY-MM-DD で返す。無ければ null */
+export function parseLooseDate(text) {
+  for (const g of String(text ?? '').matchAll(DATE_RE)) {
+    const ymd = matchToYmd(g);
+    if (ymd) return ymd;
+  }
+  return null;
+}
+
+/** text[start,end) のアンカーに最も近い日付（前後 window 文字以内）。隣のリンクの日付を拾いにくくする */
+export function nearestDate(text, start, end, window = 400) {
+  const from = Math.max(0, start - window);
+  const slice = String(text).slice(from, Math.min(text.length, end + window));
+  let best = null;
+  let bestDist = Infinity;
+  for (const g of slice.matchAll(DATE_RE)) {
+    const ymd = matchToYmd(g);
+    if (!ymd) continue;
+    const pos = from + g.index;
+    const dist = pos < start ? start - (pos + g[0].length) : Math.max(0, pos - end);
+    if (dist < bestDist) [best, bestDist] = [ymd, dist];
+  }
+  return best;
+}
+
+/** 一覧リンクの日付: URL → タイトル → アンカー周辺の順で探す */
+export function listingDate({ href, title, text, start, end }) {
+  return parseLooseDate(href) ?? parseLooseDate(title) ?? (text != null ? nearestDate(text, start, end) : null);
+}
+
+/** 日付が分かり、かつ maxAgeDays より古ければ true（日付不明・未来日付は落とさない） */
+export function isStaleListing(listing_date, today, maxAgeDays) {
+  return isYmd(listing_date) && daysBetween(listing_date, today) > maxAgeDays;
+}

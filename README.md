@@ -162,7 +162,7 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 - `watch_feeds`: 任意。良質な非Google RSS。`{ url, type: rss }`。実URLが取れるため出典にできる。
 - `news_queries`: Google News検索。検知専用。`news.google.com`は機械ゲートでdropし、更新レコードの`sources`には入れない。
 
-`scrape_hash`はページ全体の変化を検知した後、日付付きリンク・見出しを個別候補化する。構造抽出できない場合は`needs-review`に回し、全文をGeminiへ渡さない。
+`scrape_hash`はページ全体の変化を検知した後、日付付きリンク・見出しを個別候補化する。リンクの日付（URL→タイトル→周辺の順に読む）が `SCRAPE_HASH_MAX_AGE_DAYS`（既定30日）より古いものは候補にしない。構造抽出できない場合は`needs-review`に回し、全文をGeminiへ渡さない。
 
 ### DRY_RUN
 
@@ -206,6 +206,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-03 | README を実物に合わせて全面更新（Cloudflare 経路が未記載のままだった）。`ci.yml` とワークフロー対応表を追記、「6カ国」→「13カ国・地域」を訂正。この改訂履歴を新設 |
 | 2026-09-04 | GitHub Pages を止めるか検討し、**止めない**と決定（理由はデプロイ節）。構成変更なし |
 | 2026-09-13 | Gemini 障害対策。既定モデルを `-latest` から固定名へ（予備モデルへの自動切替つき）、429/503 のエラー本文をログに出す、待ち時間に累計上限、triage を40件ずつ分割、RSS の相対リンクを絶対化、`pipeline.yml` に `timeout-minutes: 90`、`ci.yml` で `npm test` を実行 |
+| 2026-09-13 | summarize の記事取得にも r.jina.ai 中継を追加（cac.gov.cn が Actions から取れず全滅していた）。scrape_hash の一覧リンクは日付を読み、30日より古いものを collect で落とす。Issue 起票ステップが `hashFiles('/tmp/...')` で常にスキップされていたのを修正し、同名の開いた Issue は重ねて立てない。ラベル `needs-review` / `diff-change` を作成 |
 
 ## ライセンス
 

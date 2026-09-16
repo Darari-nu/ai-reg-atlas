@@ -79,5 +79,32 @@
       "https://www.pm.gov.au/media/television-interview-today-13"
     ],
     "country_anchor": "/country/au/#axis-risk_classification"
+  },
+  {
+    "id": "2026-09-15-tw-001",
+    "date": "2026-09-15",
+    "country": "tw",
+    "axis": "general",
+    "change_type": "other",
+    "title": "台湾数發部、主権AI学習用民間コーパスの無償ライセンス収集を開始",
+    "summary": {
+      "what": "自願参加・明確な授権・退出可能の原則に基づく民間語料の収集開始",
+      "who": "台湾の出版社、電子書籍事業者、作家、AI開発者",
+      "when_impact": "2026年9月15日より開始"
+    },
+    "detail": "台湾デジタル発展部（moda）は2026年9月15日、「台湾主権AI訓練語料庫」への民間語料（出版物・試読内容・パブリックドメイン作品等）の収集を開始した。著作権者の権利保護のため「自願参加、明確な授権、退出可能」の3原則を提示し、無償授権方式で運用される。",
+    "so_what": "台湾向けAIモデル開発やデータ提供を行う企業は、主権AIコーパスのライセンス条件および退出手続の実務を確認する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Taiwan MODA launches public-private collection of sovereign AI corpus",
+    "publication_date": "2026-09-15",
+    "effective_date": "2026-09-15",
+    "deadline_date": null,
+    "sources": [
+      "https://moda.gov.tw/press/press-releases/20640"
+    ],
+    "country_anchor": "/country/tw/#axis-risk_classification"
   }
 ]

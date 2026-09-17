@@ -106,5 +106,59 @@
       "https://moda.gov.tw/press/press-releases/20640"
     ],
     "country_anchor": "/country/tw/#axis-risk_classification"
+  },
+  {
+    "id": "2026-09-16-kr-001",
+    "date": "2026-09-16",
+    "country": "kr",
+    "axis": "transparency",
+    "change_type": "other",
+    "title": "韓国PIPC、個人情報処理方針・権利行使対応の不備でOpenAIやWrtn等5社に改善勧告",
+    "summary": {
+      "what": "個人情報処理方針の事後点検に基づき権利行使対応や国内代理人運営に不備があった5社へ改善勧告を実施。",
+      "who": "韓国個人情報保護委員会（PIPC）、対象5社（Wrtn、テスラ、DeepSeek、OpenAI、ナイキ）",
+      "when_impact": "2026年9月9日審議決定、9月16日発表。即時適用。"
+    },
+    "detail": "韓国個人情報保護委員会（PIPC）は、2025年の個人情報処理方針評価における未吸企業の事後点検結果を受け、2026年9月9日の全体会議で5社への改善勧告を決定し9月16日に公表した。Wrtnは問い合わせへの未回答、テスラコリアとDeepSeekは韓国語の問い合わせに対し外国語（英語・中国語）で返信、OpenAIとナイキは国内代理人を介した問い合わせへ未回答であったことが確認され、改善が求められた。",
+    "so_what": "韓国市場でAIサービスを展開する事業者は、韓国語での権利行使対応や国内代理人窓口の実質的運用体制の再確認が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本件は既存の個人情報保護法に基づく個別の行政指導であり、EU AI Act基準との制度的差分に影響を与えない。"
+    },
+    "canonical_event": "South Korea PIPC issues corrective recommendations to companies for personal information inquiry violations",
+    "publication_date": "2026-09-16",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12499"
+    ],
+    "country_anchor": "/country/kr/#axis-transparency"
+  },
+  {
+    "id": "2026-09-17-br-001",
+    "date": "2026-09-17",
+    "country": "br",
+    "axis": "transparency",
+    "change_type": "new_regulation",
+    "title": "ブラジル下院、デジタルIDおよび生成AIコンテンツ規制に関する法案PL 2002/26の審議を開始",
+    "summary": {
+      "what": "生成AIによる他者なりすましや世論偽装の禁止等を盛る法案の審議",
+      "who": "ブラジル下院、AI事業者、プラットフォーム利用企業",
+      "when_impact": "下院・上院の可決および成立後"
+    },
+    "detail": "ブラジル下院において、デジタルアイデンティティおよび生成AIコンテンツの利用規律を定める法案PL 2002/26の審議が開始された。同法案は、許可なく第三者のアイデンティティを模倣することや、世論の支持を不当に偽装する目的で生成AIを利用することを禁止している。また、企業・団体の公式プロフィールの透明性確保やドクシングの禁止等も盛り込まれている。",
+    "so_what": "ブラジル市場におけるマーケティングやSNS運用等で生成AIを用いたなりすましや世論操作コンテンツの作成が禁止される見込みであり、AI利用規程の見直しが必要となる。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Act第50条はディープフェイク等の生成コンテンツに対する開示・ラベル表示義務を中心に規定しているのに対し、本法案は生成AIによる無許可のなりすましや自作自演の世論偽装行為そのものを直接禁止する規定を含んでおり、独自の行為規制（unique）を提示している。"
+    },
+    "canonical_event": "Brazilian bill proposed to regulate digital identity and AI content",
+    "publication_date": "2026-09-17",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.camara.leg.br/noticias/1304625-projeto-cria-regras-para-identidade-digital-uso-de-pseudonimos-e-conteudos-com-ia"
+    ],
+    "country_anchor": "/country/br/#axis-transparency"
   }
 ]

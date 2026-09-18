@@ -76,6 +76,16 @@
         "date": "2025-07-01",
         "event": "強制国家基準「AI生成コンテンツ標識方法」（GB 44855-2024）施行（の見込み）",
         "source": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9tVVl1MG53UENCSTZySThWQ1BZajlVLTdCSkRFcUZYMHE5c2VMRTNwa3Zva3ZBQmJQR19GUm8yVmZ2RlZqWnhlaGN1eTI2YkNMTG1VV21jY01sNEhwLXRv?oc=5"
+      },
+      {
+        "date": "2026-09-14",
+        "event": "「人工知能安全ガバナンスフレームワーク3.0」の発表",
+        "source": "https://www.cac.gov.cn/2026-09/14/c_1791137092283345.htm"
+      },
+      {
+        "date": "2026-09-18",
+        "event": "『ネットワーク安全標準実践指南——エージェントシステム開発安全指南（征求意见稿）』公表・パブコメ開始",
+        "source": "https://www.tc260.org.cn/tc260/tzgg/202609/e5b82ae7aca244d19d36b39575cbb458.shtml"
       }
     ]
   },
@@ -119,6 +129,6 @@
       }
     ]
   },
-  "last_checked": "2026-09-17T23:30:19Z",
-  "last_changed": "2026-06-13T00:31:36Z"
+  "last_checked": "2026-09-18T23:11:51Z",
+  "last_changed": "2026-09-18T23:11:51Z"
 }

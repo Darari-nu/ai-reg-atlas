@@ -160,5 +160,86 @@
       "https://www.camara.leg.br/noticias/1304625-projeto-cria-regras-para-identidade-digital-uso-de-pseudonimos-e-conteudos-com-ia"
     ],
     "country_anchor": "/country/br/#axis-transparency"
+  },
+  {
+    "id": "2026-09-14-cn-001",
+    "date": "2026-09-14",
+    "country": "cn",
+    "axis": "risk_classification",
+    "change_type": "other",
+    "title": "中国：全国ネット安全標委による「人工知能安全ガバナンスフレームワーク3.0」の発表",
+    "summary": {
+      "what": "「人工知能安全ガバナンスフレームワーク3.0」の公表によるリスク分類の更新と技術対応・総合ガバナンス措置の最適化",
+      "who": "中国のAI開発者、サービス提供者、および関連する研究機関や業界企業",
+      "when_impact": "2026年9月14日の公表以降、中国国内でのAI安全対策やリスク防犯能力の向上において参照される見込み"
+    },
+    "detail": "2026年9月14日、国家ネットワーク安全プロモーション週間の開幕式において、全国ネットワーク安全標準化技術委員会（網安標委）が「人工知能安全ガバナンスフレームワーク3.0」を発表しました。本フレームワークは、国家インターネット情報弁公室（CAC）の指導のもと、中国空間研究院などの専門機関や業界企業が共同で策定したものです。2024年の1.0、2025年の2.0に続くアップデートであり、AIの新たな発展傾向と安全性の課題に対応するため、リスク分類の更新、技術的対応および総合ガバナンス措置の最適化調整が行われています。",
+    "so_what": "中国でAI事業を展開する企業は、更新されたリスク分類や技術的対応措置を理解し、自社のAIガバナンス体制を本フレームワークに適合させる必要があります。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actが法的拘束力のある4段階のリスク分類を規定しているのに対し、本フレームワークは中国独自の「リスク分類、技術対応、総合ガバナンス」の論理に基づく推奨指針であり、アプローチが異なります（unique）。"
+    },
+    "canonical_event": "China releases Artificial Intelligence Safety Governance Framework 3.0",
+    "publication_date": "2026-09-14",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.cac.gov.cn/2026-09/14/c_1791137092283345.htm"
+    ],
+    "country_anchor": "/country/cn/#axis-risk_classification"
+  },
+  {
+    "id": "2026-09-14-cn-002",
+    "date": "2026-09-14",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "other",
+    "title": "中国CAC、生成AIサービス届出およびアプリ登録の実績（2026年7月〜8月分）を公表",
+    "summary": {
+      "what": "中国CACが2026年7〜8月の生成AIサービス届出124件およびアプリ登録133件の新規実績を公表。",
+      "who": "中国国家インターネット情報弁公室（CAC）および生成AIサービス提供事業者",
+      "when_impact": "2026年8月31日時点で累計1112件のサービス届出と731件のアプリ登録が完了。"
+    },
+    "detail": "中国国家インターネット情報弁公室（CAC）は『生成式人工智能サービス管理暫定弁法』に基づき、2026年7月から8月に新たに124件の生成AIサービス（うち7件はスマホ端末側サービス）の届出、および133件のアプリ/機能の登録（API呼び出し等）を完了したと発表した。2026年8月31日時点での累計実績はサービス届出1,112件、アプリ登録731件となった。世論属性や社会動員能力を有するサービスは届出・登録手続きが必要であり、製品画面や詳細ページ等にモデル名および届出・登録番号を明示することが義務付けられている。",
+    "so_what": "中国市場で生成AIサービスやAPI連携アプリを提供する企業は、地元の網信部門での届出・登録および製品上での届出番号等の明示義務を継続して遵守する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "既存の『生成式人工智能サービス管理暫定弁法』に基づく定期的な届出・登録実績の公表であり、EU AI Act対比での基準変更や制度的差異の変化はない。"
+    },
+    "canonical_event": "China publishes generative AI service filing information announcement",
+    "publication_date": "2026-09-14",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.cac.gov.cn/2026-09/14/c_1791136833136332.htm"
+    ],
+    "country_anchor": "/country/cn/#axis-risk_classification"
+  },
+  {
+    "id": "2026-09-18-cn-001",
+    "date": "2026-09-18",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "title": "中国TC260が「エージェントシステム開発安全指南（意見募集稿）」を公表",
+    "summary": {
+      "what": "AIエージェントシステム開発の安全指南案の公表と意見募集",
+      "who": "全国ネットワーク安全標準化技術委員会（TC260）",
+      "when_impact": "2026年10月2日まで意見募集を実施"
+    },
+    "detail": "全国ネットワーク安全標準化技術委員会（TC260）事務局は、AIエージェントシステムの安全な開発を指導しリスクを防ぐため、『ネットワーク安全標準実践指南——エージェントシステム開発安全指南（征求意见稿）』を公開した。2026年10月2日まで社会からの意見提出を受け付ける。",
+    "so_what": "中国でAIエージェントを開発・展開する事業者は、開発プロセスのセキュリティ要件を早期に把握し対応を準備する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本件は標準化機関による技術的実践指南のパブリックコメント案であり、法的規制そのものの新設や変更ではないため、EU AI Actとの対比における制度的差分に直接の影響はない。"
+    },
+    "canonical_event": "China public comment on agentic system development security guidelines",
+    "publication_date": "2026-09-18",
+    "effective_date": null,
+    "deadline_date": "2026-10-02",
+    "sources": [
+      "https://www.tc260.org.cn/tc260/tzgg/202609/e5b82ae7aca244d19d36b39575cbb458.shtml"
+    ],
+    "country_anchor": "/country/cn/#axis-risk_classification"
   }
 ]

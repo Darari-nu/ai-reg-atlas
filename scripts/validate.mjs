@@ -83,6 +83,15 @@ checkState('last_seen.json', (data) => {
     .map(([k]) => `${k}: ISO日時文字列ではない`);
 });
 
+checkState('queue.json', (data) => {
+  if (!Array.isArray(data)) return ['配列ではない'];
+  const bad = data.length > 50 ? [`件数が上限50を超えている (${data.length})`] : [];
+  data.forEach((e, i) => {
+    if (!e || typeof e.url !== 'string' || !isYmd(e.queued_at)) bad.push(`[${i}]: url/queued_at が不正`);
+  });
+  return bad;
+});
+
 checkState('seen_urls.json', (data) => {
   if (data === null || typeof data !== 'object' || Array.isArray(data)) return ['オブジェクトではない'];
   return Object.entries(data)

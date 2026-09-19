@@ -19,14 +19,25 @@ import {
   readerBody,
   writeDataJSON,
 } from './lib/pipeline.mjs';
-import { markSeen, pruneSeenUrls, readState, writeState } from './lib/state.mjs';
+import {
+  dequeueItems,
+  enqueue,
+  markSeen,
+  mergeByUrl,
+  pruneSeenUrls,
+  readState,
+  sortForSummarize,
+  toQueueItem,
+  writeState,
+} from './lib/state.mjs';
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/triaged.json';
 const SEEN_URLS_NAME = 'seen_urls.json';
+const QUEUE_NAME = 'queue.json';
 // 機械ゲート落ちのうち記憶する理由（blocked-or-js-only-page は一時的なので SKIP_VERDICTS には入れない）
 const GATE_SEEN_REASONS = ['body-too-short', 'no-ai-reg-keyword', 'blocked-or-js-only-page'];
-const MAX_PER_RUN = 8; // バッチ原則・無料枠保護（§5-3）
+const MAX_PER_RUN = Number(process.env.SUMMARIZE_MAX_PER_RUN || 8); // バッチ原則・無料枠保護（§5-3）
 const TIMEOUT_MS = 15_000;
 const JINA_TIMEOUT_MS = 30_000; // 中継は本体取得＋変換で遅い
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
@@ -129,9 +140,13 @@ const RESPONSE_SCHEMA = {
   required: ['axis', 'change_type', 'title', 'summary', 'so_what', 'diff_changed', 'usable', 'publication_date', 'effective_date', 'deadline_date'],
 };
 
-async function prepareItems(triaged, seenUrls) {
+// 先頭から limit 件ぶん通るまで fetch する。fetch すらしていない残りは untouched（attempts を増やさず繰り越す）
+async function prepareItems(ordered, seenUrls, limit) {
   const gated = [];
-  for (const item of triaged) {
+  const retry = []; // fetch失敗（一時的なので attempts+1 で繰り越す）
+  let cursor = 0;
+  for (; cursor < ordered.length && gated.length < limit; cursor++) {
+    const item = ordered[cursor];
     try {
       new URL(item.url);
     } catch {
@@ -143,31 +158,46 @@ async function prepareItems(triaged, seenUrls) {
       articleText = await fetchArticleText(item.url);
     } catch (e) {
       appendDrop({ ...item, reason: `fetch-failed:${e.message}` });
+      retry.push(item);
       continue;
     }
     const gate = mechanicalGate(item, articleText);
     if (!gate.ok) {
       appendDrop({ ...item, reason: gate.reason });
-      if (GATE_SEEN_REASONS.includes(gate.reason)) markSeen(seenUrls, item.url, gate.reason, today);
+      if (GATE_SEEN_REASONS.includes(gate.reason)) markSeen(seenUrls, item.url, gate.reason, today); // ゲート落ちは queue に入れない
       continue;
     }
     gated.push({ ...item, articleText });
   }
-  return dedupeByEvent(gated, existingEventKeys({ days: RECENCY_DAYS }));
+  return {
+    gated: dedupeByEvent(gated, existingEventKeys({ days: RECENCY_DAYS })),
+    retry,
+    untouched: ordered.slice(cursor),
+  };
 }
 
 async function main() {
   const triaged = loadJSON(IN_FILE, []);
-  if (triaged.length === 0 || !hasApiKey()) {
+  // 前日までのあふれ（TTL7日・attempts<3）と今日の triaged を混ぜる。URL重複は今日の情報を優先
+  const carried = dequeueItems(readState(QUEUE_NAME, []), today);
+  const merged = mergeByUrl(carried, triaged);
+  if (merged.length === 0 || !hasApiKey()) {
+    // 生き残りが1件も無いなら、期限切れ・打ち切り済みのエントリだけ残っている状態なので掃除する
+    if (merged.length === 0) writeState(QUEUE_NAME, carried);
     writeMeta('ok');
-    console.log(`[summarize] nothing to do (items=${triaged.length}, key=${hasApiKey()}), meta updated`);
+    console.log(`[summarize] nothing to do (items=${merged.length}, key=${hasApiKey()}), meta updated`);
     return;
   }
 
   const euBaseline = readDataJSON(['eu_baseline.json'], {});
   const seenUrls = readState(SEEN_URLS_NAME, {});
-  const prepared = await prepareItems(triaged, seenUrls);
-  const items = prepared.sort((a, b) => (a.priority === b.priority ? 0 : a.priority === 'high' ? -1 : 1)).slice(0, MAX_PER_RUN);
+  // 並び: high→low、同順位は古い繰り越しから（＝今日の high は昨日の low より先）
+  const ordered = sortForSummarize(merged, today);
+  const { gated: items, retry, untouched } = await prepareItems(ordered, seenUrls, MAX_PER_RUN);
+  const carryOver = [
+    ...untouched.map((i) => toQueueItem(i, { today })), // fetch していないので attempts は増やさない
+    ...retry.map((i) => toQueueItem(i, { today, bumpAttempts: true })),
+  ];
 
   let okCount = 0;
   let failCount = 0;
@@ -260,6 +290,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
         // 待ち予算切れ・全モデル枯渇: 残りは呼んでも無駄。件別Issueを積まず1件にまとめて打ち切る
         const rest = items.slice(idx);
         for (const r of rest) appendDrop({ ...r, country: r.countries[0], reason: 'gemini-unavailable' });
+        carryOver.push(...rest.map((r) => toQueueItem(r, { today, bumpAttempts: true }))); // 翌日に回す
         failCount += rest.length;
         console.warn(`[summarize] stop: ${e.message} (remaining ${rest.length} items dropped as gemini-unavailable)`);
         pushIssue({
@@ -289,6 +320,9 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
   }
 
   writeState(SEEN_URLS_NAME, pruneSeenUrls(seenUrls, today));
+  const { queue: nextQueue, dropped: queueDropped } = enqueue(carryOver, today);
+  writeState(QUEUE_NAME, nextQueue);
+  console.log(`[summarize] queue in=${carried.length} out=${nextQueue.length}${queueDropped ? ` over_limit_dropped=${queueDropped}` : ''}`);
 
   writeMeta(failCount > 0 && okCount === 0 ? 'partial' : 'ok');
   // drop理由の内訳をログに出す（observability。/tmp/dropped.json は collect/triage/summarize 全段の累積）

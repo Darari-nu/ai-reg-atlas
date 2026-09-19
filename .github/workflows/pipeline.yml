@@ -58,6 +58,7 @@ jobs:
           GEMINI_MODEL_SUMMARIZE: ${{ vars.GEMINI_MODEL_SUMMARIZE }}
           GEMINI_FALLBACK_SUMMARIZE: ${{ vars.GEMINI_FALLBACK_SUMMARIZE }}
           GEMINI_WAIT_BUDGET_SEC: ${{ vars.GEMINI_WAIT_BUDGET_SEC }}
+          SUMMARIZE_MAX_PER_RUN: ${{ vars.SUMMARIZE_MAX_PER_RUN }} # 1回に要約する上限。あふれは data/state/queue.json へ繰り越す
 
       - name: validate
         run: node scripts/validate.mjs

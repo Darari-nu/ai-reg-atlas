@@ -3,6 +3,7 @@ import LightLayout from '../../layouts/LightLayout.astro';
 import DiffSummary from '../../components/DiffSummary.astro';
 import AxisAccordion from '../../components/AxisAccordion.astro';
 import CopyButton from '../../components/CopyButton.astro';
+import UpdateCard from '../../components/UpdateCard.astro';
 import {
   getCountries,
   getRegulation,
@@ -12,6 +13,11 @@ import {
   DIFF_LABELS,
   fmtDate,
   withBase,
+  getUpdatesForCountry,
+  updateAgeDays,
+  fmtDaysAgo,
+  getCountryTimeline,
+  getSubregions,
 } from '../../lib/data';
 
 export function getStaticPaths() {
@@ -30,7 +36,20 @@ for (const k of ['risk_classification', 'prohibited_uses', 'gpai_obligations', '
 for (const t of r.axes.timeline) allSources.add(t.source);
 if (r.diff_vs_eu) for (const k of DIFF_KEYS) for (const d of r.diff_vs_eu[k]) allSources.add(d.source);
 
-const timeline = [...r.axes.timeline].sort((a, b) => (a.date < b.date ? 1 : -1));
+const subregions = getSubregions(country.code);
+for (const sr of subregions) for (const s of sr.sources) allSources.add(s);
+
+const updates = getUpdatesForCountry(country.code);
+const updatesShown = updates.slice(0, 10);
+const updateAge = updateAgeDays(country.code);
+
+const timelineEvents = getCountryTimeline(country.code);
+const seenTlDates = new Set<string>();
+function tlIdFor(date: string): string | undefined {
+  if (seenTlDates.has(date)) return undefined;
+  seenTlDates.add(date);
+  return `tl-${date}`;
+}
 ---
 
 <LightLayout title={`${country.name_ja}のAI規制の現状とEU AI Actとの差分 | AI Reg Atlas`}>
@@ -52,6 +71,11 @@ const timeline = [...r.axes.timeline].sort((a, b) => (a.date < b.date ? 1 : -1))
           <span class="border border-ink/25 px-2 py-0.5">{STATUS_LABELS[r.status]}</span>
           <span class="border border-ink/25 px-2 py-0.5">{APPROACH_LABELS[r.approach]}</span>
           <span class="px-2 py-0.5 text-ink/50">最終確認 {fmtDate(r.last_checked)} / 最終変更 {fmtDate(r.last_changed)}</span>
+          {updateAge !== null && (
+            <a href="#updates" class="px-2 py-0.5 text-ink/50 underline underline-offset-2 hover:text-ink">
+              最新の更新 {fmtDaysAgo(updateAge)}
+            </a>
+          )}
         </p>
       </div>
       {!isBaseline && <CopyButton regulation={r} country={country} pageUrl={pageUrl} />}
@@ -70,6 +94,25 @@ const timeline = [...r.axes.timeline].sort((a, b) => (a.date < b.date ? 1 : -1))
         <DiffSummary regulation={r} />
       )}
     </div>
+
+    <!-- この国の最近の更新（発見日順） -->
+    <section id="updates" class="mt-12">
+      <h2 class="mb-3 font-display text-lg font-semibold">この国の最近の更新</h2>
+      {updatesShown.length === 0 ? (
+        <p class="text-sm text-ink/45">この国の更新はまだ検知されていない。</p>
+      ) : (
+        <div class="space-y-3">
+          {updatesShown.map((u) => (
+            <UpdateCard update={u} country={country} theme="light" />
+          ))}
+        </div>
+      )}
+      {updates.length > 10 && (
+        <p class="mt-4 font-mono text-xs">
+          <a href={withBase(`/updates/?country=${country.code}`)} class="underline underline-offset-2 hover:text-ink">すべて見る →</a>
+        </p>
+      )}
+    </section>
 
     <!-- 7軸詳細 -->
     <h2 class="mb-3 mt-12 font-display text-lg font-semibold">7軸詳細</h2>
@@ -106,20 +149,65 @@ const timeline = [...r.axes.timeline].sort((a, b) => (a.date < b.date ? 1 : -1))
       </section>
     )}
 
-    <!-- タイムライン -->
+    <!-- 地域・州レベル -->
+    {subregions.length > 0 && (
+      <section id="subregions" class="mt-12">
+        <h2 class="mb-3 font-display text-lg font-semibold">地域・州レベル</h2>
+        <ul class="space-y-3">
+          {subregions.map((sr) => (
+            <li class="border-l-2 border-ink/15 py-1 pl-4 text-sm leading-relaxed">
+              <p class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <span class="font-medium">{sr.name_ja}</span>
+                {sr.name_en && <span class="text-xs text-ink/40">{sr.name_en}</span>}
+                {sr.status && (
+                  <span class="border border-ink/25 px-1.5 py-0.5 font-mono text-[10px] text-ink/60">{STATUS_LABELS[sr.status]}</span>
+                )}
+              </p>
+              <p class="mt-1 text-ink/75">{sr.note}</p>
+              <p class="mt-1 font-mono text-xs">
+                {sr.sources.map((s) => (
+                  <a href={s} rel="noopener" target="_blank" class="mr-3 underline underline-offset-2">出典 ↗</a>
+                ))}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- タイムライン（種データ＋更新フィード由来の派生イベント） -->
     <section class="mt-12">
       <h2 class="mb-3 font-display text-lg font-semibold">タイムライン</h2>
       <ol class="border-l border-ink/20">
-        {timeline.map((t) => (
-          <li id={`tl-${t.date}`} class="relative mb-5 pl-6">
-            <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-paper bg-ink" />
-            <time class="font-mono text-xs text-ink/55">{t.date}</time>
-            <p class="mt-0.5 text-sm leading-relaxed">
-              {t.event}
-              <a href={t.source} rel="noopener" target="_blank" class="ml-2 font-mono text-xs underline underline-offset-2">出典 ↗</a>
-            </p>
-          </li>
-        ))}
+        {timelineEvents.map((t) => {
+          const isSeed = t.kind === 'seed';
+          const suffix = t.kind === 'derived-effective' ? '（施行・適用日）' : t.kind === 'derived-deadline' ? '（期限）' : '';
+          return (
+            <li id={tlIdFor(t.date)} class="relative mb-5 pl-6">
+              <span
+                class={`absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 ${
+                  isSeed ? 'border-paper bg-ink' : 'border-ink bg-paper'
+                }`}
+              />
+              <p class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                <time class="font-mono text-xs text-ink/55">{t.date}</time>
+                {!isSeed && (
+                  <span class="border border-ink/25 px-1 font-mono text-[10px] text-ink/50">更新フィードより</span>
+                )}
+                {t.scheduled && (
+                  <span class="border border-star-gold px-1 font-mono text-[10px] text-ink/70">予定</span>
+                )}
+              </p>
+              <p class="mt-0.5 text-sm leading-relaxed">
+                {t.event}{suffix}
+                <a href={t.source} rel="noopener" target="_blank" class="ml-2 font-mono text-xs underline underline-offset-2">出典 ↗</a>
+                {!isSeed && t.updateId && (
+                  <a href={`#u-${t.updateId}`} class="ml-2 font-mono text-xs underline underline-offset-2 text-ink/70">更新を見る</a>
+                )}
+              </p>
+            </li>
+          );
+        })}
       </ol>
     </section>
 
@@ -134,3 +222,12 @@ const timeline = [...r.axes.timeline].sort((a, b) => (a.date < b.date ? 1 : -1))
     </section>
   </main>
 </LightLayout>
+
+<script>
+  // 派生年表の「更新を見る」リンク着地用: #u-{id} で来た場合、そのUpdateCardのdetailsを開く
+  const hash = location.hash;
+  if (hash.startsWith('#u-')) {
+    const target = document.getElementById(hash.slice(1));
+    if (target instanceof HTMLDetailsElement) target.open = true;
+  }
+</script>

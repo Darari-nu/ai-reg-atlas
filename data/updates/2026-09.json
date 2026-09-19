@@ -241,5 +241,61 @@
       "https://www.tc260.org.cn/tc260/tzgg/202609/e5b82ae7aca244d19d36b39575cbb458.shtml"
     ],
     "country_anchor": "/country/cn/#axis-risk_classification"
+  },
+  {
+    "id": "2026-09-16-kr-002",
+    "date": "2026-09-16",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "title": "韓国個人情報保護委員会、뤼튼・OpenAI・DeepSeek等5社に権利行使窓口等の改善を勧告",
+    "summary": {
+      "what": "個人情報処理方針評価に伴う権利行使窓口等の改善勧告",
+      "who": "韓国個人情報保護委員会、뤼튼・テスラ・DeepSeek等5社",
+      "when_impact": "2026年9月16日公表"
+    },
+    "detail": "韓国個人情報保護委員会は2026年9月16日、2025年個人情報処理方針評価の追跡点検結果を発表した。情報主体の権利行使への未回答や外国語回答、国内代理人の問い合わせ未回答などが確認された뤼튼、テスラコリア、DeepSeek、OpenAI、ナイキの5社に対し、運営体制の改善を勧告した。",
+    "so_what": "韓国向けサービス展開企業は韓国語での権利行使対応や国内代理人の実効的な運用管理体制を整備する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本件は韓国個人情報保護法に基づく行政指導であり、EU AI Act基準との対比における変更影響はない。"
+    },
+    "canonical_event": "South Korea PIPC issues corrective recommendations to companies for personal information inquiries",
+    "publication_date": "2026-09-16",
+    "discovered_at": "2026-09-19",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12499"
+    ],
+    "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-09-10-kr-001",
+    "date": "2026-09-10",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "new_regulation",
+    "title": "韓国：改正個人情報保護法・施行令が2026年9月11日施行、CPO権限強化や課徴金上限引き上げ",
+    "summary": {
+      "what": "改正個人情報保護法・施行令等の施行によるCPOの権限強化や課徴金制度の厳格化",
+      "who": "韓国国内で個人情報を取り扱うすべての企業およびCPO",
+      "when_impact": "2026年9月11日施行（ISMS-P義務化は2027年7月1日施行）"
+    },
+    "detail": "韓国の個人情報保護委員会（PIPC）は、個人情報漏洩の事前予防と被害救済を強化するための改正個人情報保護法、同施行令、および告示を2026年9月11日より施行すると発表した。主な改正点として、故意や重過失による繰り返し・大規模な個人情報漏洩に対して全体売上高の10%以内の懲罰的課徴金を科すこと、事前予防投資に応じた課徴金の減免制度を導入すること、CPO（個人情報保護責任者）の権限と責任を強化し取締役会への報告やCPO指定時の取締役会議決・申告を義務付けること、漏洩可能性の通知制度の新設などが含まれる。なお、ISMS-P認証の義務化規定については、企業の準備期間を考慮し2027年7月1日より施行される見込みである。",
+    "so_what": "韓国で個人データを用いたAI開発等を行う企業は、CPOの権限強化や取締役会への報告体制を整備し、売上高最大10%の課徴金リスクに備える必要があります。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "個人情報漏洩に対する課徴金の上限が全体売上高の10%以内とされ、EU AI Actの最大罰則（全世界売上高7%）と比較して、パーセンテージベースでより厳しい（stricter）基準が設定されている。"
+    },
+    "canonical_event": "South Korea implements amended Personal Information Protection Act, enforcement decree, and notices",
+    "publication_date": "2026-09-10",
+    "discovered_at": "2026-09-19",
+    "effective_date": "2026-09-11",
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12459"
+    ],
+    "country_anchor": "/country/kr/#updates"
   }
 ]

@@ -66,6 +66,16 @@
         "date": "2026-08-06",
         "event": "AI時代の個人정보制度革新に向けた意見募集を開始",
         "source": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12361"
+      },
+      {
+        "date": "2026-09-11",
+        "event": "改正個人정보保護法・施行令・告示の施行",
+        "source": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12459"
+      },
+      {
+        "date": "2027-07-01",
+        "event": "ISMS-P認証義務化規定の施行",
+        "source": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12459"
       }
     ]
   },
@@ -109,6 +119,6 @@
       }
     ]
   },
-  "last_checked": "2026-09-18T23:11:51Z",
-  "last_changed": "2026-08-10T21:49:49Z"
+  "last_checked": "2026-09-19T02:35:54Z",
+  "last_changed": "2026-09-19T02:35:54Z"
 }

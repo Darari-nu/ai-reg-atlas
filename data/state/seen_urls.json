@@ -294,5 +294,21 @@
   "http://www.trai.gov.in/telecom-commercial-communications-customer-preference-third-amendment-regulations-2026": {
     "verdict": "gemini-unusable",
     "date": "2026-09-19"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/1d1a11a3-530f-4b0b-94c3-53c04357535b?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-19"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//88a58985-75f9-4c47-b586-436707161fe0": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-19"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//57345bc4-973a-4fa7-b53d-0782c7b5ffd4": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-19"
+  },
+  "https://www.pm.gov.au/media/doorstop-san-jose-california": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-19"
   }
 }

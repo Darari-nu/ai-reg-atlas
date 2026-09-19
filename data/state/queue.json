@@ -12,7 +12,7 @@
     "priority": "high",
     "canonical_event": "South Korea PIPC fines GS Retail for data breach",
     "queued_at": "2026-09-19",
-    "attempts": 1
+    "attempts": 2
   },
   {
     "url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12471",
@@ -27,6 +27,6 @@
     "priority": "low",
     "canonical_event": "South Korea hosts briefing on cross-border personal information transfer system",
     "queued_at": "2026-09-19",
-    "attempts": 1
+    "attempts": 2
   }
 ]

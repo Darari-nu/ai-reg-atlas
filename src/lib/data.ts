@@ -1,6 +1,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
+import {
+  ageTier,
+  countWithin,
+  daysAgo,
+  fmtDaysAgo,
+  globeMarkers,
+  latestDateByCountry,
+  sortByDiscovery,
+} from './freshness.mjs';
+import { deriveTimelineEvents, mergeTimeline } from './derivedTimeline.mjs';
 
 const ROOT = process.cwd();
 
@@ -30,6 +40,18 @@ export type Regulation = {
   last_changed: string;
 };
 
+// 国の下位区分（米国の州など）。地球儀のマーカーに出すための最小限の情報
+export type Subregion = {
+  code: string;
+  name_ja: string;
+  name_en?: string;
+  lat: number;
+  lng: number;
+  note: string;
+  status?: Regulation['status'];
+  sources: string[];
+};
+
 export type Country = {
   code: string;
   name_ja: string;
@@ -37,6 +59,7 @@ export type Country = {
   flag: string;
   lat: number;
   lng: number;
+  subregions?: Subregion[];
 };
 
 export type UpdateRecord = {
@@ -52,6 +75,33 @@ export type UpdateRecord = {
   impact: { diff_changed: boolean; diff_note?: string };
   sources: string[];
   country_anchor: string;
+  discovered_at?: string;   // 発見日。古いレコードには無いので date でフォールバックする
+  canonical_event?: string;
+  publication_date?: string;
+  effective_date?: string | null;
+  deadline_date?: string | null;
+};
+
+// 地球儀のマーカー（国 → その国の小地域の順に並ぶ）
+export type GlobeMarker = {
+  code: string;
+  kind: 'country' | 'subregion';
+  name_ja: string;
+  flag: string;
+  lat: number;
+  lng: number;
+  href: string;
+  ageDays: number | null;
+};
+
+// 年表の1項目。種データと更新フィード由来の派生イベントを同じ形で扱う
+export type TimelineEvent = {
+  date: string;
+  event: string;
+  source: string;
+  kind: 'seed' | 'derived' | 'derived-effective' | 'derived-deadline';
+  scheduled: boolean;
+  updateId?: string;
 };
 
 export type Meta = { last_sweep: string; status: 'ok' | 'partial' | 'failed' };
@@ -168,4 +218,63 @@ export function fmtDateTime(iso: string): string {
   const d = new Date(iso);
   const pad = (n: number) => String(n).padStart(2, '0');
   return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
+}
+
+/* ---------- 鮮度・発見日順（純ロジックは freshness.mjs） ---------- */
+
+// 純ロジックの再エクスポート（後続ページはここから import する）
+export { daysAgo, fmtDaysAgo, countWithin, ageTier, sortByDiscovery };
+
+// ビルド時の日付。サイトは毎日再ビルドされるので「今日」として扱ってよい
+export function todayYmd(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+// 発見日の新しい順。getUpdates() の並び（公表日順）は変えない
+export function getUpdatesByDiscovery(): UpdateRecord[] {
+  return sortByDiscovery(getUpdates()) as UpdateRecord[];
+}
+
+export function getUpdatesForCountry(cc: string): UpdateRecord[] {
+  return getUpdatesByDiscovery().filter((u) => u.country === cc);
+}
+
+// 国ごとの最新の発見日
+export function getLatestByCountry(): Record<string, string> {
+  return latestDateByCountry(getUpdates());
+}
+
+export function latestUpdateDate(cc: string): string | null {
+  return getLatestByCountry()[cc] ?? null;
+}
+
+// その国が最後に動いてから何日経ったか。更新レコードが無ければ null
+export function updateAgeDays(cc: string, today: string = todayYmd()): number | null {
+  const latest = latestUpdateDate(cc);
+  return latest ? daysAgo(latest, today) : null;
+}
+
+// 更新レコードの飛び先。軸に紐づかないものは国ページの更新欄へ送る
+// （既存レコードの country_anchor が一律 #axis-risk_classification になっているのを表示側で矯正する）
+export function updateAnchor(u: UpdateRecord): string {
+  if (u.axis === 'general' || u.axis === 'timeline') return `/country/${u.country}/#updates`;
+  return u.country_anchor;
+}
+
+export function getSubregions(cc: string): Subregion[] {
+  return getCountries().find((c) => c.code === cc)?.subregions ?? [];
+}
+
+// 地球儀のマーカー。順序は国 → その国の小地域（DOM順＝Tab順）
+export function getGlobeMarkers(today: string = todayYmd()): GlobeMarker[] {
+  const markers = globeMarkers(getCountries(), getLatestByCountry(), today) as Array<
+    Omit<GlobeMarker, 'href'> & { path: string }
+  >;
+  return markers.map(({ path, ...m }) => ({ ...m, href: withBase(path) }));
+}
+
+// 国の年表＝種データ（regulations の axes.timeline）＋ 更新フィード由来の派生イベント
+export function getCountryTimeline(cc: string): TimelineEvent[] {
+  const seed = getRegulation(cc).axes.timeline;
+  return mergeTimeline(seed, deriveTimelineEvents(getUpdatesForCountry(cc), seed)) as TimelineEvent[];
 }

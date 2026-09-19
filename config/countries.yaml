@@ -1,5 +1,12 @@
 # 監視対象国の定義。国の追加はここに1ブロック追記 → 翌日から自動監視（§9）
 # URLは2026-06-12時点。月次で死活確認すること
+#
+# subregions（国の下位区分。米国の州・EU加盟国・中国の直轄市など）は地球儀のマーカー表示専用で、
+# 自動監視の対象ではない（official_sources / watch_feeds は国ブロックだけが持つ）。
+# 2026-09-19 追加ぶんは data/ のシードと同じく **AIが下書きした人間レビュー前のドラフト**。
+# note の成立日・施行日・執行機関は一次ソースで裏を取るまで確定値として扱わないこと。
+# sources は死活確認（curl -sIL）済みの政府・議会の一次ページのみ。法案トラッカーの深いURLは
+# 会期IDを取り違えやすいので、確度が低いものは機関のトップページに落としてある。
 countries:
   - code: eu
     name_ja: EU
@@ -12,6 +19,60 @@ countries:
       - { url: "https://artificialintelligenceact.eu/feed/", type: rss }   # EU AI Act専門トラッカー
       - { url: "https://edpb.europa.eu/feed/news_en", type: rss }          # 欧州データ保護会議(EDPB)
     news_queries: ["EU AI Act", "EU AI Act guidelines"]
+    subregions:   # EU加盟国。AI法（規則）は直接適用だが、国内実施法と所管当局は加盟国ごとに違う
+      - code: eu-de
+        name_ja: ドイツ
+        name_en: Germany
+        lat: 52.52
+        lng: 13.40
+        note: >-
+          AI法の市場監視当局として連邦ネットワーク庁（BNetzA）内にAIサービスデスクを設置。
+          国内実施法（AI市場監視法）は審議中で、所管の最終形は未確定。
+        status: draft
+        sources:
+          - "https://www.bundesnetzagentur.de/EN/Home/home_node.html"
+      - code: eu-fr
+        name_ja: フランス
+        name_en: France
+        lat: 48.86
+        lng: 2.35
+        note: >-
+          AI法の国内適用でCNIL（情報処理・自由全国委員会）がGDPRとの接続点を担い、
+          生成AIの学習データ利用に関する勧告を継続して公表している。
+        sources:
+          - "https://www.cnil.fr/en/home"
+      - code: eu-it
+        name_ja: イタリア
+        name_en: Italy
+        lat: 41.90
+        lng: 12.50
+        note: >-
+          2025年に法律132/2025（AI分野の規定）が官報で公布され、EU域内で最初の国内AI法となった。
+          執行はAgIDとACN（国家サイバーセキュリティ庁）の2機関が分担する。
+        status: in_force
+        sources:
+          - "https://www.gazzettaufficiale.it/"
+      - code: eu-es
+        name_ja: スペイン
+        name_en: Spain
+        lat: 40.42
+        lng: -3.70
+        note: >-
+          AI法の監督機関としてAESIA（スペインAI監督庁）をア・コルーニャに設置した、EU初の専門当局。
+          所管はデジタル変革省。
+        status: in_force
+        sources:
+          - "https://digital.gob.es/"
+      - code: eu-nl
+        name_ja: オランダ
+        name_en: Netherlands
+        lat: 52.37
+        lng: 4.89
+        note: >-
+          個人データ保護庁（AP）内にアルゴリズム調整局（DCA）を置き、
+          AI法の調整当局としてアルゴリズムのリスク報告を定期公表している。
+        sources:
+          - "https://www.autoriteitpersoonsgegevens.nl/en"
   - code: jp
     name_ja: 日本
     name_en: Japan
@@ -35,6 +96,65 @@ countries:
     watch_feeds:
       - { url: "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=artificial%20intelligence&per_page=20", type: rss }  # 米国官報 AI検索
     news_queries: ["US AI regulation law", "state AI law enacted"]
+    subregions:   # 連邦法が無い米国では州法が実質の規制。州都の座標を使う
+      - code: us-ca
+        name_ja: カリフォルニア州
+        name_en: California
+        lat: 38.58
+        lng: -121.49
+        note: >-
+          SB 53（Transparency in Frontier Artificial Intelligence Act）が2025年9月に成立し2026年1月に施行。
+          大規模なフロンティアAI開発者に安全フレームワークの公表と重大インシデント報告を課す。執行は州司法長官。
+        status: in_force
+        sources:
+          - "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53"
+          - "https://oag.ca.gov/"
+      - code: us-co
+        name_ja: コロラド州
+        name_en: Colorado
+        lat: 39.74
+        lng: -104.99
+        note: >-
+          SB 24-205（Colorado AI Act）が2024年5月に成立。雇用・与信・住宅など重要な決定に使う
+          「高リスクAI」の開発者と利用者に合理的注意義務と影響評価を課す。執行は州司法長官で、施行日は延期されている。
+        status: enacted
+        sources:
+          - "https://leg.colorado.gov/"
+      - code: us-ny
+        name_ja: ニューヨーク州
+        name_en: New York
+        lat: 42.65
+        lng: -73.75
+        note: >-
+          RAISE法（S6953）がフロンティアモデルの開発者に安全プロトコルの公表と重大インシデント報告を求める。
+          執行は州司法長官。適用対象は計算資源の規模で線引きされる。
+        status: enacted
+        sources:
+          - "https://www.nysenate.gov/"
+          - "https://www.governor.ny.gov/"
+      - code: us-tx
+        name_ja: テキサス州
+        name_en: Texas
+        lat: 30.27
+        lng: -97.74
+        note: >-
+          HB 149（TRAIGA / Texas Responsible AI Governance Act）が2025年6月に成立し2026年1月施行。
+          意図要件を置いた禁止用途型で、規制サンドボックスを併設する。執行は州司法長官。
+        status: in_force
+        sources:
+          - "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149"
+      - code: us-ut
+        name_ja: ユタ州
+        name_en: Utah
+        lat: 40.76
+        lng: -111.89
+        note: >-
+          SB 149（AI Policy Act）が2024年3月に成立し同年5月施行。生成AIを使う事業者に開示義務を課し、
+          AI Learning Laboratory を置いた。執行は商務省消費者保護課。
+        status: in_force
+        sources:
+          - "https://le.utah.gov/~2024/bills/static/SB0149.html"
+          - "https://le.utah.gov/"
   - code: uk
     name_ja: 英国
     name_en: United Kingdom
@@ -55,6 +175,39 @@ countries:
       - { url: "https://www.cac.gov.cn/wxzw/zcfg/gfxwj/A09370305index_1.htm", type: scrape_hash } # CAC 规范性文件(行政上の規範性文書。個別文書の法的性質は要確認)
       - { url: "https://www.tc260.org.cn/", type: scrape_hash }                                   # TC260 全国网络安全标准化技术委員会(AI安全標準の先行指標)
     news_queries: ["China AI regulation CAC", "中国 AI 規制"]
+    subregions:   # 国家レベルの弁法に先行/上乗せする地方条例。市政府トップページを一次ソースにしている
+      - code: cn-bj
+        name_ja: 北京市
+        name_en: Beijing
+        lat: 39.92
+        lng: 116.41
+        note: >-
+          「北京市人工智能産業促進条例」を市人民代表大会が可決し、算力基盤・データ供給・
+          安全管理を市レベルで規定する。所管は市経済情報化局。
+        sources:
+          - "https://www.beijing.gov.cn/"
+      - code: cn-sh
+        name_ja: 上海市
+        name_en: Shanghai
+        lat: 31.23
+        lng: 121.47
+        note: >-
+          「上海市促進人工智能産業発展条例」が2022年に施行された中国初の地方AI条例。
+          リスクに応じた分級管理とサンドボックスを定める。所管は市経済情報化委員会。
+        status: in_force
+        sources:
+          - "https://www.shanghai.gov.cn/"
+      - code: cn-sz
+        name_ja: 深圳市
+        name_en: Shenzhen
+        lat: 22.54
+        lng: 114.06
+        note: >-
+          「深圳経済特区人工知能産業促進条例」が2022年11月に施行。経済特区の立法権を使い、
+          公共データ開放とAI製品の市場参入を規定する。所管は市科技創新委員会。
+        status: in_force
+        sources:
+          - "https://www.sz.gov.cn/"
   - code: kr
     name_ja: 韓国
     name_en: South Korea
@@ -89,6 +242,18 @@ countries:
       - { url: "https://www.priv.gc.ca/en/rss/sc/", type: rss }     # OPC 協議への意見書(AI戦略・法案への当局見解)
       - { url: "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act", type: scrape_hash }  # 旧Bill C-27/AIDAのアーカイブ(廃案。現行動向はISED/OPCの上2本を参照)
     news_queries: ["Canada AI regulation AIDA", "Canada artificial intelligence law"]
+    subregions:   # 連邦のAIDAが廃案のまま止まっているため、実効的な規律は州法が担う
+      - code: ca-qc
+        name_ja: ケベック州
+        name_en: Quebec
+        lat: 46.81
+        lng: -71.21
+        note: >-
+          個人情報保護法の改正法（Law 25）が2021年に成立し、2023年9月から本格適用。
+          自動化された意思決定のみで個人情報を扱う場合の通知義務と説明請求権を定める。執行は州情報アクセス委員会（CAI）。
+        status: in_force
+        sources:
+          - "https://www.cai.gouv.qc.ca/"
   - code: br
     name_ja: ブラジル
     name_en: Brazil

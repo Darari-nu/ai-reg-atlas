@@ -11,8 +11,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
   issues: write
 
 concurrency:
@@ -23,9 +21,6 @@ jobs:
   sweep-and-deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 90 # Gemini待ち予算(600s×2ステップ)+巡回+buildに対して十分。既定の360分まで走らせない
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
 
@@ -106,14 +101,6 @@ jobs:
             }
             core.info(`filed ${created}/${issues.length} issues`);
 
-      # ビルド〜デプロイは同一ワークフロー内（GITHUB_TOKENのpushは他workflowを起動しない §15-2）
+      # ビルドが通ることだけ確認する（公開は cf-deploy.yml が workflow_run で引き継ぐ）。
+      # GitHub Pages への併載は 2026-09-19 に終了した
       - run: npx astro build
-
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: dist
-
-      - id: deployment
-        uses: actions/deploy-pages@v5
-
-      # darari-nu.com/atlas への反映は cf-deploy.yml が workflow_run で引き継ぐ

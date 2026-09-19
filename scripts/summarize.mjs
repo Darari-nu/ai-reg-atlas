@@ -40,7 +40,7 @@ const GATE_SEEN_REASONS = ['body-too-short', 'no-ai-reg-keyword', 'blocked-or-js
 const MAX_PER_RUN = Number(process.env.SUMMARIZE_MAX_PER_RUN || 8); // バッチ原則・無料枠保護（§5-3）
 const TIMEOUT_MS = 15_000;
 const JINA_TIMEOUT_MS = 30_000; // 中継は本体取得＋変換で遅い
-const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
+const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.com/atlas/about/)';
 const STATUS_ORDER = ['proposed', 'draft', 'consultation', 'enacted', 'in_force'];
 
 const today = process.env.SWEEP_DATE || new Date().toISOString().slice(0, 10);

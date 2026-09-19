@@ -25,7 +25,7 @@ const HASHES_FILE = dataPath('hashes.json');
 const OUT_FILE = '/tmp/candidates.json';
 const ISSUES_FILE = '/tmp/pipeline_issues.json';
 const TIMEOUT_MS = 15_000;
-const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.github.io/ai-reg-atlas/about/)';
+const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.com/atlas/about/)';
 const FIRST_RUN_WINDOW_DAYS = Number(process.env.FIRST_RUN_WINDOW_DAYS || 3); // 既定3日。バックフィル時は環境変数で拡大
 // scrape_hash は一覧ページの変化で全リンクを拾うため、数年前の記事まで候補になる。日付の分かる古いリンクはここで落とす
 const SCRAPE_HASH_MAX_AGE_DAYS = Number(process.env.SCRAPE_HASH_MAX_AGE_DAYS || 30);

@@ -5,7 +5,7 @@
 EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中国・韓国・シンガポール・カナダ・ブラジル・インド・豪州・台湾・カンボジア）のAI規制の差分が一目でわかる、毎日自動更新される静的サイト。
 
 - **サイト（本番）**: https://darari-nu.com/atlas/
-- **サイト（GitHub Pages・併載）**: https://darari-nu.github.io/ai-reg-atlas/
+- **サイト（予備・中継を通さない直URL）**: https://ai-reg-atlas.pages.dev/atlas/
 - **仕様書**: `REQUESTS.md`（一撃実装仕様 v2.0）
 - 一次ソース主義 / 差分主義（stricter・looser・absent・unique の4分類） / 完全自動運用
 
@@ -18,7 +18,7 @@ EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中�
   summarize.mjs  実URL本文を機械ゲート → Gemini Flash が3行要約＋差分影響を生成
                  （503/枠切れは予備モデルへ切替。待ち時間は1ステップ累計600秒で打ち切り）
   validate.mjs   JSON Schema検証（失敗ならcommitしない）
-  → data/ をcommit&push → 同一ワークフロー内で Astroビルド → GitHub Pages デプロイ
+  → data/ をcommit&push → 同一ワークフロー内で Astroビルド（通ることの確認のみ）
   → diff_changed / needs-review は Issue 自動起票
 
 ② cf-deploy.yml  (① の完了で発火 / workflow_run。①の成否は問わない)
@@ -59,33 +59,40 @@ EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中�
 | `.github/workflows/cf-deploy.yml` | `cf-deploy` | `daily-pipeline` の完了 / 手動 |
 | `.github/workflows/ci.yml` | `ci` | PR / main への push |
 
-**同じコードベースを2箇所に出している。**`astro.config.mjs` が環境変数で切り替える。
+**公開先は1箇所。** `astro.config.mjs` の既定値が本番（`https://darari-nu.com` / `/atlas`）で、
+`cf-deploy.yml` は同じ値を環境変数でも明示している。
 
-| 出力先 | ワークフロー | ASTRO_SITE / ASTRO_BASE | URL |
-|---|---|---|---|
-| Cloudflare Pages（本番） | `cf-deploy.yml` | `https://darari-nu.com` / `/atlas` | https://darari-nu.com/atlas/ |
-| GitHub Pages（併載） | `pipeline.yml` の末尾 | 未設定（既定値） | https://darari-nu.github.io/ai-reg-atlas/ |
+| 出力先 | ワークフロー | URL |
+|---|---|---|
+| Cloudflare Pages（本番） | `cf-deploy.yml` | https://darari-nu.com/atlas/ |
+| 同上・中継を通さない直URL（予備） | 同上 | https://ai-reg-atlas.pages.dev/atlas/ |
 
-**この2本は独立している。**`cf-deploy` は `workflow_run: completed` で発火するので、
-① が Gemini の 429 等で途中失敗しても、最後に commit された `data/` は
+`darari-nu.com/atlas/` は ai-kaizen-hub 側の Pages Function が中継している。
+**その中継が壊れても `ai-reg-atlas.pages.dev/atlas/` で同じサイトが見える**（実測で確認済み）。
+
+**パイプラインとデプロイは独立している。**`cf-deploy` は `workflow_run: completed` で発火するので、
+`daily-pipeline` が Gemini の 429 等で途中失敗しても、最後に commit された `data/` は
 必ず Cloudflare 側に反映される（デプロイをパイプラインから切り離した理由がこれ）。
 
-### なぜ2箇所に出したままなのか（2026-09-04 判断）
+### GitHub Pages 併載をやめた（2026-09-19 判断）
 
-GitHub Pages 側を止めるか検討したが、**止めない**と決めた。
+`darari-nu.github.io/ai-reg-atlas/` への併載を停止し、公開ページを1つにした。
+2026-09-04 には「止めない」と判断していたが、その根拠が2つとも消えたため覆した。
 
-- 止めても本番(Cloudflare)は無事。`cf-deploy` は独立しているので影響しない
-- 止める理由は「同じ内容が2ドメインで検索インデックスされる」ことだが、
-  デメリットはその程度
-- 一方、止めると `darari-nu.github.io/ai-reg-atlas/` に**古い内容が残り続ける**。
-  外部に出したリンクもそこを指したまま古い情報を見せることになる。これが一番悪い
-- 中途半端に止めるくらいなら、両方最新である状態を維持するほうが安全
+- 「外部リンクが切れる」→ オーナー判断で許容（貼り先に心当たりがない）
+- 「予備の出口が無くなる」→ **`ai-reg-atlas.pages.dev/atlas/` が予備として機能する**ことを実測で確認。
+  こちらは中継を通さないぶん依存が少ない
+- 併載していた理由（同じ内容が2ドメインに出て取り違える）の実害の方が大きいと判断した
 
-**将来やるなら**、止めるだけで済ませず次のどちらかまでセットで行うこと。
+停止にあたって先に済ませたこと（順番に意味がある）:
 
-- GitHub Pages を無効化して 404 にする（外部リンクは切れる）
-- 両方の build に `<link rel="canonical">` を入れて darari-nu.com/atlas に寄せる
-  （現状 canonical タグは無い。外部リンクは生かしたまま重複を解消できる）
+1. 巡回ロボットの User-Agent の名乗り先を `darari-nu.com/atlas/about/` に変更
+   （`collect.mjs` / `summarize.mjs`。各国政府サイトに提示する自己紹介URLなので、404 にすると
+   身元不明のボットとして弾かれうる）
+2. `astro.config.mjs` の既定値を本番の site / base に変更
+3. `pipeline.yml` から `upload-pages-artifact` / `deploy-pages` と `pages`・`id-token` 権限、
+   `environment: github-pages` を削除（ビルドは「通ることの確認」として残す）
+4. GitHub Pages 自体を無効化（リポジトリ設定）
 
 ### 触るときの注意
 
@@ -110,7 +117,7 @@ GitHub Pages 側を止めるか検討したが、**止めない**と決めた。
 
 ```bash
 npm install
-npm run dev       # http://localhost:4321/ai-reg-atlas/
+npm run dev       # http://localhost:4321/atlas/
 npm run build     # dist/ に静的出力
 npm run validate  # data/ 全JSONのスキーマ検証
 npm test          # 実APIを使わないテスト（品質ゲート・triage分割・Geminiのリトライ/フォールバック・
@@ -244,8 +251,9 @@ DRY_RUN=1 npm run validate
 | 2026-08-23 | darari-nu.com/atlas（Cloudflare Pages）を追加。当初は Mac の LaunchAgent + `scripts/deploy-cloudflare.sh` で運用 |
 | 2026-08-23 | デプロイを `cf-deploy.yml`（GitHub Actions）へ移行。LaunchAgent は停止 |
 | 2026-09-03 | README を実物に合わせて全面更新（Cloudflare 経路が未記載のままだった）。`ci.yml` とワークフロー対応表を追記、「6カ国」→「13カ国・地域」を訂正。この改訂履歴を新設 |
-| 2026-09-04 | GitHub Pages を止めるか検討し、**止めない**と決定（理由はデプロイ節）。構成変更なし |
+| 2026-09-04 | GitHub Pages を止めるか検討し、**止めない**と決定。のちに 2026-09-19 で覆した |
 | 2026-09-13 | Gemini 障害対策。既定モデルを `-latest` から固定名へ（予備モデルへの自動切替つき）、429/503 のエラー本文をログに出す、待ち時間に累計上限、triage を40件ずつ分割、RSS の相対リンクを絶対化、`pipeline.yml` に `timeout-minutes: 90`、`ci.yml` で `npm test` を実行 |
+| 2026-09-19 | **GitHub Pages 併載を終了し公開ページを1つに**（理由はデプロイ節）。ロボットの名乗り先と astro の既定値を本番URLへ移し、pipeline.yml から Pages デプロイと関連権限を削除 |
 | 2026-09-19 | Geminiのモデル列に 3.8-flash を追加し、リトライを「待つ前に全モデルを1周」方式へ変更（混雑モデルは1分待っても混雑、空きモデルは即答のため。9/16・9/18 は主モデルの503で157〜204秒待っていた） |
 | 2026-09-13 | summarize の記事取得にも r.jina.ai 中継を追加（cac.gov.cn が Actions から取れず全滅していた）。scrape_hash の一覧リンクは日付を読み、30日より古いものを collect で落とす。Issue 起票ステップが `hashFiles('/tmp/...')` で常にスキップされていたのを修正し、同名の開いた Issue は重ねて立てない。ラベル `needs-review` / `diff-change` を作成 |
 | 2026-09-19 | `data/state/`（last_seen・seen_urls・queue）に日次状態を持ち越し、既知URLの再triageと要約のあふれを解消（`data/.cache/` は不使用に）。地球儀に地域・州レベルのマーカーとHTMLオーバーレイのクリック遷移を追加（cobe 0.6.5のマーカー差し替えバグを回避）。国別ページ・トップ・鮮度表示を更新レコード（discovered_at）基準に統一し、派生年表（更新フィード由来の未確認イベント）を年表に合流 |

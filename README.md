@@ -6,8 +6,21 @@ EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中�
 
 - **サイト（本番）**: https://darari-nu.com/atlas/
 - **サイト（予備・中継を通さない直URL）**: https://ai-reg-atlas.pages.dev/atlas/
-- **仕様書**: `REQUESTS.md`（一撃実装仕様 v2.0）
+- **仕様書**: `REQUESTS.md`（一撃実装仕様 v2.0）。**ホスティングの記述だけは古い**（GitHub Pages 前提のまま。実物は Cloudflare Pages 1本。デプロイ節と改訂履歴が正）
 - 一次ソース主義 / 差分主義（stricter・looser・absent・unique の4分類） / 完全自動運用
+
+## 初めて読む人へ（どこを見ればいいか）
+
+| 知りたいこと | 見る場所 |
+|---|---|
+| 毎日何が起きているのか | 下の「アーキテクチャ」。`pipeline.yml` が1日1回、収集→選別→要約→検証→commit まで自動で行う |
+| サイトはどこに出ているのか | 「デプロイ」。公開は Cloudflare Pages の1箇所（GitHub Pages 併載は 2026-09-19 に終了） |
+| なぜ今こうなっているのか | 「改訂履歴」（日付順）。判断を覆した経緯もそこに残している |
+| 動かなくなったら | 「状態ファイル」の復旧方法、「Gemini のモデルと待ち時間」のログの読み方 |
+| 手元で動かすには | 「セットアップ」と「DRY_RUN」（`DRY_RUN=1` を付ければ実データを汚さずに試せる） |
+
+**設計の根っこ**: 出典は実際に取得できた一次ソースのURLだけ。検証を通らないデータは commit しない。
+AIの判断は「確認前」と「人が確認済み」を見た目で区別する（年表の○と●）。この3つは崩さないこと。
 
 ## アーキテクチャ
 
@@ -165,7 +178,9 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 | `GEMINI_MODEL_SUMMARIZE` | `gemini-3.6-flash` | summarize / bootstrap の主モデル |
 | `GEMINI_FALLBACK_SUMMARIZE` | `gemini-3.8-flash,gemini-3.5-flash,gemini-3.5-flash-lite` | 同上のフォールバック |
 | `GEMINI_WAIT_BUDGET_SEC` | `600` | 1ステップでバックオフに使ってよい待ち時間の累計。超えたら残りを打ち切る |
-| `TRIAGE_BATCH_SIZE` | `40` | triage 1リクエストあたりの候補数（出力が 8192 トークンで切れないように） |
+| `GEMINI_MAX_ATTEMPTS` | `3` | モデル列を何周するか（1周＝列の全モデルを待たずに1回ずつ試す） |
+
+`TRIAGE_BATCH_SIZE` など収集・選別側の変数は次の表にまとめてある。
 
 失敗時のログは `[gemini] HTTP 429 model=... kind=quota-daily quota=GenerateRequestsPerDay...` の形で出る。
 `kind=quota-daily` なら日次無料枠切れ（その日はそのモデルを使わない）、`http-retryable` なら一時的な混雑。
@@ -217,9 +232,9 @@ DRY_RUN=1 npm run validate
 
 | 頻度 | 担当 | 作業 |
 |---|---|---|
-| 日次 | Actions | 巡回→選別→要約→検証→commit→**2箇所へデプロイ**（全自動） |
-| 週次 | 人間 | `diff-change` / `needs-review` Issueの確認、要約品質の抜き取り |
-| 月次 | 人間 | ソース死活確認、Gemini枠消費確認、国追加検討 |
+| 日次 | Actions | 巡回→選別→要約→検証→commit→Cloudflareへデプロイ（全自動） |
+| 週次 | 人間 | `diff-change` / `needs-review` Issueの確認、要約品質の抜き取り、年表の○（未確認の派生イベント）で●へ昇格させたいものがないか |
+| 月次 | 人間 | ソース死活確認（`[collect] skip` が続くソース）、Gemini枠消費確認、`data/state/` の肥大チェック、国追加検討 |
 
 ## 仕様書からの意図的な簡略点（Phase 1）
 
@@ -234,7 +249,7 @@ DRY_RUN=1 npm run validate
 `data/` のシード（13カ国・地域の規制サマリー）はAIが下書きした**人間レビュー前のドラフト**を含む。
 誤りを見つけたらPRかIssueで指摘してほしい。出典のない記述は受け付けない。
 
-更新レコードには `discovered_at`（サイトが発見した日。collect.mjsが付与）を持つものがある。無い旧レコードはトップのNEW欄や鮮度計算で `date`（公表日）を代用する（`src/lib/freshness.mjs` の `discoveryDate`）。年表（`/timeline` や国別ページ）に○で出る「派生イベント」は、更新レコードから機械的に生成した**更新フィード由来・人間による確認前の自動検知**であり、`axes.timeline` に人手で載せた種データ（seed）とは扱いが異なる（`src/lib/derivedTimeline.mjs`）。
+更新レコードには `discovered_at`（サイトが発見した日。`summarize.mjs` がレコード生成時に `buildUpdateRecord` 経由で付与）を持つものがある。無い旧レコードはトップのNEW欄や鮮度計算で `date`（公表日）を代用する（`src/lib/freshness.mjs` の `discoveryDate`）。年表（`/timeline` や国別ページ）に○で出る「派生イベント」は、更新レコードから機械的に生成した**更新フィード由来・人間による確認前の自動検知**であり、`axes.timeline` に人手で載せた種データ（seed）とは扱いが異なる（`src/lib/derivedTimeline.mjs`）。
 
 ### サイト側の変更
 
@@ -253,9 +268,9 @@ DRY_RUN=1 npm run validate
 | 2026-09-03 | README を実物に合わせて全面更新（Cloudflare 経路が未記載のままだった）。`ci.yml` とワークフロー対応表を追記、「6カ国」→「13カ国・地域」を訂正。この改訂履歴を新設 |
 | 2026-09-04 | GitHub Pages を止めるか検討し、**止めない**と決定。のちに 2026-09-19 で覆した |
 | 2026-09-13 | Gemini 障害対策。既定モデルを `-latest` から固定名へ（予備モデルへの自動切替つき）、429/503 のエラー本文をログに出す、待ち時間に累計上限、triage を40件ずつ分割、RSS の相対リンクを絶対化、`pipeline.yml` に `timeout-minutes: 90`、`ci.yml` で `npm test` を実行 |
+| 2026-09-13 | summarize の記事取得にも r.jina.ai 中継を追加（cac.gov.cn が Actions から取れず全滅していた）。scrape_hash の一覧リンクは日付を読み、30日より古いものを collect で落とす。Issue 起票ステップが `hashFiles('/tmp/...')` で常にスキップされていたのを修正し、同名の開いた Issue は重ねて立てない。ラベル `needs-review` / `diff-change` を作成 |
 | 2026-09-19 | **GitHub Pages 併載を終了し公開ページを1つに**（理由はデプロイ節）。ロボットの名乗り先と astro の既定値を本番URLへ移し、pipeline.yml から Pages デプロイと関連権限を削除 |
 | 2026-09-19 | Geminiのモデル列に 3.8-flash を追加し、リトライを「待つ前に全モデルを1周」方式へ変更（混雑モデルは1分待っても混雑、空きモデルは即答のため。9/16・9/18 は主モデルの503で157〜204秒待っていた） |
-| 2026-09-13 | summarize の記事取得にも r.jina.ai 中継を追加（cac.gov.cn が Actions から取れず全滅していた）。scrape_hash の一覧リンクは日付を読み、30日より古いものを collect で落とす。Issue 起票ステップが `hashFiles('/tmp/...')` で常にスキップされていたのを修正し、同名の開いた Issue は重ねて立てない。ラベル `needs-review` / `diff-change` を作成 |
 | 2026-09-19 | `data/state/`（last_seen・seen_urls・queue）に日次状態を持ち越し、既知URLの再triageと要約のあふれを解消（`data/.cache/` は不使用に）。地球儀に地域・州レベルのマーカーとHTMLオーバーレイのクリック遷移を追加（cobe 0.6.5のマーカー差し替えバグを回避）。国別ページ・トップ・鮮度表示を更新レコード（discovered_at）基準に統一し、派生年表（更新フィード由来の未確認イベント）を年表に合流 |
 
 ## ライセンス

@@ -257,6 +257,18 @@ export function applyTriageVerdicts(batch, verdicts, targetCountries) {
   return { picked, bad, answered: seen.size };
 }
 
+/** relevant=false と判定された候補のURL（seen_urls に記憶して翌日の再判定を止めるため）。不正indexは無視 */
+export function irrelevantUrls(batch, verdicts) {
+  const urls = [];
+  const seen = new Set();
+  for (const v of verdicts ?? []) {
+    if (!Number.isInteger(v?.index) || v.index < 0 || v.index >= batch.length || seen.has(v.index)) continue;
+    seen.add(v.index);
+    if (v.relevant === false && batch[v.index]?.url) urls.push(batch[v.index].url);
+  }
+  return urls;
+}
+
 // GitHub Actionsランナーの IP を弾くサイト（cac.gov.cn 等）向けの中継。collect と summarize で共有
 export const JINA_READER_PREFIX = 'https://r.jina.ai/';
 

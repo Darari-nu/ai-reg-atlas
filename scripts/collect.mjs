@@ -16,10 +16,11 @@ import {
   resolveFeedLink,
   writeJSON,
 } from './lib/pipeline.mjs';
+import { LAST_SEEN_MAX_LOOKBACK_DAYS, clampLookback, readState, writeState } from './lib/state.mjs';
 
 const ROOT = process.cwd();
-const CACHE_DIR = dataPath('.cache');
-const LAST_SEEN_FILE = path.join(CACHE_DIR, 'last_seen.json');
+// last_seen は data/state/（data/.cache/ は .gitignore 済みでCIでは毎回空になるため持ち越せない）
+const LAST_SEEN_NAME = 'last_seen.json';
 const HASHES_FILE = dataPath('hashes.json');
 const OUT_FILE = '/tmp/candidates.json';
 const ISSUES_FILE = '/tmp/pipeline_issues.json';
@@ -199,9 +200,11 @@ async function fetchScrapeHashContent(url) {
 
 async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
   const feed = await parser.parseURL(url);
-  const prev = lastSeen[url] ? new Date(lastSeen[url]) : null;
-  const windowStart = new Date(Date.now() - FIRST_RUN_WINDOW_DAYS * 86_400_000);
-  const threshold = prev ?? windowStart;
+  const now = new Date();
+  // 遡り上限つき: 状態が古くても now − LAST_SEEN_MAX_LOOKBACK_DAYS 日より前は再収集しない
+  const prev = clampLookback(lastSeen[url], now);
+  const windowStart = new Date(now.getTime() - FIRST_RUN_WINDOW_DAYS * 86_400_000);
+  const threshold = prev ?? windowStart; // 未見フィードは初回窓
   const items = [];
   let newest = prev;
 
@@ -258,8 +261,7 @@ async function collectScrapeHash(url, countryHint, hashes) {
 
 async function main() {
   const config = yaml.load(fs.readFileSync(path.join(ROOT, 'config/countries.yaml'), 'utf8'));
-  fs.mkdirSync(CACHE_DIR, { recursive: true });
-  const lastSeen = loadJSON(LAST_SEEN_FILE, {});
+  const lastSeen = readState(LAST_SEEN_NAME, {});
   const hashes = loadJSON(HASHES_FILE, {});
 
   const candidates = [];
@@ -313,11 +315,12 @@ async function main() {
     return true;
   });
 
-  writeJSON(LAST_SEEN_FILE, lastSeen);
+  writeState(LAST_SEEN_NAME, lastSeen);
   writeJSON(HASHES_FILE, hashes);
   writeJSON(OUT_FILE, deduped);
 
   console.log(`[collect] sources ok=${okCount} failed=${failCount} candidates=${deduped.length} google_dropped=${googleDropped}`);
+  console.log(`[collect] last_seen feeds=${Object.keys(lastSeen).length} max_lookback=${LAST_SEEN_MAX_LOOKBACK_DAYS}d`);
   if (failCount > 0 && okCount === 0) process.exitCode = 1; // 全滅のみ失敗扱い
 }
 

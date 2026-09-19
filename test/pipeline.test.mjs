@@ -6,6 +6,7 @@ import {
   buildUpdateRecord,
   chunk,
   dedupeByEvent,
+  irrelevantUrls,
   isStaleListing,
   listingDate,
   mechanicalGate,
@@ -207,6 +208,16 @@ describe('triage: バッチ分割', () => {
 
   it('verdicts が null でも落ちない', () => {
     assert.deepEqual(applyTriageVerdicts([{ url: 'a' }], null, ['jp']), { picked: [], bad: 0, answered: 0 });
+  });
+
+  it('irrelevantUrls は relevant=false のURLだけ返す（duplicate は返さない）', () => {
+    const batch = [{ url: 'a' }, { url: 'b' }, { url: 'c' }];
+    const v = (index, extra = {}) => ({ index, relevant: true, duplicate: false, country: ['jp'], priority: 'low', canonical_event: 'e', ...extra });
+    assert.deepEqual(
+      irrelevantUrls(batch, [v(0, { relevant: false }), v(1, { duplicate: true }), v(2), v(9, { relevant: false }), v(0, { relevant: false })]),
+      ['a'],
+    );
+    assert.deepEqual(irrelevantUrls(batch, null), []);
   });
 });
 

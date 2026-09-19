@@ -19,9 +19,13 @@ import {
   readerBody,
   writeDataJSON,
 } from './lib/pipeline.mjs';
+import { markSeen, pruneSeenUrls, readState, writeState } from './lib/state.mjs';
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/triaged.json';
+const SEEN_URLS_NAME = 'seen_urls.json';
+// 機械ゲート落ちのうち記憶する理由（blocked-or-js-only-page は一時的なので SKIP_VERDICTS には入れない）
+const GATE_SEEN_REASONS = ['body-too-short', 'no-ai-reg-keyword', 'blocked-or-js-only-page'];
 const MAX_PER_RUN = 8; // バッチ原則・無料枠保護（§5-3）
 const TIMEOUT_MS = 15_000;
 const JINA_TIMEOUT_MS = 30_000; // 中継は本体取得＋変換で遅い
@@ -125,7 +129,7 @@ const RESPONSE_SCHEMA = {
   required: ['axis', 'change_type', 'title', 'summary', 'so_what', 'diff_changed', 'usable', 'publication_date', 'effective_date', 'deadline_date'],
 };
 
-async function prepareItems(triaged) {
+async function prepareItems(triaged, seenUrls) {
   const gated = [];
   for (const item of triaged) {
     try {
@@ -144,6 +148,7 @@ async function prepareItems(triaged) {
     const gate = mechanicalGate(item, articleText);
     if (!gate.ok) {
       appendDrop({ ...item, reason: gate.reason });
+      if (GATE_SEEN_REASONS.includes(gate.reason)) markSeen(seenUrls, item.url, gate.reason, today);
       continue;
     }
     gated.push({ ...item, articleText });
@@ -160,7 +165,8 @@ async function main() {
   }
 
   const euBaseline = readDataJSON(['eu_baseline.json'], {});
-  const prepared = await prepareItems(triaged);
+  const seenUrls = readState(SEEN_URLS_NAME, {});
+  const prepared = await prepareItems(triaged, seenUrls);
   const items = prepared.sort((a, b) => (a.priority === b.priority ? 0 : a.priority === 'high' ? -1 : 1)).slice(0, MAX_PER_RUN);
 
   let okCount = 0;
@@ -196,11 +202,13 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       const rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA, fallbackModels: FALLBACK_SUMMARIZE });
       if (rec.usable === false) {
         appendDrop({ ...item, country: cc, reason: 'gemini-unusable' });
+        markSeen(seenUrls, item.url, 'gemini-unusable', today);
         continue;
       }
       const pubGate = publicationDateGate(rec.publication_date, today);
       if (!pubGate.ok) {
         appendDrop({ ...item, country: cc, reason: pubGate.reason });
+        markSeen(seenUrls, item.url, pubGate.reason, today); // stale / missing-publication-date
         continue;
       }
 
@@ -279,6 +287,8 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       writeDataJSON(['regulations', f], reg);
     }
   }
+
+  writeState(SEEN_URLS_NAME, pruneSeenUrls(seenUrls, today));
 
   writeMeta(failCount > 0 && okCount === 0 ? 'partial' : 'ok');
   // drop理由の内訳をログに出す（observability。/tmp/dropped.json は collect/triage/summarize 全段の累積）

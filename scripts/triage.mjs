@@ -8,16 +8,20 @@ import {
   chunk,
   dedupeByEvent,
   existingEventKeys,
+  irrelevantUrls,
   loadJSON,
   normalizeEventLabel,
   pushIssue,
   sortForTriage,
   writeJSON,
 } from './lib/pipeline.mjs';
+import { isSkippable, markSeen, pruneSeenUrls, readState, writeState } from './lib/state.mjs';
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/candidates.json';
 const OUT_FILE = '/tmp/triaged.json';
+const SEEN_URLS_NAME = 'seen_urls.json';
+const TODAY = process.env.SWEEP_DATE || new Date().toISOString().slice(0, 10);
 // 1回の出力が maxOutputTokens(8192) で切れないよう分割する（1件≒60〜80トークン）
 const BATCH_SIZE = Number(process.env.TRIAGE_BATCH_SIZE || 40);
 // 対象国はcountries.yamlが単一の正（国追加でここを触らない）
@@ -74,7 +78,12 @@ function buildPrompt(batch, feedList) {
 }
 
 async function main() {
-  const candidates = loadCandidates();
+  const all = loadCandidates();
+  // 既知URL（前回までに「関係なし」等と判定済み）はバッチに入れない＝Gemini枠を浪費しない
+  const seenUrls = readState(SEEN_URLS_NAME, {});
+  const candidates = all.filter((c) => !isSkippable(seenUrls[c.url]));
+  console.log(`[triage] skipped_seen=${all.length - candidates.length}`);
+
   if (candidates.length === 0) {
     writeJSON(OUT_FILE, []);
     console.log('[triage] no candidates, skip');
@@ -106,6 +115,8 @@ async function main() {
         fallbackModels: FALLBACK_TRIAGE,
       });
       const { picked, bad, answered } = applyTriageVerdicts(batch, verdicts, TARGET_COUNTRIES);
+      // relevant=false は翌日以降も同じ判定になるので記憶しておく（duplicate は状況で変わるので記憶しない）
+      for (const url of irrelevantUrls(batch, verdicts)) markSeen(seenUrls, url, 'triage-irrelevant', TODAY);
       triaged.push(...picked);
       console.log(`[triage] batch ${bi + 1}/${batches.length} in=${batch.length} answered=${answered} picked=${picked.length}${bad ? ` bad_index=${bad}` : ''}`);
     } catch (e) {
@@ -125,6 +136,7 @@ async function main() {
 
   const deduped = dedupeByEvent(triaged, existingEventKeys({ days: 90 }));
   writeJSON(OUT_FILE, deduped);
+  writeState(SEEN_URLS_NAME, pruneSeenUrls(seenUrls, TODAY));
   console.log(
     `[triage] in=${candidates.length} batches=${batches.length} failed=${failed} relevant=${triaged.length} deduped=${deduped.length} gemini=${JSON.stringify(geminiStats())}`,
   );

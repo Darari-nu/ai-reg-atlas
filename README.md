@@ -139,14 +139,20 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 | 名前 | 既定値 | 意味 |
 |---|---|---|
 | `GEMINI_MODEL_TRIAGE` | `gemini-3.5-flash-lite` | triage の主モデル |
-| `GEMINI_FALLBACK_TRIAGE` | `gemini-3.1-flash-lite` | 主モデルが 503 続き・日次枠切れ・404 のとき使う（カンマ区切り可） |
+| `GEMINI_FALLBACK_TRIAGE` | `gemini-3.1-flash-lite,gemini-3.8-flash,gemini-3.5-flash` | 主モデルが混雑・日次枠切れ・404 のとき順に使う（カンマ区切り） |
 | `GEMINI_MODEL_SUMMARIZE` | `gemini-3.6-flash` | summarize / bootstrap の主モデル |
-| `GEMINI_FALLBACK_SUMMARIZE` | `gemini-3.5-flash,gemini-3.5-flash-lite` | 同上のフォールバック |
+| `GEMINI_FALLBACK_SUMMARIZE` | `gemini-3.8-flash,gemini-3.5-flash,gemini-3.5-flash-lite` | 同上のフォールバック |
 | `GEMINI_WAIT_BUDGET_SEC` | `600` | 1ステップでバックオフに使ってよい待ち時間の累計。超えたら残りを打ち切る |
 | `TRIAGE_BATCH_SIZE` | `40` | triage 1リクエストあたりの候補数（出力が 8192 トークンで切れないように） |
 
 失敗時のログは `[gemini] HTTP 429 model=... kind=quota-daily quota=GenerateRequestsPerDay...` の形で出る。
 `kind=quota-daily` なら日次無料枠切れ（その日はそのモデルを使わない）、`http-retryable` なら一時的な混雑。
+
+**混雑時は「待つ」より「隣のモデル」。** どのモデルが空いているかは時間帯で入れ替わる
+（2026-09-19 の実測: 同じ内容を4回ずつ投げて 3.5-flash 0/4・3.8-flash 2/4・3.6-flash 3/4 成功。
+数日前のログでは逆に 3.5-flash が救世主だった）。そのため主モデル1本に賭けず、
+**列を待たずに1周し、全部が混雑していたときだけバックオフして次の周回に入る**
+（`geminiJSON`。周回数は `GEMINI_MAX_ATTEMPTS`、待ち合計は `GEMINI_WAIT_BUDGET_SEC` で頭打ち）。
 
 ## 国の追加
 
@@ -206,6 +212,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-03 | README を実物に合わせて全面更新（Cloudflare 経路が未記載のままだった）。`ci.yml` とワークフロー対応表を追記、「6カ国」→「13カ国・地域」を訂正。この改訂履歴を新設 |
 | 2026-09-04 | GitHub Pages を止めるか検討し、**止めない**と決定（理由はデプロイ節）。構成変更なし |
 | 2026-09-13 | Gemini 障害対策。既定モデルを `-latest` から固定名へ（予備モデルへの自動切替つき）、429/503 のエラー本文をログに出す、待ち時間に累計上限、triage を40件ずつ分割、RSS の相対リンクを絶対化、`pipeline.yml` に `timeout-minutes: 90`、`ci.yml` で `npm test` を実行 |
+| 2026-09-19 | Geminiのモデル列に 3.8-flash を追加し、リトライを「待つ前に全モデルを1周」方式へ変更（混雑モデルは1分待っても混雑、空きモデルは即答のため。9/16・9/18 は主モデルの503で157〜204秒待っていた） |
 | 2026-09-13 | summarize の記事取得にも r.jina.ai 中継を追加（cac.gov.cn が Actions から取れず全滅していた）。scrape_hash の一覧リンクは日付を読み、30日より古いものを collect で落とす。Issue 起票ステップが `hashFiles('/tmp/...')` で常にスキップされていたのを修正し、同名の開いた Issue は重ねて立てない。ラベル `needs-review` / `diff-change` を作成 |
 
 ## ライセンス

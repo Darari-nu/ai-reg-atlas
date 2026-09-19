@@ -53,16 +53,28 @@ describe('gemini client', () => {
     console.warn = realWarn;
   });
 
-  it('503が続いたら同一モデルでMAX_ATTEMPTS回試してからフォールバックする', async () => {
+  it('503なら待たずに次のモデルへ回す（同一モデルで粘らない）', async () => {
     stubFetch((m) => (m === 'p503' ? mkRes(503, overloaded) : mkRes(200, okBody('{"ok":true}'))));
+    const t0 = Date.now();
     const out = await geminiJSON(args('p503', ['f503']));
     assert.deepEqual(out, { ok: true });
-    assert.equal(count('p503'), 3);
-    assert.equal(count('f503'), 1);
+    assert.deepEqual(calls, ['p503', 'f503']); // 1周目で決着
+    assert.ok(Date.now() - t0 < 500); // バックオフを挟まない
   });
 
-  it('日次枠切れ(429 PerDay)は再試行せず即フォールバックし、以後そのモデルを呼ばない', async () => {
+  it('全モデルが混雑したときだけ待って次の周回に入る', async () => {
+    // 1周目は全滅、2周目に2番目のモデルが復活する
+    stubFetch((m, n) => (m === 'f2nd' && n >= 1 ? mkRes(200, okBody('{"ok":true}')) : mkRes(503, overloaded)));
+    const out = await geminiJSON(args('p2nd', ['f2nd']));
+    assert.deepEqual(out, { ok: true });
+    assert.deepEqual(calls, ['p2nd', 'f2nd', 'p2nd', 'f2nd']);
+    assert.ok(warnings.some((w) => w.includes('all 2 model(s) busy, backoff')));
+    assert.ok(warnings.some((w) => w.includes('served by model=f2nd (pass 2/3)')));
+  });
+
+  it('日次枠切れ(429 PerDay)は即フォールバックし、以後そのモデルを呼ばない', async () => {
     stubFetch((m) => (m === 'pday' ? mkRes(429, quotaBody('GenerateRequestsPerDayPerProjectPerModel-FreeTier')) : mkRes(200, okBody('{"ok":1}'))));
+    // 2回呼んでも pday は1回しか叩かれない（exhausted 記録）
     await geminiJSON(args('pday', ['fday']));
     await geminiJSON(args('pday', ['fday']));
     assert.equal(count('pday'), 1);
@@ -91,7 +103,7 @@ describe('gemini client', () => {
   it('HTTPエラーでは geminiJSONWithRetry が2周しない', async () => {
     stubFetch(() => mkRes(503, overloaded));
     await assert.rejects(geminiJSONWithRetry(args('pall', ['fall'])), (e) => e.kind === 'quota-all' && isGeminiStop(e));
-    assert.equal(calls.length, 6); // 3試行 × 2モデル、1周だけ
+    assert.deepEqual(calls, ['pall', 'fall', 'pall', 'fall', 'pall', 'fall']); // 2モデル×3周。JSONリトライで2周目に入らない
   });
 
   it('待ち予算を超えるバックオフは待たずに budget で打ち切る', async () => {
@@ -99,7 +111,7 @@ describe('gemini client', () => {
     const t0 = Date.now();
     await assert.rejects(geminiJSON(args('pbudget', ['fbudget'])), (e) => e.kind === 'budget' && isGeminiStop(e));
     assert.ok(Date.now() - t0 < 1000);
-    assert.deepEqual(calls, ['pbudget']);
+    assert.deepEqual(calls, ['pbudget', 'fbudget']); // 1周してから待とうとして予算切れ
   });
 
   it('エラー本文にAPIキーが含まれていてもログには出さない', async () => {

@@ -14,8 +14,10 @@ function envList(name, fallback) {
 // 最新世代は混雑で503が続きやすいので使わない。2.5系は新規キーでは404（提供終了）。2026-09-13 に疎通確認済み
 export const MODEL_TRIAGE = process.env.GEMINI_MODEL_TRIAGE || 'gemini-3.5-flash-lite';
 export const MODEL_SUMMARIZE = process.env.GEMINI_MODEL_SUMMARIZE || 'gemini-3.6-flash';
-export const FALLBACK_TRIAGE = envList('GEMINI_FALLBACK_TRIAGE', 'gemini-3.1-flash-lite');
-export const FALLBACK_SUMMARIZE = envList('GEMINI_FALLBACK_SUMMARIZE', 'gemini-3.5-flash,gemini-3.5-flash-lite');
+// どのモデルが空いているかは時間帯で入れ替わる（2026-09-19 実測: 3.5-flash が 0/4、3.8-flash が 2/4、3.6-flash が 3/4）。
+// 1つに賭けず列を長く持ち、待つ前に全部を1周する（下の geminiJSON を参照）
+export const FALLBACK_TRIAGE = envList('GEMINI_FALLBACK_TRIAGE', 'gemini-3.1-flash-lite,gemini-3.8-flash,gemini-3.5-flash');
+export const FALLBACK_SUMMARIZE = envList('GEMINI_FALLBACK_SUMMARIZE', 'gemini-3.8-flash,gemini-3.5-flash,gemini-3.5-flash-lite');
 
 const BACKOFF_BASE_MS = Number(process.env.GEMINI_BACKOFF_BASE_MS || 20_000);
 const MAX_ATTEMPTS = Number(process.env.GEMINI_MAX_ATTEMPTS || 3);
@@ -90,10 +92,9 @@ function backoffMs(attempt, hintMs) {
   return Math.round(base * (1 + Math.random() * 0.2)); // ジッタ 0〜20%
 }
 
-// 1モデルに対して「同一モデルでの再試行」まで面倒を見る。失敗は GeminiError で投げる
-async function callModel(model, body, key) {
-  for (let attempt = 0; ; attempt++) {
-    const res = await fetch(`${API_BASE}/${model}:generateContent`, {
+// 1モデルに1回だけ投げる。待たない・再試行しない（再試行の制御は geminiJSON 側）。失敗は GeminiError で投げる
+async function callModelOnce(model, body, key) {
+  const res = await fetch(`${API_BASE}/${model}:generateContent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },
       body: JSON.stringify(body),
@@ -107,41 +108,36 @@ async function callModel(model, body, key) {
         `[gemini] HTTP ${res.status} model=${model} kind=${kind} status=${info.status || '-'} quota=${info.quotaIds.join('|') || '-'} retryDelay=${info.retryDelayMs ?? '-'}ms msg=${JSON.stringify(redact(info.message, key).slice(0, 300))}`,
       );
       if (!info.status) console.warn(`[gemini] body: ${raw.slice(0, 600)}`);
-      // 429(レート制限)＋408/5xx(503等のモデル過負荷/一時障害)は同一モデルでバックオフ再試行
-      if (kind === 'http-retryable' && attempt < MAX_ATTEMPTS - 1) {
-        const ms = backoffMs(attempt, info.retryDelayMs);
-        console.warn(`[gemini] backoff ${Math.round(ms / 1000)}s (attempt ${attempt + 1}/${MAX_ATTEMPTS}, waited total ${Math.round(waitedMs / 1000)}s)`);
-        await sleepWithBudget(ms, model);
-        continue;
-      }
       throw new GeminiError(`[gemini] HTTP ${res.status} from ${model} (${kind}${info.quotaIds[0] ? `: ${info.quotaIds[0]}` : ''})`, {
         kind,
         status: res.status,
         model,
         quotaId: info.quotaIds[0],
+        retryDelayMs: info.retryDelayMs,
       });
     }
 
-    const data = await res.json();
-    const cand = data?.candidates?.[0];
-    // 出力上限で切れたものは同じ入力を再送しても無意味（入力側を小さくして防ぐ）
-    if (cand?.finishReason === 'MAX_TOKENS') {
-      throw new GeminiError(`[gemini] output truncated (MAX_TOKENS) from ${model}`, { kind: 'truncated', model });
-    }
-    const text = cand?.content?.parts?.[0]?.text;
-    if (!text) throw new GeminiError(`[gemini] empty response from ${model} (finishReason=${cand?.finishReason ?? '-'})`, { kind: 'parse', model });
-    try {
-      return JSON.parse(text);
-    } catch (e) {
-      throw new GeminiError(`[gemini] invalid JSON from ${model}: ${e.message}`, { kind: 'parse', model });
-    }
+  const data = await res.json();
+  const cand = data?.candidates?.[0];
+  // 出力上限で切れたものは同じ入力を再送しても無意味（入力側を小さくして防ぐ）
+  if (cand?.finishReason === 'MAX_TOKENS') {
+    throw new GeminiError(`[gemini] output truncated (MAX_TOKENS) from ${model}`, { kind: 'truncated', model });
+  }
+  const text = cand?.content?.parts?.[0]?.text;
+  if (!text) throw new GeminiError(`[gemini] empty response from ${model} (finishReason=${cand?.finishReason ?? '-'})`, { kind: 'parse', model });
+  try {
+    return JSON.parse(text);
+  } catch (e) {
+    throw new GeminiError(`[gemini] invalid JSON from ${model}: ${e.message}`, { kind: 'parse', model });
   }
 }
 
 /**
- * 構造化出力でGeminiを呼ぶ。model → fallbackModels の順に試す。
+ * 構造化出力でGeminiを呼ぶ。model → fallbackModels の順に **待たずに1周** し、
+ * 全部が混雑(429/408/5xx)だったときだけバックオフして次の周回に入る（最大 GEMINI_MAX_ATTEMPTS 周）。
+ * 混んでいるモデルは1分待っても混んでいる一方、空いている別モデルは即答するため（2026-09-19 実測）。
  * 日次枠切れ(quota-daily)/404 のモデルは以後このプロセスではスキップ。
- * parse / truncated / http-fatal / budget はフォールバックせずそのまま投げる。
+ * parse / truncated / http-fatal / budget は周回せずそのまま投げる。
  * @returns {Promise<any>} パース済みJSON
  */
 export async function geminiJSON({ model, prompt, schema, maxOutputTokens = 8192, fallbackModels = [] }) {
@@ -160,24 +156,37 @@ export async function geminiJSON({ model, prompt, schema, maxOutputTokens = 8192
 
   const chain = [model, ...fallbackModels].filter((m, i, a) => m && a.indexOf(m) === i);
   let last = null;
-  for (const m of chain) {
-    if (exhausted.has(m)) {
-      console.warn(`[gemini] skip ${m} (exhausted earlier in this run)`);
-      continue;
-    }
-    try {
-      const out = await callModel(m, body, key);
-      if (m !== model) console.warn(`[gemini] served by fallback model=${m}`);
-      return out;
-    } catch (e) {
-      if (!(e instanceof GeminiError)) throw e; // ネットワーク例外など
-      last = e;
-      if (e.kind === 'quota-daily' || e.kind === 'not-found') exhausted.add(m);
-      if (e.kind === 'quota-daily' || e.kind === 'not-found' || e.kind === 'http-retryable') {
-        console.warn(`[gemini] ${m} failed (${e.kind}), trying next model`);
+  for (let pass = 0; pass < MAX_ATTEMPTS; pass++) {
+    let busy = 0; // この周回で混雑により落ちたモデル数
+    for (const m of chain) {
+      if (exhausted.has(m)) {
+        if (pass === 0) console.warn(`[gemini] skip ${m} (exhausted earlier in this run)`);
         continue;
       }
-      throw e; // parse / truncated / http-fatal / budget
+      try {
+        const out = await callModelOnce(m, body, key);
+        if (m !== model || pass > 0) console.warn(`[gemini] served by model=${m} (pass ${pass + 1}/${MAX_ATTEMPTS})`);
+        return out;
+      } catch (e) {
+        if (!(e instanceof GeminiError)) throw e; // ネットワーク例外など
+        last = e;
+        if (e.kind === 'quota-daily' || e.kind === 'not-found') {
+          exhausted.add(m);
+          console.warn(`[gemini] ${m} failed (${e.kind}), trying next model`);
+          continue;
+        }
+        if (e.kind === 'http-retryable') {
+          busy++;
+          continue; // 待たずに次のモデルへ
+        }
+        throw e; // parse / truncated / http-fatal / budget
+      }
+    }
+    if (busy === 0) break; // 混雑以外の理由で全滅（全モデル枯渇）。待っても回復しない
+    if (pass < MAX_ATTEMPTS - 1) {
+      const ms = backoffMs(pass, last?.retryDelayMs);
+      console.warn(`[gemini] all ${busy} model(s) busy, backoff ${Math.round(ms / 1000)}s (pass ${pass + 1}/${MAX_ATTEMPTS}, waited total ${Math.round(waitedMs / 1000)}s)`);
+      await sleepWithBudget(ms, model);
     }
   }
   throw new GeminiError(`[gemini] all models failed: ${chain.join(',')} (last: ${last?.message ?? 'none'})`, { kind: 'quota-all', model });

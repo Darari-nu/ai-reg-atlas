@@ -121,4 +121,13 @@ const usedCountries = [...new Set(updates.map((u) => u.country))];
     word = searchBox.value.trim().toLowerCase();
     apply();
   });
+
+  // URLの ?country= から初期選択（複数はカンマ区切り可。/timeline や外部リンクからの導線用）
+  const initialCountries = new URLSearchParams(location.search).get('country');
+  if (initialCountries) {
+    for (const cc of initialCountries.split(',').map((s) => s.trim()).filter(Boolean)) {
+      const chip = document.querySelector<HTMLButtonElement>(`[data-group="country"] .chip[data-value="${cc}"]`);
+      chip?.click();
+    }
+  }
 </script>

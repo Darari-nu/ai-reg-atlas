@@ -1,12 +1,14 @@
 ---
 import type { Country, Regulation } from '../lib/data';
-import { STATUS_LABELS, isRecent, withBase } from '../lib/data';
+import { STATUS_LABELS, withBase, daysAgo, fmtDaysAgo } from '../lib/data';
 
 interface Props {
   countries: Country[];
   regulations: Record<string, Regulation>;
+  latestByCc: Record<string, string>;
+  today: string;
 }
-const { countries, regulations } = Astro.props;
+const { countries, regulations, latestByCc, today } = Astro.props;
 
 const statusTone: Record<string, string> = {
   in_force: 'border-diff-looser text-diff-looser',
@@ -28,6 +30,8 @@ const dotTone: Record<string, string> = {
 <div class="hidden flex-wrap gap-2 md:flex">
   {countries.map((c) => {
     const r = regulations[c.code];
+    const latest = latestByCc[c.code];
+    const ageDays = latest ? daysAgo(latest, today) : null;
     return (
       <a
         href={withBase(`/country/${c.code}/`)}
@@ -35,7 +39,7 @@ const dotTone: Record<string, string> = {
       >
         <span class="relative text-base leading-none">
           {c.flag}
-          {isRecent(r.last_changed, 7) && (
+          {ageDays !== null && ageDays <= 7 && (
             <span class="pulse-gold absolute -right-1 -top-1 h-1.5 w-1.5 rounded-full bg-star-gold" />
           )}
         </span>
@@ -43,6 +47,9 @@ const dotTone: Record<string, string> = {
         <span class={`whitespace-nowrap border px-1.5 py-0.5 font-mono text-[10px] ${statusTone[r.status] ?? 'border-paper/40 text-paper/70'}`}>
           {STATUS_LABELS[r.status]}
         </span>
+        {ageDays !== null && (
+          <span class="whitespace-nowrap font-mono text-[10px] text-paper/50">{fmtDaysAgo(ageDays)}</span>
+        )}
       </a>
     );
   })}
@@ -52,6 +59,8 @@ const dotTone: Record<string, string> = {
 <div class="grid grid-cols-2 gap-2.5 md:hidden">
   {countries.map((c) => {
     const r = regulations[c.code];
+    const latest = latestByCc[c.code];
+    const ageDays = latest ? daysAgo(latest, today) : null;
     return (
       <a
         href={withBase(`/country/${c.code}/`)}
@@ -60,12 +69,15 @@ const dotTone: Record<string, string> = {
         <span class="flex items-center justify-between">
           <span class="text-3xl leading-none">{c.flag}</span>
           <span class="flex items-center gap-1.5">
-            <span class={`relative inline-block h-2 w-2 rounded-full ${dotTone[r.status] ?? 'bg-diff-absent'} ${isRecent(r.last_changed, 7) ? 'pulse-gold' : ''}`} />
+            <span class={`relative inline-block h-2 w-2 rounded-full ${dotTone[r.status] ?? 'bg-diff-absent'} ${ageDays !== null && ageDays <= 7 ? 'pulse-gold' : ''}`} />
             <span class="whitespace-nowrap font-mono text-[10px] text-paper/60">{STATUS_LABELS[r.status]}</span>
           </span>
         </span>
         <span class="mt-2 block text-sm font-medium text-paper">{c.name_ja}</span>
         <span class="mt-0.5 block truncate text-[11px] leading-snug text-paper/50">{r.regulation_name}</span>
+        {ageDays !== null && (
+          <span class="mt-1 block font-mono text-[10px] text-paper/50">{fmtDaysAgo(ageDays)}</span>
+        )}
       </a>
     );
   })}

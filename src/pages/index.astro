@@ -6,8 +6,13 @@ import StatusBar from '../components/StatusBar.astro';
 import {
   getCountries,
   getRegulation,
-  getUpdates,
-  isRecent,
+  getUpdatesByDiscovery,
+  getGlobeMarkers,
+  getLatestByCountry,
+  getMeta,
+  countWithin,
+  todayYmd,
+  fmtDateTime,
   withBase,
   type Regulation,
 } from '../lib/data';
@@ -17,12 +22,15 @@ const regulations: Record<string, Regulation> = {};
 for (const c of countries) regulations[c.code] = getRegulation(c.code);
 const countryMap = Object.fromEntries(countries.map((c) => [c.code, c]));
 
-const news = getUpdates().slice(0, 3);
-const markers = countries.map((c) => ({
-  lat: c.lat,
-  lng: c.lng,
-  recent: isRecent(regulations[c.code].last_changed, 7),
-}));
+const allUpdates = getUpdatesByDiscovery();
+const news = allUpdates.slice(0, 3);
+const markers = getGlobeMarkers();
+
+const today = todayYmd();
+const count7 = countWithin(allUpdates, today, 7);
+const count30 = countWithin(allUpdates, today, 30);
+const meta = getMeta();
+const latestByCc = getLatestByCountry();
 ---
 
 <DarkLayout title="AI Reg Atlas — 世界のAI規制を、EU基準の「差分」で読む">
@@ -72,9 +80,23 @@ const markers = countries.map((c) => ({
       </aside>
     </section>
 
+    <!-- 今週の動き帯 -->
+    <section aria-label="今週の動き" class="dark-rule flex flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 font-mono text-xs lowercase text-paper/70">
+      <a href={withBase('/updates/')} class="hover:text-paper hover:underline">直近7日 {count7}件</a>
+      <span>直近30日 {count30}件</span>
+      <span>
+        最終巡回 {fmtDateTime(meta.last_sweep)}
+        {meta.status !== 'ok' && (
+          <span class={meta.status === 'failed' ? 'text-diff-stricter' : 'text-star-gold'}>
+            {meta.status === 'failed' ? '（失敗）' : '（一部失敗）'}
+          </span>
+        )}
+      </span>
+    </section>
+
     <!-- 6カ国ステータスバー -->
     <section aria-label="監視対象国" class="border-t border-white/10 py-8">
-      <StatusBar countries={countries} regulations={regulations} />
+      <StatusBar countries={countries} regulations={regulations} latestByCc={latestByCc} today={today} />
     </section>
   </main>
 </DarkLayout>

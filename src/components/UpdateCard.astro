@@ -1,6 +1,6 @@
 ---
 import type { UpdateRecord, Country } from '../lib/data';
-import { AXIS_LABELS, CHANGE_TYPE_LABELS, withBase } from '../lib/data';
+import { AXIS_LABELS, CHANGE_TYPE_LABELS, withBase, updateAnchor } from '../lib/data';
 
 interface Props {
   update: UpdateRecord;
@@ -13,6 +13,7 @@ const dark = theme === 'dark';
 ---
 
 <details
+  id={`u-${u.id}`}
   class={`card-expand group ${
     dark
       ? 'dark-rule bg-navy-soft/60'
@@ -65,7 +66,7 @@ const dark = theme === 'dark';
             一次ソース ↗
           </a>
         ))}
-        <a href={withBase(u.country_anchor)} class={dark ? 'text-paper/60 hover:text-paper' : 'text-ink/60 hover:text-ink'}>
+        <a href={withBase(updateAnchor(u))} class={dark ? 'text-paper/60 hover:text-paper' : 'text-ink/60 hover:text-ink'}>
           国別ページで見る → {AXIS_LABELS[u.axis] ?? u.axis}
         </a>
       </div>

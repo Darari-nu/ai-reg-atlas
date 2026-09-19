@@ -207,7 +207,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       // 反映: updates/{YYYY-MM}.json へ追記
       const month = rec.publication_date.slice(0, 7);
       const updates = readDataJSON(['updates', `${month}.json`], []);
-      const record = buildUpdateRecord({ updates, country: cc, item, rec }); // sourcesはcollectがfetchしたURLのみ
+      const record = buildUpdateRecord({ updates, country: cc, item, rec, discoveredAt: today }); // sourcesはcollectがfetchしたURLのみ
       updates.push(record);
       writeDataJSON(['updates', `${month}.json`], updates);
 

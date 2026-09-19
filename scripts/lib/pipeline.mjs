@@ -170,7 +170,14 @@ export function nextIdForDate(updates, cc, pubDate) {
   return `${prefix}${String((nums.length ? Math.max(...nums) : 0) + 1).padStart(3, '0')}`;
 }
 
-export function buildUpdateRecord({ updates = [], country, item, rec }) {
+/** axis が timeline/general のときは国別ページに対応する軸見出しが無いので、更新一覧へ飛ばす */
+export function countryAnchor(country, axis) {
+  if (axis === 'timeline' || axis === 'general') return `/country/${country}/#updates`;
+  return `/country/${country}/#axis-${axis}`;
+}
+
+/** discoveredAt を渡すと discovered_at を含める（省略時はキー自体を出さない＝既存レコードと同じ形） */
+export function buildUpdateRecord({ updates = [], country, item, rec, discoveredAt }) {
   const pubDate = rec.publication_date;
   return {
     id: nextIdForDate(updates, country, pubDate),
@@ -189,10 +196,11 @@ export function buildUpdateRecord({ updates = [], country, item, rec }) {
     impact: { diff_changed: rec.diff_changed, diff_note: rec.diff_note ?? '' },
     canonical_event: item.canonical_event || rec.title,
     publication_date: pubDate,
+    ...(discoveredAt ? { discovered_at: discoveredAt } : {}), // サイトが見つけた日（トップのNEW欄の並び替え用）
     effective_date: rec.effective_date ?? null,
     deadline_date: rec.deadline_date ?? null,
     sources: [item.url],
-    country_anchor: `/country/${country}/#axis-${rec.axis === 'timeline' || rec.axis === 'general' ? 'risk_classification' : rec.axis}`,
+    country_anchor: countryAnchor(country, rec.axis),
   };
 }
 

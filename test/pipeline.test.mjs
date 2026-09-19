@@ -72,6 +72,49 @@ describe('pipeline quality gates', () => {
     assert.equal(record.date, '2026-06-10');
     assert.equal(record.publication_date, '2026-06-10');
     assert.equal(record.sources[0], 'https://example.gov/ai-guideline');
+    assert.equal('discovered_at' in record, false); // discoveredAt 未指定ならキー自体を出さない
+    assert.equal(record.country_anchor, '/country/us/#axis-transparency');
+  });
+
+  it('discoveredAt を渡すと discovered_at を含める', () => {
+    const record = buildUpdateRecord({
+      updates: [],
+      country: 'jp',
+      item: { url: 'https://example.go.jp/ai' },
+      rec: {
+        axis: 'penalties',
+        change_type: 'other',
+        title: 'T',
+        summary: { what: 'a', who: 'b', when_impact: 'c' },
+        so_what: 'd',
+        diff_changed: false,
+        publication_date: '2026-09-01',
+      },
+      discoveredAt: '2026-09-19',
+    });
+    assert.equal(record.discovered_at, '2026-09-19');
+    assert.equal(record.date, '2026-09-01'); // date は公表日のまま
+  });
+
+  it('axis が general/timeline のときアンカーは #updates', () => {
+    const build = (axis) =>
+      buildUpdateRecord({
+        updates: [],
+        country: 'cn',
+        item: { url: 'https://example.cn/ai' },
+        rec: {
+          axis,
+          change_type: 'other',
+          title: 'T',
+          summary: { what: 'a', who: 'b', when_impact: 'c' },
+          so_what: 'd',
+          diff_changed: false,
+          publication_date: '2026-09-01',
+        },
+      });
+    assert.equal(build('general').country_anchor, '/country/cn/#updates');
+    assert.equal(build('timeline').country_anchor, '/country/cn/#updates');
+    assert.equal(build('penalties').country_anchor, '/country/cn/#axis-penalties');
   });
 
   it('dedupes the same canonical event per country and prefers high priority', () => {

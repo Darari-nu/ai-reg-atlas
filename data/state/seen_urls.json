@@ -310,5 +310,69 @@
   "https://www.pm.gov.au/media/doorstop-san-jose-california": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-19"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei02_01000021.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/hyouka_260917000192517.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukatsu01_02000276.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001258.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01onkyu01_01000094.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01onkyu01_01000093.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu14_02000175.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zeimu02_02000472.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei10_02000125.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000456.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//12844796-cc36-4796-af66-afe6d0be1a22": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.federalregister.gov/documents/2026/09/21/2026-19271/data-intermediaries-and-approaches-to-strengthen-public-health-data-exchange": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.pm.gov.au/media/press-conference-united-nations-new-york": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.pm.gov.au/media/television-interview-abc-insiders-8": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.pm.gov.au/media/press-conference-apple-park-california": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
+  },
+  "https://www.pm.gov.au/media/working-apple-online-safety": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-20"
   }
 }

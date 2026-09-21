@@ -339,3 +339,19 @@ export function listingDate({ href, title, text, start, end }) {
 export function isStaleListing(listing_date, today, maxAgeDays) {
   return isYmd(listing_date) && daysBetween(listing_date, today) > maxAgeDays;
 }
+
+/** 日本語（ひらがな・カタカナ・漢字）を1文字でも含むか。サイトに出す見出しの言語チェック用 */
+export function hasJapanese(text) {
+  return /[\u3040-\u30ff\u3400-\u9fff]/.test(String(text ?? ''));
+}
+
+/**
+ * サイトに出す見出しを日本語に揃える。モデルが原文（英語等）のまま title を返したときは、
+ * 日本語で書かれている summary.what を見出しに使う（追加のAPI呼び出しをしない）。
+ * @returns {{ title: string, replaced: boolean }}
+ */
+export function ensureJapaneseTitle(title, summaryWhat) {
+  if (hasJapanese(title)) return { title, replaced: false };
+  if (hasJapanese(summaryWhat)) return { title: summaryWhat, replaced: true };
+  return { title, replaced: false }; // どちらも日本語でなければ手を付けない（落とすよりはまし。ログで拾う）
+}

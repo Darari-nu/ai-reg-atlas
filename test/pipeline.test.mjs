@@ -6,6 +6,8 @@ import {
   buildUpdateRecord,
   chunk,
   dedupeByEvent,
+  ensureJapaneseTitle,
+  hasJapanese,
   irrelevantUrls,
   isStaleListing,
   listingDate,
@@ -256,5 +258,29 @@ describe('collect: 一覧リンクの日付と古いリンクの除外', () => {
     const raw = 'Title: t\n\nURL Source: https://x\n\nMarkdown Content:\n2026年09月13日 星期日\n\n# 本文見出し\n本文';
     assert.equal(readerBody(raw), '\n# 本文見出し\n本文');
     assert.equal(readerBody('前置きなし'), '前置きなし');
+  });
+});
+
+describe('summarize: 見出しを日本語に揃える', () => {
+  it('hasJapanese はかな・漢字を検出する', () => {
+    assert.equal(hasJapanese('EDPB、ガイドラインを採択'), true);
+    assert.equal(hasJapanese('中国CAC'), true);
+    assert.equal(hasJapanese('EDPB Adopts Guidelines'), false);
+    assert.equal(hasJapanese(''), false);
+    assert.equal(hasJapanese(undefined), false);
+  });
+
+  it('英語の見出しは summary.what に差し替える', () => {
+    const r = ensureJapaneseTitle('EDPB Adopts Guidelines on Administrative Fines', 'EDPBがGDPRの行政制裁金ガイドラインを採択');
+    assert.deepEqual(r, { title: 'EDPBがGDPRの行政制裁金ガイドラインを採択', replaced: true });
+  });
+
+  it('日本語の見出しはそのまま', () => {
+    const r = ensureJapaneseTitle('韓国PIPC、5社に改善勧告', 'x');
+    assert.deepEqual(r, { title: '韓国PIPC、5社に改善勧告', replaced: false });
+  });
+
+  it('どちらも日本語でなければ元のまま（レコードを落とさない）', () => {
+    assert.deepEqual(ensureJapaneseTitle('English title', 'also english'), { title: 'English title', replaced: false });
   });
 });

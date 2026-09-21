@@ -9,6 +9,7 @@ import {
   appendDrop,
   buildUpdateRecord,
   dedupeByEvent,
+  ensureJapaneseTitle,
   existingEventKeys,
   isGoogleNewsUrl,
   loadJSON,
@@ -99,7 +100,7 @@ const RESPONSE_SCHEMA = {
       type: 'STRING',
       enum: ['new_regulation', 'status_change', 'guideline_draft', 'deadline_change', 'diff_change', 'other'],
     },
-    title: { type: 'STRING' },
+    title: { type: 'STRING', description: '日本語の見出し（40文字前後）。原文が英語でも必ず日本語にする' },
     summary: {
       type: 'OBJECT',
       properties: {
@@ -218,6 +219,7 @@ async function main() {
 - usable=false は、本文がAI規制の新着更新として使えない場合、または出典本文から日付・事象を確認できない場合
 - publication_date は公表日・発表日。YYYY-MM-DDで本文から抽出し、不明なら null
 - effective_date は施行日、deadline_date は期限日。本文に無ければ null
+- title は**必ず日本語**の見出し（40文字前後）。一次ソースが英語でも翻訳する。「主体、何をした」の形（例: 「欧州データ保護会議（EDPB）、GDPR制裁金の算定ガイドラインを採択」）。機関名は日本語の通称に略称を括弧で添える
 - summary.what / who / when_impact は各60文字以内・体言止め可
 - so_what は企業のAIガバナンス担当者向けの実務インパクト1文
 - EU AI Act基準（添付のeu_baseline.json）と比較し、diff_vs_euへの影響を stricter/looser/absent/unique の観点で判定。影響なしなら diff_changed=false
@@ -230,6 +232,10 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
 一次ソース本文: ${articleText}`;
 
       const rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA, fallbackModels: FALLBACK_SUMMARIZE });
+      // 見出しが日本語でなければ summary.what に差し替える（2026-09-21 に英語の見出しがサイトに出た）
+      const jaTitle = ensureJapaneseTitle(rec.title, rec.summary?.what);
+      if (jaTitle.replaced) console.warn(`[summarize] title was not Japanese, replaced with summary.what: ${item.url}`);
+      rec.title = jaTitle.title;
       if (rec.usable === false) {
         appendDrop({ ...item, country: cc, reason: 'gemini-unusable' });
         markSeen(seenUrls, item.url, 'gemini-unusable', today);

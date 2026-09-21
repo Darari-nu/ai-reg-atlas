@@ -297,5 +297,33 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12459"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-09-21-eu-001",
+    "date": "2026-09-21",
+    "country": "eu",
+    "axis": "enforcement_body",
+    "change_type": "guideline_draft",
+    "title": "EDPB Adopts Guidelines on Administrative Fines Methodology and Final DSA-GDPR Guidelines",
+    "summary": {
+      "what": "EDPBがGDPRの行政制裁金適用に関するガイドラインとDSA-GDPR関係性ガイドラインを採択",
+      "who": "欧州データ保護会議（EDPB）",
+      "when_impact": "2026年9月21日公表、パブリックコメントは2026年11月13日まで受付"
+    },
+    "detail": "EDPBは本会議において、GDPRに基づく行政制裁金の適用判断に関する5ステップのガイドライン（意見公募期間は2026年11月13日まで）および、DSAとGDPRの相互作用に関する最終版ガイドラインを採択した。",
+    "so_what": "EDPBによるGDPR制裁金やDSA連携の運用方針策定は、個人データ処理を伴うAIシステム規制の解釈や他規制との交差領域に影響を与える可能性がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本件はGDPRおよびDSAに関するEDPBのガイドラインであり、EU AI Act本体の義務やリスク分類を変更するものではない。"
+    },
+    "canonical_event": "EDPB adopts guidelines on administrative fines under GDPR and interplay with DSA",
+    "publication_date": "2026-09-21",
+    "discovered_at": "2026-09-21",
+    "effective_date": null,
+    "deadline_date": "2026-11-13",
+    "sources": [
+      "https://www.edpb.europa.eu/news/edpb-harmonises-fining-methodology-and-adopts-final-dsa-gdpr-guidelines_en"
+    ],
+    "country_anchor": "/country/eu/#axis-enforcement_body"
   }
 ]

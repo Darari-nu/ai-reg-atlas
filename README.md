@@ -25,7 +25,7 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 ## アーキテクチャ
 
 ```
-① pipeline.yml  [ワークフロー名: daily-pipeline]  (cron 21:00 UTC = JST 6:00)
+① pipeline.yml  [ワークフロー名: daily-pipeline]  (cron 21:23 UTC = JST 6:23 / 予備 4:23 UTC = JST 13:23)
   collect.mjs    countries.yaml の全ソース巡回（official_sources / watch_feeds / news_queries）
   triage.mjs     新着を40件ずつ束ねて Gemini Flash-Lite で選別・事象dedupe（一部バッチ失敗でも続行）
   summarize.mjs  実URL本文を機械ゲート → Gemini Flash が3行要約＋差分影響を生成
@@ -68,7 +68,7 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 
 | ファイル | ワークフロー名 | 起動条件 |
 |---|---|---|
-| `.github/workflows/pipeline.yml` | `daily-pipeline` | cron 21:00 UTC / 手動 |
+| `.github/workflows/pipeline.yml` | `daily-pipeline` | cron 21:23 UTC・4:23 UTC / 手動 |
 | `.github/workflows/cf-deploy.yml` | `cf-deploy` | `daily-pipeline` の完了 / 手動 |
 | `.github/workflows/ci.yml` | `ci` | PR / main への push |
 
@@ -86,6 +86,24 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 **パイプラインとデプロイは独立している。**`cf-deploy` は `workflow_run: completed` で発火するので、
 `daily-pipeline` が Gemini の 429 等で途中失敗しても、最後に commit された `data/` は
 必ず Cloudflare 側に反映される（デプロイをパイプラインから切り離した理由がこれ）。
+
+### 定期実行が「ちょうどの時刻」だと取りこぼされる（2026-09-22 判明）
+
+GitHub の scheduled workflow は混雑時に遅延し、**実行そのものが捨てられることがある**。
+`0 21 * * *`（毎時0分）は世界中の利用者が集中するため影響が大きい。
+
+- 実測: 2026-09-11〜20 の定期実行は **毎回 106〜165 分遅れて** 開始していた
+- そして 2026-09-21・22 は実行記録そのものが無い（ワークフローは有効、定義も正常、Actions も有効）
+
+対策は2つ:
+
+1. cron を半端な分に置く（`23 21 * * *` = JST 6:23）
+2. 昼にもう1本（`23 4 * * *` = JST 13:23）置き、**当日すでに巡回済みならスキップ**する。
+   判定は `guard` ジョブが `data/meta.json` の `last_sweep` の日付と UTC の当日を比べるだけ
+   （手動実行 `workflow_dispatch` は常に走る）
+
+`guard` がスキップした場合も daily-pipeline 自体は success で終わるため、`cf-deploy` は
+いつもどおり発火して同じ内容を再デプロイする（40秒程度。実害はないので許容している）。
 
 ### GitHub Pages 併載をやめた（2026-09-19 判断）
 
@@ -271,6 +289,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-13 | summarize の記事取得にも r.jina.ai 中継を追加（cac.gov.cn が Actions から取れず全滅していた）。scrape_hash の一覧リンクは日付を読み、30日より古いものを collect で落とす。Issue 起票ステップが `hashFiles('/tmp/...')` で常にスキップされていたのを修正し、同名の開いた Issue は重ねて立てない。ラベル `needs-review` / `diff-change` を作成 |
 | 2026-09-19 | **GitHub Pages 併載を終了し公開ページを1つに**（理由はデプロイ節）。ロボットの名乗り先と astro の既定値を本番URLへ移し、pipeline.yml から Pages デプロイと関連権限を削除 |
 | 2026-09-19 | Geminiのモデル列に 3.8-flash を追加し、リトライを「待つ前に全モデルを1周」方式へ変更（混雑モデルは1分待っても混雑、空きモデルは即答のため。9/16・9/18 は主モデルの503で157〜204秒待っていた） |
+| 2026-09-22 | 定期実行の cron を `0 21` から `23 21`（＋昼に取りこぼし拾いの `23 4`）へ変更し、当日巡回済みならスキップする `guard` ジョブを追加。毎時0分は混雑で106〜165分遅れており、9/21・9/22 は実行が消えていた |
 | 2026-09-19 | `data/state/`（last_seen・seen_urls・queue）に日次状態を持ち越し、既知URLの再triageと要約のあふれを解消（`data/.cache/` は不使用に）。地球儀に地域・州レベルのマーカーとHTMLオーバーレイのクリック遷移を追加（cobe 0.6.5のマーカー差し替えバグを回避）。国別ページ・トップ・鮮度表示を更新レコード（discovered_at）基準に統一し、派生年表（更新フィード由来の未確認イベント）を年表に合流 |
 
 ## ライセンス

@@ -1,7 +1,11 @@
 name: daily-pipeline
 on:
   schedule:
-    - cron: "0 21 * * *" # JST朝6時
+    # 毎時ちょうど(0分)は世界中の利用者が集中し、GitHubが遅延・**取りこぼし**を起こす。
+    # 実測: 2026-09-11〜20 の定期実行は毎回106〜165分遅れ、9/21・9/22 は実行そのものが消えた。
+    # そのため半端な分に置き、さらに昼に取りこぼし用の2本目を置く（当日巡回済みならスキップする）。
+    - cron: "23 21 * * *" # JST 6:23
+    - cron: "23 4 * * *" # JST 13:23（取りこぼし拾い）
   workflow_dispatch:
     inputs:
       first_run_window_days:
@@ -18,7 +22,28 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 今日すでに巡回済みかを見るだけの軽いジョブ。取りこぼし用の2本目が二重実行しないように
+  guard:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: check
+        run: |
+          last=$(node -p "require('./data/meta.json').last_sweep?.slice(0,10) ?? ''")
+          today=$(date -u +%F)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$last" = "$today" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "本日($today)は巡回済みのためスキップする"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "実行する（最終巡回: ${last:-なし} / 本日: $today）"
+          fi
+
   sweep-and-deploy:
+    needs: guard
+    if: needs.guard.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 90 # Gemini待ち予算(600s×2ステップ)+巡回+buildに対して十分。既定の360分まで走らせない
     steps:

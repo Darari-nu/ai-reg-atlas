@@ -534,5 +534,69 @@
   "https://www.tc260.org.cn/tc260/tzgg/202609/ec149159dcb246268eda751eee89967d.shtml": {
     "verdict": "no-ai-reg-keyword",
     "date": "2026-09-21"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187797": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187799": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187798": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12524": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_260921/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20674": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "javascript:;": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20672": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20670": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20658": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20650": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20646": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20612": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20530": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://moda.gov.tw/press/press-releases/20470": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-22"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12471": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-22"
   }
 }

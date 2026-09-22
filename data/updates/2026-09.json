@@ -325,5 +325,33 @@
       "https://www.edpb.europa.eu/news/edpb-harmonises-fining-methodology-and-adopts-final-dsa-gdpr-guidelines_en"
     ],
     "country_anchor": "/country/eu/#axis-enforcement_body"
+  },
+  {
+    "id": "2026-09-21-kr-001",
+    "date": "2026-09-21",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "title": "韓国個人情報保護委員会（PIPC）、AIデータ活用拠点「個人情報イノベーションゾーン」を追加指定",
+    "summary": {
+      "what": "仮名情報の柔軟な活用を支援するデータ分析拠点「個人情報イノベーションゾーン」に国税庁と疾病管理庁を追加指定",
+      "who": "韓国個人情報保護委員会（PIPC）",
+      "when_impact": "現地実査を経て2027年初めから本格運用を開始する予定"
+    },
+    "detail": "韓国個人情報保護委員会（PIPC）は2026年9月21日、国税庁と疾病管理庁を「個人情報イノベーションゾーン」の運営機関として追加指定したと発表した（指定機関は計10拠点へ増加）。本ゾーンは多重認証やリアルタイム画面録画などのセキュリティを備えた安全な環境で、仮名処理レベルの緩和やデータの長期間保管、第三者再利用、プライバシー強化技術（PET）の実証研究などを可能にする。現地実査を経て2027年初めより本格的な運用が開始される見込みである。",
+    "so_what": "韓国で医療や税務データを活用したAI技術・サービスの開発や実証を行いたい事業者は、安全かつ緩和された仮名化環境でのデータ利用が可能となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI ActにおけるAI規制の規定そのものの変更ではなく、AI学習・開発のためのデータ共有・活用サンドボックス環境の整備に関する施策であるため、基準との差分変更はない。"
+    },
+    "canonical_event": "South Korea PIPC designates additional data innovation zones for AI",
+    "publication_date": "2026-09-21",
+    "discovered_at": "2026-09-22",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12520"
+    ],
+    "country_anchor": "/country/kr/#updates"
   }
 ]

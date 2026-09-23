@@ -353,5 +353,89 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12520"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-09-22-ca-001",
+    "date": "2026-09-22",
+    "country": "ca",
+    "axis": "general",
+    "change_type": "other",
+    "title": "カナダ政府、責任あるデータセンター開発原則に新たに19社が署名したと発表",
+    "summary": {
+      "what": "責任あるデータセンター開発原則への署名企業が新たに19社追加され、計42組織となったこと",
+      "who": "カナダ政府（イノベーション・科学・経済開発省）",
+      "when_impact": "2026年9月22日の発表以降、カナダでのデータセンター開発に影響する見込み"
+    },
+    "detail": "カナダ政府は、2026年9月3日に立ち上げた「責任あるデータセンター開発原則（Canada's Responsible Data Centre Development Principles）」に、新たにNVIDIAやIBM、Intel、Lenovoなど19社が署名し、署名企業が計42組織に倍増したと発表した。本原則は、地域社会への長期的利益、電力消費者の保護、水使用量や環境影響の最小化、地域への影響に関する透明性、カナダへの戦略的価値の5つの期待事項を設定している。カナダの国家AI戦略「AI for All」を支えるインフラ整備の一環として位置づけられている。",
+    "so_what": "カナダでAIインフラやデータセンター事業を展開する企業は、環境配慮や地域貢献を求める本原則への準拠が期待される。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "EU AI ActはAIシステムやモデルの規制が中心であり、データセンターのインフラ開発自体を直接規制する枠組みは含まれていないため、本件によるEU基準との差異への影響はない。"
+    },
+    "canonical_event": "Government of Canada welcomes additional signatories to Responsible Data Centre Development Principles",
+    "publication_date": "2026-09-22",
+    "discovered_at": "2026-09-23",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-welcomes-19-additional-signatories-to-canadas-responsible-data-centre-development-principles.html"
+    ],
+    "country_anchor": "/country/ca/#updates"
+  },
+  {
+    "id": "2026-09-23-au-001",
+    "date": "2026-09-23",
+    "country": "au",
+    "axis": "general",
+    "change_type": "other",
+    "title": "豪首相、AI時代の子どもの権利保護連合を立ち上げ",
+    "summary": {
+      "what": "「AI時代における子どもの権利と保護のための連合」の立ち上げと、デジタル配慮義務法案の進捗状況の共有。",
+      "who": "オーストラリアのアルバニージー首相、フランス、ケニア、スペインの首脳ら",
+      "when_impact": "2026年9月23日の共同立ち上げ以降、順次各国の政策に影響を与える見込み。"
+    },
+    "detail": "オーストラリアのアルバニージー首相は、ニューヨークにおいて、フランス、ケニア、スペインの首脳らとともに「人工知能時代における子どもの権利と保護のための連合（Coalition for Children's Rights and Protection in the Age of Artificial Intelligence）」を立ち上げた。また、オーストラリア政府が検討している「デジタル配慮義務（Digital Duty of Care）」法案について、現在は公開草案（exposure draft）の段階であり、議会への提出前であると言及した。米国等からの懸念に対しては、政府による統制ではなく、デバイス上のコンテンツに対する個人のコントロールを取り戻すためのものであると主張し、超党派の支持を期待していると述べた。",
+    "so_what": "オーストラリア等による子どものAI保護連合の結成やデジタル配慮義務法案の動向は、将来的な児童向けAIサービスの規制強化につながる可能性があるため注視が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Australia prime minister announces Coalition for Children's Rights and Protection in the Age of AI",
+    "publication_date": "2026-09-23",
+    "discovered_at": "2026-09-23",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pm.gov.au/media/doorstop-new-york-23-september-2026"
+    ],
+    "country_anchor": "/country/au/#updates"
+  },
+  {
+    "id": "2026-09-23-kr-001",
+    "date": "2026-09-23",
+    "country": "kr",
+    "axis": "transparency",
+    "change_type": "guideline_draft",
+    "title": "個人情報保護委員会、「エージェント型AI」の個人情報処理ガイドライン策定に向け全体会議を開催",
+    "summary": {
+      "what": "エージェント型AIに関する個人情報保護の課題と制度革新の方向性を議論",
+      "who": "個人情報保護委員会",
+      "when_impact": "2026年9月23日開催、年末にガイドライン公表予定"
+    },
+    "detail": "個人情報保護委員会は2026年9月23日に「人工知能（AI）プライバシー民・관政策協議会（2기）第2차 전체회의」を開催した。会議では、エージェント型AIのプライバシー課題や個人情報制度の革新方向について議論が行われた。国内のAI開発・導入機関15ヵ所を対象としたインタビュー結果に基づき、プロンプトインジェクションや過度な権限付与がリスクとして挙げられ、自律・承認の境界設定やログ・メモリの管理基準の必要性が指摘された。議論の結果は、同年年末に公開予定の「エージェント型AI個人情報処理ガイドライン（仮称）」および制度革新案に反映される見込みである。",
+    "so_what": "自律的に動作するエージェント型AIを導入する企業は、プロンプトインジェクション等のリスクやログ管理の要件に備え、今後のガイドライン策定動向を注視する必要がある。",
+    "impact": {
+      "diff_changed": true,
+      "diff_note": "EU AI Actのトランスペアレンシーやリスク管理義務に対し、韓国独自の自律型AI（エージェント型AI）特化型のガイドライン策定に向けた具体的な実態調査と民官協議が進められている点でuniqueなアプローチ。"
+    },
+    "canonical_event": "South Korea seminar on agentic AI and personal information governance",
+    "publication_date": "2026-09-23",
+    "discovered_at": "2026-09-23",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12527"
+    ],
+    "country_anchor": "/country/kr/#axis-transparency"
   }
 ]

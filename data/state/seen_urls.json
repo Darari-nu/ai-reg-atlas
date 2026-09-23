@@ -598,5 +598,125 @@
   "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12471": {
     "verdict": "gemini-unusable",
     "date": "2026-09-22"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187808": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187805": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187807": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187806": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187801": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187800": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187804": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12526": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.mddi.gov.sg/newsroom/address-by-sms-tan-kiat-how-at-nvidia-ai-day-singapore/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.mddi.gov.sg/newsroom/remarks-by-minister-josephine-teo-at-foreign-policy-s-tech---ai-forum---unga81/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.mddi.gov.sg/newsroom/remarks-by-minister-josephine-teo-for-digital-development-and-information-at-digital-unga/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-anand-gujarat-bhavnagar-grahak-suraksha-mandal": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-vadodara-gujarat-shree-jagruti-grahak-suraksha-mahila": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-north-east-delhi-delhi-alabhaya-foundation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-central-delhi-delhi-federation-coummunity-radio-station": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-dakshin-dinajpur-west-bengal-hemnagar-sundarban-dream-0": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-gandhidham-santhalpur-national": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/4c59f81b-a46e-4c4e-8baf-dc3f39a04b04?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/0018cae8-91fa-4b61-8329-a70f046c20f3?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/0dddda7b-1dae-4290-8ed0-abc456d85c9a?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//f1738db8-3d15-4b0f-b05c-44744818bd74": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//e1bdf288-9047-42a0-b728-1d5b69026aba": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//d9885ef5-0862-4cfe-870d-cdb8d47dde15": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.pm.gov.au/media/macquarie-group-climate-event": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-23"
+  },
+  "https://www.edpb.europa.eu/news/the-spanish-dpa-fined-securitas-direct-100-000-eur-for-making-the-exercise-of-data-subject_en": {
+    "verdict": "body-too-short",
+    "date": "2026-09-23"
+  },
+  "http://www.trai.gov.in/telecom-consumers-protection-13th-amendment-regulations-2026": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-23"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-telecom-consumer-protection-13th-amendment-regulations": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-23"
+  },
+  "https://moda.gov.tw/press/press-releases/20684": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-23"
+  },
+  "https://www.edpb.europa.eu/news/the-irish-data-protection-commission-fines-google-403-000-000-eur-following-inquiry_en": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-23"
+  },
+  "https://www.federalregister.gov/documents/2026/09/22/2026-19388/order-granting-temporary-conditional-exemptive-relief-pursuant-to-section-36a1-of-the-securities": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-23"
   }
 }

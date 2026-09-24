@@ -118,6 +118,14 @@ describe('deriveTimelineEvents: legal_stage による絞り込み（年表は法
     const { legal_stage, ...withoutStage } = rec();
     assert.deepEqual(deriveTimelineEvents([withoutStage], []), []);
   });
+
+  it('除外段階（announcement）は effective_date/deadline_date があっても派生イベントを1つも出さない', () => {
+    const out = deriveTimelineEvents(
+      [rec({ legal_stage: 'announcement', effective_date: '2027-04-01', deadline_date: '2027-01-31' })],
+      []
+    );
+    assert.deepEqual(out, []);
+  });
 });
 
 describe('mergeTimeline', () => {

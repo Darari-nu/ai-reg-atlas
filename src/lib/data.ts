@@ -68,6 +68,7 @@ export type UpdateRecord = {
   country: string;
   axis: string;
   change_type: string;
+  legal_stage?: string;
   title: string;
   summary: { what: string; who: string; when_impact: string };
   detail?: string;

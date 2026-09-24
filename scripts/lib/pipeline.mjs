@@ -170,6 +170,18 @@ export function nextIdForDate(updates, cc, pubDate) {
   return `${prefix}${String((nums.length ? Math.max(...nums) : 0) + 1).padStart(3, '0')}`;
 }
 
+/**
+ * 同じ出典URLかつ同じ公表日のレコードが既にあるか（重複登録の機械チェック）。
+ * 同じ出典URLでも公表日が違えば別の出来事（EUの政策ハブページのように1つのURLから複数の出来事が出る）
+ * ので、URLと日付の両方で判定する。
+ */
+export function isDuplicateRecord(updates, url, date) {
+  return (updates ?? []).some((u) => u.sources?.[0] === url && u.date === date);
+}
+
+// legal_stage（法的段階）の全値。年表に載せる5段階＋載せない2段階（announcement/other）
+export const LEGAL_STAGES = ['in_force', 'enacted', 'final_guidance', 'bill', 'draft_or_consultation', 'announcement', 'other'];
+
 // 「差分変化（diff_changed）」を true にしてよい法的段階（施行・成立・確定した公式指針のみ）
 export const DIFF_BINDING_STAGES = ['in_force', 'enacted', 'final_guidance'];
 
@@ -205,6 +217,7 @@ export function buildUpdateRecord({ updates = [], country, item, rec, discovered
     country,
     axis: rec.axis,
     change_type: rec.change_type,
+    ...(LEGAL_STAGES.includes(rec.legal_stage) ? { legal_stage: rec.legal_stage } : {}),
     title: rec.title.slice(0, 120),
     summary: {
       what: rec.summary.what.slice(0, 120),

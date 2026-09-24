@@ -5,6 +5,7 @@
     "country": "uk",
     "axis": "prohibited_uses",
     "change_type": "new_regulation",
+    "legal_stage": "announcement",
     "title": "英国政府、16歳未満のSNS禁止およびAI恋愛チャットボットの18歳未満利用禁止方針を発表",
     "summary": {
       "what": "16歳未満のSNS禁止に加え、AI恋愛チャットボットの18歳未満利用禁止や親密な機能の制限を行う規制方針。",
@@ -28,6 +29,7 @@
     "country": "uk",
     "axis": "general",
     "change_type": "other",
+    "legal_stage": "announcement",
     "title": "DSIT大臣からOfcomへのオンライン環境に関する対応策についての書簡公表",
     "summary": {
       "what": "オンライン環境に関するコンサルテーションへの対応策パッケージについての進捗書簡の送付",
@@ -51,6 +53,7 @@
     "country": "eu",
     "axis": "enforcement_body",
     "change_type": "other",
+    "legal_stage": "other",
     "title": "欧州委員会、EU AI Actに基づく諮問フォーラムのメンバー174名を任命",
     "summary": {
       "what": "EU AI Actに基づき、欧州委員会とAIボードに技術的助言を行う諮問フォーラムのメンバー174名の任命を発表。",

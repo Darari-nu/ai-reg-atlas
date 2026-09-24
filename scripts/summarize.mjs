@@ -5,6 +5,7 @@ import path from 'node:path';
 import { FALLBACK_SUMMARIZE, geminiJSONWithRetry, geminiStats, hasApiKey, isGeminiStop, MODEL_SUMMARIZE } from './lib/gemini.mjs';
 import {
   JINA_READER_PREFIX,
+  LEGAL_STAGES,
   RECENCY_DAYS,
   appendDrop,
   buildUpdateRecord,
@@ -12,6 +13,7 @@ import {
   dedupeByEvent,
   ensureJapaneseTitle,
   existingEventKeys,
+  isDuplicateRecord,
   isGoogleNewsUrl,
   loadJSON,
   mechanicalGate,
@@ -116,7 +118,7 @@ const RESPONSE_SCHEMA = {
     legal_stage: {
       type: 'STRING',
       enum: ['in_force', 'enacted', 'final_guidance', 'bill', 'draft_or_consultation', 'announcement', 'other'],
-      description: '本文が示す法的段階。in_force=施行済み、enacted=議会で可決・公布済み（未施行含む）、final_guidance=草案・意見募集でない確定版の公式指針、bill=法案の提出・審議中、draft_or_consultation=草案・意見募集中、announcement=方針表明・発言・記者会見・会議・事件の公表、other=その他（報告書・統計・執行事例等）',
+      description: '本文が示す法的段階。in_force=施行済み・適用開始、enacted=議会で可決・公布済み（未施行含む）、final_guidance=確定版の公式指針・標準・フレームワークの公表（版上げを含む）、閣議決定された国家計画・戦略、bill=法案・法改正案の提出・審議・委員会可決・一院可決、行政府の立法提案、draft_or_consultation=指針や法案の草案公表、意見募集の開始、announcement=方針表明・首脳の発言・記者会見・議会答弁・会議の開催・事件の公表・提言や要請・書簡、other=特定企業への処分・勧告・執行命令、統計・報告書、協定・MOU・署名、任命、事業の開始、非公式な解説',
     },
     diff_items: {
       type: 'ARRAY',
@@ -263,8 +265,8 @@ async function main() {
 - so_what は企業のAIガバナンス担当者向けの実務インパクト1文
 - diff_changed（差分変化）は次の**両方**を満たすときだけ true。片方でも欠けたら false
   - legal_stage が「施行（in_force）」「成立（enacted: 議会で可決済み／公布済み）」「確定した公式指針（final_guidance: 草案・意見募集でない最終版）」のいずれか
-  - 対象国の現行 diff_vs_eu（添付。stricter/looser/absent/unique の項目）のどれかが、本文の内容で追加・更新・削除される（diff_items に1件以上、bucket/topic/action で挙げる）
-  - legal_stage の判定: 法案の提出・審議・一院のみ通過は bill、草案・意見募集は draft_or_consultation、方針表明・首脳の発言・記者会見・会議・協議会・事件やインシデントの公表は announcement、報告書・統計・特定企業への勧告や執行・既存の任意指針の版上げ（差分項目が変わらないもの）は other
+  - 対象国の現行 diff_vs_eu（添付。stricter/looser/absent/unique の項目）のどれかが、本文の内容で追加・更新・削除される（diff_items に1件以上、bucket/topic/action で挙げる）。既存の任意指針の版上げなど、内容が diff_vs_eu の項目を変えない場合は diff_items を空にする（diff_items が空なら diff_changed は false）
+  - legal_stage の判定: 法案・法改正案の提出・審議・委員会可決・一院可決、行政府の立法提案は bill、指針や法案の草案公表・意見募集の開始は draft_or_consultation、確定版の公式指針・標準・フレームワークの公表（版上げを含む）と閣議決定された国家計画・戦略は final_guidance、方針表明・首脳の発言・記者会見・議会答弁・会議の開催・事件の公表・提言や要請・書簡は announcement、特定企業への処分・勧告・執行命令、統計・報告書、協定・MOU・署名、任命、事業の開始、非公式な解説は other
   - 「EUと違う話だ」というだけでは diff_changed=true の理由にならない。上記の法的段階と差分項目の変化が両方揃わない限り false にする
   - 対象は AI 規制に関する差分項目だけ。個人情報保護法・サイバー法・消費者法など一般法の改正は、AI 固有の規定を新設・変更する場合に限る
 - 出典は与えられたURLのみ。本文にない情報を書かない
@@ -301,6 +303,13 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       // 反映: updates/{YYYY-MM}.json へ追記
       const month = rec.publication_date.slice(0, 7);
       const updates = readDataJSON(['updates', `${month}.json`], []);
+      if (isDuplicateRecord(updates, item.url, rec.publication_date)) {
+        appendDrop({ ...item, country: cc, reason: 'duplicate-existing-url' });
+        continue;
+      }
+      if (!LEGAL_STAGES.includes(rec.legal_stage)) {
+        console.warn(`[summarize] legal_stage missing or invalid (${rec.legal_stage ?? '-'}), record will not appear on the timeline: ${item.url}`);
+      }
       const record = buildUpdateRecord({ updates, country: cc, item, rec, discoveredAt: today }); // sourcesはcollectがfetchしたURLのみ
       updates.push(record);
       writeDataJSON(['updates', `${month}.json`], updates);

@@ -152,7 +152,8 @@ npm run dev       # http://localhost:4321/atlas/
 npm run build     # dist/ に静的出力
 npm run validate  # data/ 全JSONのスキーマ検証
 npm test          # 実APIを使わないテスト（品質ゲート・triage分割・Geminiのリトライ/フォールバック・
-                  # 鮮度・派生年表・地球儀投影・countries.yaml検証・状態ファイル・差分変化の判定ゲート。123件）
+                  # 鮮度・派生年表・地球儀投影・countries.yaml検証・状態ファイル・差分変化の判定ゲート・
+                  # legal_stage による年表の絞り込み・重複レコードの機械チェック。132件）
 ```
 
 ### Gemini APIキー（人間がやること）
@@ -269,6 +270,10 @@ DRY_RUN=1 npm run validate
 
 更新レコードには `discovered_at`（サイトが発見した日。`summarize.mjs` がレコード生成時に `buildUpdateRecord` 経由で付与）を持つものがある。無い旧レコードはトップのNEW欄や鮮度計算で `date`（公表日）を代用する（`src/lib/freshness.mjs` の `discoveryDate`）。年表（`/timeline` や国別ページ）に○で出る「派生イベント」は、更新レコードから機械的に生成した**更新フィード由来・人間による確認前の自動検知**であり、`axes.timeline` に人手で載せた種データ（seed）とは扱いが異なる（`src/lib/derivedTimeline.mjs`）。
 
+更新レコードは `legal_stage`（法的段階。要約AIが本文から判定し `scripts/summarize.mjs` が付与）を持つ。値は次の7つ: `in_force`（施行済み・適用開始）、`enacted`（議会で可決・公布済み。未施行を含む）、`final_guidance`（草案・意見募集でない確定版の公式指針・ガイドライン・標準、閣議決定された国家計画・戦略）、`bill`（法案・法改正案の提出・審議・委員会可決・一院可決、行政府の立法提案）、`draft_or_consultation`（指針や法案の草案公表、意見募集の開始）、`announcement`（方針表明・首脳の発言・記者会見・議会答弁・会議の開催・事件の公表・提言や要請・書簡）、`other`（特定企業への処分・勧告・執行命令、統計・報告書、協定・MOU・署名、任命、事業の開始、非公式な解説）。年表の○（派生イベント）は、このうち**法令の節目にあたる5段階**（施行=in_force・成立=enacted・確定指針=final_guidance・法案=bill・草案/意見募集=draft_or_consultation）のレコードからだけ作る（`announcement`・`other`・legal_stage 無しは年表に出さない。`src/lib/derivedTimeline.mjs` の `TIMELINE_LEGAL_STAGES`）。更新一覧（`/updates/`）は legal_stage に関わらず全レコードを今までどおり出す（役割分担: 年表＝法令の節目、更新一覧＝ニュース全部）。
+
+同じ出典URLかつ同じ公表日のレコードが既にある場合、summarize は新規登録をせずに `duplicate-existing-url` として drop する（`scripts/lib/pipeline.mjs` の `isDuplicateRecord`）。同じURLでも公表日が違えば別の出来事として扱う（EUの政策ハブページのように1つのURLから複数の出来事が出るため）。
+
 差分変化（`impact.diff_changed`）は「法的な変化があり、かつEUとの差分一覧（`diff_vs_eu`）の項目が実際に動く」ときだけ true にする。法案の提出・審議、草案・意見募集、方針表明・会見・会議、事件の公表だけでは true にしない（「EUと違う話だ」は理由にならない）。要約AIの判定はそのままレコードに書かず、`scripts/lib/pipeline.mjs` の機械ゲート `decideDiffChanged`（legal_stage が in_force/enacted/final_guidance のいずれか、かつ diff_items が1件以上）を通した値を使う。
 
 ### サイト側の変更
@@ -295,6 +300,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-22 | 定期実行の cron を `0 21` から `23 21`（＋昼に取りこぼし拾いの `23 4`）へ変更し、当日巡回済みならスキップする `guard` ジョブを追加。毎時0分は混雑で106〜165分遅れており、9/21・9/22 は実行が消えていた |
 | 2026-09-19 | `data/state/`（last_seen・seen_urls・queue）に日次状態を持ち越し、既知URLの再triageと要約のあふれを解消（`data/.cache/` は不使用に）。地球儀に地域・州レベルのマーカーとHTMLオーバーレイのクリック遷移を追加（cobe 0.6.5のマーカー差し替えバグを回避）。国別ページ・トップ・鮮度表示を更新レコード（discovered_at）基準に統一し、派生年表（更新フィード由来の未確認イベント）を年表に合流 |
 | 2026-09-24 | 差分変化（`diff_changed`）の誤判定を修正。要約プロンプトに対象国の現行 diff_vs_eu を渡し、`legal_stage`（法的段階）と `diff_items`（変化した差分項目）をモデルに出させ、機械ゲート `decideDiffChanged`（`scripts/lib/pipeline.mjs`）で両方揃ったときだけ true にする。既存12件のうち法的な変化が無かった10件を false に付け直した |
+| 2026-09-25 | 年表を「法令の節目」だけにした。更新レコードに `legal_stage`（7値）を保存し、年表の派生イベント（○）は施行・成立・確定指針・法案・草案/意見募集の5段階のレコードからだけ作る（`src/lib/derivedTimeline.mjs` の `TIMELINE_LEGAL_STAGES`）。更新一覧は今までどおり全件表示。既存42件（重複2件を削除した残り）に legal_stage を付与。今後の重複防止に、同じ出典URL・同じ公表日のレコードが既にあれば書かない機械チェック（`isDuplicateRecord`）を summarize に追加 |
 
 ## ライセンス
 

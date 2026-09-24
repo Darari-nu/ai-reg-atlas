@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import path from 'node:path';
 import { beforeEach, describe, it } from 'node:test';
 import {
   applyTriageVerdicts,
@@ -10,7 +11,9 @@ import {
   ensureJapaneseTitle,
   hasJapanese,
   irrelevantUrls,
+  isDuplicateRecord,
   isStaleListing,
+  LEGAL_STAGES,
   listingDate,
   mechanicalGate,
   nearestDate,
@@ -20,6 +23,7 @@ import {
   resolveFeedLink,
   sortForTriage,
 } from '../scripts/lib/pipeline.mjs';
+import { TIMELINE_LEGAL_STAGES } from '../src/lib/derivedTimeline.mjs';
 
 const longAiRegText = `
   On 2026-06-10 the authority published an artificial intelligence regulation guideline
@@ -121,6 +125,48 @@ describe('pipeline quality gates', () => {
     assert.equal(build('penalties').country_anchor, '/country/cn/#axis-penalties');
   });
 
+  it('legal_stage が有効値なら change_type の直後に含める', () => {
+    const record = buildUpdateRecord({
+      updates: [],
+      country: 'jp',
+      item: { url: 'https://example.go.jp/ai' },
+      rec: {
+        axis: 'timeline',
+        change_type: 'status_change',
+        title: 'T',
+        summary: { what: 'a', who: 'b', when_impact: 'c' },
+        so_what: 'd',
+        diff_changed: false,
+        publication_date: '2026-09-01',
+        legal_stage: 'in_force',
+      },
+    });
+    assert.equal(record.legal_stage, 'in_force');
+    assert.deepEqual(Object.keys(record).slice(0, 5), ['id', 'date', 'country', 'axis', 'change_type']);
+    assert.equal(Object.keys(record)[5], 'legal_stage');
+  });
+
+  it('legal_stage が無効値・無しならキー自体を出さない', () => {
+    const build = (legal_stage) =>
+      buildUpdateRecord({
+        updates: [],
+        country: 'jp',
+        item: { url: 'https://example.go.jp/ai' },
+        rec: {
+          axis: 'timeline',
+          change_type: 'status_change',
+          title: 'T',
+          summary: { what: 'a', who: 'b', when_impact: 'c' },
+          so_what: 'd',
+          diff_changed: false,
+          publication_date: '2026-09-01',
+          ...(legal_stage !== undefined ? { legal_stage } : {}),
+        },
+      });
+    assert.equal('legal_stage' in build(undefined), false);
+    assert.equal('legal_stage' in build('IN_FORCE'), false); // enum外（大文字違い）
+  });
+
   it('dedupes the same canonical event per country and prefers high priority', () => {
     const deduped = dedupeByEvent([
       {
@@ -149,6 +195,26 @@ describe('pipeline quality gates', () => {
     assert.equal(deduped.length, 2);
     assert.equal(deduped.find((item) => item.countries[0] === 'eu').url, 'https://official.example/guideline');
     assert.equal(deduped.find((item) => item.countries[0] === 'us').url, 'https://official.example/guideline-us');
+  });
+});
+
+describe('isDuplicateRecord: 同じ出典URLかつ同じ公表日の重複チェック', () => {
+  const updates = [{ id: '2026-09-16-kr-001', date: '2026-09-16', sources: ['https://example.kr/a'] }];
+
+  it('同URL・同日 → true', () => {
+    assert.equal(isDuplicateRecord(updates, 'https://example.kr/a', '2026-09-16'), true);
+  });
+
+  it('同URL・別日 → false（同じURLから複数の出来事が出るページもあるため）', () => {
+    assert.equal(isDuplicateRecord(updates, 'https://example.kr/a', '2026-09-19'), false);
+  });
+
+  it('別URL・同日 → false', () => {
+    assert.equal(isDuplicateRecord(updates, 'https://example.kr/b', '2026-09-16'), false);
+  });
+
+  it('空配列 → false', () => {
+    assert.equal(isDuplicateRecord([], 'https://example.kr/a', '2026-09-16'), false);
   });
 });
 
@@ -342,5 +408,39 @@ describe('decideDiffChanged: 法的段階＋差分項目の両方が揃ったと
 
   it('diff_items が配列でない（文字列）なら false', () => {
     assert.equal(decideDiffChanged({ ...base, diff_items: 'x' }), false);
+  });
+});
+
+describe('legal_stage の enum 整合（schema / pipeline / derivedTimeline / summarize プロンプトが食い違わないこと）', () => {
+  const schema = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'schema/update.schema.json'), 'utf8'));
+  const schemaEnum = schema.items.properties.legal_stage.enum;
+
+  // summarize.mjs は import すると main() が動いてしまうので、ソースを文字列として読み
+  // RESPONSE_SCHEMA.legal_stage.enum の配列リテラルだけを正規表現で抜き出す
+  const summarizeSrc = fs.readFileSync(path.join(process.cwd(), 'scripts/summarize.mjs'), 'utf8');
+  const legalStageBlockMatch = summarizeSrc.match(/legal_stage:\s*{[\s\S]*?enum:\s*\[([^\]]+)\]/);
+  assert.ok(legalStageBlockMatch, 'RESPONSE_SCHEMA.legal_stage.enum が summarize.mjs に見つからない');
+  const responseSchemaEnum = legalStageBlockMatch[1]
+    .split(',')
+    .map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
+    .filter(Boolean);
+
+  it('(a) schema/update.schema.json の legal_stage enum は LEGAL_STAGES と同じ7値・同じ順', () => {
+    assert.deepEqual(schemaEnum, LEGAL_STAGES);
+    assert.equal(LEGAL_STAGES.length, 7);
+  });
+
+  it('(b) derivedTimeline の TIMELINE_LEGAL_STAGES は LEGAL_STAGES の部分集合で5値', () => {
+    assert.equal(TIMELINE_LEGAL_STAGES.length, 5);
+    for (const stage of TIMELINE_LEGAL_STAGES) {
+      assert.ok(LEGAL_STAGES.includes(stage), `${stage} は LEGAL_STAGES に含まれるはず`);
+    }
+    // announcement / other は法令の節目ではないので年表には含まれない
+    assert.equal(TIMELINE_LEGAL_STAGES.includes('announcement'), false);
+    assert.equal(TIMELINE_LEGAL_STAGES.includes('other'), false);
+  });
+
+  it('(c) summarize.mjs の RESPONSE_SCHEMA.legal_stage.enum は LEGAL_STAGES と一致', () => {
+    assert.deepEqual(responseSchemaEnum, LEGAL_STAGES);
   });
 });

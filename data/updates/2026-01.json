@@ -5,6 +5,7 @@
     "country": "kr",
     "axis": "risk_classification",
     "change_type": "status_change",
+    "legal_stage": "in_force",
     "title": "韓国AI基本法が施行（アジア初の包括AI法）",
     "summary": {
       "what": "AI基本法と施行令が同時に施行され、高影響AI・生成AI表示等の義務が発動",

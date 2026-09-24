@@ -5,6 +5,7 @@ import {
   applyTriageVerdicts,
   buildUpdateRecord,
   chunk,
+  decideDiffChanged,
   dedupeByEvent,
   ensureJapaneseTitle,
   hasJapanese,
@@ -282,5 +283,47 @@ describe('summarize: 見出しを日本語に揃える', () => {
 
   it('どちらも日本語でなければ元のまま（レコードを落とさない）', () => {
     assert.deepEqual(ensureJapaneseTitle('English title', 'also english'), { title: 'English title', replaced: false });
+  });
+});
+
+describe('decideDiffChanged: 法的段階＋差分項目の両方が揃ったときだけ true', () => {
+  const base = { diff_changed: true, legal_stage: 'in_force', diff_items: [{ bucket: 'stricter', topic: 'x', action: 'add' }] };
+
+  it('施行（in_force）＋項目1件 → true', () => {
+    assert.equal(decideDiffChanged(base), true);
+  });
+
+  it('成立（enacted）＋項目 → true', () => {
+    assert.equal(decideDiffChanged({ ...base, legal_stage: 'enacted' }), true);
+  });
+
+  it('確定した公式指針（final_guidance）＋項目 → true', () => {
+    assert.equal(decideDiffChanged({ ...base, legal_stage: 'final_guidance' }), true);
+  });
+
+  it('法案（bill）＋項目 → false', () => {
+    assert.equal(decideDiffChanged({ ...base, legal_stage: 'bill' }), false);
+  });
+
+  it('announcement（方針表明・会見・事件の公表） → false', () => {
+    assert.equal(decideDiffChanged({ ...base, legal_stage: 'announcement' }), false);
+  });
+
+  it('diff_items が0件 → false', () => {
+    assert.equal(decideDiffChanged({ ...base, diff_items: [] }), false);
+  });
+
+  it('diff_items が無い（undefined） → false', () => {
+    const { diff_items, ...rest } = base;
+    assert.equal(decideDiffChanged(rest), false);
+  });
+
+  it('legal_stage が無い（undefined） → false', () => {
+    const { legal_stage, ...rest } = base;
+    assert.equal(decideDiffChanged(rest), false);
+  });
+
+  it('diff_changed=false ならほかが揃っていても false', () => {
+    assert.equal(decideDiffChanged({ ...base, diff_changed: false }), false);
   });
 });

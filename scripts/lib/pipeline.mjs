@@ -170,6 +170,24 @@ export function nextIdForDate(updates, cc, pubDate) {
   return `${prefix}${String((nums.length ? Math.max(...nums) : 0) + 1).padStart(3, '0')}`;
 }
 
+// 「差分変化（diff_changed）」を true にしてよい法的段階（施行・成立・確定した公式指針のみ）
+export const DIFF_BINDING_STAGES = ['in_force', 'enacted', 'final_guidance'];
+
+/**
+ * diff_changed=true にしてよいのは、次の両方を満たすときだけ:
+ * 1. legal_stage が「施行（in_force）」「成立（enacted）」「確定した公式指針（final_guidance）」のいずれか
+ * 2. diff_items（EUとの差分一覧 diff_vs_eu の追加・更新・削除）が1件以上ある
+ * どちらか欠けていれば、モデルの diff_changed=true 判定でも false に落とす（機械ゲート）。
+ */
+export function decideDiffChanged(rec) {
+  return (
+    rec.diff_changed === true &&
+    DIFF_BINDING_STAGES.includes(rec.legal_stage) &&
+    Array.isArray(rec.diff_items) &&
+    rec.diff_items.length > 0
+  );
+}
+
 /** axis が timeline/general のときは国別ページに対応する軸見出しが無いので、更新一覧へ飛ばす */
 export function countryAnchor(country, axis) {
   if (axis === 'timeline' || axis === 'general') return `/country/${country}/#updates`;

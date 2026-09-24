@@ -266,6 +266,7 @@ async function main() {
   - 対象国の現行 diff_vs_eu（添付。stricter/looser/absent/unique の項目）のどれかが、本文の内容で追加・更新・削除される（diff_items に1件以上、bucket/topic/action で挙げる）
   - legal_stage の判定: 法案の提出・審議・一院のみ通過は bill、草案・意見募集は draft_or_consultation、方針表明・首脳の発言・記者会見・会議・協議会・事件やインシデントの公表は announcement、報告書・統計・特定企業への勧告や執行・既存の任意指針の版上げ（差分項目が変わらないもの）は other
   - 「EUと違う話だ」というだけでは diff_changed=true の理由にならない。上記の法的段階と差分項目の変化が両方揃わない限り false にする
+  - 対象は AI 規制に関する差分項目だけ。個人情報保護法・サイバー法・消費者法など一般法の改正は、AI 固有の規定を新設・変更する場合に限る
 - 出典は与えられたURLのみ。本文にない情報を書かない
 - regulation_patch は status変更 または timeline追加が確実な場合のみ。なければ null
 
@@ -276,7 +277,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
 
       const rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA, fallbackModels: FALLBACK_SUMMARIZE });
       // 差分変化の機械ゲート（法的段階＋差分項目の変化が両方揃わなければ false に落とす。§定義参照）
-      const gatedDiff = decideDiffChanged(rec);
+      const gatedDiff = decideDiffChanged(rec, cc);
       if (rec.diff_changed && !gatedDiff) {
         console.warn(`[summarize] diff_changed demoted (legal_stage=${rec.legal_stage ?? '-'} items=${rec.diff_items?.length ?? 0}): ${item.url}`);
       }
@@ -332,9 +333,15 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       writeDataJSON(['regulations', `${cc}.json`], current);
 
       if (rec.diff_changed) {
+        const diffItemsSection =
+          Array.isArray(rec.diff_items) && rec.diff_items.length > 0
+            ? `\n\n変化した差分項目（data/regulations/${cc}.json の diff_vs_eu を人が直すための手がかり）:\n${rec.diff_items
+                .map((d) => `- ${d.bucket} / ${d.topic} / ${d.action}`)
+                .join('\n')}`
+            : '';
         pushIssue({
           title: `diff-change: ${cc} ${record.title}`,
-          body: `${rec.diff_note ?? ''}\n\n出典: ${item.url}\nフィードID: ${record.id}`,
+          body: `${rec.diff_note ?? ''}${diffItemsSection}\n\n出典: ${item.url}\nフィードID: ${record.id}`,
           labels: ['diff-change'],
         });
       }

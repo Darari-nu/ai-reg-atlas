@@ -178,8 +178,10 @@ export const DIFF_BINDING_STAGES = ['in_force', 'enacted', 'final_guidance'];
  * 1. legal_stage が「施行（in_force）」「成立（enacted）」「確定した公式指針（final_guidance）」のいずれか
  * 2. diff_items（EUとの差分一覧 diff_vs_eu の追加・更新・削除）が1件以上ある
  * どちらか欠けていれば、モデルの diff_changed=true 判定でも false に落とす（機械ゲート）。
+ * country==='eu' は常に false（EU自身はEU AI Act基準そのものなので「EUとの差分」という概念が存在しない）。
  */
-export function decideDiffChanged(rec) {
+export function decideDiffChanged(rec, country) {
+  if (country === 'eu') return false;
   return (
     rec.diff_changed === true &&
     DIFF_BINDING_STAGES.includes(rec.legal_stage) &&

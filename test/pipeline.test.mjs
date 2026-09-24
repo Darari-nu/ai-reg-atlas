@@ -326,4 +326,21 @@ describe('decideDiffChanged: 法的段階＋差分項目の両方が揃ったと
   it('diff_changed=false ならほかが揃っていても false', () => {
     assert.equal(decideDiffChanged({ ...base, diff_changed: false }), false);
   });
+
+  it('country=eu なら他が全部揃っていても false（EU自身に「EUとの差分」は無い）', () => {
+    assert.equal(decideDiffChanged(base, 'eu'), false);
+  });
+
+  it('country=jp で揃っていれば true', () => {
+    assert.equal(decideDiffChanged(base, 'jp'), true);
+  });
+
+  it('legal_stage が enum 外（大文字違い等）なら false', () => {
+    assert.equal(decideDiffChanged({ ...base, legal_stage: 'IN_FORCE' }), false);
+    assert.equal(decideDiffChanged({ ...base, legal_stage: 'in force' }), false);
+  });
+
+  it('diff_items が配列でない（文字列）なら false', () => {
+    assert.equal(decideDiffChanged({ ...base, diff_items: 'x' }), false);
+  });
 });

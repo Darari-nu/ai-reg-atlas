@@ -736,8 +736,9 @@ jobs:
 制約:
 - summary.what / who / when_impact は各60文字以内・体言止め可
 - so_what は企業のAIガバナンス担当者向けの実務インパクト1文
-- EU AI Act基準（添付のeu_baseline.json）と比較し、diff_vs_euへの影響を
-  stricter/looser/absent/unique の観点で判定。影響なしなら diff_changed=false
+- diff_changed=true にしてよいのは、法的段階が施行・成立・確定した公式指針のいずれかで、かつ
+  現在の diff_vs_eu の項目（stricter/looser/absent/unique）が追加・更新・削除されるときだけ。
+  詳細は scripts/summarize.mjs のプロンプトと decideDiffChanged（scripts/lib/pipeline.mjs）を参照
 - 出典は与えられたURLのみ。本文にない情報を書かない
 
 eu_baseline: {eu_baseline_json}

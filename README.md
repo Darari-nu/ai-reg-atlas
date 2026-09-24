@@ -269,6 +269,8 @@ DRY_RUN=1 npm run validate
 
 更新レコードには `discovered_at`（サイトが発見した日。`summarize.mjs` がレコード生成時に `buildUpdateRecord` 経由で付与）を持つものがある。無い旧レコードはトップのNEW欄や鮮度計算で `date`（公表日）を代用する（`src/lib/freshness.mjs` の `discoveryDate`）。年表（`/timeline` や国別ページ）に○で出る「派生イベント」は、更新レコードから機械的に生成した**更新フィード由来・人間による確認前の自動検知**であり、`axes.timeline` に人手で載せた種データ（seed）とは扱いが異なる（`src/lib/derivedTimeline.mjs`）。
 
+差分変化（`impact.diff_changed`）は「法的な変化があり、かつEUとの差分一覧（`diff_vs_eu`）の項目が実際に動く」ときだけ true にする。法案の提出・審議、草案・意見募集、方針表明・会見・会議、事件の公表だけでは true にしない（「EUと違う話だ」は理由にならない）。要約AIの判定はそのままレコードに書かず、`scripts/lib/pipeline.mjs` の機械ゲート `decideDiffChanged`（legal_stage が in_force/enacted/final_guidance のいずれか、かつ diff_items が1件以上）を通した値を使う。
+
 ### サイト側の変更
 
 国別ページの「この国の最近の更新」節、トップの「今週の動き」帯、鮮度表示（地球儀の点の大きさ・色、ステータスバーの経過日数）は、いずれも規制サマリーの `last_changed` ではなく更新レコード（発見日基準）を根拠にするよう切り替えた。
@@ -292,6 +294,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-22 | 更新レコードの見出しを日本語に統一。要約プロンプトに title の言語と書き方（「主体（略称）、何をした」）の指示が無く、英語の一次ソースだと英語の見出しがサイトに出ていた（2026-09-21-eu-001）。プロンプト・スキーマに明記し、それでも日本語でなければ `summary.what` に差し替える安全装置（`ensureJapaneseTitle`）を追加。該当1件の見出しを手で日本語化 |
 | 2026-09-22 | 定期実行の cron を `0 21` から `23 21`（＋昼に取りこぼし拾いの `23 4`）へ変更し、当日巡回済みならスキップする `guard` ジョブを追加。毎時0分は混雑で106〜165分遅れており、9/21・9/22 は実行が消えていた |
 | 2026-09-19 | `data/state/`（last_seen・seen_urls・queue）に日次状態を持ち越し、既知URLの再triageと要約のあふれを解消（`data/.cache/` は不使用に）。地球儀に地域・州レベルのマーカーとHTMLオーバーレイのクリック遷移を追加（cobe 0.6.5のマーカー差し替えバグを回避）。国別ページ・トップ・鮮度表示を更新レコード（discovered_at）基準に統一し、派生年表（更新フィード由来の未確認イベント）を年表に合流 |
+| 2026-09-24 | 差分変化（`diff_changed`）の誤判定を修正。要約プロンプトに対象国の現行 diff_vs_eu を渡し、`legal_stage`（法的段階）と `diff_items`（変化した差分項目）をモデルに出させ、機械ゲート `decideDiffChanged`（`scripts/lib/pipeline.mjs`）で両方揃ったときだけ true にする。既存12件のうち法的な変化が無かった10件を false に付け直した |
 
 ## ライセンス
 

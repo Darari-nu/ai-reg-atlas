@@ -8,6 +8,7 @@ import {
   RECENCY_DAYS,
   appendDrop,
   buildUpdateRecord,
+  decideDiffChanged,
   dedupeByEvent,
   ensureJapaneseTitle,
   existingEventKeys,
@@ -112,7 +113,29 @@ const RESPONSE_SCHEMA = {
     },
     detail: { type: 'STRING' },
     so_what: { type: 'STRING' },
-    diff_changed: { type: 'BOOLEAN' },
+    legal_stage: {
+      type: 'STRING',
+      enum: ['in_force', 'enacted', 'final_guidance', 'bill', 'draft_or_consultation', 'announcement', 'other'],
+      description: '本文が示す法的段階。in_force=施行済み、enacted=議会で可決・公布済み（未施行含む）、final_guidance=草案・意見募集でない確定版の公式指針、bill=法案の提出・審議中、draft_or_consultation=草案・意見募集中、announcement=方針表明・発言・記者会見・会議・事件の公表、other=その他（報告書・統計・執行事例等）',
+    },
+    diff_items: {
+      type: 'ARRAY',
+      items: {
+        type: 'OBJECT',
+        properties: {
+          bucket: { type: 'STRING', enum: ['stricter', 'looser', 'absent', 'unique'] },
+          topic: { type: 'STRING' },
+          action: { type: 'STRING', enum: ['add', 'update', 'remove'] },
+        },
+        required: ['bucket', 'topic', 'action'],
+      },
+      description: '対象国の現行 diff_vs_eu（stricter/looser/absent/unique）のうち、この記事の内容で追加・更新・削除される項目。変化が無ければ空配列',
+    },
+    diff_changed: {
+      type: 'BOOLEAN',
+      description:
+        'true にしてよいのは、legal_stage が in_force/enacted/final_guidance のいずれか、かつ diff_items に1件以上ある場合だけ。「EUと違う話だ」というだけでは true にしない',
+    },
     diff_note: { type: 'STRING' },
     usable: { type: 'BOOLEAN' },
     publication_date: { type: 'STRING', nullable: true },
@@ -138,7 +161,19 @@ const RESPONSE_SCHEMA = {
       },
     },
   },
-  required: ['axis', 'change_type', 'title', 'summary', 'so_what', 'diff_changed', 'usable', 'publication_date', 'effective_date', 'deadline_date'],
+  required: [
+    'axis',
+    'change_type',
+    'title',
+    'summary',
+    'so_what',
+    'legal_stage',
+    'diff_changed',
+    'usable',
+    'publication_date',
+    'effective_date',
+    'deadline_date',
+  ],
 };
 
 // 先頭から limit 件ぶん通るまで fetch する。fetch すらしていない残りは untouched（attempts を増やさず繰り越す）
@@ -212,6 +247,10 @@ async function main() {
       }
       const articleText = item.articleText; // 確証: 実URLfetch済み本文（§5-2 Step3）
       const current = readDataJSON(['regulations', `${cc}.json`], {});
+      // diff_items の判定材料。note/source はトークン節約のため渡さず {bucket, topic} だけに縮める
+      const diffVsEu = Object.entries(current.diff_vs_eu ?? {}).flatMap(([bucket, entries]) =>
+        (entries ?? []).map((e) => ({ bucket, topic: e.topic }))
+      );
 
       const prompt = `あなたはAI法規制の専門アナリストです。以下の一次ソース本文から、更新レコードを生成してください。事実のみを書き、推測には「〜の見込み」と明記。
 
@@ -222,16 +261,27 @@ async function main() {
 - title は**必ず日本語**の見出し（40文字前後）。一次ソースが英語でも翻訳する。「主体、何をした」の形（例: 「欧州データ保護会議（EDPB）、GDPR制裁金の算定ガイドラインを採択」）。機関名は日本語の通称に略称を括弧で添える
 - summary.what / who / when_impact は各60文字以内・体言止め可
 - so_what は企業のAIガバナンス担当者向けの実務インパクト1文
-- EU AI Act基準（添付のeu_baseline.json）と比較し、diff_vs_euへの影響を stricter/looser/absent/unique の観点で判定。影響なしなら diff_changed=false
+- diff_changed（差分変化）は次の**両方**を満たすときだけ true。片方でも欠けたら false
+  - legal_stage が「施行（in_force）」「成立（enacted: 議会で可決済み／公布済み）」「確定した公式指針（final_guidance: 草案・意見募集でない最終版）」のいずれか
+  - 対象国の現行 diff_vs_eu（添付。stricter/looser/absent/unique の項目）のどれかが、本文の内容で追加・更新・削除される（diff_items に1件以上、bucket/topic/action で挙げる）
+  - legal_stage の判定: 法案の提出・審議・一院のみ通過は bill、草案・意見募集は draft_or_consultation、方針表明・首脳の発言・記者会見・会議・協議会・事件やインシデントの公表は announcement、報告書・統計・特定企業への勧告や執行・既存の任意指針の版上げ（差分項目が変わらないもの）は other
+  - 「EUと違う話だ」というだけでは diff_changed=true の理由にならない。上記の法的段階と差分項目の変化が両方揃わない限り false にする
+  - 対象は AI 規制に関する差分項目だけ。個人情報保護法・サイバー法・消費者法など一般法の改正は、AI 固有の規定を新設・変更する場合に限る
 - 出典は与えられたURLのみ。本文にない情報を書かない
 - regulation_patch は status変更 または timeline追加が確実な場合のみ。なければ null
 
 eu_baseline: ${JSON.stringify(euBaseline.axes)}
-対象国の現行データ: ${JSON.stringify({ status: current.status, approach: current.approach, regulation_name: current.regulation_name })}
+対象国の現行データ: ${JSON.stringify({ status: current.status, approach: current.approach, regulation_name: current.regulation_name, diff_vs_eu: diffVsEu })}
 記事URL: ${item.url}
 一次ソース本文: ${articleText}`;
 
       const rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA, fallbackModels: FALLBACK_SUMMARIZE });
+      // 差分変化の機械ゲート（法的段階＋差分項目の変化が両方揃わなければ false に落とす。§定義参照）
+      const gatedDiff = decideDiffChanged(rec, cc);
+      if (rec.diff_changed && !gatedDiff) {
+        console.warn(`[summarize] diff_changed demoted (legal_stage=${rec.legal_stage ?? '-'} items=${rec.diff_items?.length ?? 0}): ${item.url}`);
+      }
+      rec.diff_changed = gatedDiff;
       // 見出しが日本語でなければ summary.what に差し替える（2026-09-21 に英語の見出しがサイトに出た）
       const jaTitle = ensureJapaneseTitle(rec.title, rec.summary?.what);
       if (jaTitle.replaced) console.warn(`[summarize] title was not Japanese, replaced with summary.what: ${item.url}`);
@@ -283,9 +333,15 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       writeDataJSON(['regulations', `${cc}.json`], current);
 
       if (rec.diff_changed) {
+        const diffItemsSection =
+          Array.isArray(rec.diff_items) && rec.diff_items.length > 0
+            ? `\n\n変化した差分項目（data/regulations/${cc}.json の diff_vs_eu を人が直すための手がかり）:\n${rec.diff_items
+                .map((d) => `- ${d.bucket} / ${d.topic} / ${d.action}`)
+                .join('\n')}`
+            : '';
         pushIssue({
           title: `diff-change: ${cc} ${record.title}`,
-          body: `${rec.diff_note ?? ''}\n\n出典: ${item.url}\nフィードID: ${record.id}`,
+          body: `${rec.diff_note ?? ''}${diffItemsSection}\n\n出典: ${item.url}\nフィードID: ${record.id}`,
           labels: ['diff-change'],
         });
       }

@@ -718,5 +718,105 @@
   "https://www.federalregister.gov/documents/2026/09/22/2026-19388/order-granting-temporary-conditional-exemptive-relief-pursuant-to-section-36a1-of-the-securities": {
     "verdict": "gemini-unusable",
     "date": "2026-09-23"
+  },
+  "https://www8.cao.go.jp/cstp/ai/ai_topics/ai_topics.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/02gyosei04_04000203.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban06_02000141.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zeimu02_02000474.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei05_01000346.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/sms-tan-kiat-how-opening-remarks-at-the-futurechina-global-forum/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-a5x/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-mos-rahayu-mahzam-at-intelligencex-2026--the-global-quantumxai-frontier/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-the-apac-finance-forum/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-amreli-gujarat-reliance-jio-infocomm-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-kurukshetra-haryana-netplus-broadband-services-pvt-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-siddharthnagar-uttar-pradesh-rural-consumers-federation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//e4885093-6753-427b-b47c-3149b3af51ed": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//07a89476-8b72-41f2-9d9c-c27d6c208ee1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//b1e6ecce-22fa-43cf-b795-7b898b8743b2": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//a8244114-6cb5-4a35-ad23-34c2bbf9f4f5": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//e28c1a2e-6243-4903-a550-f9ce11bfbe55": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//6088ffb5-1d94-4935-8a31-7575ee52d8a8": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//c60bd9ce-9b12-4661-b8fd-2bd5d6d5661a": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.federalregister.gov/documents/2026/09/24/2026-19535/request-for-information-medicare-part-d-reasonable-and-relevant-pharmacy-contracting-standards": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.federalregister.gov/documents/2026/09/24/2026-19528/hud-evaluation-policy": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.pm.gov.au/media/australias-place-indo-pacific-2026-atlantic-council-global-citizen-awards-new-york": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.pm.gov.au/media/remarks-australia-ukraine-meeting": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.pm.gov.au/media/agreement-long-term-support-and-cooperation-between-australia-and-ukraine": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-24"
+  },
+  "https://www.camara.leg.br/noticias/1304004-projeto-cria-diretrizes-de-protecao-digital-e-indicador-de-desenvolvimento-para-a-primeira-infancia": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-24"
   }
 }

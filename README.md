@@ -152,7 +152,7 @@ npm run dev       # http://localhost:4321/atlas/
 npm run build     # dist/ に静的出力
 npm run validate  # data/ 全JSONのスキーマ検証
 npm test          # 実APIを使わないテスト（品質ゲート・triage分割・Geminiのリトライ/フォールバック・
-                  # 鮮度・派生年表・地球儀投影・countries.yaml検証・状態ファイル。106件）
+                  # 鮮度・派生年表・地球儀投影・countries.yaml検証・状態ファイル・差分変化の判定ゲート。123件）
 ```
 
 ### Gemini APIキー（人間がやること）

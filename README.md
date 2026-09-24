@@ -153,7 +153,7 @@ npm run build     # dist/ に静的出力
 npm run validate  # data/ 全JSONのスキーマ検証
 npm test          # 実APIを使わないテスト（品質ゲート・triage分割・Geminiのリトライ/フォールバック・
                   # 鮮度・派生年表・地球儀投影・countries.yaml検証・状態ファイル・差分変化の判定ゲート・
-                  # legal_stage による年表の絞り込み・重複レコードの機械チェック。132件）
+                  # legal_stage による年表の絞り込み・重複レコードの機械チェック・enum の整合。136件）
 ```
 
 ### Gemini APIキー（人間がやること）

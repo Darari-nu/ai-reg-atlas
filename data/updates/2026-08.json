@@ -5,6 +5,7 @@
     "country": "us",
     "axis": "general",
     "change_type": "other",
+    "legal_stage": "other",
     "title": "NISTとDOE、AI革新加速に向けたGenesis Missionでの連携MOUを締結",
     "summary": {
       "what": "Genesis MissionにおけるAI革新加速に向けたMOU締結",
@@ -32,6 +33,7 @@
     "country": "sg",
     "axis": "general",
     "change_type": "other",
+    "legal_stage": "announcement",
     "title": "シンガポールMDDI、自律型AI（Agentic AI）のガバナンス枠組み等に関する議会質問に回答",
     "summary": {
       "what": "自律型AIに関するガバナンス枠組みおよび規制方針についての答弁",
@@ -59,6 +61,7 @@
     "country": "sg",
     "axis": "transparency",
     "change_type": "other",
+    "legal_stage": "announcement",
     "title": "シンガポール政府、AI生成コンテンツのラベリング義務化について国際動向と技術標準を注視し評価する方針を表明",
     "summary": {
       "what": "AI生成コンテンツの義務的ラベリング導入に関する政府見解",
@@ -86,6 +89,7 @@
     "country": "br",
     "axis": "prohibited_uses",
     "change_type": "new_regulation",
+    "legal_stage": "bill",
     "title": "ブラジル下院、AI搭載スマートグラスの使用および販売を規制する法案（PL 19/26）を審議",
     "summary": {
       "what": "AI搭載スマートグラスの録画明示義務や顔認識・特定場所での使用禁止を規定する法案の審議",
@@ -113,6 +117,7 @@
     "country": "br",
     "axis": "penalties",
     "change_type": "new_regulation",
+    "legal_stage": "in_force",
     "title": "ブラジルで児童・青少年のデジタル性暴力およびAI・ディープフェイク悪用に対する厳罰化法（Lei 15.487/26）が成立",
     "summary": {
       "what": "AIやディープフェイクを悪用した児童性暴力犯罪等の厳罰化および凶悪犯罪指定",
@@ -140,6 +145,7 @@
     "country": "br",
     "axis": "general",
     "change_type": "new_regulation",
+    "legal_stage": "bill",
     "title": "ブラジル下院にデジタル経済枠組み法案（PL 5960/25）が提出、ハイリスクAI認証等を規定",
     "summary": {
       "what": "ブラジル下院でデジタル経済育成とAI利用ルールを定める法案PL 5960/25の審議が開始",
@@ -167,6 +173,7 @@
     "country": "eu",
     "axis": "risk_classification",
     "change_type": "other",
+    "legal_stage": "other",
     "title": "EU AI Actにおけるセラピー・精神的サポートAIの規制適用に関するガイド",
     "summary": {
       "what": "セラピー・精神的サポート用AIおよびGPAIモデルへのEU AI Act適用整理ガイドの公表",
@@ -194,6 +201,7 @@
     "country": "br",
     "axis": "prohibited_uses",
     "change_type": "other",
+    "legal_stage": "other",
     "title": "ブラジルANPD、パラナ州公立学校での出席管理用顔認識システムの即時停止を命令",
     "summary": {
       "what": "公立学校での出席管理目的における顔認識データ処理の即時停止命令",
@@ -221,6 +229,7 @@
     "country": "kr",
     "axis": "general",
     "change_type": "other",
+    "legal_stage": "draft_or_consultation",
     "title": "韓国PIPC、AI時代の個人情報制度革新に向けた国民意見募集を開始",
     "summary": {
       "what": "AI環境に対応した個人情報保護制度の革新に向けた意見募集の実施",
@@ -248,6 +257,7 @@
     "country": "cn",
     "axis": "general",
     "change_type": "guideline_draft",
+    "legal_stage": "draft_or_consultation",
     "title": "中国TC260、コックピットデータ処理安全要件の実践指針（意見募集稿）を公開",
     "summary": {
       "what": "コックピットデータ処理安全要件実践指針案の意見公募開始",
@@ -275,6 +285,7 @@
     "country": "kr",
     "axis": "general",
     "change_type": "new_regulation",
+    "legal_stage": "enacted",
     "title": "韓国国会、AI開発のための個人情報活用特例を新設する個人情報保護法改正案を可決",
     "summary": {
       "what": "AI開発向けの個人情報活用特例を新設する保護法改正案が本会議可決",
@@ -302,6 +313,7 @@
     "country": "br",
     "axis": "prohibited_uses",
     "change_type": "status_change",
+    "legal_stage": "bill",
     "title": "ブラジル下院、公共空間での顔認識監視を認める法案PL 1.828/2023を可決し上院へ送付",
     "summary": {
       "what": "下院が公共交通や公道等での顔認識監視を容認するPL 1.828/2023修正案を可決",

@@ -17,6 +17,7 @@
       "change_type": {
         "enum": ["new_regulation", "status_change", "guideline_draft", "deadline_change", "diff_change", "other"]
       },
+      "legal_stage": { "type": "string", "enum": ["in_force", "enacted", "final_guidance", "bill", "draft_or_consultation", "announcement", "other"] },
       "title": { "type": "string", "minLength": 1, "maxLength": 120 },
       "summary": {
         "type": "object",

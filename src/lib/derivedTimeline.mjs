@@ -16,6 +16,7 @@
  * @property {string[]} [sources]
  * @property {string|null} [effective_date]
  * @property {string|null} [deadline_date]
+ * @property {string} [legal_stage]
  */
 
 /**
@@ -35,8 +36,13 @@ function isYmd(v) {
   return typeof v === 'string' && YMD.test(v);
 }
 
+// 年表に載せてよい法的段階（法案・草案/意見募集・確定指針・成立・施行の5段階）。
+// announcement（方針表明・会見等）・other（処分・統計等）は法令の節目でないので載せない。
+export const TIMELINE_LEGAL_STAGES = ['in_force', 'enacted', 'final_guidance', 'bill', 'draft_or_consultation'];
+
 /**
  * 1国分の更新レコードから派生イベントを作る（国での絞り込みは呼び出し側の責任）。
+ * 年表は法令の節目だけ。ニュース全般（announcement/other、legal_stage 無し）は更新一覧に出る。
  * @param {UpdateLike[]} updates
  * @param {SeedItem[]} [seedTimeline]
  * @returns {DerivedEvent[]}
@@ -48,7 +54,7 @@ export function deriveTimelineEvents(updates, seedTimeline = []) {
 
   /** @type {DerivedEvent[]} */
   const out = [];
-  for (const u of updates ?? []) {
+  for (const u of (updates ?? []).filter((u) => TIMELINE_LEGAL_STAGES.includes(u.legal_stage))) {
     const source = u.sources?.[0] ?? '';
 
     // 1) 公表イベント。既に種データ化されている（summarize の timeline_add 経由）なら二重表示しない

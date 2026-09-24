@@ -12,6 +12,7 @@ import {
   dedupeByEvent,
   ensureJapaneseTitle,
   existingEventKeys,
+  isDuplicateRecord,
   isGoogleNewsUrl,
   loadJSON,
   mechanicalGate,
@@ -116,7 +117,7 @@ const RESPONSE_SCHEMA = {
     legal_stage: {
       type: 'STRING',
       enum: ['in_force', 'enacted', 'final_guidance', 'bill', 'draft_or_consultation', 'announcement', 'other'],
-      description: '本文が示す法的段階。in_force=施行済み、enacted=議会で可決・公布済み（未施行含む）、final_guidance=草案・意見募集でない確定版の公式指針、bill=法案の提出・審議中、draft_or_consultation=草案・意見募集中、announcement=方針表明・発言・記者会見・会議・事件の公表、other=その他（報告書・統計・執行事例等）',
+      description: '本文が示す法的段階。in_force=施行済み、enacted=議会で可決・公布済み（未施行含む）、final_guidance=草案・意見募集でない確定版の公式指針、閣議決定された国家計画・戦略、bill=法案の提出・審議中、draft_or_consultation=草案・意見募集中、announcement=方針表明・発言・記者会見・会議・事件の公表、議会答弁・提言や要請・書簡、other=その他（報告書・統計・執行事例等）、特定企業への処分・勧告・執行命令、協定・MOU・署名、任命、事業の開始、非公式な解説',
     },
     diff_items: {
       type: 'ARRAY',
@@ -301,6 +302,10 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       // 反映: updates/{YYYY-MM}.json へ追記
       const month = rec.publication_date.slice(0, 7);
       const updates = readDataJSON(['updates', `${month}.json`], []);
+      if (isDuplicateRecord(updates, item.url, rec.publication_date)) {
+        appendDrop({ ...item, country: cc, reason: 'duplicate-existing-url' });
+        continue;
+      }
       const record = buildUpdateRecord({ updates, country: cc, item, rec, discoveredAt: today }); // sourcesはcollectがfetchしたURLのみ
       updates.push(record);
       writeDataJSON(['updates', `${month}.json`], updates);

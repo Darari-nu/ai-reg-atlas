@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { deriveTimelineEvents, mergeTimeline } from '../src/lib/derivedTimeline.mjs';
+import { deriveTimelineEvents, mergeTimeline, TIMELINE_LEGAL_STAGES } from '../src/lib/derivedTimeline.mjs';
 
-/** 更新レコードの最小形 */
+/** 更新レコードの最小形。legal_stage は既定で年表に載る段階（in_force）にしておく */
 const rec = (over = {}) => ({
   id: '2026-09-03-jp-001',
   date: '2026-09-03',
@@ -10,6 +10,7 @@ const rec = (over = {}) => ({
   sources: ['https://example.go.jp/a'],
   effective_date: null,
   deadline_date: null,
+  legal_stage: 'in_force',
   ...over,
 });
 
@@ -97,6 +98,25 @@ describe('deriveTimelineEvents', () => {
 
   it('更新レコードが空なら何も出ない', () => {
     assert.deepEqual(deriveTimelineEvents([], []), []);
+  });
+});
+
+describe('deriveTimelineEvents: legal_stage による絞り込み（年表は法令の節目だけ）', () => {
+  it('5段階（施行・成立・確定指針・法案・草案/意見募集）は派生イベントになる', () => {
+    for (const stage of TIMELINE_LEGAL_STAGES) {
+      const out = deriveTimelineEvents([rec({ legal_stage: stage })], []);
+      assert.equal(out.length, 1, `legal_stage=${stage} は年表に出るはず`);
+    }
+  });
+
+  it('announcement・other は年表に出ない', () => {
+    assert.deepEqual(deriveTimelineEvents([rec({ legal_stage: 'announcement' })], []), []);
+    assert.deepEqual(deriveTimelineEvents([rec({ legal_stage: 'other' })], []), []);
+  });
+
+  it('legal_stage が無いレコードは年表に出ない', () => {
+    const { legal_stage, ...withoutStage } = rec();
+    assert.deepEqual(deriveTimelineEvents([withoutStage], []), []);
   });
 });
 

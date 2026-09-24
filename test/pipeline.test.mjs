@@ -10,6 +10,7 @@ import {
   ensureJapaneseTitle,
   hasJapanese,
   irrelevantUrls,
+  isDuplicateRecord,
   isStaleListing,
   listingDate,
   mechanicalGate,
@@ -121,6 +122,48 @@ describe('pipeline quality gates', () => {
     assert.equal(build('penalties').country_anchor, '/country/cn/#axis-penalties');
   });
 
+  it('legal_stage が有効値なら change_type の直後に含める', () => {
+    const record = buildUpdateRecord({
+      updates: [],
+      country: 'jp',
+      item: { url: 'https://example.go.jp/ai' },
+      rec: {
+        axis: 'timeline',
+        change_type: 'status_change',
+        title: 'T',
+        summary: { what: 'a', who: 'b', when_impact: 'c' },
+        so_what: 'd',
+        diff_changed: false,
+        publication_date: '2026-09-01',
+        legal_stage: 'in_force',
+      },
+    });
+    assert.equal(record.legal_stage, 'in_force');
+    assert.deepEqual(Object.keys(record).slice(0, 5), ['id', 'date', 'country', 'axis', 'change_type']);
+    assert.equal(Object.keys(record)[5], 'legal_stage');
+  });
+
+  it('legal_stage が無効値・無しならキー自体を出さない', () => {
+    const build = (legal_stage) =>
+      buildUpdateRecord({
+        updates: [],
+        country: 'jp',
+        item: { url: 'https://example.go.jp/ai' },
+        rec: {
+          axis: 'timeline',
+          change_type: 'status_change',
+          title: 'T',
+          summary: { what: 'a', who: 'b', when_impact: 'c' },
+          so_what: 'd',
+          diff_changed: false,
+          publication_date: '2026-09-01',
+          ...(legal_stage !== undefined ? { legal_stage } : {}),
+        },
+      });
+    assert.equal('legal_stage' in build(undefined), false);
+    assert.equal('legal_stage' in build('IN_FORCE'), false); // enum外（大文字違い）
+  });
+
   it('dedupes the same canonical event per country and prefers high priority', () => {
     const deduped = dedupeByEvent([
       {
@@ -149,6 +192,26 @@ describe('pipeline quality gates', () => {
     assert.equal(deduped.length, 2);
     assert.equal(deduped.find((item) => item.countries[0] === 'eu').url, 'https://official.example/guideline');
     assert.equal(deduped.find((item) => item.countries[0] === 'us').url, 'https://official.example/guideline-us');
+  });
+});
+
+describe('isDuplicateRecord: 同じ出典URLかつ同じ公表日の重複チェック', () => {
+  const updates = [{ id: '2026-09-16-kr-001', date: '2026-09-16', sources: ['https://example.kr/a'] }];
+
+  it('同URL・同日 → true', () => {
+    assert.equal(isDuplicateRecord(updates, 'https://example.kr/a', '2026-09-16'), true);
+  });
+
+  it('同URL・別日 → false（同じURLから複数の出来事が出るページもあるため）', () => {
+    assert.equal(isDuplicateRecord(updates, 'https://example.kr/a', '2026-09-19'), false);
+  });
+
+  it('別URL・同日 → false', () => {
+    assert.equal(isDuplicateRecord(updates, 'https://example.kr/b', '2026-09-16'), false);
+  });
+
+  it('空配列 → false', () => {
+    assert.equal(isDuplicateRecord([], 'https://example.kr/a', '2026-09-16'), false);
   });
 });
 

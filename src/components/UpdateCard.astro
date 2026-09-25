@@ -38,6 +38,14 @@ const dark = theme === 'dark';
         {u.impact.diff_changed && (
           <span class="bg-diff-unique px-1.5 py-0.5 text-[10px] tracking-wide text-white">差分変化</span>
         )}
+        {u.source_kind === 'media' && (
+          <span
+            class={`px-1.5 py-0.5 text-[10px] tracking-wide ${
+              dark ? 'border border-white/20 text-paper/70' : 'border border-ink/20 text-ink/60'
+            }`}
+            title="信頼できる報道機関の記事が出典（公式発表ではない）"
+          >報道</span>
+        )}
       </span>
       <span class={`mt-1 block font-medium leading-snug ${big ? 'text-lg' : 'text-sm'}`}>{u.title}</span>
     </span>

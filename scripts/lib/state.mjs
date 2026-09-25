@@ -2,7 +2,7 @@
 // data/.cache/ は .gitignore 済みで CI では毎回空になるため、持ち越したい状態はこちらに置く。
 // 保存するのは URL・タイトル・抜粋と判定結果だけ。記事本文（生データ）は保存しない（§4-1）。
 import fs from 'node:fs';
-import { dataPath, daysBetween, isYmd, rootPath, writeJSON } from './pipeline.mjs';
+import { dataPath, daysBetween, isYmd, rootPath, SOURCE_GROUP_ORDER, writeJSON } from './pipeline.mjs';
 
 // 既知URLの記憶（seen_urls）の有効期限。切れたら忘れてもう一度拾い直す
 export const SEEN_URL_TTL_DAYS = Number(process.env.SEEN_URL_TTL_DAYS || 30);
@@ -130,12 +130,19 @@ export function mergeByUrl(queued, todays) {
   return [...byUrl.values()];
 }
 
-/** priority high → low、同順位は queued_at（無ければ today）が古い順＝翌日優先 */
+/**
+ * priority high → low、同順位は source_group の順（official_sources > watch_feeds > news_queries、
+ * それ以外は最後）、さらに同順位は queued_at（無ければ today）が古い順＝翌日優先。
+ * 報道が増えた日に公式が queue に押し出されないよう、第2キーに source_group を入れている（§追加指示 必須3c）
+ */
 export function sortForSummarize(items, today) {
   const rank = (p) => (p === 'high' ? 0 : 1);
+  const groupRank = (g) => SOURCE_GROUP_ORDER[g] ?? 9;
   return [...items].sort((a, b) => {
     const byPriority = rank(a.priority) - rank(b.priority);
     if (byPriority !== 0) return byPriority;
+    const byGroup = groupRank(a.source_group) - groupRank(b.source_group);
+    if (byGroup !== 0) return byGroup;
     const qa = isYmd(a.queued_at) ? a.queued_at : today;
     const qb = isYmd(b.queued_at) ? b.queued_at : today;
     return qa < qb ? -1 : qa > qb ? 1 : 0;

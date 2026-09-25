@@ -98,8 +98,11 @@ export function hostMatches(host, domain) {
   return h === d || h.endsWith(`.${d}`);
 }
 
-// 政府系TLD（末尾一致）。.gov / .gov.xx（2文字の国コード） / .go.kr / .go.jp / .gc.ca / .gob.xx / .gouv.fr / europa.eu / nic.in / leg.br / parliament.uk
-export const OFFICIAL_TLD_RE = /(?:^|\.)(?:gov(?:\.[a-z]{2})?|go\.kr|go\.jp|gc\.ca|gob\.[a-z]{2}|gouv\.fr|europa\.eu|nic\.in|leg\.br|parliament\.uk)$/i;
+// 政府系TLD（末尾一致）。.gov / .gov.(uk|in|br|au|sg|cn|tw|kh|hk|nz|ie)（任意の2文字ccTLDではなく列挙に限定。
+// gov.ai・x.gov.io のような非政府ドメインが誤って official にならないように） / .go.kr / .go.jp / .gc.ca /
+// .gob.xx / .gouv.fr / europa.eu / nic.in / leg.br / parliament.uk
+export const OFFICIAL_TLD_RE =
+  /(?:^|\.)(?:gov(?:\.(?:uk|in|br|au|sg|cn|tw|kh|hk|nz|ie))?|go\.kr|go\.jp|gc\.ca|gob\.[a-z]{2}|gouv\.fr|europa\.eu|nic\.in|leg\.br|parliament\.uk)$/i;
 
 /**
  * 出典URLのホストから official/media を機械的に決める。壊れたURLは media。
@@ -116,6 +119,15 @@ export function classifySourceKind(url, { officialDomains = [], officialHosts = 
   if (officialDomains.some((d) => hostMatches(host, d))) return 'official';
   if (officialHosts.some((h) => hostMatches(host, h))) return 'official';
   return 'media';
+}
+
+/**
+ * regulation_patch（status前進・timeline_add）を自動適用してよいか。
+ * 報道由来（sourceKind === 'media'）のときは自動適用せず、needs-review Issue に回す（§追加指示 必須1）。
+ * official・未設定（undefined）は従来どおり自動適用してよい。
+ */
+export function shouldAutoApplyPatch(sourceKind) {
+  return sourceKind !== 'media';
 }
 
 /** ホストが trustedMedia（source_domains.yaml の trusted_media）のどれかに一致するか */
@@ -204,6 +216,11 @@ export function existingEventKeys({ days = 90 } = {}) {
   return keys;
 }
 
+/** source_group の優先順位（SOURCE_GROUP_ORDER に無いものは最後） */
+function sourceGroupRank(sourceGroup) {
+  return SOURCE_GROUP_ORDER[sourceGroup] ?? 9;
+}
+
 export function dedupeByEvent(items, existingKeys = new Set()) {
   const byKey = new Map();
   const priorityRank = { high: 2, low: 1 };
@@ -219,7 +236,16 @@ export function dedupeByEvent(items, existingKeys = new Set()) {
       }
       const expanded = { ...item, countries: [cc], canonical_event: item.canonical_event || item.title };
       const prev = byKey.get(key);
-      if (!prev || (priorityRank[expanded.priority] || 0) > (priorityRank[prev.priority] || 0)) {
+      let expandedWins;
+      if (!prev) {
+        expandedWins = true;
+      } else {
+        const expandedRank = priorityRank[expanded.priority] || 0;
+        const prevRank = priorityRank[prev.priority] || 0;
+        // priorityが同じなら source_group の順（official_sources > watch_feeds > news_queries）で優先する
+        expandedWins = expandedRank !== prevRank ? expandedRank > prevRank : sourceGroupRank(expanded.source_group) < sourceGroupRank(prev.source_group);
+      }
+      if (expandedWins) {
         if (prev) appendDrop({ ...prev, country: cc, reason: 'duplicate-event-lower-priority' });
         byKey.set(key, expanded);
       } else {
@@ -259,6 +285,40 @@ export function nextIdForDate(updates, cc, pubDate) {
  */
 export function isDuplicateRecord(updates, url, date) {
   return (updates ?? []).some((u) => u.sources?.[0] === url && u.date === date);
+}
+
+/**
+ * normalizeEventLabel した文字列どうしの文字2-gram集合のJaccard係数（0〜1）。
+ * どちらかが正規化後に空（2-gramが取れない）なら0。報道の同一事象の重複登録対策（§追加指示 必須3b）
+ */
+export function titleBigramSimilarity(a, b) {
+  const bigrams = (value) => {
+    const norm = normalizeEventLabel(value);
+    const set = new Set();
+    for (let i = 0; i < norm.length - 1; i++) set.add(norm.slice(i, i + 2));
+    return set;
+  };
+  const setA = bigrams(a);
+  const setB = bigrams(b);
+  if (setA.size === 0 || setB.size === 0) return 0;
+  let intersection = 0;
+  for (const gram of setA) if (setB.has(gram)) intersection++;
+  const union = setA.size + setB.size - intersection;
+  return union === 0 ? 0 : intersection / union;
+}
+
+/**
+ * 同じ country で、date の差が days 日以内、タイトルの類似度（titleBigramSimilarity）が threshold 以上の
+ * 既存レコードがあれば返す（無ければ null）。報道由来レコードの二重登録対策（§追加指示 必須3b）
+ */
+export function findSimilarRecord(updates, { country, date, title }, { days = 3, threshold = 0.6 } = {}) {
+  for (const u of updates ?? []) {
+    if (u.country !== country) continue;
+    if (!isYmd(u.date) || !isYmd(date)) continue;
+    if (Math.abs(daysBetween(date, u.date)) > days) continue;
+    if (titleBigramSimilarity(title, u.title) >= threshold) return u;
+  }
+  return null;
 }
 
 // legal_stage（法的段階）の全値。年表に載せる5段階＋載せない2段階（announcement/other）

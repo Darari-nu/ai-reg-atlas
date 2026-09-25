@@ -10,6 +10,7 @@ interface Props {
 }
 const { update: u, country, theme, big = false } = Astro.props;
 const dark = theme === 'dark';
+const sourceLinkLabel = u.source_kind === 'media' ? '出典（報道）↗' : '一次ソース ↗';
 ---
 
 <details
@@ -43,7 +44,7 @@ const dark = theme === 'dark';
             class={`px-1.5 py-0.5 text-[10px] tracking-wide ${
               dark ? 'border border-white/20 text-paper/70' : 'border border-ink/20 text-ink/60'
             }`}
-            title="信頼できる報道機関の記事が出典（公式発表ではない）"
+            title="公式発表ではない出典（許可リストの報道機関・専門機関）"
           >報道</span>
         )}
       </span>
@@ -71,7 +72,7 @@ const dark = theme === 'dark';
       <div class="flex flex-wrap items-center gap-x-5 gap-y-1 font-mono text-xs">
         {u.sources.map((s) => (
           <a href={s} rel="noopener" target="_blank" class={`underline underline-offset-2 ${dark ? 'text-star-gold' : 'text-ink'}`}>
-            一次ソース ↗
+            {sourceLinkLabel}
           </a>
         ))}
         <a href={withBase(updateAnchor(u))} class={dark ? 'text-paper/60 hover:text-paper' : 'text-ink/60 hover:text-ink'}>

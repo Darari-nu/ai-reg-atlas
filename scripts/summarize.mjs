@@ -14,6 +14,7 @@ import {
   dedupeByEvent,
   ensureJapaneseTitle,
   existingEventKeys,
+  findSimilarRecord,
   isDuplicateRecord,
   isGoogleNewsUrl,
   loadJSON,
@@ -23,6 +24,7 @@ import {
   pushIssue,
   readDataJSON,
   readerBody,
+  shouldAutoApplyPatch,
   writeDataJSON,
 } from './lib/pipeline.mjs';
 import {
@@ -216,6 +218,17 @@ async function prepareItems(ordered, seenUrls, limit) {
   };
 }
 
+// month（YYYY-MM）の前月・当月・翌月を返す。報道由来レコードの類似タイトル判定で月をまたぐ重複を拾うため
+function adjacentMonths(month) {
+  const [y, m] = month.split('-').map(Number);
+  const fmt = (yy, mm) => `${yy}-${String(mm).padStart(2, '0')}`;
+  const prevY = m === 1 ? y - 1 : y;
+  const prevM = m === 1 ? 12 : m - 1;
+  const nextY = m === 12 ? y + 1 : y;
+  const nextM = m === 12 ? 1 : m + 1;
+  return [fmt(prevY, prevM), month, fmt(nextY, nextM)];
+}
+
 async function main() {
   const sourceDomains = loadSourceDomains(ROOT);
   const triaged = loadJSON(IN_FILE, []);
@@ -310,17 +323,29 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
         appendDrop({ ...item, country: cc, reason: 'duplicate-existing-url' });
         continue;
       }
+      const sourceKind = classifySourceKind(item.url, sourceDomains);
+      // 報道由来だけ、同じ出来事の二重登録を防ぐため類似タイトル判定をかける（前後1か月・3日以内・類似度0.6以上）。
+      // 公式ソースには適用しない（公式の取りこぼしを避けるため）§追加指示 必須3b
+      if (sourceKind === 'media') {
+        const nearbyUpdates = adjacentMonths(month).flatMap((m) => (m === month ? updates : readDataJSON(['updates', `${m}.json`], [])));
+        const similar = findSimilarRecord(nearbyUpdates, { country: cc, date: rec.publication_date, title: rec.title });
+        if (similar) {
+          appendDrop({ ...item, country: cc, reason: 'duplicate-similar-record' });
+          console.log(`[summarize] similar to ${similar.id}: ${item.url}`);
+          continue;
+        }
+      }
       if (!LEGAL_STAGES.includes(rec.legal_stage)) {
         console.warn(`[summarize] legal_stage missing or invalid (${rec.legal_stage ?? '-'}), record will not appear on the timeline: ${item.url}`);
       }
-      const sourceKind = classifySourceKind(item.url, sourceDomains);
       const record = buildUpdateRecord({ updates, country: cc, item, rec, discoveredAt: today, sourceKind }); // sourcesはcollectがfetchしたURLのみ
       updates.push(record);
       writeDataJSON(['updates', `${month}.json`], updates);
 
-      // regulation_patch: 矛盾チェック付き適用（§5-4）
+      // regulation_patch: 矛盾チェック付き適用（§5-4）。報道由来（sourceKind==='media'）は自動適用せず、
+      // needs-review Issue に回す（§追加指示 必須1）。official・未設定は従来どおり自動適用する
       let changed = false;
-      if (rec.regulation_patch) {
+      if (rec.regulation_patch && shouldAutoApplyPatch(sourceKind)) {
         const p = rec.regulation_patch;
         if (p.status && p.status !== current.status) {
           if (STATUS_ORDER.indexOf(p.status) < STATUS_ORDER.indexOf(current.status)) {
@@ -339,6 +364,20 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
             current.axes.timeline.push({ date: t.date, event: t.event, source: item.url });
             changed = true;
           }
+        }
+      } else if (rec.regulation_patch && !shouldAutoApplyPatch(sourceKind)) {
+        const p = rec.regulation_patch;
+        const hasStatusProposal = Boolean(p.status && p.status !== current.status);
+        const hasTimelineAdd = Array.isArray(p.timeline_add) && p.timeline_add.length > 0;
+        if (hasStatusProposal || hasTimelineAdd) {
+          const statusLine = hasStatusProposal ? `status: ${current.status}→${p.status}` : '';
+          const timelineLines = hasTimelineAdd ? p.timeline_add.map((t) => `- ${t.date}: ${t.event}`).join('\n') : '';
+          const proposalSection = [statusLine, timelineLines].filter(Boolean).join('\n');
+          pushIssue({
+            title: `needs-review: ${cc} 報道ベースの規制状況・年表の提案`,
+            body: `${proposalSection}\n\n出典: ${item.url}\n\n報道ベースのため自動適用していない。公式発表で確認してから data/regulations/${cc}.json を直すこと`,
+            labels: ['needs-review'],
+          });
         }
       }
       current.last_checked = nowIso;

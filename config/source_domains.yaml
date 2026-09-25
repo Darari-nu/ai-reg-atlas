@@ -5,6 +5,17 @@
 official:
   - canada.ca
   - tc260.org.cn
+  # 政府系TLD規則では拾えない規制機関・議会・政府ポータル（2026-09-26 追記、Fable監査の指摘）
+  - ico.org.uk
+  - ofcom.org.uk
+  - fca.org.uk
+  - parl.ca
+  - ourcommons.ca
+  - sencanada.ca
+  - quebec.ca
+  - korea.kr
+  - jus.br
+  - lg.jp
 trusted_media:
   # 国際・EU
   - reuters.com

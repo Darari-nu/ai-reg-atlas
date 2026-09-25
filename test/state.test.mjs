@@ -173,6 +173,23 @@ describe('state: queue（要約のあふれの繰り越し）', () => {
     assert.deepEqual(sortForSummarize(items, TODAY).map((i) => i.url), ['old-high', 'today-high', 'old-low', 'today-low']);
   });
 
+  it('sortForSummarize は同じ priority なら source_group の順（official_sources > watch_feeds > news_queries）が先', () => {
+    const items = [
+      { ...item('news'), priority: 'high', source_group: 'news_queries' },
+      { ...item('official'), priority: 'high', source_group: 'official_sources' },
+      { ...item('watch'), priority: 'high', source_group: 'watch_feeds' },
+    ];
+    assert.deepEqual(sortForSummarize(items, TODAY).map((i) => i.url), ['official', 'watch', 'news']);
+  });
+
+  it('sortForSummarize は priority が第1キー: priority high の報道は priority low の公式より先', () => {
+    const items = [
+      { ...item('low-official'), priority: 'low', source_group: 'official_sources' },
+      { ...item('high-news'), priority: 'high', source_group: 'news_queries' },
+    ];
+    assert.deepEqual(sortForSummarize(items, TODAY).map((i) => i.url), ['high-news', 'low-official']);
+  });
+
   it('enqueue は URL で重複排除する（より多く失敗した記録を残す）', () => {
     const { queue } = enqueue(
       [

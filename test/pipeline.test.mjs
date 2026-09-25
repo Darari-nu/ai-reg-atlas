@@ -10,6 +10,7 @@ import {
   decideDiffChanged,
   dedupeByEvent,
   ensureJapaneseTitle,
+  findSimilarRecord,
   hasJapanese,
   hostMatches,
   irrelevantItems,
@@ -28,7 +29,9 @@ import {
   readerBody,
   publicationDateGate,
   resolveFeedLink,
+  shouldAutoApplyPatch,
   sortForTriage,
+  titleBigramSimilarity,
   unwrapBingNewsUrl,
 } from '../scripts/lib/pipeline.mjs';
 import { TIMELINE_LEGAL_STAGES } from '../src/lib/derivedTimeline.mjs';
@@ -203,6 +206,47 @@ describe('pipeline quality gates', () => {
     assert.equal(deduped.length, 2);
     assert.equal(deduped.find((item) => item.countries[0] === 'eu').url, 'https://official.example/guideline');
     assert.equal(deduped.find((item) => item.countries[0] === 'us').url, 'https://official.example/guideline-us');
+  });
+
+  it('同じ key・同じ priority なら source_group の順（official_sources > watch_feeds > news_queries）で優先する', () => {
+    const official = {
+      url: 'https://official.example/a',
+      title: 'A',
+      countries: ['jp'],
+      priority: 'high',
+      source_group: 'official_sources',
+      canonical_event: 'Same event',
+    };
+    const news = {
+      url: 'https://news.example/a',
+      title: 'A (news)',
+      countries: ['jp'],
+      priority: 'high',
+      source_group: 'news_queries',
+      canonical_event: 'Same event',
+    };
+    assert.equal(dedupeByEvent([news, official])[0].url, official.url); // 入力順を入れ替えても official が残る
+    assert.equal(dedupeByEvent([official, news])[0].url, official.url);
+  });
+
+  it('priority が違えば従来どおり priority が勝つ（source_group は無視）', () => {
+    const highNews = {
+      url: 'https://news.example/b',
+      title: 'B',
+      countries: ['jp'],
+      priority: 'high',
+      source_group: 'news_queries',
+      canonical_event: 'Another event',
+    };
+    const lowOfficial = {
+      url: 'https://official.example/b',
+      title: 'B (official)',
+      countries: ['jp'],
+      priority: 'low',
+      source_group: 'official_sources',
+      canonical_event: 'Another event',
+    };
+    assert.equal(dedupeByEvent([lowOfficial, highNews])[0].url, highNews.url);
   });
 });
 
@@ -542,12 +586,43 @@ describe('classifySourceKind（出典ホストの official/media 判定）', () 
   it('壊れたURLは media', () => {
     assert.equal(classifySourceKind('not a url', domains), 'media');
   });
+
+  it('gov.ai・x.gov.io のような非政府ドメインは media（任意の2文字ccTLDにはマッチしない）', () => {
+    assert.equal(classifySourceKind('https://gov.ai/', domains), 'media');
+    assert.equal(classifySourceKind('https://x.gov.io/', domains), 'media');
+  });
+
+  it('gov.uk・nist.gov・gov.br は official（列挙したgov系ccTLD）', () => {
+    assert.equal(classifySourceKind('https://www.gov.uk/', domains), 'official');
+    assert.equal(classifySourceKind('https://www.nist.gov/', domains), 'official');
+    assert.equal(classifySourceKind('https://example.gov.br/', domains), 'official');
+  });
+
+  it('source_domains.yaml の official 追記分（規制機関・議会・政府ポータル）は official', () => {
+    assert.equal(classifySourceKind('https://ico.org.uk/action/', domains), 'official');
+    assert.equal(classifySourceKind('https://www.korea.kr/news', domains), 'official');
+    assert.equal(classifySourceKind('https://stf.jus.br/portal', domains), 'official');
+    assert.equal(classifySourceKind('https://metro.tokyo.lg.jp/', domains), 'official');
+    assert.equal(classifySourceKind('https://www.ourcommons.ca/', domains), 'official');
+  });
 });
 
 describe('OFFICIAL_TLD_RE', () => {
   it('部分一致のなりすましホストにはマッチしない', () => {
     assert.equal(OFFICIAL_TLD_RE.test('evilgov.uk'), false);
     assert.equal(OFFICIAL_TLD_RE.test('notgov.com'), false);
+  });
+
+  it('任意の2文字ccTLDにはマッチしない（gov.ai・gov.io は非対象）', () => {
+    assert.equal(OFFICIAL_TLD_RE.test('gov.ai'), false);
+    assert.equal(OFFICIAL_TLD_RE.test('x.gov.io'), false);
+  });
+
+  it('列挙したgov系ccTLD（uk/in/br/au/sg/cn/tw/kh/hk/nz/ie）と単独の.govはマッチする', () => {
+    for (const tld of ['uk', 'in', 'br', 'au', 'sg', 'cn', 'tw', 'kh', 'hk', 'nz', 'ie']) {
+      assert.equal(OFFICIAL_TLD_RE.test(`example.gov.${tld}`), true, `gov.${tld}`);
+    }
+    assert.equal(OFFICIAL_TLD_RE.test('example.gov'), true);
   });
 });
 
@@ -637,5 +712,64 @@ describe('既存データ（data/updates/*.json）の source_kind', () => {
       hosts.filter((h) => h === 'dataprivacybr.org').length,
       2
     );
+  });
+});
+
+describe('shouldAutoApplyPatch（報道由来は regulation_patch を自動適用しない）', () => {
+  it('media は false', () => {
+    assert.equal(shouldAutoApplyPatch('media'), false);
+  });
+
+  it('official・未設定（undefined）は true', () => {
+    assert.equal(shouldAutoApplyPatch('official'), true);
+    assert.equal(shouldAutoApplyPatch(undefined), true);
+  });
+});
+
+describe('titleBigramSimilarity（正規化した文字2-gramのJaccard係数）', () => {
+  it('同一の文字列は1', () => {
+    assert.equal(titleBigramSimilarity('EDPB、GDPR制裁金ガイドラインを採択', 'EDPB、GDPR制裁金ガイドラインを採択'), 1);
+  });
+
+  it('無関係な文字列は低い', () => {
+    assert.ok(titleBigramSimilarity('EDPB、GDPR制裁金ガイドラインを採択', '韓国PIPC、5社に改善勧告') < 0.3);
+  });
+
+  it('空文字・2-gramが取れない短い文字列は0', () => {
+    assert.equal(titleBigramSimilarity('', 'なにか'), 0);
+    assert.equal(titleBigramSimilarity('a', 'b'), 0); // normalizeEventLabel後1文字ずつで2-gramが取れない
+  });
+});
+
+describe('findSimilarRecord（同じ出来事らしい既存レコードを探す。報道の二重登録対策）', () => {
+  const updates = [
+    { id: '2026-09-10-jp-001', country: 'jp', date: '2026-09-10', title: 'デジタル庁、AI利用ガイドラインの改定案を公表' },
+  ];
+
+  it('国・日付・類似度の条件を満たせば既存レコードを返す', () => {
+    const found = findSimilarRecord(updates, {
+      country: 'jp',
+      date: '2026-09-12',
+      title: 'デジタル庁がAI利用ガイドラインの改定案を公表',
+    });
+    assert.equal(found?.id, '2026-09-10-jp-001');
+  });
+
+  it('国が違えば null', () => {
+    assert.equal(
+      findSimilarRecord(updates, { country: 'kr', date: '2026-09-11', title: 'デジタル庁、AI利用ガイドラインの改定案を公表' }),
+      null
+    );
+  });
+
+  it('日付が4日以上離れていれば null（既定days=3）', () => {
+    assert.equal(
+      findSimilarRecord(updates, { country: 'jp', date: '2026-09-14', title: 'デジタル庁、AI利用ガイドラインの改定案を公表' }),
+      null
+    );
+  });
+
+  it('類似度が低ければ null', () => {
+    assert.equal(findSimilarRecord(updates, { country: 'jp', date: '2026-09-11', title: '全く関係ない別の話題の記事' }), null);
   });
 });

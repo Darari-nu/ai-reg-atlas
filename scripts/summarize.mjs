@@ -270,7 +270,7 @@ async function main() {
   - 「EUと違う話だ」というだけでは diff_changed=true の理由にならない。上記の法的段階と差分項目の変化が両方揃わない限り false にする
   - 対象は AI 規制に関する差分項目だけ。個人情報保護法・サイバー法・消費者法など一般法の改正は、AI 固有の規定を新設・変更する場合に限る
 - 出典は与えられたURLのみ。本文にない情報を書かない
-- regulation_patch は status変更 または timeline追加が確実な場合のみ。なければ null
+- regulation_patch は null が基本。status は、対象国の主たるAI規制（対象国の現行データの regulation_name）そのものの段階が変わったと本文で確認できるときだけ入れる。別の法令・指針・草案の記事で国の status を変えない。timeline_add も同じく、その主たるAI規制の施行日・適用日など、本文で確定した節目だけ
 
 eu_baseline: ${JSON.stringify(euBaseline.axes)}
 対象国の現行データ: ${JSON.stringify({ status: current.status, approach: current.approach, regulation_name: current.regulation_name, diff_vs_eu: diffVsEu })}

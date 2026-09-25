@@ -153,7 +153,7 @@ npm run build     # dist/ に静的出力
 npm run validate  # data/ 全JSONのスキーマ検証
 npm test          # 実APIを使わないテスト（品質ゲート・triage分割・Geminiのリトライ/フォールバック・
                   # 鮮度・派生年表・地球儀投影・countries.yaml検証・状態ファイル・差分変化の判定ゲート・
-                  # legal_stage による年表の絞り込み・重複レコードの機械チェック・enum の整合。136件）
+                  # legal_stage による年表の絞り込み・重複レコードの機械チェック・enum の整合・Gemini usage の積算。137件）
 ```
 
 ### Gemini APIキー（人間がやること）
@@ -203,6 +203,11 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 
 失敗時のログは `[gemini] HTTP 429 model=... kind=quota-daily quota=GenerateRequestsPerDay...` の形で出る。
 `kind=quota-daily` なら日次無料枠切れ（その日はそのモデルを使わない）、`http-retryable` なら一時的な混雑。
+
+`temperature` は既定(1.0)のままにしている。Gemini 3 系は 1.0 未満だとループや性能低下が起きうると公式ガイドが強く推奨しているため
+（出力のぶれは構造化出力・enum・機械ゲートで受け止める設計）。
+成功時のログは `gemini={... usage:{calls,prompt,output,thoughts}}` の形で出る。`calls` は成功した呼び出し回数、
+`prompt`/`output`/`thoughts` は `usageMetadata` から積算したトークン数の累計（無料枠の消費見積もり用。HTTPエラーは数えない）。
 
 ### パイプラインの環境変数（Repository Variables で差し替え可）
 
@@ -301,6 +306,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-19 | `data/state/`（last_seen・seen_urls・queue）に日次状態を持ち越し、既知URLの再triageと要約のあふれを解消（`data/.cache/` は不使用に）。地球儀に地域・州レベルのマーカーとHTMLオーバーレイのクリック遷移を追加（cobe 0.6.5のマーカー差し替えバグを回避）。国別ページ・トップ・鮮度表示を更新レコード（discovered_at）基準に統一し、派生年表（更新フィード由来の未確認イベント）を年表に合流 |
 | 2026-09-24 | 差分変化（`diff_changed`）の誤判定を修正。要約プロンプトに対象国の現行 diff_vs_eu を渡し、`legal_stage`（法的段階）と `diff_items`（変化した差分項目）をモデルに出させ、機械ゲート `decideDiffChanged`（`scripts/lib/pipeline.mjs`）で両方揃ったときだけ true にする。既存12件のうち法的な変化が無かった10件を false に付け直した |
 | 2026-09-25 | 年表を「法令の節目」だけにした。更新レコードに `legal_stage`（7値）を保存し、年表の派生イベント（○）は施行・成立・確定指針・法案・草案/意見募集の5段階のレコードからだけ作る（`src/lib/derivedTimeline.mjs` の `TIMELINE_LEGAL_STAGES`）。更新一覧は今までどおり全件表示。既存42件（重複2件を削除した残り）に legal_stage を付与。今後の重複防止に、同じ出典URL・同じ公表日のレコードが既にあれば書かない機械チェック（`isDuplicateRecord`）を summarize に追加 |
+| 2026-09-25 | `/claude-api prompt-audit` の指摘を反映。temperature 0.2 を外し既定(1.0)へ（Gemini 3 系への公式ガイド推奨）、Gemini のトークン消費を `usage`（calls/prompt/output/thoughts）としてログに記録、triage の「関係あり」判定を要約側と同じ基準（AI固有の規定を含む場合だけ true）に統一、summarize の `regulation_patch.status` を「対象国の主たるAI規制そのものの段階変化」に限定（Issue #13 の誤提案対策）、bootstrap の下書きプロンプトをスキーマが返す3項目（regulation_name/status/approach）だけの指示に整理。取り下げ: triage に `thinkingLevel: 'low'` を付ける案は、実APIで確認したところ flash-lite 系はもともと思考0で、3.1-flash-lite はむしろ low 指定で思考が増えた（0→124）ため見送り |
 
 ## ライセンス
 

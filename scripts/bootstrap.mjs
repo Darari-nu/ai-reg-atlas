@@ -55,13 +55,11 @@ async function main() {
   }
 
   const euBaseline = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eu_baseline.json'), 'utf8'));
-  const prompt = `あなたはAI法規制の専門アナリストです。${country.name_ja}（${country.name_en ?? cc}）のAI規制の現状サマリーを、以下のJSON構造で生成してください。
+  const prompt = `あなたはAI法規制の専門アナリストです。${country.name_ja}（${country.name_en ?? cc}）で中心となっているAI規制について、公式の名称（regulation_name）、段階（status）、規制アプローチ（approach）を返してください。
 
 制約:
-- 事実のみ。確信が持てない項目は summary を空文字にする
-- sources には公式機関のURLのみを書く（不確かなURLは書かない）
-- diff_vs_eu はEU AI Act（添付）との差分を stricter/looser/absent/unique の4分類で
-- これは人間レビュー前のドラフトである
+- 事実のみ。名称は公式のものを使う。approach は添付の EU AI Act 基準と比べて判断する
+- これは人間レビュー前のドラフトで、軸の詳細・EUとの差分・出典は別の工程で人が埋める
 
 eu_baseline: ${JSON.stringify(euBaseline.axes)}`;
 

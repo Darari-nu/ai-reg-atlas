@@ -27,6 +27,7 @@ const WAIT_BUDGET_MS = Number(process.env.GEMINI_WAIT_BUDGET_SEC || 600) * 1000;
 
 let waitedMs = 0; // プロセス累計の待ち時間
 const exhausted = new Set(); // 日次枠切れ/404 で以後使わないモデル
+const usage = { calls: 0, prompt: 0, output: 0, thoughts: 0 }; // 無料枠の消費を見積もるため
 
 export function hasApiKey() {
   return Boolean(process.env.GEMINI_API_KEY);
@@ -42,7 +43,7 @@ export class GeminiError extends Error {
 
 /** これ以上Geminiを呼んでも無駄な失敗（待ち予算切れ・全モデル枯渇）。呼び出し側はループを打ち切る */
 export const isGeminiStop = (e) => e instanceof GeminiError && (e.kind === 'budget' || e.kind === 'quota-all');
-export const geminiStats = () => ({ waitedSec: Math.round(waitedMs / 1000), exhausted: [...exhausted] });
+export const geminiStats = () => ({ waitedSec: Math.round(waitedMs / 1000), exhausted: [...exhausted], usage: { ...usage } });
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -118,6 +119,10 @@ async function callModelOnce(model, body, key) {
     }
 
   const data = await res.json();
+  usage.calls += 1;
+  usage.prompt += data?.usageMetadata?.promptTokenCount ?? 0;
+  usage.output += data?.usageMetadata?.candidatesTokenCount ?? 0;
+  usage.thoughts += data?.usageMetadata?.thoughtsTokenCount ?? 0;
   const cand = data?.candidates?.[0];
   // 出力上限で切れたものは同じ入力を再送しても無意味（入力側を小さくして防ぐ）
   if (cand?.finishReason === 'MAX_TOKENS') {
@@ -150,7 +155,8 @@ export async function geminiJSON({ model, prompt, schema, maxOutputTokens = 8192
       response_mime_type: 'application/json',
       response_schema: schema,
       maxOutputTokens,
-      temperature: 0.2,
+      // temperature は既定(1.0)のまま。Gemini 3 系は 1.0 未満でループや性能低下が起きうると公式ガイドが強く推奨している
+      // （出力のぶれは構造化出力・enum・機械ゲートで受け止める）
     },
   };
 

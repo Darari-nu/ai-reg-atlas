@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import yaml from 'js-yaml';
 
 export const ROOT = process.cwd();
 export const DRY_ROOT = '/tmp/dry';
@@ -70,6 +71,99 @@ export function isGoogleNewsUrl(raw) {
   }
 }
 
+/**
+ * Bing ニュースの転送URL（bing.com/news/apiclick.aspx?...&url=<元記事>）から元記事のURLを取り出す。
+ * Bing 以外・url パラメータ無し・http(s) 以外のときはそのまま返す（§計画 実装指示2）。
+ */
+export function unwrapBingNewsUrl(link) {
+  try {
+    const url = new URL(link);
+    const host = url.hostname.toLowerCase();
+    const isBing = host === 'bing.com' || host.endsWith('.bing.com');
+    if (isBing && url.pathname.includes('/news/apiclick.aspx')) {
+      const target = url.searchParams.get('url');
+      if (target && /^https?:\/\//i.test(target)) return target;
+    }
+    return link;
+  } catch {
+    return link;
+  }
+}
+
+/** host が domain 自身か、そのサブドメインか（先頭の www. は無視。部分文字列一致はしない） */
+export function hostMatches(host, domain) {
+  const h = String(host || '').toLowerCase().replace(/^www\./, '');
+  const d = String(domain || '').toLowerCase().replace(/^www\./, '');
+  if (!h || !d) return false;
+  return h === d || h.endsWith(`.${d}`);
+}
+
+// 政府系TLD（末尾一致）。.gov / .gov.(uk|in|br|au|sg|cn|tw|kh|hk|nz|ie)（任意の2文字ccTLDではなく列挙に限定。
+// gov.ai・x.gov.io のような非政府ドメインが誤って official にならないように） / .go.kr / .go.jp / .gc.ca /
+// .gob.xx / .gouv.fr / europa.eu / nic.in / leg.br / parliament.uk
+export const OFFICIAL_TLD_RE =
+  /(?:^|\.)(?:gov(?:\.(?:uk|in|br|au|sg|cn|tw|kh|hk|nz|ie))?|go\.kr|go\.jp|gc\.ca|gob\.[a-z]{2}|gouv\.fr|europa\.eu|nic\.in|leg\.br|parliament\.uk)$/i;
+
+/**
+ * 出典URLのホストから official/media を機械的に決める。壊れたURLは media。
+ * official: 政府系TLD（OFFICIAL_TLD_RE） or officialDomains（source_domains.yaml の official） or officialHosts（countries.yaml の official_sources のホスト）
+ */
+export function classifySourceKind(url, { officialDomains = [], officialHosts = [] } = {}) {
+  let host;
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch {
+    return 'media';
+  }
+  if (OFFICIAL_TLD_RE.test(host)) return 'official';
+  if (officialDomains.some((d) => hostMatches(host, d))) return 'official';
+  if (officialHosts.some((h) => hostMatches(host, h))) return 'official';
+  return 'media';
+}
+
+/**
+ * regulation_patch（status前進・timeline_add）を自動適用してよいか。
+ * 報道由来（sourceKind === 'media'）のときは自動適用せず、needs-review Issue に回す（§追加指示 必須1）。
+ * official・未設定（undefined）は従来どおり自動適用してよい。
+ */
+export function shouldAutoApplyPatch(sourceKind) {
+  return sourceKind !== 'media';
+}
+
+/** ホストが trustedMedia（source_domains.yaml の trusted_media）のどれかに一致するか */
+export function isTrustedMediaUrl(url, trustedMedia = []) {
+  let host;
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch {
+    return false;
+  }
+  return trustedMedia.some((d) => hostMatches(host, d));
+}
+
+/**
+ * config/source_domains.yaml と config/countries.yaml を読み、
+ * { officialDomains, officialHosts, trustedMedia } を返す（I/Oを伴うのでこれだけ純関数でない）。
+ */
+export function loadSourceDomains(root) {
+  const sourceDomains = yaml.load(fs.readFileSync(path.join(root, 'config/source_domains.yaml'), 'utf8')) || {};
+  const officialDomains = (sourceDomains.official ?? []).map((d) => String(d).toLowerCase());
+  const trustedMedia = (sourceDomains.trusted_media ?? []).map((d) => String(d).toLowerCase());
+
+  const countriesCfg = yaml.load(fs.readFileSync(path.join(root, 'config/countries.yaml'), 'utf8')) || {};
+  const officialHosts = [];
+  for (const country of countriesCfg.countries ?? []) {
+    for (const src of country.official_sources ?? []) {
+      try {
+        officialHosts.push(new URL(src.url).hostname.toLowerCase().replace(/^www\./, ''));
+      } catch {
+        // 壊れたURLは無視
+      }
+    }
+  }
+  return { officialDomains, officialHosts, trustedMedia };
+}
+
 export function hasAiRegKeyword(text, keywords = AI_REG_KEYWORDS) {
   const lower = String(text || '').toLowerCase();
   return keywords.some((kw) => lower.includes(kw.toLowerCase()));
@@ -122,6 +216,11 @@ export function existingEventKeys({ days = 90 } = {}) {
   return keys;
 }
 
+/** source_group の優先順位（SOURCE_GROUP_ORDER に無いものは最後） */
+function sourceGroupRank(sourceGroup) {
+  return SOURCE_GROUP_ORDER[sourceGroup] ?? 9;
+}
+
 export function dedupeByEvent(items, existingKeys = new Set()) {
   const byKey = new Map();
   const priorityRank = { high: 2, low: 1 };
@@ -137,7 +236,16 @@ export function dedupeByEvent(items, existingKeys = new Set()) {
       }
       const expanded = { ...item, countries: [cc], canonical_event: item.canonical_event || item.title };
       const prev = byKey.get(key);
-      if (!prev || (priorityRank[expanded.priority] || 0) > (priorityRank[prev.priority] || 0)) {
+      let expandedWins;
+      if (!prev) {
+        expandedWins = true;
+      } else {
+        const expandedRank = priorityRank[expanded.priority] || 0;
+        const prevRank = priorityRank[prev.priority] || 0;
+        // priorityが同じなら source_group の順（official_sources > watch_feeds > news_queries）で優先する
+        expandedWins = expandedRank !== prevRank ? expandedRank > prevRank : sourceGroupRank(expanded.source_group) < sourceGroupRank(prev.source_group);
+      }
+      if (expandedWins) {
         if (prev) appendDrop({ ...prev, country: cc, reason: 'duplicate-event-lower-priority' });
         byKey.set(key, expanded);
       } else {
@@ -179,6 +287,42 @@ export function isDuplicateRecord(updates, url, date) {
   return (updates ?? []).some((u) => u.sources?.[0] === url && u.date === date);
 }
 
+/**
+ * normalizeEventLabel した文字列どうしの文字2-gram集合のJaccard係数（0〜1）。
+ * どちらかが正規化後に空（2-gramが取れない）なら0。報道の同一事象の重複登録対策（§追加指示 必須3b）
+ */
+export function titleBigramSimilarity(a, b) {
+  const bigrams = (value) => {
+    const norm = normalizeEventLabel(value);
+    const set = new Set();
+    for (let i = 0; i < norm.length - 1; i++) set.add(norm.slice(i, i + 2));
+    return set;
+  };
+  const setA = bigrams(a);
+  const setB = bigrams(b);
+  if (setA.size === 0 || setB.size === 0) return 0;
+  let intersection = 0;
+  for (const gram of setA) if (setB.has(gram)) intersection++;
+  const union = setA.size + setB.size - intersection;
+  return union === 0 ? 0 : intersection / union;
+}
+
+/**
+ * 同じ country で、date の差が days 日以内、タイトルの類似度（titleBigramSimilarity）が threshold 以上の
+ * 既存レコードがあれば返す（無ければ null）。報道由来レコードの二重登録対策（§追加指示 必須3b）
+ * 2026-09-26 実測: 重複3組 0.24〜0.27、別の出来事14組 最大0.18。差が小さいので、報道のみに適用し、
+ * 落としたものは similar ログで確認する。
+ */
+export function findSimilarRecord(updates, { country, date, title }, { days = 3, threshold = 0.2 } = {}) {
+  for (const u of updates ?? []) {
+    if (u.country !== country) continue;
+    if (!isYmd(u.date) || !isYmd(date)) continue;
+    if (Math.abs(daysBetween(date, u.date)) > days) continue;
+    if (titleBigramSimilarity(title, u.title) >= threshold) return u;
+  }
+  return null;
+}
+
 // legal_stage（法的段階）の全値。年表に載せる5段階＋載せない2段階（announcement/other）
 export const LEGAL_STAGES = ['in_force', 'enacted', 'final_guidance', 'bill', 'draft_or_consultation', 'announcement', 'other'];
 
@@ -208,8 +352,11 @@ export function countryAnchor(country, axis) {
   return `/country/${country}/#axis-${axis}`;
 }
 
-/** discoveredAt を渡すと discovered_at を含める（省略時はキー自体を出さない＝既存レコードと同じ形） */
-export function buildUpdateRecord({ updates = [], country, item, rec, discoveredAt }) {
+/**
+ * discoveredAt を渡すと discovered_at を含める（省略時はキー自体を出さない＝既存レコードと同じ形）。
+ * sourceKind が 'official'|'media' のときだけ source_kind を legal_stage の直後に含める（無ければキー自体を出さない）。
+ */
+export function buildUpdateRecord({ updates = [], country, item, rec, discoveredAt, sourceKind }) {
   const pubDate = rec.publication_date;
   return {
     id: nextIdForDate(updates, country, pubDate),
@@ -218,6 +365,7 @@ export function buildUpdateRecord({ updates = [], country, item, rec, discovered
     axis: rec.axis,
     change_type: rec.change_type,
     ...(LEGAL_STAGES.includes(rec.legal_stage) ? { legal_stage: rec.legal_stage } : {}),
+    ...(sourceKind === 'official' || sourceKind === 'media' ? { source_kind: sourceKind } : {}),
     title: rec.title.slice(0, 120),
     summary: {
       what: rec.summary.what.slice(0, 120),

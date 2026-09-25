@@ -19,7 +19,7 @@ EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中�
 | 動かなくなったら | 「状態ファイル」の復旧方法、「Gemini のモデルと待ち時間」のログの読み方 |
 | 手元で動かすには | 「セットアップ」と「DRY_RUN」（`DRY_RUN=1` を付ければ実データを汚さずに試せる） |
 
-**設計の根っこ**: 出典は実際に取得できた一次ソースのURLだけ。検証を通らないデータは commit しない。
+**設計の根っこ**: 出典は、実際に取得できた一次ソース、または許可リストにある信頼できる報道（サイト上で「報道」と明示）だけ。検証を通らないデータは commit しない。
 AIの判断は「確認前」と「人が確認済み」を見た目で区別する（年表の○と●）。この3つは崩さないこと。
 
 ## アーキテクチャ
@@ -63,6 +63,8 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 `isSkippable` が再 triage・再要約を止める `SKIP_VERDICTS`（`scripts/lib/state.mjs`）: `gemini-unusable` / `no-ai-reg-keyword` / `body-too-short` / `stale-publication-date` / `triage-irrelevant`。`blocked-or-js-only-page` や fetch 失敗は一時的な失敗として含めず、翌日また試す。
 
 公式ソース（`official_sources`）だけは、1回目の判定で `relevant=false` でもすぐには `triage-irrelevant` を記録しない。RSS（`watch_feeds`/`news_queries`）は `last_seen` の仕組みで `pub <= last_seen` の記事を二度と候補に出さないため一度きりの判定で確定してよいが、一次情報は temperature 既定(1.0)による1回ごとの判定の揺れで取りこぼすと再挑戦の機会が来ない。そこで同じ実行の中でもう一度だけ判定し（セカンドルック）、どちらかで `relevant=true` なら残す。ログは `[triage] second_look in=N rescued=M`（Nがセカンドルックに回した件数、Mが救済した件数）、救済分は `second_look rescued:`、2回とも落ちたものは `second_look still irrelevant:`（週次の確認用、それぞれ最大10行）。
+
+報道由来の更新（`source_kind: media`）は `regulation_patch` を自動適用しない（`shouldAutoApplyPatch`）。status変更やtimeline追記の提案があれば `needs-review` Issue に回し、`data/regulations/{cc}.json` は人が公式発表で確認してから直す。同じ出来事の二重登録を防ぐため、報道由来のレコードだけは書き込み直前に類似タイトル判定（`titleBigramSimilarity` / `findSimilarRecord`。前後1か月・3日以内・類似度0.2以上）をかけ、見つかれば `duplicate-similar-record` として捨てる（公式ソースには適用しない）。
 
 ## デプロイ
 
@@ -155,7 +157,10 @@ npm run build     # dist/ に静的出力
 npm run validate  # data/ 全JSONのスキーマ検証
 npm test          # 実APIを使わないテスト（品質ゲート・triage分割・Geminiのリトライ/フォールバック・
                   # 鮮度・派生年表・地球儀投影・countries.yaml検証・状態ファイル・差分変化の判定ゲート・
-                  # legal_stage による年表の絞り込み・重複レコードの機械チェック・enum の整合・Gemini usage の積算。139件）
+                  # legal_stage による年表の絞り込み・重複レコードの機械チェック・enum の整合・Gemini usage の積算・
+                  # source_domains.yaml検証・source_kind の判定と既存データの機械チェック・
+                  # regulation_patch自動適用の判定（報道は不適用）・出来事の重複排除のsource_group順・
+                  # 類似タイトル判定（titleBigramSimilarity/findSimilarRecord）。183件）
 ```
 
 ### Gemini APIキー（人間がやること）
@@ -238,8 +243,8 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 国ブロック内に次の3種をyamlで追加する。コード側に国別・媒体別の分岐は足さない。
 
 - `official_sources`: 権威ソース。`{ url, type: rss|scrape_hash }`。更新レコードの出典にできる。
-- `watch_feeds`: 任意。良質な非Google RSS。`{ url, type: rss }`。実URLが取れるため出典にできる。
-- `news_queries`: Google News検索。検知専用。`news.google.com`は機械ゲートでdropし、更新レコードの`sources`には入れない。
+- `watch_feeds`: 任意。個別に選んだ報道・専門機関の RSS。`{ url, type: rss }`。許可リスト（`trusted_media`）を通さずに出典になるので、追加は慎重に。
+- `news_queries`: Bingニュース検索RSS（`collect.mjs`の`newsRssUrl`）。Bingのリンクは`bing.com/news/apiclick.aspx?...&url=<元記事>`の形で転送されるので、`unwrapBingNewsUrl`で`url`パラメータから元記事のURLを取り出す。取り出した候補は`config/source_domains.yaml`の許可リスト（`trusted_media`）に載っているドメインか、公式ドメイン（政府系TLD・`source_domains.yaml`の`official`・`countries.yaml`の`official_sources`のホスト）でなければ`collect`で落とす（`isTrustedMediaUrl` / `classifySourceKind`）。許可リストに無い報道は出典にできない。落ちた候補の上位ホストは`[collect] dropped_untrusted top hosts: ...`にログが出るので、実在する報道機関なら`config/source_domains.yaml`の`trusted_media`に追記して許可リストを育てる運用にする。
 
 国ブロックには任意で `subregions:`（地域・州レベル）も追記できる。国の下位区分（米国の州・EU加盟国・中国の直轄市など）を地球儀のマーカー表示専用に載せるためのもので、`official_sources` / `watch_feeds` は持たず自動監視の対象にはならない。現在は米国5州（カリフォルニア・コロラド・ニューヨーク・テキサス・ユタ）、EU5カ国（ドイツ・フランス・イタリア・スペイン・オランダ）、中国3市（北京・上海・深圳）、カナダのケベック州を初期データとして収録済みで、いずれも**AIが下書きした人間レビュー前のドラフト**（`config/countries.yaml` 内のコメント参照）。成立日・施行日・所管機関は一次ソースで裏を取るまで確定値として扱わないこと。
 
@@ -310,6 +315,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-25 | 年表を「法令の節目」だけにした。更新レコードに `legal_stage`（7値）を保存し、年表の派生イベント（○）は施行・成立・確定指針・法案・草案/意見募集の5段階のレコードからだけ作る（`src/lib/derivedTimeline.mjs` の `TIMELINE_LEGAL_STAGES`）。更新一覧は今までどおり全件表示。既存42件（重複2件を削除した残り）に legal_stage を付与。今後の重複防止に、同じ出典URL・同じ公表日のレコードが既にあれば書かない機械チェック（`isDuplicateRecord`）を summarize に追加 |
 | 2026-09-25 | `/claude-api prompt-audit` の指摘を反映。temperature 0.2 を外し既定(1.0)へ（Gemini 3 系への公式ガイド推奨）、Gemini のトークン消費を `usage`（calls/prompt/output/thoughts）としてログに記録、triage の「関係あり」判定を要約側と同じ基準（AI固有の規定を含む場合だけ true）に統一、summarize の `regulation_patch.status` を「対象国の主たるAI規制そのものの段階変化」に限定（Issue #13 の誤提案対策）、bootstrap の下書きプロンプトをスキーマが返す3項目（regulation_name/status/approach）だけの指示に整理。取り下げ: triage に `thinkingLevel: 'low'` を付ける案は、実APIで確認したところ flash-lite 系はもともと思考0で、3.1-flash-lite はむしろ low 指定で思考が増えた（0→124）ため見送り |
 | 2026-09-25 | 選別の取りこぼし対策（Fable監査の追い作業2点）。(A) triage の「関係あり」基準に一文追加: ディープフェイク・AI生成物・自動化された意思決定の規定は、刑法・選挙法・消費者法などの中にあってもAI固有の規定として true。(B) 公式ソース（`official_sources`）の候補で `relevant=false` になったものだけ、同じ実行の中でもう一度選別にかけ、どちらかで `relevant=true` なら残す「セカンドルック」を追加（`irrelevantItems` / `needsSecondLook` / `SECOND_LOOK_GROUPS`、`scripts/lib/pipeline.mjs`）。temperature を既定(1.0)に戻したことで1回ごとの判定が揺れ、RSSの記事は last_seen の仕組みで一度しか候補に出ないため、一次情報だけは1回の揺れで取りこぼさないようにした。取り下げ: 当初案の「公式ソースは seen_urls に記憶しない」は採らなかった。RSSは `pub <= last_seen` の記事を二度と候補にしない（`collect.mjs` の `collectRss`）ので、記憶しなくても再挑戦の機会が来ない（効くのは scrape_hash の一覧が変わって同じリンクが再抽出される場合だけ） |
+| 2026-09-26 | オーナー裁定で出典の原則を「一次ソースだけ」から「一次ソース＋許可リストにある信頼できる報道」へ広げた。Google ニュース検索（`news_queries`）を Bing ニュースRSSへ置き換え、転送URL（`bing.com/news/apiclick.aspx?...&url=<元記事>`）を`unwrapBingNewsUrl`で元記事URLに展開。許可リスト（`trusted_media`）と公式ドメイン（`official`）は新設の`config/source_domains.yaml`の1箇所で管理し、`isTrustedMediaUrl`/`classifySourceKind`で候補を絞る（`collect.mjs`、ログ`[collect] news kept=N dropped_untrusted=M`）。更新レコードに出典の種別`source_kind`（`official`|`media`）を追加し、報道由来のときサイトに「報道」バッジを出す。報道由来の`diff-change` Issueには「公式発表で確認すること」の一文を追記。既存42件（official 38・media 4: `artificialintelligenceact.eu` 2件・`dataprivacybr.org` 2件）に`source_kind`を機械的に付け直した。**Fable監査の指摘を反映**（同日追加コミット）: 報道由来のレコードは`regulation_patch`を自動適用せず`needs-review` Issueに回すよう変更（`shouldAutoApplyPatch`）。`OFFICIAL_TLD_RE`の`gov`系ccTLDを`gov`単独と`gov.(uk\|in\|br\|au\|sg\|cn\|tw\|kh\|hk\|nz\|ie)`に限定し（`gov.ai`等の誤判定を修正）、`source_domains.yaml`の`official`に`ico.org.uk`等10件を追加（既存42件の判定は不変と確認済み）。同じ出来事の二重登録対策として`dedupeByEvent`と`sortForSummarize`の同順位判定にsource_group順を追加し、報道由来のレコードには書き込み直前に類似タイトル判定（`titleBigramSimilarity`/`findSimilarRecord`）を追加した。類似判定のしきい値は実測で0.2（重複3組0.24〜0.27、別の出来事14組は最大0.18）、選別（`triage.mjs`）で同一出来事に同じ`canonical_event`を付けさせるようプロンプトを1文追記した |
 
 ## ライセンス
 

@@ -7,13 +7,17 @@ import yaml from 'js-yaml';
 import Parser from 'rss-parser';
 import {
   JINA_READER_PREFIX,
+  classifySourceKind,
   dataPath,
   isGoogleNewsUrl,
   isStaleListing,
+  isTrustedMediaUrl,
   listingDate,
   loadJSON,
+  loadSourceDomains,
   readerBody,
   resolveFeedLink,
+  unwrapBingNewsUrl,
   writeJSON,
 } from './lib/pipeline.mjs';
 import { LAST_SEEN_MAX_LOOKBACK_DAYS, clampLookback, readState, writeState } from './lib/state.mjs';
@@ -77,9 +81,10 @@ async function decodeHtmlResponse(res) {
   }
 }
 
+// Google ニュースは実URLが取れず全件捨てていた。Bing ニュース検索RSSは url パラメータに元記事URLがある
 function newsRssUrl(query) {
   const q = encodeURIComponent(query);
-  return `https://news.google.com/rss/search?q=${q}&hl=ja&gl=JP&ceid=JP:ja`;
+  return `https://www.bing.com/news/search?q=${q}&format=rss`;
 }
 
 function pushIssue(issue) {
@@ -218,9 +223,11 @@ async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
       console.warn(`[collect] skip item with unresolvable link: ${(item.title ?? '').slice(0, 60)}`);
       continue;
     }
+    // Bing ニュースの転送URL（bing.com/news/apiclick.aspx?...&url=<元記事>）を元記事URLに展開する。Bing以外は素通り
+    const unwrapped = unwrapBingNewsUrl(link);
     items.push({
       title: item.title ?? '',
-      url: normalizeUrl(link),
+      url: normalizeUrl(unwrapped),
       snippet: (item.contentSnippet ?? '').slice(0, 300),
       country_hint: countryHint,
       source_type: sourceType,
@@ -263,6 +270,7 @@ async function main() {
   const config = yaml.load(fs.readFileSync(path.join(ROOT, 'config/countries.yaml'), 'utf8'));
   const lastSeen = readState(LAST_SEEN_NAME, {});
   const hashes = loadJSON(HASHES_FILE, {});
+  const sourceDomains = loadSourceDomains(ROOT);
 
   const candidates = [];
   let okCount = 0;
@@ -315,12 +323,42 @@ async function main() {
     return true;
   });
 
+  // news_queries の候補だけ、許可リスト（trusted_media）か公式ドメインのものだけ残す（それ以外は報道でも公式でもなく出典に使えない）
+  let newsKept = 0;
+  const droppedHostCounts = new Map();
+  const final = deduped.filter((c) => {
+    if (c.source_group !== 'news_queries') return true;
+    const trusted = isTrustedMediaUrl(c.url, sourceDomains.trustedMedia) || classifySourceKind(c.url, sourceDomains) === 'official';
+    if (trusted) {
+      newsKept++;
+      return true;
+    }
+    let host = c.url;
+    try {
+      host = new URL(c.url).hostname.toLowerCase();
+    } catch {
+      // hostが取れない壊れたURLはそのままログに出す
+    }
+    droppedHostCounts.set(host, (droppedHostCounts.get(host) ?? 0) + 1);
+    return false;
+  });
+  const newsDropped = [...droppedHostCounts.values()].reduce((a, b) => a + b, 0);
+
   writeState(LAST_SEEN_NAME, lastSeen);
   writeJSON(HASHES_FILE, hashes);
-  writeJSON(OUT_FILE, deduped);
+  writeJSON(OUT_FILE, final);
 
-  console.log(`[collect] sources ok=${okCount} failed=${failCount} candidates=${deduped.length} google_dropped=${googleDropped}`);
+  console.log(`[collect] sources ok=${okCount} failed=${failCount} candidates=${final.length} google_dropped=${googleDropped}`);
   console.log(`[collect] last_seen feeds=${Object.keys(lastSeen).length} max_lookback=${LAST_SEEN_MAX_LOOKBACK_DAYS}d`);
+  console.log(`[collect] news kept=${newsKept} dropped_untrusted=${newsDropped}`);
+  if (droppedHostCounts.size > 0) {
+    const topHosts = [...droppedHostCounts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([host, count]) => `${host}(${count})`)
+      .join(', ');
+    console.log(`[collect] dropped_untrusted top hosts: ${topHosts}`);
+  }
   if (failCount > 0 && okCount === 0) process.exitCode = 1; // 全滅のみ失敗扱い
 }
 

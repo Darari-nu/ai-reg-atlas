@@ -206,7 +206,7 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 
 `temperature` は既定(1.0)のままにしている。Gemini 3 系は 1.0 未満だとループや性能低下が起きうると公式ガイドが強く推奨しているため
 （出力のぶれは構造化出力・enum・機械ゲートで受け止める設計）。
-成功時のログは `gemini={... usage:{calls,prompt,output,thoughts}}` の形で出る。`calls` は成功した呼び出し回数、
+成功時のログは、選別が `[triage] ... gemini={... "usage":{calls,prompt,output,thoughts}}`、要約が `[summarize] gemini {... "usage":{...}}` の形で出る（要約側は `=` なし）。`calls` は成功した呼び出し回数、
 `prompt`/`output`/`thoughts` は `usageMetadata` から積算したトークン数の累計（無料枠の消費見積もり用。HTTPエラーは数えない）。
 
 ### パイプラインの環境変数（Repository Variables で差し替え可）

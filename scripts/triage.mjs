@@ -166,6 +166,9 @@ async function main() {
   // セカンドルック: 温度1.0の1回の揺れで一次情報を取りこぼさないよう、公式ソースの relevant=false だけもう一度判定する
   if (secondLook.length > 0 && !stopped) {
     triaged.push(...(await runSecondLook(secondLook, feedList, seenUrls)));
+  } else if (secondLook.length > 0) {
+    // 1回目が予算切れ・全モデル枯渇で打ち切られた日は2回目も呼ばない（記憶もしないので後日の再挑戦は残る）
+    console.log(`[triage] second_look skipped (stopped) in=${secondLook.length}`);
   }
 
   if (failed > 0) {

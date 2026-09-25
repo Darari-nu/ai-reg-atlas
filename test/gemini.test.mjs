@@ -6,7 +6,7 @@ process.env.GEMINI_API_KEY = 'test-key-XYZ';
 process.env.GEMINI_BACKOFF_BASE_MS = '1';
 process.env.GEMINI_WAIT_BUDGET_SEC = '1';
 process.env.GEMINI_MAX_ATTEMPTS = '3';
-const { geminiJSON, geminiJSONWithRetry, GeminiError, isGeminiStop } = await import('../scripts/lib/gemini.mjs');
+const { geminiJSON, geminiJSONWithRetry, GeminiError, isGeminiStop, geminiStats } = await import('../scripts/lib/gemini.mjs');
 
 const mkRes = (status, body) => new Response(typeof body === 'string' ? body : JSON.stringify(body), { status });
 const okBody = (text, finishReason = 'STOP') => ({ candidates: [{ finishReason, content: { parts: [{ text }] } }] });
@@ -126,5 +126,22 @@ describe('gemini client', () => {
     await assert.rejects(geminiJSON(args('phtml')));
     assert.ok(warnings.some((w) => w.includes('body: <html>bad gateway ***')));
     assert.ok(warnings.every((w) => !w.includes('test-key-XYZ')));
+  });
+
+  it('usageMetadataをgeminiStats().usageに積算する（HTTPエラーは数えない）', async () => {
+    const before = geminiStats().usage;
+    const usageBody = (usageMetadata) => ({
+      candidates: [{ finishReason: 'STOP', content: { parts: [{ text: '{"ok":true}' }] } }],
+      usageMetadata,
+    });
+    // perr は毎回503（数えない）、pusage1/pusage2 は成功（数える）
+    stubFetch((m) => (m === 'perr' ? mkRes(503, overloaded) : mkRes(200, usageBody({ promptTokenCount: 10, candidatesTokenCount: 5, thoughtsTokenCount: 2 }))));
+    await geminiJSON(args('perr', ['pusage1']));
+    await geminiJSON(args('pusage2'));
+    const after = geminiStats().usage;
+    assert.equal(after.calls - before.calls, 2);
+    assert.equal(after.prompt - before.prompt, 20);
+    assert.equal(after.output - before.output, 10);
+    assert.equal(after.thoughts - before.thoughts, 4);
   });
 });

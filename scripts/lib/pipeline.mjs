@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import yaml from 'js-yaml';
 
 export const ROOT = process.cwd();
 export const DRY_ROOT = '/tmp/dry';
@@ -68,6 +69,87 @@ export function isGoogleNewsUrl(raw) {
   } catch {
     return false;
   }
+}
+
+/**
+ * Bing ニュースの転送URL（bing.com/news/apiclick.aspx?...&url=<元記事>）から元記事のURLを取り出す。
+ * Bing 以外・url パラメータ無し・http(s) 以外のときはそのまま返す（§計画 実装指示2）。
+ */
+export function unwrapBingNewsUrl(link) {
+  try {
+    const url = new URL(link);
+    const host = url.hostname.toLowerCase();
+    const isBing = host === 'bing.com' || host.endsWith('.bing.com');
+    if (isBing && url.pathname.includes('/news/apiclick.aspx')) {
+      const target = url.searchParams.get('url');
+      if (target && /^https?:\/\//i.test(target)) return target;
+    }
+    return link;
+  } catch {
+    return link;
+  }
+}
+
+/** host が domain 自身か、そのサブドメインか（先頭の www. は無視。部分文字列一致はしない） */
+export function hostMatches(host, domain) {
+  const h = String(host || '').toLowerCase().replace(/^www\./, '');
+  const d = String(domain || '').toLowerCase().replace(/^www\./, '');
+  if (!h || !d) return false;
+  return h === d || h.endsWith(`.${d}`);
+}
+
+// 政府系TLD（末尾一致）。.gov / .gov.xx（2文字の国コード） / .go.kr / .go.jp / .gc.ca / .gob.xx / .gouv.fr / europa.eu / nic.in / leg.br / parliament.uk
+export const OFFICIAL_TLD_RE = /(?:^|\.)(?:gov(?:\.[a-z]{2})?|go\.kr|go\.jp|gc\.ca|gob\.[a-z]{2}|gouv\.fr|europa\.eu|nic\.in|leg\.br|parliament\.uk)$/i;
+
+/**
+ * 出典URLのホストから official/media を機械的に決める。壊れたURLは media。
+ * official: 政府系TLD（OFFICIAL_TLD_RE） or officialDomains（source_domains.yaml の official） or officialHosts（countries.yaml の official_sources のホスト）
+ */
+export function classifySourceKind(url, { officialDomains = [], officialHosts = [] } = {}) {
+  let host;
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch {
+    return 'media';
+  }
+  if (OFFICIAL_TLD_RE.test(host)) return 'official';
+  if (officialDomains.some((d) => hostMatches(host, d))) return 'official';
+  if (officialHosts.some((h) => hostMatches(host, h))) return 'official';
+  return 'media';
+}
+
+/** ホストが trustedMedia（source_domains.yaml の trusted_media）のどれかに一致するか */
+export function isTrustedMediaUrl(url, trustedMedia = []) {
+  let host;
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch {
+    return false;
+  }
+  return trustedMedia.some((d) => hostMatches(host, d));
+}
+
+/**
+ * config/source_domains.yaml と config/countries.yaml を読み、
+ * { officialDomains, officialHosts, trustedMedia } を返す（I/Oを伴うのでこれだけ純関数でない）。
+ */
+export function loadSourceDomains(root) {
+  const sourceDomains = yaml.load(fs.readFileSync(path.join(root, 'config/source_domains.yaml'), 'utf8')) || {};
+  const officialDomains = (sourceDomains.official ?? []).map((d) => String(d).toLowerCase());
+  const trustedMedia = (sourceDomains.trusted_media ?? []).map((d) => String(d).toLowerCase());
+
+  const countriesCfg = yaml.load(fs.readFileSync(path.join(root, 'config/countries.yaml'), 'utf8')) || {};
+  const officialHosts = [];
+  for (const country of countriesCfg.countries ?? []) {
+    for (const src of country.official_sources ?? []) {
+      try {
+        officialHosts.push(new URL(src.url).hostname.toLowerCase().replace(/^www\./, ''));
+      } catch {
+        // 壊れたURLは無視
+      }
+    }
+  }
+  return { officialDomains, officialHosts, trustedMedia };
 }
 
 export function hasAiRegKeyword(text, keywords = AI_REG_KEYWORDS) {
@@ -208,8 +290,11 @@ export function countryAnchor(country, axis) {
   return `/country/${country}/#axis-${axis}`;
 }
 
-/** discoveredAt を渡すと discovered_at を含める（省略時はキー自体を出さない＝既存レコードと同じ形） */
-export function buildUpdateRecord({ updates = [], country, item, rec, discoveredAt }) {
+/**
+ * discoveredAt を渡すと discovered_at を含める（省略時はキー自体を出さない＝既存レコードと同じ形）。
+ * sourceKind が 'official'|'media' のときだけ source_kind を legal_stage の直後に含める（無ければキー自体を出さない）。
+ */
+export function buildUpdateRecord({ updates = [], country, item, rec, discoveredAt, sourceKind }) {
   const pubDate = rec.publication_date;
   return {
     id: nextIdForDate(updates, country, pubDate),
@@ -218,6 +303,7 @@ export function buildUpdateRecord({ updates = [], country, item, rec, discovered
     axis: rec.axis,
     change_type: rec.change_type,
     ...(LEGAL_STAGES.includes(rec.legal_stage) ? { legal_stage: rec.legal_stage } : {}),
+    ...(sourceKind === 'official' || sourceKind === 'media' ? { source_kind: sourceKind } : {}),
     title: rec.title.slice(0, 120),
     summary: {
       what: rec.summary.what.slice(0, 120),

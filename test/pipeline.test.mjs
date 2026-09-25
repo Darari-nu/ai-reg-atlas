@@ -6,24 +6,30 @@ import {
   applyTriageVerdicts,
   buildUpdateRecord,
   chunk,
+  classifySourceKind,
   decideDiffChanged,
   dedupeByEvent,
   ensureJapaneseTitle,
   hasJapanese,
+  hostMatches,
   irrelevantItems,
   irrelevantUrls,
   isDuplicateRecord,
   isStaleListing,
+  isTrustedMediaUrl,
   LEGAL_STAGES,
   listingDate,
+  loadSourceDomains,
   mechanicalGate,
   nearestDate,
   needsSecondLook,
+  OFFICIAL_TLD_RE,
   parseLooseDate,
   readerBody,
   publicationDateGate,
   resolveFeedLink,
   sortForTriage,
+  unwrapBingNewsUrl,
 } from '../scripts/lib/pipeline.mjs';
 import { TIMELINE_LEGAL_STAGES } from '../src/lib/derivedTimeline.mjs';
 
@@ -461,5 +467,175 @@ describe('legal_stage の enum 整合（schema / pipeline / derivedTimeline / su
 
   it('(c) summarize.mjs の RESPONSE_SCHEMA.legal_stage.enum は LEGAL_STAGES と一致', () => {
     assert.deepEqual(responseSchemaEnum, LEGAL_STAGES);
+  });
+});
+
+describe('unwrapBingNewsUrl（Bingニュースの転送URLを元記事URLに展開）', () => {
+  it('bing.com/news/apiclick.aspx の url パラメータを取り出す', () => {
+    const link = 'https://www.bing.com/news/apiclick.aspx?ID=abc&url=https%3A%2F%2Fexample.com%2Farticle';
+    assert.equal(unwrapBingNewsUrl(link), 'https://example.com/article');
+  });
+
+  it('Bing 以外のURLはそのまま返す', () => {
+    assert.equal(unwrapBingNewsUrl('https://example.com/news/apiclick.aspx?url=https://other.com'), 'https://example.com/news/apiclick.aspx?url=https://other.com');
+  });
+
+  it('bing.com でも apiclick.aspx 以外・url パラメータ無しはそのまま返す', () => {
+    assert.equal(unwrapBingNewsUrl('https://www.bing.com/news/search?q=ai'), 'https://www.bing.com/news/search?q=ai');
+    assert.equal(unwrapBingNewsUrl('https://www.bing.com/news/apiclick.aspx?ID=abc'), 'https://www.bing.com/news/apiclick.aspx?ID=abc');
+  });
+
+  it('url パラメータが http(s) 以外はそのまま返す', () => {
+    const link = 'https://www.bing.com/news/apiclick.aspx?url=javascript%3Aalert(1)';
+    assert.equal(unwrapBingNewsUrl(link), link);
+  });
+
+  it('壊れたURLはそのまま返す', () => {
+    assert.equal(unwrapBingNewsUrl('not a url'), 'not a url');
+  });
+});
+
+describe('hostMatches（ホストがドメイン自身かサブドメインか）', () => {
+  it('完全一致・サブドメインは true', () => {
+    assert.equal(hostMatches('reuters.com', 'reuters.com'), true);
+    assert.equal(hostMatches('jp.reuters.com', 'reuters.com'), true);
+  });
+
+  it('先頭の www. を除いて比較する', () => {
+    assert.equal(hostMatches('www.reuters.com', 'reuters.com'), true);
+    assert.equal(hostMatches('reuters.com', 'www.reuters.com'), true);
+  });
+
+  it('部分文字列一致は false（notreuters.com は reuters.com に一致しない）', () => {
+    assert.equal(hostMatches('notreuters.com', 'reuters.com'), false);
+    assert.equal(hostMatches('reuters.com.evil.com', 'reuters.com'), false);
+  });
+});
+
+describe('classifySourceKind（出典ホストの official/media 判定）', () => {
+  const domains = loadSourceDomains(path.join(process.cwd()));
+
+  it('政府系TLD（.gov / .go.kr / .go.jp / .gc.ca / europa.eu / leg.br 等）は official', () => {
+    assert.equal(classifySourceKind('https://www.nist.gov/news', domains), 'official');
+    assert.equal(classifySourceKind('https://www.msit.go.kr/', domains), 'official');
+    assert.equal(classifySourceKind('https://www8.cao.go.jp/', domains), 'official');
+    assert.equal(classifySourceKind('https://priv.gc.ca/', domains), 'official');
+    assert.equal(classifySourceKind('https://digital-strategy.ec.europa.eu/', domains), 'official');
+    assert.equal(classifySourceKind('https://www.camara.leg.br/', domains), 'official');
+    assert.equal(classifySourceKind('https://www.gov.uk/', domains), 'official');
+  });
+
+  it('source_domains.yaml の official（canada.ca）は official', () => {
+    assert.equal(classifySourceKind('https://www.canada.ca/en.html', domains), 'official');
+  });
+
+  it('countries.yaml の official_sources のホストは official', () => {
+    assert.equal(classifySourceKind('https://www.tc260.org.cn/', domains), 'official');
+  });
+
+  it('報道・NGOなど許可リスト外の非公式ドメインは media', () => {
+    assert.equal(classifySourceKind('https://artificialintelligenceact.eu/feed/', domains), 'media');
+    assert.equal(classifySourceKind('https://www.dataprivacybr.org/', domains), 'media');
+    assert.equal(classifySourceKind('https://www.reuters.com/technology/', domains), 'media');
+  });
+
+  it('壊れたURLは media', () => {
+    assert.equal(classifySourceKind('not a url', domains), 'media');
+  });
+});
+
+describe('OFFICIAL_TLD_RE', () => {
+  it('部分一致のなりすましホストにはマッチしない', () => {
+    assert.equal(OFFICIAL_TLD_RE.test('evilgov.uk'), false);
+    assert.equal(OFFICIAL_TLD_RE.test('notgov.com'), false);
+  });
+});
+
+describe('isTrustedMediaUrl（許可リストの報道機関か）', () => {
+  const domains = loadSourceDomains(path.join(process.cwd()));
+
+  it('許可リストのドメイン・サブドメインは true', () => {
+    assert.equal(isTrustedMediaUrl('https://www.reuters.com/technology/', domains.trustedMedia), true);
+    assert.equal(isTrustedMediaUrl('https://jp.reuters.com/article', domains.trustedMedia), true);
+  });
+
+  it('許可リストに無い媒体は false', () => {
+    assert.equal(isTrustedMediaUrl('https://www.dataprivacybr.org/', domains.trustedMedia), false);
+  });
+});
+
+describe('buildUpdateRecord の source_kind', () => {
+  const baseRec = {
+    axis: 'timeline',
+    change_type: 'status_change',
+    title: 'T',
+    summary: { what: 'a', who: 'b', when_impact: 'c' },
+    so_what: 'd',
+    diff_changed: false,
+    publication_date: '2026-09-01',
+    legal_stage: 'in_force',
+  };
+
+  it('official/media を渡すと legal_stage の直後に含める', () => {
+    const record = buildUpdateRecord({
+      updates: [],
+      country: 'jp',
+      item: { url: 'https://example.go.jp/ai' },
+      rec: baseRec,
+      sourceKind: 'media',
+    });
+    assert.equal(record.source_kind, 'media');
+    assert.deepEqual(Object.keys(record).slice(0, 6), ['id', 'date', 'country', 'axis', 'change_type', 'legal_stage']);
+    assert.equal(Object.keys(record)[6], 'source_kind');
+  });
+
+  it('未指定・不正値ならキー自体を出さない', () => {
+    const withoutKind = buildUpdateRecord({
+      updates: [],
+      country: 'jp',
+      item: { url: 'https://example.go.jp/ai' },
+      rec: baseRec,
+    });
+    assert.equal('source_kind' in withoutKind, false);
+
+    const invalidKind = buildUpdateRecord({
+      updates: [],
+      country: 'jp',
+      item: { url: 'https://example.go.jp/ai' },
+      rec: baseRec,
+      sourceKind: 'unknown',
+    });
+    assert.equal('source_kind' in invalidKind, false);
+  });
+});
+
+describe('既存データ（data/updates/*.json）の source_kind', () => {
+  const domains = loadSourceDomains(path.join(process.cwd()));
+  const dir = path.join(process.cwd(), 'data/updates');
+  const records = fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .flatMap((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
+
+  it('全件に source_kind があり classifySourceKind(sources[0]) と一致する', () => {
+    assert.ok(records.length > 0);
+    for (const rec of records) {
+      assert.ok(['official', 'media'].includes(rec.source_kind), `${rec.id}: source_kind が無いか不正`);
+      assert.equal(rec.source_kind, classifySourceKind(rec.sources[0], domains), `${rec.id}: 判定結果と不一致`);
+    }
+  });
+
+  it('media は4件（artificialintelligenceact.eu 2件 + dataprivacybr.org 2件）', () => {
+    const mediaRecords = records.filter((r) => r.source_kind === 'media');
+    assert.equal(mediaRecords.length, 4);
+    const hosts = mediaRecords.map((r) => new URL(r.sources[0]).hostname.replace(/^www\./, ''));
+    assert.deepEqual(
+      hosts.filter((h) => h === 'artificialintelligenceact.eu').length,
+      2
+    );
+    assert.deepEqual(
+      hosts.filter((h) => h === 'dataprivacybr.org').length,
+      2
+    );
   });
 });

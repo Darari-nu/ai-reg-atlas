@@ -9,6 +9,7 @@ import {
   RECENCY_DAYS,
   appendDrop,
   buildUpdateRecord,
+  classifySourceKind,
   decideDiffChanged,
   dedupeByEvent,
   ensureJapaneseTitle,
@@ -16,6 +17,7 @@ import {
   isDuplicateRecord,
   isGoogleNewsUrl,
   loadJSON,
+  loadSourceDomains,
   mechanicalGate,
   publicationDateGate,
   pushIssue,
@@ -215,6 +217,7 @@ async function prepareItems(ordered, seenUrls, limit) {
 }
 
 async function main() {
+  const sourceDomains = loadSourceDomains(ROOT);
   const triaged = loadJSON(IN_FILE, []);
   // 前日までのあふれ（TTL7日・attempts<3）と今日の triaged を混ぜる。URL重複は今日の情報を優先
   const carried = dequeueItems(readState(QUEUE_NAME, []), today);
@@ -310,7 +313,8 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       if (!LEGAL_STAGES.includes(rec.legal_stage)) {
         console.warn(`[summarize] legal_stage missing or invalid (${rec.legal_stage ?? '-'}), record will not appear on the timeline: ${item.url}`);
       }
-      const record = buildUpdateRecord({ updates, country: cc, item, rec, discoveredAt: today }); // sourcesはcollectがfetchしたURLのみ
+      const sourceKind = classifySourceKind(item.url, sourceDomains);
+      const record = buildUpdateRecord({ updates, country: cc, item, rec, discoveredAt: today, sourceKind }); // sourcesはcollectがfetchしたURLのみ
       updates.push(record);
       writeDataJSON(['updates', `${month}.json`], updates);
 
@@ -348,9 +352,11 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
                 .map((d) => `- ${d.bucket} / ${d.topic} / ${d.action}`)
                 .join('\n')}`
             : '';
+        // 報道由来のdiff-changeは、人が diff_vs_eu を直す前に一次情報で確認できるよう明記する
+        const mediaNote = sourceKind === 'media' ? '（報道ベース。diff_vs_eu を直す前に公式発表で確認すること）\n\n' : '';
         pushIssue({
           title: `diff-change: ${cc} ${record.title}`,
-          body: `${rec.diff_note ?? ''}${diffItemsSection}\n\n出典: ${item.url}\nフィードID: ${record.id}`,
+          body: `${mediaNote}${rec.diff_note ?? ''}${diffItemsSection}\n\n出典: ${item.url}\nフィードID: ${record.id}`,
           labels: ['diff-change'],
         });
       }

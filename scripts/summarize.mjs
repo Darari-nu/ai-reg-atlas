@@ -245,7 +245,7 @@ async function main() {
 
   const euBaseline = readDataJSON(['eu_baseline.json'], {});
   const seenUrls = readState(SEEN_URLS_NAME, {});
-  // 並び: high→low、同順位は古い繰り越しから（＝今日の high は昨日の low より先）
+  // 並び: high→low、同順位は公式→watch→報道、その次に古い繰り越しから（＝今日の high は昨日の low より先）
   const ordered = sortForSummarize(merged, today);
   const { gated: items, retry, untouched } = await prepareItems(ordered, seenUrls, MAX_PER_RUN);
   const carryOver = [

@@ -64,7 +64,7 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 
 公式ソース（`official_sources`）だけは、1回目の判定で `relevant=false` でもすぐには `triage-irrelevant` を記録しない。RSS（`watch_feeds`/`news_queries`）は `last_seen` の仕組みで `pub <= last_seen` の記事を二度と候補に出さないため一度きりの判定で確定してよいが、一次情報は temperature 既定(1.0)による1回ごとの判定の揺れで取りこぼすと再挑戦の機会が来ない。そこで同じ実行の中でもう一度だけ判定し（セカンドルック）、どちらかで `relevant=true` なら残す。ログは `[triage] second_look in=N rescued=M`（Nがセカンドルックに回した件数、Mが救済した件数）、救済分は `second_look rescued:`、2回とも落ちたものは `second_look still irrelevant:`（週次の確認用、それぞれ最大10行）。
 
-報道由来の更新（`source_kind: media`）は `regulation_patch` を自動適用しない（`shouldAutoApplyPatch`）。status変更やtimeline追記の提案があれば `needs-review` Issue に回し、`data/regulations/{cc}.json` は人が公式発表で確認してから直す。同じ出来事の二重登録を防ぐため、報道由来のレコードだけは書き込み直前に類似タイトル判定（`titleBigramSimilarity` / `findSimilarRecord`。前後1か月・3日以内・類似度0.6以上）をかけ、見つかれば `duplicate-similar-record` として捨てる（公式ソースには適用しない）。
+報道由来の更新（`source_kind: media`）は `regulation_patch` を自動適用しない（`shouldAutoApplyPatch`）。status変更やtimeline追記の提案があれば `needs-review` Issue に回し、`data/regulations/{cc}.json` は人が公式発表で確認してから直す。同じ出来事の二重登録を防ぐため、報道由来のレコードだけは書き込み直前に類似タイトル判定（`titleBigramSimilarity` / `findSimilarRecord`。前後1か月・3日以内・類似度0.2以上）をかけ、見つかれば `duplicate-similar-record` として捨てる（公式ソースには適用しない）。
 
 ## デプロイ
 

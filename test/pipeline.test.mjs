@@ -10,6 +10,7 @@ import {
   dedupeByEvent,
   ensureJapaneseTitle,
   hasJapanese,
+  irrelevantItems,
   irrelevantUrls,
   isDuplicateRecord,
   isStaleListing,
@@ -17,6 +18,7 @@ import {
   listingDate,
   mechanicalGate,
   nearestDate,
+  needsSecondLook,
   parseLooseDate,
   readerBody,
   publicationDateGate,
@@ -287,6 +289,23 @@ describe('triage: バッチ分割', () => {
       ['a'],
     );
     assert.deepEqual(irrelevantUrls(batch, null), []);
+  });
+
+  it('irrelevantItems は relevant=false の候補オブジェクトを返す（duplicate・範囲外・重複indexは無視）', () => {
+    const batch = [{ url: 'a', title: 'A' }, { url: 'b', title: 'B' }, { url: 'c', title: 'C' }];
+    const v = (index, extra = {}) => ({ index, relevant: true, duplicate: false, country: ['jp'], priority: 'low', canonical_event: 'e', ...extra });
+    assert.deepEqual(
+      irrelevantItems(batch, [v(0, { relevant: false }), v(1, { duplicate: true }), v(2), v(9, { relevant: false }), v(0, { relevant: false })]),
+      [batch[0]],
+    );
+    assert.deepEqual(irrelevantItems(batch, null), []);
+  });
+
+  it('needsSecondLook は official_sources だけ true', () => {
+    assert.equal(needsSecondLook({ source_group: 'official_sources' }), true);
+    assert.equal(needsSecondLook({ source_group: 'watch_feeds' }), false);
+    assert.equal(needsSecondLook({ source_group: 'news_queries' }), false);
+    assert.equal(needsSecondLook({}), false);
   });
 });
 

@@ -290,16 +290,34 @@ export function applyTriageVerdicts(batch, verdicts, targetCountries) {
   return { picked, bad, answered: seen.size };
 }
 
-/** relevant=false と判定された候補のURL（seen_urls に記憶して翌日の再判定を止めるため）。不正indexは無視 */
-export function irrelevantUrls(batch, verdicts) {
-  const urls = [];
+/** relevant=false と判定された候補オブジェクト（不正・重複indexは無視）。セカンドルックの対象選別に使う */
+export function irrelevantItems(batch, verdicts) {
+  const items = [];
   const seen = new Set();
   for (const v of verdicts ?? []) {
     if (!Number.isInteger(v?.index) || v.index < 0 || v.index >= batch.length || seen.has(v.index)) continue;
     seen.add(v.index);
-    if (v.relevant === false && batch[v.index]?.url) urls.push(batch[v.index].url);
+    if (v.relevant === false && batch[v.index]) items.push(batch[v.index]);
   }
-  return urls;
+  return items;
+}
+
+/** relevant=false と判定された候補のURL（seen_urls に記憶して翌日の再判定を止めるため）。不正indexは無視 */
+export function irrelevantUrls(batch, verdicts) {
+  return irrelevantItems(batch, verdicts)
+    .filter((c) => c.url)
+    .map((c) => c.url);
+}
+
+// セカンドルックの対象にする source_group。RSS（watch_feeds/news_queries）は last_seen の仕組みで
+// pub <= last_seen の記事を二度と候補に出さないため、1回の判定で relevant=false になると再挑戦の機会が
+// 来ない。一次情報（official_sources）だけは temperature 既定(1.0)の1回の揺れで取りこぼさないよう、
+// 同じ実行内でもう一度判定する。
+export const SECOND_LOOK_GROUPS = ['official_sources'];
+
+/** セカンドルック（再判定）の対象か */
+export function needsSecondLook(item) {
+  return SECOND_LOOK_GROUPS.includes(item?.source_group);
 }
 
 // GitHub Actionsランナーの IP を弾くサイト（cac.gov.cn 等）向けの中継。collect と summarize で共有

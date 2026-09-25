@@ -62,6 +62,8 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 
 `isSkippable` が再 triage・再要約を止める `SKIP_VERDICTS`（`scripts/lib/state.mjs`）: `gemini-unusable` / `no-ai-reg-keyword` / `body-too-short` / `stale-publication-date` / `triage-irrelevant`。`blocked-or-js-only-page` や fetch 失敗は一時的な失敗として含めず、翌日また試す。
 
+公式ソース（`official_sources`）だけは、1回目の判定で `relevant=false` でもすぐには `triage-irrelevant` を記録しない。RSS（`watch_feeds`/`news_queries`）は `last_seen` の仕組みで `pub <= last_seen` の記事を二度と候補に出さないため一度きりの判定で確定してよいが、一次情報は temperature 既定(1.0)による1回ごとの判定の揺れで取りこぼすと再挑戦の機会が来ない。そこで同じ実行の中でもう一度だけ判定し（セカンドルック）、どちらかで `relevant=true` なら残す。ログは `[triage] second_look in=N rescued=M`（Nがセカンドルックに回した件数、Mが救済した件数）、救済分は `second_look rescued:`、2回とも落ちたものは `second_look still irrelevant:`（週次の確認用、それぞれ最大10行）。
+
 ## デプロイ
 
 ワークフローは3本。**表示名とファイル名が違うので注意**（`workflow_run` は表示名で紐づく）。
@@ -153,7 +155,7 @@ npm run build     # dist/ に静的出力
 npm run validate  # data/ 全JSONのスキーマ検証
 npm test          # 実APIを使わないテスト（品質ゲート・triage分割・Geminiのリトライ/フォールバック・
                   # 鮮度・派生年表・地球儀投影・countries.yaml検証・状態ファイル・差分変化の判定ゲート・
-                  # legal_stage による年表の絞り込み・重複レコードの機械チェック・enum の整合・Gemini usage の積算。137件）
+                  # legal_stage による年表の絞り込み・重複レコードの機械チェック・enum の整合・Gemini usage の積算。139件）
 ```
 
 ### Gemini APIキー（人間がやること）
@@ -307,6 +309,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-24 | 差分変化（`diff_changed`）の誤判定を修正。要約プロンプトに対象国の現行 diff_vs_eu を渡し、`legal_stage`（法的段階）と `diff_items`（変化した差分項目）をモデルに出させ、機械ゲート `decideDiffChanged`（`scripts/lib/pipeline.mjs`）で両方揃ったときだけ true にする。既存12件のうち法的な変化が無かった10件を false に付け直した |
 | 2026-09-25 | 年表を「法令の節目」だけにした。更新レコードに `legal_stage`（7値）を保存し、年表の派生イベント（○）は施行・成立・確定指針・法案・草案/意見募集の5段階のレコードからだけ作る（`src/lib/derivedTimeline.mjs` の `TIMELINE_LEGAL_STAGES`）。更新一覧は今までどおり全件表示。既存42件（重複2件を削除した残り）に legal_stage を付与。今後の重複防止に、同じ出典URL・同じ公表日のレコードが既にあれば書かない機械チェック（`isDuplicateRecord`）を summarize に追加 |
 | 2026-09-25 | `/claude-api prompt-audit` の指摘を反映。temperature 0.2 を外し既定(1.0)へ（Gemini 3 系への公式ガイド推奨）、Gemini のトークン消費を `usage`（calls/prompt/output/thoughts）としてログに記録、triage の「関係あり」判定を要約側と同じ基準（AI固有の規定を含む場合だけ true）に統一、summarize の `regulation_patch.status` を「対象国の主たるAI規制そのものの段階変化」に限定（Issue #13 の誤提案対策）、bootstrap の下書きプロンプトをスキーマが返す3項目（regulation_name/status/approach）だけの指示に整理。取り下げ: triage に `thinkingLevel: 'low'` を付ける案は、実APIで確認したところ flash-lite 系はもともと思考0で、3.1-flash-lite はむしろ low 指定で思考が増えた（0→124）ため見送り |
+| 2026-09-25 | 選別の取りこぼし対策（Fable監査の追い作業2点）。(A) triage の「関係あり」基準に一文追加: ディープフェイク・AI生成物・自動化された意思決定の規定は、刑法・選挙法・消費者法などの中にあってもAI固有の規定として true。(B) 公式ソース（`official_sources`）の候補で `relevant=false` になったものだけ、同じ実行の中でもう一度選別にかけ、どちらかで `relevant=true` なら残す「セカンドルック」を追加（`irrelevantItems` / `needsSecondLook` / `SECOND_LOOK_GROUPS`、`scripts/lib/pipeline.mjs`）。temperature を既定(1.0)に戻したことで1回ごとの判定が揺れ、RSSの記事は last_seen の仕組みで一度しか候補に出ないため、一次情報だけは1回の揺れで取りこぼさないようにした。取り下げ: 当初案の「公式ソースは seen_urls に記憶しない」は採らなかった。RSSは `pub <= last_seen` の記事を二度と候補にしない（`collect.mjs` の `collectRss`）ので、記憶しなくても再挑戦の機会が来ない（効くのは scrape_hash の一覧が変わって同じリンクが再抽出される場合だけ） |
 
 ## ライセンス
 

@@ -73,7 +73,7 @@ function buildPrompt(batch, feedList) {
 - country: 対象国コード（複数可・対象外なら除外）
 - duplicate: 既存フィードと同一事象か
 - priority: high（法令・公式文書の発行/変更） / low（動向解説）
-- canonical_event: 同一事象を短く正規化したラベル（例: "EU AI Act GPAI guidelines published"）。媒体名やURLは含めない
+- canonical_event: 同一事象を短く正規化したラベル（例: "EU AI Act GPAI guidelines published"）。媒体名やURLは含めない。同じ出来事を扱う複数の候補（媒体違い・言語違い）には、完全に同じ canonical_event を付ける
 
 候補: ${JSON.stringify(batch.map((c, i) => ({ index: i, title: c.title, snippet: c.snippet, country_hint: c.country_hint })))}`;
 }

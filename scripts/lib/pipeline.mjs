@@ -310,8 +310,10 @@ export function titleBigramSimilarity(a, b) {
 /**
  * 同じ country で、date の差が days 日以内、タイトルの類似度（titleBigramSimilarity）が threshold 以上の
  * 既存レコードがあれば返す（無ければ null）。報道由来レコードの二重登録対策（§追加指示 必須3b）
+ * 2026-09-26 実測: 重複3組 0.24〜0.27、別の出来事14組 最大0.18。差が小さいので、報道のみに適用し、
+ * 落としたものは similar ログで確認する。
  */
-export function findSimilarRecord(updates, { country, date, title }, { days = 3, threshold = 0.6 } = {}) {
+export function findSimilarRecord(updates, { country, date, title }, { days = 3, threshold = 0.2 } = {}) {
   for (const u of updates ?? []) {
     if (u.country !== country) continue;
     if (!isYmd(u.date) || !isYmd(date)) continue;

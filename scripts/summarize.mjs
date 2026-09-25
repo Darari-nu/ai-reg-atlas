@@ -324,7 +324,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
         continue;
       }
       const sourceKind = classifySourceKind(item.url, sourceDomains);
-      // 報道由来だけ、同じ出来事の二重登録を防ぐため類似タイトル判定をかける（前後1か月・3日以内・類似度0.6以上）。
+      // 報道由来だけ、同じ出来事の二重登録を防ぐため類似タイトル判定をかける（前後1か月・3日以内・類似度0.2以上）。
       // 公式ソースには適用しない（公式の取りこぼしを避けるため）§追加指示 必須3b
       if (sourceKind === 'media') {
         const nearbyUpdates = adjacentMonths(month).flatMap((m) => (m === month ? updates : readDataJSON(['updates', `${m}.json`], [])));

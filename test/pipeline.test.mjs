@@ -726,18 +726,54 @@ describe('shouldAutoApplyPatch（報道由来は regulation_patch を自動適�
   });
 });
 
+// 2026-09-26 実測（実データ）: 同じ出来事の見出し違い（媒体・言語違い）3組は 0.24〜0.27、
+// 既存42件で「同じ国・前後3日」の別の出来事14組は最大0.18。既定しきい値0.2でこの境界を分ける。
+const REAL_SIMILAR_PAIRS = [
+  [
+    '韓国PIPC、個人情報処理方針・権利行使対応の不備でOpenAIやWrtn等5社に改善勧告',
+    '韓国個人情報保護委員会、뤼튼・OpenAI・DeepSeek等5社に権利行使窓口等の改善を勧告',
+  ],
+  [
+    '中国TC260によるAIコード生成安全要求や未成年者保護等に関するAI安全国家標準計画およびガイドライン草案の公表',
+    '中国TC260、AIコード生成・未成年者保護・分野別（教育・医療）AI安全標準案を公開',
+  ],
+  [
+    'インド電子情報技術省（MeitY）、AIインシデント報告規則の厳格化を計画',
+    'インド政府、AIインシデントの報告ルールを厳格化へ',
+  ],
+];
+
+const REAL_DISSIMILAR_PAIRS = [
+  [
+    '韓国個人情報保護委員会、TikTokとAppleに計105億ウォン超の過徴金等処分',
+    '韓国個人情報保護委員会、「公共AXプライバシー保護ガイドライン」を公開',
+  ],
+  [
+    'ブラジル下院、AI搭載スマートグラスの使用および販売を規制する法案（PL 19/26）を審議',
+    'ブラジル下院にデジタル経済枠組み法案（PL 5960/25）が提出、ハイリスクAI認証等を規定',
+  ],
+];
+
 describe('titleBigramSimilarity（正規化した文字2-gramのJaccard係数）', () => {
   it('同一の文字列は1', () => {
     assert.equal(titleBigramSimilarity('EDPB、GDPR制裁金ガイドラインを採択', 'EDPB、GDPR制裁金ガイドラインを採択'), 1);
   });
 
-  it('無関係な文字列は低い', () => {
-    assert.ok(titleBigramSimilarity('EDPB、GDPR制裁金ガイドラインを採択', '韓国PIPC、5社に改善勧告') < 0.3);
-  });
-
   it('空文字・2-gramが取れない短い文字列は0', () => {
     assert.equal(titleBigramSimilarity('', 'なにか'), 0);
     assert.equal(titleBigramSimilarity('a', 'b'), 0); // normalizeEventLabel後1文字ずつで2-gramが取れない
+  });
+
+  it('実データ: 同じ出来事（媒体・言語違いの見出し）は0.2以上', () => {
+    for (const [a, b] of REAL_SIMILAR_PAIRS) {
+      assert.ok(titleBigramSimilarity(a, b) >= 0.2, `expected >= 0.2: ${a} / ${b}`);
+    }
+  });
+
+  it('実データ: 別の出来事（同じ国・近い時期でも見出しが違う）は0.2未満', () => {
+    for (const [a, b] of REAL_DISSIMILAR_PAIRS) {
+      assert.ok(titleBigramSimilarity(a, b) < 0.2, `expected < 0.2: ${a} / ${b}`);
+    }
   });
 });
 
@@ -771,5 +807,25 @@ describe('findSimilarRecord（同じ出来事らしい既存レコードを探�
 
   it('類似度が低ければ null', () => {
     assert.equal(findSimilarRecord(updates, { country: 'jp', date: '2026-09-11', title: '全く関係ない別の話題の記事' }), null);
+  });
+
+  it('実データ: 同じ出来事の見出し違い3組はいずれも既定しきい値0.2で見つかる', () => {
+    for (const [existingTitle, newTitle] of REAL_SIMILAR_PAIRS) {
+      const found = findSimilarRecord(
+        [{ id: 'existing', country: 'kr', date: '2026-09-10', title: existingTitle }],
+        { country: 'kr', date: '2026-09-11', title: newTitle }
+      );
+      assert.equal(found?.id, 'existing', `expected match: ${existingTitle} / ${newTitle}`);
+    }
+  });
+
+  it('実データ: 別の出来事の組2組はいずれも既定しきい値0.2で見つからない', () => {
+    for (const [existingTitle, newTitle] of REAL_DISSIMILAR_PAIRS) {
+      const found = findSimilarRecord(
+        [{ id: 'existing', country: 'kr', date: '2026-09-10', title: existingTitle }],
+        { country: 'kr', date: '2026-09-11', title: newTitle }
+      );
+      assert.equal(found, null, `expected no match: ${existingTitle} / ${newTitle}`);
+    }
   });
 });

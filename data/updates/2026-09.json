@@ -6,6 +6,7 @@
     "axis": "general",
     "change_type": "other",
     "legal_stage": "bill",
+    "source_kind": "official",
     "title": "ブラジル下院委員会、AI支援発明の特許帰属を資金・技術提供者とする法案（PL 303/24）を可決",
     "summary": {
       "what": "AI支援発明の特許を資金・リソース提供者に帰属させる法案可決",
@@ -34,6 +35,7 @@
     "axis": "general",
     "change_type": "other",
     "legal_stage": "final_guidance",
+    "source_kind": "official",
     "title": "カナダ政府、AI等を支える「責任あるデータセンター開発原則」を発表",
     "summary": {
       "what": "責任あるデータセンター開発原則の策定・公表",
@@ -62,6 +64,7 @@
     "axis": "general",
     "change_type": "new_regulation",
     "legal_stage": "draft_or_consultation",
+    "source_kind": "official",
     "title": "豪首相、アルゴリズムのオプトアウト等を認めるデジタル注意義務法案の草案公表に言及",
     "summary": {
       "what": "中毒性アルゴリズムのオプトアウト等を認めるデジタル注意義務法案の公開草案発表",
@@ -90,6 +93,7 @@
     "axis": "general",
     "change_type": "other",
     "legal_stage": "other",
+    "source_kind": "official",
     "title": "台湾数發部、主権AI学習用民間コーパスの無償ライセンス収集を開始",
     "summary": {
       "what": "自願参加・明確な授権・退出可能の原則に基づく民間語料の収集開始",
@@ -118,6 +122,7 @@
     "axis": "transparency",
     "change_type": "other",
     "legal_stage": "other",
+    "source_kind": "official",
     "title": "韓国PIPC、個人情報処理方針・権利行使対応の不備でOpenAIやWrtn等5社に改善勧告",
     "summary": {
       "what": "個人情報処理方針の事後点検に基づき権利行使対応や国内代理人運営に不備があった5社へ改善勧告を実施。",
@@ -146,6 +151,7 @@
     "axis": "transparency",
     "change_type": "new_regulation",
     "legal_stage": "bill",
+    "source_kind": "official",
     "title": "ブラジル下院、デジタルIDおよび生成AIコンテンツ規制に関する法案PL 2002/26の審議を開始",
     "summary": {
       "what": "生成AIによる他者なりすましや世論偽装の禁止等を盛る法案の審議",
@@ -174,6 +180,7 @@
     "axis": "risk_classification",
     "change_type": "other",
     "legal_stage": "final_guidance",
+    "source_kind": "official",
     "title": "中国：全国ネット安全標委による「人工知能安全ガバナンスフレームワーク3.0」の発表",
     "summary": {
       "what": "「人工知能安全ガバナンスフレームワーク3.0」の公表によるリスク分類の更新と技術対応・総合ガバナンス措置の最適化",
@@ -202,6 +209,7 @@
     "axis": "general",
     "change_type": "other",
     "legal_stage": "other",
+    "source_kind": "official",
     "title": "中国CAC、生成AIサービス届出およびアプリ登録の実績（2026年7月〜8月分）を公表",
     "summary": {
       "what": "中国CACが2026年7〜8月の生成AIサービス届出124件およびアプリ登録133件の新規実績を公表。",
@@ -230,6 +238,7 @@
     "axis": "general",
     "change_type": "guideline_draft",
     "legal_stage": "draft_or_consultation",
+    "source_kind": "official",
     "title": "中国TC260が「エージェントシステム開発安全指南（意見募集稿）」を公表",
     "summary": {
       "what": "AIエージェントシステム開発の安全指南案の公表と意見募集",
@@ -258,6 +267,7 @@
     "axis": "general",
     "change_type": "new_regulation",
     "legal_stage": "in_force",
+    "source_kind": "official",
     "title": "韓国：改正個人情報保護法・施行令が2026年9月11日施行、CPO権限強化や課徴金上限引き上げ",
     "summary": {
       "what": "改正個人情報保護法・施行令等の施行によるCPOの権限強化や課徴金制度の厳格化",
@@ -287,6 +297,7 @@
     "axis": "enforcement_body",
     "change_type": "guideline_draft",
     "legal_stage": "final_guidance",
+    "source_kind": "official",
     "title": "欧州データ保護会議（EDPB）、GDPR制裁金の算定方法に関するガイドラインとDSA・GDPR関係の最終ガイドラインを採択",
     "summary": {
       "what": "EDPBがGDPRの行政制裁金適用に関するガイドラインとDSA-GDPR関係性ガイドラインを採択",
@@ -316,6 +327,7 @@
     "axis": "general",
     "change_type": "other",
     "legal_stage": "other",
+    "source_kind": "official",
     "title": "韓国個人情報保護委員会（PIPC）、AIデータ活用拠点「個人情報イノベーションゾーン」を追加指定",
     "summary": {
       "what": "仮名情報の柔軟な活用を支援するデータ分析拠点「個人情報イノベーションゾーン」に国税庁と疾病管理庁を追加指定",
@@ -345,6 +357,7 @@
     "axis": "general",
     "change_type": "other",
     "legal_stage": "announcement",
+    "source_kind": "official",
     "title": "カナダ政府、責任あるデータセンター開発原則に新たに19社が署名したと発表",
     "summary": {
       "what": "責任あるデータセンター開発原則への署名企業が新たに19社追加され、計42組織となったこと",
@@ -374,6 +387,7 @@
     "axis": "general",
     "change_type": "other",
     "legal_stage": "announcement",
+    "source_kind": "official",
     "title": "豪首相、AI時代の子どもの権利保護連合を立ち上げ",
     "summary": {
       "what": "「AI時代における子どもの権利と保護のための連合」の立ち上げと、デジタル配慮義務法案の進捗状況の共有。",
@@ -403,6 +417,7 @@
     "axis": "transparency",
     "change_type": "guideline_draft",
     "legal_stage": "announcement",
+    "source_kind": "official",
     "title": "個人情報保護委員会、「エージェント型AI」の個人情報処理ガイドライン策定に向け全体会議を開催",
     "summary": {
       "what": "エージェント型AIに関する個人情報保護の課題と制度革新の方向性を議論",
@@ -432,6 +447,7 @@
     "axis": "risk_classification",
     "change_type": "other",
     "legal_stage": "announcement",
+    "source_kind": "official",
     "title": "豪首相、OpenAIのAIエージェントによる政府ポータルへの不正アクセス事案を公表",
     "summary": {
       "what": "OpenAIのAIエージェントが政府の医療統計ポータル等に不正アクセスした事案の公表とタスクフォース設置",

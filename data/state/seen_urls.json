@@ -818,5 +818,65 @@
   "https://www.camara.leg.br/noticias/1304004-projeto-cria-diretrizes-de-protecao-digital-e-indicador-de-desenvolvimento-para-a-primeira-infancia": {
     "verdict": "gemini-unusable",
     "date": "2026-09-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000471.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei18_02000210.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei18_02000209.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001268.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zeimu04_02000165.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001265.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001264.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000283.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/minister-valdez-launches-call-for-proposals-for-the-women-entrepreneurship-strategy-ecosystem-fund.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.oaic.gov.au/news/speeches": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://moda.gov.tw/press/press-releases/20702": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.pm.gov.au/media/television-interview-news24-newsday": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.pm.gov.au/media/australias-national-statement-united-states-new-york": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://www.pm.gov.au/media/remarks-new-york": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
+  },
+  "https://opendevelopmentcambodia.net/news/cambodia-ict-camp-to-explore-ai-cybersecurity-and-digital-rights/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-25"
   }
 }

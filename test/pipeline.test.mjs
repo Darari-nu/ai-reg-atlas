@@ -4,6 +4,7 @@ import path from 'node:path';
 import { beforeEach, describe, it } from 'node:test';
 import {
   applyTriageVerdicts,
+  buildTriagePayload,
   buildUpdateRecord,
   chunk,
   classifySourceKind,
@@ -607,6 +608,50 @@ describe('classifySourceKind（出典ホストの official/media 判定）', () 
   });
 });
 
+describe('buildTriagePayload（triageに渡す候補ペイロードの写像）', () => {
+  const domains = loadSourceDomains(path.join(process.cwd()));
+
+  it('official/media を classifySourceKind と同じ結果で source_kind に載せる', () => {
+    const batch = [
+      { url: 'https://www.gov.cn/some/page', title: 'gov cn title', snippet: 'gov cn snippet', country_hint: 'cn' },
+      { url: 'https://mainichi.jp/articles/x', title: 'mainichi title', snippet: 'mainichi snippet', country_hint: 'cn' },
+    ];
+    const payload = buildTriagePayload(batch, domains);
+    assert.equal(payload[0].source_kind, 'official');
+    assert.equal(payload[1].source_kind, 'media');
+  });
+
+  it('壊れたURLは media', () => {
+    const batch = [{ url: 'not a url', title: 't', snippet: 's', country_hint: 'eu' }];
+    assert.equal(buildTriagePayload(batch, domains)[0].source_kind, 'media');
+  });
+
+  it('index は 0 始まりで、配列の並び順どおりに振られる', () => {
+    const batch = [
+      { url: 'https://a.example/1', title: 'a', snippet: 'a-snippet', country_hint: 'us' },
+      { url: 'https://b.example/2', title: 'b', snippet: 'b-snippet', country_hint: 'us' },
+      { url: 'https://c.example/3', title: 'c', snippet: 'c-snippet', country_hint: 'us' },
+    ];
+    const payload = buildTriagePayload(batch, domains);
+    assert.deepEqual(payload.map((p) => p.index), [0, 1, 2]);
+  });
+
+  it('余計なキー（url・source_group）は出さない。決められた5キーだけ', () => {
+    const batch = [
+      {
+        url: 'https://a.example/1',
+        title: 'a',
+        snippet: 'a-snippet',
+        country_hint: 'us',
+        source_group: 'news_queries',
+        source_type: 'rss',
+      },
+    ];
+    const payload = buildTriagePayload(batch, domains);
+    assert.deepEqual(Object.keys(payload[0]).sort(), ['country_hint', 'index', 'snippet', 'source_kind', 'title']);
+  });
+});
+
 describe('OFFICIAL_TLD_RE', () => {
   it('部分一致のなりすましホストにはマッチしない', () => {
     assert.equal(OFFICIAL_TLD_RE.test('evilgov.uk'), false);
@@ -700,18 +745,15 @@ describe('既存データ（data/updates/*.json）の source_kind', () => {
     }
   });
 
-  it('media は4件（artificialintelligenceact.eu 2件 + dataprivacybr.org 2件）', () => {
-    const mediaRecords = records.filter((r) => r.source_kind === 'media');
-    assert.equal(mediaRecords.length, 4);
-    const hosts = mediaRecords.map((r) => new URL(r.sources[0]).hostname.replace(/^www\./, ''));
-    assert.deepEqual(
-      hosts.filter((h) => h === 'artificialintelligenceact.eu').length,
-      2
-    );
-    assert.deepEqual(
-      hosts.filter((h) => h === 'dataprivacybr.org').length,
-      2
-    );
+  // 日次の巡回で media レコードは増えていくので件数では固定しない。
+  // 報道対応(9/26)より前に付与した既存分（artificialintelligenceact.eu・dataprivacybr.org）以外は許可リストの媒体だけ
+  it('media の出典は許可リストの媒体か、報道対応前からの既存2媒体だけ', () => {
+    const { trustedMedia } = loadSourceDomains(path.join(process.cwd()));
+    const legacy = ['artificialintelligenceact.eu', 'dataprivacybr.org'];
+    for (const r of records.filter((r) => r.source_kind === 'media')) {
+      const host = new URL(r.sources[0]).hostname.replace(/^www\./, '');
+      assert.ok(legacy.includes(host) || isTrustedMediaUrl(r.sources[0], trustedMedia), `${r.id}: ${host}`);
+    }
   });
 });
 

@@ -164,6 +164,21 @@ export function loadSourceDomains(root) {
   return { officialDomains, officialHosts, trustedMedia };
 }
 
+/**
+ * triage プロンプトに渡す候補ペイロード。各候補を { index, title, snippet, country_hint, source_kind } に写像する
+ * （url・source_group など判定に不要なキーは出さない）。source_kind は classifySourceKind(c.url, sourceDomains) で機械判定する
+ * （§計画 実装指示1）。
+ */
+export function buildTriagePayload(batch, sourceDomains) {
+  return batch.map((c, i) => ({
+    index: i,
+    title: c.title,
+    snippet: c.snippet,
+    country_hint: c.country_hint,
+    source_kind: classifySourceKind(c.url, sourceDomains),
+  }));
+}
+
 export function hasAiRegKeyword(text, keywords = AI_REG_KEYWORDS) {
   const lower = String(text || '').toLowerCase();
   return keywords.some((kw) => lower.includes(kw.toLowerCase()));

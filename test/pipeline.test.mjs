@@ -4,6 +4,7 @@ import path from 'node:path';
 import { beforeEach, describe, it } from 'node:test';
 import {
   applyTriageVerdicts,
+  buildTriagePayload,
   buildUpdateRecord,
   chunk,
   classifySourceKind,
@@ -604,6 +605,50 @@ describe('classifySourceKind（出典ホストの official/media 判定）', () 
     assert.equal(classifySourceKind('https://stf.jus.br/portal', domains), 'official');
     assert.equal(classifySourceKind('https://metro.tokyo.lg.jp/', domains), 'official');
     assert.equal(classifySourceKind('https://www.ourcommons.ca/', domains), 'official');
+  });
+});
+
+describe('buildTriagePayload（triageに渡す候補ペイロードの写像）', () => {
+  const domains = loadSourceDomains(path.join(process.cwd()));
+
+  it('official/media を classifySourceKind と同じ結果で source_kind に載せる', () => {
+    const batch = [
+      { url: 'https://www.gov.cn/some/page', title: 'gov cn title', snippet: 'gov cn snippet', country_hint: 'cn' },
+      { url: 'https://mainichi.jp/articles/x', title: 'mainichi title', snippet: 'mainichi snippet', country_hint: 'cn' },
+    ];
+    const payload = buildTriagePayload(batch, domains);
+    assert.equal(payload[0].source_kind, 'official');
+    assert.equal(payload[1].source_kind, 'media');
+  });
+
+  it('壊れたURLは media', () => {
+    const batch = [{ url: 'not a url', title: 't', snippet: 's', country_hint: 'eu' }];
+    assert.equal(buildTriagePayload(batch, domains)[0].source_kind, 'media');
+  });
+
+  it('index は 0 始まりで、配列の並び順どおりに振られる', () => {
+    const batch = [
+      { url: 'https://a.example/1', title: 'a', snippet: 'a-snippet', country_hint: 'us' },
+      { url: 'https://b.example/2', title: 'b', snippet: 'b-snippet', country_hint: 'us' },
+      { url: 'https://c.example/3', title: 'c', snippet: 'c-snippet', country_hint: 'us' },
+    ];
+    const payload = buildTriagePayload(batch, domains);
+    assert.deepEqual(payload.map((p) => p.index), [0, 1, 2]);
+  });
+
+  it('余計なキー（url・source_group）は出さない。決められた5キーだけ', () => {
+    const batch = [
+      {
+        url: 'https://a.example/1',
+        title: 'a',
+        snippet: 'a-snippet',
+        country_hint: 'us',
+        source_group: 'news_queries',
+        source_type: 'rss',
+      },
+    ];
+    const payload = buildTriagePayload(batch, domains);
+    assert.deepEqual(Object.keys(payload[0]).sort(), ['country_hint', 'index', 'snippet', 'source_kind', 'title']);
   });
 });
 

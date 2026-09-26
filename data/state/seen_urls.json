@@ -910,5 +910,9 @@
   "https://www.business-standard.com/technology/tech-news/ai-agents-safety-india-guardrails-frontier-models-hugging-face-openai-126092301026_1.html": {
     "verdict": "gemini-unusable",
     "date": "2026-09-26"
+  },
+  "https://mainichi.jp/articles/20260924/k00/00m/030/315000c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-26"
   }
 }

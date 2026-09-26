@@ -561,36 +561,6 @@
     "country_anchor": "/country/eu/#updates"
   },
   {
-    "id": "2026-09-24-cn-001",
-    "date": "2026-09-24",
-    "country": "cn",
-    "axis": "general",
-    "change_type": "status_change",
-    "legal_stage": "announcement",
-    "source_kind": "media",
-    "title": "米トランプ大統領、米中首脳会談を前にAI開発の規制反対を表明",
-    "summary": {
-      "what": "米中首脳会談の主要議題としてAI規制反対を表明",
-      "who": "ドナルド・トランプ米大統領",
-      "when_impact": "2026年9月24日公表"
-    },
-    "detail": "ドナルド・トランプ米大統領は2026年9月24日、同日行われる米中首脳会談で人工知能（AI）が主要議題になるとの見通しを示し、自身のソーシャルメディアへの投稿でAIの現状維持と開発規制に反対する姿勢を強調した。さらに、中国の習近平国家主席の立場も同じであると主張した。",
-    "so_what": "米中両首脳がAI開発の規制に否定的な姿勢を示したことで、米中間のAIガバナンスを巡る政策協調の動向や今後の国際ルール形成への影響を注視する必要がある。",
-    "impact": {
-      "diff_changed": false,
-      "diff_note": ""
-    },
-    "canonical_event": "US and China position on AI regulation and bilateral summit discussions",
-    "publication_date": "2026-09-24",
-    "discovered_at": "2026-09-26",
-    "effective_date": null,
-    "deadline_date": null,
-    "sources": [
-      "https://mainichi.jp/articles/20260924/k00/00m/030/315000c"
-    ],
-    "country_anchor": "/country/cn/#updates"
-  },
-  {
     "id": "2026-09-24-cn-002",
     "date": "2026-09-24",
     "country": "cn",

@@ -898,5 +898,17 @@
   "http://www.trai.gov.in/node/18712": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-25"
+  },
+  "https://www.reuters.com/jp/markets/japan/AA4A4OVQFFIP3IGOHNTFV73KWE-2026-09-25/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-26"
+  },
+  "https://iapp.org/news/a/notes-from-the-iapp-europe-children-online-future-of-ai-and-eu-digital-laws-clarifications": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-26"
+  },
+  "https://www.business-standard.com/technology/tech-news/ai-agents-safety-india-guardrails-frontier-models-hugging-face-openai-126092301026_1.html": {
+    "verdict": "gemini-unusable",
+    "date": "2026-09-26"
   }
 }

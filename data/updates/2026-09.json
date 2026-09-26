@@ -469,5 +469,155 @@
       "https://www.pm.gov.au/media/press-conference-new-york"
     ],
     "country_anchor": "/country/au/#axis-risk_classification"
+  },
+  {
+    "id": "2026-09-25-br-001",
+    "date": "2026-09-25",
+    "country": "br",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "legal_stage": "final_guidance",
+    "source_kind": "official",
+    "title": "ブラジル国家研究倫理機関（INAEP）、科学研究でのAI利用ガイドラインを承認",
+    "summary": {
+      "what": "科学研究での安全なAI利用に向けた倫理ガイドラインおよびリスク評価ツール「Mariah」の承認と公表",
+      "who": "ブラジルで人間を対象とする科学研究を実施する研究者および研究倫理委員会（CEP）",
+      "when_impact": "2026年9月25日に公開され、6ヶ月間の試用運用および意見募集（社会協議）を開始"
+    },
+    "detail": "ブラジル保健省傘下の国家研究倫理機関（INAEP）は2026年9月25日、科学研究におけるAIの安全かつ責任ある利用を指導するためのガイドライン（Caderno Referencial）を承認・公表した。本ガイドラインは、データ保護、透明性、バイアス・差別、人間による監督、責任の所在といった懸念点に対し、各研究倫理委員会（CEP）が共通の基準で審査を行えるようにすることを目的としている。また、人間を対象とする研究でのAI活用リスクを評価するオンラインツール「Mariah」も導入され、6ヶ月間の実用テストと並行して社会協議（パブリックコンサルテーション）が実施される。",
+    "so_what": "ブラジルでヘルスケアや人間を対象とする科学研究分野のAI活用を行う企業は、現地CEPの審査基準やリスク評価ツール（Mariah）に沿ったガバナンス対応が求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Brazil publication of guidelines for AI use in scientific research",
+    "publication_date": "2026-09-25",
+    "discovered_at": "2026-09-26",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/inaep-aprova-guia-para-orientar-uso-de-inteligencia-artificial-em-estudos-cientificos"
+    ],
+    "country_anchor": "/country/br/#updates"
+  },
+  {
+    "id": "2026-09-23-eu-001",
+    "date": "2026-09-23",
+    "country": "eu",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "media",
+    "title": "イタリア、EU AI法運用に向け新政令を制定し企業の罰則・責任等を明確化",
+    "summary": {
+      "what": "EU AI法に対応する国内法および警察利用や刑事罰、企業の管理責任等を定める政令第160号の施行",
+      "who": "イタリア政府および同国でAIシステムを利用・運用する事業者",
+      "when_impact": "政令第160号は2026年9月30日までに施行予定"
+    },
+    "detail": "イタリアにおいて2025年10月に施行された法律第132号に加え、2026年9月9日に制定された政令第160号が同年9月30日までに施行される見込み。本政令は警察によるAI利用や法的罰則、企業の行政責任の拡大、専門的な民事訴訟メカニズムなどを規定している。特に企業に対し、適切な管理体制や人間による監督、紛争時に提示できる最新の包括的文書を通じた立証責任の担保を要求している。",
+    "so_what": "イタリアで事業を展開する企業は、AIシステムの人間による監督体制や立証可能な管理文書の整備が求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Italy national AI regulatory architecture and EU AI Act operationalization",
+    "publication_date": "2026-09-23",
+    "discovered_at": "2026-09-26",
+    "effective_date": "2026-09-30",
+    "deadline_date": null,
+    "sources": [
+      "https://iapp.org/news/a/italys-ai-framework-operationalizing-the-eu-ai-act"
+    ],
+    "country_anchor": "/country/eu/#updates"
+  },
+  {
+    "id": "2026-09-23-eu-002",
+    "date": "2026-09-23",
+    "country": "eu",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "media",
+    "title": "IAPP寄稿論説、EU AI法改正案のAIリテラシー義務変更による実務影響を分析",
+    "summary": {
+      "what": "第4条リテラシー義務から最善努力の文言が削除され欧州委指針依存となる影響を解説",
+      "who": "AIシステムのプロバイダーおよびデプロイヤー（開発者・導入事業者）",
+      "when_impact": "オムニバス合意内容を受けた実務対応において留意が必要"
+    },
+    "detail": "IAPPに掲載された専門家の論説記事。2026年に欧州理事会と欧州議会が暫定合意したDigital OmnibusによるEU AI法第4条（AIリテラシー義務）の改訂内容を分析している。改訂により「最善の努力（best extent）」という文言が削除され、事業者はリテラシー育成を支援する措置をとる義務へと変更された。表面的には義務の緩和と説明されているものの、実質的には欧州委員会が今後策定する指針や基準にコンプライアンスが依存することになり、自主評価型から外部基準準拠型へとシフトすることで実務上の複雑性が増大すると指摘している。",
+    "so_what": "AIリテラシー義務が自主的な最善努力から欧州委等の公的基準・指針に沿った証明へと厳格化・複雑化する可能性があり、社内教育体制の早期点検が求められます。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "EU AI Act literacy requirements compliance analysis",
+    "publication_date": "2026-09-23",
+    "discovered_at": "2026-09-26",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://iapp.org/news/a/eu-ai-act-literacy-changes-may-complicate-more-than-simplify-compliance"
+    ],
+    "country_anchor": "/country/eu/#updates"
+  },
+  {
+    "id": "2026-09-24-cn-001",
+    "date": "2026-09-24",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "status_change",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "米トランプ大統領、米中首脳会談を前にAI開発の規制反対を表明",
+    "summary": {
+      "what": "米中首脳会談の主要議題としてAI規制反対を表明",
+      "who": "ドナルド・トランプ米大統領",
+      "when_impact": "2026年9月24日公表"
+    },
+    "detail": "ドナルド・トランプ米大統領は2026年9月24日、同日行われる米中首脳会談で人工知能（AI）が主要議題になるとの見通しを示し、自身のソーシャルメディアへの投稿でAIの現状維持と開発規制に反対する姿勢を強調した。さらに、中国の習近平国家主席の立場も同じであると主張した。",
+    "so_what": "米中両首脳がAI開発の規制に否定的な姿勢を示したことで、米中間のAIガバナンスを巡る政策協調の動向や今後の国際ルール形成への影響を注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "US and China position on AI regulation and bilateral summit discussions",
+    "publication_date": "2026-09-24",
+    "discovered_at": "2026-09-26",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://mainichi.jp/articles/20260924/k00/00m/030/315000c"
+    ],
+    "country_anchor": "/country/cn/#updates"
+  },
+  {
+    "id": "2026-09-24-cn-002",
+    "date": "2026-09-24",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "中国国連代表、AIのグローバルガバナンス枠組み構築に向けた調整を提唱",
+    "summary": {
+      "what": "AI開発戦略やガバナンス等の調整とグローバル枠組みの早期形成の提唱",
+      "who": "中国国連代表の傅聡氏",
+      "when_impact": "2026年9月23日の国連安全保障理事会会合時"
+    },
+    "detail": "2026年9月23日に開催された国連安全保障理事会の会合において、中国の国連代表である傅聡氏は、AIの開発戦略、ガバナンス、技術基準の整合性と調整を強化し、合意に基づくグローバルなガバナンス枠組みを早期に形成することを呼びかけた。これに対し、米国の科学技術政策局（OSTP）局長マイケル・クラツィオス氏はグローバルな規制スキームの構築に否定的な見解を示しており、米中間での温度差が浮き彫りとなっている。また、2026年9月24日にはトランプ大統領と習近平国家主席による米中首脳会談が開催され、AIの安全性についても議題に上ったが、公式な合意の発表には至っていない。",
+    "so_what": "中国は国際的な協調姿勢をアピールしているが、中国国内の個別規制やコンテンツ統制方針への即時の影響はない。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "今回の国連での発言や首脳会談におけるやり取りは方針の表明にとどまり、既存の中国のAI規制体系やEUとの規制差分に直接の影響を与えるものではない。"
+    },
+    "canonical_event": "Global AI guardrails and US China safety summit outlook",
+    "publication_date": "2026-09-24",
+    "discovered_at": "2026-09-26",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.politico.com/newsletters/digital-future-daily/2026/09/24/the-odds-against-global-ai-guardrails-01092268"
+    ],
+    "country_anchor": "/country/cn/#updates"
   }
 ]

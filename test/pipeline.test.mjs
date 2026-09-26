@@ -745,18 +745,15 @@ describe('既存データ（data/updates/*.json）の source_kind', () => {
     }
   });
 
-  it('media は4件（artificialintelligenceact.eu 2件 + dataprivacybr.org 2件）', () => {
-    const mediaRecords = records.filter((r) => r.source_kind === 'media');
-    assert.equal(mediaRecords.length, 4);
-    const hosts = mediaRecords.map((r) => new URL(r.sources[0]).hostname.replace(/^www\./, ''));
-    assert.deepEqual(
-      hosts.filter((h) => h === 'artificialintelligenceact.eu').length,
-      2
-    );
-    assert.deepEqual(
-      hosts.filter((h) => h === 'dataprivacybr.org').length,
-      2
-    );
+  // 日次の巡回で media レコードは増えていくので件数では固定しない。
+  // 報道対応(9/26)より前に付与した既存分（artificialintelligenceact.eu・dataprivacybr.org）以外は許可リストの媒体だけ
+  it('media の出典は許可リストの媒体か、報道対応前からの既存2媒体だけ', () => {
+    const { trustedMedia } = loadSourceDomains(path.join(process.cwd()));
+    const legacy = ['artificialintelligenceact.eu', 'dataprivacybr.org'];
+    for (const r of records.filter((r) => r.source_kind === 'media')) {
+      const host = new URL(r.sources[0]).hostname.replace(/^www\./, '');
+      assert.ok(legacy.includes(host) || isTrustedMediaUrl(r.sources[0], trustedMedia), `${r.id}: ${host}`);
+    }
   });
 });
 

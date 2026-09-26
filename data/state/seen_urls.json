@@ -914,5 +914,13 @@
   "https://mainichi.jp/articles/20260924/k00/00m/030/315000c": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-26"
+  },
+  "https://iapp.org/news/a/eu-ai-act-literacy-changes-may-complicate-more-than-simplify-compliance": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-26"
+  },
+  "https://www.politico.com/newsletters/digital-future-daily/2026/09/24/the-odds-against-global-ai-guardrails-01092268": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-26"
   }
 }

@@ -922,5 +922,13 @@
   "https://www.politico.com/newsletters/digital-future-daily/2026/09/24/the-odds-against-global-ai-guardrails-01092268": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-26"
+  },
+  "https://www.pm.gov.au/media/doorstop-sydney-9": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-27"
+  },
+  "https://www.mddi.gov.sg/newsroom/sg-translate-2-0-media-factsheet/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-27"
   }
 }

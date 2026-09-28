@@ -529,5 +529,35 @@
       "https://iapp.org/news/a/italys-ai-framework-operationalizing-the-eu-ai-act"
     ],
     "country_anchor": "/country/eu/#updates"
+  },
+  {
+    "id": "2026-09-28-kr-001",
+    "date": "2026-09-28",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "個人情報保護委員会、グローバルAIプライバシーフラムを開催",
+    "summary": {
+      "what": "国内外の専門家が参加するグローバルAIプライバシーフラムの開催",
+      "who": "個人情報保護委員会",
+      "when_impact": "2026年9月29日開催"
+    },
+    "detail": "個人情報保護委員会は、2026年9月29日にソウルにおいて「グローバル AI プライバシーフラム」を開催する。本フォーラムでは、国内外の政府・国際機・企業・学界の専門家が参加し、インテリジェントなAI革新と個人情報保護の国際協力やア동・青少年の権り保護について議論が行われる。",
+    "so_what": "国内外の規制動向や国際協力を把握し、AI開発におけるプライバシー保護体制の整備に備える。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea PIPC designs privacy guardrails for AI innovation",
+    "publication_date": "2026-09-28",
+    "discovered_at": "2026-09-28",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12535"
+    ],
+    "country_anchor": "/country/kr/#updates"
   }
 ]

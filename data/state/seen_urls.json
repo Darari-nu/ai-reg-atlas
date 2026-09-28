@@ -930,5 +930,93 @@
   "https://www.mddi.gov.sg/newsroom/sg-translate-2-0-media-factsheet/": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-27"
+  },
+  "https://www.pm.gov.au/media/press-conference-launceston-tas": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.pm.gov.au/media/more-fans-closer-action-new-stand-opens-launcestons-utas-stadium": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.business-standard.com/technology/artificial-intelligence/why-india-needs-to-keep-its-ai-push-going-amid-global-calls-for-slowdown-126092800772_1.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://government.economictimes.indiatimes.com/news/digital-india/ai-agents-test-security-boundaries-strengthening-case-for-mandatory-incident-reporting/134533924": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001270.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei06_02000352.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu04_02000269.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=84&nttSeqNo=3186406": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=84&nttSeqNo=3186405": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=84&nttSeqNo=3186404": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=84&nttSeqNo=3186403": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12532": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12529": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "http://www.trai.gov.in/node/18722": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-telecom-subscription-data-august-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "http://www.trai.gov.in/node/18720": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-across-south-delhi-and-nearby": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "http://www.trai.gov.in/node/18718": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-delhi-agra-routes-yamuna": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-jaisalmer-rajasthan-jeevan-dhara-ngo": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-durg-chhattisgarh-ro-bhopal": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//2aadda72-89be-45b0-8c3c-d3acdf801ef7": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-28"
   }
 }

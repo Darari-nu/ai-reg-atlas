@@ -1018,5 +1018,33 @@
   "https://www.ey.gov.tw/Page/9277F759E41CCD91//2aadda72-89be-45b0-8c3c-d3acdf801ef7": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-28"
+  },
+  "https://www.govtech.com/artificial-intelligence/is-connecticut-writing-the-ai-regulations-major-companies-want": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-29"
+  },
+  "https://www.nist.gov/news-events/news/2026/09/nist-provides-updates-national-construction-safety-team-activities": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-29"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187811": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-29"
+  },
+  "https://www.camara.leg.br/noticias/1307129-projeto-de-lei-apresentado-pelo-governo-torna-crime-a-exploracao-e-a-publicidade-de-bets": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-29"
+  },
+  "http://www.trai.gov.in/node/18724": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-29"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//c4385475-b4f1-4c99-9b59-e512781b07d0": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-29"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//29f5522c-ae21-402b-bcd6-3085dcb523a9": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-09-29"
   }
 }

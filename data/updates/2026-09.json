@@ -559,5 +559,35 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12535"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-09-30-us-001",
+    "date": "2026-09-30",
+    "country": "us",
+    "axis": "general",
+    "change_type": "new_regulation",
+    "legal_stage": "enacted",
+    "source_kind": "official",
+    "title": "カリフォルニア州、労働者保護や透明性強化を目的としたAI関連法案群に署名",
+    "summary": {
+      "what": "労働者や医療従事者の保護、AI透明性強化などの一連の州法案への署名およびAI定義に関する知事命令の発令",
+      "who": "カリフォルニア州知事（ギャビン・ニューサム）",
+      "when_impact": "法案成立にともない、各法案の規定に基づく施行日に順次適用予定"
+    },
+    "detail": "カリフォルニア州のギャビン・ニューサム知事は、2026年9月30日、労働者保護、医療、透明性、ディープフェイク対策などを目的とした一連のAI関連法案に署名し、成立させた。主な内容として、AIのみに依存した解雇や懲戒の禁止（SB 947）、AI起因の大量一時解雇・移転時の通知義務（SB 951）、医療従事者の最終判断の尊重とバイアス緩和措置の義務化（SB 503）、デジタルウォーターマークの削除禁止（SB 1000/AB 2713）、および「人工知能（Artificial Intelligence）」の定義を明確化する知事命令などが含まれる。",
+    "so_what": "カリフォルニア州でビジネスを行う企業は、AIによる自動解雇の禁止、ウォーターマーク削除の禁止など、大幅に強化された州法群への対応が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "カリフォルニア州のパッチワーク的な規制強化の一環であり、既存の差分分類である「州法パッチワーク」の枠内に収まるため、新たな差分項目の追加や変更はない。"
+    },
+    "canonical_event": "California Governor signs AI worker protection legislation",
+    "publication_date": "2026-09-30",
+    "discovered_at": "2026-10-01",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
+    ],
+    "country_anchor": "/country/us/#updates"
   }
 ]

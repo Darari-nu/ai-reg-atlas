@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2026-10-01-kr-001",
+    "date": "2026-10-01",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "韓国科学技術情報通信部、国家AI安全マスタープラン策定に向け官民実務協議会を構成",
+    "summary": {
+      "what": "「国家AI安全生態系造成マスタープラン」策定に向けた官民実務協議会の発足と計画樹立の推進",
+      "who": "科学技術情報通信部（MSIT）、民間専門家",
+      "when_impact": "今後のマスタープランの策定および公表時"
+    },
+    "detail": "韓国の科学技術情報通信部（MSIT）は、官民が共同で「（仮称）国家AI安全生態系造成マスタープラン」を樹立することを目的とし、官民実務協議会を構成して国家人工知能安全総合計画の策定を推進することを明らかにした。",
+    "so_what": "韓国政府がAIの安全性確保に向けた国家計画の策定を開始したため、今後の安全基準の方向性に注視が必要である。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea national AI safety comprehensive plan establishment",
+    "publication_date": "2026-10-01",
+    "discovered_at": "2026-10-01",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187823"
+    ],
+    "country_anchor": "/country/kr/#updates"
+  }
+]

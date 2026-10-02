@@ -28,5 +28,35 @@
       "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187823"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-10-01-tw-001",
+    "date": "2026-10-01",
+    "country": "tw",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "台湾デジタル発展部（moda）、国連総会関連イベントでAIガバナンス方針を表明",
+    "summary": {
+      "what": "主権AIやリスク分類枠組みを通じた信頼性の高いAIエコシステム構築と国際連携を要請",
+      "who": "台湾デジタル発展部（moda）",
+      "when_impact": "2026年9月29日の講演実施以降"
+    },
+    "detail": "台湾デジタル発展部（moda）の侯宜秀政務次長は、国連総会ハイレベルウィークのサイドイベント「AI For Good」等の講演において、台湾の「AI基本法」草案やリスク分類枠組みなどのガバナンス実践を提示し、国際社会との連携および信頼できるAI解決策の構築を呼びかけた。",
+    "so_what": "台湾政府のAIガバナンス姿勢を示すものであり、民間企業に対する新たな法規上の直接義務や規制変更は発生しない。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Taiwan MODA official speech on AI for good at UN side event",
+    "publication_date": "2026-10-01",
+    "discovered_at": "2026-10-02",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://moda.gov.tw/press/press-releases/20734"
+    ],
+    "country_anchor": "/country/tw/#updates"
   }
 ]

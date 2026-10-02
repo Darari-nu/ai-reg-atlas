@@ -1306,5 +1306,125 @@
   "https://www.ey.gov.tw/Page/9277F759E41CCD91//0a071493-d2b0-423a-b0ae-6d812dfa8ecf": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-01"
+  },
+  "https://www.soumu.go.jp/menu_syokai/saiyou/detail/02ryutsu15_04000026.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.federalregister.gov/documents/2026/10/01/2026-20143/rule-on-impersonation-of-government-and-businesses": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.dataprivacybr.org/governanca-de-dados-e-a-construcao-de-um-ecossistema-informacional-justo/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.dataprivacybr.org/dadocracia-ep-210-bets-design-manipulativo-e-saude-mental/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.politico.eu/article/uk-ai-minister-focus-building-tech-not-regulating-it/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.politico.eu/article/uk-financial-watchdogs-dont-want-to-regulate-ai/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.asahi.com/articles/ASV9Z644YV9ZULZU006M.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei04_01000305.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei08_01000353.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000473.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei08_02000332.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei04_01000306.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001266.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "http://www.stat.go.jp/whatsnew/index.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12551": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12549": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "http://www.trai.gov.in/what-s-new/direction-regarding-publication-tariff-offers-etc": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "http://www.trai.gov.in/direction-regarding-publication-tariff-offers-etc": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "http://www.trai.gov.in/node/18730": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "http://www.trai.gov.in/node/18729": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/589306a3-c925-4f97-aa73-7a1e769f0a8d?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/b92ffe9b-1ab0-455b-8173-f9b2bba51186?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//180700d8-1416-4f56-8e6c-c827ac029bfa": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//94a792d1-05db-4bdf-8f88-672ed9d01232": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//9bf57fb4-d5e8-4337-9416-70d1f8e8e364": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//48d6ed2f-4d0b-44ce-9f38-1c5ac98d67e4": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//9f078171-ca09-45a7-9a2e-92edf390159b": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//59848ab4-676b-41b7-898e-9f5207325f0a": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//4d7b8a90-f834-4035-ab54-7728b91f243b": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//93b80cbd-0c98-40ee-a7a8-a47db089ad9c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-02"
   }
 }

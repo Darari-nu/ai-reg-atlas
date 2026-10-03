@@ -58,5 +58,35 @@
       "https://moda.gov.tw/press/press-releases/20734"
     ],
     "country_anchor": "/country/tw/#updates"
+  },
+  {
+    "id": "2026-10-02-kr-001",
+    "date": "2026-10-02",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "国家人工知能戦略委員会、第5回CAIO協議会でAI立法方針を議論",
+    "summary": {
+      "what": "AI基本法を軸とする「AI立法フレームワーク（案）」などを議論",
+      "who": "国家人工知能戦略委員会および42中央行政機関の人工知能責任官",
+      "when_impact": "2026年10月2日に協議会を開催、今後の分野別法制整備に反映へ"
+    },
+    "detail": "韓国の国家人工知能戦略委員会は2026年10月2日、第5回人工知能責任官（CAIO）協議会を開催した。今回の会議から参加対象が従来の28機関から14の次官級機関を含む42の中央行政機関へと拡大された。会議では、AI基本法施行に伴う立法需要増に対応するため、①AI基本法中心の立法、②国防・安保分野の立法空白解消、③事業者の予測可能性向上、④逆機能発生時の即時対応、という4大基本方向を盛り込んだ「大韓民国人工知能立法フレームワーク（案）」が報告・議論された。あわせて、12月に全国民向け提供予定の「みんなのAI」サービスの準備状況やデータ共有、公共部門の個人情報保護強化策についても協議が行われた。",
+    "so_what": "韓国政府がAI基本法を中核とした分野別法整備の基本方針を定めており、今後の個別領域での法規制具体化を注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea holds meeting of Chief AI Officers",
+    "publication_date": "2026-10-02",
+    "discovered_at": "2026-10-03",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12556"
+    ],
+    "country_anchor": "/country/kr/#updates"
   }
 ]

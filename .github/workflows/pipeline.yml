@@ -126,6 +126,13 @@ jobs:
             }
             core.info(`filed ${created}/${issues.length} issues`);
 
+      # 情報源が3日続けて止まった/復旧した通知。collect が積んだ /tmp/pipeline_notifications.json を送る。
+      # DISCORD_WEBHOOK_URL 未登録なら何もしない。送信失敗でも落とさない（スクリプトが常に exit 0）
+      - name: notify discord
+        run: node scripts/notify-discord.mjs
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
       # ビルドが通ることだけ確認する（公開は cf-deploy.yml が workflow_run で引き継ぐ）。
       # GitHub Pages への併載は 2026-09-19 に終了した
       - run: npx astro build

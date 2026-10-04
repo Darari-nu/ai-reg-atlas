@@ -56,6 +56,7 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 |---|---|---|
 | `last_seen.json` | `{ feedURL: ISO日時 }`。フィードごとの最終収集時刻 | `collect.mjs` が読み書き。遡り上限は `threshold = max(前回, 今 − LAST_SEEN_MAX_LOOKBACK_DAYS日)`（`clampLookback`） |
 | `seen_urls.json` | `{ url: { verdict, date } }`。既知URLの選別結果 | `triage.mjs` / `summarize.mjs` が書き込み、`triage.mjs` がバッチを作る前に `isSkippable` で除外。TTL `SEEN_URL_TTL_DAYS`（既定30日）を超えた分は毎回 `pruneSeenUrls` で捨てる |
+| `source_health.json` | `{ 情報源URL: { label, country, fail_days, first_failed, last_failed, last_ok, last_reason, alerted } }`。情報源ごとの稼働監視 | `collect.mjs` が読み書き（`scripts/lib/sourceHealth.mjs` の `recordOutcome` / `pruneHealth`）。下記「情報源の稼働監視」 |
 | `queue.json` | その日に要約しきれなかった候補の繰り越し配列 | `summarize.mjs` が読み書き。TTL 7日・`attempts` 3回未満・上限50件（`QUEUE_TTL_DAYS` / `QUEUE_MAX_ATTEMPTS` / `QUEUE_MAX`、`enqueue` / `dequeueItems`） |
 
 いずれも壊れたら中身を `{}`（`last_seen.json` / `seen_urls.json`）か `[]`（`queue.json`）に戻せば安全に再開できる（`readStateFile` は壊れたJSONを warn して fallback を返すので、パイプライン自体は止まらない）。
@@ -182,6 +183,7 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 |---|---|---|
 | `GEMINI_API_KEY` | triage / summarize の要約生成 | `pipeline.yml` |
 | `CLOUDFLARE_API_TOKEN` | Cloudflare Pages へのデプロイ | `cf-deploy.yml` |
+| `DISCORD_WEBHOOK_URL`（任意） | 情報源の停止・復旧の Discord 通知。未登録なら通知しないだけ | `pipeline.yml`（`notify discord`） |
 
 `CLOUDFLARE_ACCOUNT_ID` は Secret ではなく `cf-deploy.yml` に平文で直書きしてある
 （機密ではないが、Secrets を探しても見つからないので迷わないよう明記）。
@@ -250,6 +252,16 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 
 `scrape_hash`はページ全体の変化を検知した後、日付付きリンク・見出しを個別候補化する。リンクの日付（URL→タイトル→周辺の順に読む）が `SCRAPE_HASH_MAX_AGE_DAYS`（既定30日）より古いものは候補にしない。構造抽出できない場合は`needs-review`に回し、全文をGeminiへ渡さない。
 
+### 情報源の稼働監視と Discord 通知
+
+`collect` は情報源（`official_sources` / `watch_feeds` / `news_queries` の全部）ごとの成否を `data/state/source_health.json` に記録する。
+**失敗**は (a) 取得の例外、(b) `scrape_hash` でページは取れたのに日付付きリンクが0件（`no-dated-links`。ハッシュの変化に関係なく毎回判定する）。RSS が取れて新着0件は成功。
+
+- 失敗した日が **3日（UTC日付、`SOURCE_DOWN_DAYS`）続いたら**「止まった」を1回、止まっていたものが成功したら「復旧した」を1回だけ通知する。同じ日に何度失敗しても1日扱い。毎日は送らない。数えるのは巡回が実際に走った日なので、cron の遅れで UTC の日付をまたいで巡回が1日抜けると、通知は1日遅れることがある
+- 止まったときは `needs-review: 情報源が3日続けて読み取れない（<国名 種別 URL>）` の Issue も情報源ごとに1件立てる（旧: `scrape_hash` の抽出0件で即時に立てていた Issue は廃止。月替わりの空ページで誤検知した #17 の原因）
+- 通知は `scripts/notify-discord.mjs` が `/tmp/pipeline_notifications.json` を読んで Discord webhook に POST（1回に最大10件・2000字まで）。**Secret `DISCORD_WEBHOOK_URL` が未登録なら何もしない**。送信失敗でもパイプラインは落とさない（その場合「通知済み」の記録は残るので再送はしない。Issue の方で気づける）。URL はログに出さない
+- 検証用に `SWEEP_DATE=YYYY-MM-DD` で日付を進めて `DRY_RUN=1 node scripts/collect.mjs` を回せる（状態は `/tmp/dry` に残るので、日付を変えて3回回すと3日目に down が出る）
+
 ### DRY_RUN
 
 `DRY_RUN=1`を付けると、`data/`への書き込みは`/tmp/dry/data/`へ退避される。監査用dropログは通常どおり`/tmp/dropped.json`に出る。
@@ -317,6 +329,7 @@ DRY_RUN=1 npm run validate
 | 2026-09-25 | 選別の取りこぼし対策（Fable監査の追い作業2点）。(A) triage の「関係あり」基準に一文追加: ディープフェイク・AI生成物・自動化された意思決定の規定は、刑法・選挙法・消費者法などの中にあってもAI固有の規定として true。(B) 公式ソース（`official_sources`）の候補で `relevant=false` になったものだけ、同じ実行の中でもう一度選別にかけ、どちらかで `relevant=true` なら残す「セカンドルック」を追加（`irrelevantItems` / `needsSecondLook` / `SECOND_LOOK_GROUPS`、`scripts/lib/pipeline.mjs`）。temperature を既定(1.0)に戻したことで1回ごとの判定が揺れ、RSSの記事は last_seen の仕組みで一度しか候補に出ないため、一次情報だけは1回の揺れで取りこぼさないようにした。取り下げ: 当初案の「公式ソースは seen_urls に記憶しない」は採らなかった。RSSは `pub <= last_seen` の記事を二度と候補にしない（`collect.mjs` の `collectRss`）ので、記憶しなくても再挑戦の機会が来ない（効くのは scrape_hash の一覧が変わって同じリンクが再抽出される場合だけ） |
 | 2026-09-26 | オーナー裁定で出典の原則を「一次ソースだけ」から「一次ソース＋許可リストにある信頼できる報道」へ広げた。Google ニュース検索（`news_queries`）を Bing ニュースRSSへ置き換え、転送URL（`bing.com/news/apiclick.aspx?...&url=<元記事>`）を`unwrapBingNewsUrl`で元記事URLに展開。許可リスト（`trusted_media`）と公式ドメイン（`official`）は新設の`config/source_domains.yaml`の1箇所で管理し、`isTrustedMediaUrl`/`classifySourceKind`で候補を絞る（`collect.mjs`、ログ`[collect] news kept=N dropped_untrusted=M`）。更新レコードに出典の種別`source_kind`（`official`|`media`）を追加し、報道由来のときサイトに「報道」バッジを出す。報道由来の`diff-change` Issueには「公式発表で確認すること」の一文を追記。既存42件（official 38・media 4: `artificialintelligenceact.eu` 2件・`dataprivacybr.org` 2件）に`source_kind`を機械的に付け直した。**Fable監査の指摘を反映**（同日追加コミット）: 報道由来のレコードは`regulation_patch`を自動適用せず`needs-review` Issueに回すよう変更（`shouldAutoApplyPatch`）。`OFFICIAL_TLD_RE`の`gov`系ccTLDを`gov`単独と`gov.(uk\|in\|br\|au\|sg\|cn\|tw\|kh\|hk\|nz\|ie)`に限定し（`gov.ai`等の誤判定を修正）、`source_domains.yaml`の`official`に`ico.org.uk`等10件を追加（既存42件の判定は不変と確認済み）。同じ出来事の二重登録対策として`dedupeByEvent`と`sortForSummarize`の同順位判定にsource_group順を追加し、報道由来のレコードには書き込み直前に類似タイトル判定（`titleBigramSimilarity`/`findSimilarRecord`）を追加した。類似判定のしきい値は実測で0.2（重複3組0.24〜0.27、別の出来事14組は最大0.18）、選別（`triage.mjs`）で同一出来事に同じ`canonical_event`を付けさせるようプロンプトを1文追記した |
 | 2026-09-26 | 報道(media)候補の選別基準を厳格化。triageの候補ペイロードに`source_kind`（official\|media、`classifySourceKind`で機械判定・`buildTriagePayload`、`scripts/lib/pipeline.mjs`）を載せ、プロンプトに「mediaは対象国自身の政府・議会・規制当局・裁判所が主体の法規制の動きに限る（論説・寄稿・解説・インタビュー・提言・政治家や首脳の発言/姿勢表明・国際会議での主張だけは false）」を追加。countryの定義文を「その規制・決定を行う国・地域。記事で言及されるだけの国、country_hintの国ではない」と明確化した。誤登録1件（トランプ発言が`cn`に登録されていた`2026-09-24-cn-001`）を削除し、出典URLを`seen_urls`に`triage-irrelevant`として記憶した。source_kind は出典URLのホストで決まるので、watch_feeds のうち政府系でない媒体（artificialintelligenceact.eu・dataprivacybr.org・medianama 等）の記事にも同じ厳格基準がかかる |
+| 2026-10-04 | 情報源の稼働監視と Discord 通知を追加（`source_health.json`・`sourceHealth.mjs`・`notify-discord.mjs`）。失敗が3日続いたら通知＋`needs-review` Issue、復旧したら通知。`scrape_hash` の抽出0件の即時 Issue は廃止し、毎回抽出して稼働判定に使う（候補化の条件は従来どおり）。`collect` に検証用 `SWEEP_DATE` を追加 |
 
 ## ライセンス
 

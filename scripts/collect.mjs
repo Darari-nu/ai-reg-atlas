@@ -21,6 +21,7 @@ import {
   writeJSON,
 } from './lib/pipeline.mjs';
 import { LAST_SEEN_MAX_LOOKBACK_DAYS, clampLookback, readState, writeState } from './lib/state.mjs';
+import { SOURCE_DOWN_DAYS, pruneHealth, recordOutcome } from './lib/sourceHealth.mjs';
 
 const ROOT = process.cwd();
 // last_seen は data/state/（data/.cache/ は .gitignore 済みでCIでは毎回空になるため持ち越せない）
@@ -28,13 +29,15 @@ const LAST_SEEN_NAME = 'last_seen.json';
 const HASHES_FILE = dataPath('hashes.json');
 const OUT_FILE = '/tmp/candidates.json';
 const ISSUES_FILE = '/tmp/pipeline_issues.json';
+const NOTIFY_FILE = '/tmp/pipeline_notifications.json'; // notify-discord.mjs が読む
+const HEALTH_NAME = 'source_health.json';
 const TIMEOUT_MS = 15_000;
 const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.com/atlas/about/)';
 const FIRST_RUN_WINDOW_DAYS = Number(process.env.FIRST_RUN_WINDOW_DAYS || 3); // 既定3日。バックフィル時は環境変数で拡大
 // scrape_hash は一覧ページの変化で全リンクを拾うため、数年前の記事まで候補になる。日付の分かる古いリンクはここで落とす
 const SCRAPE_HASH_MAX_AGE_DAYS = Number(process.env.SCRAPE_HASH_MAX_AGE_DAYS || 30);
 const MAX_LINKS_PER_PAGE = 20;
-const TODAY = new Date().toISOString().slice(0, 10);
+const TODAY = process.env.SWEEP_DATE || new Date().toISOString().slice(0, 10); // SWEEP_DATE は検証用（triage/summarize と同じ）
 
 const parser = new Parser({ timeout: TIMEOUT_MS, headers: { 'User-Agent': USER_AGENT } });
 
@@ -91,6 +94,23 @@ function pushIssue(issue) {
   const issues = loadJSON(ISSUES_FILE, []);
   issues.push(issue);
   writeJSON(ISSUES_FILE, issues);
+}
+
+function pushNotification(n) {
+  const list = loadJSON(NOTIFY_FILE, []);
+  list.push(n);
+  writeJSON(NOTIFY_FILE, list);
+}
+
+// ログ・通知用の短い表記（host+path を40字まで）
+function shortUrl(u) {
+  try {
+    const url = new URL(u);
+    const s = `${url.hostname.replace(/^www\./, '')}${url.pathname === '/' ? '' : url.pathname}`;
+    return s.length > 40 ? `${s.slice(0, 40)}…` : s;
+  } catch {
+    return String(u).slice(0, 40);
+  }
 }
 
 function stripHtml(html) {
@@ -247,23 +267,17 @@ async function collectScrapeHash(url, countryHint, hashes) {
   const changed = hashes[url] !== undefined && hashes[url] !== hash;
   const isFirst = hashes[url] === undefined;
   hashes[url] = hash;
-  if (!changed) return [];
-  if (isFirst) return [];
+  // 稼働監視のため、ハッシュの変化に関係なく毎回抽出して件数を数える（候補にするのは変化した時だけ）
   const extracted = viaProxy
     ? extractDatedLinksMarkdown(html, url, countryHint)
     : extractDatedLinks(html, url, countryHint);
-  if (extracted.length === 0) {
-    pushIssue({
-      title: `needs-review: scrape_hash構造抽出不可（${countryHint}）`,
-      body: `全文を候補化せず保留。URL: ${url}`,
-      labels: ['needs-review'],
-    });
-  }
+  const extractedCount = extracted.length;
+  if (!changed || isFirst) return { items: [], extractedCount };
   const fresh = extracted.filter((c) => !isStaleListing(c.listing_date, TODAY, SCRAPE_HASH_MAX_AGE_DAYS));
   if (fresh.length < extracted.length) {
     console.log(`[collect] scrape_hash ${url}: dropped ${extracted.length - fresh.length}/${extracted.length} links older than ${SCRAPE_HASH_MAX_AGE_DAYS}d`);
   }
-  return fresh.slice(0, MAX_LINKS_PER_PAGE); // 古いリンクを落としてから上限をかける（古いものに枠を取られないように）
+  return { items: fresh.slice(0, MAX_LINKS_PER_PAGE), extractedCount }; // 古いリンクを落としてから上限をかける（古いものに枠を取られないように）
 }
 
 async function main() {
@@ -276,42 +290,91 @@ async function main() {
   let okCount = 0;
   let failCount = 0;
 
+  // 情報源ごとの稼働監視。失敗が SOURCE_DOWN_DAYS 日続いたら down、復旧したら recovered のイベントが出る
+  let health = readState(HEALTH_NAME, {});
+  const activeKeys = new Set();
+  const healthEvents = [];
+  const track = (country, key, label, { ok, reason }) => {
+    activeKeys.add(key);
+    const r = recordOutcome(health, key, { ok, reason, label, country: country.code, date: TODAY });
+    health = r.health;
+    if (r.event) healthEvents.push({ ...r.event, flag: country.flag ?? '' });
+  };
+
   for (const country of config.countries) {
     for (const src of country.official_sources ?? []) {
+      const label = `${country.name_ja} ${src.type} ${shortUrl(src.url)}`;
       try {
+        let outcome = { ok: true };
         if (src.type === 'rss') {
           candidates.push(...(await collectRss(src.url, country.code, lastSeen, 'rss', 'official_sources')));
         } else if (src.type === 'scrape_hash') {
-          candidates.push(...(await collectScrapeHash(src.url, country.code, hashes)));
+          const { items, extractedCount } = await collectScrapeHash(src.url, country.code, hashes);
+          candidates.push(...items);
+          // ページは取れたのに日付付きリンクが1件も取れない＝構造が変わった（または空ページ）
+          if (extractedCount === 0) outcome = { ok: false, reason: 'no-dated-links' };
         }
-        okCount++;
+        if (outcome.ok) okCount++;
+        else {
+          failCount++;
+          console.warn(`[collect] scrape_hash ${src.url}: 日付付きリンクの抽出が0件`);
+        }
+        track(country, src.url, label, outcome);
       } catch (e) {
         failCount++;
         console.warn(`[collect] skip ${src.type} ${src.url} (${e.message})`); // 継続（§5-2）
+        track(country, src.url, label, { ok: false, reason: e.message });
       }
     }
     for (const src of country.watch_feeds ?? []) {
+      const label = `${country.name_ja} watch_feed ${shortUrl(src.url)}`;
       try {
         if (src.type === 'rss') {
           candidates.push(...(await collectRss(src.url, country.code, lastSeen, 'rss', 'watch_feeds')));
         }
         okCount++;
+        track(country, src.url, label, { ok: true });
       } catch (e) {
         failCount++;
         console.warn(`[collect] skip watch_feed ${src.url} (${e.message})`);
+        track(country, src.url, label, { ok: false, reason: e.message });
       }
     }
     for (const q of country.news_queries ?? []) {
       const url = newsRssUrl(q);
+      const label = `${country.name_ja} ニュース検索「${q}」`;
       try {
         candidates.push(...(await collectRss(url, country.code, lastSeen, 'rss', 'news_queries')));
         okCount++;
+        track(country, url, label, { ok: true });
       } catch (e) {
         failCount++;
         console.warn(`[collect] skip news "${q}" (${e.message})`);
+        track(country, url, label, { ok: false, reason: e.message });
       }
     }
   }
+
+  // 稼働監視の結果を保存し、イベントを通知ファイル（と down は needs-review Issue）に出す
+  health = pruneHealth(health, activeKeys);
+  writeState(HEALTH_NAME, health);
+  let downCount = 0;
+  let recoveredCount = 0;
+  for (const ev of healthEvents) {
+    pushNotification(ev);
+    if (ev.type === 'down') {
+      downCount++;
+      pushIssue({
+        title: `needs-review: 情報源が${SOURCE_DOWN_DAYS}日続けて読み取れない（${ev.country}）`,
+        body: `情報源: ${ev.label}\nURL: ${ev.key}\n理由: ${ev.reason ?? '不明'}\n失敗の開始: ${ev.since}（${ev.days}日連続）`,
+        labels: ['needs-review'],
+      });
+    } else {
+      recoveredCount++;
+    }
+  }
+  const failingCount = Object.values(health).filter((h) => h.fail_days > 0).length;
+  console.log(`[collect] health down=${downCount} recovered=${recoveredCount} failing=${failingCount}`);
 
   // URL正規化済みの重複排除＋Google News除外（出典になれないので早期に落としtriage/Gemini枠を本物に回す）
   const seen = new Set();

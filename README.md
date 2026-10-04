@@ -257,9 +257,9 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 `collect` は情報源（`official_sources` / `watch_feeds` / `news_queries` の全部）ごとの成否を `data/state/source_health.json` に記録する。
 **失敗**は (a) 取得の例外、(b) `scrape_hash` でページは取れたのに日付付きリンクが0件（`no-dated-links`。ハッシュの変化に関係なく毎回判定する）。RSS が取れて新着0件は成功。
 
-- 失敗した日が **3日（UTC日付、`SOURCE_DOWN_DAYS`）続いたら**「止まった」を1回、止まっていたものが成功したら「復旧した」を1回だけ通知する。同じ日に何度失敗しても1日扱い。毎日は送らない
-- 止まったときは `needs-review: 情報源が3日続けて読み取れない（<国>）` の Issue も1件立てる（旧: `scrape_hash` の抽出0件で即時に立てていた Issue は廃止。月替わりの空ページで誤検知した #17 の原因）
-- 通知は `scripts/notify-discord.mjs` が `/tmp/pipeline_notifications.json` を読んで Discord webhook に POST（1回に最大10件・2000字まで）。**Secret `DISCORD_WEBHOOK_URL` が未登録なら何もしない**。送信失敗でもパイプラインは落とさない。URL はログに出さない
+- 失敗した日が **3日（UTC日付、`SOURCE_DOWN_DAYS`）続いたら**「止まった」を1回、止まっていたものが成功したら「復旧した」を1回だけ通知する。同じ日に何度失敗しても1日扱い。毎日は送らない。数えるのは巡回が実際に走った日なので、cron の遅れで UTC の日付をまたいで巡回が1日抜けると、通知は1日遅れることがある
+- 止まったときは `needs-review: 情報源が3日続けて読み取れない（<国名 種別 URL>）` の Issue も情報源ごとに1件立てる（旧: `scrape_hash` の抽出0件で即時に立てていた Issue は廃止。月替わりの空ページで誤検知した #17 の原因）
+- 通知は `scripts/notify-discord.mjs` が `/tmp/pipeline_notifications.json` を読んで Discord webhook に POST（1回に最大10件・2000字まで）。**Secret `DISCORD_WEBHOOK_URL` が未登録なら何もしない**。送信失敗でもパイプラインは落とさない（その場合「通知済み」の記録は残るので再送はしない。Issue の方で気づける）。URL はログに出さない
 - 検証用に `SWEEP_DATE=YYYY-MM-DD` で日付を進めて `DRY_RUN=1 node scripts/collect.mjs` を回せる（状態は `/tmp/dry` に残るので、日付を変えて3回回すと3日目に down が出る）
 
 ### DRY_RUN

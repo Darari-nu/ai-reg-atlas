@@ -365,7 +365,7 @@ async function main() {
     if (ev.type === 'down') {
       downCount++;
       pushIssue({
-        title: `needs-review: 情報源が${SOURCE_DOWN_DAYS}日続けて読み取れない（${ev.country}）`,
+        title: `needs-review: 情報源が${SOURCE_DOWN_DAYS}日続けて読み取れない（${ev.label}）`,
         body: `情報源: ${ev.label}\nURL: ${ev.key}\n理由: ${ev.reason ?? '不明'}\n失敗の開始: ${ev.since}（${ev.days}日連続）`,
         labels: ['needs-review'],
       });

@@ -88,5 +88,35 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12556"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-10-04-jp-001",
+    "date": "2026-10-04",
+    "country": "jp",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "古川デジタル相、AI推進法の改正や情報提供制度の見直し検討を表明",
+    "summary": {
+      "what": "AI推進法の改正と開発事業者からの情報提供制度の見直しの検討",
+      "who": "古川俊治デジタル相",
+      "when_impact": "今後の法改正時"
+    },
+    "detail": "古川俊治デジタル相はインタビューにおいて、急速なAI技術の発展に対応するため「AI推進法」の改正を含めた検討を進める考えを明らかにしました。具体的には、開発事業者からの情報提供のあり方に関する制度見直しなどを検討します。政府は2025年12月にAI活用の指針を策定し事業者に不適切な出力抑制等の対策を求めていますが、さらなる高性能化を踏まえた制度のアップデートを目指す見込みです。",
+    "so_what": "日本におけるAI開発者への情報開示・ガバナンス要求が強化される可能性があるため、今後の法改正動向に注視が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Japan digital minister mentions consideration of AI promotion law amendment",
+    "publication_date": "2026-10-04",
+    "discovered_at": "2026-10-04",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.nikkei.com/article/DGKKZO99097910T01C26A0EA3000/"
+    ],
+    "country_anchor": "/country/jp/#updates"
   }
 ]

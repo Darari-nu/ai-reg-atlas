@@ -1,0 +1,602 @@
+{
+  "https://artificialintelligenceact.eu/feed/": {
+    "label": "EU watch_feed artificialintelligenceact.eu/feed/",
+    "country": "eu",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://edpb.europa.eu/feed/news_en": {
+    "label": "EU watch_feed edpb.europa.eu/feed/news_en",
+    "country": "eu",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=EU%20AI%20Act&format=rss": {
+    "label": "EU ニュース検索「EU AI Act」",
+    "country": "eu",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=EU%20AI%20Act%20guidelines&format=rss": {
+    "label": "EU ニュース検索「EU AI Act guidelines」",
+    "country": "eu",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www8.cao.go.jp/cstp/ai/index.html": {
+    "label": "日本 scrape_hash www8.cao.go.jp/cstp/ai/index.html",
+    "country": "jp",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/index.html": {
+    "label": "日本 scrape_hash soumu.go.jp/menu_news/s-news/index.html",
+    "country": "jp",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.soumu.go.jp/news.rdf": {
+    "label": "日本 watch_feed soumu.go.jp/news.rdf",
+    "country": "jp",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%E6%97%A5%E6%9C%AC%20AI%20%E8%A6%8F%E5%88%B6%20%E6%B3%95%E5%BE%8B&format=rss": {
+    "label": "日本 ニュース検索「日本 AI 規制 法律」",
+    "country": "jp",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=AI%E6%8E%A8%E9%80%B2%E6%B3%95&format=rss": {
+    "label": "日本 ニュース検索「AI推進法」",
+    "country": "jp",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.nist.gov/news-events/news/rss.xml": {
+    "label": "米国 rss nist.gov/news-events/news/rss.xml",
+    "country": "us",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=artificial%20intelligence&per_page=20": {
+    "label": "米国 watch_feed federalregister.gov/api/v1/documents.rss",
+    "country": "us",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=US%20AI%20regulation%20law&format=rss": {
+    "label": "米国 ニュース検索「US AI regulation law」",
+    "country": "us",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=state%20AI%20law%20enacted&format=rss": {
+    "label": "米国 ニュース検索「state AI law enacted」",
+    "country": "us",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=department-for-science-innovation-and-technology": {
+    "label": "英国 rss gov.uk/search/news-and-communications.at…",
+    "country": "uk",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=UK%20AI%20regulation&format=rss": {
+    "label": "英国 ニュース検索「UK AI regulation」",
+    "country": "uk",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm": {
+    "label": "中国 scrape_hash cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+    "country": "cn",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.cac.gov.cn/wxzw/zcfg/gfxwj/A09370305index_1.htm": {
+    "label": "中国 scrape_hash cac.gov.cn/wxzw/zcfg/gfxwj/A09370305inde…",
+    "country": "cn",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.tc260.org.cn/": {
+    "label": "中国 scrape_hash tc260.org.cn",
+    "country": "cn",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=China%20AI%20regulation%20CAC&format=rss": {
+    "label": "中国 ニュース検索「China AI regulation CAC」",
+    "country": "cn",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%20AI%20%E8%A6%8F%E5%88%B6&format=rss": {
+    "label": "中国 ニュース検索「中国 AI 規制」",
+    "country": "cn",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=94": {
+    "label": "韓国 rss msit.go.kr/user/rss/rss.do",
+    "country": "kr",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=84": {
+    "label": "韓国 rss msit.go.kr/user/rss/rss.do",
+    "country": "kr",
+    "fail_days": 1,
+    "first_failed": "2026-10-04",
+    "last_failed": "2026-10-04",
+    "last_ok": null,
+    "last_reason": "socket hang up",
+    "alerted": false
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardList.do?bbsId=BS074&mCode=C020010000": {
+    "label": "韓国 scrape_hash pipc.go.kr/np/cop/bbs/selectBoardList.do",
+    "country": "kr",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Korea%20AI%20Basic%20Act&format=rss": {
+    "label": "韓国 ニュース検索「Korea AI Basic Act」",
+    "country": "kr",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%E9%9F%93%E5%9B%BD%20AI%E5%9F%BA%E6%9C%AC%E6%B3%95&format=rss": {
+    "label": "韓国 ニュース検索「韓国 AI基本法」",
+    "country": "kr",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches": {
+    "label": "シンガポール scrape_hash imda.gov.sg/resources/press-releases-fac…",
+    "country": "sg",
+    "fail_days": 1,
+    "first_failed": "2026-10-04",
+    "last_failed": "2026-10-04",
+    "last_ok": null,
+    "last_reason": "no-dated-links",
+    "alerted": false
+  },
+  "https://www.mddi.gov.sg/newsroom/": {
+    "label": "シンガポール scrape_hash mddi.gov.sg/newsroom/",
+    "country": "sg",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://aiverifyfoundation.sg/news/": {
+    "label": "シンガポール scrape_hash aiverifyfoundation.sg/news/",
+    "country": "sg",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Singapore%20AI%20governance%20IMDA&format=rss": {
+    "label": "シンガポール ニュース検索「Singapore AI governance IMDA」",
+    "country": "sg",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Singapore%20Model%20AI%20Governance%20Framework&format=rss": {
+    "label": "シンガポール ニュース検索「Singapore Model AI Governance Framework」",
+    "country": "sg",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://api.io.canada.ca/io-server/gc/news/en/v2?type=newsreleases&dept=departmentofindustry&sort=publishedDate&orderBy=desc&publishedDate%3E=2021-07-23&pick=50&format=atom": {
+    "label": "カナダ rss api.io.canada.ca/io-server/gc/news/en/v2",
+    "country": "ca",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.priv.gc.ca/en/rss/news/": {
+    "label": "カナダ rss priv.gc.ca/en/rss/news/",
+    "country": "ca",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.priv.gc.ca/en/rss/sc/": {
+    "label": "カナダ rss priv.gc.ca/en/rss/sc/",
+    "country": "ca",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act": {
+    "label": "カナダ scrape_hash ised-isde.canada.ca/site/innovation-bett…",
+    "country": "ca",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Canada%20AI%20regulation%20AIDA&format=rss": {
+    "label": "カナダ ニュース検索「Canada AI regulation AIDA」",
+    "country": "ca",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Canada%20artificial%20intelligence%20law&format=rss": {
+    "label": "カナダ ニュース検索「Canada artificial intelligence law」",
+    "country": "ca",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233": {
+    "label": "ブラジル scrape_hash www25.senado.leg.br/web/atividade/materi…",
+    "country": "br",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.camara.leg.br/noticias/rss/dinamico/CIENCIA-E-TECNOLOGIA": {
+    "label": "ブラジル rss camara.leg.br/noticias/rss/dinamico/CIEN…",
+    "country": "br",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.dataprivacybr.org/feed/": {
+    "label": "ブラジル watch_feed dataprivacybr.org/feed/",
+    "country": "br",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Brazil%20AI%20bill%20PL%202338&format=rss": {
+    "label": "ブラジル ニュース検索「Brazil AI bill PL 2338」",
+    "country": "br",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Brasil%20intelig%C3%AAncia%20artificial%20regula%C3%A7%C3%A3o&format=rss": {
+    "label": "ブラジル ニュース検索「Brasil inteligência artificial regulação」",
+    "country": "br",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.trai.gov.in/rss.xml": {
+    "label": "インド rss trai.gov.in/rss.xml",
+    "country": "in",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.medianama.com/tag/meity/feed/": {
+    "label": "インド watch_feed medianama.com/tag/meity/feed/",
+    "country": "in",
+    "fail_days": 1,
+    "first_failed": "2026-10-04",
+    "last_failed": "2026-10-04",
+    "last_ok": null,
+    "last_reason": "Status code 403",
+    "alerted": false
+  },
+  "https://www.medianama.com/tag/artificial-intelligence/feed/": {
+    "label": "インド watch_feed medianama.com/tag/artificial-intelligenc…",
+    "country": "in",
+    "fail_days": 1,
+    "first_failed": "2026-10-04",
+    "last_failed": "2026-10-04",
+    "last_ok": null,
+    "last_reason": "Status code 403",
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=India%20AI%20regulation%20MeitY&format=rss": {
+    "label": "インド ニュース検索「India AI regulation MeitY」",
+    "country": "in",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=India%20AI%20governance%20guidelines&format=rss": {
+    "label": "インド ニュース検索「India AI governance guidelines」",
+    "country": "in",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.oaic.gov.au/news": {
+    "label": "豪州 scrape_hash oaic.gov.au/news",
+    "country": "au",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.pm.gov.au/rss.xml": {
+    "label": "豪州 watch_feed pm.gov.au/rss.xml",
+    "country": "au",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Australia%20AI%20mandatory%20guardrails&format=rss": {
+    "label": "豪州 ニュース検索「Australia AI mandatory guardrails」",
+    "country": "au",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Australia%20AI%20regulation&format=rss": {
+    "label": "豪州 ニュース検索「Australia AI regulation」",
+    "country": "au",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.nstc.gov.tw/nstc/rss/newsdata": {
+    "label": "台湾 rss nstc.gov.tw/nstc/rss/newsdata",
+    "country": "tw",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://moda.gov.tw/press/press-releases/372": {
+    "label": "台湾 scrape_hash moda.gov.tw/press/press-releases/372",
+    "country": "tw",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.ey.gov.tw/RSS_Content.aspx?ModuleType=3": {
+    "label": "台湾 rss ey.gov.tw/RSS_Content.aspx",
+    "country": "tw",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Taiwan%20AI%20Basic%20Act&format=rss": {
+    "label": "台湾 ニュース検索「Taiwan AI Basic Act」",
+    "country": "tw",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%E5%8F%B0%E6%B9%BE%20AI%E5%9F%BA%E6%9C%AC%E6%B3%95&format=rss": {
+    "label": "台湾 ニュース検索「台湾 AI基本法」",
+    "country": "tw",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://mptc.gov.kh/en/feed/": {
+    "label": "カンボジア rss mptc.gov.kh/en/feed/",
+    "country": "kh",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://mptc.gov.kh/en/": {
+    "label": "カンボジア scrape_hash mptc.gov.kh/en/",
+    "country": "kh",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://opendevelopmentcambodia.net/tag/artificial-intelligence-ai/feed/": {
+    "label": "カンボジア watch_feed opendevelopmentcambodia.net/tag/artifici…",
+    "country": "kh",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Cambodia%20AI%20strategy%20regulation&format=rss": {
+    "label": "カンボジア ニュース検索「Cambodia AI strategy regulation」",
+    "country": "kh",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Cambodia%20artificial%20intelligence%20policy&format=rss": {
+    "label": "カンボジア ニュース検索「Cambodia artificial intelligence policy」",
+    "country": "kh",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-04",
+    "last_reason": null,
+    "alerted": false
+  }
+}

@@ -118,5 +118,35 @@
       "https://www.nikkei.com/article/DGKKZO99097910T01C26A0EA3000/"
     ],
     "country_anchor": "/country/jp/#updates"
+  },
+  {
+    "id": "2026-10-01-kr-002",
+    "date": "2026-10-01",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "個人情報保護委員会（PIPC）と行政安全部、AI時代の個人情報活用に向けた国民討論会を発表",
+    "summary": {
+      "what": "AI時代の個人情報保護と活用の両立に向けた国民討論会の開催および参加者募集を発表",
+      "who": "個人情報保護委員会（PIPC）、行政安全部",
+      "when_impact": "2026年10月1日から募集を開始し、11月1日に討論会を開催、年内に政策方向を公表予定"
+    },
+    "detail": "韓国の個人情報保護委員会（PIPC）と行政安全部は、2026年11月1日に「AI時代、個人情報をどのように保護し活用するか」をテーマとした「みんなの討論会」を開催すると発表した。10月1日から11日まで一般国民200人の参加者を募集し、専門家による発題や小グループ熟議を通じてAI開発・サービスにおける個人情報活用の必要性と懸念点について議論する。PIPCは8月に受付済みの国民提案や今回の討論会で出された意見を反映し、AI時代に適した個人情報制度革新の政策方向を年内に発表する計画である。",
+    "so_what": "韓国の個人情報保護政策の方針検討プロセスであり、直ちに企業へ新たなAIガバナンス義務を課すものではない。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea public consultation on AI personal information protection and usage",
+    "publication_date": "2026-10-01",
+    "discovered_at": "2026-10-05",
+    "effective_date": null,
+    "deadline_date": "2026-10-11",
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12550"
+    ],
+    "country_anchor": "/country/kr/#updates"
   }
 ]

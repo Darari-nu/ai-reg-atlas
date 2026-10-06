@@ -216,7 +216,7 @@ countries:
     lng: 126.98
     official_sources:   # トップページはJS描画SPAで本文が空(ハッシュ固定)のため2026-08に差し替え。2026-08-19時点: 3本ともローカルからは200だがGitHub Actions上で連日timeout/fetch failed→CI環境IPブロック疑い(同上、8/6差し替え後もまだ発生)。韓国は現状official_sourcesが3本とも実質死んでおりnews_queries頼み
       - { url: "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=94", type: rss }   # MSIT 보도자료(公式RSS)
-      - { url: "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=84", type: rss }   # MSIT 입법행정예고(法令改正手続きRSS)
+      # MSIT 입법행정예고 RSS(bbsSeqNo=84)は GitHub Actions から毎回 socket hang up で9月以降1件も取れず、2026-10-07 に外した（稼働監視の通知で確認）
       - { url: "https://www.pipc.go.kr/np/cop/bbs/selectBoardList.do?bbsId=BS074&mCode=C020010000", type: scrape_hash }  # 個人情報保護委員会 報道資料(AI学習データ・越境移転等を含む)
     news_queries: ["Korea AI Basic Act", "韓国 AI基本法"]
   - code: sg
@@ -275,9 +275,8 @@ countries:
     official_sources:   # meity.gov.in/pib.gov.inはBot UAで403＋SPA化のため2026-08に差し替え。TRAIは通信規制庁でAI直結率は低いが唯一取得できた政府公式RSS。
                         # MeitY自体のAI Governance Guidelines等は現状取得手段なし(UA変更等の別対応が必要、既知の穴として残す)
       - { url: "https://www.trai.gov.in/rss.xml", type: rss }
-    watch_feeds:   # 2026-08-19時点: 下2本はローカルからは200だがGitHub Actions上で連日403→CI環境IPブロック疑い(同上)
-      - { url: "https://www.medianama.com/tag/meity/feed/", type: rss }                # MeitY動向専門トラッカー
-      - { url: "https://www.medianama.com/tag/artificial-intelligence/feed/", type: rss } # AI政策トラッカー(インド限定ではなく海外AIニュースも混在。ノイズ多め)
+    # watch_feeds の medianama 2本(meity/artificial-intelligence)は GitHub Actions から連日403で取れず、2026-10-07 に外した。
+    # medianama.com は source_domains.yaml の trusted_media にあるので、Bing ニュース検索に出た記事は出典にできる
     news_queries: ["India AI regulation MeitY", "India AI governance guidelines"]
   - code: au
     name_ja: 豪州

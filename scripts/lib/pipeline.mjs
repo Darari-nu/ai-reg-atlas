@@ -545,8 +545,8 @@ export function nearestDate(text, start, end, window = 400) {
 }
 
 /** 一覧リンクの日付: URL → タイトル → アンカー周辺の順で探す */
-export function listingDate({ href, title, text, start, end }) {
-  return parseLooseDate(href) ?? parseLooseDate(title) ?? (text != null ? nearestDate(text, start, end) : null);
+export function listingDate({ href, title, text, start, end, window = 400 }) {
+  return parseLooseDate(href) ?? parseLooseDate(title) ?? (text != null ? nearestDate(text, start, end, window) : null);
 }
 
 /** 日付が分かり、かつ maxAgeDays より古ければ true（日付不明・未来日付は落とさない） */

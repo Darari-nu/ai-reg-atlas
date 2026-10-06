@@ -226,7 +226,7 @@ countries:
     lat: 1.35
     lng: 103.82
     official_sources:   # トップページはNext.js SPAで本文が空(ハッシュ固定)のため2026-08に差し替え。pdpc.gov.sgは代替ページも常に空だったため削除
-      - { url: "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches", type: scrape_hash }  # IMDA報道発表
+      - { url: "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches", type: scrape_hash, context_window: 800 }  # IMDA報道発表（日付divがアンカーの約470字後ろにあるため文脈幅を広げる）
       - { url: "https://www.mddi.gov.sg/newsroom/", type: scrape_hash }                                         # MDDI(IMDA/PDPC上位省庁)ニュースルーム
       - { url: "https://aiverifyfoundation.sg/news/", type: scrape_hash }                                       # AI Verify Foundation(政府非公式。IMDAとGenAI版Model AI Governance Framework等を共同策定)
     news_queries: ["Singapore AI governance IMDA", "Singapore Model AI Governance Framework"]

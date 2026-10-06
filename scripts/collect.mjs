@@ -20,6 +20,7 @@ import {
   unwrapBingNewsUrl,
   writeJSON,
 } from './lib/pipeline.mjs';
+import { DEFAULT_CONTEXT_WINDOW, extractDatedLinks, extractDatedLinksMarkdown, isEmptyBody, normalizeUrl, stripHtml } from './lib/scrape.mjs';
 import { LAST_SEEN_MAX_LOOKBACK_DAYS, clampLookback, readState, writeState } from './lib/state.mjs';
 import { SOURCE_DOWN_DAYS, pruneHealth, recordOutcome } from './lib/sourceHealth.mjs';
 
@@ -41,24 +42,11 @@ const TODAY = process.env.SWEEP_DATE || new Date().toISOString().slice(0, 10); /
 
 const parser = new Parser({ timeout: TIMEOUT_MS, headers: { 'User-Agent': USER_AGENT } });
 
-function normalizeUrl(u) {
-  try {
-    const url = new URL(u);
-    url.hash = '';
-    url.searchParams.delete('utm_source');
-    url.searchParams.delete('utm_medium');
-    url.searchParams.delete('utm_campaign');
-    return url.toString();
-  } catch {
-    return u;
-  }
-}
-
-async function fetchWithTimeout(url) {
+async function fetchWithTimeout(url, extraHeaders = {}) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
-    return await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': USER_AGENT } });
+    return await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': USER_AGENT, ...extraHeaders } });
   } finally {
     clearTimeout(t);
   }
@@ -113,110 +101,30 @@ function shortUrl(u) {
   }
 }
 
-function stripHtml(html) {
-  return html
-    .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function textFromHtmlFragment(fragment) {
-  return stripHtml(fragment).slice(0, 300);
-}
-
-function extractDatedLinks(html, baseUrl, countryHint) {
-  const items = [];
-  const seen = new Set();
-  // 米国式(Jul 22, 2026)、日→月式(22 July 2026、豪州・シンガポール等)、dd/mm/yyyy式(ブラジル・欧州圏)を許容
-  const datePattern = /(?:20\d{2}[-/.年]\s?\d{1,2}[-/.月]\s?\d{1,2}日?|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s+20\d{2}|\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*,?\s+20\d{2}|\d{1,2}\/\d{1,2}\/20\d{2})/i;
-  // href前後の属性も個別に捕捉: タイトルが空のアンカー(aria-labelのみ)や、日付が兄弟要素にあるカード型レイアウトに対応するため
-  const anchorRe = /<a\b([^>]*)href=["']([^"']+)["']([^>]*)>([\s\S]*?)<\/a>/gi;
-  const CONTEXT_WINDOW = 400; // アンカー自身に日付が無くても周辺の兄弟要素(日付div等)を見る
-  for (const match of html.matchAll(anchorRe)) {
-    const attrs = `${match[1]} ${match[3]}`;
-    const href = match[2];
-    let title = textFromHtmlFragment(match[4]);
-    if (!title) {
-      const ariaMatch = attrs.match(/aria-label=["']([^"']+)["']/i);
-      if (ariaMatch) title = textFromHtmlFragment(ariaMatch[1]);
-    }
-    if (!title) continue;
-    const start = Math.max(0, match.index - CONTEXT_WINDOW);
-    const end = Math.min(html.length, match.index + match[0].length + CONTEXT_WINDOW);
-    const context = `${title} ${href} ${html.slice(start, end)}`;
-    if (!datePattern.test(context)) continue;
-    let absolute;
-    try {
-      absolute = normalizeUrl(new URL(href, baseUrl).toString());
-    } catch {
-      continue;
-    }
-    if (seen.has(absolute)) continue;
-    seen.add(absolute);
-    items.push({
-      title,
-      url: absolute,
-      snippet: title,
-      country_hint: countryHint,
-      source_type: 'scrape_hash',
-      source_group: 'official_sources',
-      listing_date: listingDate({ href: absolute, title, text: html, start: match.index, end: match.index + match[0].length }),
-    });
-  }
-  return items;
-}
-
-// r.jina.ai Reader経由のフォールバック時はMarkdown（[text](url)形式）で返るため、HTML用extractDatedLinksとは別にリンク抽出する
-function extractDatedLinksMarkdown(text, baseUrl, countryHint) {
-  const items = [];
-  const seen = new Set();
-  const datePattern = /(?:20\d{2}[-/.年]\s?\d{1,2}[-/.月]\s?\d{1,2}日?|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s+20\d{2}|\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*,?\s+20\d{2}|\d{1,2}\/\d{1,2}\/20\d{2})/i;
-  const linkRe = /\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
-  const CONTEXT_WINDOW = 400;
-  for (const match of text.matchAll(linkRe)) {
-    const title = textFromHtmlFragment(match[1]);
-    const href = match[2];
-    if (!title || !href) continue;
-    if (/^(?:javascript:|#)/i.test(href) || /\.(?:png|jpe?g|gif|svg|webp|ico)(?:[?#]|$)/i.test(href)) continue; // 疑似リンク・画像は除外
-    const start = Math.max(0, match.index - CONTEXT_WINDOW);
-    const end = Math.min(text.length, match.index + match[0].length + CONTEXT_WINDOW);
-    const context = `${title} ${href} ${text.slice(start, end)}`;
-    if (!datePattern.test(context)) continue;
-    let absolute;
-    try {
-      absolute = normalizeUrl(new URL(href, baseUrl).toString());
-    } catch {
-      continue;
-    }
-    if (seen.has(absolute)) continue;
-    seen.add(absolute);
-    items.push({
-      title,
-      url: absolute,
-      snippet: title,
-      country_hint: countryHint,
-      source_type: 'scrape_hash',
-      source_group: 'official_sources',
-      listing_date: listingDate({ href: absolute, title, text, start: match.index, end: match.index + match[0].length }),
-    });
-  }
-  return items;
-}
-
-// 直接fetchが失敗した場合のみr.jina.ai Reader経由で再試行する（GitHub Actionsランナー特有のIPブロック対策）
+// 直接fetchが失敗した場合、または成功しても本文が空（JS描画のみ・script だけ等）の場合に r.jina.ai Reader 経由で再試行する（GitHub Actionsランナー特有のIPブロック対策）
+// 戻り値の format: 'html'（HTML形式。extractDatedLinks で抽出）/ 'markdown'（jinaの既定形式。extractDatedLinksMarkdown で抽出）
 async function fetchScrapeHashContent(url) {
   try {
     const res = await fetchWithTimeout(url);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return { text: await decodeHtmlResponse(res), viaProxy: false };
+    const text = await decodeHtmlResponse(res);
+    if (!isEmptyBody(text)) return { text, viaProxy: false, format: 'html' };
+    // 取得は成功したが本文が空 → 中継を HTML 形式で取り直す（markdown 形式は空アンカー［aria-labelだけのカード］が落ちる）
+    try {
+      const proxied = await fetchWithTimeout(JINA_READER_PREFIX + url, { 'X-Return-Format': 'html' });
+      if (!proxied.ok) throw new Error(`HTTP ${proxied.status}`);
+      const body = readerBody(await decodeHtmlResponse(proxied));
+      if (isEmptyBody(body)) throw new Error('empty body via proxy');
+      return { text: body, viaProxy: true, format: 'html', reason: 'empty body, html' };
+    } catch {
+      return { text, viaProxy: false, format: 'html' }; // 中継も駄目なら従来どおり空本文のまま（稼働監視が no-dated-links で拾う）
+    }
   } catch (directErr) {
     try {
       const proxied = await fetchWithTimeout(JINA_READER_PREFIX + url);
       if (!proxied.ok) throw new Error(`HTTP ${proxied.status}`);
       // jinaの前置きヘッダ(Title:/URL Source:/直後のページ取得日時)を除去。取得日時が全リンクの文脈窓に誤って入り込むのを防ぐ
-      return { text: readerBody(await decodeHtmlResponse(proxied)), viaProxy: true };
+      return { text: readerBody(await decodeHtmlResponse(proxied)), viaProxy: true, format: 'markdown', reason: 'direct fetch failed' };
     } catch {
       throw directErr; // 直接fetchのエラーの方が原因診断に有用なのでそちらを報告
     }
@@ -258,9 +166,10 @@ async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
   return items;
 }
 
-async function collectScrapeHash(url, countryHint, hashes) {
-  const { text: html, viaProxy } = await fetchScrapeHashContent(url);
-  if (viaProxy) console.warn(`[collect] scrape_hash via jina proxy (direct fetch failed): ${url}`);
+async function collectScrapeHash(url, countryHint, hashes, opts = {}) {
+  const contextWindow = opts.contextWindow ?? DEFAULT_CONTEXT_WINDOW;
+  const { text: html, viaProxy, format, reason } = await fetchScrapeHashContent(url);
+  if (viaProxy) console.warn(`[collect] scrape_hash via jina proxy (${reason}): ${url}`);
   // 正規化: script/style除去 → タグ除去 → 空白圧縮（生HTMLは保存しない §4-1）
   const text = stripHtml(html);
   const hash = crypto.createHash('sha256').update(text).digest('hex');
@@ -268,9 +177,9 @@ async function collectScrapeHash(url, countryHint, hashes) {
   const isFirst = hashes[url] === undefined;
   hashes[url] = hash;
   // 稼働監視のため、ハッシュの変化に関係なく毎回抽出して件数を数える（候補にするのは変化した時だけ）
-  const extracted = viaProxy
-    ? extractDatedLinksMarkdown(html, url, countryHint)
-    : extractDatedLinks(html, url, countryHint);
+  const extracted = format === 'markdown'
+    ? extractDatedLinksMarkdown(html, url, countryHint, contextWindow)
+    : extractDatedLinks(html, url, countryHint, contextWindow);
   const extractedCount = extracted.length;
   if (!changed || isFirst) return { items: [], extractedCount };
   const fresh = extracted.filter((c) => !isStaleListing(c.listing_date, TODAY, SCRAPE_HASH_MAX_AGE_DAYS));
@@ -309,7 +218,7 @@ async function main() {
         if (src.type === 'rss') {
           candidates.push(...(await collectRss(src.url, country.code, lastSeen, 'rss', 'official_sources')));
         } else if (src.type === 'scrape_hash') {
-          const { items, extractedCount } = await collectScrapeHash(src.url, country.code, hashes);
+          const { items, extractedCount } = await collectScrapeHash(src.url, country.code, hashes, { contextWindow: src.context_window });
           candidates.push(...items);
           // ページは取れたのに日付付きリンクが1件も取れない＝構造が変わった（または空ページ）
           if (extractedCount === 0) outcome = { ok: false, reason: 'no-dated-links' };

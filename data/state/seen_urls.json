@@ -1582,5 +1582,73 @@
   "https://www.ey.gov.tw/Page/9277F759E41CCD91//60be1b8a-a984-4067-95b7-80bf11ce5b5e": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-06"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/02kiban09_04000739.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.federalregister.gov/documents/2026/10/06/2026-20474/investment-adviser-performance-based-compensation-modernization": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.federalregister.gov/documents/2026/10/06/2026-20466/adviser-and-regulated-fund-custody-rules-crypto-custody-rules": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.pm.gov.au/media/vale-richard-morecroft": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.pm.gov.au/media/third-anniversary-october-7-attacks": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.pm.gov.au/media/statement-death-australian-army-soldier": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://convergenciadigital.com.br/governo/e-mandatorio-que-anatel-e-anpd-participem-de-forma-efetiva-na-regulacao-das-plataformas-digitais/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei02_02000423.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12562": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12560": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.camara.leg.br/noticias/1309774-projeto-pune-divulgacao-de-crueldade-contra-animais-na-internet-e-responsabiliza-redes-sociais": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-dhar-madhya-pradesh-ro-bhopal": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-kullu-himachal-pradesh-himachal-upbhokta-sanrakchan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-south-east-delhi-delhi-reliance-jio-infocomm-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-sirmaur-himachal-pradesh-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://moda.gov.tw/press/press-releases/20954": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//87b157f6-40a1-4d4d-af98-4a8717216297": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-07"
   }
 }

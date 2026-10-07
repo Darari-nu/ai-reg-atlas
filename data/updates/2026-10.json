@@ -148,5 +148,65 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12550"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-10-06-eu-001",
+    "date": "2026-10-06",
+    "country": "eu",
+    "axis": "transparency",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "OpenAI、EU AI法遵守に向けChatGPT生成テキストへ電子透かしを導入",
+    "summary": {
+      "what": "EU域内のChatGPT等の生成テキストに不可視透かし「textGrain」を導入",
+      "who": "OpenAI（EU域内の全ChatGPTおよびCodexユーザーが対象）",
+      "when_impact": "発表後数週間で順次展開、API利用者は2026年10月5日より選択可能"
+    },
+    "detail": "OpenAIは、EU AI法第50条第2項が定める生成AIコンテンツの機械可読な表示・検知義務への対応として、EU域内でChatGPTおよびCodexが生成する対象テキストに不可視の統計的電子透かし「textGrain」を導入すると発表した。同技術は単語選択に統計的パターンを付与する仕組みだが、編集によって検出精度が大幅に低下するなどの制約があるため、検知ツールは当初承認された研究者や専門機関に限定提供される。今後技術をオープンソース化する方針も示されている。",
+    "so_what": "EU AI法第50条の機械可読表示義務に対する主要プロバイダーの実装例として、自社が採用する生成AIツールの出力管理・検知対策の参考となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "OpenAI implements watermarking for ChatGPT in EU under AI Act",
+    "publication_date": "2026-10-06",
+    "discovered_at": "2026-10-07",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.thehindu.com/business/openai-to-watermark-chatgpt-text-in-eu-under-ai-act-rules/article71551205.ece"
+    ],
+    "country_anchor": "/country/eu/#axis-transparency"
+  },
+  {
+    "id": "2026-10-06-br-001",
+    "date": "2026-10-06",
+    "country": "br",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "ブラジル法務公安省（MJSP）、デジタル環境規制におけるリスク予防原則を主張",
+    "summary": {
+      "what": "デジタル環境規制において事後損害対応からリスク予防および注意義務中心への転換を強調した。",
+      "who": "ブラジル法務公安省（MJSP）",
+      "when_impact": "2026年9月30日のセミナー発表以降"
+    },
+    "detail": "ブラジル法務公安省（MJSP）のデジタル権利事務局（Sedigi）は、上院で開催されたセミナーにおいて、コンテンツモデレーションやデジタル環境の規制方針に関する見解を述べた。従来の被害発生後の司法対応を中心とする枠組みから、リスク予防および注意義務に基づく管理体制への移行を主張。最高裁判所（STF）によるインターネット市民フレームワーク（Marco Civil）19条の解釈整理や、国家データ保護庁（ANPD）における子ども・若者保護やAIに関する規制アジェンダの推進を踏まえ、プラットフォーム側における事前のリスク管理と監査・体制整備の必要性を明示した。",
+    "so_what": "ブラジル市場で展開するデジタルサービスやAIの運用において、事後対応ではなく事前リスク評価と注意義務の履行を意識したガバナンス体制が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Brazil Ministry of Justice discusses AI governance and data privacy",
+    "publication_date": "2026-10-06",
+    "discovered_at": "2026-10-07",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.gov.br/mj/pt-br/assuntos/noticias-1/mjsp-defende-prevencao-de-riscos-e-capacidade-institucional-na-regulacao-do-ambiente-digital-1"
+    ],
+    "country_anchor": "/country/br/#updates"
   }
 ]

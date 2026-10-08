@@ -208,5 +208,65 @@
       "https://www.gov.br/mj/pt-br/assuntos/noticias-1/mjsp-defende-prevencao-de-riscos-e-capacidade-institucional-na-regulacao-do-ambiente-digital-1"
     ],
     "country_anchor": "/country/br/#updates"
+  },
+  {
+    "id": "2026-10-06-sg-001",
+    "date": "2026-10-06",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "シンガポールMDDI、フロンティアAIの事前アクセス義務化を見送る方針を表明",
+    "summary": {
+      "what": "フロンティアAIモデルの事前アクセス義務化を見送り協力関係を優先する方針の提示",
+      "who": "シンガポールデジタル開発・情報省（MDDI）、フロンティアAI開発事業者",
+      "when_impact": "即時（現行方針の明確化）"
+    },
+    "detail": "シンガポール国会において、最先端（フロンティア）AIモデルの展開前に政府機関へアクセスを義務付けるべきかとの質問に対し、デジタル開発・情報省（MDDI）は書面で答弁した。モデルへのアクセス権限のみではリスクの全体像を把握できないことや、厳格な義務化が企業の協調姿勢を阻害する懸念を挙げ、一律の事前アクセス義務化は見送る方針を示した。代わりに開発者との信頼に基づく情報共有や、シンガポールAIセーフティ研究所（AISI）を通じた評価能力の整備、リスクに応じた段階的ガバナンスを推進する。",
+    "so_what": "シンガポールで最先端AIを開発・展開する事業者は事前アクセスの法的強制を免れる一方、自主的な情報共有とリスク検証への協力が期待されます。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Singapore parliament response on pre-deployment government access to frontier AI models",
+    "publication_date": "2026-10-06",
+    "discovered_at": "2026-10-08",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-providing-pre-deployment-government-access-to-frontier-ai-models-for-independent-evaluation-of-national-security-risks-and-vulnerab/"
+    ],
+    "country_anchor": "/country/sg/#updates"
+  },
+  {
+    "id": "2026-10-06-sg-002",
+    "date": "2026-10-06",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "シンガポールデジタル開発情報省、外国のAIチップ輸出規制による国内影響を監視",
+    "summary": {
+      "what": "外国のAIチップ輸出規制やリモートアクセス制限が国内DCやクラウド部門に与える影響の監視と企業への対話",
+      "who": "デジタル開発情報省（MDDI）",
+      "when_impact": "2026年10月6日の国会答弁より継続的な監視と必要に応じた緩和策の検討"
+    },
+    "detail": "シンガポールデジタル開発情報省（MDDI）は、外国によるAIチップの輸出規制強化や、海外コンピューティングインフラへのリモートアクセス制限が、シンガポールのデータセンター（DC）およびクラウドサービス部門に及ぼす影響についての質問に対し、書面で回答した。政府は現在、輸出規制やリモートアクセス制限の動向を監視するとともに、関連企業への潜在的な影響についてヒアリングを行っており、必要に応じてシンガポール国内企業への影響を緩和するための適切な措置を検討する方針を示した。",
+    "so_what": "シンガポールでのAIインフラ利用企業は、外国の輸出規制によるDCへの影響や政府の救済策の有無を注視すべきである。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Singapore parliament response on impact of foreign AI chip export controls",
+    "publication_date": "2026-10-06",
+    "discovered_at": "2026-10-08",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-impact-of-foreign-ai-chip-export-controls-and-remote-computing-access-restrictions-on-singapore-data-centre-and-cloud-services-sectors-and-mitigation-measures/"
+    ],
+    "country_anchor": "/country/sg/#updates"
   }
 ]

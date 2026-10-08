@@ -2,7 +2,7 @@
 
 > 世界のAI規制を、EU基準の「差分」で読む。
 
-EU AI Actを基準に、13カ国・地域（EU・日本・米国・英国・中国・韓国・シンガポール・カナダ・ブラジル・インド・豪州・台湾・カンボジア）のAI規制の差分が一目でわかる、毎日自動更新される静的サイト。
+EU AI Actを基準に、14カ国・地域（EU・日本・米国・英国・中国・韓国・シンガポール・カナダ・ブラジル・インド・豪州・台湾・カンボジア・ベトナム）のAI規制の差分が一目でわかる、毎日自動更新される静的サイト。
 
 - **サイト（本番）**: https://darari-nu.com/atlas/
 - **サイト（予備・中継を通さない直URL）**: https://ai-reg-atlas.pages.dev/atlas/
@@ -289,7 +289,7 @@ DRY_RUN=1 npm run validate
 
 ## データの注意
 
-`data/` のシード（13カ国・地域の規制サマリー）はAIが下書きした**人間レビュー前のドラフト**を含む。
+`data/` のシード（14カ国・地域の規制サマリー）はAIが下書きした**人間レビュー前のドラフト**を含む。
 誤りを見つけたらPRかIssueで指摘してほしい。出典のない記述は受け付けない。
 
 更新レコードには `discovered_at`（サイトが発見した日。`summarize.mjs` がレコード生成時に `buildUpdateRecord` 経由で付与）を持つものがある。無い旧レコードはトップのNEW欄や鮮度計算で `date`（公表日）を代用する（`src/lib/freshness.mjs` の `discoveryDate`）。年表（`/timeline` や国別ページ）に○で出る「派生イベント」は、更新レコードから機械的に生成した**更新フィード由来・人間による確認前の自動検知**であり、`axes.timeline` に人手で載せた種データ（seed）とは扱いが異なる（`src/lib/derivedTimeline.mjs`）。
@@ -332,6 +332,7 @@ DRY_RUN=1 npm run validate
 | 2026-10-04 | 情報源の稼働監視と Discord 通知を追加（`source_health.json`・`sourceHealth.mjs`・`notify-discord.mjs`）。失敗が3日続いたら通知＋`needs-review` Issue、復旧したら通知。`scrape_hash` の抽出0件の即時 Issue は廃止し、毎回抽出して稼働判定に使う（候補化の条件は従来どおり）。`collect` に検証用 `SWEEP_DATE` を追加 |
 | 2026-10-07 | 稼働監視の初回通知で、9月から1件も取れていなかった情報源3本（韓国 MSIT RSS bbsSeqNo=84・インド medianama の watch_feeds 2本）を `countries.yaml` から外した。medianama.com は `trusted_media` にあるので Bing ニュース経由の記事は引き続き出典にできる |
 | 2026-10-07 | シンガポール IMDA 報道発表一覧（scrape_hash）を読めるようにした。GitHub Actions からの取得は 200 でも本文が script だけで、一覧のハッシュが 8/6 から空文字列のSHA256のまま、中継（jina）へのフォールバックも例外時しか働かなかった。(1) 直接取得が成功しても `stripHtml` 後に本文が空なら、r.jina.ai を HTML 形式（`X-Return-Format: html`）で取り直す（ログ `via jina proxy (empty body, html)`。markdown 形式は aria-label だけの空アンカーが落ちるため使わない。既存の「例外時に markdown 形式で中継」は不変）。(2) `countries.yaml` の scrape_hash に任意の `context_window`（既定400）を追加し、IMDA だけ 800（日付 div がアンカーの約470字後ろにあるため）。抽出関数は単体テストのため `scripts/lib/scrape.mjs` に移した（`test/scrape.test.mjs`）。他の情報源の抽出結果は不変（全情報源の DRY_RUN で変更前後を比較）。初回はハッシュが「変化した」扱いで直近30日の記事が候補に出る |
+| 2026-10-09 | ベトナムを追加（14カ国目）。`countries.yaml` に vn（MOST・官報・政府英語ニュースの scrape_hash 3本、VnExpress 英語RSS、Bing ニュース検索2語）、`source_domains.yaml` に .gov.vn 系3ドメインと英語版のある主要紙5社を追加。`data/regulations/vn.json` は人工知能法 No.134/2025/QH15 と政令142/2026/ND-CP を政府英語ニュース・法律事務所の記事で確認した範囲だけで書いた**人の確認前のドラフト**（制裁金額・首相の高リスク一覧・処罰政令は未確認）。比較表に vn の行を追加 |
 
 ## ライセンス
 

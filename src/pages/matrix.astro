@@ -60,6 +60,10 @@ const MATRIX: Record<string, Record<(typeof AXIS_KEYS)[number], Cell>> = {
     risk_classification: 'absent', prohibited_uses: 'absent', gpai_obligations: 'absent',
     transparency: 'absent', penalties: 'absent', enforcement_body: 'absent',
   },
+  vn: {
+    risk_classification: 'unique', prohibited_uses: 'looser', gpai_obligations: 'absent',
+    transparency: 'unique', penalties: 'absent', enforcement_body: 'unique',
+  },
 };
 
 const cellClass: Record<Cell, string> = {

@@ -5,7 +5,8 @@ import { z } from 'zod';
 import { zodOutputFormat } from '@anthropic-ai/sdk/helpers/zod';
 
 export const DEFAULT_MODEL = 'claude-sonnet-5-5'; // 日付接尾辞は付けない。EXPLAINER_MODEL で差し替え可
-export const MAX_TOKENS = 4000;
+// Sonnet 5.5 は thinking が既定ONで、max_tokens は思考＋本文の合算。4000 だと思考で食い切って本文が空になりうるので 16000
+export const MAX_TOKENS = 16000;
 export const EFFORT = 'medium';
 
 // 費用の概算用（Sonnet 5.5: $2 / $10 per MTok。キャッシュ読みは入力の 0.1 倍、書き込みは 1.25 倍）。
@@ -13,7 +14,13 @@ export const EFFORT = 'medium';
 export const PRICE_PER_MTOK = { input: 2, output: 10, cacheRead: 0.2, cacheWrite: 2.5 };
 
 // 写し防止: 空白除去後の文字列で、出典本文とこの長さ以上連続して一致する部分があれば不合格（報道由来のみ）
+// 日本語（非ASCII）を含む窓は 40 字、英数字だけの窓は 60 字（固有名詞・定型句の羅列での誤検知を避ける）
 export const COPY_THRESHOLD = 40;
+export const COPY_THRESHOLD_ASCII = 60;
+
+// 失敗の再挑戦: 検査落ち・refusal・max_tokens・parse-failed がこの回数に達したレコードは対象外にする（費用の垂れ流し防止）
+export const ATTEMPTS_MAX_TRIES = 2;
+export const ATTEMPTS_TTL_DAYS = 7;
 
 // 長さの上下限（文字数）
 export const LIMITS = {
@@ -104,18 +111,35 @@ function norm(s) {
     .toLowerCase();
 }
 
-/** 出典本文の COPY_THRESHOLD 字窓の集合（正規化後） */
-export function shingleSet(text, n = COPY_THRESHOLD) {
+const isAscii = (t) => /^[\x00-\x7f]*$/.test(t);
+
+/** 出典本文の窓の集合（正規化後）。jp: 非ASCIIを含む40字窓、ascii: 英数字だけの60字窓 */
+export function shingleSet(text) {
   const t = norm(text);
-  const set = new Set();
-  for (let i = 0; i + n <= t.length; i++) set.add(t.slice(i, i + n));
-  return set;
+  const jp = new Set();
+  const ascii = new Set();
+  for (let i = 0; i + COPY_THRESHOLD <= t.length; i++) {
+    const w = t.slice(i, i + COPY_THRESHOLD);
+    if (!isAscii(w)) jp.add(w);
+  }
+  for (let i = 0; i + COPY_THRESHOLD_ASCII <= t.length; i++) {
+    const w = t.slice(i, i + COPY_THRESHOLD_ASCII);
+    if (isAscii(w)) ascii.add(w);
+  }
+  return { jp, ascii };
 }
 
-/** field が出典本文と n 字以上連続して一致するか（空白除去・小文字化後） */
-export function hasLongCopy(fieldText, shingles, n = COPY_THRESHOLD) {
+/** field が出典本文と連続一致するか（空白除去・小文字化後。日本語を含む窓は40字、英数字だけは60字） */
+export function hasLongCopy(fieldText, shingles) {
   const t = norm(fieldText);
-  for (let i = 0; i + n <= t.length; i++) if (shingles.has(t.slice(i, i + n))) return true;
+  for (let i = 0; i + COPY_THRESHOLD <= t.length; i++) {
+    const w = t.slice(i, i + COPY_THRESHOLD);
+    if (!isAscii(w) && shingles.jp.has(w)) return true;
+  }
+  for (let i = 0; i + COPY_THRESHOLD_ASCII <= t.length; i++) {
+    const w = t.slice(i, i + COPY_THRESHOLD_ASCII);
+    if (isAscii(w) && shingles.ascii.has(w)) return true;
+  }
   return false;
 }
 
@@ -185,12 +209,13 @@ function ymdToDay(ymd) {
 }
 
 /** 解説の対象: 直近 days 日（発見日、無ければ公表日）で、まだ解説が無いレコード。新しい順に max 件まで */
-export function selectTargets(records, { existingIds = new Set(), today, days = 7, max = Infinity } = {}) {
+export function selectTargets(records, { existingIds = new Set(), attempts = {}, today, days = 7, max = Infinity } = {}) {
   const todayDay = ymdToDay(today);
   const keyOf = (r) => r.discovered_at ?? r.date;
   return records
     .filter((r) => r && r.id && Array.isArray(r.sources) && r.sources.length > 0)
     .filter((r) => !existingIds.has(r.id))
+    .filter((r) => (attempts[r.id]?.tries ?? 0) < ATTEMPTS_MAX_TRIES)
     .filter((r) => {
       const d = todayDay - ymdToDay(keyOf(r));
       return Number.isFinite(d) && d >= 0 && d <= days;
@@ -199,13 +224,31 @@ export function selectTargets(records, { existingIds = new Set(), today, days = 
     .slice(0, max);
 }
 
+/* ---------- 失敗の記録（data/state/explainer_attempts.json: { id: { tries, last, reasons } }） ---------- */
+
+export function recordAttempt(map, id, reason, today) {
+  const prev = map[id] ?? { tries: 0, last: today, reasons: [] };
+  return { ...map, [id]: { tries: prev.tries + 1, last: today, reasons: [...prev.reasons, reason].slice(-5) } };
+}
+
+/** 最後の失敗から ttlDays 日を過ぎたエントリを捨てる */
+export function pruneAttempts(map, today, ttlDays = ATTEMPTS_TTL_DAYS) {
+  const out = {};
+  for (const [id, e] of Object.entries(map ?? {})) {
+    const age = ymdToDay(today) - ymdToDay(e?.last);
+    if (Number.isFinite(age) && age <= ttlDays) out[id] = e;
+  }
+  return out;
+}
+
 /* ---------- エラー分類・費用 ---------- */
 
 /** 'abort'（その回は打ち切り）| 'skip'（その記事だけスキップ） */
 export function classifyApiError(err) {
   const status = err?.status;
-  if (status === 401 || status === 402 || status === 403) return 'abort';
-  return 'skip'; // 429 / 529 / 5xx（SDK の既定リトライ後）、400、通信エラー、パース失敗など
+  // 400/404 は設定ミス（モデルID・パラメータ）なので毎日叩き続けない
+  if (status === 400 || status === 401 || status === 402 || status === 403 || status === 404) return 'abort';
+  return 'skip'; // 429 / 529 / 5xx（SDK の既定リトライ後）、通信エラーなど
 }
 
 export function addUsage(total, usage) {
@@ -226,30 +269,36 @@ export function estimateCostUsd(u) {
 
 /**
  * 1件ぶんの解説を生成する。client は Anthropic SDK のクライアント（テストではモック）。
- * 戻り値: { status: 'ok', explainer, usage } | { status: 'skip'|'abort', reason, usage? }
+ * 戻り値: { status: 'ok', explainer, usage } | { status: 'skip'|'abort', reason, usage?, countable? }
+ * countable=true は再挑戦回数（explainer_attempts）に数える失敗（refusal / max_tokens / parse-failed）
  * 拒否時の server-side fallback は使わない: 拒否は「その記事は解説しない」でよく、
  * fallback 先がより高価なモデルになるのを避ける。
  */
 export async function generateExplainer({ client, model = DEFAULT_MODEL, record, sourceText }) {
+  const format = zodOutputFormat(ExplainerSchema);
   let msg;
   try {
     // temperature 等のサンプリング指定・thinking 指定・assistant prefill は Sonnet 5.5 で 400 になるので付けない
-    msg = await client.messages.parse({
+    msg = await client.messages.create({
       model,
       max_tokens: MAX_TOKENS,
       system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
       messages: [{ role: 'user', content: buildUserMessage(record, sourceText) }],
-      output_config: { effort: EFFORT, format: zodOutputFormat(ExplainerSchema) },
+      output_config: { effort: EFFORT, format },
     });
   } catch (err) {
     const status = err?.status ?? null;
     return { status: classifyApiError(err), reason: `api-error(${status ?? err?.name ?? 'Error'}): ${String(err?.message ?? '').slice(0, 160)}` };
   }
-  const usage = msg.usage ?? null;
-  if (msg.stop_reason === 'refusal') return { status: 'skip', reason: 'refusal', usage };
-  if (msg.stop_reason === 'max_tokens') return { status: 'skip', reason: 'max_tokens', usage };
-  if (!msg.parsed_output) return { status: 'skip', reason: 'parse-failed', usage };
-  return { status: 'ok', explainer: msg.parsed_output, usage };
+  const usage = msg.usage ?? null; // どの経路でも usage を返して費用集計に入れる
+  if (msg.stop_reason === 'refusal') return { status: 'skip', reason: 'refusal', usage, countable: true };
+  if (msg.stop_reason === 'max_tokens') return { status: 'skip', reason: 'max_tokens', usage, countable: true };
+  const text = (msg.content ?? []).filter((b) => b.type === 'text').map((b) => b.text).join('');
+  try {
+    return { status: 'ok', explainer: format.parse(text), usage };
+  } catch (e) {
+    return { status: 'skip', reason: 'parse-failed', usage, countable: true, detail: String(e?.message ?? '').slice(0, 160) };
+  }
 }
 
 /* ---------- 保存形・Markdown ---------- */

@@ -13,9 +13,12 @@ import {
   estimateCostUsd,
   explainerToMarkdown,
   generateExplainer,
+  pruneAttempts,
+  recordAttempt,
   selectTargets,
 } from './lib/explainer.mjs';
 import { fetchArticleText } from './lib/fetchArticle.mjs';
+import { readState, writeState } from './lib/state.mjs';
 import { DRY_ROOT, loadJSON, pushIssue, readDataJSON, rootPath, writeDataJSON, writeJSON } from './lib/pipeline.mjs';
 
 export const NOTIFY_FILE = '/tmp/pipeline_notifications.json'; // notify-discord.mjs が読む
@@ -75,6 +78,8 @@ export async function run({
   existingIds = defaultExistingIds,
   fetchArticle = fetchArticleText,
   writeExplainer = (id, data) => writeDataJSON(['explainers', `${id}.json`], data),
+  readAttempts = () => readState('explainer_attempts.json', {}),
+  writeAttempts = (m) => writeState('explainer_attempts.json', m),
   pushIssueFn = pushIssue,
   pushNotification = defaultPushNotification,
   log = console,
@@ -92,7 +97,8 @@ export async function run({
     const autoPublish = env.EXPLAINER_AUTO_PUBLISH === '1';
     const status = autoPublish ? 'published' : 'draft';
 
-    const targets = selectTargets(loadRecords(), { existingIds: existingIds(), today, days: 7 });
+    let attempts = pruneAttempts(readAttempts(), today);
+    const targets = selectTargets(loadRecords(), { existingIds: existingIds(), attempts, today, days: 7 });
     if (targets.length === 0) {
       log.log('[explain] nothing to do');
       return 0;
@@ -121,11 +127,13 @@ export async function run({
       }
       if (res.status === 'skip') {
         log.warn(`[explain] skip ${record.id}: ${res.reason}`);
+        if (res.countable) attempts = recordAttempt(attempts, record.id, res.reason, today);
         continue;
       }
       const check = checkExplainer(res.explainer, record, sourceText);
       if (!check.ok) {
         log.warn(`[explain] rejected ${record.id}: ${check.reasons.join(', ')}`);
+        attempts = recordAttempt(attempts, record.id, `rejected: ${check.reasons.join(',')}`.slice(0, 200), today);
         continue;
       }
       const stored = buildStored({ record, out: res.explainer, model, status, now });
@@ -134,6 +142,7 @@ export async function run({
       log.log(`[explain] ok ${record.id} (${status})`);
     }
 
+    writeAttempts(attempts);
     log.log(
       `[explain] done made=${made.length} attempted=${attempted} model=${model} usage=${JSON.stringify(usage)} cost~$${estimateCostUsd(usage).toFixed(3)} (Sonnet 5.5 単価換算)${aborted ? ` aborted=${aborted}` : ''}`
     );

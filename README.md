@@ -57,7 +57,8 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 - **下書きから始める**: 保存時の `status` は `draft`。サイトには出ない（`src/pages/explain/[id].astro` の `getStaticPaths` は `published` だけ）。下書きができると `needs-review: 解説の下書き <id>` の Issue（本文に記事全文）と Discord 通知が出る。確認して OK なら `node scripts/explainer-publish.mjs <id...>` で `published` にしてコミットすると、`/explain/<id>/` が生成され、更新カードに「解説を読む →」が付く
 - **事実と解釈を分ける**: ページでは「資料に書いてあること」（`facts`、各項目に出典リンク）と「解釈（AIによる解説）」を見出しと色で分け、末尾に元資料リンクと注意書きを固定表示。報道由来（`source_kind=media`）は「報道ベース」と明示
 - **機械チェック**（`checkExplainer`）: `facts` が1件以上で全 `source_url` がレコードの `sources` に含まれる／長さの上下限／公式以外（報道・不明）は出典本文と40字以上連続一致する部分があれば不合格（空白除去後の比較）。落ちたら保存しない
-- **止まり方**: `ANTHROPIC_API_KEY` が無ければ `[explain] no key, skip` で終了。401/402/403 はその回を打ち切り（残りは翌日）、429/529/5xx は SDK の既定リトライ後にその記事だけスキップ。`stop_reason` が `refusal`/`max_tokens` なら保存しない。どんな場合も exit 0。拒否時に高価なモデルへ回す server-side fallback は使わない
+- **止まり方**: `ANTHROPIC_API_KEY` が無ければ `[explain] no key, skip` で終了。400/401/402/403/404 はその回を打ち切り（残りは翌日）、429/529/5xx は SDK の既定リトライ後にその記事だけスキップ。`stop_reason` が `refusal`/`max_tokens` なら保存しない。どんな場合も exit 0。拒否時に高価なモデルへ回す server-side fallback は使わない
+- **失敗の記録**: 検査落ち・refusal・max_tokens・parse-failed は `data/state/explainer_attempts.json`（`{id: {tries, last, reasons}}`）に残し、`tries>=2` のレコードは対象外にする（毎日同じ失敗で費用が出るのを防ぐ。最後の失敗から7日で掃除）。`max_tokens` は 16000（Sonnet 5.5 は思考と本文の合算）。400/404 は設定ミスとして打ち切る
 - 送るのは公開資料（出典ページ本文とレコード）だけ。費用は 1 本あたり約 $0.05 の見積り（上限は本数・`max_tokens` 4000・入力字数の 3 つで縛る）。実測は未確認
 
 ### 状態ファイル（data/state/）

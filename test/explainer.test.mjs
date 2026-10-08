@@ -5,6 +5,7 @@ import path from 'node:path';
 import { describe, it } from 'node:test';
 import {
   COPY_THRESHOLD,
+  COPY_THRESHOLD_ASCII,
   DEFAULT_MODEL,
   SYSTEM_PROMPT,
   buildStored,
@@ -14,6 +15,8 @@ import {
   estimateCostUsd,
   explainerToMarkdown,
   generateExplainer,
+  pruneAttempts,
+  recordAttempt,
   selectTargets,
 } from '../scripts/lib/explainer.mjs';
 import { run } from '../scripts/explain.mjs';
@@ -46,7 +49,7 @@ const article = (over = {}) => ({
 });
 const longText = (seed) => Array.from({ length: 200 }, (_, i) => `${seed}${i}`).join(' ');
 const usage = { input_tokens: 1000, output_tokens: 500, cache_read_input_tokens: 0, cache_creation_input_tokens: 0 };
-const okMsg = (out = article()) => ({ stop_reason: 'end_turn', parsed_output: out, usage });
+const okMsg = (out = article()) => ({ stop_reason: 'end_turn', content: [{ type: 'text', text: JSON.stringify(out) }], usage });
 const apiErr = (status) => Object.assign(new Error(`status ${status}`), { status });
 
 describe('checkExplainer', () => {
@@ -116,12 +119,12 @@ describe('selectTargets', () => {
 describe('generateExplainer', () => {
   it('API 引数: モデル・max_tokens・effort・format・system の cache_control。サンプリング/thinking/prefill は付けない', async () => {
     let args;
-    const client = { messages: { parse: async (a) => ((args = a), okMsg()) } };
+    const client = { messages: { create: async (a) => ((args = a), okMsg()) } };
     const r = await generateExplainer({ client, record: record(), sourceText: 'body' });
     assert.equal(r.status, 'ok');
     assert.equal(args.model, 'claude-sonnet-5-5');
     assert.equal(DEFAULT_MODEL, 'claude-sonnet-5-5');
-    assert.equal(args.max_tokens, 4000);
+    assert.equal(args.max_tokens, 16000);
     assert.equal(args.output_config.effort, 'medium');
     assert.ok(args.output_config.format);
     assert.equal(args.system[0].cache_control.type, 'ephemeral');
@@ -137,28 +140,32 @@ describe('generateExplainer', () => {
     assert.ok(m.includes(SRC) && m.includes('BODY-TEXT') && m.includes('source_kind'));
   });
   it('refusal / max_tokens / パース失敗は skip（保存対象にしない）', async () => {
-    for (const [stop_reason, parsed_output, reason] of [
-      ['refusal', null, 'refusal'],
-      ['max_tokens', null, 'max_tokens'],
-      ['end_turn', null, 'parse-failed'],
+    for (const [stop_reason, content, reason] of [
+      ['refusal', [], 'refusal'],
+      ['max_tokens', [{ type: 'text', text: '{"headline":' }], 'max_tokens'],
+      ['end_turn', [{ type: 'text', text: '{壊れたJSON' }], 'parse-failed'], // 例外を投げる parse
+      ['end_turn', [{ type: 'text', text: '{"headline":"x"}' }], 'parse-failed'], // スキーマ違反
     ]) {
-      const client = { messages: { parse: async () => ({ stop_reason, parsed_output, usage }) } };
+      const client = { messages: { create: async () => ({ stop_reason, content, usage }) } };
       const r = await generateExplainer({ client, record: record(), sourceText: 'b' });
       assert.equal(r.status, 'skip');
       assert.equal(r.reason, reason);
+      assert.deepEqual(r.usage, usage); // どの経路でも usage を返す
+      assert.equal(r.countable, true);
     }
   });
   it('401/402/403 は abort、429/529/500 は skip', async () => {
-    for (const [status, want] of [[401, 'abort'], [402, 'abort'], [403, 'abort'], [429, 'skip'], [529, 'skip'], [500, 'skip']]) {
+    for (const [status, want] of [[400, 'abort'], [401, 'abort'], [402, 'abort'], [403, 'abort'], [404, 'abort'], [429, 'skip'], [529, 'skip'], [500, 'skip']]) {
       assert.equal(classifyApiError(apiErr(status)), want);
-      const client = { messages: { parse: async () => { throw apiErr(status); } } };
+      const client = { messages: { create: async () => { throw apiErr(status); } } };
       assert.equal((await generateExplainer({ client, record: record(), sourceText: 'b' })).status, want);
     }
   });
 });
 
-function harness({ records, existing = new Set(), env = {}, parse, fetchArticle } = {}) {
+function harness({ records, existing = new Set(), env = {}, parse, fetchArticle, attempts = {} } = {}) {
   const saved = {};
+  const attemptsStore = { map: attempts };
   const issues = [];
   const notes = [];
   const logs = [];
@@ -169,10 +176,12 @@ function harness({ records, existing = new Set(), env = {}, parse, fetchArticle 
     env: { ANTHROPIC_API_KEY: 'test-key-not-real', ...env },
     createClient: () => {
       clientCreated++;
-      return { messages: { parse: async (a) => ((calls++), parse(a, calls)) } };
+      return { messages: { create: async (a) => ((calls++), parse(a, calls)) } };
     },
     loadRecords: () => records,
     existingIds: () => existing,
+    readAttempts: () => attemptsStore.map,
+    writeAttempts: (m) => { attemptsStore.map = m; },
     fetchArticle: fetchArticle ?? (async () => longText('本文')),
     writeExplainer: (id, d) => { saved[id] = d; },
     pushIssueFn: (i) => issues.push(i),
@@ -181,7 +190,7 @@ function harness({ records, existing = new Set(), env = {}, parse, fetchArticle 
     today: '2026-10-09',
     now: '2026-10-09T00:00:00Z',
   };
-  return { deps, saved, issues, notes, logs, calls: () => calls, clientCreated: () => clientCreated };
+  return { deps, attemptsStore, saved, issues, notes, logs, calls: () => calls, clientCreated: () => clientCreated };
 }
 const recs = (n) => Array.from({ length: n }, (_, i) => record({ id: `2026-10-08-kr-00${i + 1}`, sources: [`https://example.gov/${i}`] }));
 const artFor = (r) => article({ facts: [{ text: '事実。', source_url: r.sources[0] }] });
@@ -255,7 +264,7 @@ describe('explain run', () => {
     const rs = recs(2).map((r) => ({ ...r, sources: [SRC] }));
     const h = harness({
       records: rs,
-      parse: async (_a, n) => ({ stop_reason: n === 1 ? 'refusal' : 'max_tokens', parsed_output: null, usage }),
+      parse: async (_a, n) => ({ stop_reason: n === 1 ? 'refusal' : 'max_tokens', content: [], usage }),
     });
     await run(h.deps);
     assert.deepEqual(h.saved, {});
@@ -293,6 +302,56 @@ describe('explain run', () => {
     const h = harness({ records: rs, parse: async () => okMsg() });
     h.deps.loadRecords = () => { throw new Error('boom'); };
     assert.equal(await run(h.deps), 0);
+  });
+});
+
+describe('explainer_attempts', () => {
+  it('検査落ち・refusal・max_tokens・parse-failed を記録し、tries>=2 で対象外にする', async () => {
+    const rs = recs(1);
+    const h = harness({ records: rs, parse: async () => ({ stop_reason: 'refusal', content: [], usage }) });
+    await run(h.deps);
+    assert.equal(h.attemptsStore.map[rs[0].id].tries, 1);
+    assert.deepEqual(h.attemptsStore.map[rs[0].id].reasons, ['refusal']);
+    await run(h.deps); // 2回目
+    assert.equal(h.attemptsStore.map[rs[0].id].tries, 2);
+    const before = h.calls();
+    await run(h.deps); // 3回目は対象外で API を呼ばない
+    assert.equal(h.calls(), before);
+  });
+  it('検査落ちも記録される', async () => {
+    const rs = recs(1);
+    const h = harness({ records: rs, parse: async () => okMsg(article({ facts: [] })) });
+    await run(h.deps);
+    assert.ok(h.attemptsStore.map[rs[0].id].reasons[0].startsWith('rejected'));
+  });
+  it('429 は記録しない', async () => {
+    const rs = recs(1);
+    const h = harness({ records: rs, parse: async () => { throw apiErr(429); } });
+    await run(h.deps);
+    assert.deepEqual(h.attemptsStore.map, {});
+  });
+  it('selectTargets は tries>=2 を除外し、pruneAttempts は7日超を掃除する', () => {
+    const rs = [record({ id: '2026-10-08-kr-001' }), record({ id: '2026-10-08-kr-002' })];
+    const t = selectTargets(rs, { today: '2026-10-09', attempts: { '2026-10-08-kr-001': { tries: 2 }, '2026-10-08-kr-002': { tries: 1 } } });
+    assert.deepEqual(t.map((r) => r.id), ['2026-10-08-kr-002']);
+    const m = pruneAttempts({ a: { tries: 2, last: '2026-10-01' }, b: { tries: 2, last: '2026-10-02' } }, '2026-10-09');
+    assert.deepEqual(Object.keys(m), ['b']);
+  });
+  it('recordAttempt は回数を足す', () => {
+    const m = recordAttempt(recordAttempt({}, 'x', 'a', '2026-10-09'), 'x', 'b', '2026-10-09');
+    assert.deepEqual(m.x, { tries: 2, last: '2026-10-09', reasons: ['a', 'b'] });
+  });
+});
+
+describe('写し防止の窓（英数字は60字）', () => {
+  it('英数字だけの40〜59字一致は許し、60字以上は不合格。日本語を含む窓は40字', () => {
+    const en = 'Providers of high impact AI systems must conduct risk assessments before deployment of the system.';
+    const clip = (n) => en.replace(/ /g, '').slice(0, n);
+    const mk = (t) => article({ lead: `${t}。この文章は導入の長さを満たすための追加の文章です。` });
+    const media = record({ source_kind: 'media' });
+    assert.equal(checkExplainer(mk(clip(59)), media, en).ok, true);
+    assert.equal(checkExplainer(mk(clip(60)), media, en).ok, false);
+    assert.ok(COPY_THRESHOLD_ASCII === 60 && COPY_THRESHOLD === 40);
   });
 });
 

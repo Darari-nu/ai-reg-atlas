@@ -106,6 +106,25 @@ export type TimelineEvent = {
   updateId?: string;
 };
 
+// 解説記事（Claude による下書き → darari の OK で published）。サイトに出るのは published だけ
+export type Explainer = {
+  id: string;
+  status: 'draft' | 'published';
+  model: string;
+  created_at: string;
+  published_at?: string;
+  record_id: string;
+  source_kind: 'official' | 'media';
+  headline: string;
+  lead: string;
+  facts: { text: string; source_url: string }[];
+  who_is_affected: string;
+  japan_impact: string;
+  next_steps: string;
+  unknowns: string[];
+  glossary: { term: string; explanation: string }[];
+};
+
 export type Meta = { last_sweep: string; status: 'ok' | 'partial' | 'failed' };
 
 /* ---------- 読み込み（ビルド時に静的展開） ---------- */
@@ -132,6 +151,30 @@ export function getUpdates(): UpdateRecord[] {
     all.push(...JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
   }
   return all.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+}
+
+// published の解説だけを返す（下書きは絶対にサイトに出さない）。data/explainers が無ければ空
+let explainerCache: Explainer[] | null = null;
+export function getPublishedExplainers(): Explainer[] {
+  if (explainerCache) return explainerCache;
+  const dir = path.join(ROOT, 'data/explainers');
+  const all: Explainer[] = [];
+  if (fs.existsSync(dir)) {
+    for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+      const ex = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')) as Explainer;
+      if (ex.status === 'published') all.push(ex);
+    }
+  }
+  explainerCache = all;
+  return all;
+}
+
+export function hasExplainer(updateId: string): boolean {
+  return getPublishedExplainers().some((e) => e.id === updateId);
+}
+
+export function explainerPath(id: string): string {
+  return `/explain/${id}/`;
 }
 
 export function getMeta(): Meta {

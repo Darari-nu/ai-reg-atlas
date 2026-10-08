@@ -1,6 +1,6 @@
 ---
 import type { UpdateRecord, Country } from '../lib/data';
-import { AXIS_LABELS, CHANGE_TYPE_LABELS, withBase, updateAnchor } from '../lib/data';
+import { AXIS_LABELS, CHANGE_TYPE_LABELS, withBase, updateAnchor, hasExplainer, explainerPath } from '../lib/data';
 
 interface Props {
   update: UpdateRecord;
@@ -10,6 +10,7 @@ interface Props {
 }
 const { update: u, country, theme, big = false } = Astro.props;
 const dark = theme === 'dark';
+const explained = hasExplainer(u.id);
 const sourceLinkLabel = u.source_kind === 'media' ? '出典（報道）↗' : '一次ソース ↗';
 ---
 
@@ -70,6 +71,11 @@ const sourceLinkLabel = u.source_kind === 'media' ? '出典（報道）↗' : '�
         <span class={`mr-2 font-mono text-[10px] ${dark ? 'text-paper/40' : 'text-ink/40'}`}>SO WHAT</span>{u.so_what}
       </p>
       <div class="flex flex-wrap items-center gap-x-5 gap-y-1 font-mono text-xs">
+        {explained && (
+          <a href={withBase(explainerPath(u.id))} class={`font-medium underline underline-offset-2 ${dark ? 'text-star-gold' : 'text-ink'}`}>
+            解説を読む →
+          </a>
+        )}
         {u.sources.map((s) => (
           <a href={s} rel="noopener" target="_blank" class={`underline underline-offset-2 ${dark ? 'text-star-gold' : 'text-ink'}`}>
             {sourceLinkLabel}

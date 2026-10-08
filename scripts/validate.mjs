@@ -12,7 +12,9 @@ addFormats(ajv);
 
 const regulationSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/regulation.schema.json'), 'utf8'));
 const updateSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/update.schema.json'), 'utf8'));
+const explainerSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/explainer.schema.json'), 'utf8'));
 const validateRegulation = ajv.compile(regulationSchema);
+const validateExplainer = ajv.compile(explainerSchema);
 const validateUpdates = ajv.compile(updateSchema);
 
 let errors = 0;
@@ -52,6 +54,12 @@ for (const f of ['eu_baseline.json', ...listDataFiles('regulations').map((f) => 
 for (const f of listDataFiles('updates').filter((f) => f.endsWith('.json'))) {
   const data = JSON.parse(fs.readFileSync(resolveData(`updates/${f}`), 'utf8'));
   check(`updates/${f}`, validateUpdates(data), validateUpdates);
+}
+
+// explainers（解説記事。無ければ0件）
+for (const f of listDataFiles('explainers').filter((f) => f.endsWith('.json'))) {
+  const data = JSON.parse(fs.readFileSync(resolveData(`explainers/${f}`), 'utf8'));
+  check(`explainers/${f}`, validateExplainer(data), validateExplainer);
 }
 
 // meta

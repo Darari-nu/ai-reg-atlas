@@ -15,6 +15,7 @@ function mmdd(ymd) {
 
 /** 通知1件を1行の文面にする */
 export function formatNotification(n) {
+  if (n.type === 'explainer') return `📝 ${String(n.label ?? '解説の下書きができました').slice(0, 120)}`; // explain.mjs が積む
   const flag = n.flag ? `${n.flag} ` : '';
   if (n.type === 'recovered') return `🟢 ${flag}${n.label} が復旧しました`;
   const reason = String(n.reason ?? '不明').slice(0, MAX_REASON_CHARS);

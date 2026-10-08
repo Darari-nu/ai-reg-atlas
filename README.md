@@ -30,6 +30,8 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
   triage.mjs     新着を40件ずつ束ねて Gemini Flash-Lite で選別・事象dedupe（一部バッチ失敗でも続行）
   summarize.mjs  実URL本文を機械ゲート → Gemini Flash が3行要約＋差分影響を生成
                  （503/枠切れは予備モデルへ切替。待ち時間は1ステップ累計600秒で打ち切り）
+  explain.mjs    直近7日の更新のうち解説が無いものを Claude（claude-sonnet-5-5）で解説記事の「下書き」にする
+                 （キー未設定・クレジット切れ・API障害は何もせず続行。下書きはサイトに出ない）
   validate.mjs   JSON Schema検証（失敗ならcommitしない）
   → data/ をcommit&push → 同一ワークフロー内で Astroビルド（通ることの確認のみ）
   → diff_changed / needs-review は Issue 自動起票
@@ -47,6 +49,16 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 - DBなし。`data/` のJSONがデータベース（履歴はGit）
 - 収集した記事本文・生HTMLは要約後に破棄。保存するのは構造化レコードのみ
 - フロント: Astro（静的）＋ Reactアイランド（地球儀 cobe のみ）＋ Tailwind
+
+### 解説記事（Claude API・下書き運用）
+
+`scripts/explain.mjs`（`scripts/lib/explainer.mjs`）が、直近7日の更新レコードのうち `data/explainers/<id>.json` がまだ無いものを、出典ページ本文と合わせて Claude に渡し、構造化 JSON（見出し・リード・事実・誰に効くか・日本への影響・今後の予定・資料から分からないこと・用語）の解説にする。
+
+- **下書きから始める**: 保存時の `status` は `draft`。サイトには出ない（`src/pages/explain/[id].astro` の `getStaticPaths` は `published` だけ）。下書きができると `needs-review: 解説の下書き <id>` の Issue（本文に記事全文）と Discord 通知が出る。確認して OK なら `node scripts/explainer-publish.mjs <id...>` で `published` にしてコミットすると、`/explain/<id>/` が生成され、更新カードに「解説を読む →」が付く
+- **事実と解釈を分ける**: ページでは「資料に書いてあること」（`facts`、各項目に出典リンク）と「解釈（AIによる解説）」を見出しと色で分け、末尾に元資料リンクと注意書きを固定表示。報道由来（`source_kind=media`）は「報道ベース」と明示
+- **機械チェック**（`checkExplainer`）: `facts` が1件以上で全 `source_url` がレコードの `sources` に含まれる／長さの上下限／公式以外（報道・不明）は出典本文と40字以上連続一致する部分があれば不合格（空白除去後の比較）。落ちたら保存しない
+- **止まり方**: `ANTHROPIC_API_KEY` が無ければ `[explain] no key, skip` で終了。401/402/403 はその回を打ち切り（残りは翌日）、429/529/5xx は SDK の既定リトライ後にその記事だけスキップ。`stop_reason` が `refusal`/`max_tokens` なら保存しない。どんな場合も exit 0。拒否時に高価なモデルへ回す server-side fallback は使わない
+- 送るのは公開資料（出典ページ本文とレコード）だけ。費用は 1 本あたり約 $0.05 の見積り（上限は本数・`max_tokens` 4000・入力字数の 3 つで縛る）。実測は未確認
 
 ### 状態ファイル（data/state/）
 
@@ -183,6 +195,7 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 |---|---|---|
 | `GEMINI_API_KEY` | triage / summarize の要約生成 | `pipeline.yml` |
 | `CLOUDFLARE_API_TOKEN` | Cloudflare Pages へのデプロイ | `cf-deploy.yml` |
+| `ANTHROPIC_API_KEY`（任意） | 解説記事の下書き生成（Claude）。未登録なら `explain` は何もしない | `pipeline.yml`（`explain`） |
 | `DISCORD_WEBHOOK_URL`（任意） | 情報源の停止・復旧の Discord 通知。未登録なら通知しないだけ | `pipeline.yml`（`notify discord`） |
 
 `CLOUDFLARE_ACCOUNT_ID` は Secret ではなく `cf-deploy.yml` に平文で直書きしてある
@@ -223,6 +236,10 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 | 名前 | 既定値 | 意味 |
 |---|---|---|
 | `SUMMARIZE_MAX_PER_RUN` | `8` | summarize が1回の実行で要約する件数の上限（バッチ原則・無料枠保護）。超えた分は `queue.json` に繰り越す |
+| `EXPLAINER_MODEL` | `claude-sonnet-5-5` | 解説に使う Claude のモデル。日付接尾辞は付けない |
+| `EXPLAINER_MAX_PER_RUN` | `3` | explain が1回で解説する本数の上限 |
+| `EXPLAINER_MAX_INPUT_CHARS` | `40000` | Claude に送る出典本文の上限字数（超えたら切ってログに出す） |
+| `EXPLAINER_AUTO_PUBLISH` | 未設定（オフ） | `1` のときだけ下書きを経ず最初から `published` にする。既定オフ |
 | `LAST_SEEN_MAX_LOOKBACK_DAYS` | `14` | `last_seen.json` の遡り上限日数。状態が古くても `今 − この日数` より前は再収集しない |
 | `SEEN_URL_TTL_DAYS` | `30` | `seen_urls.json` に記録した選別結果を覚えておく日数。切れたら忘れてもう一度拾い直す |
 | `SCRAPE_HASH_MAX_AGE_DAYS` | `30` | `scrape_hash` ソースで候補化する日付付きリンクの上限鮮度（collect.mjs） |
@@ -332,6 +349,7 @@ DRY_RUN=1 npm run validate
 | 2026-10-04 | 情報源の稼働監視と Discord 通知を追加（`source_health.json`・`sourceHealth.mjs`・`notify-discord.mjs`）。失敗が3日続いたら通知＋`needs-review` Issue、復旧したら通知。`scrape_hash` の抽出0件の即時 Issue は廃止し、毎回抽出して稼働判定に使う（候補化の条件は従来どおり）。`collect` に検証用 `SWEEP_DATE` を追加 |
 | 2026-10-07 | 稼働監視の初回通知で、9月から1件も取れていなかった情報源3本（韓国 MSIT RSS bbsSeqNo=84・インド medianama の watch_feeds 2本）を `countries.yaml` から外した。medianama.com は `trusted_media` にあるので Bing ニュース経由の記事は引き続き出典にできる |
 | 2026-10-07 | シンガポール IMDA 報道発表一覧（scrape_hash）を読めるようにした。GitHub Actions からの取得は 200 でも本文が script だけで、一覧のハッシュが 8/6 から空文字列のSHA256のまま、中継（jina）へのフォールバックも例外時しか働かなかった。(1) 直接取得が成功しても `stripHtml` 後に本文が空なら、r.jina.ai を HTML 形式（`X-Return-Format: html`）で取り直す（ログ `via jina proxy (empty body, html)`。markdown 形式は aria-label だけの空アンカーが落ちるため使わない。既存の「例外時に markdown 形式で中継」は不変）。(2) `countries.yaml` の scrape_hash に任意の `context_window`（既定400）を追加し、IMDA だけ 800（日付 div がアンカーの約470字後ろにあるため）。抽出関数は単体テストのため `scripts/lib/scrape.mjs` に移した（`test/scrape.test.mjs`）。他の情報源の抽出結果は不変（全情報源の DRY_RUN で変更前後を比較）。初回はハッシュが「変化した」扱いで直近30日の記事が候補に出る |
+| 2026-10-09 | 解説記事（Claude API）を追加。`explain.mjs`＋`lib/explainer.mjs`＋`explainer-publish.mjs`、`schema/explainer.schema.json`、`/explain/<id>/` ページ、更新カードの「解説を読む」リンク、`pipeline.yml` の `explain` ステップ（`continue-on-error`、キー無しなら何もしない）。下書き運用で開始（公開は `explainer-publish.mjs`）。`summarize.mjs` の本文取得を `lib/fetchArticle.mjs` に出した（挙動は不変）。依存に `@anthropic-ai/sdk`・`zod` を追加。実 API での品質・費用・キャッシュ効果は未確認（キー発行後） |
 
 ## ライセンス
 

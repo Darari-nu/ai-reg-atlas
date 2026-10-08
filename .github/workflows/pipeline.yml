@@ -80,6 +80,19 @@ jobs:
           GEMINI_WAIT_BUDGET_SEC: ${{ vars.GEMINI_WAIT_BUDGET_SEC }}
           SUMMARIZE_MAX_PER_RUN: ${{ vars.SUMMARIZE_MAX_PER_RUN }} # 1回に要約する上限。あふれは data/state/queue.json へ繰り越す
 
+      # Claude による解説記事の下書き。キー未登録・クレジット切れ・API障害でも何もせず続行する（スクリプトが常に exit 0）。
+      # 下書きはサイトに出ない。公開は darari の OK 後に scripts/explainer-publish.mjs で行う
+      - name: explain
+        continue-on-error: true
+        run: node scripts/explain.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # 以下は Repository Variables。未設定なら空文字→コードの既定値
+          EXPLAINER_MODEL: ${{ vars.EXPLAINER_MODEL }}
+          EXPLAINER_MAX_PER_RUN: ${{ vars.EXPLAINER_MAX_PER_RUN }}
+          EXPLAINER_MAX_INPUT_CHARS: ${{ vars.EXPLAINER_MAX_INPUT_CHARS }}
+          EXPLAINER_AUTO_PUBLISH: ${{ vars.EXPLAINER_AUTO_PUBLISH }}
+
       - name: validate
         run: node scripts/validate.mjs
 

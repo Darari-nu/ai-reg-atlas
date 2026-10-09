@@ -1766,5 +1766,181 @@
   "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-and-around-balasore-city-covering": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-08"
+  },
+  "https://www.edpb.europa.eu/news/swedish-dpa-fines-miljodata-i-karlskrona-approximately-eur-160-000-for-insufficient-technical_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.edpb.europa.eu/news/hellenic-dpa-decision-on-a-data-breach-involving-eetaa-sa-as-processor-for-the-ministry-of_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denki_seisaku/02tsushin10_04000737.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/ICT_services/02kiban18_02000508.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/hougakuken/R8_kaisai_00001.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/chizai/02zaisei02_04001397_00974.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/chizai/02zaisei02_04001397_00973.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/chizai/02zaisei02_04001397_00972.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/chizai/02zaisei02_04001397_00971.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/chizai/02zaisei02_04001397_00970.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/chizai/02zaisei02_04001397_00969.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.federalregister.gov/documents/2026/10/08/2026-20674/public-meeting-of-the-national-sea-grant-advisory-board": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://biz.chosun.com/en/en-society/2026/10/08/GO45Z5DDV5CYXP7ZJVOWZC5YFI/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://economictimes.indiatimes.com/tech/newsletters/tech-top-5/indias-ai-rules-take-shape-tcs-profit-jumps-15/articleshow/134790897.cms": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.theguardian.com/australia-news/2026/oct/08/openai-used-ai-to-help-write-email-warning-australian-government-ai-had-hacked-its-websites": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei07_01000294.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei17_02000274.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.nist.gov/news-events/news/2026/10/nist-joins-white-house-effort-drive-new-golden-age-science": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.nist.gov/news-events/news/2026/10/nist-study-shows-how-toxic-substances-mixed-fentanyl-vary-across-us-and": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.tc260.org.cn/tc260/xwdt1/202404/83debc7e404846c9b3d7fd3236016a8e.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.tc260.org.cn/tc260/zjwy/zjwy.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.tc260.org.cn/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.tc260.org.cn/tc260/gzzyfbbzsl/gzzyfbbzsl.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.tc260.org.cn/tc260/bzzqyj/yjzj_list.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-tracking-and-limiting-excessive-screen-use-among-seniors/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-evaluating-impact-of-readsg-challenge-in-cultivating-long-term-reading-habits-beyond-re/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-reasons-for-reports-deemed-ineligible-for-act/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-verifying-identity-of-government-officers-and-accessing-contact-details-following-changes-to-singapore/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-proportion-and-reasons-for-unanswered-outbound-calls-from-government-agencies-and-measures-to-improve-outreach-to-residents-requiring-assitance/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/government-of-canada-announces-new-investment-to-strengthen-canadas-domestic-radiopharmaceutical-production-capacity.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261008/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-west-godavari-andhra-pradesh-reliance-jio-infocomm-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-jhalawar-rajasthan-bharat-sanchar-nigam-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-anupgarh-rajasthan-reliance-jio-infocomm-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-panchmahal-gujarat-ro-jaipur": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "http://www.trai.gov.in/node/18749": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "http://www.trai.gov.in/node/18748": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "http://www.trai.gov.in/node/18747": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-across-fazilka-city-and-adjoining": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//78254ce1-3da5-47c0-883b-e4a64a874424": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//1c5aa1c3-c020-43d0-9298-75fac734b9d8": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//43428817-ccd2-4127-beb6-e25046299970": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-09"
+  },
+  "https://www.edpb.europa.eu/news/dutch-dpa-fines-uber-eur-824-990-000-for-unlawful-automated-decision-making-and-insufficient_en": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-09"
+  },
+  "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-adequacy-of-ai-computing-resources-for-local-enterprises-through-domestic-facilities-and-overseas-cloud-services/": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-09"
   }
 }

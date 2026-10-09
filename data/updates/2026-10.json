@@ -268,5 +268,35 @@
       "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-impact-of-foreign-ai-chip-export-controls-and-remote-computing-access-restrictions-on-singapore-data-centre-and-cloud-services-sectors-and-mitigation-measures/"
     ],
     "country_anchor": "/country/sg/#updates"
+  },
+  {
+    "id": "2026-10-08-in-001",
+    "date": "2026-10-08",
+    "country": "in",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "インド電子情報技術省（MeitY）、1か月以内にAI規制の意見募集文書を公表へ",
+    "summary": {
+      "what": "安全性やディープフェイク対策に焦点を当てたAI規制の意見募集文書の公表",
+      "who": "インド電子情報技術省（MeitY）のアシュウィニ・ヴァイシュナウ大臣",
+      "when_impact": "2026年11月頃までに公表され意見募集が開始される予定"
+    },
+    "detail": "インドの電子情報技術省（MeitY）のアシュウィニ・ヴァイシュナウ大臣は、2026年10月8日、1か月以内にAI規制に関する意見募集文書（コンサルテーション・ペーパー）を公表すると発表した。この文書では、AI利用の「安全性」「ヒューマンファースト」「スケール」「包摂性」「ディープフェイクなどの社会的危害」の5点に焦点を当てる。また、法的な対応にとどまらず、技術と法を組み合わせた解決策（techno-legal solutions）を模索し、サイバーセキュリティやディープフェイク等については業界自身が主要な責任を負うアプローチを提示する見込みである。",
+    "so_what": "インド政府がこれまでの放任姿勢からAI規制法制定に向け舵を切ったことを示しており、今後の法制化の方向性を占う重要な転換点となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本件は意見募集文書の公表に関する方針表明（announcement）段階であるため、現時点でのEU法との差分定義に変更はない。"
+    },
+    "canonical_event": "India MeitY announces upcoming consultation paper on AI regulation",
+    "publication_date": "2026-10-08",
+    "discovered_at": "2026-10-09",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.medianama.com/2026/10/223-meity-consultation-paper-ai-regulation/"
+    ],
+    "country_anchor": "/country/in/#updates"
   }
 ]

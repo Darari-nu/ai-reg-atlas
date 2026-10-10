@@ -1,0 +1,70 @@
+{
+  "id": "2026-09-17-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:19:58Z",
+  "record_id": "2026-09-17-br-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:19:58Z",
+  "headline": "ブラジル下院、デジタルIDとAI生成コンテンツ規律の法案を審議",
+  "lead": "ブラジル下院で、デジタル上の本人確認、仮名の利用、生成AIコンテンツの扱いを定める法案PL 2002/26の審議が始まりました。生成AIで第三者になりすますことや、人々の支持が集まっているように見せかけることを禁じる内容が含まれます。成立にはまだ下院と上院の可決が必要で、施行日は資料からは分かりません。",
+  "facts": [
+    {
+      "text": "法案PL 2002/26は、デジタルIDや責任ある本人確認、正当な秘匿、仮名の利用、AI生成コンテンツについての一般規則を定めるもので、下院で審議されています。",
+      "source_url": "https://www.camara.leg.br/noticias/1304625-projeto-cria-regras-para-identidade-digital-uso-de-pseudonimos-e-conteudos-com-ia"
+    },
+    {
+      "text": "法案は「保管付き本人確認」の仕組みを設け、リスクが高い公的コミュニケーションについては、一般利用者に実名の公開を求めずに実際の責任者のデータを検証して安全に保管し、裁判所命令または法律に明記された場合にのみ開示できるとしています。",
+      "source_url": "https://www.camara.leg.br/noticias/1304625-projeto-cria-regras-para-identidade-digital-uso-de-pseudonimos-e-conteudos-com-ia"
+    },
+    {
+      "text": "本人確認はGov.brアカウント、デジタル証明書、銀行認証、書類確認のいずれかで行え、全国民を対象とする単一の登録簿の作成は禁止されます。",
+      "source_url": "https://www.camara.leg.br/noticias/1304625-projeto-cria-regras-para-identidade-digital-uso-de-pseudonimos-e-conteudos-com-ia"
+    },
+    {
+      "text": "企業、官公庁、政党、市民団体の公式プロフィールには、正式名称、CNPJ（ある場合）、連絡先の公開が求められ、組織的な活動や政治キャンペーンを隠すための偽の自然発生的なプロフィールの使用も明示的に禁止されます。",
+      "source_url": "https://www.camara.leg.br/noticias/1304625-projeto-cria-regras-para-identidade-digital-uso-de-pseudonimos-e-conteudos-com-ia"
+    },
+    {
+      "text": "法案は、生成AIを使って偽の民意の支持を装うことや、許可なく第三者の身元を模倣することを禁じ、脅迫・迫害・嫌がらせ目的で個人情報を悪意をもって公開するドクシングも禁止しています。",
+      "source_url": "https://www.camara.leg.br/noticias/1304625-projeto-cria-regras-para-identidade-digital-uso-de-pseudonimos-e-conteudos-com-ia"
+    },
+    {
+      "text": "法案は科学技術イノベーション、文化、コミュニケーション、憲法・司法・市民権の各委員会で結論的に審査され、法律になるには下院と上院の可決が必要です。",
+      "source_url": "https://www.camara.leg.br/noticias/1304625-projeto-cria-regras-para-identidade-digital-uso-de-pseudonimos-e-conteudos-com-ia"
+    }
+  ],
+  "who_is_affected": "ブラジル向けにSNS運用、広告、マーケティング、カスタマーコミュニケーションを行う企業や、公式アカウントを持つ組織が対象になる可能性があります。生成AIで人物の模倣や応援コメントの作成を行うサービスの提供者や、プロフィール機能や本人確認を提供するプラットフォーム事業者にも関わる可能性があります。ただし、どの事業者にどの義務が課されるかは、記事からは確定できません。",
+  "japan_impact": "ブラジルでSNSアカウントやキャンペーンを運用する日本企業やその代理店は、生成AIでの人物模倣、なりすまし、ステマ的な世論演出に当たる運用がないか、社内のAI利用規程と運用を点検しておく意味があります。公式アカウントの組織名や連絡先の表示が整っているかも確認対象になりえます。ブラジル向けにプラットフォームを提供する場合は、本人確認の仕組みや開示手続きへの影響を注視するとよいでしょう。現時点では法案段階であり、法的助言ではなく情報整理としてお読みください。",
+  "next_steps": "資料によると、法案は4つの委員会で結論的に審査され、成立には下院と上院の可決が必要です。委員会の審議日程や施行時期は資料に書かれていません。内容が修正される可能性もあるため、今後の審議経過を確認することが望ましいというのは推測です。",
+  "unknowns": [
+    "施行日や経過措置の有無",
+    "違反した場合の罰則や制裁の内容",
+    "「リスクが高い公的コミュニケーション」の具体的な範囲",
+    "どの事業者（プラットフォーム、AI提供者、利用企業）にどの義務が課されるか",
+    "委員会審議の日程と、修正が入るかどうか",
+    "国外事業者への適用範囲"
+  ],
+  "glossary": [
+    {
+      "term": "PL 2002/26",
+      "explanation": "ブラジル下院で審議中の法案番号です。PLは「法案（Projeto de Lei）」の略です。"
+    },
+    {
+      "term": "保管付き本人確認",
+      "explanation": "責任者の実際の身元データを検証して安全に保管し、裁判所命令などの場合にだけ開示できるようにする仕組みです。利用者は公には仮名などを使えます。"
+    },
+    {
+      "term": "ドクシング",
+      "explanation": "相手を脅したり嫌がらせをしたりする目的で、個人情報を暴露する行為です。"
+    },
+    {
+      "term": "CNPJ",
+      "explanation": "ブラジルの法人登録番号です。"
+    },
+    {
+      "term": "結論的審査",
+      "explanation": "記事の説明では、法案が複数の委員会で審査される手続です。法律になるには、下院と上院の可決が必要とされています。"
+    }
+  ]
+}

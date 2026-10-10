@@ -1,0 +1,69 @@
+{
+  "id": "2026-10-06-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:19:58Z",
+  "record_id": "2026-10-06-br-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:19:58Z",
+  "headline": "ブラジル法務公安省、コンテンツ規制でリスク予防を主張",
+  "lead": "ブラジル法務公安省（MJSP）は2026年9月30日に上院で開かれたセミナーで、コンテンツモデレーションを「システミック・リスク」と「注意義務」の考え方で規制すべきだと主張しました。損害が出てから対応する従来の枠組みから、事前のリスク予防へ移る方向性を示した発言です。公式発表は同年10月6日付で、新たな義務や期限を定めたものではありません。",
+  "facts": [
+    {
+      "text": "MJSPは2026年9月30日に上院で開かれたセミナーで、コンテンツモデレーションをシステミック・リスクの論理と注意義務に基づいて規制すべきだと述べました。",
+      "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/mjsp-defende-prevencao-de-riscos-e-capacidade-institucional-na-regulacao-do-ambiente-digital-1"
+    },
+    {
+      "text": "デジタル権利事務局（Sedigi）によれば、個別の損害は司法に委ね、規制はサービスのシステミック・リスクに集中させる選択をしており、これを基本権の保護とイノベーションの保護の両立策と位置づけています。",
+      "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/mjsp-defende-prevencao-de-riscos-e-capacidade-institucional-na-regulacao-do-ambiente-digital-1"
+    },
+    {
+      "text": "連邦最高裁（STF）はインターネット市民法（Marco Civil）19条を一部違憲とし、注意義務とシステミックな不備、過失の推定、通報への未対応の3軸でプロバイダーの責任の枠組みを示しました。",
+      "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/mjsp-defende-prevencao-de-riscos-e-capacidade-institucional-na-regulacao-do-ambiente-digital-1"
+    },
+    {
+      "text": "2026年の政令第12.975号と第12.976号は注意義務を具体化し、第三者コンテンツへの責任をシステム面から問う仕組みと、個別通報の審査とを切り分けています。国家データ保護庁（ANPD）は通報処理の不備を調べる監督役です。",
+      "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/mjsp-defende-prevencao-de-riscos-e-capacidade-institucional-na-regulacao-do-ambiente-digital-1"
+    },
+    {
+      "text": "法律第15.211号は、子どもと青少年に対する犯罪について、特定コンテンツの積極的な検出、情報の保管、警察当局への送付を求める厳格なモデレーション体制を定めており、ANPDを子ども・青少年保護の自律的な行政機関としています。",
+      "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/mjsp-defende-prevencao-de-riscos-e-capacidade-institucional-na-regulacao-do-ambiente-digital-1"
+    },
+    {
+      "text": "ANPDの規制アジェンダには、AI、年齢確認、公的機関によるデータ共有、データ集約事業者、監督・制裁の仕組みに関する案件が含まれると紹介されました。",
+      "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/mjsp-defende-prevencao-de-riscos-e-capacidade-institucional-na-regulacao-do-ambiente-digital-1"
+    }
+  ],
+  "who_is_affected": "ブラジルでSNSや投稿・販売の場を提供するプラットフォーム事業者（プロバイダー）が主な対象になる可能性があります。特に大規模事業者には、より高い水準の対策が求められる方向性が示されています。マーケットプレイスや、子ども・青少年が利用しうるサービスも関係しうると読めます。AIを使う検出・フィルタリング機能を持つサービスも、規制議論の周辺に入る可能性があります。",
+  "japan_impact": "日本企業がブラジル向けにSNS、投稿型サービス、マーケットプレイス、AI機能付きサービスを提供している場合、事後の削除対応だけでなく、事前のリスク評価、通報処理の体制、記録や監査に耐える運用が問われる可能性があります。まずブラジルでの提供実態を棚卸しし、現地法人や代理人の有無、通報受付と検出の運用、子ども・青少年の利用状況を確認しておくことが考えられます。上記の政令や法律の条文の適用範囲は、現地の専門家に確認することをおすすめします。本稿は情報整理であり、法的助言ではありません。",
+  "next_steps": "資料には、新たな施行日や期限は書かれていません。ANPDの規制アジェンダにAIや年齢確認などの案件があることは資料に記載がありますが、各案件の時期は示されていません。今後ANPDが具体的な規則やガイドラインを出すのではないかというのは推測です。ブラジル当局の公表を継続して確認することが望まれます。",
+  "unknowns": [
+    "注意義務やシステミック・リスクの対象となる事業者の規模・類型の詳細",
+    "違反時の制裁や罰則の内容と水準",
+    "ANPDの規制アジェンダ各案件の公表・施行時期",
+    "AI全般に対する具体的な義務の有無と内容",
+    "外国企業への適用方法や現地代理人の要否"
+  ],
+  "glossary": [
+    {
+      "term": "MJSP / Sedigi",
+      "explanation": "MJSPはブラジルの法務公安省です。Sedigiはその下にあるデジタル権利事務局で、デジタル分野の政策を担当します。"
+    },
+    {
+      "term": "Marco Civil（インターネット市民法）",
+      "explanation": "2014年に制定されたブラジルのインターネット利用に関する基本法です。19条はプロバイダーの責任を定め、STFが一部違憲と判断しました。"
+    },
+    {
+      "term": "ANPD",
+      "explanation": "ブラジルの国家データ保護庁です。資料では、子ども・青少年保護の自律的な行政機関とされ、通報処理の監督役も担います。"
+    },
+    {
+      "term": "システミック・リスク",
+      "explanation": "個別の投稿ではなく、サービスの設計や運用全体に由来する構造的なリスクを指す用語として使われています。"
+    },
+    {
+      "term": "注意義務（dever de cuidado）",
+      "explanation": "プロバイダーが損害を防ぐために合理的な対策をとる義務を指します。資料では、事後対応ではなく予防を重視する考え方の中心に置かれています。"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "2026-09-21-eu-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:19:58Z",
+  "record_id": "2026-09-21-eu-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:19:58Z",
+  "headline": "EDPB、GDPR制裁金の判断手順と対DSA指針を採択",
+  "lead": "欧州データ保護会議（EDPB）は2026年9月21日、GDPRに基づく行政制裁金を科すかどうかを判断する5段階の手順を示すガイドラインを採択しました。あわせて、デジタルサービス法（DSA）とGDPRの関係についての指針を、意見公募を経た最終版として採択しています。制裁金に関するガイドラインへの意見公募は2026年11月13日までです。",
+  "facts": [
+    {
+      "text": "EDPBは2026年9月21日、GDPRにおける他の是正権限との関係で行政制裁金を科す権限をどう適用するかについてのガイドラインを採択しました。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-harmonises-fining-methodology-and-adopts-final-dsa-gdpr-guidelines_en"
+    },
+    {
+      "text": "データ保護当局は、制裁金を科すか判断する際、①違反が制裁金の対象となり得るか、②調査対象者が責任を負うか、③故意または過失があるか、④加重・軽減要素は何か、⑤制裁金が実効的・比例的・抑止的か、の5段階で検討するとされています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-harmonises-fining-methodology-and-adopts-final-dsa-gdpr-guidelines_en"
+    },
+    {
+      "text": "違反が軽微な場合は原則として制裁金を科さず戒告にとどめ得る一方、軽微でない場合は制裁金を科すべきだという強い推定が働くと説明されています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-harmonises-fining-methodology-and-adopts-final-dsa-gdpr-guidelines_en"
+    },
+    {
+      "text": "同ガイドラインは、警告、戒告、命令、禁止を含む制限、認証の取消しといった各国当局の是正措置を整理し、14の具体例も示しています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-harmonises-fining-methodology-and-adopts-final-dsa-gdpr-guidelines_en"
+    },
+    {
+      "text": "制裁金に関するガイドラインは2026年11月13日まで意見公募の対象です。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-harmonises-fining-methodology-and-adopts-final-dsa-gdpr-guidelines_en"
+    },
+    {
+      "text": "DSAとGDPRの相互作用に関するガイドラインは、意見公募を経て最終版が採択され、仲介サービス提供者による個人データ処理に関するDSAの規定がGDPRの概念や定義を参照する場面での整合的な適用を支えるものとされています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-harmonises-fining-methodology-and-adopts-final-dsa-gdpr-guidelines_en"
+    }
+  ],
+  "who_is_affected": "EU域内の個人データを扱う管理者や処理者が、GDPR違反で当局の調査を受ける場面に関係する可能性があります。DSAが適用されるオンライン仲介サービス（ホスティングやプラットフォームなど）の提供者も、個人データの扱いで関係する可能性があります。AIシステムが個人データを処理する場合も、GDPRの執行の考え方として参考になるかもしれません。ただし本文はAIに直接言及していません。",
+  "japan_impact": "EU向けにサービスを提供する日本企業や、EUに拠点・取引先を持つ企業は、GDPR違反が疑われた際に当局がどの順序で判断するかを把握できるため、社内の対応手順やリスク評価の見直しに役立つ可能性があります。個人データを扱うAIサービスを提供している場合は、DSAとGDPRの両方が関わるかどうかを確認しておくとよいでしょう。意見公募に参加するかどうかは、業界団体経由も含めて検討の余地があります。これは情報整理であり、法的助言ではありません。",
+  "next_steps": "資料に書かれている予定は、制裁金に関するガイドラインの意見公募が2026年11月13日まで行われる、という点です。その後の最終版の採択時期は資料に書かれていません。推測ですが、意見公募の結果を踏まえて内容が修正される可能性があります。",
+  "unknowns": [
+    "制裁金ガイドラインの最終版がいつ採択されるか",
+    "制裁金に関するガイドラインの発効日や適用開始日",
+    "ガイドラインがAIシステムの規制にどう関係するか（本文はAIに触れていません）",
+    "日本企業のような域外事業者に特有の扱いがあるか",
+    "DSA・GDPR最終ガイドラインの具体的な内容と、公募時からの変更点"
+  ],
+  "glossary": [
+    {
+      "term": "EDPB（欧州データ保護会議）",
+      "explanation": "EU各国のデータ保護当局で構成される機関で、GDPRの一貫した適用のためのガイドラインなどを出します。"
+    },
+    {
+      "term": "GDPR（一般データ保護規則）",
+      "explanation": "EUの個人データ保護に関する規則です。違反には行政制裁金などの是正措置が科され得ます。"
+    },
+    {
+      "term": "DSA（デジタルサービス法）",
+      "explanation": "オンラインの仲介サービス提供者に関するEUの規則です。本文では、個人データ処理に関する規定がGDPRとどう関わるかが扱われています。"
+    },
+    {
+      "term": "是正権限",
+      "explanation": "データ保護当局が違反に対して使える手段で、警告、戒告、命令、制限（禁止を含む）、認証の取消し、制裁金などがあります。"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "2026-10-06-eu-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:19:58Z",
+  "record_id": "2026-10-06-eu-001",
+  "source_kind": "media",
+  "published_at": "2026-10-10T11:19:58Z",
+  "headline": "OpenAI、EU域内のChatGPT等の文章に透かしを導入",
+  "lead": "OpenAIは、EU AI法第50条第2項の透明性要件に対応するため、EU域内のChatGPTとCodexが生成する対象テキストに、不可視の電子透かし「textGrain」を加えると発表しました。展開は今後数週間で進み、API利用者は10月5日から世界中で一部モデルについて任意で利用できます。検知ツールは当初、承認された研究者や専門機関に限って提供されます。",
+  "facts": [
+    {
+      "text": "OpenAIは、EU域内のChatGPTおよびCodexの全プランの対象ユーザーに向けて、生成テキストへ不可視の透かしを今後数週間かけて導入するとしています。",
+      "source_url": "https://www.thehindu.com/business/openai-to-watermark-chatgpt-text-in-eu-under-ai-act-rules/article71551205.ece"
+    },
+    {
+      "text": "OpenAIは、テキスト透かしを発表時点で世界共通の初期設定にはせず、10月5日からは世界中のAPI顧客が一部モデルで透かしを任意に選べるとしています。",
+      "source_url": "https://www.thehindu.com/business/openai-to-watermark-chatgpt-text-in-eu-under-ai-act-rules/article71551205.ece"
+    },
+    {
+      "text": "EU AI法第50条第2項は、生成AIシステムの提供者に、テキストを含むAI生成・加工コンテンツを機械可読な形で表示し、人工的に生成されたものとして検知可能にすることを求めており、この透明性義務は2026年8月2日から適用されています。",
+      "source_url": "https://www.thehindu.com/business/openai-to-watermark-chatgpt-text-in-eu-under-ai-act-rules/article71551205.ece"
+    },
+    {
+      "text": "同法は透かしの使用そのものを特に義務付けておらず、欧州委員会は遵守の実務的措置を示す任意の「AI生成コンテンツの透明性に関する行動規範」を作成し、OpenAIをはじめAnthropic、Google、Meta、Microsoft、Mistralがマーキングと検知に関する第1節に署名しています。",
+      "source_url": "https://www.thehindu.com/business/openai-to-watermark-chatgpt-text-in-eu-under-ai-act-rules/article71551205.ece"
+    },
+    {
+      "text": "textGrainは、モデルの単語選択に秘密鍵と直前の文脈を用いて統計的な信号を付ける方式で、隠し文字や専用トークンは挿入しません。",
+      "source_url": "https://www.thehindu.com/business/openai-to-watermark-chatgpt-text-in-eu-under-ai-act-rules/article71551205.ece"
+    },
+    {
+      "text": "OpenAIの評価では、心理学分野の文章で誤検知率1%の設定時、200トークンで約80%、400トークンで約95%の検出率でしたが、数学では低く、400トークンの文章で単語の25%を類義語に置換すると検出率は約92%から約17%に下がりました。",
+      "source_url": "https://www.thehindu.com/business/openai-to-watermark-chatgpt-text-in-eu-under-ai-act-rules/article71551205.ece"
+    },
+    {
+      "text": "OpenAIは、誤検知や検出漏れのリスクを理由に検知ツールを当初は承認された研究者・専門機関に限定し、textGrainをオープンソース化する計画も示しています。",
+      "source_url": "https://www.thehindu.com/business/openai-to-watermark-chatgpt-text-in-eu-under-ai-act-rules/article71551205.ece"
+    }
+  ],
+  "who_is_affected": "直接の対象はEU域内でChatGPTやCodexを使う利用者です。日本企業がEU向けに生成AIサービスを提供する場合、同様の機械可読な表示への対応を求められる可能性があります。OpenAIのAPIで自社サービスを作る事業者は、透かしを選べる点が関係するかもしれません。",
+  "japan_impact": "日本企業がEU域内の従業員や顧客にChatGPT等を使わせている場合、出力文に透かしが付く可能性があります。自社の利用環境が対象かの確認が必要です。EU向けに生成AIサービスを提供する企業は、自社が提供者として第50条の対象になるかを確認し、API経由の透かし機能や行動規範の内容を、対応方法の検討材料にできます。透かしは編集や翻訳で検出されにくくなるため、これだけに頼らない運用設計が要ると考えられます。これは情報整理であり、法的助言ではありません。",
+  "next_steps": "資料によれば、OpenAIの展開は発表後数週間で進み、テキスト透かしのオープンソース化も計画されていますが、時期は示されていません。検知ツールの対象拡大の予定も資料には書かれていません。今後の他社の実装動向は、推測の域を出ません。",
+  "unknowns": [
+    "透かしの対象となる「適格なテキスト」の具体的な範囲",
+    "EU域内かどうかをどう判定するか",
+    "API利用で透かしを選べる「一部モデル」の具体名",
+    "オープンソース化の時期",
+    "検知ツールを一般企業が使えるようになる時期",
+    "第50条違反時の罰則の内容"
+  ],
+  "glossary": [
+    {
+      "term": "EU AI法第50条第2項",
+      "explanation": "生成AIの提供者に、AI生成・加工コンテンツを機械可読な形で表示し、検知可能にすることを求める規定です。"
+    },
+    {
+      "term": "電子透かし",
+      "explanation": "生成物に人が気づかない信号を埋め込み、後から検出ツールで生成元を確認できるようにする技術です。"
+    },
+    {
+      "term": "行動規範（Code of Practice）",
+      "explanation": "欧州委員会が作成した任意の指針で、第50条の遵守に向けた実務的な措置を示しています。"
+    },
+    {
+      "term": "誤検知率",
+      "explanation": "透かしのない文章を、誤って透かしありと判定してしまう割合です。"
+    },
+    {
+      "term": "C2PA／Content Credentials",
+      "explanation": "画像や音声などの来歴情報を付与する仕組みで、OpenAIは画像・音声でこれらを使っていると説明しています。"
+    }
+  ]
+}

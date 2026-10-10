@@ -1,0 +1,65 @@
+{
+  "id": "2026-09-25-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:19:58Z",
+  "record_id": "2026-09-25-br-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:19:58Z",
+  "headline": "ブラジルINAEP、研究でのAI利用指針とMariahを公表",
+  "lead": "ブラジル保健省に属する研究倫理機関INAEPが2026年9月25日、科学研究でのAI利用を導く指針（Caderno Referencial）を承認し公開しました。あわせて、倫理リスクの評価を支援するオンラインツール「Mariah」も示され、6か月の初期運用と社会からの意見募集が並行して行われます。対象は主に研究倫理委員会（CEP）の審査です。",
+  "facts": [
+    {
+      "text": "INAEPは保健省に関係する機関で、科学研究でのAI利用に関する指針を承認し、2026年9月25日（金）に公開しました。",
+      "source_url": "https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/inaep-aprova-guia-para-orientar-uso-de-inteligencia-artificial-em-estudos-cientificos"
+    },
+    {
+      "text": "指針は、データの扱い、情報の透明性、参加者や地域社会への影響といった点で、研究を安全かつ責任ある形で進めることを目的としています。",
+      "source_url": "https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/inaep-aprova-guia-para-orientar-uso-de-inteligencia-artificial-em-estudos-cientificos"
+    },
+    {
+      "text": "INAEPの調整役は、CEPの審査ではすでにAIが考慮されているものの、データ保護、偏り、差別、データの代表性、人間による監督、責任の所在に疑問が残り、委員会ごとの経験にも差があったと説明しています。",
+      "source_url": "https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/inaep-aprova-guia-para-orientar-uso-de-inteligencia-artificial-em-estudos-cientificos"
+    },
+    {
+      "text": "指針は共通の審査の物差しを示しつつ、各CEPの自律性は保つとされています。",
+      "source_url": "https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/inaep-aprova-guia-para-orientar-uso-de-inteligencia-artificial-em-estudos-cientificos"
+    },
+    {
+      "text": "作成にあたり、WHO、ユネスコ、カナダ政府、EU、オーストラリアの国家保健医療研究評議会、英国MHRAなどの文書が参照されました。",
+      "source_url": "https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/inaep-aprova-guia-para-orientar-uso-de-inteligencia-artificial-em-estudos-cientificos"
+    },
+    {
+      "text": "Mariah（人を対象とする研究におけるAIのリスク評価マトリクス）は、CEPがAI利用の特徴を整理し、リスクや保護の不足を見つけ、想定される保護措置を確認する手順を示すツールで、CEPが最初の6か月間に試用できます。この期間と並行して、指針などへの意見を電子フォームで募ります。",
+      "source_url": "https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/inaep-aprova-guia-para-orientar-uso-de-inteligencia-artificial-em-estudos-cientificos"
+    }
+  ],
+  "who_is_affected": "主にブラジルで人を対象とする研究を審査するCEPと、そこに申請する研究者が対象になるとみられます。現地で医療・ヘルスケア分野の研究にAIを使う企業や、研究機関と共同研究を行う企業も、審査で指針やMariahの観点を問われる可能性があります。ただし、資料は企業への直接の義務には触れていません。",
+  "japan_impact": "ブラジルで臨床研究や人を対象とするデータ研究を現地の研究機関と行う日本企業は、AI利用の目的、データの代表性、偏りへの対処、人間による監督、責任の所在を説明できるよう準備しておくと、CEP審査に備えやすくなると考えられます。現地パートナーに、審査での運用状況や提出資料の要件を確認することも有益です。一般向けのAIサービスの提供が直ちに対象になるとは、資料からは読み取れません。",
+  "next_steps": "資料によると、CEPによるMariahの試用は初期6か月間で、社会からの意見募集は電子フォームを通じてINAEPのページで案内される予定です。試用や意見募集の結果を受けた見直しや正式運用の時期は資料にありません。結果によって内容が修正される可能性はありますが、これは推測です。",
+  "unknowns": [
+    "指針やMariahの利用がCEPに義務づけられるのか、推奨にとどまるのか。",
+    "意見募集の具体的な開始日と締切日。",
+    "6か月の試用後に指針が改訂・正式化される時期と手続き。",
+    "企業が行う研究に適用される範囲や、順守しない場合の影響。",
+    "研究以外の商用AIサービスへの適用の有無。"
+  ],
+  "glossary": [
+    {
+      "term": "INAEP（国家研究倫理機関）",
+      "explanation": "ブラジル保健省に関係する、研究倫理を扱う全国レベルの機関です。資料では「Instância Nacional de Ética em Pesquisa」と表記されています。"
+    },
+    {
+      "term": "CEP（研究倫理委員会）",
+      "explanation": "人を対象とする研究の計画を倫理面から審査する委員会です。"
+    },
+    {
+      "term": "Mariah",
+      "explanation": "人を対象とする研究でのAI利用に伴う倫理リスクを、CEPが整理・分類するために作られたオンラインの評価ツールです。"
+    },
+    {
+      "term": "Caderno Referencial",
+      "explanation": "今回の指針を収めた文書の名称で、参照用の手引きという意味合いです。"
+    }
+  ]
+}

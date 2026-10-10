@@ -1,0 +1,65 @@
+{
+  "id": "2026-09-30-us-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:19:58Z",
+  "record_id": "2026-09-30-us-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:19:58Z",
+  "headline": "カリフォルニア州知事、労働・医療・透明性のAI関連法に署名",
+  "lead": "カリフォルニア州のニューサム知事は2026年9月30日、AIに関わる労働者保護、医療、透明性、ディープフェイク対策などの法案群に署名したと発表しました。AIだけに頼った懲戒・解雇の禁止や、デジタルウォーターマークの削除禁止などが含まれます。AIの呼称に関する知事命令にも署名しています。各法の施行日は発表からは分かりません。",
+  "facts": [
+    {
+      "text": "ニューサム知事は2026年9月30日、AB 1331、AB 1883、SB 947、SB 951、SB 503、SB 1000、AB 2713など計13件の法案に署名したと発表しました。",
+      "source_url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
+    },
+    {
+      "text": "発表によれば、雇用主は、懲戒や解雇の判断でAIだけに頼ることを禁じられます。",
+      "source_url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
+    },
+    {
+      "text": "発表によれば、大量解雇・事業所の移転・解雇がAIシステムに起因する場合、雇用主はその旨を示すことが求められます。また、職場の浴室での監視ツールの使用も禁止されます。",
+      "source_url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
+    },
+    {
+      "text": "医療分野では、AIや臨床判断ツールを使う場合でも医師などが自らの専門的判断を用いられるようにし、ツールの開発者には既知または予見可能なバイアスを減らす合理的な措置を求めます。",
+      "source_url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
+    },
+    {
+      "text": "透明性の分野では、デジタルウォーターマークの削除を禁じ、AI生成かどうかを判別しやすくするためメタデータへのアクセスを認めます。あわせてカリフォルニアAI透明性法を強化します。",
+      "source_url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
+    },
+    {
+      "text": "知事は、州内でのAIの呼称を定める趣旨の知事命令にも署名しました。発表ではこれを「当たり前のことを宣言する」命令と表現しています。",
+      "source_url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
+    }
+  ],
+  "who_is_affected": "カリフォルニア州で従業員を雇用する企業は、人事でAIを使う場合に影響を受ける可能性があります。AI生成コンテンツの出所情報を扱う事業者や、医療向けの臨床判断ツールの開発者・提供者も対象になりうます。ただし、各法の対象範囲の細部は発表文だけでは確認できません。",
+  "japan_impact": "カリフォルニア州に拠点や従業員を持つ日本企業は、採用・評価・解雇でAIをどう使っているかを点検する価値があります。州内向けにAI生成物を出すサービスや医療関連ツールを提供している場合は、ウォーターマークやメタデータの扱い、バイアス対策が関係しないかを確認するとよいでしょう。条文を読んで対象かどうかを判断する必要があり、現地の弁護士への相談も有効です。本稿は情報整理であり、法的助言ではありません。",
+  "next_steps": "発表には、各法の施行日や今後の手続きの記載はありません。施行時期は各法案の条文で確認する必要があります。なお発表によれば、知事は別の知事命令で専門家グループを招集し、2カ月以内にAIの安全・セキュリティ法を強化するための指針を示すとしています。",
+  "unknowns": [
+    "各法案の施行日",
+    "違反時の罰則や執行の仕組み",
+    "各法が適用される事業者の規模や範囲",
+    "SB 951の通知義務の具体的な内容や期限",
+    "AIの定義に関する知事命令の法的効力の詳細"
+  ],
+  "glossary": [
+    {
+      "term": "知事命令（Executive Order）",
+      "explanation": "州知事が行政権限で出す命令です。議会が制定する法律とは別の手続きによります。"
+    },
+    {
+      "term": "デジタルウォーターマーク",
+      "explanation": "コンテンツがAIで生成されたことなどを示すため、画像や音声などに埋め込まれる識別情報です。"
+    },
+    {
+      "term": "メタデータ",
+      "explanation": "コンテンツの作成方法や出所などを示す付随情報です。"
+    },
+    {
+      "term": "ディープフェイク",
+      "explanation": "AIを使って人の顔や声などを本物らしく偽造した映像や音声です。"
+    }
+  ]
+}

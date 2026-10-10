@@ -1,0 +1,57 @@
+{
+  "id": "2026-09-22-ca-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:19:58Z",
+  "record_id": "2026-09-22-ca-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:19:58Z",
+  "headline": "カナダ政府、データセンター原則に新たに19社が署名",
+  "lead": "カナダ政府は2026年9月22日、「責任あるデータセンター開発原則」に新たに19社が署名したと発表しました。署名組織は計42となり、9月3日の開始時点の23から増えています。原則は地域への利益や電力料金の保護などを掲げています。",
+  "facts": [
+    {
+      "text": "カナダ政府は2026年9月22日、責任あるデータセンター開発原則に新たに19社が署名し、署名組織が合計42になったと発表しました。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-welcomes-19-additional-signatories-to-canadas-responsible-data-centre-development-principles.html"
+    },
+    {
+      "text": "この原則は2026年9月3日に開始され、データセンター開発に関する国としての枠組みと位置づけられています。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-welcomes-19-additional-signatories-to-canadas-responsible-data-centre-development-principles.html"
+    },
+    {
+      "text": "原則は、地域に長く残る利益の創出、電力料金を負担する利用者の保護、水使用と環境影響の最小化、地域への影響に関する透明性、カナダにとっての戦略的価値という5つの期待を示しています。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-welcomes-19-additional-signatories-to-canadas-responsible-data-centre-development-principles.html"
+    },
+    {
+      "text": "新たな署名者には、AMD、IBM、Intel、Lenovo、NVIDIA、Schneider Electric、STACK Infrastructure、Vantage Data Centersなどが含まれます。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-welcomes-19-additional-signatories-to-canadas-responsible-data-centre-development-principles.html"
+    },
+    {
+      "text": "政府は、この原則が国家AI戦略「AI for All」と、国内でのソブリンAIインフラおよび計算資源の拡大の取り組みを支えるものだと説明しています。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-welcomes-19-additional-signatories-to-canadas-responsible-data-centre-development-principles.html"
+    }
+  ],
+  "who_is_affected": "カナダでデータセンター、クラウド、AI関連の事業を行う、または計画する企業が中心になると考えられます。署名企業にはチップ、機器、電力、建設、投資など幅広い分野が含まれるため、データセンターの供給網に関わる事業者にも間接的に関係する可能性があります。",
+  "japan_impact": "カナダでデータセンターを建設・運営する日本企業や、現地のデータセンターを利用してAIサービスを提供する日本企業は、5つの期待事項（地域利益、電力料金への配慮、水・環境、透明性、戦略的価値）を自社の計画に照らして確認しておくとよいでしょう。カナダ拠点の取引先や委託先が署名しているかを把握しておくことも有用です。資料からは署名が法的義務かどうか分からないため、現時点では事業上の期待や評価の基準として捉えるのが妥当と考えられます。",
+  "next_steps": "資料には、今後の施行日や追加の手続きなどの予定は書かれていません。署名企業がさらに増えるかどうかや、具体的な運用の詳細は、推測の域を出ないため、カナダ政府の公式ページを継続して確認することをお勧めします。",
+  "unknowns": [
+    "原則に法的拘束力や罰則があるのか",
+    "署名していない企業に対する扱い",
+    "5つの期待事項を満たしているかを確かめる具体的な方法や基準",
+    "外国企業や日本企業が署名できる条件",
+    "今後の施行日や追加の制度化の予定"
+  ],
+  "glossary": [
+    {
+      "term": "責任あるデータセンター開発原則",
+      "explanation": "カナダ政府が2026年9月3日に始めた、データセンター開発に関する5つの期待事項をまとめた枠組みです。"
+    },
+    {
+      "term": "電力料金負担者の保護（ratepayers）",
+      "explanation": "電気料金を支払う利用者を指し、データセンターの電力需要の影響で負担が増えないようにする考え方です。"
+    },
+    {
+      "term": "ソブリンAI",
+      "explanation": "資料では、カナダ国内にAIインフラや計算資源を整備する取り組みの文脈で使われています。詳細な定義は資料に書かれていません。"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "2026-10-06-sg-001",
+  "status": "draft",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T08:45:28Z",
+  "record_id": "2026-10-06-sg-001",
+  "source_kind": "official",
+  "headline": "シンガポールMDDI、フロンティアAIの事前アクセス義務化を見送り",
+  "lead": "シンガポールのデジタル開発・情報省（MDDI）は2026年10月6日、国会での書面質問への答弁で、最先端（フロンティア）AIモデルの展開前に政府へのアクセスを義務づけない現状を説明しました。モデルへのアクセスだけではリスクの全体像が分からないことや、厳格な義務化が企業の協力を妨げうることを理由に挙げています。開発者との協力関係と政府自身の技術力強化を重視する姿勢です。",
+  "facts": [
+    {
+      "text": "MDDIは2026年10月6日の国会で、フロンティアAIの開発者に対し、適切な場合にモデルへのアクセスや情報の提供を求めて働きかけているが、現時点ではそれを要件としていないと答弁しました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-providing-pre-deployment-government-access-to-frontier-ai-models-for-independent-evaluation-of-national-security-risks-and-vulnerab/"
+    },
+    {
+      "text": "MDDIは義務化しない理由として、モデルへのアクセスだけではリスクの全体像が必ずしも分からないこと、および硬直的な要件は企業が協力や情報共有を絞る結果を招き逆効果になりうることを挙げました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-providing-pre-deployment-government-access-to-frontier-ai-models-for-independent-evaluation-of-national-security-risks-and-vulnerab/"
+    },
+    {
+      "text": "MDDIは、フロンティアAI研究所との協力関係を築き、実質的で時宜にかなった情報共有を促す方針を示しています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-providing-pre-deployment-government-access-to-frontier-ai-models-for-independent-evaluation-of-national-security-risks-and-vulnerab/"
+    },
+    {
+      "text": "リスク把握には、開発者自身の評価やテスト、独立した研究や評価、他国のAIセーフティ研究所や国際的な連携先の成果など、複数の情報源を活用するとしています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-providing-pre-deployment-government-access-to-frontier-ai-models-for-independent-evaluation-of-national-security-risks-and-vulnerab/"
+    },
+    {
+      "text": "シンガポールAIセーフティ研究所（AISI）は高度なAIシステムを評価する技術力を構築中で、シンガポールのニーズに関係する能力に重点を置くと説明されました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-providing-pre-deployment-government-access-to-frontier-ai-models-for-independent-evaluation-of-national-security-risks-and-vulnerab/"
+    },
+    {
+      "text": "医療・インフラなど必須サービスや高リスク用途では、より厳格なテスト、安全策が有効だと示す証拠、展開時の管理強化、規制監督の強化などが考えられるとし、政府は高リスク用途での新たな要件の必要性を引き続き検討するとしています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-providing-pre-deployment-government-access-to-frontier-ai-models-for-independent-evaluation-of-national-security-risks-and-vulnerab/"
+    }
+  ],
+  "who_is_affected": "主にシンガポールで最先端のAIモデルを開発・提供する事業者が関係する可能性があります。現時点では事前アクセスの法的義務はありませんが、政府からの情報提供やアクセスの働きかけに応じることが期待される場面があるかもしれません。必須サービスなど高リスク用途でAIを使う事業者も、今後の検討の動向に関係しうると考えられます。",
+  "japan_impact": "日本企業がフロンティアAIモデルをシンガポールで提供・展開している場合、現時点では事前アクセスを法的に強制される根拠は本文から確認できません。ただし、協力的な情報共有が重視されているため、シンガポール当局との窓口や、自社の評価・テスト結果を説明できる体制を整えておくことが有益かもしれません。シンガポール拠点や取引先がある場合は、高リスク用途向けの要件検討とIMDAのガイダンス類（エージェント型AIの枠組み、LLMアプリのテスト用キット）の確認が考えられます。これは情報整理であり、法的助言ではありません。",
+  "next_steps": "資料には、事前アクセス義務化に関する具体的な今後の日程は書かれていません。資料に書かれている方針は、政府が高リスク用途での新たな要件の必要性を引き続き検討すること、AIが関わるインシデントの報告に既存の窓口を活用する方法や追加の調整・報告の仕組みの要否を検討すること、そしてリスクの証拠の変化に応じて安全策を調整していくことです。義務化の方針が将来変わるかどうかは資料からは分からず、あくまで推測にとどまります。",
+  "unknowns": [
+    "事前アクセスの義務化を将来行う可能性や、その条件",
+    "高リスク用途で新たに課される要件の具体的な内容と時期",
+    "AIインシデントの報告に関する追加の調整・報告の仕組みが設けられるかどうか",
+    "政府がアクセスや情報提供を求める際の対象事業者の範囲と手続き",
+    "情報提供に応じない場合の扱いや罰則の有無"
+  ],
+  "glossary": [
+    {
+      "term": "フロンティアAI",
+      "explanation": "最先端の能力を持つ高度なAIモデルを指します。本文では、国際的に開発・展開され、単独の国や企業ではリスクを評価しきれないものとして扱われています。"
+    },
+    {
+      "term": "MDDI",
+      "explanation": "シンガポールのデジタル開発・情報省です。今回の国会質問に書面で答弁しました。"
+    },
+    {
+      "term": "AISI（シンガポールAIセーフティ研究所）",
+      "explanation": "高度なAIシステムを評価する技術力と、テストや保証の実践的な方法を整備している機関です。"
+    },
+    {
+      "term": "事前アクセス",
+      "explanation": "AIモデルを展開する前に、政府機関が独立した評価のためにそのモデルへアクセスできるようにすることです。"
+    },
+    {
+      "term": "IMDA",
+      "explanation": "シンガポールの情報通信メディア開発庁です。エージェント型AIのガバナンス枠組みなどを公表しています。"
+    }
+  ]
+}

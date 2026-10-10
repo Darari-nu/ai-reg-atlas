@@ -232,6 +232,21 @@ describe('explain run', () => {
     const h3 = harness({ records: shared, env: { EXPLAINER_MAX_PER_RUN: '1' }, parse: async () => okMsg(article()) });
     await run(h3.deps);
     assert.equal(h3.calls(), 1);
+    const hBad = harness({ records: shared, env: { EXPLAINER_MAX_PER_RUN: 'abc' }, parse: async () => okMsg(article()) });
+    await run(hBad.deps);
+    assert.equal(hBad.calls(), 3); // 不正値は既定3（上限なしにならない）
+  });
+  it('EXPLAINER_LOOKBACK_DAYS で遡る日数を広げられる（既定7・不正値は7）', async () => {
+    const old = record({ id: '2026-08-01-kr-001', date: '2026-08-01', discovered_at: '2026-08-01', sources: [SRC] });
+    const h7 = harness({ records: [old], parse: async () => okMsg(article()) });
+    await run(h7.deps);
+    assert.equal(h7.calls(), 0);
+    const hBad = harness({ records: [old], env: { EXPLAINER_LOOKBACK_DAYS: 'abc' }, parse: async () => okMsg(article()) });
+    await run(hBad.deps);
+    assert.equal(hBad.calls(), 0);
+    const h400 = harness({ records: [old], env: { EXPLAINER_LOOKBACK_DAYS: '400' }, parse: async () => okMsg(article()) });
+    await run(h400.deps);
+    assert.equal(h400.calls(), 1);
   });
   it('解説済みのレコードは対象外', async () => {
     const rs = recs(2).map((r) => ({ ...r, sources: [SRC] }));

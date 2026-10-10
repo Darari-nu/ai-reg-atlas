@@ -92,13 +92,18 @@ export async function run({
       return 0;
     }
     const model = env.EXPLAINER_MODEL || DEFAULT_MODEL;
-    const max = Number(env.EXPLAINER_MAX_PER_RUN || 3);
+    // 不正値（NaN・0以下）だと上限が効かなくなるので既定3に戻す
+    const maxRaw = Number(env.EXPLAINER_MAX_PER_RUN);
+    const max = Number.isFinite(maxRaw) && maxRaw > 0 ? maxRaw : 3;
     const maxInput = Number(env.EXPLAINER_MAX_INPUT_CHARS || 40_000);
+    // 遡る日数（既定7）。過去分の一括解説（explain-backfill.yml）のときだけ大きくする。不正値は既定に戻す
+    const lookback = Number(env.EXPLAINER_LOOKBACK_DAYS);
+    const days = Number.isFinite(lookback) && lookback > 0 ? lookback : 7;
     const autoPublish = env.EXPLAINER_AUTO_PUBLISH === '1';
     const status = autoPublish ? 'published' : 'draft';
 
     let attempts = pruneAttempts(readAttempts(), today);
-    const targets = selectTargets(loadRecords(), { existingIds: existingIds(), attempts, today, days: 7 });
+    const targets = selectTargets(loadRecords(), { existingIds: existingIds(), attempts, today, days });
     if (targets.length === 0) {
       log.log('[explain] nothing to do');
       return 0;

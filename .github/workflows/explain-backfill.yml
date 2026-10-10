@@ -1,0 +1,74 @@
+# 過去の更新レコードをまとめて解説する（手動実行のみ・2026-10-10 追加）。
+# 日次の explain は直近7日だけを対象にするので、それより前の分はここで本数を区切って流す。
+# 費用の上限は共通台帳（~/Claudecode/tama/memory/reference_api_keys_ledger.md「Claude API の割り付け」）が正。
+# 公開されるかどうかは日次と同じく vars.EXPLAINER_AUTO_PUBLISH に従う。
+# デプロイはしない（終わったら cf-deploy を手動で動かす）。
+# 同じ concurrency グループで待てるのは1件だけなので、1回ずつ終わってから次を起動すること。
+name: explain-backfill
+
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: '1回で解説する最大本数'
+        default: '20'
+      lookback_days:
+        description: '何日前の更新まで遡るか'
+        default: '400'
+
+permissions:
+  contents: write
+
+# 日次の pipeline と同時に data/ を書かないよう、同じグループで順番待ちにする
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: explain (backfill)
+        run: node scripts/explain.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EXPLAINER_MODEL: ${{ vars.EXPLAINER_MODEL }}
+          EXPLAINER_MAX_INPUT_CHARS: ${{ vars.EXPLAINER_MAX_INPUT_CHARS }}
+          EXPLAINER_AUTO_PUBLISH: ${{ vars.EXPLAINER_AUTO_PUBLISH }}
+          EXPLAINER_MAX_PER_RUN: ${{ inputs.max }}
+          EXPLAINER_LOOKBACK_DAYS: ${{ inputs.lookback_days }}
+
+      - name: validate
+        run: node scripts/validate.mjs
+
+      - name: commit data
+        run: |
+          git config user.name "atlas-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(data): explain backfill $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push rejected, rebasing and retrying ($i/5)..."
+            git pull --rebase origin main
+            sleep 5
+          done
+          git push
+
+      - name: notify discord
+        run: node scripts/notify-discord.mjs
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}

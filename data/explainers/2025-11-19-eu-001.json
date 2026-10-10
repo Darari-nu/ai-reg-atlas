@@ -1,0 +1,64 @@
+{
+  "id": "2025-11-19-eu-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:30:49Z",
+  "record_id": "2025-11-19-eu-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:30:49Z",
+  "headline": "欧州委、AI Act簡素化案を採択　ハイリスクAIの適用を後ろ倒し",
+  "lead": "欧州委員会は2025年11月19日、AI Actの実施を簡素化する提案（AI Omnibus）を採択しました。出典ページによれば、その後2026年5月7日に政治合意に至り、同年7月27日に発効しています。ハイリスクAIの規則は、Annex III系が2027年12月2日、Annex I系が2028年8月2日から適用されます。",
+  "facts": [
+    {
+      "text": "AI Actの実施を簡素化する法案（通称AI Omnibus）は、2025年11月19日に欧州委員会が採択しました。",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "text": "この法案については、2026年5月7日に政治合意が成立し、2026年7月27日に発効したと記載されています。",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "text": "生体認証、重要インフラ、教育、雇用、移民・難民・国境管理などの分野（Annex III）のハイリスクAI規則は、2027年12月2日から適用されます。",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "text": "昇降機や玩具など規制対象製品に組み込まれるハイリスクAI（Annex I）の規則は、2028年8月2日から適用されます。",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "text": "禁止されるAI慣行と、汎用AI（GPAI）モデルの義務は、それぞれ2025年2月と2025年8月から適用されています。透明性ルールは2026年8月に適用開始と記載されています。",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "text": "同改正では、同意のない性的画像や児童性的虐待コンテンツを生成するAIの禁止が追加され、2026年12月に適用されます。また、中小企業向けの簡素化措置が小規模ミッドキャップ企業にも拡大されます。",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    }
+  ],
+  "who_is_affected": "EU域内でハイリスクAIを提供する事業者や利用する事業者が中心になると考えられます。採用選考、与信審査、教育、生体認証などのAIを扱う企業や、AI機能を組み込んだ製品のメーカーが該当する可能性があります。簡素化措置の拡大により、小規模ミッドキャップ企業にも影響が及ぶ可能性があります。",
+  "japan_impact": "EU向けにAIサービスや製品を提供する日本企業にとっては、ハイリスク対応の期限が延びたと読めます。ただし、自社のサービスがAnnex IとAnnex IIIのどちらに当たるかによって期限が異なります。まず該当性を確認し、EU拠点や取引先との責任分担を整理しておくと有用です。なお、禁止行為、GPAI義務、透明性ルールは延期の対象とは書かれておらず、すでに適用されているか、まもなく適用されます。そのため、これらへの対応は並行して進める必要があります。本記事は情報整理であり、法的助言ではありません。",
+  "next_steps": "資料に記載された予定は、禁止行為9番目（非同意の性的コンテンツ生成AI等）の2026年12月適用、Annex III系の2027年12月2日適用、Annex I系の2028年8月2日適用です。このほか、2027年に運用開始見込みのAIモデル評価体制の整備が示されています。個別の対応時期については、推測の域を出ないため、公式の最終条文での確認が必要です。",
+  "unknowns": [
+    "違反時の罰則や制裁金の具体的な水準は、本文からは分かりません。",
+    "最終条文での各義務の細部や例外規定は、本文からは分かりません。",
+    "日本企業が域外適用の対象になる具体的な条件は、本文からは分かりません。",
+    "簡素化措置の対象となる小規模ミッドキャップ企業の定義は、本文からは分かりません。"
+  ],
+  "glossary": [
+    {
+      "term": "AI Omnibus",
+      "explanation": "AI Actの実施を簡素化するための修正パッケージです。ハイリスクAIの適用時期の延期などを含みます。"
+    },
+    {
+      "term": "Annex I／Annex III",
+      "explanation": "AI Actの附属書です。Annex Iは規制対象製品に組み込まれるAI、Annex IIIは生体認証や雇用など特定分野のAIを扱います。"
+    },
+    {
+      "term": "GPAI",
+      "explanation": "General-Purpose AIの略で、幅広い作業をこなせる汎用AIモデルを指します。"
+    },
+    {
+      "term": "規制サンドボックス",
+      "explanation": "実環境に近い条件でAIを試験できる枠組みです。本文では、EUレベルのものを含めて利用機会が広がるとされています。"
+    }
+  ]
+}

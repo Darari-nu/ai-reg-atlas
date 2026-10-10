@@ -1,0 +1,64 @@
+{
+  "id": "2026-06-19-eu-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:30:49Z",
+  "record_id": "2026-06-19-eu-001",
+  "source_kind": "media",
+  "published_at": "2026-10-10T11:30:49Z",
+  "headline": "欧州委員会、AI Act諮問フォーラムの174名を任命",
+  "lead": "欧州委員会は2026年6月1日、EU AI Actに基づく諮問フォーラムの構成を発表しました。メンバーは700件超の応募から選ばれた174名で、産業界、スタートアップ、中小企業、市民社会、学術界の代表が含まれます。フォーラムは欧州委員会とAIボードに技術的な助言を行う機関です。",
+  "facts": [
+    {
+      "text": "欧州委員会は2026年6月1日に諮問フォーラムの構成を発表し、メンバーは700件を超える応募から選ばれた174名でした。",
+      "source_url": "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
+    },
+    {
+      "text": "諮問フォーラムはAI Act第67条に基づいて設置され、欧州委員会とAIボードに技術的専門知識を提供し、助言を行います。",
+      "source_url": "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
+    },
+    {
+      "text": "メンバー構成は、産業界、スタートアップ、中小企業、市民社会、学術界のバランスを取る必要があり、営利と非営利の間、また営利の中でも中小企業とそれ以外の企業の間でも均衡が求められます。",
+      "source_url": "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
+    },
+    {
+      "text": "基本権機関(FRA)、欧州サイバーセキュリティ機関(ENISA)、CEN、CENELEC、ETSIの5機関が常任メンバーです。",
+      "source_url": "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
+    },
+    {
+      "text": "AI Act第40条と第41条により、欧州委員会は標準化要請や共通仕様の作成にあたり、他の関係者と並んでこのフォーラムに意見を聞かなければなりません。",
+      "source_url": "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
+    },
+    {
+      "text": "任期は2年で1回のみ再任でき、最長4年です。フォーラムは年2回以上開催され、活動に関する年次報告書を公開します。",
+      "source_url": "https://artificialintelligenceact.eu/the-advisory-forum-what-is-it-and-how-does-it-work/"
+    }
+  ],
+  "who_is_affected": "直接の対象は欧州委員会、AIボード、選ばれたメンバーです。企業に新たな義務が課されるわけではありませんが、EU向けにAIを提供する事業者や、標準化・実施ガイドラインの動向に関心を持つ企業には、間接的に関係する可能性があります。",
+  "japan_impact": "日本の企業にとって、今回の任命が直ちに対応を求めるものではないと読めます。ただし、フォーラムは標準化要請や共通仕様の作成過程で意見を求められる立場にあるため、EU市場にAIを提供する日本企業や、EU域内に拠点・取引先を持つ企業は、今後出る標準や仕様の方向性を把握しておく意義があります。業界団体や現地拠点を通じて、フォーラムの年次報告書や公開情報を確認する体制を考えるとよいでしょう。本記事は情報整理であり、法的助言ではありません。",
+  "next_steps": "資料によれば、フォーラムは年2回以上開催され、活動に関する年次報告書を公開する予定です。付託事項、メンバー一覧、会合の詳細は欧州委員会の専門家グループ登録簿で参照できるとされています。個別の会合日程や最初の検討テーマは資料に記載がありません。推測ですが、標準化要請や共通仕様の議論が進むにつれ、フォーラムの助言内容が注目される場面が増えるかもしれません。",
+  "unknowns": [
+    "最初の会合の日程と検討テーマ",
+    "174名の具体的な顔ぶれと、日本企業や日本関連の参加者がいるか",
+    "フォーラムの意見が標準化要請や共通仕様にどの程度反映されるか",
+    "年次報告書の最初の公開時期"
+  ],
+  "glossary": [
+    {
+      "term": "諮問フォーラム(Advisory Forum)",
+      "explanation": "AI Act第67条に基づき、欧州委員会とAIボードに技術的な助言を行う関係者の会議体です。"
+    },
+    {
+      "term": "AIボード",
+      "explanation": "AI Actの実施に関わる、EUの統治体制の一部を成す機関です。本資料では、フォーラムの助言先の一つとして登場します。"
+    },
+    {
+      "term": "共通仕様",
+      "explanation": "AI Act第41条に関わる仕組みで、欧州委員会が作成する際にフォーラムへの意見聴取が必要とされています。"
+    },
+    {
+      "term": "CEN・CENELEC・ETSI",
+      "explanation": "欧州の3つの標準化団体です。資料では、AI Actの運用に調和規格が重要な役割を持つことから、常任メンバーになっていると説明されています。"
+    }
+  ]
+}

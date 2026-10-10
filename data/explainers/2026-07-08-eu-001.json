@@ -1,0 +1,69 @@
+{
+  "id": "2026-07-08-eu-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:30:49Z",
+  "record_id": "2026-07-08-eu-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:30:49Z",
+  "headline": "EDPB、生成AI向け匿名化とスクレイピングの指針案を採択",
+  "lead": "欧州データ保護ボード(EDPB)は2026年7月8日、匿名化とウェブスクレイピングに関するガイドライン(指針)を採択したと公表しました。いずれも2026年10月30日までパブリックコンサルテーション(意見募集)に付されます。あわせてブロックチェーン指針の最終版も採択されています。",
+  "facts": [
+    {
+      "text": "EDPBは2026年7月8日付の発表で、匿名化に関するガイドラインと、生成AIの文脈でのウェブスクレイピングに関するガイドラインを採択したと述べています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en"
+    },
+    {
+      "text": "匿名化の指針は、データが匿名かどうかを確かめる枠組みとして「レコードの孤立化がない」「リンクがない」「推論がない」という3つの基準を示し、3つすべてを満たせば匿名とみなせるとしています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en"
+    },
+    {
+      "text": "この枠組みは、識別しうる主体ごとの能力差を考慮する「コンテキストアプローチ」と、差を考慮しない「簡易アプローチ」の2通りで使え、簡易アプローチは管理者が望む場合に選べるとされています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en"
+    },
+    {
+      "text": "ウェブスクレイピングの指針は、個人データの収集・保存などを伴う場合にGDPRが適用されると整理し、目的制限と透明性に特に注意するよう求めています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en"
+    },
+    {
+      "text": "EDPBは、正確性の原則を守るため、信頼できる情報源からのみ収集し、取得時刻を記録し、AI学習に使う前にデータを検証することを推奨しています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en"
+    },
+    {
+      "text": "特別カテゴリの個人データの処理は原則禁止で、スクレイピングで扱う場合はGDPR第6条の適法根拠と第9条2項の例外の両方が必要であり、第9条の一般的な適用除外はないと強調しています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-sheds-light-on-anonymisation-and-web-scraping-for-generative-ai-and-adopts-final-version_en"
+    }
+  ],
+  "who_is_affected": "生成AIの学習用にウェブ上のデータを収集する事業者や、データを匿名化して利用・提供する事業者に関係する可能性があります。EU域内の個人のデータを扱う場合、日本企業も対象になりうると考えられます。ただし本文は草案段階の指針について述べており、個別の適用可否は資料からは判断できません。",
+  "japan_impact": "EU向けにAIサービスを提供する、または学習データにEU居住者の情報が含まれうる日本企業は、収集元の信頼性、取得時刻の記録、データ検証、匿名化の判定方法を自社の運用と照らして確認しておくとよいと考えられます。EU拠点や委託先が収集・加工を担う場合は、その運用も棚卸しの対象になりえます。意見募集に参加する選択肢もあります。これは情報整理であり、法的助言ではありません。",
+  "next_steps": "資料によると、匿名化とウェブスクレイピングの2つの指針は2026年10月30日までパブリックコンサルテーションに付されます。その後の最終化の時期は資料に書かれていません。推測ですが、意見募集の結果を踏まえて内容が修正される可能性があるため、最終版の公表を注視する必要があります。",
+  "unknowns": [
+    "意見募集後に最終版が採択される時期",
+    "指針案が今後どの程度修正されるか",
+    "日本企業を含むEU域外の事業者への具体的な適用範囲",
+    "指針自体に法的拘束力や罰則があるかどうか(本文には記載なし)",
+    "本文に記載のある各種判決(CJEUの判例)の具体的な適用の詳細"
+  ],
+  "glossary": [
+    {
+      "term": "EDPB(欧州データ保護ボード)",
+      "explanation": "EU各国のデータ保護当局で構成され、GDPRの統一的な適用のための指針などを出す機関です。"
+    },
+    {
+      "term": "GDPR",
+      "explanation": "EUの一般データ保護規則で、個人データの処理に関するルールを定めています。"
+    },
+    {
+      "term": "ウェブスクレイピング",
+      "explanation": "ウェブ上の情報を自動的に大量に取得する処理のことです。"
+    },
+    {
+      "term": "特別カテゴリの個人データ",
+      "explanation": "GDPR第9条が定める、原則として処理が禁止されている種類の個人データです。"
+    },
+    {
+      "term": "パブリックコンサルテーション",
+      "explanation": "文書案について関係者から広く意見を募る手続きです。"
+    }
+  ]
+}

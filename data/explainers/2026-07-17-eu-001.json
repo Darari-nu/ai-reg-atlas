@@ -1,0 +1,61 @@
+{
+  "id": "2026-07-17-eu-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:30:49Z",
+  "record_id": "2026-07-17-eu-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:30:49Z",
+  "headline": "EDPB、規制当局間の情報共有の法的根拠を欧州委に要請",
+  "lead": "欧州データ保護会議（EDPB）は2026年7月16〜17日にダブリンで開いた会合で、権限の異なる規制当局どうしが情報を共有するための明確な法的根拠を、欧州委員会が提案するよう求めました。機密情報も共有の対象に含まれうる内容です。現時点では要請の段階で、新たな義務が企業に課されたわけではありません。",
+  "facts": [
+    {
+      "text": "EDPBは2026年7月16日と17日にダブリンで開いた高官級会合で、異なる権限を持つ規制当局間で情報を共有するための明確な法的根拠を求めました。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-calls-for-legal-basis-for-cross-regulatory-information-sharing_en"
+    },
+    {
+      "text": "EDPBは欧州委員会に対し、規制当局が各自の所管分野の執行に関わる情報（機密情報を含む）を交換できるようにする法的根拠を提案するよう求めました。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-calls-for-legal-basis-for-cross-regulatory-information-sharing_en"
+    },
+    {
+      "text": "EDPBは、国内・EU双方のレベルで他のEUデジタル規制当局と協力した経験から、協力を円滑にするにはより強い法整備が必要だと示しています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-calls-for-legal-basis-for-cross-regulatory-information-sharing_en"
+    },
+    {
+      "text": "データ保護当局は、AI利用の増加なども一因として苦情の件数と複雑さが大きく増えており、限られた資源への負担が増していると説明しています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-calls-for-legal-basis-for-cross-regulatory-information-sharing_en"
+    },
+    {
+      "text": "EDPBは、データ保護当局間で資源を出し合う方法や共同オペレーションの活用を議論し、執行手続や各国の実務に関するワークショップを開く予定だとしています。これは近く適用される手続規則（Procedural Regulation）への対応も見据えたものです。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-calls-for-legal-basis-for-cross-regulatory-information-sharing_en"
+    }
+  ],
+  "who_is_affected": "直接の名宛人は欧州委員会で、現時点で企業に新たな義務はありません。ただし将来、法的根拠が整えば、個人データを扱ってAIを開発・提供する企業が、データ保護当局とその他のデジタル規制当局の双方から関心を持たれる可能性があります。特にEU域内の個人に影響するサービスが当てはまりえます。",
+  "japan_impact": "日本からEU向けにAI関連サービスを提供する企業や、EU拠点・EU域内の取引先を持つ企業は、GDPR（EU一般データ保護規則）対応と他のデジタル規制対応を別々に進めている場合、説明内容や記録に食い違いが出ないかを確認しておくとよいと考えられます。当局間で情報が共有される前提で、個人データの扱いとAIの管理体制を一体で整理しておくことが選択肢になります。ただし、これは資料に基づく解釈であり、法的助言ではありません。",
+  "next_steps": "資料には、欧州委員会が提案を出す時期や、法制化の予定は書かれていません。EDPB側の予定として、執行手続に関するワークショップの開催が示されています。また、手続規則が「近く」適用されると記されていますが、具体的な日付は資料にありません。欧州委員会の対応については、推測の域を出ませんが、今後の公表を継続して確認することが望ましいです。",
+  "unknowns": [
+    "欧州委員会が実際に提案を行うかどうか、またその時期",
+    "情報共有の対象となる規制当局や法令の具体的な範囲",
+    "共有された情報の企業への影響や、罰則・手続上の扱い",
+    "手続規則（Procedural Regulation）の適用開始日と詳しい内容",
+    "AI規制法など個別の法令との関係"
+  ],
+  "glossary": [
+    {
+      "term": "EDPB（欧州データ保護会議）",
+      "explanation": "EU各国のデータ保護当局などで構成され、GDPRの一貫した適用を目指す機関です。"
+    },
+    {
+      "term": "GDPR",
+      "explanation": "EUの一般データ保護規則で、個人データの取扱いについて定めたルールです。"
+    },
+    {
+      "term": "データ保護当局（DPA）",
+      "explanation": "各国でGDPRの執行を担う監督機関です。"
+    },
+    {
+      "term": "手続規則（Procedural Regulation）",
+      "explanation": "資料で「近く適用される」とされる規則で、データ保護当局の既存の実務の多くを明文化するものと説明されています。"
+    }
+  ]
+}

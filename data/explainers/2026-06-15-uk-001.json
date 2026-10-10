@@ -1,0 +1,65 @@
+{
+  "id": "2026-06-15-uk-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:30:49Z",
+  "record_id": "2026-06-15-uk-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:30:49Z",
+  "headline": "英国政府、16歳未満のSNS禁止とAI恋愛チャットボット規制を発表",
+  "lead": "英国政府は2026年6月15日、16歳未満へのSNS提供を禁止する方針を公表しました。あわせて、恋愛や性的なロールプレイを模擬するAI「ロマンティック・コンパニオン」型チャットボットに18歳以上の年齢制限を課し、より広いAIチャットボットでも親密な機能を18歳未満向けに制限するとしています。議会提出は年内、規制の施行は2027年春の見込みです。",
+  "facts": [
+    {
+      "text": "英国政府は、オーストラリアと同じモデルでSNSの禁止を行う計画で、ユーザー間で交流し投稿できるプラットフォームを対象とし、Snapchat、TikTok、YouTube、Instagram、Facebook、Xなどが含まれるとしています。",
+      "source_url": "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back"
+    },
+    {
+      "text": "性的な関係やロールプレイを模擬するよう設計されたAI「ロマンティック・コンパニオン」チャットボットには、最低年齢18歳を実施させるとしています。",
+      "source_url": "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back"
+    },
+    {
+      "text": "より広いAIチャットボットでも、同様の親密な機能は18歳未満について制限されるとしています。",
+      "source_url": "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back"
+    },
+    {
+      "text": "政府は、回避を難しくする「高度に効果的な年齢確認（HEAA）」の措置を導入するとし、Ofcomは16歳超かを確認する有効な年齢確認について迅速な調査を行います。",
+      "source_url": "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back"
+    },
+    {
+      "text": "16歳未満に対しては、ライブ配信や見知らぬ相手とのやり取りといった機能もゲームサイトを含む幅広いサービスで制限され、16〜17歳でもこれらの制限は初期設定でオンになるとしています。",
+      "source_url": "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back"
+    },
+    {
+      "text": "政府はChildren's Wellbeing and Schools Actで得た権限に基づき二次立法で対応する方針で、議会への提出は年内（クリスマス前）、保護措置の施行は2027年春の見込みとされています。",
+      "source_url": "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back"
+    }
+  ],
+  "who_is_affected": "SNSやユーザー投稿型プラットフォームの事業者のほか、恋愛・親密な対話機能を持つAIチャットボットの提供者が主な対象になる可能性があります。ライブ配信や見知らぬ人との連絡機能を持つゲームサービスにも影響が及ぶ可能性があります。ただし、対象の線引きは今後の詳細決定に左右されます。",
+  "japan_impact": "英国のユーザーに向けてSNS、ゲーム、対話型AIを提供する日本企業は、英国の利用者が対象に入るか、年齢確認の仕組みを持っているかを早めに確認しておくとよいと考えられます。AIコンパニオン機能やロールプレイ機能を持つ製品では、18歳未満への提供制限が必要になる可能性があります。英国に拠点を持つ企業や、英国向けサービスを委託・提携している企業は、取引先の対応方針も確認しておくとよいでしょう。本記事は情報整理であり、法的助言ではありません。",
+  "next_steps": "資料によれば、政府は年内に議会へ提出し、最初の規制は2027年春に施行される見込みです。夜間の外出禁止時間のような利用制限や無限スクロールの休止については、7月に詳細を示すとしており、協議に対する政府の全面的な回答も7月に公表される予定です。Ofcomの執行体制についても、できるだけ早く執行戦略を公表するとしています。",
+  "unknowns": [
+    "AIチャットボットに関する具体的な規制の文言や、対象となるサービスの範囲の細部",
+    "違反した場合の罰則や制裁の内容",
+    "HEAAとして認められる具体的な年齢確認の方法",
+    "SNS禁止の対象となるプラットフォームの最終的な範囲や、除外対象の詳細",
+    "海外事業者に対する適用方法や、事業者の対応期限"
+  ],
+  "glossary": [
+    {
+      "term": "HEAA（高度に効果的な年齢確認）",
+      "explanation": "子供が回避しにくい年齢確認の措置を指します。資料では、Ofcomが有効な方法を調べるとしています。"
+    },
+    {
+      "term": "Ofcom",
+      "explanation": "英国の通信・放送などを所管する規制機関です。資料では、新たな規制の実施と執行を担うとされています。"
+    },
+    {
+      "term": "二次立法",
+      "explanation": "新しい法律を作り直さず、既存の法律が与えた権限を使って規則を定める方法です。"
+    },
+    {
+      "term": "Online Safety Act",
+      "explanation": "英国のオンライン上の安全に関する法律です。資料ではOfcomが既存の規定の執行を続けるとされています。"
+    }
+  ]
+}

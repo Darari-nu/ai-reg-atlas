@@ -48,6 +48,14 @@ const sourceLinkLabel = u.source_kind === 'media' ? '出典（報道）↗' : '�
             title="公式発表ではない出典（許可リストの報道機関・専門機関）"
           >報道</span>
         )}
+        {explained && (
+          <span
+            class={`px-1.5 py-0.5 text-[10px] tracking-wide ${
+              dark ? 'border border-star-gold/60 text-star-gold' : 'border border-star-gold bg-star-gold/10 text-ink'
+            }`}
+            title="開くと「解説を読む」リンクがあります"
+          >解説あり</span>
+        )}
       </span>
       <span class={`mt-1 block font-medium leading-snug ${big ? 'text-lg' : 'text-sm'}`}>{u.title}</span>
     </span>

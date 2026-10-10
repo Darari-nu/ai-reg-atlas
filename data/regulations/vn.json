@@ -1,0 +1,139 @@
+{
+  "jurisdiction": "vn",
+  "regulation_name": "人工知能法（Law on Artificial Intelligence, No. 134/2025/QH15）",
+  "status": "in_force",
+  "approach": "risk_based",
+  "axes": {
+    "risk_classification": {
+      "summary": "AIシステムを高・中・低の3段階に分類。提供者が事前に自己分類し、中・高リスクは国家AI単一窓口ポータル経由で科学技術省（MOST）へ届け出る。",
+      "detail": "法第9条は、高リスクを生命・健康・権利・公益・国家安全に重大な害を及ぼし得るもの、中リスクを利用者がAIとの対話やAI生成物であることに気づけず混乱・操作され得るもの、低リスクをそれ以外と定義する。第10条により提供者は供用前に自己分類し、中・高リスクは分類書類を整えてポータルから届け出る。高リスクには定期検査、中リスクには報告・抽出検査等による監視、低リスクは事故・苦情の後の確認が中心。高リスクの適合性評価は第13条（自己評価、または首相の一覧に載るものは登録・認定機関による第三者評価）。政令142/2026/ND-CP（2026-04-30公布、05-01施行）が分類基準（影響の大きさ・導入分野・利用者規模や重要インフラとの結合）と再分類の条件を定め、社内利用・事務支援・芸術やゲーム等の創作用途は中・高の枠から除かれる。首相が定める高リスクAI一覧は、出典記事の時点では未公布（その後の存否は未確認）。",
+      "sources": [
+        "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm",
+        "https://www.tilleke.com/insights/vietnam-takes-major-step-in-ai-governance-with-new-guiding-decree/",
+        "https://www.allenandgledhill.com/vn/publication/articles/32667/s-new-law-on-artificial-intelligence-risk-based-regulatory-framework-in-force-1-march-2026"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "第7条が全AIに共通の禁止行為を列挙。ただしEU第5条のような用途の個別類型（社会的スコアリング等）は条文に出てこない。",
+      "detail": "禁止されるのは、AIの違法目的での悪用、人を欺き操作して重大な害を与える偽装・合成コンテンツ、子ども・高齢者・障害者など脆弱な集団の弱みの悪用、国家安全・公共秩序に重大な害を与える虚偽コンテンツの作成・拡散、データ・個人情報・知財・サイバーセキュリティ法に反するデータ利用、人間による監督・制御の妨害、法定の開示・ラベルの隠蔽・改ざん、研究・試験・監査の悪用。政府公式英語ニュース掲載の英訳で確認した範囲では、第7条に生体識別・社会的スコアリング・感情認識・遠隔リアルタイム識別の語は出てこない。",
+      "sources": [
+        "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm",
+        "https://www.allenandgledhill.com/vn/publication/articles/32667/s-new-law-on-artificial-intelligence-risk-based-regulatory-framework-in-force-1-march-2026"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）への個別義務はない。法律は汎用モデル・大規模言語モデルを国の支援対象として扱う。",
+      "detail": "政府公式英語ニュース掲載の英訳で確認した範囲では、汎用AI・基盤モデル・システミックリスク・計算量基準を定義・規制する条文はない。基盤モデル・汎用AIモデルは、国のインフラ整備（第16条）、研究開発の優先分野（第18条）、企業への開発支援（第25条）として出てくるだけ。生成AIへの規律は、リスク3段階の一般義務と、生成物の機械可読表示（第11条）を通じて及ぶ。",
+      "sources": [
+        "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm",
+        "https://www.allenandgledhill.com/vn/publication/articles/32667/s-new-law-on-artificial-intelligence-risk-based-regulatory-framework-in-force-1-march-2026"
+      ]
+    },
+    "transparency": {
+      "summary": "提供者にはAIとの対話の告知とAI生成物の機械可読表示（第11条1〜2項）、実施者（deployer）には誤認を招く生成物の公衆への通知と実在の人物・出来事を模すものへのラベル表示（同3〜4項）を義務付け。",
+      "detail": "法第11条の主体は書き分けられている。提供者（1〜2項）は、人と直接やり取りするシステムでAIであることが利用者に分かる設計にすること、AI生成の音声・画像・動画を政府規定に従い機械可読形式で表示することを求められる。実施者（3〜4項）は、AI生成・編集の文章・音声・画像・動画が事象や人物の真正性について混乱を招き得る場合に公衆へ明確に通知し、実在の人物を模す、または実在の出来事を再現するものに識別できるラベルを付ける（映画・芸術・創作作品ではラベルが鑑賞を妨げない方法とする）。政令142は、メタデータ・電子署名・来歴等の機械可読マーキングを提供者に、真正性を誤認させ得る生成コンテンツ（ディープフェイク・模擬音声・再現された実在の出来事）の公開時の明確な通知を実施者に課す。技術的編集・社内利用・研究や試験は例外。表示の隠蔽・改ざんは第7条で禁止。",
+      "sources": [
+        "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm",
+        "https://www.tilleke.com/insights/vietnam-takes-major-step-in-ai-governance-with-new-guiding-decree/",
+        "https://www.allenandgledhill.com/vn/publication/articles/32667/s-new-law-on-artificial-intelligence-risk-based-regulatory-framework-in-force-1-march-2026"
+      ]
+    },
+    "penalties": {
+      "summary": "法律本体に制裁金額の定めはなく、行政処分または刑事責任とし、金額は政府が別途定める。高リスクAIの被害には民事上の賠償責任の規定がある。",
+      "detail": "第29条は、違反に対し行政処分または刑事訴追、被害は民法に従う賠償とし、行政処分の詳細は政府が定める（第29条5項）。高リスクAIは、適正に運用していても被害が出た場合は実施者がまず賠償し、提供者・開発者に契約に基づき求償できる（被害者の故意のみが原因、または不可抗力・緊急事態は免責）。第三者の不正アクセスは第三者が責任を負い、提供者・実施者に過失があれば連帯責任。制裁金の金額・処罰政令の有無は出典が割れており未確認（確定値として扱わない）。",
+      "sources": [
+        "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm",
+        "https://www.allenandgledhill.com/vn/publication/articles/32667/s-new-law-on-artificial-intelligence-risk-based-regulatory-framework-in-force-1-march-2026"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "政府が統一的に国家管理し、科学技術省（MOST）が主管。MOSTが運営する国家AI単一窓口ポータルが届出・事故報告の窓口。",
+      "detail": "第30条は政府による統一的な国家管理とし、MOSTを主管官庁とする。各省・省級機関が所管分野で協力し、省・市の人民委員会が地域内を管理する。首相は国家AI戦略（第19条。少なくとも3年ごと、または技術・市場が大きく動いたときに見直し）と高リスクAI一覧（第13条4項）を発出する。届出・事故報告・公開情報は国家AI単一窓口ポータルと国家AIデータベースで扱う（第8条）。事故は政令142で（届出用のポータルは出典記事の時点で未稼働）、緊急なら72時間以内、その他の重大事故は5営業日以内に速報、15日以内に続報、ログ・データの保全を求める。外国の高リスクAI提供者は国内の法的連絡窓口が必要で、強制認証が要るものは商業拠点か授権代理人が必要（第14条6項）。施行前から稼働するシステムには移行期間（医療・教育・金融は18カ月、その他は12カ月）。関連法として、デジタル技術法 No.71/2025/QH15 の AI 関連規定（第IV章など）は本法第33条で廃止された（法本文で確認）。国家AI戦略（2030年目標・2045年展望）は政府が承認したと政府公式英語ニュースが2026-08-29に報じた（承認日・決定番号は未確認）。",
+      "sources": [
+        "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm",
+        "https://www.tilleke.com/insights/vietnam-takes-major-step-in-ai-governance-with-new-guiding-decree/",
+        "https://www.allenandgledhill.com/vn/publication/articles/32667/s-new-law-on-artificial-intelligence-risk-based-regulatory-framework-in-force-1-march-2026",
+        "https://en.baochinhphu.vn/govt-approves-national-ai-strategy-111260829094257423.htm"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2025-12-10",
+        "event": "人工知能法 No.134/2025/QH15 が国会（第15期第10回会期）で可決",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      },
+      {
+        "date": "2026-03-01",
+        "event": "人工知能法が施行（8章35条。施行前から稼働するシステムの移行期間は医療・教育・金融18カ月、その他12カ月）",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      },
+      {
+        "date": "2026-04-30",
+        "event": "政令142/2026/ND-CP（人工知能法の詳細規定）が公布",
+        "source": "https://www.tilleke.com/insights/vietnam-takes-major-step-in-ai-governance-with-new-guiding-decree/"
+      },
+      {
+        "date": "2026-05-01",
+        "event": "政令142/2026/ND-CP が施行（リスク分類基準・届出・機械可読表示・重大事故報告・サンドボックス）",
+        "source": "https://www.tilleke.com/insights/vietnam-takes-major-step-in-ai-governance-with-new-guiding-decree/"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [
+      {
+        "topic": "重大事故の報告対象",
+        "note": "政令142は重大事故の報告（緊急72時間以内の速報、5営業日以内、15日以内の続報）を全てのAIシステムに課す。EUは主に高リスクAIの提供者が対象（第73条。ほかにシステミックリスクのあるGPAI提供者（第55条1項(c)）と実施者の通知義務（第26条5項））",
+        "source": "https://www.tilleke.com/insights/vietnam-takes-major-step-in-ai-governance-with-new-guiding-decree/"
+      }
+    ],
+    "looser": [
+      {
+        "topic": "禁止用途の個別類型",
+        "note": "第7条は違法利用・欺瞞・脆弱集団の悪用等の一般的な禁止行為で、EU第5条のような用途の個別禁止（社会的スコアリング等）は条文にない",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      },
+      {
+        "topic": "外国提供者の国内代理",
+        "note": "外国の高リスク提供者に求めるのは原則として国内の法的連絡窓口。授権代理人または商業拠点が要るのは強制認証の対象システムだけ。EUは域外の高リスク提供者に授権代理人を求める",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデル・システミックリスク・計算量基準の規定がない。汎用モデルは国の支援対象として出てくるだけ",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      },
+      {
+        "topic": "制裁金額の法定",
+        "note": "法律本体は金額を定めず、政府が別途定めるとする。EUのような売上連動の上限額はない（実際の金額は未確認）",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "中リスク区分と事前届出",
+        "note": "透明性（AIだと気づけない）を軸に「中リスク」を定義し、中・高リスクはポータルでMOSTへ事前に自己申告届出（識別コード発行）する",
+        "source": "https://www.tilleke.com/insights/vietnam-takes-major-step-in-ai-governance-with-new-guiding-decree/"
+      },
+      {
+        "topic": "高リスクAIの賠償責任",
+        "note": "適正運用でも被害が出れば実施者が賠償し、提供者・開発者に求償できる規定を法に置く。EU AI法本体にはない",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      },
+      {
+        "topic": "国家AI主権とインフラ",
+        "note": "AIインフラ・国産LLMの整備を法の一章とし、首相が指定する重要分野の重要AIは国家AIインフラ上での運用を求める",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      },
+      {
+        "topic": "単一窓口ポータルでの届出と一元管理",
+        "note": "中・高リスクの分類届出・事故報告・公開情報を国家AI単一窓口ポータルと国家AIデータベースで受け、MOSTを主管官庁とする政府の統一的な国家管理（第8・10・30条）",
+        "source": "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm"
+      }
+    ]
+  },
+  "last_checked": "2026-10-08T21:19:19Z",
+  "last_changed": "2026-10-08T21:19:19Z"
+}

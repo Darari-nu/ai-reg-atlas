@@ -312,3 +312,19 @@ countries:
     watch_feeds:
       - { url: "https://opendevelopmentcambodia.net/tag/artificial-intelligence-ai/feed/", type: rss }  # Open Development Cambodia AIタグ限定フィード(政府機関ではない現地NGOの集約サイト)
     news_queries: ["Cambodia AI strategy regulation", "Cambodia artificial intelligence policy"]
+  - code: vn
+    name_ja: ベトナム
+    name_en: Vietnam
+    flag: "🇻🇳"
+    lat: 21.03
+    lng: 105.85
+    # 2026-10-09 追加。mst.gov.vn・congbao・VnExpress RSS は GitHub Actions 上で実測済み（200・本文あり・日付あり）。
+    # en.baochinhphu.vn（政府英語ニュース）は米国式 mm/dd/yyyy を dd/mm と誤読して60日前の日付になり、30日より古い扱いで全件落ちるため外した（date_order オプションを足してから戻す）。
+    # 未確認: 制裁金額（政令委任で出典が割れる）、首相の高リスクリスト（Decision 33/2026/QD-TTg の存否で割れる）、処罰政令の有無、条文の官報一次確認。
+    # quochoi.vn（国会）は直接だと本文が空（中継なら可）なので今回は入れていない。
+    official_sources:
+      - { url: "https://mst.gov.vn/tin-tuc-su-kien/chuyen-doi-so.htm", type: scrape_hash }   # 科学技術省(MOST) デジタル変革ニュース
+      - { url: "https://congbao.chinhphu.vn/van-ban-dang-cong-bao/bo-khoa-hoc-va-cong-nghe-c13.htm", type: scrape_hash }  # 官報 MOST分(法令の公布)
+    watch_feeds:
+      - { url: "https://e.vnexpress.net/rss/tech.rss", type: rss }   # VnExpress International テック(英語。政府機関ではない報道)
+    news_queries: ["Vietnam Law on Artificial Intelligence", "Vietnam AI law MOST decree"]

@@ -16,6 +16,10 @@ official:
   - korea.kr
   - jus.br
   - lg.jp
+  # ベトナム（.gov.vn は政府系TLD規則に無いため。2026-10-09 追記）
+  - chinhphu.vn
+  - baochinhphu.vn
+  - mst.gov.vn
 trusted_media:
   # 国際・EU
   - reuters.com
@@ -102,3 +106,9 @@ trusted_media:
   - khmertimeskh.com
   - phnompenhpost.com
   - cambodianess.com
+  # ベトナム（英語版のある主要紙）
+  - vnexpress.net
+  - vietnamplus.vn
+  - vir.com.vn
+  - vietnamnews.vn
+  - tuoitrenews.vn

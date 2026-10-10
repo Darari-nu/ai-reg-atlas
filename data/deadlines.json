@@ -1,0 +1,206 @@
+[
+  {
+    "id": "eu-art50-2-transition-end",
+    "country": "eu",
+    "date": "2026-12-02",
+    "kind": "transition_end",
+    "title": "生成AIの出力表示義務（第50条2項）の猶予が終わる",
+    "what_to_do": [
+      "2026-08-02より前にEU市場へ出した生成AIシステムがあるか棚卸しする",
+      "出力（音声・画像・動画・文章）に機械可読の表示（透かし・メタデータ等）を付けられるか、技術面を点検する",
+      "自社製品に組み込んだ他社の生成AI（API等）について、提供元の対応状況を確認する"
+    ],
+    "applies_to": "2026-08-02より前にEU市場へ出した生成AIシステム（汎用AIを含む）の提供者",
+    "sources": [
+      "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+      "https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "eu-new-prohibitions",
+    "country": "eu",
+    "date": "2026-12-02",
+    "kind": "in_force",
+    "title": "EU: 性的ディープフェイク等の生成AIが禁止に追加",
+    "what_to_do": [
+      "画像・動画の生成や加工ができる自社サービスで、実在の人物の性的な画像を作れてしまう経路がないか点検する",
+      "利用規約・生成時のフィルタ・通報窓口が、この禁止に沿っているか見直す"
+    ],
+    "applies_to": "EU向けに画像・動画生成AIを提供する、または使わせる事業者",
+    "sources": [
+      "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "eu-gpai-legacy-models",
+    "country": "eu",
+    "date": "2027-08-02",
+    "kind": "transition_end",
+    "title": "EU: 2025-08-02前の汎用AIモデルの義務対応の期限",
+    "what_to_do": [
+      "2025-08-02より前にEU市場へ出した自社の汎用AIモデルを洗い出す",
+      "技術文書・学習データの概要の公開・著作権方針など、汎用AIモデル提供者の義務に対する不足を確認する",
+      "他社モデルを組み込む場合は、提供元の対応計画を確認する"
+    ],
+    "applies_to": "2025-08-02より前にEU市場へ出した汎用AIモデルの提供者",
+    "sources": [
+      "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "eu-annex3-highrisk",
+    "country": "eu",
+    "date": "2027-12-02",
+    "kind": "obligation_applies",
+    "title": "EU AI法: Annex III系ハイリスクAIの義務が適用",
+    "what_to_do": [
+      "自社のAIが、採用・教育・生体認証・移民・重要サービスの利用可否など、Annex IIIの用途に当たるか棚卸しする",
+      "当たる場合、リスク管理・データ管理・技術文書・人による監督・ログ保存の整備計画を立てる",
+      "EU向けの提供・利用がある場合、EU内の代理人や、ベンダー（提供者）との責任分担を確認する"
+    ],
+    "applies_to": "Annex III用途のAIをEUで提供・利用する事業者（日本企業を含む）",
+    "sources": [
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "eu-annex1-highrisk",
+    "country": "eu",
+    "date": "2028-08-02",
+    "kind": "obligation_applies",
+    "title": "EU AI法: 製品組み込み型（Annex I系）の義務が適用",
+    "what_to_do": [
+      "EUに出す製品（機械・玩具・医療機器・昇降機など）にAIを安全部品として組み込んでいるか確認する",
+      "該当する場合、既存の製品安全の適合性評価にAI法の要求を足す計画を、認証機関と相談しながら立てる"
+    ],
+    "applies_to": "EU製品安全法令の対象製品にAIを組み込むメーカー・輸入者",
+    "sources": [
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "us-ca-ccpa-admt",
+    "country": "us",
+    "date": "2027-01-01",
+    "kind": "obligation_applies",
+    "title": "カリフォルニア州: 自動意思決定技術（ADMT）規則の期限",
+    "what_to_do": [
+      "カリフォルニア州の消費者に関わる重要な決定（雇用・与信・住居・医療など）にAIや自動処理を使っているか棚卸しする",
+      "事前の通知、オプトアウト（拒否）の手段、利用者からの問い合わせ対応の手順を整える",
+      "自社がCCPAの対象事業者に当たるか（売上・取り扱う個人情報の件数の基準）を確認する"
+    ],
+    "applies_to": "CCPAの対象となる事業者のうち、重要な決定にADMTを使うもの",
+    "sources": [
+      "https://www.hunton.com/privacy-and-cybersecurity-law-blog/cppa-finalizes-ccpa-regulations-on-automated-decision-making-technology-risk-assessments-and-cybersecurity-audits"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "us-ca-ai-transparency-platforms",
+    "country": "us",
+    "date": "2027-01-01",
+    "kind": "obligation_applies",
+    "title": "カリフォルニア州AI透明性法: 大規模PF等の義務が開始",
+    "what_to_do": [
+      "月間利用者200万人超のSNS・ファイル共有・検索などを運営する場合、投稿に付いたAI生成物の出所情報を表示できるか確認する",
+      "生成AIのソースコードやモデルの重みをダウンロード提供する場合、規則に沿わないもの（出所情報を付ける仕組みを欠くもの）を知りながら提供しない運用か、条文で確認する"
+    ],
+    "applies_to": "カリフォルニア州で大規模オンラインプラットフォーム（月間利用者200万人超）またはGenAIホスティングを運営する事業者",
+    "sources": [
+      "https://www.troutmanprivacy.com/2025/10/california-ai-transparency-act-amendments-signed-into-law/"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "us-co-sb189-developer",
+    "country": "us",
+    "date": "2027-01-01",
+    "kind": "obligation_applies",
+    "title": "コロラド州新AI法（SB26-189）: 開発者の文書提供義務",
+    "what_to_do": [
+      "コロラド州の消費者に関わる重要な決定に使われるAI・自動処理を提供している場合、導入側へ渡す説明資料を用意する（想定用途・学習データの種類・既知の限界・適切な使い方と人によるレビュー）",
+      "導入側の通知・異議申し立て・人による再審査の義務は、開始日が公式サイトで確認できていない。州司法長官の規則を待ちつつ、最新の条文を確認する"
+    ],
+    "applies_to": "コロラド州の消費者に関わる重要な決定に使われるADMTの開発者",
+    "sources": [
+      "https://leg.colorado.gov/bills/SB26-189"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "vn-transition-12m",
+    "country": "vn",
+    "date": "2027-03-01",
+    "kind": "transition_end",
+    "title": "ベトナムAI法: 稼働済みシステムの移行期間（12か月）が終了",
+    "what_to_do": [
+      "2026-03-01より前からベトナムで稼働している自社AI（医療・教育・金融を除く）を洗い出す",
+      "AI法の遵守義務（リスク分類・届出・AI生成物の表示・重大事故の報告など）を満たす体制を、この日までに整える",
+      "届出の窓口（国家AIポータル）の運用開始状況を確認する"
+    ],
+    "applies_to": "施行前（2026-03-01より前）からベトナムで稼働するAIの提供者・利用者（医療・教育・金融以外）",
+    "sources": [
+      "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm",
+      "https://www.allenandgledhill.com/vn/publication/articles/32667/s-new-law-on-artificial-intelligence-risk-based-regulatory-framework-in-force-1-march-2026"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "kr-ismsp-mandatory",
+    "country": "kr",
+    "date": "2027-07-01",
+    "kind": "obligation_applies",
+    "title": "韓国: 重要な個人情報取扱者のISMS-P認証が義務化",
+    "what_to_do": [
+      "韓国で個人情報を取り扱う事業がある場合、自社が「重要な個人情報取扱者」に当たるか、施行令の基準を確認する（基準は別途定められる）",
+      "当たる可能性があれば、認証の取得に必要な予算と審査期間を見込んで準備を始める"
+    ],
+    "applies_to": "公共・民間の「重要な個人情報取扱者」（個人情報保護法の改正。AIに限らない）",
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12459"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "vn-transition-18m",
+    "country": "vn",
+    "date": "2027-09-01",
+    "kind": "transition_end",
+    "title": "ベトナムAI法: 医療・教育・金融の移行期間（18か月）が終了",
+    "what_to_do": [
+      "2026-03-01より前からベトナムで稼働している医療・教育・金融向けのAIを洗い出す",
+      "AI法の遵守義務を満たす体制を、この日までに整える（リスク分類・届出・表示・事故報告など）",
+      "国の高リスクAI一覧や追加のガイダンスが出たら、該当するか確認する"
+    ],
+    "applies_to": "施行前（2026-03-01より前）からベトナムで稼働する医療・教育・金融分野のAIの提供者・利用者",
+    "sources": [
+      "https://en.baochinhphu.vn/viet-nams-law-on-artificial-intelligence-111260715113551787.htm",
+      "https://www.allenandgledhill.com/vn/publication/articles/32667/s-new-law-on-artificial-intelligence-risk-based-regulatory-framework-in-force-1-march-2026"
+    ],
+    "verified": "2026-10-10"
+  },
+  {
+    "id": "us-ca-capture-devices",
+    "country": "us",
+    "date": "2028-01-01",
+    "kind": "obligation_applies",
+    "title": "カリフォルニア州AI透明性法: 撮影・録音機器メーカーの義務",
+    "what_to_do": [
+      "カリフォルニア州で売る、カメラ・マイク内蔵の機器や録音機器の製品ラインを洗い出す",
+      "撮影・録音したコンテンツに、本物であることを示す出所情報を付ける機能が必要になるため、仕様への組み込みを検討する"
+    ],
+    "applies_to": "2028-01-01以降に製造し、カリフォルニア州で販売するカメラ・マイク内蔵機器・録音機器のメーカー",
+    "sources": [
+      "https://www.troutmanprivacy.com/2025/10/california-ai-transparency-act-amendments-signed-into-law/"
+    ],
+    "verified": "2026-10-10"
+  }
+]

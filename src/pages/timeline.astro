@@ -1,8 +1,12 @@
 ---
 import LightLayout from '../layouts/LightLayout.astro';
-import { getCountries, getCountryTimeline, withBase } from '../lib/data';
+import DeadlineList from '../components/DeadlineList.astro';
+import { getCountries, getCountryTimeline, getUpcomingDeadlines, withBase } from '../lib/data';
 
 const countries = getCountries();
+const countryMap = Object.fromEntries(countries.map((c) => [c.code, c]));
+const upcoming = getUpcomingDeadlines();
+const curatedCount = upcoming.filter((d) => d.source === 'curated').length;
 type Ev = {
   date: string;
   event: string;
@@ -42,6 +46,23 @@ const eventSuffix: Record<string, string> = {
       ● 種データ　○ 更新フィード由来（法令の節目のみ・自動検知・確認前）　予定＝施行・期限の見込み
     </p>
     <p class="mt-1 font-mono text-xs text-ink/40">全 {events.length} 件（うち更新フィード由来 {derivedCount} 件）</p>
+
+    <section id="deadlines" class="mt-8 scroll-mt-6" aria-label="これからの期限">
+      <h2 class="font-display text-xl font-semibold">これからの期限</h2>
+      <p class="mt-1 text-sm text-ink/70">
+        これから義務がかかる日・移行期間が終わる日・意見募集の締切を、残り日数つきで。
+      </p>
+      <p class="mt-1 text-xs text-ink/50">
+        「やること」は出典の内容に沿った一般的な準備の整理（解釈・AIによる整理）で、法的助言ではありません。
+        「更新から自動」は毎日の更新に書かれた日付を自動で拾ったものです。
+      </p>
+      <p class="mt-1 font-mono text-xs text-ink/40">全 {upcoming.length} 件（うち人が確認した期限 {curatedCount} 件）</p>
+      <div class="mt-4">
+        <DeadlineList deadlines={upcoming} countries={countryMap} theme="light" />
+      </div>
+    </section>
+
+    <h2 class="mt-12 font-display text-xl font-semibold">年表</h2>
 
     {years.map((y) => (
       <section class="mt-10">

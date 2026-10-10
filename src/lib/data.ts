@@ -11,7 +11,7 @@ import {
   sortByDiscovery,
 } from './freshness.mjs';
 import { deriveTimelineEvents, mergeTimeline } from './derivedTimeline.mjs';
-import { buildUpcomingDeadlines } from './upcomingDeadlines.mjs';
+import { buildUpcomingDeadlines, todayJst } from './upcomingDeadlines.mjs';
 
 const ROOT = process.cwd();
 
@@ -354,6 +354,7 @@ export type UpcomingDeadline = {
   verified?: string;
   updateId?: string;
   hasExplainer?: boolean;
+  whenImpact?: string;
 };
 
 export const DEADLINE_KIND_LABELS: Record<string, string> = {
@@ -368,8 +369,8 @@ export function getCuratedDeadlines(): CuratedDeadline[] {
   return JSON.parse(fs.readFileSync(path.join(ROOT, 'data/deadlines.json'), 'utf8'));
 }
 
-// 今日より先の期限を日付順に。人が確認した分＋更新レコードの effective_date / deadline_date（自動）
-export function getUpcomingDeadlines(today: string = todayYmd()): UpcomingDeadline[] {
+// 今日（JST）以降の期限を日付順に。人が確認した分＋意見募集・案の更新レコードの effective_date / deadline_date（自動）
+export function getUpcomingDeadlines(today: string = todayJst()): UpcomingDeadline[] {
   return buildUpcomingDeadlines({
     curated: getCuratedDeadlines(),
     updates: getUpdates(),

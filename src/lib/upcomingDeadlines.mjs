@@ -28,6 +28,7 @@
  * @property {string[]} [what_to_do]    curated のみ
  * @property {string} [applies_to]      curated のみ
  * @property {string} [verified]        curated のみ
+ * @property {string} [whenImpact]      auto のみ（元の更新の summary.when_impact）
  * @property {string} [updateId]        auto のみ（元の更新レコード）
  * @property {boolean} [hasExplainer]   auto のみ
  */
@@ -41,17 +42,27 @@ export function daysUntil(date, today) {
 /**
  * @param {Object} args
  * @param {CuratedDeadline[]} args.curated
- * @param {Array<{id:string,country:string,title:string,sources?:string[],effective_date?:string|null,deadline_date?:string|null}>} args.updates
+ * @param {Array<{id:string,country:string,title:string,sources?:string[],legal_stage?:string,change_type?:string,summary?:{when_impact?:string},effective_date?:string|null,deadline_date?:string|null}>} args.updates
  * @param {string} args.today
  * @param {Set<string>} [args.explainerIds]  解説が公開済みの更新レコード id
  * @returns {UpcomingDeadline[]}
  */
+/** 意見募集・案の段階の更新か（legal_stage が draft_or_consultation、または change_type が案・意見募集系の guideline_draft） */
+export function isConsultationRecord(u) {
+  return u.legal_stage === 'draft_or_consultation' || u.change_type === 'guideline_draft';
+}
+
+/** 今日の日付（Asia/Tokyo）。サイトの読者は日本にいるので、UTC ではなく JST で数える */
+export function todayJst(now = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+}
+
 export function buildUpcomingDeadlines({ curated, updates, today, explainerIds = new Set() }) {
   /** @type {UpcomingDeadline[]} */
   const out = [];
 
   for (const c of curated) {
-    if (!(c.date > today)) continue;
+    if (c.date < today) continue; // 当日は「今日まで」として残す
     out.push({
       id: c.id,
       source: 'curated',
@@ -67,17 +78,17 @@ export function buildUpcomingDeadlines({ curated, updates, today, explainerIds =
     });
   }
 
-  // 自動分。同じ国・同じ日付・同じ出典URLが curated にあれば curated を優先して捨てる
-  const curatedKeys = new Set();
-  for (const c of out) for (const s of c.sources) curatedKeys.add(`${c.country}|${c.date}|${s}`);
+  // 自動分。意見募集・案の段階のレコードだけを拾う（確定済みの法令の日付は人が確認して curated に入れる）。
+  // 同じ国・同じ日付が curated にあれば、出典URLが違っても curated を優先して捨てる
+  const curatedKeys = new Set(out.map((c) => `${c.country}|${c.date}`));
   const autoSeen = new Set();
 
   for (const u of updates) {
-    for (const [field, kind] of [['effective_date', 'in_force'], ['deadline_date', 'other']]) {
+    if (!isConsultationRecord(u)) continue;
+    for (const [field, kind] of [['effective_date', 'in_force'], ['deadline_date', 'consultation_deadline']]) {
       const date = u[field];
-      if (!date || !(date > today)) continue;
-      const sources = u.sources ?? [];
-      if (sources.some((s) => curatedKeys.has(`${u.country}|${date}|${s}`))) continue;
+      if (!date || date < today) continue;
+      if (curatedKeys.has(`${u.country}|${date}`)) continue;
       // 同じレコードで施行日と期限が同じ日付のときは1件にまとめる
       const key = `${u.id}|${date}`;
       if (autoSeen.has(key)) continue;
@@ -90,7 +101,8 @@ export function buildUpcomingDeadlines({ curated, updates, today, explainerIds =
         daysLeft: daysUntil(date, today),
         kind,
         title: u.title,
-        sources,
+        sources: u.sources ?? [],
+        whenImpact: u.summary?.when_impact,
         updateId: u.id,
         hasExplainer: explainerIds.has(u.id),
       });

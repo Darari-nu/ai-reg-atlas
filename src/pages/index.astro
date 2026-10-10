@@ -27,7 +27,7 @@ const countryMap = Object.fromEntries(countries.map((c) => [c.code, c]));
 const allUpdates = getUpdatesByDiscovery();
 const news = allUpdates.slice(0, 3);
 const markers = getGlobeMarkers();
-const upcoming = getUpcomingDeadlines().slice(0, 3);
+const upcoming = getUpcomingDeadlines().filter((d) => d.source === 'curated').slice(0, 3);
 
 const today = todayYmd();
 const count7 = countWithin(allUpdates, today, 7);

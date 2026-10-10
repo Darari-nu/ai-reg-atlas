@@ -26,6 +26,7 @@ function sourceHost(url: string): string {
   }
 }
 function leftLabel(n: number): string {
+  if (n === 0) return '今日まで';
   return n === 1 ? 'あと 1 日（明日）' : `あと ${n} 日`;
 }
 ---
@@ -33,7 +34,7 @@ function leftLabel(n: number): string {
 <ul class="space-y-3">
   {deadlines.map((d) => {
     const c = countries[d.country];
-    const soon = SOON_DAYS >= d.daysLeft;
+    const soon = d.source === 'curated' && SOON_DAYS >= d.daysLeft;
     const box = `${
       dark ? 'dark-rule bg-navy-soft/60' : 'border border-ink/15 bg-white shadow-[0_1px_2px_rgba(26,34,51,0.06)]'
     } ${soon ? 'border-l-2 border-l-star-gold' : ''}`;
@@ -54,6 +55,7 @@ function leftLabel(n: number): string {
             )}
           </span>
           <span class="mt-1 block text-sm font-medium leading-snug">{d.title}</span>
+          {d.whenImpact && <span class={`mt-1 block text-xs leading-snug ${muted}`}>{d.whenImpact}</span>}
         </span>
       </Fragment>
     );

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { describe, it } from 'node:test';
-import { buildUpcomingDeadlines, daysUntil } from '../src/lib/upcomingDeadlines.mjs';
+import { buildUpcomingDeadlines, daysUntil, todayJst } from '../src/lib/upcomingDeadlines.mjs';
 
 const TODAY = '2026-10-10';
 
@@ -25,6 +25,9 @@ const upd = (over = {}) => ({
   sources: ['https://example.kr/a'],
   effective_date: null,
   deadline_date: null,
+  legal_stage: 'draft_or_consultation',
+  change_type: 'other',
+  summary: { what: 'w', who: 'x', when_impact: '2026-10-11まで意見募集' },
   ...over,
 });
 
@@ -39,13 +42,21 @@ describe('daysUntil', () => {
   });
 });
 
+describe('todayJst', () => {
+  it('UTC の夕方は JST では翌日になる', () => {
+    assert.equal(todayJst(new Date('2026-10-10T15:30:00Z')), '2026-10-11');
+    assert.equal(todayJst(new Date('2026-10-10T14:59:00Z')), '2026-10-10');
+  });
+});
+
 describe('buildUpcomingDeadlines', () => {
-  it('過去の期限と今日の期限は出ない', () => {
+  it('過去の期限は出ない。当日は残り（daysLeft 0）', () => {
     const r = build([cur({ id: 'a', date: '2026-10-09' }), cur({ id: 'b', date: '2026-10-10' }), cur({ id: 'c', date: '2026-10-11' })], [
       upd({ id: 'u1', deadline_date: '2026-09-01' }),
-      upd({ id: 'u2', effective_date: '2026-10-10' }),
+      upd({ id: 'u2', country: 'jp', effective_date: '2026-10-10' }),
     ]);
-    assert.deepEqual(r.map((d) => d.id), ['c']);
+    assert.deepEqual(r.map((d) => d.id), ['b', 'auto-u2-effective_date', 'c']);
+    assert.equal(r[0].daysLeft, 0);
   });
 
   it('日付順に並び、daysLeft が付く', () => {
@@ -63,37 +74,48 @@ describe('buildUpcomingDeadlines', () => {
     assert.deepEqual(r.map((d) => d.source), ['curated', 'auto']);
   });
 
-  it('同じ国・日付・出典URLなら curated を残して auto を捨てる', () => {
+  it('同じ国・同じ日付なら出典URLが違っても curated を残して auto を捨てる', () => {
     const r = build(
-      [cur({ id: 'c', country: 'eu', date: '2026-12-02', sources: ['https://example.eu/a', 'https://example.eu/b'] })],
-      [upd({ id: 'u', country: 'eu', effective_date: '2026-12-02', sources: ['https://example.eu/b'] })],
+      [cur({ id: 'c', country: 'eu', date: '2026-12-02', sources: ['https://example.eu/a'] })],
+      [upd({ id: 'u', country: 'eu', deadline_date: '2026-12-02', sources: ['https://example.eu/other'] })],
     );
     assert.equal(r.length, 1);
     assert.equal(r[0].source, 'curated');
   });
 
-  it('日付・国・出典のどれかが違えば重複とみなさない', () => {
-    const base = { id: 'c', country: 'eu', date: '2026-12-02', sources: ['https://example.eu/b'] };
+  it('日付か国が違えば重複とみなさない', () => {
     const r = build(
-      [cur(base)],
+      [cur({ id: 'c', country: 'eu', date: '2026-12-02' })],
       [
-        upd({ id: 'u1', country: 'eu', effective_date: '2026-12-03', sources: ['https://example.eu/b'] }),
-        upd({ id: 'u2', country: 'us', effective_date: '2026-12-02', sources: ['https://example.eu/b'] }),
-        upd({ id: 'u3', country: 'eu', effective_date: '2026-12-02', sources: ['https://example.eu/other'] }),
+        upd({ id: 'u1', country: 'eu', deadline_date: '2026-12-03' }),
+        upd({ id: 'u2', country: 'us', deadline_date: '2026-12-02' }),
       ],
     );
-    assert.equal(r.length, 4);
+    assert.equal(r.length, 3);
   });
 
-  it('auto は effective_date と deadline_date の両方を拾い、元の更新 id と解説の有無を持つ', () => {
+  it('auto は意見募集・案の段階のレコードだけ拾う', () => {
+    const r = build(
+      [],
+      [
+        upd({ id: 'ok1', deadline_date: '2026-11-01', legal_stage: 'draft_or_consultation', change_type: 'other' }),
+        upd({ id: 'ok2', deadline_date: '2026-11-02', legal_stage: 'announcement', change_type: 'guideline_draft' }),
+        upd({ id: 'ng1', deadline_date: '2026-11-03', legal_stage: 'in_force', change_type: 'other' }),
+        upd({ id: 'ng2', deadline_date: '2026-11-04', legal_stage: 'bill', change_type: 'new_regulation' }),
+      ],
+    );
+    assert.deepEqual(r.map((d) => d.updateId), ['ok1', 'ok2']);
+  });
+
+  it('auto の deadline_date は意見募集の締切、effective_date は施行。when_impact・更新id・解説の有無を持つ', () => {
     const r = build(
       [],
       [upd({ id: 'u', effective_date: '2027-01-01', deadline_date: '2026-11-01' })],
       { explainerIds: new Set(['u']) },
     );
-    assert.equal(r.length, 2);
-    assert.deepEqual(r.map((d) => d.kind), ['other', 'in_force']);
+    assert.deepEqual(r.map((d) => d.kind), ['consultation_deadline', 'in_force']);
     assert.ok(r.every((d) => d.source === 'auto' && d.updateId === 'u' && d.hasExplainer === true));
+    assert.equal(r[0].whenImpact, '2026-10-11まで意見募集');
     assert.equal(r[0].what_to_do, undefined);
   });
 

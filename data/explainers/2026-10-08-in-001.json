@@ -1,6 +1,6 @@
 {
   "id": "2026-10-08-in-001",
-  "status": "draft",
+  "status": "published",
   "model": "claude-sonnet-5-5",
   "created_at": "2026-10-10T08:45:28Z",
   "record_id": "2026-10-08-in-001",
@@ -64,5 +64,6 @@
       "term": "AIGEG",
       "explanation": "AI Governance and Economic Group。2026年4月に設置された、AI政策を調整する中央の機関です。"
     }
-  ]
+  ],
+  "published_at": "2026-10-10T09:03:05Z"
 }

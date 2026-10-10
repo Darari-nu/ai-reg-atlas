@@ -1,6 +1,6 @@
 {
   "id": "2026-10-06-sg-002",
-  "status": "draft",
+  "status": "published",
   "model": "claude-sonnet-5-5",
   "created_at": "2026-10-10T08:45:28Z",
   "record_id": "2026-10-06-sg-002",
@@ -52,5 +52,6 @@
       "term": "PQ（国会質問）",
       "explanation": "議員が大臣に対して国会で行う質問です。この件は書面での回答形式でした。"
     }
-  ]
+  ],
+  "published_at": "2026-10-10T09:03:05Z"
 }

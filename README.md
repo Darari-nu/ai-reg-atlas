@@ -196,7 +196,7 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 |---|---|---|
 | `GEMINI_API_KEY` | triage / summarize の要約生成 | `pipeline.yml` |
 | `CLOUDFLARE_API_TOKEN` | Cloudflare Pages へのデプロイ | `cf-deploy.yml` |
-| `ANTHROPIC_API_KEY`（任意） | 解説記事の下書き生成（Claude）。未登録なら `explain` は何もしない | `pipeline.yml`（`explain`） |
+| `ANTHROPIC_API_KEY`（任意） | 解説記事の生成（Claude）。未登録なら `explain` は何もしない。workspace・支出上限・金庫での名前は全プロジェクト共通の台帳 `~/Claudecode/tama/memory/reference_api_keys_ledger.md`「Claude API の割り付け」節が正（ここには書かない） | `pipeline.yml`（`explain`） |
 | `DISCORD_WEBHOOK_URL`（任意） | 情報源の停止・復旧の Discord 通知。未登録なら通知しないだけ | `pipeline.yml`（`notify discord`） |
 
 `CLOUDFLARE_ACCOUNT_ID` は Secret ではなく `cf-deploy.yml` に平文で直書きしてある

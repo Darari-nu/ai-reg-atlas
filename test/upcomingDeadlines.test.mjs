@@ -53,9 +53,9 @@ describe('buildUpcomingDeadlines', () => {
   it('過去の期限は出ない。当日は残り（daysLeft 0）', () => {
     const r = build([cur({ id: 'a', date: '2026-10-09' }), cur({ id: 'b', date: '2026-10-10' }), cur({ id: 'c', date: '2026-10-11' })], [
       upd({ id: 'u1', deadline_date: '2026-09-01' }),
-      upd({ id: 'u2', country: 'jp', effective_date: '2026-10-10' }),
+      upd({ id: 'u2', country: 'jp', deadline_date: '2026-10-10' }),
     ]);
-    assert.deepEqual(r.map((d) => d.id), ['b', 'auto-u2-effective_date', 'c']);
+    assert.deepEqual(r.map((d) => d.id), ['b', 'auto-u2-deadline_date', 'c']);
     assert.equal(r[0].daysLeft, 0);
   });
 
@@ -107,21 +107,21 @@ describe('buildUpcomingDeadlines', () => {
     assert.deepEqual(r.map((d) => d.updateId), ['ok1', 'ok2']);
   });
 
-  it('auto の deadline_date は意見募集の締切、effective_date は施行。when_impact・更新id・解説の有無を持つ', () => {
+  it('auto は deadline_date だけを意見募集の締切として拾い、effective_date は拾わない。when_impact・更新id・解説の有無を持つ', () => {
     const r = build(
       [],
       [upd({ id: 'u', effective_date: '2027-01-01', deadline_date: '2026-11-01' })],
       { explainerIds: new Set(['u']) },
     );
-    assert.deepEqual(r.map((d) => d.kind), ['consultation_deadline', 'in_force']);
-    assert.ok(r.every((d) => d.source === 'auto' && d.updateId === 'u' && d.hasExplainer === true));
+    assert.equal(r.length, 1);
+    assert.equal(r[0].kind, 'consultation_deadline');
+    assert.ok(r[0].source === 'auto' && r[0].updateId === 'u' && r[0].hasExplainer === true);
     assert.equal(r[0].whenImpact, '2026-10-11まで意見募集');
     assert.equal(r[0].what_to_do, undefined);
   });
 
-  it('同じ更新で施行日と期限が同じ日付なら1件にまとめる', () => {
-    const r = build([], [upd({ id: 'u', effective_date: '2027-01-01', deadline_date: '2027-01-01' })]);
-    assert.equal(r.length, 1);
+  it('effective_date だけのレコードは拾わない', () => {
+    assert.deepEqual(build([], [upd({ id: 'u', effective_date: '2027-01-01' })]), []);
   });
 
   it('日付が null の更新は拾わない', () => {

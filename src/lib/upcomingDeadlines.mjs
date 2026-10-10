@@ -1,5 +1,5 @@
 // 「これからの期限」の純ロジック。ファイル I/O も import.meta も使わない（node --test から直接読む）。
-// 人が確認した期限（data/deadlines.json）と、更新レコードの effective_date / deadline_date を合わせ、
+// 人が確認した期限（data/deadlines.json）と、更新レコードの deadline_date（意見募集の締切）を合わせ、
 // 今日より先のものを日付順に返す。日付は全て 'YYYY-MM-DD'。
 
 /**
@@ -81,18 +81,13 @@ export function buildUpcomingDeadlines({ curated, updates, today, explainerIds =
   // 自動分。意見募集・案の段階のレコードだけを拾う（確定済みの法令の日付は人が確認して curated に入れる）。
   // 同じ国・同じ日付が curated にあれば、出典URLが違っても curated を優先して捨てる
   const curatedKeys = new Set(out.map((c) => `${c.country}|${c.date}`));
-  const autoSeen = new Set();
 
   for (const u of updates) {
     if (!isConsultationRecord(u)) continue;
-    for (const [field, kind] of [['effective_date', 'in_force'], ['deadline_date', 'consultation_deadline']]) {
+    for (const [field, kind] of [['deadline_date', 'consultation_deadline']]) {
       const date = u[field];
       if (!date || date < today) continue;
       if (curatedKeys.has(`${u.country}|${date}`)) continue;
-      // 同じレコードで施行日と期限が同じ日付のときは1件にまとめる
-      const key = `${u.id}|${date}`;
-      if (autoSeen.has(key)) continue;
-      autoSeen.add(key);
       out.push({
         id: `auto-${u.id}-${field}`,
         source: 'auto',

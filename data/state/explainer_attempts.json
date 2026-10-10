@@ -1,8 +1,9 @@
 {
   "2026-10-04-jp-001": {
-    "tries": 1,
+    "tries": 2,
     "last": "2026-10-10",
     "reasons": [
+      "rejected: copied-from-source(fact[2])",
       "rejected: copied-from-source(fact[2])"
     ]
   }

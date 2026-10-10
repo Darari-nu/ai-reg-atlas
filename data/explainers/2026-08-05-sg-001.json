@@ -1,0 +1,65 @@
+{
+  "id": "2026-08-05-sg-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-08-05-sg-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "シンガポールMDDI、自律型AIの統治方針を議会で回答",
+  "lead": "シンガポール情報通信省(MDDI)は2026年8月5日、自律型AI(Agentic AI)への既存枠組みの拡張や義務化の是非を問う議会質問に、書面で回答しました。回答は2026年1月公表の枠組みを参照し、人間と組織の説明責任を重視する姿勢を示しました。義務化については、7月7日の別の答弁を参照するよう述べるにとどまっています。",
+  "facts": [
+    {
+      "text": "2026年8月5日の議会質問で、Model AI Governance FrameworkとAI Verifyを、個別判断に人の確認がない自律型AIにも広げるのか、導入者の注意義務の水準、高い影響を持つ導入での任意から義務への移行が問われました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-extending-model-ai-governance-framework-and-ai-verify-to-cover-agentic-ai-systems/"
+    },
+    {
+      "text": "この質問は口頭回答の枠で出されましたが、書面回答に切り替えられました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-extending-model-ai-governance-framework-and-ai-verify-to-cover-agentic-ai-systems/"
+    },
+    {
+      "text": "MDDIは、自律型AIの開発者向けの指針は、政府が2026年1月に公表したModel Governance Framework for Agentic AIにあると答えました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-extending-model-ai-governance-framework-and-ai-verify-to-cover-agentic-ai-systems/"
+    },
+    {
+      "text": "MDDIは、人と組織の説明責任がシンガポールのAIガバナンスの中心だと述べました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-extending-model-ai-governance-framework-and-ai-verify-to-cover-agentic-ai-systems/"
+    },
+    {
+      "text": "同枠組みは、AIを導入する組織に対し、監督役割を明確にした統治体制の整備、意味のある人の説明責任の確保、AIのリスクと自律性の水準に見合ったリスク管理の仕組みと統制の実施を求めていると説明されました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-extending-model-ai-governance-framework-and-ai-verify-to-cover-agentic-ai-systems/"
+    },
+    {
+      "text": "要件の厳格化の可否については、高リスクAIの規制を扱った2026年7月7日のAlex Yeo議員への回答を参照するよう述べました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-extending-model-ai-governance-framework-and-ai-verify-to-cover-agentic-ai-systems/"
+    }
+  ],
+  "who_is_affected": "シンガポールで自律型AIを開発・導入する事業者が中心と考えられます。とくに、個別の判断に人の確認を挟まない運用をする企業は、枠組みが求める監督体制や説明責任の整理が関係する可能性があります。",
+  "japan_impact": "日本からシンガポールに自律型AIを提供する企業や、現地拠点・取引先で使う企業は、1月公表の枠組みを読み、自社の監督役割、人の説明責任、自律性とリスクに応じた統制がどう対応しているか確認するとよいと考えられます。今回の回答自体は新たな義務を示していませんが、義務化の議論は別の答弁で扱われているため、その内容も併せて確認する必要があります。なお本記事は情報整理であり、法的助言ではありません。",
+  "next_steps": "資料には、新たな規制の施行日や今後の手続きの予定は書かれていません。義務化については7月7日の回答を参照するよう示されただけです。今後の方針は、その回答や今後の公表で確認する必要があります(推測)。",
+  "unknowns": [
+    "高リスクなAI導入を義務化するかどうか、また時期や対象範囲",
+    "導入者の注意義務の具体的な水準(質問(b)に対する具体的な回答は本文にない)",
+    "AI Verifyを自律型AIに広げるかどうか(本文では直接触れられていない)",
+    "2026年7月7日の回答の内容",
+    "罰則や法的拘束力の有無"
+  ],
+  "glossary": [
+    {
+      "term": "自律型AI(Agentic AI)",
+      "explanation": "人が個々の判断を確認せず、自ら判断して動作するAIシステムを指します。本件の質問では、そうしたシステムが対象とされています。"
+    },
+    {
+      "term": "MDDI",
+      "explanation": "シンガポールの情報通信省(Ministry of Digital Development and Information)です。"
+    },
+    {
+      "term": "AI Verify",
+      "explanation": "質問の中でModel AI Governance Frameworkと並んで挙げられたAI関連の取り組みです。本文には詳しい説明はありません。"
+    },
+    {
+      "term": "PQ(議会質問)",
+      "explanation": "議員が大臣に出す議会での質問です。今回は口頭回答の枠から書面回答に変更されました。"
+    }
+  ]
+}

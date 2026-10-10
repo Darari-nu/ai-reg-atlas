@@ -1,0 +1,62 @@
+{
+  "id": "2026-08-04-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-08-04-br-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "ブラジル下院、AIスマートグラス規制法案を審議",
+  "lead": "ブラジル下院で、AIと音声・映像センサーを備えたスマートグラスの販売と使用に関する規則を定める法案（PL 19/26）が審議されています。法案は交通委員会で承認済みで、今後は科学技術委員会と憲法司法委員会で審議される予定です。録画中の表示義務や顔認識の制限などが盛り込まれており、まだ法律にはなっていません。",
+  "facts": [
+    {
+      "text": "PL 19/26は、AIと音声・映像センサーを備えたスマートグラスの国内での販売と使用に関する規則を定める法案です。",
+      "source_url": "https://www.camara.leg.br/noticias/1295008-deputado-defende-projeto-que-regulamenta-venda-e-uso-de-oculos-inteligentes-assista-a-entrevista"
+    },
+    {
+      "text": "法案は最近、交通委員会（Comissão de Viação e Transportes）で承認され、科学技術委員会と憲法司法委員会の審査を経て本会議に進む流れです。",
+      "source_url": "https://www.camara.leg.br/noticias/1295008-deputado-defende-projeto-que-regulamenta-venda-e-uso-de-oculos-inteligentes-assista-a-entrevista"
+    },
+    {
+      "text": "法案は、録画が行われていることを示す視覚的または音による信号を常時出すことを求めています。",
+      "source_url": "https://www.camara.leg.br/noticias/1295008-deputado-defende-projeto-que-regulamenta-venda-e-uso-de-oculos-inteligentes-assista-a-entrevista"
+    },
+    {
+      "text": "法案は、初期設定では顔認識と第三者の生体識別ができないようにすることを定めています。",
+      "source_url": "https://www.camara.leg.br/noticias/1295008-deputado-defende-projeto-que-regulamenta-venda-e-uso-de-oculos-inteligentes-assista-a-entrevista"
+    },
+    {
+      "text": "法案は、トイレ、更衣室、病院、教室、宗教施設など、プライバシーが期待される場所での使用を禁じています。",
+      "source_url": "https://www.camara.leg.br/noticias/1295008-deputado-defende-projeto-que-regulamenta-venda-e-uso-de-oculos-inteligentes-assista-a-entrevista"
+    },
+    {
+      "text": "提出者のカルロス・ザラッティーニ議員（PT-SP）は8月4日のラジオ・カマラの取材で、技術の禁止が目的ではなく、プライバシーや私生活の侵害を防ぐことが目的だと述べました。",
+      "source_url": "https://www.camara.leg.br/noticias/1295008-deputado-defende-projeto-que-regulamenta-venda-e-uso-de-oculos-inteligentes-assista-a-entrevista"
+    }
+  ],
+  "who_is_affected": "AI搭載スマートグラスなどのウェアラブル端末を製造・販売する事業者が主な対象になる可能性があります。端末のソフトウェアに何を搭載してよいかを定める趣旨とされているため、ブラジルで同種の機器を扱う企業や、顔認識機能を使うアプリ・サービスの提供者にも影響が及ぶ可能性があります。端末を使う利用者や、病院・学校・宗教施設などの施設管理者に関わる可能性もあります。",
+  "japan_impact": "ブラジル向けにスマートグラスやAIカメラ機能付きの端末を輸出・販売している日本企業は、録画表示の仕組みや顔認識の初期設定がどうなっているかを確認しておくとよいでしょう。ブラジルに拠点や販売代理店がある場合は、現地の担当者と法案の動向を共有しておくと安心です。ただし法案は審議の途中で、内容が変わる可能性があります。現時点では、仕様変更を決めるよりも情報収集と社内の棚卸しが現実的です。なお、本記事は情報整理であり、法的助言ではありません。",
+  "next_steps": "資料によると、今後は科学技術委員会と憲法司法委員会で審議され、その後に本会議（Plenário）へ進む流れです。それぞれの審議時期や成立の見通し、施行日は資料に書かれていません。推測ですが、各委員会で修正が入る可能性があるため、今後の審議状況を継続的に確認する必要があります。",
+  "unknowns": [
+    "法案の成立時期と施行日",
+    "罰則や制裁の有無と内容",
+    "対象となる事業者の範囲（製造者、輸入者、販売者、利用者のどこまでか）",
+    "録画を示す信号の具体的な技術基準",
+    "顔認識を「初期設定で」禁止する場合の、利用者の同意など例外の扱い",
+    "委員会審議で内容が修正されるかどうか"
+  ],
+  "glossary": [
+    {
+      "term": "PL 19/26",
+      "explanation": "ブラジル下院に提出された法案（Projeto de Lei）の番号です。スマートグラスの販売と使用の規則を定める内容です。"
+    },
+    {
+      "term": "生体識別",
+      "explanation": "顔など、身体の特徴から個人を特定する技術のことです。法案では、第三者に対する初期設定での利用を禁じるとされています。"
+    },
+    {
+      "term": "憲法司法委員会",
+      "explanation": "ブラジル下院の委員会の一つで、法案が憲法や法制度に適合しているかなどを審査します。本件では次の審議先の一つです。"
+    }
+  ]
+}

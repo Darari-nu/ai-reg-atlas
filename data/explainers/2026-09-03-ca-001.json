@@ -1,0 +1,57 @@
+{
+  "id": "2026-09-03-ca-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-09-03-ca-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "カナダ政府、責任あるデータセンター開発原則を公表",
+  "lead": "カナダのAI・デジタルイノベーション大臣とカナダ自治体連盟（FCM）は、2026年9月3日に「責任あるデータセンター開発原則」を発表しました。データセンター事業に対して5つの期待事項を示す全国共通の枠組みで、AWS、Anthropic、Google、Meta、Microsoft、OpenAI、Cohereなど多数の事業者が署名しています。法令ではなく、各地域の既存の手続を補う基準と位置づけられています。",
+  "facts": [
+    {
+      "text": "2026年9月3日、イノベーション・科学・経済開発省は、Evan Solomon大臣とFCMのTim Tierney会長が「責任あるデータセンター開発原則」を発表したと公表しました。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-launches-canadas-responsible-data-centre-development-principles.html"
+    },
+    {
+      "text": "原則は、データセンター事業に対し、地域に持続的な利益をもたらすこと、電力コストを国民に転嫁しないこと、水利用と環境への影響を最小限にすること、地域への影響について透明性を保つこと、カナダに戦略的価値をもたらすことの5点を期待事項として掲げています。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-launches-canadas-responsible-data-centre-development-principles.html"
+    },
+    {
+      "text": "署名者には、AWS、Anthropic、Cohere、Google、Meta、Microsoft、OpenAI、Equinix、Bell Canada（BCE）、TELUSなど、データセンター、クラウド、AI、技術分野の約20社以上が名を連ねています。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-launches-canadas-responsible-data-centre-development-principles.html"
+    },
+    {
+      "text": "政府は、データセンターの開発判断は本質的に地域の問題だとしています。そのうえで、この原則は州・準州・市町村・先住民の既存の規制手続を補完する、全国的に認められた基準線として位置づけられています。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-launches-canadas-responsible-data-centre-development-principles.html"
+    },
+    {
+      "text": "政府は、この原則が国家AI戦略「AI for All」と、国内のソブリンAIインフラ支援の方針を前進させるものだと説明しています。",
+      "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-launches-canadas-responsible-data-centre-development-principles.html"
+    }
+  ],
+  "who_is_affected": "カナダ国内でデータセンターやAI向け計算基盤を新設・拡張する事業者が中心になると考えられます。署名した企業は、自社の約束として対応を求められる可能性があります。自治体は、案件を審査する際にこの原則を判断の参照点として使うと考えられます。",
+  "japan_impact": "日本企業が自らカナダでデータセンターを建設・運営する場合や、カナダの施設を借りてサービスを提供する場合は、立地先の自治体から電力・水利用や地域への影響について説明を求められる可能性があります。カナダのデータセンター事業者やクラウド事業者と取引する企業は、取引先が署名しているか、どのような対応を約束しているかを確認すると、調達や契約の検討に役立ちます。なお、資料からは法的な義務は読み取れないため、現時点では実務上の期待や審査の基準になるものとして捉えるのが妥当と考えます。",
+  "next_steps": "資料には、施行日、期限、今後の追加手続の予定は書かれていません。以下は推測です。今後、自治体の審査や事業者の投資計画の中で、この原則が参照される場面が増える可能性があります。FCMは、透明性や説明責任の強化に向けて政府と業界と引き続き協力する意向を示しています。",
+  "unknowns": [
+    "原則に法的拘束力や罰則があるのか、署名していない事業者にどう適用されるのか",
+    "原則の全文における各期待事項の具体的な基準（電力・水利用の数値目安など）",
+    "署名事業者が約束をどう履行し、誰がどのように確認するのか",
+    "電力料金への転嫁を防ぐ仕組みの具体的な内容",
+    "今後の改訂や追加措置の予定"
+  ],
+  "glossary": [
+    {
+      "term": "カナダ自治体連盟（FCM）",
+      "explanation": "カナダの市町村を代表する全国組織です。今回は政府とともに原則を発表しました。"
+    },
+    {
+      "term": "データセンター",
+      "explanation": "サーバーなどの機器を集めて、クラウド、データ保管、AIの計算処理を担う施設です。"
+    },
+    {
+      "term": "ソブリンAIインフラ",
+      "explanation": "AIの計算能力やデータ保管を、国外の設備に頼りすぎず国内で確保しようとする考え方に基づく基盤です。"
+    }
+  ]
+}

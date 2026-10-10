@@ -1,0 +1,68 @@
+{
+  "id": "2026-08-04-br-002",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-08-04-br-002",
+  "source_kind": "media",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "ブラジルANPD、パラナ州公立校の顔認識出席管理を即時停止命令",
+  "lead": "ブラジル国家データ保護庁（ANPD）の監察局は2026年8月4日、パラナ州の公立学校で使われている顔認識による出席管理について、生徒の生体データ処理を直ちに止めるよう命じました。生体データの扱いが一般データ保護法（LGPD）の求める必要性・比例性などを満たしていないと判断したためです。ただし、学校での顔認識を一律に禁じる決定ではないと、出典の解説記事は述べています。",
+  "facts": [
+    {
+      "text": "ANPDの監察局（SFI）は2026年8月4日、決定Despacho Decisório nº 2/2026/SFIにより、パラナ州公立学校に在籍する子ども・青少年の生体データ処理の即時停止を命じました。",
+      "source_url": "https://www.dataprivacybr.org/anpd-suspende-o-uso-de-reconhecimento-facial-em-escolas-publicas-do-parana/"
+    },
+    {
+      "text": "対象は「Escola Paraná Biometria」というシステムで、2023年から、教師が教室で撮影した写真を使う顔認識を出席登録の条件としており、Celepar社とValid Soluções社が処理していました。",
+      "source_url": "https://www.dataprivacybr.org/anpd-suspende-o-uso-de-reconhecimento-facial-em-escolas-publicas-do-parana/"
+    },
+    {
+      "text": "ANPDの技術文書は、適切な法的根拠の欠如、不必要・不均衡で過剰な処理、安全管理とガバナンスの不備、子の最善の利益への不配慮、監督活動への妨害の5点を問題として挙げています。",
+      "source_url": "https://www.dataprivacybr.org/anpd-suspende-o-uso-de-reconhecimento-facial-em-escolas-publicas-do-parana/"
+    },
+    {
+      "text": "州教育局（SEED/PR）が示した時間短縮や精度向上などの利点について、ANPDは導入後の検証がなく、より侵害の小さい代替手段で足りないことも示されていないと判断しました。州の規則自体が手動での出席登録も認めている点も根拠に挙げられています。",
+      "source_url": "https://www.dataprivacybr.org/anpd-suspende-o-uso-de-reconhecimento-facial-em-escolas-publicas-do-parana/"
+    },
+    {
+      "text": "決定は、ANPDが新たに決定するまで処理を再開できないとし、SEED/PRに対して10営業日以内に措置の履行を証明するよう求めています。",
+      "source_url": "https://www.dataprivacybr.org/anpd-suspende-o-uso-de-reconhecimento-facial-em-escolas-publicas-do-parana/"
+    },
+    {
+      "text": "ANPDは、この停止は予防的措置であり制裁ではないとしています。事件は制裁手続の開始を検討する部署に送られ、技術文書はパラナ州検察にも送付されます。",
+      "source_url": "https://www.dataprivacybr.org/anpd-suspende-o-uso-de-reconhecimento-facial-em-escolas-publicas-do-parana/"
+    }
+  ],
+  "who_is_affected": "直接の名宛人はパラナ州の教育局（SEED/PR）で、システムを運用した委託先も関係します。民間企業に直接の義務が課されたわけではありません。ただ、生体データ、とくに子どもの顔認識データを扱うサービスや、顔認証を勤怠・入退管理などに使う事業者は、同様の観点で見られる可能性があります。",
+  "japan_impact": "日本企業が直ちに対象になるわけではありません。ブラジルで子ども向けのサービスや教育関連のサービスを提供している場合や、ブラジル拠点で顔認証による勤怠・入退管理を行っている場合は、確認が望ましいと考えられます。確認したい点は、生体データを使う必要性を示せるか、手動などの代替手段を検討した記録があるか、法的根拠を一貫して整理しているか、委託先の安全管理を把握しているか、影響評価書を更新しているかです。これらは本件の指摘から読み取った解釈であり、法的助言ではありません。",
+  "next_steps": "資料に書かれた予定は、SEED/PRによる10営業日以内の履行証明、制裁手続の開始を検討する部署への事件送付、パラナ州検察への技術文書の送付です。州検察が起こした民事公益訴訟は別に係属中ですが、ANPDの判断が裁判所を拘束するものではないと記事は述べています。制裁の有無や時期は資料に書かれておらず、今後の見通しは判断できません。",
+  "unknowns": [
+    "制裁手続が実際に始まるか、始まる場合の制裁の内容や時期",
+    "10営業日の履行期限の具体的な日付と、SEED/PR側の対応",
+    "係属中の民事公益訴訟で裁判所がどう判断するか",
+    "ブラジルの他州や民間事業者に同様の判断が及ぶか"
+  ],
+  "glossary": [
+    {
+      "term": "ANPD",
+      "explanation": "ブラジル国家データ保護庁です。LGPDの執行を担う監督機関です。"
+    },
+    {
+      "term": "LGPD",
+      "explanation": "ブラジルの一般データ保護法です。生体データは機微な個人データとして、通常のデータより厳しい要件が課されます。"
+    },
+    {
+      "term": "必要性・比例性",
+      "explanation": "データ処理を目的達成に必要な最小限にとどめ、より侵害の小さい手段がないか検討する考え方です。"
+    },
+    {
+      "term": "RIPD（データ保護影響評価書）",
+      "explanation": "処理が個人の権利に与えるリスクと、その対策を整理した文書です。本件では2021年1月作成のまま見直しの形跡がないと指摘されました。"
+    },
+    {
+      "term": "仮処分的な予防措置",
+      "explanation": "制裁を科す前に、被害拡大を防ぐため暫定的に処理の停止などを命じる措置です。ANPDは本件を制裁ではないとしています。"
+    }
+  ]
+}

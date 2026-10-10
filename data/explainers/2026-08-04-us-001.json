@@ -1,0 +1,69 @@
+{
+  "id": "2026-08-04-us-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-08-04-us-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "NISTとDOE科学局、Genesis Mission連携のMOUを締結",
+  "lead": "米国立標準技術研究所（NIST）とエネルギー省（DOE）科学局は、ホワイトハウス科学技術政策局が主導するGenesis Missionの枠組みで、AIを活用した科学技術革新に関する覚書（MOU）を締結しました。NISTは、MITREとの官民連携を通じ、製造業と重要インフラのサイバー防御に向けた2年間のスプリント事業を進めるとしています。規制や義務を定めるものではなく、研究開発・連携に関する発表です。",
+  "facts": [
+    {
+      "text": "NISTとDOE科学局は、Genesis Missionが掲げる国家的な科学技術課題にAIで取り組むための協力を定めるMOUに署名しました（2026年8月4日付の発表）。",
+      "source_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+    },
+    {
+      "text": "Genesis Missionはホワイトハウス科学技術政策局が主導する政府横断の取り組みで、10年以内に米国の科学・工学の生産性と影響力を倍増させることを目指しています。",
+      "source_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+    },
+    {
+      "text": "MOUにより両機関は、バイオテクノロジー、量子科学、材料の設計・探索などの分野で取り組みを調整し、互いの資源を活用できるようになります。",
+      "source_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+    },
+    {
+      "text": "NISTは、非営利団体MITRE Corporationとの官民連携である「Centers for AI in Manufacturing and Critical Infrastructure」を通じて、Genesis Missionを支援する2つの取り組みを実施します。",
+      "source_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+    },
+    {
+      "text": "1つ目の製造業向けセンターは、AI駆動の自律エージェントの開発・普及を進め、民生・軍事用ドローンの生産を2年で10倍に拡大することを目指すプロジェクトを開始しました。",
+      "source_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+    },
+    {
+      "text": "2つ目の重要インフラ向けセンターは、電力網、通信網、水処理施設、金融基盤、医療システムなどを対象に、超高速でサイバー脅威を検知・修復するAIエージェントの開発・普及を進めます。両取り組みは2年間のスプリントとして設計されています。",
+      "source_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+    }
+  ],
+  "who_is_affected": "直接の義務を負う企業は、資料からは確認できません。当面は、米国の製造業・重要インフラ分野の事業者や、AIエージェント、産業用ロボット、サイバーセキュリティ製品を扱う企業が、成果の移転先や協業相手として関わる可能性があります（解釈）。",
+  "japan_impact": "今回の発表自体が日本企業に新たな遵守義務を課すとは読み取れません。ただし、米国の製造・重要インフラ向けAI技術の開発動向は、米国向けに製品やサービスを提供する日本企業や米国拠点、取引先にとって参考になる可能性があります。自社の事業が対象分野に近い場合は、NISTの公表情報を継続的に確認し、将来の技術基準や調達要件への影響を見ておくとよいでしょう（解釈）。なお、本稿は法的助言ではなく情報整理です。",
+  "next_steps": "資料には、両取り組みが2年間のスプリントとして設計されていること、また追加の協力分野が議論中であることが書かれています。具体的な成果物の公開日や標準化の予定は資料にありません。推測ですが、成果は今後NISTなどから順次公表される可能性があるため、公式発表を定期的に確認することが現実的です。",
+  "unknowns": [
+    "MOUの有効期間や具体的な予算・資金規模",
+    "民間企業の参加条件や公募の有無",
+    "成果が標準やガイドラインとして整備されるかどうか、およびその時期",
+    "日本企業や外国企業が参加・利用できるかどうか",
+    "議論中とされる追加の協力分野の内容"
+  ],
+  "glossary": [
+    {
+      "term": "MOU（覚書）",
+      "explanation": "機関同士が協力の方針や範囲を確認する文書です。通常、法令のような強制力を持つ規制ではありません。"
+    },
+    {
+      "term": "Genesis Mission",
+      "explanation": "ホワイトハウス科学技術政策局が主導する政府横断の取り組みで、AIによる科学的発見を促し、10年以内に米国の科学・工学の生産性を倍増させることを目指しています。"
+    },
+    {
+      "term": "MITRE",
+      "explanation": "米国の非営利団体（MITRE Corporation）です。今回はNISTの官民連携の相手として挙げられています。"
+    },
+    {
+      "term": "AIエージェント",
+      "explanation": "与えられた目標に向けて、自律的に判断し作業を進めるAIの仕組みを指します。本件では製造やサイバー防御への活用が想定されています。"
+    },
+    {
+      "term": "スプリント",
+      "explanation": "短期間で成果を出すことを狙った集中的な取り組みです。本件では2年間とされています。"
+    }
+  ]
+}

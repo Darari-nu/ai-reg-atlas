@@ -1,0 +1,66 @@
+{
+  "id": "2026-08-07-br-002",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-08-07-br-002",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "ブラジル下院、AI利用規則を含むデジタル経済法案を審議",
+  "lead": "ブラジル下院で、デジタル経済振興とAI利用のルールを定める法案PL 5960/25（提出者はJadyel Alencar議員）の審議が始まりました。AI関連では、ハイリスクAIの認証制度、アルゴリズムの透明性、著作物利用への報酬の仕組み、行政上の制裁などが盛り込まれています。法案段階で、施行日は資料に示されていません。",
+  "facts": [
+    {
+      "text": "PL 5960/25は「デジタル経済振興枠組み」を設け、デジタル経済の発展、デジタル主権、AIシステムの利用、公的データ基盤の提供、資金面の支援、技術システムの認証に関する原則や仕組みを定めるものです。",
+      "source_url": "https://www.camara.leg.br/noticias/1295796-projeto-cria-marco-da-economia-digital-e-define-regras-para-uso-de-ia-no-brasil"
+    },
+    {
+      "text": "法案はJadyel Alencar議員（Republicanos-PI）によるもので、現在ブラジル下院で審議中です。",
+      "source_url": "https://www.camara.leg.br/noticias/1295796-projeto-cria-marco-da-economia-digital-e-define-regras-para-uso-de-ia-no-brasil"
+    },
+    {
+      "text": "法案には、アルゴリズムの透明性、自動応答の識別、利用したコンテンツの原典への帰属表示、基本的権利の保護、商用利用、第三者コンテンツ（報道記事や芸術・文学作品を含む）の複製に関する規定が含まれ、権利者向けに公正な報酬と集団的ライセンスの仕組みも想定されています。",
+      "source_url": "https://www.camara.leg.br/noticias/1295796-projeto-cria-marco-da-economia-digital-e-define-regras-para-uso-de-ia-no-brasil"
+    },
+    {
+      "text": "法案はAIの品質と信頼性を示す認証を出す「国家AI認証システム」を創設し、高リスクと分類されるAI用途には認証を義務付けることを想定しています。",
+      "source_url": "https://www.camara.leg.br/noticias/1295796-projeto-cria-marco-da-economia-digital-e-define-regras-para-uso-de-ia-no-brasil"
+    },
+    {
+      "text": "法案は、業界ごとの自主規制を奨励するとともに、技術的・助言的な性格を持つ「国家AI安全・イノベーション研究所」の設立を認めています。",
+      "source_url": "https://www.camara.leg.br/noticias/1295796-projeto-cria-marco-da-economia-digital-e-define-regras-para-uso-de-ia-no-brasil"
+    },
+    {
+      "text": "規則違反に対しては、警告、単純な過料、活動の停止・禁止などの行政上の制裁が定められています。",
+      "source_url": "https://www.camara.leg.br/noticias/1295796-projeto-cria-marco-da-economia-digital-e-define-regras-para-uso-de-ia-no-brasil"
+    }
+  ],
+  "who_is_affected": "ブラジル市場でAIを提供する企業が対象になる可能性があります。特に、高リスクに分類されうる用途（資料で例示された保健、農業、教育など）のサービスや、生成AIなどで報道記事や創作物を利用する事業者に関係するかもしれません。ただし、対象となる事業者の範囲や域外適用の有無は資料から分かりません。",
+  "japan_impact": "日本からブラジルへAIサービスを提供する企業や、現地に拠点・取引先を持つ企業は、自社サービスが「高リスク」とされる可能性があるかを確認しておくとよいでしょう。あわせて、学習・生成に使うコンテンツの権利処理、自動応答であることの表示、利用コンテンツの出所の説明について、現状の対応を棚卸ししておくことが考えられます。ただし現時点は法案段階で内容が変わりうるため、動向の把握が中心になります。本記事は情報整理であり、法的助言ではありません。",
+  "next_steps": "資料によると、法案は下院の経済開発委員会、科学技術・イノベーション委員会、財政・租税委員会、憲法・司法・市民権委員会で、結論的な形（conclusivo）で審議される予定です。可決の時期や施行日は資料に書かれておらず、その後の見通しは分かりません。推測ですが、委員会での修正により内容が変わる可能性があるため、審議の進展を確認する必要があります。",
+  "unknowns": [
+    "施行日や、規定ごとの経過措置・猶予期間",
+    "「高リスク」AIの具体的な定義・分類基準と、認証の手続き・費用",
+    "規制の対象となる事業者の範囲（外国企業やブラジル向けに提供する海外事業者が含まれるか）",
+    "過料の金額・算定方法や、制裁を担当する当局",
+    "著作物利用への報酬額や集団的ライセンスの具体的な運用",
+    "委員会審議の日程や修正の見込み"
+  ],
+  "glossary": [
+    {
+      "term": "PL（Projeto de Lei）",
+      "explanation": "ブラジルの法案を指す呼称です。PL 5960/25は2025年の番号が付いた法案を意味します。"
+    },
+    {
+      "term": "高リスクAI",
+      "explanation": "法案が、より厳しい義務（ここでは義務的認証）の対象とする分類のAI用途です。具体的な範囲は資料からは分かりません。"
+    },
+    {
+      "term": "集団的ライセンス",
+      "explanation": "多数の権利者の著作物を、まとめて利用許諾する仕組みです。法案は権利者への報酬と合わせて想定しています。"
+    },
+    {
+      "term": "結論的審議（caráter conclusivo）",
+      "explanation": "ブラジル下院で、本会議の採決を経ずに委員会の判断で審議を進める手続きです。資料にはこの形で審議される旨が書かれています。"
+    }
+  ]
+}

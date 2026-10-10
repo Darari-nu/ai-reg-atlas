@@ -1,0 +1,65 @@
+{
+  "id": "2026-08-05-sg-002",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-08-05-sg-002",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "シンガポールMDDI、AI生成物ラベル義務化を見送り注視",
+  "lead": "2026年8月5日のシンガポール国会で、AI生成物へのラベル表示義務について書面質問があり、デジタル開発情報省（MDDI）が回答しました。現時点で義務化の決定は示されず、国際動向と技術標準の成熟度を見ながら、義務化すべきかを評価していく姿勢が示されました。",
+  "facts": [
+    {
+      "text": "2026年8月5日の国会で、アレックス・イェオ議員が、EU AI Act第50条のような透明性義務に似た、AI生成物・加工コンテンツの表示ラベル規制を検討したかを書面で質問しました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-mandatory-labelling-for-ai-generated-and-digitally-manipulated-content-to-align-with-code-of-practice-for-online-safety-and-genai-transparency-guidelines/"
+    },
+    {
+      "text": "回答では、政府は技術の進展に合わせて規制や枠組みが適切かを定期的に見直していると述べられました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-mandatory-labelling-for-ai-generated-and-digitally-manipulated-content-to-align-with-code-of-practice-for-online-safety-and-genai-transparency-guidelines/"
+    },
+    {
+      "text": "IMDAの2つのオンライン安全に関する行動規範は、指定されたSNSやアプリ配信サービスに対し、AI生成を含む有害コンテンツへのシンガポール利用者の接触を減らす仕組みを求めています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-mandatory-labelling-for-ai-generated-and-digitally-manipulated-content-to-align-with-code-of-practice-for-online-safety-and-genai-transparency-guidelines/"
+    },
+    {
+      "text": "生成AIチャットボットの透明性ガイドラインは、提供者に対し、チャットボットの能力、限界、安全対策を利用者に明確に説明するよう促すものです。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-mandatory-labelling-for-ai-generated-and-digitally-manipulated-content-to-align-with-code-of-practice-for-online-safety-and-genai-transparency-guidelines/"
+    },
+    {
+      "text": "MDDIは、AI生成・加工コンテンツのラベル表示に関する国際動向を引き続き監視し、ウォーターマークやデジタル来歴の技術標準の成熟度を追って、義務化すべきかを評価すると述べました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-mandatory-labelling-for-ai-generated-and-digitally-manipulated-content-to-align-with-code-of-practice-for-online-safety-and-genai-transparency-guidelines/"
+    }
+  ],
+  "who_is_affected": "当面、新たなラベル義務の対象になる事業者は示されていません。ただし、既存のオンライン安全の行動規範の対象となる指定SNS・アプリ配信サービスや、シンガポール向けに生成AIチャットボットを提供する事業者は、現行の枠組みの影響を受ける可能性があります。将来の義務化の対象は未定です。",
+  "japan_impact": "シンガポールでAI生成物のラベル表示が直ちに義務になるわけではないため、日本企業に即時の新規対応が生じるとは資料からは読み取れません。ただしシンガポール向けにSNS、アプリ配信、生成AIチャットボットを提供している場合は、既存の行動規範の適用有無や、透明性ガイドラインの内容を確認しておくことが考えられます。あわせて、将来の義務化に備え、ウォーターマークや来歴情報の付与に自社サービスが対応できるかを把握しておくと役立つ可能性があります。EUでも事業を行う場合は、EU側の義務は別に確認が必要です。",
+  "next_steps": "資料には、義務化の時期や今後の具体的な予定は書かれていません。MDDIが国際動向と技術標準を継続して監視し、義務化の要否を評価するとされているだけです。将来、義務化が検討される可能性はありますが、これは推測であり、資料から確定的には言えません。",
+  "unknowns": [
+    "義務化を決める時期や判断基準",
+    "義務化する場合の対象範囲や罰則",
+    "生成AIチャットボット向けガイドラインの発出時期や詳しい内容",
+    "行動規範の対象となる指定サービスの具体的な一覧",
+    "AI生成物の表示に関する新たな自主的な取り組みの有無"
+  ],
+  "glossary": [
+    {
+      "term": "MDDI",
+      "explanation": "シンガポールのデジタル開発情報省です。デジタル政策や情報分野を所管します。"
+    },
+    {
+      "term": "IMDA",
+      "explanation": "シンガポールの情報通信メディア開発庁です。オンライン安全の行動規範などを所管しています。"
+    },
+    {
+      "term": "EU AI Act第50条",
+      "explanation": "EUのAI規則にある透明性義務の条文です。質問では、AI生成物の表示義務の比較対象として挙げられました。"
+    },
+    {
+      "term": "ウォーターマーキング",
+      "explanation": "AIが作成したコンテンツに、識別のための印や情報を埋め込む技術です。"
+    },
+    {
+      "term": "デジタル来歴（デジタルプロヴェナンス）",
+      "explanation": "コンテンツがいつ、誰により、どう作られ加工されたかを示す情報や仕組みです。"
+    }
+  ]
+}

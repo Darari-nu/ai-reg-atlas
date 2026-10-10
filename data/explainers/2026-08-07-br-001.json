@@ -1,0 +1,65 @@
+{
+  "id": "2026-08-07-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-08-07-br-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "ブラジル、児童への性暴力のAI悪用を厳罰化する新法",
+  "lead": "ブラジルでルーラ大統領が、児童・青少年に対するデジタル性暴力の罰則を引き上げる法律（Lei 15.487/26）に署名し、2026年8月7日付の官報で公布されました。AIやディープフェイクなどを犯行や身元隠しに使った場合の刑が重くなり、多くの関連犯罪が凶悪犯罪（hediondo）に位置づけられます。捜査機関には公開されたデジタル空間での巡回捜査などの権限も与えられます。",
+  "facts": [
+    {
+      "text": "Lei 15.487/26はルーラ大統領が署名し、2026年8月7日（金）付の官報（Diário Oficial da União）で公布されました。",
+      "source_url": "https://www.camara.leg.br/noticias/1295754-lei-aumenta-penas-para-violencia-sexual-digital-contra-criancas-e-adolescentes-e-endurece-punicoes"
+    },
+    {
+      "text": "児童・青少年の性暴力に関する素材の製造、販売、公開、保管、要求といった犯罪について、児童青少年法（ECA）上の刑が引き上げられ、インターネット、SNS、メッセージアプリ、動画サービスなどで行われた場合はさらに重くなります。",
+      "source_url": "https://www.camara.leg.br/noticias/1295754-lei-aumenta-penas-para-violencia-sexual-digital-contra-criancas-e-adolescentes-e-endurece-punicoes"
+    },
+    {
+      "text": "AI、ディープフェイク、偽プロフィール、フィルター、メッセージアプリ、SNS、オンラインゲーム、デジタル上の身元を隠す手段などを、特定を困難にするため、または犯行を容易にするために使った場合、刑が加重されます。",
+      "source_url": "https://www.camara.leg.br/noticias/1295754-lei-aumenta-penas-para-violencia-sexual-digital-contra-criancas-e-adolescentes-e-endurece-punicoes"
+    },
+    {
+      "text": "児童・青少年が性暴力コンテンツに関与しているように見せる合成画像や偽画像の作成についても、刑が重くなります。",
+      "source_url": "https://www.camara.leg.br/noticias/1295754-lei-aumenta-penas-para-violencia-sexual-digital-contra-criancas-e-adolescentes-e-endurece-punicoes"
+    },
+    {
+      "text": "製造、公開、販売、被害者の勧誘、保管などの行為が凶悪犯罪に含まれ、刑の執行では各種の恩典に対する制限が強まります。",
+      "source_url": "https://www.camara.leg.br/noticias/1295754-lei-aumenta-penas-para-violencia-sexual-digital-contra-criancas-e-adolescentes-e-endurece-punicoes"
+    },
+    {
+      "text": "捜査機関は公開されたデジタル環境で関連ファイルを特定・収集する「ronda virtual」を行えます。現行犯や被害者の生命・身体に危険がある場合は、裁判所の許可なしにプロバイダへ登録情報を請求でき、48時間以内に司法へ通知する必要があります。",
+      "source_url": "https://www.camara.leg.br/noticias/1295754-lei-aumenta-penas-para-violencia-sexual-digital-contra-criancas-e-adolescentes-e-endurece-punicoes"
+    }
+  ],
+  "who_is_affected": "主な対象は、児童・青少年への性暴力に関する犯罪を行う個人と考えられます。記事から読み取れる範囲では、AIサービスやSNS、メッセージアプリ、オンラインゲームなどの事業者に直接の新しい義務が課されるかは分かりません。ただし、プロバイダが捜査機関から登録情報の請求を受ける場面が増える可能性があります。",
+  "japan_impact": "ブラジルで画像生成AI、SNS、メッセージ、ゲームなどを提供する日本企業は、自社サービスが悪用された場合に当局から情報提供を求められる可能性があります。そのため、ブラジル向けの法執行機関対応窓口、登録情報の保管・提供手順、48時間という通知期限を踏まえた社内フローを確認しておくとよいでしょう。あわせて、児童に関する不適切な生成物への対策や利用規約が現地の動向と整合しているかも点検対象になります。具体的な法的義務は、原文と現地の専門家で確認する必要があります。",
+  "next_steps": "資料によると、法律は公布済みで、2026年8月7日付の官報に掲載されています。今後の施行規則やガイドライン、事業者向け対応の予定は、資料には書かれていません。推測ですが、実務での運用や事業者への影響は、今後の当局の動きや関連報道で明らかになる可能性があります。",
+  "unknowns": [
+    "具体的な刑の長さや加重の程度は、資料からは分かりません。",
+    "事業者に新たな義務や罰則があるかどうかは、資料からは分かりません。",
+    "施行日や経過措置の詳細は、本文に明記されておらず分かりません。",
+    "プロバイダへの登録情報請求で対象となるデータの範囲は、分かりません。",
+    "外国の事業者への適用範囲は、資料からは分かりません。"
+  ],
+  "glossary": [
+    {
+      "term": "凶悪犯罪（crimes hediondos）",
+      "explanation": "ブラジル法で特に重い犯罪に指定される区分です。刑の執行で恩典などが制限されます。"
+    },
+    {
+      "term": "ディープフェイク",
+      "explanation": "AIを使い、画像や音声を加工して本物のように見せた偽の合成物です。"
+    },
+    {
+      "term": "ronda virtual（ロンダ・ヴィルトゥアル）",
+      "explanation": "捜査機関が公開されたデジタル環境を巡回し、関連ファイルを特定・収集する捜査手法です。"
+    },
+    {
+      "term": "ECA（児童青少年法）",
+      "explanation": "ブラジルで児童・青少年の権利と保護を定める法律です。"
+    }
+  ]
+}

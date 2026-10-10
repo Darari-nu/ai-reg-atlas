@@ -1,0 +1,66 @@
+{
+  "id": "2026-08-20-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-08-20-br-001",
+  "source_kind": "media",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "ブラジル下院、公共空間の顔認識を認める法案を可決",
+  "lead": "ブラジル下院は2026年8月12日、駅や公道などでの顔認識システム設置を認める法案PL 1.828/2023の修正案を可決し、上院に送りました。修正案には子どもの生体データ処理の原則禁止や影響評価の義務などが入っています。出典は市民団体Data Privacy Brasilのブログ(報道的な解説)で、同団体は修正後も不十分だと批判しています。",
+  "facts": [
+    {
+      "text": "ブラジル下院は2026年8月12日にPL 1.828/2023を可決し、法案は上院へ送られました。",
+      "source_url": "https://www.dataprivacybr.org/camara-aprova-o-pl-1-828-2023-e-abre-caminho-para-a-expansao-da-vigilancia-facial-no-brasil/"
+    },
+    {
+      "text": "この法案は、鉄道駅やバスターミナル、車両、公道、官公庁施設に顔認識システムを設置することを認める内容だと説明されています。",
+      "source_url": "https://www.dataprivacybr.org/camara-aprova-o-pl-1-828-2023-e-abre-caminho-para-a-expansao-da-vigilancia-facial-no-brasil/"
+    },
+    {
+      "text": "採択された修正案は、子ども・青少年の生体データの処理を原則禁止し、大量監視や無差別な監視、差別的な目的での顔認識の利用も禁じています。",
+      "source_url": "https://www.dataprivacybr.org/camara-aprova-o-pl-1-828-2023-e-abre-caminho-para-a-expansao-da-vigilancia-facial-no-brasil/"
+    },
+    {
+      "text": "強制的な措置や権利を制限する措置の前には、事前・個別・有資格者による人的検証が求められます。",
+      "source_url": "https://www.dataprivacybr.org/camara-aprova-o-pl-1-828-2023-e-abre-caminho-para-a-expansao-da-vigilancia-facial-no-brasil/"
+    },
+    {
+      "text": "修正案は、データ保護影響評価(RIPD)の実施とその要約版の公表、監査可能な記録の保持、精度とバイアスのテストの実施を義務づけています。",
+      "source_url": "https://www.dataprivacybr.org/camara-aprova-o-pl-1-828-2023-e-abre-caminho-para-a-expansao-da-vigilancia-facial-no-brasil/"
+    },
+    {
+      "text": "同じ修正案は、技術を提供する企業の責任追及の仕組みを強め、ANPD(国家データ保護庁)の監督権限を広げ、生体データベースへのアクセス・共有・追跡可能性の規則も厳しくしたとされています。",
+      "source_url": "https://www.dataprivacybr.org/camara-aprova-o-pl-1-828-2023-e-abre-caminho-para-a-expansao-da-vigilancia-facial-no-brasil/"
+    }
+  ],
+  "who_is_affected": "ブラジルの公的機関向けに顔認識・生体認証システムを提供するベンダーや、導入・運用する公的機関に影響する可能性があります。公共空間向けの機器、ソフトウェア、クラウドなどを供給する企業も、法律が成立すれば対応が必要になるかもしれません。",
+  "japan_impact": "ブラジルで公共空間向けの顔認識製品やサービスを提供している、または検討している日本企業は、法案の内容を注視する価値があります。人的検証の仕組み、影響評価の作成と要約公表、ログ保持、精度・バイアスの試験、ベンダー責任の各点について、自社製品が対応できるかを確認しておくと、成立後の準備が早まります。現地代理店や取引先が公共案件を扱っているかどうかも確認対象です。ただし法案段階で、内容が上院で変わる可能性もあるため、法的助言は専門家に確認してください。",
+  "next_steps": "資料によると、法案は上院で審議されます。Data Privacy Brasilと「Coalizão Direitos na Rede」は上院での審議を引き続き注視するとしています。上院での日程、成立時期、施行日は資料に書かれていません。推測ですが、上院で修正される可能性もあるため、成立するまでは最終的な義務内容は確定しないと考えられます。",
+  "unknowns": [
+    "上院での審議日程と成立の見通し",
+    "成立した場合の施行日と経過措置",
+    "義務違反に対する罰則や制裁の有無と内容",
+    "民間企業が運用する顔認識システムにも適用されるのか",
+    "修正案の条文全文と各義務の詳細な要件",
+    "外国企業が提供する場合の特別な扱いの有無"
+  ],
+  "glossary": [
+    {
+      "term": "PL 1.828/2023",
+      "explanation": "ブラジルの法案番号で、公共空間での顔認識システムの設置を認める内容の法案です。"
+    },
+    {
+      "term": "Substitutivo(修正案)",
+      "explanation": "元の法案に代わる形で審議・採決される修正版の法案文です。"
+    },
+    {
+      "term": "RIPD(データ保護影響評価)",
+      "explanation": "個人データ処理のリスクを事前に評価する報告書です。本法案では要約版の公表も求められます。"
+    },
+    {
+      "term": "ANPD",
+      "explanation": "ブラジルの国家データ保護庁で、個人データ保護法の監督を担う機関です。"
+    }
+  ]
+}

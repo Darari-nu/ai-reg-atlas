@@ -1,0 +1,65 @@
+{
+  "id": "2026-09-03-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-10T11:25:16Z",
+  "record_id": "2026-09-03-br-001",
+  "source_kind": "official",
+  "published_at": "2026-10-10T11:25:16Z",
+  "headline": "ブラジル下院委員会、AI支援発明の特許帰属法案を可決",
+  "lead": "ブラジル下院の産業・商業・サービス委員会は、AIで開発された発明の特許を、資金や技術的資源を提供した個人・企業に帰属させる法案（PL 303/24）を2026年9月3日付の報道で承認したと伝えられました。AI自体を発明者・特許権者とする当初案の規定は削除されています。法律になるには、さらに委員会での審議と下院・上院での承認が必要です。",
+  "facts": [
+    {
+      "text": "ブラジル下院の産業・商業・サービス委員会が、AIで開発された発明の特許を、その発明に使う技術的資源を資金面・技術面で提供した個人または企業に与える提案を承認しました。",
+      "source_url": "https://www.camara.leg.br/noticias/1302597-comissao-aprova-regras-para-patentes-criadas-com-auxilio-de-inteligencia-artificial"
+    },
+    {
+      "text": "この提案は産業財産法（LPI、法律9.279/96）を改正するもので、PL 303/24と付随する別の法案を、科学技術・イノベーション委員会の代替案に修正を加えた形で承認しました。",
+      "source_url": "https://www.camara.leg.br/noticias/1302597-comissao-aprova-regras-para-patentes-criadas-com-auxilio-de-inteligencia-artificial"
+    },
+    {
+      "text": "原案にあったAIシステムを発明者・特許権者として認める規定は、財産的権利を行使できるのは自然人または法人に限られるとの理由で、報告者のアドリアナ・ベントゥーラ議員により削除されました。",
+      "source_url": "https://www.camara.leg.br/noticias/1302597-comissao-aprova-regras-para-patentes-criadas-com-auxilio-de-inteligencia-artificial"
+    },
+    {
+      "text": "提案は、技術開発に発明面で貢献した専門家を共同発明者として記載できるようにしています。",
+      "source_url": "https://www.camara.leg.br/noticias/1302597-comissao-aprova-regras-para-patentes-criadas-com-auxilio-de-inteligencia-artificial"
+    },
+    {
+      "text": "現行のLPIは特許の権利を発明者に与えており、AIを発明者や特許権者とする規定はなく、INPI（国家産業財産院）はDabusの事案で、発明者は権利義務の主体となれる者でなければならないとして、AIを発明者とする記載を拒否しました。",
+      "source_url": "https://www.camara.leg.br/noticias/1302597-comissao-aprova-regras-para-patentes-criadas-com-auxilio-de-inteligencia-artificial"
+    },
+    {
+      "text": "法案は結論的審議（conclusivo）の手続きで進められ、次に憲法・司法・市民権委員会で審議されます。法律になるには下院と上院の承認が必要と報じられています。",
+      "source_url": "https://www.camara.leg.br/noticias/1302597-comissao-aprova-regras-para-patentes-criadas-com-auxilio-de-inteligencia-artificial"
+    }
+  ],
+  "who_is_affected": "AIを使って研究開発や発明を行い、ブラジルで特許出願を考える企業や技術者に関係する可能性があります。特に、計算資源の調達、エンジニアの雇用、ライセンス取得などで費用やリスクを負う事業者に影響しうる内容です。",
+  "japan_impact": "ブラジルで特許出願やR&Dを行う日本企業、現地子会社、共同開発の相手先は、AI支援発明の権利が誰に帰属するかが変わりうる点に注意が必要です。社内のAI利用の資金負担者、委託先との契約、発明者の記録方法を確認しておくと、法案が進んだ場合に対応しやすくなると考えられます。ただし現時点では法案段階で、法的助言ではなく情報整理です。",
+  "next_steps": "資料によれば、次は憲法・司法・市民権委員会で審議され、法律になるには下院と上院の承認が必要です。施行日や成立時期は資料に書かれていません。今後の経過を追う必要があります（これは推測を含まない確認事項です）。",
+  "unknowns": [
+    "成立する場合の施行日や経過措置",
+    "資金提供者と技術提供者が別の場合の帰属の細かな判断基準",
+    "共同発明者として記載された技術者の権利や報酬の扱い",
+    "付随する別の法案の内容",
+    "最終的に条文がどう修正されるか"
+  ],
+  "glossary": [
+    {
+      "term": "PL 303/24",
+      "explanation": "ブラジル下院で審議されている法案の番号で、AIが関わる発明の特許の扱いを定めるものです。"
+    },
+    {
+      "term": "LPI（産業財産法）",
+      "explanation": "ブラジルの特許など産業財産権を定める法律9.279/96です。"
+    },
+    {
+      "term": "INPI",
+      "explanation": "ブラジルの国家産業財産院で、特許などの出願を扱う機関です。"
+    },
+    {
+      "term": "結論的審議（conclusivo）",
+      "explanation": "一定の法案を本会議にかけず委員会で審議する手続きです。資料では、この法案がこの形で進むと説明されています。"
+    }
+  ]
+}

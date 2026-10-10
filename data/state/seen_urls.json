@@ -1942,5 +1942,81 @@
   "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-adequacy-of-ai-computing-resources-for-local-enterprises-through-domestic-facilities-and-overseas-cloud-services/": {
     "verdict": "gemini-unusable",
     "date": "2026-10-09"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-iqvia-eur-7-000-000-for-unlawful-processing-of-patients-health-data_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-security-company-eur-39-000-for-violations-concerning-employees-data_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-emirates-eur-180-000-for-infringements-concerning-passengers-health-data_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-bbva-eur-5-508-000-for-failing-to-respect-a-customers-objection-to-direct_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.dataprivacybr.org/egd-turma-2-cinco-dias-construindo-pontes-na-governanca-de-dados/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001260.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001275.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000285.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban13_02000138.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban13_02000137.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001274.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban14_02000806.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban07_02000130.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban07_02000129.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei12_02000168.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://www.mddi.gov.sg/newsroom/keynote-address-by-sms-tan-kiat-how-at-elevenlabs--a-singapore-exclusive-/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "http://www.trai.gov.in/draft-telecommunication-broadcasting-cable-services-drm-based-digital-addressable-systems-audit": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-draft-telecommunication-broadcasting-and-cable-services-0": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
+  },
+  "https://mptc.gov.kh/en/2026/10/announcement-on-the-organization-of-the-side-event-francotech-2026-from-14-16-november-2026-in-phnom-penh/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-10"
   }
 }

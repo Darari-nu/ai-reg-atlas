@@ -1,0 +1,1262 @@
+{
+  "id": "eu-ai-act-high-risk",
+  "parent": "eu-ai-act",
+  "title": "高リスクAIの書類と手続き 実務ガイド",
+  "description": "EU AI法で自社のAIが高リスクに当たったとき、提供者が何を作り、どんな手続きを踏むのかを、条文（規則 (EU) 2024/1689・改正規則 (EU) 2026/1744）に沿って、架空の具体例つきで整理したページ。",
+  "last_verified": "2026-10-11",
+  "disclaimer": "このページは一般的な情報の整理で、法的助言ではありません。具体例はすべて架空です。条文が求めていないことを義務として書かないようにしていますが、実際の対応は一次資料と専門家の確認を経てください。",
+  "summary_title": "このページの使い方",
+  "summary": [
+    {
+      "text": "自社のAIが「高リスク」に当たると分かった後に読むページです。当たるかどうかの判断は、本体の「業界・職種別: これはハイリスク？」と第6条の説明を見てください。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_6"
+      ]
+    },
+    {
+      "text": "主な読者は、高リスクAIを作ってEUに出す側（提供者）の開発・品質保証・法務の担当者です。使う側（導入者）の義務は本体の6章にまとめています。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_16",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+      ]
+    },
+    {
+      "text": "附属書III の高リスクAIの義務は、改正後の日程で2027年12月2日から適用されます。条文は書類の「書式」をほとんど定めておらず、「何を含むか」を定めています。表の項目例や具体例は、そのための目安です。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_11"
+      ]
+    }
+  ],
+  "milestones": [],
+  "sections": [
+    {
+      "id": "flow",
+      "number": 1,
+      "title": "全体の流れ",
+      "blocks": [
+        {
+          "type": "flow",
+          "steps": [
+            {
+              "label": "設計・開発",
+              "text": "リスク管理・データ管理・ログ機能・人による監督・正確性等の要件を作り込み、品質管理システムを整える",
+              "basis": "第9〜10条・第12条・第14〜15条・第17条",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_9",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_12",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_14",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_15",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "label": "書類",
+              "text": "技術文書（附属書IVの項目）と、導入者向けの使用説明書を作る",
+              "basis": "第11条・附属書IV・第13条",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_11",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_13"
+              ]
+            },
+            {
+              "label": "適合性評価",
+              "text": "附属書III 2〜8 は提供者自身の内部統制（附属書VI）。附属書III 1（生体（バイオメトリクス）。遠隔生体識別など。本人確認だけの生体認証は除く）は条件により第三者機関",
+              "basis": "第43条・附属書VI・VII",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_43",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_VI"
+              ]
+            },
+            {
+              "label": "EU適合宣言",
+              "text": "要件を満たすことを提供者の責任で宣言する文書を作る（附属書Vの項目）",
+              "basis": "第47条・附属書V",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_47",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_V"
+              ]
+            },
+            {
+              "label": "CEマーク",
+              "text": "システム（デジタル提供ならデジタルのCEマーク）、難しければ包装・添付文書に付ける",
+              "basis": "第48条",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_48"
+              ]
+            },
+            {
+              "label": "EUデータベース登録",
+              "text": "附属書III のもの（2 重要インフラを除く）は、市場に出す前に提供者（または代理人）が登録",
+              "basis": "第49条1項・第71条・附属書VIII",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_49",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_71",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_VIII"
+              ]
+            },
+            {
+              "label": "市場に出す",
+              "text": "EUの外の提供者は、事前にEU域内代理人を書面で選任。名前・連絡先を表示",
+              "basis": "第22条・第16条(b)",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_22",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_16"
+              ]
+            },
+            {
+              "label": "市販後",
+              "text": "市販後監視、重大インシデントの報告、是正措置、書類の10年保管、ログの保存。大幅な変更をしたら適合性評価をやり直す",
+              "basis": "第72条・第73条・第20条・第18〜19条・第43条4項",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_72",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_73",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_20",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_18",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_19",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_43"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "高リスクAIの提供者の義務は第16条にまとまっています（要件を満たす、表示、品質管理システム、書類とログの保管、適合性評価、EU適合宣言、CEマーク、登録、是正措置、当局への説明、アクセシビリティ）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_16"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "number": 2,
+      "title": "通しの具体例（架空）",
+      "blocks": [
+        {
+          "type": "example",
+          "title": "A社の書類選考AI",
+          "items": [
+            "日本のソフトウェア会社「A社」（架空）が、EUの企業向けに、応募書類を読み込んで候補者を評価・順位付けする「書類選考AI」をSaaSで提供する。",
+            "応募書類の分析・ふるい分け・候補者の評価は、附属書III 4(a)（採用・選考）に当たる。候補者の評価は個人のプロファイリングに当たりうるため、第6条3項の例外は使わない前提で進める（架空の設定）。",
+            "A社はEUに拠点がないので、EU域内代理人を選ぶ。附属書III 4 なので適合性評価は内部統制（附属書VI）で、第三者機関は関わらない。",
+            "以下の各章の「架空の例」は、このA社なら何を作るかの一例で、条文が求める唯一の形ではない。"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "当てはめの根拠: 附属書III 4(a)、第6条3項（プロファイリングは常に高リスク）、第22条、第43条2項。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_6",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_22",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_43"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "risk-management",
+      "number": 3,
+      "title": "リスク管理の仕組み（第9条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "リスク管理の仕組みを作り、実施し、文書にし、維持します。開発から廃止までの全期間を通じた、計画的で繰り返す仕組みとされています（第9条1・2項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_9"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "求められること",
+          "items": [
+            "(a) 意図された用途で使ったときに、健康・安全・基本的権利に生じうる既知の・合理的に予見できるリスクを特定・分析する",
+            "(b) 意図された用途と、合理的に予見できる誤用の条件でのリスクを見積もり・評価する",
+            "(c) 市販後監視（第72条）で集めたデータから、ほかのリスクを評価する",
+            "(d) 特定したリスクに向けた対策をとる。残るリスクは許容できる水準と判断できること（第9条5項）",
+            "対策の順序: 設計・開発でなくす・減らす → なくせないものは軽減・管理 → 導入者への情報提供（第13条）と必要に応じて訓練（第9条5項）",
+            "テスト: 事前に決めた指標と確率的なしきい値に照らして、遅くとも市場に出す前に行う（第9条6〜8項）",
+            "18歳未満やほかの弱い立場の人への悪影響の可能性も考える（第9条9項）"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_9"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "作る書類",
+          "text": "条文は書類の書式を定めていません。リスク管理の仕組みの詳しい説明は技術文書に入れます（附属書IV 5）。テストの手順・指標・日付と責任者の署名入りのテスト記録・報告も技術文書の項目です（附属書IV 2(g)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "リスク管理計画: 対象範囲、見直しの頻度（例: リリースごと・四半期ごと）、責任者、市販後監視のデータの取り込み方。",
+            "リスク一覧の項目例: 番号／リスクの内容（例: 特定の年齢層の応募者が不当に低く評価される）／影響を受ける人／起こりやすさと重大さ／対策（例: 属性別の評価差のテスト、人による最終判断）／残るリスクとその判断／関連するテスト記録。",
+            "誤用の想定例: 導入企業が書類選考の結果だけで不採用を決めてしまう → 使用説明書と画面で、人が最終判断する前提を示す。",
+            "テスト記録: 事前に決めた指標（例: 属性ごとの評価のずれの上限）と結果、日付、責任者の署名。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "number": 4,
+      "title": "データとデータガバナンス（第10条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "学習でモデルを作る高リスクAIは、学習・検証・テストのデータが品質の基準を満たす必要があります。学習を使わないものは、テスト用データにだけ適用されます（改正後の第10条1項・6項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "data-governance",
+          "columns": [
+            "記録・管理すること（第10条2項）",
+            "平易な説明"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "(a) 設計上の選択",
+                "どんなデータを、なぜ使うことにしたか"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+              ]
+            },
+            {
+              "cells": [
+                "(b) 収集の方法と出どころ",
+                "どこから・どう集めたか。個人データなら、もともと何の目的で集めたものか"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+              ]
+            },
+            {
+              "cells": [
+                "(c) 前処理",
+                "アノテーション・ラベル付け・クリーニング・更新・付加・集約など"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+              ]
+            },
+            {
+              "cells": [
+                "(d) 前提",
+                "そのデータが何を測り、何を表すと考えているか"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+              ]
+            },
+            {
+              "cells": [
+                "(e) 量と適切さの評価",
+                "必要なデータが手に入るか、量は足りるか、目的に合うか"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+              ]
+            },
+            {
+              "cells": [
+                "(f) 偏りの検討",
+                "健康・安全、基本的権利、禁止された差別につながる偏りがないか（出力が次の入力に影響する場合は特に）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+              ]
+            },
+            {
+              "cells": [
+                "(g) 偏りへの対策",
+                "(f) で見つけた偏りを検出・防止・軽減する措置"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+              ]
+            },
+            {
+              "cells": [
+                "(h) 欠落・不足",
+                "規則を守るうえで足りないデータとその補い方"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "データは目的に照らして関連性があり、十分に代表的で、できる限り誤りがなく完全であることが求められます。使われる地域・状況・行動・機能の特徴も、目的に必要な範囲で考慮します（第10条3・4項）。その地域等を反映したデータで学習・テストしたものは、4項を満たすと推定されます（第42条1項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_42"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "偏りの検出・修正のための特別な種類の個人データ（人種・健康など）の処理は、改正で新設の第4a条に移り、ほかのデータでは代えられないこと、仮名化などの安全措置、第三者に渡さないこと、修正後の削除などの条件をすべて満たす場合に限って例外的に認められます。GDPR などのデータ保護法は別に適用されます。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "学習データ: EUの協力企業から提供を受けた過去の応募書類と選考結果。出どころ・提供契約・もともとの収集目的（採用選考）・期間を一覧にする。",
+            "前処理の記録: 個人を特定する情報の扱い、書式の正規化、ラベル（書類選考通過・不通過）の付け方と確認方法。",
+            "偏りの確認: 性別・年齢層などで評価の分布を比べ、差があれば原因（例: 過去の選考結果に含まれる偏り）と対策（例: 学習データの見直し、特徴量の除外）を記録する。",
+            "欠落の記録: ある国・言語の応募書類が少ない → その言語での利用を使用説明書で制限する、など。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technical-documentation",
+      "number": 5,
+      "title": "技術文書（第11条・附属書IV）: 製品仕様書で足りる？",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "技術文書は市場に出す前に作り、最新に保ちます。要件を満たしていることを示し、当局と第三者機関が判断できる情報を、明確で分かりやすい形で含めること、少なくとも附属書IVの項目を含むことが求められます（第11条1項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_11"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "結論（目安）",
+          "text": "一般的な製品仕様書は「何ができるか」が中心で、附属書IVが求める開発の過程・データ・テストの記録・リスク管理・市販後監視の計画などは入っていないことが多いと考えられます。下の表の「仕様書に通常あるか」は一般論の目安で、会社や製品によって違います。既存の仕様書を土台にして、足りない項目を足していくやり方が考えられます。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "annex-iv-table",
+          "caption": "「通常あるか」は一般論の目安で、断定ではありません。○＝あることが多い、△＝一部あることが多い、×＝別に作ることが多い。項目名は附属書IVの要約です。",
+          "columns": [
+            "附属書IVの項目",
+            "平易な説明",
+            "一般的な製品仕様書に通常あるか（目安）",
+            "足りないときに足すもの（例）"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "1(a) 意図された用途・提供者名・版",
+                "何に使うためのものか、誰が作ったか、前の版との関係",
+                "△ 名前と版はあるが、用途の範囲の書き方が足りないことが多い",
+                "意図された用途と使ってはいけない使い方の記述、版の履歴"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "1(b) 外部とのやりとり",
+                "ほかのハードウェア・ソフトウェア・AIとの連携",
+                "○ 連携仕様としてあることが多い",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "1(c) ソフトウェアの版と更新の条件",
+                "関係するソフト・ファームウェアの版、更新の要件",
+                "○",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "1(d) 提供形態",
+                "組み込み・ダウンロード・API など市場に出す形",
+                "○",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "1(e) 動かすハードウェア",
+                "想定する実行環境",
+                "○",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "1(f) 製品の外観・表示・内部配置",
+                "製品の部品として組み込む場合の写真・図",
+                "△ 製品組み込みの場合のみ",
+                "写真・図"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "1(g)(h) 画面と使用説明書",
+                "導入者に見せる画面の説明と使用説明書",
+                "△ 操作マニュアルはあるが第13条の項目を満たさないことがある",
+                "第13条の項目に沿った使用説明書（7章）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_13"
+              ]
+            },
+            {
+              "cells": [
+                "2(a) 開発の方法と手順",
+                "他社の学習済みモデル・ツールの使い方と改変を含む",
+                "× 開発手順書は別文書のことが多い",
+                "開発プロセスの説明、使った外部モデル・ツールの一覧と使い方"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "2(b) 設計の考え方",
+                "アルゴリズムの考え方、主な設計判断とその理由・前提、何を最適化するか、出力の品質、要件間のトレードオフ",
+                "△ 機能設計はあるが、理由・前提・トレードオフは書かれないことが多い",
+                "設計判断の記録（なぜその方式か、対象者についての前提）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "2(c) システム構成と計算資源",
+                "部品のつながり、開発・学習・テストに使った計算資源",
+                "△ 構成図はあるが計算資源はないことが多い",
+                "学習・テスト環境と計算資源の記録"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "2(d) データの要件",
+                "学習方法、データセットの概要・出どころ・範囲・特徴、選び方、ラベル付け、クリーニング",
+                "× ",
+                "データシート（4章の記録）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "2(e) 人による監督の評価",
+                "第14条の監督措置と、出力を解釈しやすくする技術的措置の評価",
+                "×",
+                "監督の設計とその評価（8章）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_14"
+              ]
+            },
+            {
+              "cells": [
+                "2(f) 事前に決めた変更",
+                "学習を続けるAIなどで、あらかじめ決めた変更と、要件を守り続ける仕組み",
+                "×",
+                "変更の範囲と管理方法（学習を続けるAIでは、ここに書いた変更は「大幅な変更」に当たらない。第43条4項）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_43"
+              ]
+            },
+            {
+              "cells": [
+                "2(g) 検証とテスト",
+                "テストの手順、データ、正確性・堅牢性・差別的影響の指標、日付と責任者の署名入りのテスト記録・報告",
+                "× 試験成績書はあっても、差別的影響の指標や署名入りの記録まではないことが多い",
+                "テスト計画・記録・報告（署名・日付つき）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "2(h) サイバーセキュリティ対策",
+                "とった対策",
+                "△ セキュリティ仕様はあるがAI固有の攻撃への対策は書かれないことが多い",
+                "第15条5項のAI固有の攻撃への対策（9章）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_15"
+              ]
+            },
+            {
+              "cells": [
+                "3 監視・機能・制御",
+                "能力と限界、対象者・集団ごとの正確さ、予見できる意図しない結果、リスクの源、監督措置、入力データの仕様",
+                "△ 性能値はあるが、集団ごとの正確さや限界の説明は少ない",
+                "性能と限界の説明、集団別の結果"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "4 性能指標の適切さ",
+                "選んだ指標がこのAIに適切な理由",
+                "×",
+                "指標の選定理由"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "5 リスク管理の仕組み",
+                "第9条の仕組みの詳しい説明",
+                "×",
+                "リスク管理計画・リスク一覧（3章）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_9"
+              ]
+            },
+            {
+              "cells": [
+                "6 変更の履歴",
+                "提供者が加えた主な変更",
+                "△ 改版履歴はあることが多い",
+                "要件に関わる変更の記録"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "7 適用した規格",
+                "官報に参照が載った整合規格の一覧。使っていなければ要件を満たすためにとった方法の詳しい説明と、ほかの規格・仕様の一覧",
+                "△",
+                "規格の一覧、または代わりにとった方法の説明（13章）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "cells": [
+                "8 EU適合宣言の写し",
+                "第47条の宣言",
+                "×",
+                "EU適合宣言（11章）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_47"
+              ]
+            },
+            {
+              "cells": [
+                "9 市販後監視",
+                "市販後の性能評価の仕組みと市販後監視計画",
+                "×",
+                "市販後監視計画（12章）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_72"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "中小企業・SMCの簡易様式",
+          "text": "中小企業（スタートアップを含む）と中堅企業（SMC）は、附属書IVの項目を簡易な形で出せます。欧州委員会がそのための簡易様式を作り、簡易な形を選ぶ場合はその様式を使い、第三者機関はそれを受け入れます（改正後の第11条1項）。様式の公表状況は、このページの確認日時点で未確認です。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "保管期間",
+          "text": "技術文書は、市場に出してから10年間、当局が求めたときに出せるよう保管します。品質管理システムの文書、第三者機関の決定・承認した変更（該当する場合）、EU適合宣言も同じです（第18条1項）。EU域内代理人も10年間写しを保管します（第22条3項(b)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_18",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_22"
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "A社の既存の「製品仕様書」「API仕様書」「運用マニュアル」は、1(b)〜(e)の土台として使い、技術文書の目次から参照する。",
+            "新たに作るもの: 設計判断の記録、データシート、署名入りのテスト報告（属性別の評価差を含む）、リスク管理計画とリスク一覧、人による監督の評価、市販後監視計画、EU適合宣言の写し。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "logs",
+      "number": 6,
+      "title": "記録の自動保存（ログ、第12条・第19条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "高リスクAIは、使っている期間を通じて出来事（ログ）を自動で記録できる仕組みを持つ必要があります。記録は、リスクや大幅な変更につながる状況の特定、市販後監視、導入者による動作の監視（第26条5項）に役立つものであることが求められます（第12条1・2項）。遠隔生体識別（附属書III 1(a)）には、利用期間・照合したデータベース・一致した入力・結果を確認した人などの最低限の項目があります（第12条3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_12"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "提供者は、管理下にあるログを、目的に合った期間で少なくとも6か月保存します（個人データ保護法などに別の定めがある場合を除く。第19条1項）。導入者も管理下のログを少なくとも6か月保存します（第26条6項）。当局の求めに応じてログへのアクセスを提供します（第21条2項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_19",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_21"
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "記録する項目の例: 処理日時、使ったモデルの版、入力した応募書類の識別子（本文そのものではなく）、出力した評価と順位、担当者が評価を変更・無視した操作。",
+            "導入企業がログを集めて読めるように、ログの出し方を使用説明書に書く（第13条3項(f)）。保存期間は個人データ保護とのバランスで決める。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "instructions",
+      "number": 7,
+      "title": "導入者への情報提供・使用説明書（第13条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "高リスクAIは、導入者が出力を解釈して適切に使えるよう、十分に透明に作り、簡潔・完全・正確・明確な使用説明書を付けます（第13条1・2項）。使用説明書に書く最低限の項目は次のとおりです（第13条3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_13"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "(a) 提供者（と代理人）の名前・連絡先",
+            "(b) 特徴・能力・性能の限界: (i) 意図された用途、(ii) テストで確かめた正確性（指標）・堅牢性・サイバーセキュリティの水準と、それに影響しうる状況、(iii) 意図された用途や予見できる誤用でリスクにつながりうる状況、(iv) 出力を説明する情報を出す機能（該当する場合）、(v) 対象の人・集団ごとの性能（適切な場合）、(vi) 入力データの仕様や学習・検証・テストデータの情報（適切な場合）、(vii) 出力を解釈して適切に使うための情報（該当する場合）",
+            "(c) 最初の適合性評価の時点で決めておいた変更（あれば）",
+            "(d) 人による監督の措置（出力の解釈を助ける技術的措置を含む）",
+            "(e) 必要な計算資源・ハードウェア、想定寿命、ソフトウェア更新を含む保守の内容と頻度",
+            "(f) ログを集め・保存し・読むための仕組み（該当する場合）"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_13"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "正確性の水準と指標は使用説明書で宣言します（第15条3項）。使用説明書は技術文書にも含めます（附属書IV 1(h)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_15",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "意図された用途: 「人事担当者が書類選考の優先順位を検討する際の参考情報。不採用の決定に単独で使わない」。",
+            "性能: 検証データでの指標と、言語・職種ごとの結果、性能が落ちる条件（例: 学習データが少ない言語の書類、画像だけの書類）。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "human-oversight",
+      "number": 8,
+      "title": "人による監督（第14条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "高リスクAIは、使っている間、人が効果的に監督できるよう、適切な画面などの道具を含めて設計します。監督の措置は、提供者がシステムに組み込むものと、導入者が実施するよう提供者が定めるものの、どちらか又は両方です（第14条1〜3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_14"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "監督する人ができるようにすること（第14条4項）",
+          "items": [
+            "(a) 能力と限界を理解し、異常・誤作動・想定外の性能に気づいて対処できる",
+            "(b) 出力に頼りすぎる傾向（自動化バイアス）を意識できる",
+            "(c) 出力を正しく解釈できる",
+            "(d) 使わない、または出力を無視・上書き・取り消すと判断できる",
+            "(e) 「停止」ボタンなどで介入し、安全な状態で止められる"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_14"
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "画面に評価の根拠（どの記載が評価に効いたか）を表示し、人事担当者が評価と順位を修正・無視できるようにする。",
+            "「AIの評価は参考情報です。最終判断は担当者が行ってください」と表示し、全件をAIの順位どおりに処理したときに注意を出す（自動化バイアス対策の一例）。",
+            "管理者がシステム全体の利用を一時停止できる機能。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accuracy",
+      "number": 9,
+      "title": "正確性・堅牢性・サイバーセキュリティ（第15条）",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "全期間を通じて、適切な水準の正確性・堅牢性・サイバーセキュリティを保ち、安定して動くように設計する（第15条1項）",
+            "正確性の水準と指標を使用説明書で宣言する（第15条3項）",
+            "システム内や環境で起きる誤り・故障・矛盾にできる限り強くする。予備の仕組み・フェイルセーフも手段になりうる（第15条4項）",
+            "市場に出した後も学習を続けるAIは、偏った出力が次の入力に影響する「フィードバックループ」のリスクをできる限りなくす・減らす（第15条4項）",
+            "AI固有の攻撃（学習データの汚染、学習済み部品の汚染、誤りを起こさせる入力、機密性への攻撃、モデルの欠陥）への対策を、必要に応じて講じる（第15条5項）"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_15"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "EUのサイバーセキュリティ認証制度（規則 (EU) 2019/881）で認証を受けたもの（官報に参照が載った制度）は、その範囲で第15条のサイバーセキュリティ要件を満たすと推定されます（第42条2項）。改正で、サイバーレジリエンス法（規則 (EU) 2024/2847）の対象で同法第12条1項の条件を満たすものも、第15条のサイバーセキュリティ要件を満たすとみなされることになりました（第42条3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_42",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "応募書類に、AIへの指示のような文章を紛れ込ませて評価を上げようとする入力（誤りを起こさせる入力の一例）を想定し、テストと検知の仕組みを用意する。",
+            "学習を続ける設計にしない、または続ける場合は再学習のデータと結果の偏りを確認する手順を決める。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qms",
+      "number": 10,
+      "title": "品質管理システム（第17条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "提供者は、規則の順守を確保する品質管理システムを置き、方針・手順・指示として体系的に文書化します。少なくとも次の項目を含みます（第17条1項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "qms-items",
+          "columns": [
+            "項目",
+            "内容（要約）"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "(a)",
+                "法令順守の戦略（適合性評価の手順、変更管理を含む）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(b)",
+                "設計・設計管理・設計検証の手法と手順"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(c)",
+                "開発・品質管理・品質保証の手法と手順"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(d)",
+                "開発の前・中・後の検査・テスト・検証の手順と頻度"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(e)",
+                "適用する技術仕様・規格と、整合規格で足りない部分を満たす方法"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(f)",
+                "データ管理（取得・収集・分析・ラベル付け・保存・選別・集約・保持など）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(g)",
+                "リスク管理の仕組み（第9条）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(h)",
+                "市販後監視の仕組み（第72条）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(i)",
+                "重大インシデントの報告手順（第73条）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(j)",
+                "当局・第三者機関・取引先・顧客などとの連絡"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(k)",
+                "関係する文書と情報の記録管理"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(l)",
+                "資源の管理（供給の安定を含む）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            },
+            {
+              "cells": [
+                "(m)",
+                "経営層と従業員の責任を定める説明責任の枠組み"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "実施は組織の規模に見合ったものでよいとされ、改正で中小企業（スタートアップを含む）とSMCが明記されました。ただし求められる厳密さと保護の水準は守ります（改正後の第17条2項）。改正後の第63条1項では、提携・関連企業のない中小企業は、品質管理システムの一部の項目を簡易な形で満たせ、欧州委員会がそのガイドラインを作ることになっています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "ISO 9001 などとの関係",
+          "text": "AI法の条文は、ISO 9001 などの特定の民間規格には触れていません。分野別のEU法で品質管理システムの義務がある提供者は、第17条の項目をその仕組みの一部にできます（第17条3項）。既存の品質マネジメントの仕組みを土台にする場合も、上の (a)〜(m) を項目ごとに確認して足りない部分を足す、という進め方が考えられます。欧州委員会のページによると、品質管理システム（第17条の分野）の規格案 prEN 18286 が作られています（13章）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17",
+            "https://digital-strategy.ec.europa.eu/en/policies/ai-act-standardisation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conformity",
+      "number": 11,
+      "title": "適合性評価・EU適合宣言・CEマーク・登録・代理人",
+      "blocks": [
+        {
+          "type": "table",
+          "id": "conformity-steps",
+          "columns": [
+            "手続き",
+            "何をするか",
+            "根拠"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "適合性評価",
+                "附属書III 2〜8 は内部統制（附属書VI）: 品質管理システムが第17条に合っているか、技術文書で要件を満たすか、設計・開発と市販後監視が技術文書と一致しているかを提供者自身が確かめる。第三者機関は関わらない。附属書III 1（生体（遠隔生体識別など））は整合規格などを適用すれば内部統制か第三者機関（附属書VII）を選べ、適用しなければ第三者機関",
+                "第43条1・2項、附属書VI・VII"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_43",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_VI"
+              ]
+            },
+            {
+              "cells": [
+                "やり直し",
+                "大幅な変更（substantial modification。初回の適合性評価で予見・計画されていない変更で、要件への適合に影響するもの等）をしたら新たに適合性評価を受ける。市場に出した後も学習を続けるAIでは、事前に決めて技術文書（附属書IV 2(f)）に書いた変更は大幅な変更に当たらない",
+                "第43条4項、第3条23号"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_43",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+              ]
+            },
+            {
+              "cells": [
+                "第三者機関の証明書",
+                "附属書VIIの場合の証明書の有効期間は、附属書IIIのAIで最長4年（再評価で延長可）",
+                "第44条2項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_44"
+              ]
+            },
+            {
+              "cells": [
+                "EU適合宣言",
+                "システムごとに、機械可読・紙・電子署名のいずれかの書面で作り、10年保管。販売する加盟国の当局が理解しやすい言語に翻訳。他のEU法でも宣言が必要なら1通にまとめる。作成により提供者が順守の責任を負う",
+                "第47条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_47"
+              ]
+            },
+            {
+              "cells": [
+                "宣言に書く項目",
+                "AIシステムの名前・種類・識別情報、提供者（代理人）の名前と住所、提供者の単独責任で出す旨、規則（と他のEU法）に適合する旨、個人データを扱う場合はGDPR等に適合する旨、適用した整合規格・共通仕様、第三者機関の名前・番号・証明書（該当する場合）、発行場所と日付・署名者の名前と役職・署名",
+                "附属書V"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_V"
+              ]
+            },
+            {
+              "cells": [
+                "CEマーク",
+                "見やすく・読みやすく・消えないように付ける。デジタルで提供するものはデジタルのCEマーク（画面や機械可読コード等から簡単に見られる場合のみ）。第三者機関が関わる場合はその識別番号を続ける",
+                "第48条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_48"
+              ]
+            },
+            {
+              "cells": [
+                "EUデータベース登録",
+                "附属書III のもの（2 重要インフラを除く）は、市場に出す前に提供者（または代理人）が自社とシステムを登録。附属書III 2 は国レベルで登録",
+                "第49条1・5項、第71条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_49",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_71"
+              ]
+            },
+            {
+              "cells": [
+                "登録する情報",
+                "提供者・代理人の名前と連絡先、商品名と識別情報、意図された用途と機能、使う情報（データ・入力）と動作の考え方の簡潔な説明、状態（市販中・回収など）、第三者機関の証明書（該当する場合）、提供する加盟国、EU適合宣言の写し、電子版の使用説明書など",
+                "附属書VIII セクションA"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_VIII"
+              ]
+            },
+            {
+              "cells": [
+                "EU域内代理人",
+                "EUの外の提供者は、EU市場で提供する前に書面で選任。代理人はEU適合宣言と技術文書が作られ適合性評価が行われたことの確認、10年間の写しの保管、当局への情報提供・協力、登録などを行う",
+                "第22条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_22"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "A社: 内部統制（附属書VI）で自己評価 → EU適合宣言を英語で作り、販売する国の当局が理解しやすい言語の訳を用意 → SaaSの画面からたどれるデジタルのCEマーク → EUデータベースに登録 → 代理人と委任契約。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "post-market",
+      "number": 12,
+      "title": "市販後の監視と重大インシデントの報告",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "提供者は、リスクに見合った市販後監視の仕組みを作って文書化し、導入者などからの性能データを全期間にわたり積極的・体系的に集めて分析し、要件を守り続けているかを評価します。仕組みは市販後監視計画に基づき、計画は技術文書の一部です（第72条1〜3項）。改正で、欧州委員会はひな形を含む計画のガイダンスを2027年9月2日までに出すことになりました（改正後の第72条3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_72",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "incident-deadlines",
+          "columns": [
+            "場合",
+            "報告の期限（気づいてから）",
+            "根拠"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "重大インシデント（原則）",
+                "因果関係を確認したら（または合理的な可能性があれば）すぐに。遅くとも15日以内",
+                "第73条2項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_73"
+              ]
+            },
+            {
+              "cells": [
+                "広範な違反、または重要インフラの深刻で不可逆な混乱（第3条49号(b)）",
+                "すぐに。遅くとも2日以内",
+                "第73条3項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_73"
+              ]
+            },
+            {
+              "cells": [
+                "人の死亡",
+                "因果関係を確認・疑ったらすぐに。遅くとも10日以内",
+                "第73条4項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_73"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "報告先は、インシデントが起きた加盟国の市場監視当局です。期限に間に合わせるため、まず不完全な第一報を出し、後で完全な報告を出すこともできます。報告後は、原因の調査・リスク評価・是正措置を行い、当局に知らせる前に原因の評価に影響するようなシステムの変更をしてはいけません（第73条1・5・6項）。重大インシデントとは、人の死亡や健康への重大な害、重要インフラの深刻で不可逆な混乱、基本的権利を守るEU法上の義務の違反、財産・環境への重大な害につながるものです（第3条49号）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_73",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "規則に適合していないと考えたら、すぐに是正・回収・停止などの措置をとり、販売者・導入者などに知らせます（第20条）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_20"
+          ]
+        },
+        {
+          "type": "example",
+          "items": [
+            "市販後監視計画の項目例: 集めるデータ（導入企業からの問い合わせ、評価の修正率、属性別の評価差の定期測定）、頻度、しきい値を超えたときの対応、リスク一覧への反映。",
+            "重大インシデントの例として考えられるもの: 不具合で特定の属性の応募者が一律に低く評価され、差別を禁じるEU法上の義務の違反につながった場合（第3条49号(c)）。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "standards",
+      "number": 13,
+      "title": "整合規格と共通仕様の状況",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "官報に参照が載った整合規格に適合していれば、その範囲で要件を満たすと推定されます（第40条1項）。欧州委員会は欧州標準化機関に、要件をすべて対象とする標準化を要請します（第40条2項）。整合規格がなかったり不十分だったりする場合、欧州委員会は条件を満たせば実施法令で共通仕様を定められます（第41条）。改正で、附属書Iの製品法令とあわせて満たせる標準化成果物の要請も加わりました（改正後の第40条2項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_40",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_41",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "欧州委員会のページで確認できたこと（2026-08-03 更新版）",
+          "items": [
+            "欧州委員会は CEN と CENELEC に、リスク管理、データセットのガバナンスと品質、記録、透明性、人による監督、正確性、堅牢性、サイバーセキュリティ、品質管理、適合性評価の10分野の規格づくりを要請している（決定 C(2025)3871 にリンク）",
+            "規格づくりは CEN と CENELEC の合同技術委員会 JTC 21 が担っている",
+            "2025年10月30日、品質管理システム（第17条の分野）の規格案 prEN 18286 が、AIの整合規格として初めて公開意見照会に入った",
+            "規格が公表されると欧州委員会が評価し、その後に官報で参照が掲載される。規格の適用は任意で、ほかの方法で順守を示してもよい"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/policies/ai-act-standardisation"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "このページの確認日時点で、AI法の高リスク要件について官報に参照が載った整合規格は確認できていません。共通仕様が定められたことも確認できていません。整合規格を使わない場合は、要件を満たすためにとった方法を技術文書で詳しく説明します（附属書IV 7）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/policies/ai-act-standardisation",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "number": 14,
+      "title": "よくある質問",
+      "blocks": [
+        {
+          "type": "faq",
+          "items": [
+            {
+              "q": "技術文書は、今ある製品仕様書で足りますか？",
+              "a": "多くの場合、足りないと考えられます。附属書IVは、開発の手順、設計判断の理由、データの記録、署名入りのテスト報告、リスク管理、市販後監視計画、EU適合宣言の写しなどを求めています。既存の仕様書は土台として使い、足りない項目を足すやり方が考えられます（5章の表）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_11",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV"
+              ]
+            },
+            {
+              "q": "社内の既存の品質文書を流用してよいですか？",
+              "a": "条文は書類の書式を定めておらず、技術文書が附属書IVの項目を含むこと、品質管理システムが第17条の項目を含むことを求めています。分野別のEU法で品質管理システムやリスク管理の義務がある場合は、その仕組みに組み込めます（第17条3項・第9条10項）。附属書I セクションAの製品は、技術文書を製品法令の書類と1式にまとめます（第11条2項）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_11",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_9"
+              ]
+            },
+            {
+              "q": "書類は英語で作る必要がありますか？",
+              "a": "このページで確認した範囲では、AI法は技術文書を作る言語を直接は定めていません。ただし、当局から求められたら、その加盟国が示すEU公用語のうち当局が理解しやすい言語で情報・文書を出します（第21条1項）。EU適合宣言は、販売する加盟国の当局が理解しやすい言語に翻訳します（第47条2項）。使用説明書の言語の定めは、このページで確認した範囲のAI法の条文には見当たりませんでした（未確認）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_21",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_47"
+              ]
+            },
+            {
+              "q": "オープンソースの部品やモデルを使う場合は？",
+              "a": "他社の学習済みシステムやツールを使った場合は、その使い方・組み込み方・改変を技術文書に書きます（附属書IV 2(a)）。部品を提供する第三者とは書面で必要な情報・技術的なアクセスを取り決めますが、無償のオープンソースライセンスで公開されたツール・部品（汎用AIモデルを除く）の提供者にはこの取り決めの義務はありません（改正後の第25条4項）。要件を満たす責任は提供者にあります（第16条(a)）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_IV",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_16"
+              ]
+            },
+            {
+              "q": "一度適合性評価をすれば終わりですか？",
+              "a": "大幅な変更をしたら、新たに適合性評価を受けます。大幅な変更とは、市場に出した後の変更のうち、初回の適合性評価で予見・計画されていなかったもので、要件への適合に影響するか、意図された用途を変えるものです（第3条23号）。市場に出した後も学習を続けるAIでは、あらかじめ決めて技術文書に書いた変更は大幅な変更に当たりません（第43条4項）。市販後監視・インシデント報告・書類の更新は続きます（第72・73条、第11条1項）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_43",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_72",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_73",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_11"
+              ]
+            },
+            {
+              "q": "いつまでに準備すればよいですか？",
+              "a": "附属書III の高リスクAIの義務は2027年12月2日から適用されます。それより前に市場に出たものは、その後に設計の大きな変更がなければ原則として対象外ですが、公的機関向けのものは2030年8月2日までに対応が必要です（改正後の第113条・第111条2項）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "label": "規則 (EU) 2024/1689（EU AI法）英語本文（EUR-Lex）",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689",
+      "note": "第9〜22条・第40〜49条・第71〜73条、附属書IV・V・VI・VIII など"
+    },
+    {
+      "label": "規則 (EU) 2026/1744（Digital Omnibus on AI）英語本文（EUR-Lex）",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744",
+      "note": "第10条・第11条・第17条・第25条・第42条・第63条・第72条・第113条などの改正"
+    },
+    {
+      "label": "欧州委員会: Standardisation of the AI Act",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-act-standardisation",
+      "note": "2026-08-03 更新版を確認"
+    },
+    {
+      "label": "欧州委員会: 高リスクAI分類ガイドライン案（2026-05-19）",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-10-11",
+      "note": "初版。条文と欧州委員会の公式ページで確認した範囲で作成。具体例はすべて架空"
+    }
+  ]
+}

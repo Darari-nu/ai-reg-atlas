@@ -5,6 +5,7 @@ import { withBase } from '../lib/data';
 const items = [
   { href: '/', symbol: '◍', label: 'トップ' },
   { href: '/matrix/', symbol: '▦', label: '比較表' },
+  { href: '/eu-ai-act/', symbol: '§', label: 'EU AI法' },
   { href: '/timeline/', symbol: '≡', label: '年表' },
   { href: '/updates/', symbol: '⚡', label: '更新' },
 ];
@@ -19,7 +20,7 @@ const isActive = (href: string) => (href === '/' ? current === '/' : current.sta
   class="fixed inset-x-0 bottom-0 z-50 border-t border-white/15 bg-navy-deep/95 backdrop-blur md:hidden"
   style="padding-bottom: env(safe-area-inset-bottom)"
 >
-  <div class="grid grid-cols-4">
+  <div class="grid grid-cols-5">
     {items.map((item) => (
       <a
         href={withBase(item.href)}

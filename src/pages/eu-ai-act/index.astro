@@ -1,0 +1,16 @@
+---
+// EU AI法 徹底解説（/eu-ai-act/）。中身は data/guides/eu-ai-act.json（一次資料で裏を取った静的な文章）を描くだけ。
+// 日程表の「これからの期限」は data/deadlines.json（人が確認した期限）から、残り日数はビルド日（JST）で数える。
+import LightLayout from '../../layouts/LightLayout.astro';
+import GuideArticle from '../../components/GuideArticle.astro';
+import { getGuide } from '../../lib/data';
+
+const g = getGuide('eu-ai-act');
+---
+
+<LightLayout title={`${g.title} — 条文で確認した日本企業向けガイド | AI Reg Atlas`} description={g.description}>
+  <GuideArticle
+    guide={g}
+    crumbs={[{ label: 'AI Reg Atlas', href: '/' }, { label: 'EU', href: '/country/eu/' }, { label: 'EU AI法 徹底解説' }]}
+  />
+</LightLayout>

@@ -1,0 +1,134 @@
+---
+// 解説ページ（data/guides/*.json）の本文一式: パンくず・目次（PC は左に固定、スマホは折りたたみ）・0章・各章・出典一覧。
+// 本体 /eu-ai-act/ と子ページ（/eu-ai-act/high-risk/ など）で共有する。
+import type { Guide } from '../lib/data';
+import { withBase } from '../lib/data';
+import { blockSources, labeledSources } from '../lib/guideView';
+import GuideBlock from './GuideBlock.astro';
+
+interface Props {
+  guide: Guide;
+  crumbs: { label: string; href?: string }[];
+}
+const { guide: g, crumbs } = Astro.props;
+
+const summaryTitle = g.summary_title ?? 'ひとことで';
+const refNumber = Math.max(0, ...g.sections.map((s) => s.number)) + 1;
+const toc = [
+  { id: 'summary', label: `0. ${summaryTitle}` },
+  ...g.sections.map((s) => ({ id: s.id, label: `${s.number}. ${s.title}` })),
+  { id: 'references', label: `${refNumber}. 出典一覧・更新履歴` },
+];
+const children = g.children ?? [];
+---
+
+<main class="mx-auto max-w-6xl px-5 py-8">
+  <nav class="font-mono text-xs text-ink/50" aria-label="パンくず">
+    {crumbs.map((c, i) => (
+      <>
+        {i > 0 && <span class="mx-1">›</span>}
+        {c.href ? <a href={withBase(c.href)} class="hover:underline">{c.label}</a> : <span>{c.label}</span>}
+      </>
+    ))}
+  </nav>
+
+  <div class="mt-4 md:grid md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10">
+    <aside class="hidden md:block">
+      <nav class="sticky top-6 text-xs leading-relaxed" aria-label="目次">
+        <p class="font-mono text-[10px] tracking-widest text-ink/40">CONTENTS</p>
+        <ol class="mt-2 space-y-1.5 border-l border-ink/15 pl-3">
+          {toc.map((t) => <li><a href={`#${t.id}`} class="text-ink/70 hover:text-ink hover:underline">{t.label}</a></li>)}
+        </ol>
+        {children.length > 0 && (
+          <div class="mt-5 border-t border-ink/15 pt-3">
+            <p class="font-mono text-[10px] tracking-widest text-ink/40">詳しいページ</p>
+            <ul class="mt-1.5 space-y-1.5">
+              {children.map((c) => <li><a href={withBase(c.href)} class="font-medium text-ink underline underline-offset-2">{c.label} →</a></li>)}
+            </ul>
+          </div>
+        )}
+      </nav>
+    </aside>
+
+    <article class="min-w-0">
+      <header>
+        <h1 class="font-display text-2xl font-semibold md:text-3xl">{g.title}</h1>
+        <p class="mt-2 text-sm text-ink/70">{g.description}</p>
+        <p class="mt-2 font-mono text-xs text-ink/50">最終確認 {g.last_verified}（条文・欧州委員会の公式ページで確認）</p>
+        <p class="mt-4 border-l-2 border-diff-stricter bg-white px-4 py-3 text-xs leading-relaxed text-ink/75">{g.disclaimer}</p>
+      </header>
+
+      <details class="mt-5 border border-ink/15 bg-white md:hidden">
+        <summary class="cursor-pointer select-none px-4 py-2.5 text-sm font-medium">目次</summary>
+        <ol class="space-y-1.5 border-t border-ink/10 px-4 py-3 text-sm">
+          {toc.map((t) => <li><a href={`#${t.id}`} class="underline-offset-2 hover:underline">{t.label}</a></li>)}
+        </ol>
+        {children.length > 0 && (
+          <ul class="space-y-1.5 border-t border-ink/10 px-4 py-3 text-sm">
+            {children.map((c) => <li><a href={withBase(c.href)} class="font-medium underline underline-offset-2">詳しいページ: {c.label} →</a></li>)}
+          </ul>
+        )}
+      </details>
+
+      <section id="summary" class="mt-8 scroll-mt-6">
+        <h2 class="font-display text-xl font-semibold">0. {summaryTitle}</h2>
+        <ul class="mt-3 space-y-2 border-2 border-star-gold bg-white p-5 text-sm leading-relaxed">
+          {g.summary.map((s) => (
+            <li class="flex gap-2">
+              <span class="mt-[0.45rem] h-1.5 w-1.5 shrink-0 bg-star-gold" aria-hidden="true"></span>
+              <span>{s.text}</span>
+            </li>
+          ))}
+        </ul>
+        {children.length > 0 && (
+          <ul class="mt-3 space-y-1 text-sm">
+            {children.map((c) => (
+              <li>
+                <span class="mr-2 font-mono text-[10px] text-ink/45">詳しいページ</span>
+                <a href={withBase(c.href)} class="font-medium underline underline-offset-2">{c.label} →</a>
+                {c.note && <span class="block text-xs text-ink/60">{c.note}</span>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      {g.sections.map((sec) => {
+        const secSources = labeledSources(sec.blocks.flatMap((b) => blockSources(b, g)));
+        return (
+          <section id={sec.id} class="mt-12 scroll-mt-6">
+            <h2 class="font-display text-xl font-semibold">{sec.number}. {sec.title}</h2>
+            <div class="mt-3 space-y-5 text-sm leading-relaxed">
+              {sec.blocks.map((b) => <GuideBlock block={b} guide={g} />)}
+            </div>
+            {secSources.length > 0 && (
+              <p class="mt-4 font-mono text-[10px] leading-relaxed text-ink/45">
+                出典:{' '}
+                {secSources.map((s) => (
+                  <a href={s.url} class="mr-2 underline underline-offset-2 hover:text-ink" target="_blank" rel="noopener">{s.label}</a>
+                ))}
+              </p>
+            )}
+          </section>
+        );
+      })}
+
+      <section id="references" class="mt-12 scroll-mt-6">
+        <h2 class="font-display text-xl font-semibold">{refNumber}. 出典一覧・更新履歴</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          {g.references.map((r) => (
+            <li>
+              <a href={r.url} class="underline underline-offset-2" target="_blank" rel="noopener">{r.label}</a>
+              {r.note && <span class="block text-xs text-ink/55">{r.note}</span>}
+            </li>
+          ))}
+        </ul>
+        <h3 class="mt-6 font-bold">更新履歴</h3>
+        <ul class="mt-2 space-y-1 text-xs text-ink/70">
+          {g.changelog.map((c) => <li><time class="mr-2 font-mono">{c.date}</time>{c.note}</li>)}
+        </ul>
+        <p class="mt-6 border-l-2 border-diff-stricter bg-white px-4 py-3 text-xs leading-relaxed text-ink/75">{g.disclaimer}</p>
+      </section>
+    </article>
+  </div>
+</main>

@@ -378,3 +378,39 @@ export function getUpcomingDeadlines(today: string = todayJst()): UpcomingDeadli
     explainerIds: new Set(getPublishedExplainers().map((e) => e.id)),
   }) as UpcomingDeadline[];
 }
+
+/* ---------- 解説ページ（data/guides/*.json。一次資料で裏を取った静的な文章。自動生成しない） ---------- */
+
+export type GuideSourced = { text: string; sources: string[] };
+export type GuideBlock =
+  | { type: 'p'; heading?: string; text: string; sources: string[] }
+  | { type: 'note'; text: string; sources?: string[] }
+  | { type: 'list'; heading?: string; items: string[]; sources: string[] }
+  | { type: 'table'; id?: string; heading?: string; caption?: string; columns: string[]; rows: { cells: string[]; sources: string[] }[] }
+  | { type: 'risk_tiers'; tiers: { key: 'prohibited' | 'high' | 'transparency' | 'minimal'; label: string; basis: string; text: string; sources: string[] }[] }
+  | { type: 'schedule'; country: string }
+  | { type: 'checklist'; heading?: string; items: GuideSourced[] }
+  | { type: 'faq'; items: { q: string; a: string; sources: string[] }[] }
+  | { type: 'links'; heading?: string; items: { label: string; href: string; note?: string }[] }
+  | { type: 'example'; title?: string; items: string[] }
+  | { type: 'flow'; steps: { label: string; text: string; basis: string; sources: string[] }[] };
+
+export type Guide = {
+  id: string;
+  parent?: string;
+  title: string;
+  description: string;
+  last_verified: string;
+  disclaimer: string;
+  summary_title?: string;
+  children?: { label: string; href: string; note?: string }[];
+  summary: GuideSourced[];
+  milestones: { date: string; event: string; sources: string[] }[];
+  sections: { id: string; number: number; title: string; blocks: GuideBlock[] }[];
+  references: { label: string; url: string; note?: string }[];
+  changelog: { date: string; note: string }[];
+};
+
+export function getGuide(id: string): Guide {
+  return JSON.parse(fs.readFileSync(path.join(ROOT, `data/guides/${id}.json`), 'utf8'));
+}

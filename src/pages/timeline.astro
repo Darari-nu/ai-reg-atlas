@@ -1,8 +1,18 @@
 ---
 import LightLayout from '../layouts/LightLayout.astro';
-import { getCountries, getCountryTimeline, withBase } from '../lib/data';
+import DeadlineTable from '../components/DeadlineTable.astro';
+import { getCountries, getCountryTimeline, getUpcomingDeadlines, withBase } from '../lib/data';
+import { todayJst, daysUntil } from '../lib/upcomingDeadlines.mjs';
+import { excludeDuplicateFutureEvents, groupByYear, isYearOpen } from '../lib/timelineView.mjs';
 
 const countries = getCountries();
+const countryMap = Object.fromEntries(countries.map((c) => [c.code, c]));
+const today = todayJst();
+
+const upcoming = getUpcomingDeadlines(today);
+const curated = upcoming.filter((d) => d.source === 'curated');
+const autos = upcoming.filter((d) => d.source === 'auto');
+
 type Ev = {
   date: string;
   event: string;
@@ -15,65 +25,262 @@ type Ev = {
   name: string;
   future: boolean;
 };
-const today = new Date().toISOString().slice(0, 10);
 
-const events: Ev[] = [];
+const allEvents: Ev[] = [];
 for (const c of countries) {
   for (const t of getCountryTimeline(c.code)) {
-    events.push({ ...t, cc: c.code, flag: c.flag, name: c.name_ja, future: t.date > today });
+    allEvents.push({ ...t, cc: c.code, flag: c.flag, name: c.name_ja, future: t.date > today });
   }
 }
-events.sort((a, b) => (a.date < b.date ? 1 : -1));
+allEvents.sort((a, b) => (a.date < b.date ? 1 : -1));
 
-const derivedCount = events.filter((e) => e.kind !== 'seed').length;
-const years = [...new Set(events.map((e) => e.date.slice(0, 4)))];
+// 「これからの期限」と国＋日付が同じ未来の項目は年表から外す（重複解消）。残った未来の項目は先頭に「予定」として出す
+const events = excludeDuplicateFutureEvents(allEvents, curated); // 人が確認した期限と重なる未来の項目だけ外す
+const plannedEvents = events.filter((e) => e.future).sort((a, b) => (a.date < b.date ? -1 : 1));
+const pastGroups = groupByYear(events.filter((e) => !e.future));
 
 const eventSuffix: Record<string, string> = {
   'derived-effective': '（施行・適用日）',
   'derived-deadline': '（期限）',
 };
+
+// 時間軸バー: 今日 → 終端の年末。点の位置は残り日数の割合
+// 終端は「2028年末」か「最後の期限の年末」の遅い方（期限が先へ延びても右端で重ならないように）。
+// 日数が0以下（期限が無い等）のときは軸を描かない
+const lastYear = Math.max(2028, ...curated.map((d) => Number(d.date.slice(0, 4))));
+const AXIS_END = `${lastYear}-12-31`;
+const axisDays = daysUntil(AXIS_END, today);
+const showAxis = axisDays > 0 && curated.length > 0;
+const pct = (date: string) => (showAxis ? Math.max(0, Math.min(100, (daysUntil(date, today) / axisDays) * 100)) : 0);
+const firstTickYear = Number(today.slice(0, 4)) + 1;
+const ticks = Array.from({ length: Math.max(0, lastYear - firstTickYear + 1) }, (_, i) => `${firstTickYear + i}-01-01`).map((d) => ({ label: d.slice(0, 4), left: pct(d) }));
+const dots = curated.map((d) => ({ d, left: pct(d.date) }));
+
+const usedCountries = countries.filter((c) => curated.some((d) => d.country === c.code) || allEvents.some((e) => e.cc === c.code));
 ---
 
 <LightLayout title="タイムライン — 施行日・延期の年表 | AI Reg Atlas">
   <main class="mx-auto max-w-4xl px-5 py-8">
     <h1 class="font-display text-2xl font-semibold">タイムライン</h1>
-    <p class="mt-2 text-sm text-ink/70">{countries.length}カ国の施行日・延期・主要文書を1本の年表に。未来の日付は予定。</p>
-    <p class="mt-1 text-xs text-ink/50">
-      ● 種データ　○ 更新フィード由来（法令の節目のみ・自動検知・確認前）　予定＝施行・期限の見込み
+    <p class="mt-2 text-sm text-ink/70">
+      これからの期限と、{countries.length}カ国・地域の施行日・延期・主要文書の年表。
     </p>
-    <p class="mt-1 font-mono text-xs text-ink/40">全 {events.length} 件（うち更新フィード由来 {derivedCount} 件）</p>
+    <details class="mt-1 text-xs text-ink/50">
+      <summary class="cursor-pointer select-none underline underline-offset-2">この年表の見方</summary>
+      <div class="mt-2 space-y-1 leading-relaxed">
+        <p>● 種データ　○ 更新フィード由来（法令の節目のみ・自動検知・確認前）　予定＝施行・期限の見込み。</p>
+        <p>
+          「これからの期限」は、人が出典を開いて確認した日付だけを載せています。「やること」は出典の内容に沿った一般的な準備の整理（解釈・AIによる整理）で、法的助言ではありません。
+          強調（金の左罫線）は90日以内の期限です。当日の期限は「今日まで」と表示し、翌日から消えます。
+        </p>
+        <p>
+          「更新から自動」は、毎日の更新のうち意見募集・案の段階のものに書かれた締切日を自動で拾ったものです。
+          年表に載る日付のうち、これからの期限と国・日付が同じものは年表から省いています。
+        </p>
+      </div>
+    </details>
 
-    {years.map((y) => (
-      <section class="mt-10">
-        <h2 class="font-mono text-lg font-medium text-ink/40">{y}</h2>
-        <ol class="mt-3 border-l border-ink/20">
-          {events.filter((e) => e.date.startsWith(y)).map((e) => {
-            const pending = e.kind === 'seed' ? e.future : e.scheduled;
-            const href = e.kind === 'seed'
-              ? withBase(`/country/${e.cc}/#tl-${e.date}`)
-              : withBase(`/country/${e.cc}/#u-${e.updateId}`);
-            return (
-              <li class="relative mb-5 pl-6">
-                {e.kind === 'seed' ? (
-                  <span class={`absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-paper ${e.future ? 'bg-star-gold' : 'bg-ink'}`} />
-                ) : (
-                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-ink bg-paper" />
-                )}
-                <p class="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
-                  <time class="font-mono text-xs text-ink/55">{e.date}</time>
-                  <a href={href} class="text-xs no-underline hover:underline">{e.flag} {e.name}</a>
-                  {e.kind !== 'seed' && <span class="border border-ink/25 px-1 font-mono text-[10px] text-ink/60">更新フィードより</span>}
-                  {pending && <span class="border border-star-gold px-1 font-mono text-[10px] text-ink/70">予定</span>}
-                </p>
-                <p class="mt-0.5 text-sm leading-relaxed">
-                  {e.event}{eventSuffix[e.kind] ? ` ${eventSuffix[e.kind]}` : ''}
-                  <a href={e.source} rel="noopener" target="_blank" class="ml-2 font-mono text-xs underline underline-offset-2">出典 ↗</a>
-                </p>
+    <!-- 国で絞る（期限表と年表の両方に効く。選択は ?cc= に反映） -->
+    <div id="cc-filter" class="mt-5 flex flex-wrap gap-1.5" role="group" aria-label="国・地域で絞る">
+      <button type="button" class="chip border border-ink/25 bg-ink px-2 py-1 text-xs text-paper" data-value="">すべて</button>
+      {usedCountries.map((c) => (
+        <button type="button" class="chip border border-ink/25 bg-white px-2 py-1 text-xs" data-value={c.code}>{c.flag} {c.name_ja}</button>
+      ))}
+    </div>
+
+    <section id="deadlines" class="mt-8 scroll-mt-6" aria-label="これからの期限">
+      <h2 class="flex flex-wrap items-baseline gap-x-3 font-display text-xl font-semibold">
+        これからの期限
+        <span class="font-mono text-xs font-normal text-ink/40"><span id="dl-count">{curated.length}</span> 件</span>
+      </h2>
+
+      {/* 時間軸バー（デスクトップのみ）。点をクリックすると該当の行が開く */}
+      <div class:list={["mt-4 hidden", showAxis && "md:block"]} id="dl-axis">
+        <div class="relative h-9">
+          <div class="absolute left-0 right-0 top-4 h-px bg-ink/25"></div>
+          <span class="absolute left-0 top-0 font-mono text-[10px] text-ink/40">今日</span>
+          {ticks.map((t) => (
+            <span class="absolute top-0 -translate-x-1/2 font-mono text-[10px] text-ink/40" style={`left:${t.left}%`}>{t.label}</span>
+          ))}
+          {ticks.map((t) => <span class="absolute top-[13px] h-1.5 w-px bg-ink/30" style={`left:${t.left}%`}></span>)}
+          {dots.map(({ d, left }) => (
+            <a
+              href={`#dl-${d.id}`}
+              class="dl-dot absolute top-[11px] h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-ink bg-star-gold hover:scale-125"
+              style={`left:${left}%`}
+              data-country={d.country}
+              data-target={`dl-${d.id}`}
+              title={`${countryMap[d.country]?.flag ?? ''} ${countryMap[d.country]?.name_ja ?? d.country} ${d.date} ${d.title}`}
+              aria-label={`${countryMap[d.country]?.name_ja ?? d.country} ${d.date} ${d.title}`}
+            ></a>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <DeadlineTable deadlines={curated} countries={countryMap} />
+        <p id="dl-empty" class="hidden py-3 text-sm text-ink/50">この国・地域で人が確認した期限はまだありません。</p>
+      </div>
+
+      {autos.length > 0 && (
+        <div id="dl-auto" class="mt-6">
+          <h3 class="text-xs font-medium text-ink/60">意見募集の締切（更新から自動）</h3>
+          <ul class="mt-1 divide-y divide-ink/10 border-y border-ink/15 bg-white">
+            {autos.map((d) => (
+              <li class="dl-item flex flex-wrap items-center gap-x-3 gap-y-0.5 px-3 py-2 text-xs md:flex-nowrap" data-country={d.country}>
+                <time class="w-[5.5rem] shrink-0 font-mono text-ink/60">{d.date}</time>
+                <span class="w-16 shrink-0 whitespace-nowrap font-mono text-ink/50">{d.daysLeft === 0 ? '今日まで' : `あと${d.daysLeft}日`}</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-ink/60">{countryMap[d.country]?.flag} {countryMap[d.country]?.name_ja}</span>
+                <span class="min-w-0 basis-full text-sm leading-snug md:basis-auto md:flex-1">
+                  {d.title}
+                  {d.whenImpact && <span class="block text-xs text-ink/50">{d.whenImpact}</span>}
+                </span>
+                <span class="flex shrink-0 gap-3 font-mono">
+                  <a href={withBase(`/country/${d.country}/#u-${d.updateId}`)} class="underline underline-offset-2">元の更新 →</a>
+                  {d.hasExplainer && <a href={withBase(`/explain/${d.updateId}/`)} class="underline underline-offset-2">解説 →</a>}
+                </span>
               </li>
-            );
-          })}
-        </ol>
-      </section>
-    ))}
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+
+    <section id="chronicle" class="mt-12 scroll-mt-6" aria-label="年表">
+      <h2 class="font-display text-xl font-semibold">年表</h2>
+
+      {plannedEvents.length > 0 && (
+        <section class="year-group mt-4">
+          <details open>
+            <summary class="cursor-pointer select-none font-mono text-lg font-medium text-ink/40">
+              予定 <span class="year-count text-xs">{plannedEvents.length}件</span>
+            </summary>
+            <ol class="mt-3 border-l border-ink/20">
+              {plannedEvents.map((e) => (
+                <li class="tl-item relative mb-5 pl-6" data-country={e.cc}>
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-paper bg-star-gold" />
+                  <p class="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                    <time class="font-mono text-xs text-ink/55">{e.date}</time>
+                    <a href={e.kind === 'seed' ? withBase(`/country/${e.cc}/#tl-${e.date}`) : withBase(`/country/${e.cc}/#u-${e.updateId}`)} class="text-xs no-underline hover:underline">{e.flag} {e.name}</a>
+                    {e.kind !== 'seed' && <span class="border border-ink/25 px-1 font-mono text-[10px] text-ink/60">更新フィードより</span>}
+                    <span class="border border-star-gold px-1 font-mono text-[10px] text-ink/70">予定</span>
+                  </p>
+                  <p class="mt-0.5 text-sm leading-relaxed">
+                    {e.event}{eventSuffix[e.kind] ? ` ${eventSuffix[e.kind]}` : ''}
+                    <a href={e.source} rel="noopener" target="_blank" class="ml-2 font-mono text-xs underline underline-offset-2">出典 ↗</a>
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </details>
+        </section>
+      )}
+
+      {pastGroups.map((g) => (
+        <section class="year-group mt-4" data-year={g.year}>
+          <details open={isYearOpen(g.year, today)}>
+            <summary class="cursor-pointer select-none font-mono text-lg font-medium text-ink/40">
+              {g.year} <span class="year-count text-xs">{g.items.length}件</span>
+            </summary>
+            <ol class="mt-3 border-l border-ink/20">
+              {g.items.map((e) => {
+                const pending = e.kind === 'seed' ? e.future : e.scheduled;
+                const href = e.kind === 'seed'
+                  ? withBase(`/country/${e.cc}/#tl-${e.date}`)
+                  : withBase(`/country/${e.cc}/#u-${e.updateId}`);
+                return (
+                  <li class="tl-item relative mb-5 pl-6" data-country={e.cc}>
+                    {e.kind === 'seed' ? (
+                      <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-paper bg-ink" />
+                    ) : (
+                      <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-ink bg-paper" />
+                    )}
+                    <p class="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                      <time class="font-mono text-xs text-ink/55">{e.date}</time>
+                      <a href={href} class="text-xs no-underline hover:underline">{e.flag} {e.name}</a>
+                      {e.kind !== 'seed' && <span class="border border-ink/25 px-1 font-mono text-[10px] text-ink/60">更新フィードより</span>}
+                      {pending && <span class="border border-star-gold px-1 font-mono text-[10px] text-ink/70">予定</span>}
+                    </p>
+                    <p class="mt-0.5 text-sm leading-relaxed">
+                      {e.event}{eventSuffix[e.kind] ? ` ${eventSuffix[e.kind]}` : ''}
+                      <a href={e.source} rel="noopener" target="_blank" class="ml-2 font-mono text-xs underline underline-offset-2">出典 ↗</a>
+                    </p>
+                  </li>
+                );
+              })}
+            </ol>
+          </details>
+        </section>
+      ))}
+      <p id="tl-empty" class="mt-6 hidden text-sm text-ink/50">この国・地域の年表の項目はありません。</p>
+    </section>
   </main>
 </LightLayout>
+
+<script>
+  // 国チップ（単一選択）。期限表・自動分・時間軸の点・年表を data-country で絞り、?cc= に反映する
+  const chips = [...document.querySelectorAll<HTMLButtonElement>('#cc-filter .chip')];
+  const valid = new Set(chips.map((c) => c.dataset.value ?? ''));
+
+  function apply(cc: string) {
+    for (const chip of chips) {
+      const on = (chip.dataset.value ?? '') === cc;
+      chip.setAttribute('aria-pressed', String(on));
+      chip.classList.toggle('bg-ink', on);
+      chip.classList.toggle('text-paper', on);
+      chip.classList.toggle('bg-white', !on);
+    }
+    const match = (el: HTMLElement) => cc === '' || el.dataset.country === cc;
+
+    // 期限表の行・自動分・時間軸の点
+    document.querySelectorAll<HTMLElement>('.dl-item, .dl-dot, .tl-item').forEach((el) => {
+      const show = match(el);
+      el.style.display = show ? '' : 'none';
+    });
+    // 空になった期限表の年見出し
+    document.querySelectorAll<HTMLElement>('.dl-year').forEach((g) => {
+      const any = [...g.querySelectorAll<HTMLElement>('.dl-item')].some((i) => i.style.display !== 'none');
+      g.style.display = any ? '' : 'none';
+    });
+    const dlVisible = [...document.querySelectorAll<HTMLElement>('#dl-table .dl-item')].filter((i) => i.style.display !== 'none').length;
+    document.getElementById('dl-count')!.textContent = String(dlVisible);
+    document.getElementById('dl-empty')!.classList.toggle('hidden', dlVisible > 0);
+    const auto = document.getElementById('dl-auto');
+    if (auto) {
+      const any = [...auto.querySelectorAll<HTMLElement>('.dl-item')].some((i) => i.style.display !== 'none');
+      auto.style.display = any ? '' : 'none';
+    }
+
+    // 年表: 年ごとの件数を数え直し、該当なしの年は年見出しごと隠す
+    let tlVisible = 0;
+    document.querySelectorAll<HTMLElement>('.year-group').forEach((g) => {
+      const n = [...g.querySelectorAll<HTMLElement>('.tl-item')].filter((i) => i.style.display !== 'none').length;
+      g.style.display = n > 0 ? '' : 'none';
+      const count = g.querySelector('.year-count');
+      if (count) count.textContent = `${n}件`;
+      tlVisible += n;
+    });
+    document.getElementById('tl-empty')!.classList.toggle('hidden', tlVisible > 0);
+
+    const url = new URL(location.href);
+    if (cc) url.searchParams.set('cc', cc);
+    else url.searchParams.delete('cc');
+    history.replaceState(null, '', url);
+  }
+
+  chips.forEach((chip) => chip.addEventListener('click', () => apply(chip.dataset.value ?? '')));
+
+  // 時間軸の点: 該当の行を開いてそこへ移動する
+  document.querySelectorAll<HTMLAnchorElement>('.dl-dot').forEach((dot) => {
+    dot.addEventListener('click', (ev) => {
+      const row = document.getElementById(dot.dataset.target ?? '') as HTMLDetailsElement | null;
+      if (!row) return;
+      ev.preventDefault();
+      row.open = true;
+      row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+  const initial = new URLSearchParams(location.search).get('cc') ?? '';
+  if (initial && valid.has(initial)) apply(initial);
+</script>

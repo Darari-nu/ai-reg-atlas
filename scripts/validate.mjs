@@ -13,9 +13,11 @@ addFormats(ajv);
 const regulationSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/regulation.schema.json'), 'utf8'));
 const updateSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/update.schema.json'), 'utf8'));
 const explainerSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/explainer.schema.json'), 'utf8'));
+const deadlinesSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/deadlines.schema.json'), 'utf8'));
 const validateRegulation = ajv.compile(regulationSchema);
 const validateExplainer = ajv.compile(explainerSchema);
 const validateUpdates = ajv.compile(updateSchema);
+const validateDeadlines = ajv.compile(deadlinesSchema);
 
 let errors = 0;
 
@@ -60,6 +62,23 @@ for (const f of listDataFiles('updates').filter((f) => f.endsWith('.json'))) {
 for (const f of listDataFiles('explainers').filter((f) => f.endsWith('.json'))) {
   const data = JSON.parse(fs.readFileSync(resolveData(`explainers/${f}`), 'utf8'));
   check(`explainers/${f}`, validateExplainer(data), validateExplainer);
+}
+
+// deadlines（人が確認した期限一覧）。スキーマに加え、id の重複と国コードの実在を調べる
+{
+  const data = JSON.parse(fs.readFileSync(resolveData('deadlines.json'), 'utf8'));
+  check('deadlines.json', validateDeadlines(data), validateDeadlines);
+  const countryCodes = new Set(
+    fs.readdirSync(path.join(ROOT, 'data/regulations')).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, '')),
+  );
+  const extra = [];
+  const ids = new Set();
+  for (const d of Array.isArray(data) ? data : []) {
+    if (ids.has(d.id)) extra.push(`id が重複: ${d.id}`);
+    ids.add(d.id);
+    if (!countryCodes.has(d.country)) extra.push(`${d.id}: 未知の国コード ${d.country}`);
+  }
+  check('deadlines.json (id・国コード)', extra.length === 0, { errors: extra.map((message) => ({ instancePath: '', message })) });
 }
 
 // meta

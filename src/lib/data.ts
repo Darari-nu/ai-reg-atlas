@@ -11,6 +11,7 @@ import {
   sortByDiscovery,
 } from './freshness.mjs';
 import { deriveTimelineEvents, mergeTimeline } from './derivedTimeline.mjs';
+import { buildUpcomingDeadlines, todayJst } from './upcomingDeadlines.mjs';
 
 const ROOT = process.cwd();
 
@@ -322,4 +323,58 @@ export function getGlobeMarkers(today: string = todayYmd()): GlobeMarker[] {
 export function getCountryTimeline(cc: string): TimelineEvent[] {
   const seed = getRegulation(cc).axes.timeline;
   return mergeTimeline(seed, deriveTimelineEvents(getUpdatesForCountry(cc), seed)) as TimelineEvent[];
+}
+
+/* ---------- これからの期限 ---------- */
+
+// 人が確認した期限（data/deadlines.json）。「やること」は解釈（AIによる整理）として出す
+export type CuratedDeadline = {
+  id: string;
+  country: string;
+  date: string;
+  kind: 'obligation_applies' | 'transition_end' | 'in_force' | 'consultation_deadline' | 'other';
+  title: string;
+  what_to_do: string[];
+  applies_to: string;
+  sources: string[];
+  verified: string;
+};
+
+export type UpcomingDeadline = {
+  id: string;
+  source: 'curated' | 'auto';
+  country: string;
+  date: string;
+  daysLeft: number;
+  kind: CuratedDeadline['kind'];
+  title: string;
+  sources: string[];
+  what_to_do?: string[];
+  applies_to?: string;
+  verified?: string;
+  updateId?: string;
+  hasExplainer?: boolean;
+  whenImpact?: string;
+};
+
+export const DEADLINE_KIND_LABELS: Record<string, string> = {
+  obligation_applies: '義務の適用',
+  transition_end: '移行期間の終了',
+  in_force: '施行',
+  consultation_deadline: '意見募集の締切',
+  other: '期限',
+};
+
+export function getCuratedDeadlines(): CuratedDeadline[] {
+  return JSON.parse(fs.readFileSync(path.join(ROOT, 'data/deadlines.json'), 'utf8'));
+}
+
+// 今日（JST）以降の期限を日付順に。人が確認した分＋意見募集・案の更新レコードの effective_date / deadline_date（自動）
+export function getUpcomingDeadlines(today: string = todayJst()): UpcomingDeadline[] {
+  return buildUpcomingDeadlines({
+    curated: getCuratedDeadlines(),
+    updates: getUpdates(),
+    today,
+    explainerIds: new Set(getPublishedExplainers().map((e) => e.id)),
+  }) as UpcomingDeadline[];
 }

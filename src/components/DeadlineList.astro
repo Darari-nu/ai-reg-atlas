@@ -1,0 +1,104 @@
+---
+import type { UpcomingDeadline, Country } from '../lib/data';
+import { DEADLINE_KIND_LABELS, withBase, explainerPath } from '../lib/data';
+
+interface Props {
+  deadlines: UpcomingDeadline[];
+  countries: Record<string, Country>;
+  theme: 'dark' | 'light';
+  compact?: boolean; // トップ用。開閉は付けず、見出し・日付・残り日数・バッジだけ
+}
+const { deadlines, countries, theme, compact = false } = Astro.props;
+const dark = theme === 'dark';
+const SOON_DAYS = 90; // これ以内は強調（金の左罫線）
+
+const muted = dark ? 'text-paper/50' : 'text-ink/50';
+const chip = dark ? 'border border-white/20 text-paper/70' : 'border border-ink/20 text-ink/60';
+const link = dark ? 'text-star-gold' : 'text-ink';
+const rule = dark ? 'border-white/10' : 'border-ink/10';
+const faint = dark ? 'text-paper/40' : 'text-ink/40';
+
+function sourceHost(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return '出典';
+  }
+}
+function leftLabel(n: number): string {
+  if (n === 0) return '今日まで';
+  return n === 1 ? 'あと 1 日（明日）' : `あと ${n} 日`;
+}
+---
+
+<ul class="space-y-3">
+  {deadlines.map((d) => {
+    const c = countries[d.country];
+    const soon = d.source === 'curated' && SOON_DAYS >= d.daysLeft;
+    const box = `${
+      dark ? 'dark-rule bg-navy-soft/60' : 'border border-ink/15 bg-white shadow-[0_1px_2px_rgba(26,34,51,0.06)]'
+    } ${soon ? 'border-l-2 border-l-star-gold' : ''}`;
+    const head = (
+      <Fragment>
+        <span class="text-lg leading-none">{c?.flag}</span>
+        <span class="min-w-0 flex-1">
+          <span class="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs">
+            <time class={dark ? 'text-star-gold' : 'text-ink/60'}>{d.date}</time>
+            <span class={`font-medium ${soon ? (dark ? 'text-star-gold' : 'text-ink') : muted}`}>{leftLabel(d.daysLeft)}</span>
+            <span class={muted}>{c?.name_ja ?? d.country}</span>
+            <span class={`px-1.5 py-0.5 text-[10px] tracking-wide ${chip}`}>{DEADLINE_KIND_LABELS[d.kind] ?? d.kind}</span>
+            {d.source === 'auto' && (
+              <span
+                class={`px-1.5 py-0.5 text-[10px] tracking-wide ${chip}`}
+                title="毎日の更新に書かれた日付を自動で拾ったもの。「やること」は付いていません"
+              >更新から自動</span>
+            )}
+          </span>
+          <span class="mt-1 block text-sm font-medium leading-snug">{d.title}</span>
+          {d.whenImpact && <span class={`mt-1 block text-xs leading-snug ${muted}`}>{d.whenImpact}</span>}
+        </span>
+      </Fragment>
+    );
+    return compact ? (
+      <li class={`p-4 ${box}`}>
+        <div class="flex items-start gap-3">{head}</div>
+      </li>
+    ) : d.source === 'curated' ? (
+      <li>
+        <details class={`card-expand group p-4 ${box}`}>
+          <summary class="flex items-start gap-3">
+            {head}
+            <span class={`mt-1 shrink-0 font-mono text-xs transition-transform group-open:rotate-90 ${faint}`} aria-hidden="true">▸</span>
+          </summary>
+          <div class="expand-body">
+            <div class={`mt-4 space-y-3 border-t pt-4 text-sm leading-relaxed ${rule}`}>
+              <p><span class={`mr-2 font-mono text-[10px] ${faint}`}>WHO</span>{d.applies_to}</p>
+              <div class="border-l-2 border-star-gold pl-3">
+                <p class={`font-mono text-[10px] ${faint}`}>この日までにやること（解釈・AIによる整理。法的助言ではありません）</p>
+                <ul class="mt-1 list-disc space-y-1 pl-5">
+                  {d.what_to_do?.map((t) => <li>{t}</li>)}
+                </ul>
+              </div>
+              <div class="flex flex-wrap items-center gap-x-5 gap-y-1 font-mono text-xs">
+                {d.sources.map((s) => (
+                  <a href={s} rel="noopener" target="_blank" class={`underline underline-offset-2 ${link}`}>出典（{sourceHost(s)}）↗</a>
+                ))}
+                <span class={faint}>確認日 {d.verified}</span>
+              </div>
+            </div>
+          </div>
+        </details>
+      </li>
+    ) : (
+      <li class={`p-4 ${box}`}>
+        <div class="flex items-start gap-3">{head}</div>
+        <div class="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1 pl-8 font-mono text-xs">
+          <a href={withBase(`/country/${d.country}/#u-${d.updateId}`)} class={`underline underline-offset-2 ${link}`}>元の更新を見る →</a>
+          {d.hasExplainer && (
+            <a href={withBase(explainerPath(d.updateId ?? ''))} class={`underline underline-offset-2 ${link}`}>解説を読む →</a>
+          )}
+        </div>
+      </li>
+    );
+  })}
+</ul>

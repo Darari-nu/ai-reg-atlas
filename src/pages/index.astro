@@ -3,6 +3,7 @@ import DarkLayout from '../layouts/DarkLayout.astro';
 import Globe from '../components/Globe.tsx';
 import UpdateCard from '../components/UpdateCard.astro';
 import StatusBar from '../components/StatusBar.astro';
+import DeadlineList from '../components/DeadlineList.astro';
 import {
   getCountries,
   getRegulation,
@@ -10,6 +11,7 @@ import {
   getGlobeMarkers,
   getLatestByCountry,
   getMeta,
+  getUpcomingDeadlines,
   countWithin,
   todayYmd,
   fmtDateTime,
@@ -25,6 +27,7 @@ const countryMap = Object.fromEntries(countries.map((c) => [c.code, c]));
 const allUpdates = getUpdatesByDiscovery();
 const news = allUpdates.slice(0, 3);
 const markers = getGlobeMarkers();
+const upcoming = getUpcomingDeadlines().filter((d) => d.source === 'curated').slice(0, 3);
 
 const today = todayYmd();
 const count7 = countWithin(allUpdates, today, 7);
@@ -77,6 +80,20 @@ const latestByCc = getLatestByCountry();
           href={withBase('/updates/')}
           class="mt-4 inline-block font-mono text-xs text-star-gold hover:underline"
         >すべての更新を見る →</a>
+
+        {upcoming.length > 0 && (
+          <div class="mt-8" id="next-deadlines">
+            <h2 class="mb-3 flex items-baseline gap-2">
+              <span class="border border-star-gold px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-widest text-star-gold">NEXT</span>
+              <span class="text-sm text-paper/60">次の期限</span>
+            </h2>
+            <DeadlineList deadlines={upcoming} countries={countryMap} theme="dark" compact />
+            <a
+              href={withBase('/timeline/#deadlines')}
+              class="mt-4 inline-block font-mono text-xs text-star-gold hover:underline"
+            >すべての期限 →</a>
+          </div>
+        )}
       </aside>
     </section>
 

@@ -61,6 +61,29 @@ AIの判断は「確認前」と「人が確認済み」を見た目で区別す
 - **失敗の記録**: 検査落ち・refusal・max_tokens・parse-failed は `data/state/explainer_attempts.json`（`{id: {tries, last, reasons}}`）に残し、`tries>=2` のレコードは対象外にする（毎日同じ失敗で費用が出るのを防ぐ。最後の失敗から7日で掃除）。`max_tokens` は 16000（Sonnet 5.5 は思考と本文の合算）。400/404 は設定ミスとして打ち切る
 - 送るのは公開資料（出典ページ本文とレコード）だけ。費用は 1 本あたり約 $0.05 の見積り（上限は本数・`max_tokens` 4000・入力字数の 3 つで縛る）。実測は未確認
 
+### 週1ダイジェスト原稿（Claude API・この Mac の取り込みつき）
+
+毎週月曜の朝（JST）に、先週（月〜日・JST）の更新・公開済みの解説・これからの期限から、「今週のAI規制の変化3つ＋社内で聞かれたときの一言」の**原稿**を作る。公開はしない。darari の GO・検品OK・承認の3段を通って初めて HP などに出る。
+
+```
+GitHub Actions（digest.yml・日曜 22:30 UTC = 月曜 07:30 JST）
+  → scripts/digest.mjs が data/digests/YYYY-Www.md を作ってコミット
+この Mac の launchd（月曜 08:00 と 12:00）→ scripts/local/digest-intake.sh
+  → HP リポ 10_drafts/65_外部原稿/YYYYMMDD_atlas-digest-YYYY-Www.md に「置くだけ」
+dispatch の巡回（15分ごとの intake.mjs --scan）→ 企画室に G-xx → darari の GO → 書き手が HP 記事化（mode: sozai）→ 検品室 → 投稿室
+```
+
+- **ファイル**: `scripts/digest.mjs`（本体。依存を差し替えられる `run()`）、`scripts/lib/digest.mjs`（対象週・入力・検査・Markdown 化の純関数）、`.github/workflows/digest.yml`、`scripts/local/digest-intake.sh`、`scripts/local/com.darari.ai-reg-atlas.digest-intake.plist`（雛形）、`test/digest.test.mjs`
+- **原稿の形**: kiji-intake の決まり（正本 `~/.claude/skills/kiji-intake/SKILL.md`）。frontmatter は `title`（`今週のAI規制：<一言>（YYYY/MM/DD週）`）・`source`・`dare`・`henka`・`mode: sozai`・`summary`（120字以内）。本文は「今週の変化3つ」（見出し・資料に書いてあること・社内で聞かれたときの一言（解釈）・詳しく=Atlas の解説/国別ページ URL と元資料 URL）、「これからの期限（90日以内）」、任意で「今週のその他の動き」（最大5行）。darari の一次体験は書かない（GO 後に書き手が足す）
+- **選び方**: 先週分のレコードを、法的段階（成立・施行・確定した指針を優先）・出典の種類（公式優先）で並べた上位 40 件を Claude に渡し、日本企業への関係も見て最大3つ選ばせる。候補が3件未満ならある分だけ。**先週の更新が0件なら API を呼ばない**
+- **URL はコードが付ける**: モデルが返すのは `record_id` と文面だけ。`record_id` が入力に無ければ不合格、文面に `http` / `www.` が入っても不合格。解説ページ・国別ページ・元資料・年表の URL はコードが `record_id` から組み立てる。報道由来のレコードは、既存の解説と同じ写し防止（`hasLongCopy`）にかける
+- **止まり方**: `ANTHROPIC_API_KEY` が無い・400/401/402/403/404・429/5xx・refusal・max_tokens・検査落ちのときは何も書かず exit 0。`data/digests/YYYY-Www.md` が既にあれば API を呼ばず上書きしない。呼び出しは解説と同じ作り（`max_tokens` 16000・effort medium・`DIGEST_MODEL` で差し替え、既定 `claude-sonnet-5-5`）。usage と費用（Sonnet 5.5 単価換算）をログに出す。実 API での品質・費用は未確認（1回1本・数円の見積り）
+- **検査**: `validate.mjs` が `data/digests/*.md` の frontmatter の必須項目（title・source・summary・mode）と本文 200 字以上を見る。`validate` が落ちて原稿がコミットされなかった週は、`DIGEST_DATE` を指定して手動実行（Actions の `weekly-digest` を手動実行、またはローカルで `DIGEST_DATE=その週の翌月曜 node scripts/digest.mjs`）で再生成する
+- **通知**: 原稿ができた回だけ Discord に「今週のダイジェスト原稿ができました」の1行（`DISCORD_WEBHOOK_URL` 未登録なら送らない）
+- **手動実行**: `ANTHROPIC_API_KEY=... node scripts/digest.mjs`（`DIGEST_DATE=YYYY-MM-DD` で「今日」を差し替えられる。その日の前の週が対象。`DRY_RUN=1` なら `/tmp/dry/data/digests/` に出す）。GitHub なら Actions の `weekly-digest` を手動実行
+- **この Mac の取り込み**: `digest-intake.sh` が `git fetch origin main` し（作業ツリーは pull しない。主チェックアウトがどのブランチでも影響を受けない。fetch に失敗したら何もせずログだけ）、`origin/main` の `data/digests/*.md` のうち状態ファイル `~/.local/state/ai-reg-atlas/digest-intake.txt` に無いものを `git show` で HP の `65_外部原稿/` へ書き出す（HP 側に同じ週の `*_atlas-digest-YYYY-Www.md` があればコピーしない。HP の `10_drafts` が見えない＝DevSSD 未マウントなら何もしない）。node には依存せず、日付は macOS の `date` で出す（launchd の PATH でも動く）。HP のコミットはしない（dispatch が行う）。ログ（`~/Library/Logs/ai-reg-atlas-digest-intake.log`）に `copied=N skipped=M` を出す。手動で試すときは `ATLAS_DIR` / `HP_INBOX` / `STATE_FILE` / `LOG_FILE` で場所を差し替えられる
+- **launchd の入れ方（未実施・darari の OK 後に）**: `cp scripts/local/com.darari.ai-reg-atlas.digest-intake.plist ~/Library/LaunchAgents/` → `launchctl load ~/Library/LaunchAgents/com.darari.ai-reg-atlas.digest-intake.plist`。外すときは `launchctl unload` してファイルを消す。雛形のパスは本線の置き場（`/Volumes/DevSSD/Vibe_Website/260612_ai-reg-atlas`）を向いている
+
 ### 状態ファイル（data/state/）
 
 日をまたいで持ち越す状態は `data/state/*.json`（`data/.cache/` は .gitignore 済みで CI では毎回空になるため使わなくなった）。読み書きは `scripts/lib/state.mjs` に集約。
@@ -196,8 +219,8 @@ gh secret set GEMINI_API_KEY --repo Darari-nu/ai-reg-atlas
 |---|---|---|
 | `GEMINI_API_KEY` | triage / summarize の要約生成 | `pipeline.yml` |
 | `CLOUDFLARE_API_TOKEN` | Cloudflare Pages へのデプロイ | `cf-deploy.yml` |
-| `ANTHROPIC_API_KEY`（任意） | 解説記事の生成（Claude）。未登録なら `explain` は何もしない。workspace・支出上限・金庫での名前は全プロジェクト共通の台帳 `~/Claudecode/tama/memory/reference_api_keys_ledger.md`「Claude API の割り付け」節が正（ここには書かない） | `pipeline.yml`（`explain`） |
-| `DISCORD_WEBHOOK_URL`（任意） | 情報源の停止・復旧の Discord 通知。未登録なら通知しないだけ | `pipeline.yml`（`notify discord`） |
+| `ANTHROPIC_API_KEY`（任意） | 解説記事の生成（Claude）。未登録なら `explain`・`digest` は何もしない。workspace・支出上限・金庫での名前は全プロジェクト共通の台帳 `~/Claudecode/tama/memory/reference_api_keys_ledger.md`「Claude API の割り付け」節が正（ここには書かない） | `pipeline.yml`（`explain`）、`digest.yml` |
+| `DISCORD_WEBHOOK_URL`（任意） | 情報源の停止・復旧の Discord 通知。未登録なら通知しないだけ | `pipeline.yml`（`notify discord`）、`digest.yml` |
 
 `CLOUDFLARE_ACCOUNT_ID` は Secret ではなく `cf-deploy.yml` に平文で直書きしてある
 （機密ではないが、Secrets を探しても見つからないので迷わないよう明記）。
@@ -354,6 +377,7 @@ DRY_RUN=1 npm run validate
 | 2026-10-09 | ベトナムを追加（14カ国目）。`countries.yaml` に vn（MOST デジタル変革ニュースと官報 MOST 分の scrape_hash 2本、VnExpress 英語RSS、Bing ニュース検索2語）、`source_domains.yaml` に .gov.vn 系3ドメイン（chinhphu.vn・baochinhphu.vn・mst.gov.vn）と英語版のある主要紙5社を追加。政府英語ニュース（en.baochinhphu.vn）の scrape_hash は米国式 mm/dd/yyyy を dd/mm と誤読して全件が古い扱いになるため入れていない（`date_order` オプションを足してから戻す）。`data/regulations/vn.json` は人工知能法 No.134/2025/QH15 と政令142/2026/ND-CP を、政府英語ニュース掲載の法本文英訳・法律事務所の記事で確認した範囲だけで書いた**人の確認前のドラフト**（制裁金額・首相の高リスク一覧・処罰政令は未確認）。比較表に vn の行を追加 |
 | 2026-10-10 | 解説記事の初回3本（Sonnet 5.5・1本約$0.027）を darari が確認して公開し、以後は自動公開に切り替えた（リポジトリ変数 `EXPLAINER_AUTO_PUBLISH=1`。下書き運用に戻すときはこの変数を消す）。解説がある更新カードに「解説あり」の印を追加 |
 | 2026-10-10 | **「これからの期限」（施行日カウントダウン）を追加**（公開前に darari の確認待ち）。仕様: (1) `data/deadlines.json` は**人が出典を開いて確認した期限だけ**を手で育てる一覧（日付・対象・「やること（解釈）」・出典URL・確認日。`schema/deadlines.schema.json` と `validate.mjs` で検査）。(2) 加えて、更新レコードのうち**意見募集・案の段階**（`legal_stage` が `draft_or_consultation`、または `change_type` が `guideline_draft`）の `deadline_date`（意見募集の締切）が今日以降のものだけを**自動**で拾い（`effective_date` は拾わない）、「更新から自動」の印と `summary.when_impact` の1行を付ける（やることは付けない）。確定した法令の日付は自動で拾わず、人が確認して curated に入れる。(3) 同じ**国＋日付**は curated を優先して1件にする（出典URLが違っても）。(4) 「今日」は Asia/Tokyo の日付（`todayJst`）。当日の期限は「今日まで」と表示して残し、翌日から消える。残り日数はビルド時に計算するので毎日の再ビルドで更新される。(5) トップは**人が確認した期限だけ**を日付順に3件（`NEXT`「次の期限」）。年表ページ先頭に全件（`DeadlineList.astro`）。90日以内の金の罫線の強調は人が確認した期限だけ。ロジックは `src/lib/upcomingDeadlines.mjs`、`getUpcomingDeadlines`。確認できなかった候補は入れない運用 |
+| 2026-10-11 | **週1ダイジェスト原稿を追加**（公開前に darari の確認待ち）。`scripts/digest.mjs`＋`lib/digest.mjs`、`.github/workflows/digest.yml`（日曜 22:30 UTC）、`data/digests/YYYY-Www.md`、`validate.mjs` に原稿の検査、この Mac 用の `scripts/local/digest-intake.sh` と launchd 雛形（未インストール）。先週分の更新から「今週の変化3つ」の原稿を Claude（Sonnet 5.5）で作り、kiji-intake の形で HP の `65_外部原稿/` に置くだけ。実 API での品質・費用は未確認 |
 
 ## ライセンス
 

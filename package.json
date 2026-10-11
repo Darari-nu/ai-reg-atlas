@@ -13,6 +13,7 @@
     "triage": "node scripts/triage.mjs",
     "summarize": "node scripts/summarize.mjs",
     "explain": "node scripts/explain.mjs",
+    "digest": "node scripts/digest.mjs",
     "validate": "node scripts/validate.mjs",
     "bootstrap": "node scripts/bootstrap.mjs",
     "sweep": "npm run collect && npm run triage && npm run summarize && npm run validate"

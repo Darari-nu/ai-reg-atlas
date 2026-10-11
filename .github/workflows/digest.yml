@@ -1,0 +1,64 @@
+name: weekly-digest
+# 週1ダイジェスト原稿: 先週（月〜日・JST）の更新・解説・これからの期限から「今週のAI規制の変化3つ」の原稿を Claude で作り、
+# data/digests/YYYY-Www.md にコミットする。公開はしない（この Mac の digest-intake.sh が HP リポの 65_外部原稿/ に置き、
+# dispatch の巡回が企画室に登録 → darari の GO・検品・承認の3段を通る）。
+on:
+  schedule:
+    # 日曜 22:30 UTC = 月曜 07:30 JST（日次巡回 21:23 UTC の後）。半端な分に置くのは pipeline.yml と同じ理由（毎時0分は混む）
+    - cron: "30 22 * * 0"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # キー未登録・クレジット切れ・API障害・先週の更新が0件・原稿が既にある、のときは何もせず続行する（スクリプトが常に exit 0）
+      - name: digest
+        run: node scripts/digest.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Repository Variables。未設定なら空文字→コードの既定値（claude-sonnet-5-5）
+          DIGEST_MODEL: ${{ vars.DIGEST_MODEL }}
+
+      - name: validate
+        run: node scripts/validate.mjs
+
+      - name: commit data
+        run: |
+          [ -d data/digests ] || exit 0 # 原稿が無い週（キー無し・0件・検査落ち）は何もしない
+          git config user.name "atlas-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/digests
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(data): weekly digest $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push rejected (probably a concurrent push to main), rebasing and retrying ($i/5)..."
+            git pull --rebase origin main
+            sleep 5
+          done
+          git push
+
+      # 「今週のダイジェスト原稿ができました」の1行。digest.mjs が原稿を作ったときだけ /tmp/pipeline_notifications.json に積む。
+      # DISCORD_WEBHOOK_URL 未登録・積まれていないなら何もしない。送信失敗でも落とさない（スクリプトが常に exit 0）
+      - name: notify discord
+        run: node scripts/notify-discord.mjs
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}

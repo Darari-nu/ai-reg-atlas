@@ -1,0 +1,1982 @@
+{
+  "id": "eu-ai-act-gpai",
+  "parent": "eu-ai-act",
+  "title": "汎用AI（GPAI）モデル 実務ガイド",
+  "description": "大規模言語モデルなどの汎用AIモデルを作る会社と、それを組み込んで製品を作る会社に向けて、EU AI法の義務を整理したページです。対象になるかの目安、誰が提供者か、提供者の義務（第53条）、オープンソースの例外、システミックリスクのあるモデル（第51〜55条）、行動規範、組み込む会社が受け取れる情報に分けています。根拠は、条文（規則 (EU) 2024/1689・改正規則 (EU) 2026/1744）と欧州委員会の公式資料です。",
+  "last_verified": "2026-10-11",
+  "disclaimer": "このページは一般的な情報の整理で、法的助言ではありません。条文の要約と、欧州委員会のガイドライン・Q&A・行動規範で確認できた範囲だけを書いています。ガイドライン・Q&Aに法的拘束力はなく、最終的な解釈は欧州連合司法裁判所が行います。行動規範は任意の手段です。自分で作った例には「架空の例」と付けています。実際の判断は一次資料と専門家の確認を経てください。",
+  "summary_title": "このページの使い方",
+  "summary": [
+    {
+      "text": "このページは、3つの問いの順に読むと分かりやすくなります。①汎用AIモデルか（1章）、②自社は提供者か（2章）、③システミックリスクのあるモデルか（5章）です。他社のモデルを組み込む会社は、7章から読んでもかまいません。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_51",
+        "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act"
+      ]
+    },
+    {
+      "text": "汎用AIモデル（幅広い作業をこなせて、いろいろなシステムに組み込めるAIモデル）をEUで市場に出す会社は、EUの外にあっても対象です（第2条1項(a)）。この会社を「提供者」と呼びます。提供者には、文書の作成・著作権の方針・学習データの要約の公表などの義務があります（第53条）。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53"
+      ]
+    },
+    {
+      "text": "他社のモデルに手を加えずに組み込む会社は、そのモデルの提供者ではありません（ガイドライン段落55）。ファインチューニングをしても、多くは提供者になりません（欧州委員会のFAQ）。こうした会社は「下流の提供者」として情報を受け取れますが、自社のAIシステムの義務は自社が負います（7章）。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+        "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+        "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+      ]
+    },
+    {
+      "text": "汎用AIモデルの義務は、2025年8月2日から適用されています。それより前に出したモデルは、2027年8月2日までの対応が必要です（第111条3項）。欧州委員会の罰金は2026年8月2日からで、上限は1,500万ユーロか全世界年間売上高の3%の高い方です（第101条・第113条）。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "date": "2025-07-10",
+      "event": "汎用AIの行動規範（Code of Practice）公表",
+      "sources": [
+        "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+      ]
+    },
+    {
+      "date": "2025-08-01",
+      "event": "欧州委員会と AI評議会が行動規範を妥当と評価",
+      "sources": [
+        "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-general-purpose-ai-code-practice",
+        "https://digital-strategy.ec.europa.eu/en/policies/ai-code-practice"
+      ]
+    },
+    {
+      "date": "2025-08-02",
+      "event": "汎用AIモデルの義務（第V章）の適用開始（第101条の罰金を除く）",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "event": "改正規則 (EU) 2026/1744 が発効（第56条6項の行動規範の評価のしくみなどを改正）",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_4",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "event": "欧州委員会による汎用AIモデル提供者への罰金（第101条）の適用開始",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+        "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-is-gpai",
+      "number": 1,
+      "title": "汎用AIモデルとは",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "汎用AIモデルは、かなりの汎用性があり、幅広い異なる作業をうまくこなせるAIモデルです。さまざまな下流のシステムやアプリに組み込めることも条件です。大量のデータを自己教師あり学習で大規模に学習したものを含み、市場への出し方は問いません（第3条63号）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "市場に出す前の研究・開発・試作だけに使うモデルは、この定義から外れます（第3条63号）。法律全体も、市場に出す前の研究・試験・開発には適用されません。ただし、実環境での試験は除かれません（第2条8項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "AIシステム・汎用AIシステムとの違い",
+          "text": "モデルだけでは、AIシステムになりません。画面（ユーザーインターフェース）などの部品を足して、はじめてAIシステムになります（前文97）。汎用AIモデルを基にして、いろいろな目的に使えるAIシステムを「汎用AIシステム」と呼びます（第3条66号）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_97",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "汎用AIモデルの義務は、モデルそのものにかかり、最終的な使い道には左右されません。AIシステムの義務は、使い方で決まります。モデルをシステムに組み込むと、両方のルールが別々にかかります（前文97、欧州委員会のQ&A）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_97",
+            "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "欧州委員会のガイドラインの目安",
+          "text": "条文には、汎用AIモデルかを判断する具体的な基準がありません。そこで、欧州委員会のガイドラインが目安を示しています（ガイドライン段落13・17）。目安は、学習の計算量が10の23乗FLOPを超え、言語・文章から画像・文章から動画のどれかを生成できるモデルです（段落17）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "FLOPは、浮動小数点演算の回数です（第3条67号）。言語には文章と音声を含み、文章にはプログラムのコードも含むとされています（段落17、脚注3・4）。10の23乗FLOPは、10億パラメータのモデルを大量のデータで学習するときの、おおよその計算量です（段落18）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "目安に当たっても、汎用性がなく狭い作業しかできないモデルは、汎用AIモデルではありません。逆に、目安に当たらなくても、汎用性があれば汎用AIモデルです（段落20）。ガイドラインに法的拘束力はなく、個別の判断が必要です（段落9）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "gpai-examples",
+          "heading": "ガイドラインが挙げる例（段落20のあと）",
+          "caption": "ガイドラインの例を短くまとめたものです。どれも個別の判断が前提です。",
+          "columns": [
+            "モデルの例（学習の計算量）",
+            "目安（段落17）",
+            "ガイドラインの見方"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "幅広い自然言語データで学習した言語モデル（10の24乗）",
+                "当たる",
+                "汎用AIモデルである可能性が高い"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "自然言語で学習したが、幅広い作業はできないモデル（10の22乗）",
+                "当たらない",
+                "汎用AIモデルではない"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "音声の文字起こし専用、または文章から音声を作る専用のモデル（10の24乗）",
+                "当たる",
+                "狭い作業しかできなければ、汎用AIモデルではない"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "画像の高解像度化専用、または画像の欠けた部分を補う専用のモデル（10の24乗）",
+                "当たる",
+                "狭い作業しかできなければ、汎用AIモデルではない"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "歌詞を含む指示から音楽を作る専用のモデル（10の24乗）",
+                "当たる",
+                "狭い作業しかできなければ、汎用AIモデルではない"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "効果音を作る専用のモデル。話し言葉も出せるが、内容の質は低い（10の24乗）",
+                "当たる",
+                "狭い作業しかできなければ、汎用AIモデルではない"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "チェス・ゲーム専用のモデル、気象や物理の現象を予測するモデル（10の24乗）",
+                "当たらない（言語・画像・動画を生成しない）",
+                "汎用AIモデルではない"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "学習の計算量の見積もり方",
+          "text": "ガイドラインの附属書は、学習の計算量の見積もり方を2つ示しています（段落121）。1つは、GPUの台数・使用時間・性能・使用率から計算する方法です（段落123・124）。もう1つはモデルの構造から計算する方法で、大きな言語モデルでは「6×パラメータ数×学習トークン数」で近似できます（段落129）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "見積もりで数えるもの・数えなくてよいもの",
+          "items": [
+            "汎用AIモデルかの判断では、パラメータの更新に直接使った計算量を数える（段落115）",
+            "システミックリスクの判断では、事前学習・合成データの生成・ファインチューニングなど、能力を高めた計算を累積して数える（段落115・116、前文111）",
+            "公開していない合成データを作った計算は、捨てたデータの分も数える（段落117）",
+            "公開されている合成データの生成、評価やレッドチーミング、蒸留の親モデルの学習などは、数えなくてよい（段落119）",
+            "見積もりは、全体で誤差30%以内が目安。方法と前提は記録しておく（段落120）"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_111"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "provider",
+      "number": 2,
+      "title": "誰が「提供者」になるか",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "汎用AIモデルの提供者は、モデルを開発し（または開発させ）、自社の名前・商標で市場に出す人や組織です。有償か無償かは問いません（第3条3号）。「市場に出す」とは、EU市場で初めて提供することです（第3条9号）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "ここでの「提供」は、事業として、EU市場での配布や利用のためにモデルを供給することです（第3条10号）。EUの外にいる会社でも、EUでモデルを市場に出せば対象です（第2条1項(a)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "ガイドラインが挙げる「市場に出す」の例（どれもEU市場で初めての場合。段落51）",
+          "items": [
+            "ソフトウェアのライブラリ・パッケージで提供する",
+            "API（ほかのプログラムから呼び出すしくみ）で提供する",
+            "公開のカタログ・ハブ・リポジトリにアップロードし、ダウンロードできるようにする",
+            "物理的な複製で提供する、またはクラウドサービスで提供する",
+            "顧客の設備にコピーして提供する",
+            "モデルを組み込んだチャットボットをウェブで、またはアプリをアプリストアで提供する",
+            "第三者への製品・サービスの提供に欠かせない社内業務や、EUの人の権利に影響する社内業務に使う"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_97"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "ガイドラインが挙げる「誰が提供者か」の例（段落49）",
+          "items": [
+            "A社がモデルを開発して市場に出す → A社が提供者",
+            "A社がB社に開発させ、A社が市場に出す → A社が提供者",
+            "A社が開発し、C社が運営するリポジトリにアップロードする → A社が提供者",
+            "共同体・コンソーシアムのために複数の組織が開発し、市場に出す → 通常は取りまとめ役。共同体そのものの場合もあり、個別に判断する"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "自社のモデルを自社のシステムに組み込む場合",
+          "text": "自社のモデルを自社のAIシステムに組み込んで提供すると、そのモデルも市場に出したものとみなされます。この場合、モデルの義務とシステムの義務の両方がかかります（前文97、段落54）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_97",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "一方、純粋な社内業務だけに使うモデルには、モデルの義務がかかりません。条件は、第三者への製品・サービスの提供に欠かせない業務ではなく、人の権利にも影響しないことです（前文97）。ただし、システミックリスクのあるモデルには、常に義務がかかります（同）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_97",
+            "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "EUの外で他社にモデルを渡した場合",
+          "text": "EUの外で他社から受け取ったモデルを組み込み、そのシステムをEUで出すことがあります。この場合、システムをEUで出した時点で、モデルもEU市場に出たとみなされます（段落56）。原則は渡した会社が提供者ですが、EUでの配布・利用を明確に除外していれば、受け取った会社が提供者とみなされます（同）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "日本の会社どうしでモデルをやりとりし、受け取った側がEUで製品を出す場合に関係します。受け取る側は、モデルの利用条件でEUでの利用が除外されていないかを確認するとよいでしょう。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "他社のモデルを改変・ファインチューニングした場合",
+          "text": "条文は、他社のモデルを改変した人がいつ提供者になるかを定めていません（段落57）。ガイドラインによると、改変した人が提供者になるのは、モデルの汎用性・能力・システミックリスクが大きく変わる場合だけです（段落59）。その目安は、改変に使った計算量が、元のモデルの学習の計算量の3分の1を超えることです（段落60）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "改変の目安のポイント",
+          "items": [
+            "ファインチューニング（追加の学習で調整すること）は、改変のやり方の一つ（段落57、脚注12）",
+            "元のモデルの計算量が分からず見積もれないときは、目安を置き換える。元がシステミックリスクのあるモデルなら10の25乗の3分の1、それ以外は10の23乗の3分の1（段落61）",
+            "API 経由のファインチューニングなどで、改変したのが元の提供者か下流の会社かは、個別に判断する。モデルの重みを誰が管理しているかが重要な要素になる場合がある（脚注13）",
+            "欧州委員会のFAQは、この基準は高く、ほとんどのファインチューニングや小さな改変では提供者にならないとしている",
+            "提供者になった場合、義務は改変の部分に限られる。文書は改変についての情報、著作権方針と学習データの要約は改変に使ったデータが対象（前文109、段落65）",
+            "提供者になった場合、EUの外の会社は域内代理人の選任も必要（段落66、第54条）",
+            "元がシステミックリスクのあるモデルで、改変した人が提供者になると、改変後のモデルもシステミックリスクのあるモデルとされる。欧州委員会への通知が必要（段落67・68）"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_109",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_54"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "改変した人がモデルの提供者にならなくても、モデルを組み込んだAIシステムを出すなら、AIシステムの義務は別にかかります（欧州委員会のQ&A）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "EUの外の提供者と域内代理人",
+          "text": "EUの外にいる提供者は、モデルをEU市場に出す前に、EU域内の代理人を書面で選任する必要があります（第54条1項）。代理人は、技術文書の作成と義務の履行を確認します。モデルを市場に出してから10年間、技術文書の写しを当局のために保管します（第54条3項(a)(b)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_54",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "obligations",
+      "number": 3,
+      "title": "すべての提供者の義務（第53条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "汎用AIモデルの提供者には、4つの義務があります（第53条1項）。2つは文書の義務で、残りの2つは著作権の方針と学習データの要約です。このほか、欧州委員会と各国の当局への協力も必要です（第53条3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "art53",
+          "heading": "第53条1項の4つの義務",
+          "columns": [
+            "義務",
+            "中身",
+            "誰に向けたものか",
+            "オープンソースの例外（4章）"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "(a) 技術文書",
+                "学習・テストの過程と評価の結果を含む技術文書を作り、最新に保つ。最低限の項目は附属書XI",
+                "AI Office・各国当局（求めがあったときに出す）",
+                "免除（システミックリスクのあるモデルを除く）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI"
+              ]
+            },
+            {
+              "cells": [
+                "(b) 下流向けの情報",
+                "モデルを組み込む予定の会社向けに、情報と文書を作り、最新に保ち、渡す。最低限の項目は附属書XII",
+                "モデルを組み込む予定のAIシステムの提供者",
+                "免除（システミックリスクのあるモデルを除く）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "(c) 著作権の方針",
+                "EUの著作権法を守る方針を定める。テキスト・データマイニングの権利留保を、最新の技術も使って見つけて守る",
+                "社内の方針として定める",
+                "免除されない"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_104"
+              ]
+            },
+            {
+              "cells": [
+                "(d) 学習データの要約",
+                "学習に使ったコンテンツの十分に詳しい要約を、AI Office のひな形に沿って作る",
+                "一般に公表する",
+                "免除されない"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_104"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "id": "annex-xi-xii",
+          "heading": "技術文書と下流向け情報の主な項目",
+          "caption": "附属書XI 第1節と附属書XIIの項目を並べたものです。附属書XIは、モデルの規模とリスクに応じて書きます。",
+          "columns": [
+            "項目",
+            "技術文書（附属書XI・当局向け）",
+            "下流向け情報（附属書XII）"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "モデルが行う作業と、組み込めるAIシステムの種類",
+                "対象",
+                "対象"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "利用規約（許容される使い方の方針）",
+                "対象",
+                "対象"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "公開日と配布の方法",
+                "対象",
+                "対象"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "構造とパラメータ数",
+                "対象",
+                "対象"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "入出力の種類（文章・画像など）と形式",
+                "対象",
+                "対象（最大サイズ。例: コンテキスト長）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "ライセンス",
+                "対象",
+                "対象"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "組み込みに必要な技術的手段（使用説明・設備・ツール）",
+                "対象",
+                "対象"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "学習・テスト・検証のデータ（種類・出所・整理の方法）",
+                "対象（データ点の数、入手のしかた、偏りの検出の方法なども）",
+                "対象"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "cells": [
+                "設計の仕様と学習の過程（手法、主な設計判断と理由）",
+                "対象",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI"
+              ]
+            },
+            {
+              "cells": [
+                "学習に使った計算資源（FLOP など）と学習時間",
+                "対象",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI"
+              ]
+            },
+            {
+              "cells": [
+                "エネルギー消費量（分かっている値か推定）",
+                "対象",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI"
+              ]
+            },
+            {
+              "cells": [
+                "モデルの外のハード・ソフトとの連携、関係するソフトの版",
+                "—",
+                "対象"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "システミックリスクのあるモデルの技術文書には、項目が加わります。評価の方法と結果、敵対的テスト（レッドチーミングなど）の措置、システム構造の説明です（附属書XI 第2節）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XI"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "文書は「モデルの一生」を通じて最新に",
+          "text": "ガイドラインは、モデルの一生（ライフサイクル）を、大規模な事前学習の開始からと考えます（段落22）。その後に提供者が行う開発は、市場に出す前でも後でも、同じモデルの一生に含まれます（同）。文書はモデルごとに作り、一生を通じて最新に保つ必要があります（段落23）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "著作権の方針",
+          "text": "提供者は、EUの著作権法を守る方針を定める必要があります（第53条1項(c)）。中心は、テキスト・データマイニング（TDM、データを機械で大量に解析すること）の扱いです。権利者が示した権利留保（TDMを拒む意思表示）を見つけて守ることが求められます（同、デジタル単一市場著作権指令 第4条3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_105"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "この義務は、学習をどの国で行ったかに関係なく、EUにモデルを出すすべての提供者にかかります（前文106）。ガイドラインは、方針を1つ作って全モデルに使ってもよいとしています（段落23）。AI Office は、学習データの作品ごとの著作権の確認まではしません（前文108）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_106",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_108",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "学習データの要約（欧州委員会のひな形）",
+          "text": "提供者は、学習に使ったコンテンツの十分に詳しい要約を作り、公表する必要があります（第53条1項(d)）。要約は、技術的に細かいものではなく、範囲として全体を網羅するものとされています（前文107）。欧州委員会は、そのひな形と説明文書を公表しています（このページは C(2025) 8311、2025-12-05付の版で確認）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_107",
+            "https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "summary-template",
+          "heading": "ひな形の3つの部分（説明文書 段落15）",
+          "columns": [
+            "部分",
+            "主な中身"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "1. 一般情報",
+                "提供者とモデルの特定。データの種類ごとの量（大まかな範囲から選ぶ）と特徴"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+              ]
+            },
+            {
+              "cells": [
+                "2. データの出所の一覧",
+                "公開データセット、第三者から得た非公開データ、ウェブから集めたデータ（主なドメイン名の要約を含む）、利用者のデータ、合成データ、その他"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+              ]
+            },
+            {
+              "cells": [
+                "3. データ処理の面",
+                "TDMの権利留保を守るための措置、違法なコンテンツを取り除く措置"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "ひな形の説明文書のポイント",
+          "items": [
+            "事前学習から、調整・ファインチューニングなどの事後学習まで、すべての段階のデータが対象（段落13）",
+            "運用中に入れるデータ（RAG、検索した文書をAIに渡すしくみなど）は、モデルがそこから学習しない限り、必須の項目に入れなくてよい（段落13）",
+            "個々のデータや作品の詳細までは求めていない。任意で詳しく書くことはできる（段落16）",
+            "ウェブから集めたデータは、量で上位10%のドメイン名を載せる。中小企業は上位5%か上位1000件（脚注16）",
+            "遅くともモデルをEU市場に出すときまでに、公式サイトと公開の配布先で公表する（段落32）",
+            "追加の学習で中身が変わるときは、6か月ごと、または大きな更新が必要になったときの早い方で更新する（段落29）",
+            "他社のモデルを改変して提供者になった場合は、改変に使ったデータだけを書き、元のモデル名を明記する（段落28）"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "open-source",
+      "number": 4,
+      "title": "オープンソースの例外",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "条件を満たすオープンソースのモデルは、義務の一部が免除されます。免除されるのは、技術文書・下流向け情報・域内代理人の3つです（第53条2項・第54条6項、ガイドライン段落70）。著作権の方針と学習データの要約は、免除されません（前文104、段落72）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_54",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_104",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "システミックリスクのあるモデルには、この例外は使えません（第53条2項・第54条6項）。オープンソースで公開しても、すべての義務がかかります（前文104、段落71）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_54",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_104",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "os-conditions",
+          "heading": "例外の条件（第53条2項、ガイドライン4.2）",
+          "columns": [
+            "条件",
+            "ガイドラインの説明"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "無償のオープンソースライセンスで公開している",
+                "アクセス・利用・改変・再配布のすべてを認めるライセンスであること。1つでも欠けると当たらない（段落75）。作者の表示や、同じ条件での再配布を求めるのはよい（段落77）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_102",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "収益化していない",
+                "料金を取らないだけでなく、ほかの方法でも収益化していないこと（段落82、前文103）。零細企業どうしの取引は、収益化に当たらない（段落86）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_103",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "重み・構造・使い方の情報を公開している",
+                "利用・改変・配布ができる形と明確さで公開する（段落88）。使い方の情報には、入出力の種類、能力と限界、組み込みに必要な技術的手段を含める（段落89）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "ライセンスが条件を満たさない例（段落80）",
+          "items": [
+            "非商用・研究目的に限る",
+            "モデルや部品の配布を禁止する",
+            "月間利用者数などの規模で、追加のライセンスを求める",
+            "特定の用途に、別の商用ライセンスを求める"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "一方、安全のための利用制限は、一定の範囲で認められます。公共の安全・セキュリティ・基本的権利に大きなリスクがある用途に限る制限です。リスクに見合い、客観的で差別のない基準であることが条件です（段落81）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "収益化に当たる例・当たらない例（段落83〜85）",
+          "items": [
+            "当たる: 学術利用は無料、商用や一定規模以上は有料、という二重ライセンス",
+            "当たる: モデルが動かない・使えなくなるような、モデルと切り離せない有料の技術サポート",
+            "当たる: モデルを使うのに、サポート・研修・保守の購入が必要",
+            "当たる: 提供者の有料サイトでだけ公開している（無料で入れても有料の広告が出る場合を含む）",
+            "当たる: 使うのに個人データの収集が必要（モデルの安全のためだけに厳しく限る場合を除く。段落84）",
+            "当たらない: モデルの自由な利用に影響しない、任意の有料サービスを別に提供する",
+            "当たらない: 購入義務のない有料サポートや、高機能版・追加ツールを並べて提供する"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "systemic-risk",
+      "number": 5,
+      "title": "システミックリスクのあるモデル（第51条・第52条・第55条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "システミックリスクは、汎用AIモデルの「高い影響力を持つ能力」に特有のリスクです。影響の広さや、健康・安全・基本的権利・社会全体への悪影響を通じて、EU市場に大きな影響を与えるものを指します（第3条65号）。高い影響力を持つ能力とは、最も進んだモデルの能力に並ぶか上回る能力です（第3条64号）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "次のどちらかに当たるモデルは、システミックリスクのあるモデルに分類されます（第51条1項）。1つは、高い影響力を持つ能力がある場合です。もう1つは、欧州委員会が附属書XIIIの基準で、同等の能力や影響があると決めた場合です。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_51",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XIII"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "学習の累積計算量が10の25乗FLOPを超えるモデルは、高い影響力を持つ能力があると推定されます（第51条2項）。欧州委員会は、この基準値を委任法令で変えられます（第51条3項）。欧州委員会のQ&Aは、Epoch AI（2024年）の推定を引いて、この基準に届く学習には現時点で数千万ユーロかかるとしています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_51",
+            "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
+          ]
+        },
+        {
+          "type": "flow",
+          "steps": [
+            {
+              "label": "見積もる",
+              "text": "大規模な事前学習を始める前に、使う累積計算量を見積もる。基準に届かない見込みでも、学習中とその後の計算量を見守る",
+              "basis": "ガイドライン段落30",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "label": "通知する",
+              "text": "基準を満たした、または満たすと分かったら、遅くとも2週間以内に欧州委員会へ通知する。学習が終わる前に必要になる場合もある",
+              "basis": "第52条1項、段落29・30",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_52",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_112",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "label": "反論する（任意）",
+              "text": "通知と一緒に、例外的にシステミックリスクがない理由を示せる。立証の負担は提供者にある。反論しても、義務は止まらない",
+              "basis": "第52条2項、段落33・40",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_52",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "label": "欧州委員会が判断",
+              "text": "理由が不十分なら退け、システミックリスクのあるモデルとなる。認められたら、その決定を知らされた時点から追加の義務が外れる",
+              "basis": "第52条3項、段落40",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_52",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "label": "一覧の公表",
+              "text": "欧州委員会は、システミックリスクのあるモデルの一覧を公表し、最新に保つ",
+              "basis": "第52条6項",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_52"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "通知に入れる情報（段落31）",
+          "items": [
+            "通知のきっかけになった計算量の見積もり（FLOP、有効数字2桁。例: 2.3×10の25乗）",
+            "見積もりの方法（正確な情報がない部分の近似のしかたを含む）"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "反論で考慮されること",
+          "text": "欧州委員会は、計算量がどれだけ基準を超えているかを考慮します。ベンチマークの予測値や実績など、計算量以外の要素も見ます（段落38）。すでに行った、または予定している安全対策は、システミックリスクがない理由として認められません（段落39）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "欧州委員会による指定",
+          "text": "欧州委員会は、職権または科学パネル（独立の専門家の集まり）の警告を受けて、モデルを指定できます。基準は附属書XIIIです（第51条1項(b)・第52条4項・第90条1項）。通知すべきなのに通知しなかったモデルも指定でき、この場合は罰金の対象になる場合があります（第52条1項、段落43）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_51",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_52",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_90",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XIII",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "附属書XIIIの基準",
+          "items": [
+            "パラメータの数",
+            "データセットの質や大きさ（トークン数など）",
+            "学習の計算量（FLOP、または学習の費用・時間・エネルギーの推定）",
+            "入出力の種類（文章から文章、文章から画像、マルチモーダルなど）と、種類ごとの最先端の基準",
+            "能力のベンチマークと評価（追加の学習なしでこなせる作業の数、自律性、使えるツールなど）",
+            "域内市場への影響の大きさ（EUに拠点のある登録事業者ユーザーが1万以上なら、大きいと推定）",
+            "登録した最終利用者の数"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XIII"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "指定されたモデルの提供者は、指定から6か月たてば、再評価を求められます。指定のあとに生じた、客観的で詳しい新しい理由が必要です（第52条5項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_52",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "art55",
+          "heading": "追加の義務（第55条1項。第53条・第54条の義務に加えてかかる）",
+          "columns": [
+            "義務",
+            "中身"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "(a) モデルの評価",
+                "標準化された手順と最新のツールで評価する。敵対的テストを行い、記録する"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55"
+              ]
+            },
+            {
+              "cells": [
+                "(b) リスクの評価と軽減",
+                "開発・市場に出すこと・利用から生じるおそれのある、EUレベルのシステミックリスクを評価し、軽減する"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55"
+              ]
+            },
+            {
+              "cells": [
+                "(c) 重大インシデント",
+                "重大インシデントと是正措置の情報を記録し、AI Office（必要に応じて各国当局）に遅滞なく報告する"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55"
+              ]
+            },
+            {
+              "cells": [
+                "(d) サイバーセキュリティ",
+                "モデルと物理的な設備を、十分に守る"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "重大インシデントとは",
+          "text": "ガイドラインは、モデルや設備への深刻なサイバーセキュリティの侵害を、重大インシデントに含めています。モデルのパラメータの流出（モデル自身による持ち出しを含む）やサイバー攻撃も含みます（段落100）。そのほかは、AIシステムの重大インシデントの定義に当たる事態を、モデルが直接・間接に引き起こした場合です（同、第3条49号(a)〜(d)）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "incident-deadlines",
+          "heading": "行動規範の報告期限（安全性とセキュリティの章 Measure 9.3）",
+          "caption": "署名した会社の約束で、条文の期限ではありません。未解決なら4週間ごとに中間報告、解決から60日以内に最終報告です。",
+          "columns": [
+            "モデルが関わった事態",
+            "初回報告の期限（気づいてから）"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "重要インフラの管理・運用の、深刻で元に戻せない混乱",
+                "2日以内"
+              ],
+              "sources": [
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+                "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+              ]
+            },
+            {
+              "cells": [
+                "深刻なサイバーセキュリティの侵害（モデルの重みの流出を含む）",
+                "5日以内"
+              ],
+              "sources": [
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+                "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+              ]
+            },
+            {
+              "cells": [
+                "人の死亡",
+                "10日以内"
+              ],
+              "sources": [
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+                "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+              ]
+            },
+            {
+              "cells": [
+                "健康への深刻な害、基本的権利を守る義務の侵害、財産・環境への深刻な害",
+                "15日以内"
+              ],
+              "sources": [
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+                "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code-of-practice",
+      "number": 6,
+      "title": "行動規範（Code of Practice）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "行動規範は、提供者が第53条・第55条の義務を守っていると示すための、任意の手段です。独立した専門家が、多くの関係者の意見を聞いて作りました。2025年7月10日に公表されました（欧州委員会の行動規範のページ）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+            "https://digital-strategy.ec.europa.eu/en/policies/ai-code-practice"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "code-chapters",
+          "heading": "行動規範の3つの章",
+          "columns": [
+            "章",
+            "対象",
+            "中身"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "透明性",
+                "すべての提供者",
+                "第53条1項(a)(b)の文書の作り方。モデル文書の書式（Model Documentation Form）つき"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118120"
+              ]
+            },
+            {
+              "cells": [
+                "著作権",
+                "すべての提供者",
+                "第53条1項(c)の著作権の方針の、実務的なやり方"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118115"
+              ]
+            },
+            {
+              "cells": [
+                "安全性とセキュリティ",
+                "システミックリスクのあるモデルの提供者（最先端のモデルの少数の提供者）",
+                "第55条のリスク管理。10の約束（Commitment）からなる"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118119"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "署名の意味",
+          "text": "署名は任意で、期限はなく、いつでも署名・撤回できます（署名のQ&A）。署名した提供者は、行動規範を守ることで義務の順守を示せます（第53条4項・第55条2項）。欧州委員会は、そうした提供者には、行動規範を守っているかの監視に執行の重点を置くとしています（ガイドライン段落91）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/faqs/signing-general-purpose-ai-code-practice",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "ただし、行動規範を守っても、適合の推定（法律を守っていると推定される効果）は得られません。適合の推定が得られるのは、整合規格（EUの公式な技術規格）に合っている場合です（第53条4項・第55条2項、段落97）。一部の章に署名しないと、その章の分は順守を示しやすくなる効果を失います（段落91）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "署名しない場合",
+          "text": "署名しない提供者は、ほかの適切な方法で順守を示す必要があります（第53条4項・第55条2項）。ガイドラインは、実施した措置を AI Office に報告し、行動規範との差の分析などで説明することを想定しています（段落92）。情報の請求やモデル評価のためのアクセスの求めが多くなる場合がある、とも書いています（同）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://digital-strategy.ec.europa.eu/en/faqs/signing-general-purpose-ai-code-practice"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "罰金の額を決めるとき、欧州委員会は行動規範での約束を考慮します（第101条1項、段落93）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "行動規範の主な約束（例）",
+          "items": [
+            "透明性の章: モデル文書を更新しても、旧版をモデルを市場に出してから10年間保管する（Measure 1.1）",
+            "透明性の章: 下流の会社から追加の情報を求められたら、例外を除き14日以内に渡す（Measure 1.2）",
+            "著作権の章: ペイウォールなどのアクセス制限を回避しない。商業規模で著作権侵害を繰り返すと、EU・EEAの裁判所や当局が認めたサイトは集めない（Measure 1.2）",
+            "著作権の章: robots.txt（ウェブサイトがクローラーに示す指示）に従うクローラーを使う（Measure 1.3）",
+            "著作権の章: 権利を侵害する出力を防ぐ技術的な対策をとり、利用規約で侵害する使い方を禁止する（Measure 1.4）",
+            "著作権の章: 権利者の窓口と、苦情を受け付けるしくみを設ける（Measure 1.5）"
+          ],
+          "sources": [
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118120",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118115"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "改正で変わったこと（第56条6項）",
+          "text": "改正規則 (EU) 2026/1744 は、第56条6項を置き換えました（改正規則 第1条(21)）。改正前は、欧州委員会が実施法（委員会が定める実施のための法令）で行動規範を承認し、EU全体で有効にできました。改正後はこの権限がなくなり、欧州委員会が評価して結果を公表する形になりました。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_56"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "art56-6",
+          "heading": "第56条6項の改正前後",
+          "columns": [
+            "項目",
+            "改正前",
+            "改正後（2026-07-27から）"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "行動規範の達成状況の監視・評価",
+                "AI Office と AI評議会が定期的に行う",
+                "欧州委員会と AI評議会が定期的に行う"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_56",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "第53条・第55条を網羅しているかの評価",
+                "AI Office と AI評議会が行う",
+                "欧州委員会が、AI評議会の意見を最大限に考慮して行う"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_56",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "妥当性の評価の公表",
+                "AI Office と AI評議会が公表する",
+                "欧州委員会が公表する"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_56",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "実施法での承認（EU全体での一般的な効力）",
+                "欧州委員会が実施法で承認できる",
+                "規定が削除された"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_56",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "改正規則の前文41によると、行動規範の法的な効果は限られ、特に適合の推定を与えません。そのため、実施法での承認は厳密には必要ないとしています。提供者は、第56条6項で妥当と評価された行動規範に頼れる、とも述べています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#rct_41"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "2025年8月1日、欧州委員会と AI評議会は、それぞれ行動規範を妥当と評価しました（欧州委員会の意見 C(2025) 5361）。行動規範が仕上がらない・妥当でない場合に、欧州委員会が実施法で共通ルールを定められる規定（第56条9項）は、改正されていません。なお、ガイドライン段落96の実施法による承認の説明は、改正前の第56条6項に基づくものです。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-general-purpose-ai-code-practice",
+            "https://digital-strategy.ec.europa.eu/en/policies/ai-code-practice",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_56",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "downstream",
+      "number": 7,
+      "title": "モデルを組み込む会社が受け取れるもの・やること",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "他社のモデルを API などで使い、自社のAIシステムを作る会社は「下流の提供者」です（第3条68号）。他社のモデルに手を加えずに組み込むなら、モデルの義務は元の提供者が負います（ガイドライン段落55）。一方、自社のAIシステムをEUで出すなら、システムの義務は自社が負います（同）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "受け取れる情報",
+          "text": "モデルの提供者は、組み込む予定の会社に情報と文書を渡す必要があります（第53条1項(b)）。目的は、モデルの能力と限界をよく理解し、自社の義務を果たせるようにすることです（同(i)）。最低限の項目は附属書XIIで、3章の表のとおりです。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII",
+            "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "提供者は、知的財産と営業秘密を守る必要に配慮して、情報を渡せます（第53条1項(b)）。条件を満たすオープンソースのモデルは、この義務が免除されます。ただし、例外の条件として、使い方の情報（入出力の種類、能力と限界、組み込みの手段など）が公開されています（第53条2項、段落89）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "checklist",
+          "heading": "受け取る情報で確認するとよいこと（附属書XIIの項目から）",
+          "items": [
+            {
+              "text": "モデルが想定する作業と、組み込めるAIシステムの種類",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "text": "利用規約（許容される使い方の方針）に、自社の使い方が合っているか",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "text": "入出力の種類・形式・最大サイズ（コンテキスト長など）",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "text": "組み込みに必要な使用説明・設備・ツールと、関係するソフトの版",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "text": "学習・テスト・検証のデータの種類・出所・整理の方法",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            },
+            {
+              "text": "モデルのライセンス",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "情報が足りないとき",
+          "text": "下流の提供者は、モデルの提供者が規則に違反していると考えたとき、苦情を申し立てる権利があります（第89条2項）。苦情には、提供者の連絡先・関係する事実と条文・違反と考える理由を書く必要があります（同(a)(b)）。行動規範の署名者は、下流の会社からの求めに原則14日以内に応じると約束しています（透明性の章 Measure 1.2）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_89",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118120"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "自社のAIシステムの義務",
+          "text": "自社のAIシステムが高リスク（附属書IIIの用途など）に当たれば、提供者の義務がかかります。生成AIやチャットボットなら、第50条の透明性の義務がかかる場合があります。これらは、モデルの提供者が誰かとは別に判断します（欧州委員会のQ&A）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_6",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "高リスクAIに組み込む場合の書面の取り決め",
+          "text": "高リスクAIの提供者と、そこに使われるAIモデルなどを供給する第三者は、書面で取り決める必要があります。必要な情報・能力・技術的なアクセス・支援を、一般に認められた最新の技術水準に基づいて定めます（改正後の第25条4項）。改正で、供給するものに「AIモデル」が明記されました（改正規則 第1条(12)(b)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "オープンソースで公開した部品は、この取り決めの対象外です。ただし、汎用AIモデルはこの除外に含まれません（改正後の第25条4項）。第25条は第III章第3節にあり、適用は2027年12月2日（附属書III）・2028年8月2日（附属書I）からです（改正後の第113条(c)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "監督する当局（改正後の第75条1項）",
+          "text": "改正後、AI Office が専属で監督するAIシステムは2種類です（改正後の第75条1項）。1つは、モデルとシステムを同じ提供者（または同じ企業グループ）が作った場合です（附属書Iの製品に関係するものなどの例外あり、同(a)）。もう1つは、超大規模オンラインプラットフォーム・検索エンジンに当たるか、組み込まれた場合です（同(b)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_75",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#rct_31"
+          ]
+        },
+        {
+          "type": "links",
+          "heading": "関係するページ",
+          "items": [
+            {
+              "label": "高リスクAIの書類と手続き 実務ガイド",
+              "href": "/eu-ai-act/high-risk/",
+              "note": "自社のAIシステムが高リスクに当たる場合の書類と手続き"
+            },
+            {
+              "label": "透明性の義務 実務ガイド",
+              "href": "/eu-ai-act/transparency/",
+              "note": "生成AI・チャットボットの告知と、生成物の表示（第50条）"
+            },
+            {
+              "label": "AIを使う会社（導入者）向け 実務ガイド",
+              "href": "/eu-ai-act/deployers/",
+              "note": "他社のAIを業務で使う会社の義務"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "number": 8,
+      "title": "日程・経過措置・執行",
+      "blocks": [
+        {
+          "type": "table",
+          "id": "gpai-dates",
+          "heading": "汎用AIモデルに関係する日付",
+          "columns": [
+            "日付",
+            "できごと",
+            "根拠"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "2024-08-01",
+                "EU AI法が発効",
+                "第113条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "2025-07-10",
+                "行動規範の公表",
+                "欧州委員会の行動規範のページ"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+                "https://digital-strategy.ec.europa.eu/en/policies/ai-code-practice"
+              ]
+            },
+            {
+              "cells": [
+                "2025-08-01",
+                "欧州委員会と AI評議会が、行動規範を妥当と評価",
+                "欧州委員会の意見 C(2025) 5361"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-general-purpose-ai-code-practice",
+                "https://digital-strategy.ec.europa.eu/en/policies/ai-code-practice"
+              ]
+            },
+            {
+              "cells": [
+                "2025-08-02",
+                "汎用AIモデルの章（第V章）の適用開始。第52条の決定（反論の判断・指定）もこの日から",
+                "第113条(b)、ガイドライン段落104"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "2026-07-27",
+                "改正規則 (EU) 2026/1744 の発効（第56条6項・第75条などを改正）",
+                "改正規則 第4条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_4",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744"
+              ]
+            },
+            {
+              "cells": [
+                "2026-08-02",
+                "欧州委員会の監督・執行の権限（第IX章第5節、第88〜94条）と罰金（第101条）の適用開始",
+                "第113条、段落103・112"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "2027-08-02",
+                "2025-08-02より前に市場に出したモデルの対応期限",
+                "第111条3項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111",
+                "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "汎用AIモデルの義務は、2025年8月2日から適用されています（第113条(b)）。ただし、罰金を定める第101条は除かれており、2026年8月2日からの適用です（同）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "既存モデルの経過措置",
+          "text": "2025年8月2日より前に市場に出したモデルの提供者は、2027年8月2日までに必要な対応をとる必要があります（第111条3項）。ガイドラインは、この期限がモデルの一生全体に及ぶとしています（段落106）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "過去の学習について、再学習や学習の取り消し（アンラーニング）までは求められません（段落108）。対象は、過去の行為のためにできない場合・学習データの情報がない場合・取り出す負担が大きすぎる場合です（同）。その場合は、その旨と理由を、著作権の方針と学習データの要約にはっきり書く必要があります（同）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "最初の1年の扱い",
+          "text": "2025年8月2日からの1年間、欧州委員会の執行の権限はまだ適用されず、執行措置をとれませんでした（段落112）。それでも、義務そのものは2025年8月2日から適用されています（同）。2026年8月2日からは、完全に対応していない提供者に罰金を含めて執行する、とガイドラインは書いています（同）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+            "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "執行のしくみ",
+          "text": "汎用AIモデルの義務の監督と執行は、欧州委員会だけが行い、AI Office に任せています（第88条1項）。AI Office は、欧州委員会の中で、AIの実施・監視・監督を担う部署です（第3条47号）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_88",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "欧州委員会の主な権限",
+          "items": [
+            "文書・情報の請求（第91条）。請求の前に、構造化された対話を始めることがある",
+            "モデルの評価（第92条）。API やソースコードなどで、モデルへのアクセスを求められる",
+            "措置の要求（第93条）。義務を守る措置、リスクの軽減、市場での提供の制限・撤回・回収",
+            "罰金（第101条）。2026-08-02から"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_91",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_92",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_93",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "通知や重大インシデントの報告などの書類は、EU SEND という提出の基盤で出します。欧州委員会のガイドラインの概要ページが、そう案内しています。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "penalties",
+      "number": 9,
+      "title": "罰則（第101条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "欧州委員会は、汎用AIモデルの提供者に罰金を科せます。上限は、前の会計年度の全世界年間売上高の3%か、1,500万ユーロの高い方です（第101条1項）。故意または過失で、次のどれかをした場合が対象です（同）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "gpai-fines",
+          "columns": [
+            "対象となる行為",
+            "根拠"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "規則の関係する規定に違反した",
+                "第101条1項(a)"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101"
+              ]
+            },
+            {
+              "cells": [
+                "文書・情報の請求に応じなかった、または誤った・不完全な・誤解を招く情報を出した",
+                "第101条1項(b)、第91条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_91"
+              ]
+            },
+            {
+              "cells": [
+                "求められた措置に従わなかった",
+                "第101条1項(c)、第93条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_93"
+              ]
+            },
+            {
+              "cells": [
+                "評価のためのモデルへのアクセスを提供しなかった",
+                "第101条1項(d)、第92条"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_92"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "額は、違反の性質・重大さ・期間を考え、比例と適切さの原則に沿って決めます。第93条3項の約束や、行動規範での約束も考慮します（第101条1項）。決定の前に、提供者は暫定的な結論を知らされ、意見を述べる機会があります（第101条2項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "罰金の決定は、欧州連合司法裁判所が全面的に審査でき、取り消し・減額・増額ができます（第101条5項）。罰金は2026年8月2日から科せます（第113条(b)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "下流の会社が、自社のAIシステムについての義務に違反した場合は、各国が定める罰則（第99条）の対象です。詳しくは本体の罰則の章と、導入者向けのページを参照してください。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "number": 10,
+      "title": "日本企業の場面別",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "日本企業が関係しやすい場面は、自社でモデルを作る・他社のモデルを改変する・他社のモデルを組み込む、の3つです。どれに当たるかで、かかる義務が大きく変わります。下の表は条文とガイドラインで言える範囲の整理で、結論は事実関係によります。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "japan-scenes",
+          "columns": [
+            "場面",
+            "モデルの義務（第V章）",
+            "AIシステムの義務など"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "自社で事前学習した言語モデルを、API でEUの顧客に提供する",
+                "ガイドラインの目安に当たれば、汎用AIモデルの提供者になる場合がある。第53条の義務と域内代理人（第54条）。10の25乗FLOPを超えれば、通知と第55条",
+                "自社の画面などでAIシステムとしても提供するなら、システムの義務もかかる（前文97）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_54",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_51",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_97",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "他社のオープンウェイトモデルをファインチューニングし、EU向けに公開する",
+                "改変の計算量が元のモデルの3分の1を超えなければ、目安では提供者にならない。超えれば、改変の部分について提供者になる",
+                "組み込んだシステムを出すなら、システムの義務がかかる"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+                "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers",
+                "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
+              ]
+            },
+            {
+              "cells": [
+                "他社のモデルを API で組み込み、EU向けのSaaSを出す",
+                "モデルの義務は元の提供者が負う。自社は下流の提供者として、附属書XIIの情報を受け取れる",
+                "用途が高リスクや第50条に当たれば、自社の義務。高リスクなら第25条4項の書面の取り決めも"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_XII",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "日本の会社からEUの外でモデルを受け取り、組み込んだ製品をEUで出す",
+                "原則は渡した会社が提供者。渡した会社がEUでの利用を明確に除外していれば、自社がモデルの提供者とみなされる（段落56）",
+                "自社の製品としての義務"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "cells": [
+                "自社のモデルを、純粋な社内業務だけに使う（第三者への製品に欠かせない業務ではなく、人の権利にも影響しない）",
+                "モデルの義務はかからない。システミックリスクのあるモデルは除く（前文97）",
+                "使い方によっては、AIシステムとしての義務がかかる場合がある"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_97",
+                "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "example",
+          "title": "架空の例: ミライ言語研究所（日本の会社）",
+          "items": [
+            "ミライ言語研究所は、日本語に強い言語モデル「ミライ-7B」を自社で事前学習した。70億パラメータ・20兆トークンで、6×P×D の式から計算量を約8.4×10の23乗FLOPと見積もった。ガイドラインの目安（10の23乗）を超え、幅広い作業ができるので、汎用AIモデルに当たる可能性が高いと考えた。",
+            "2027年に、EUの顧客へ API で提供を始める計画だ。提供を始めるまでに、附属書XIの技術文書、附属書XIIの下流向け情報、著作権の方針、ひな形に沿った学習データの要約を用意する。",
+            "EUに拠点がないので、提供を始める前に、EU域内の代理人を書面で選任する（第54条1項）。",
+            "計算量は10の25乗に遠く届かず、基準による推定には当たらない。追加の学習で計算量が増えるときは、見積もりを更新する。",
+            "別の部署は、他社のオープンウェイトモデル（学習の計算量が公表されている）を社内データでファインチューニングし、EU向けの翻訳アプリに組み込む。改変の計算量は元のモデルの1%未満なので、目安では改変したモデルの提供者にならない。翻訳アプリの提供者としての義務（第50条など）は、別に確認する。",
+            "ミライ-7B をオープンソースで公開する案も検討した。ただ、月間利用者数で商用利用を制限するライセンスでは、例外の条件を満たさない（段落80）。"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "上の例は説明のための架空のもので、実在の会社・モデルとは関係ありません。実際の判断は、事実関係と専門家の確認によります。"
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "number": 11,
+      "title": "よくある質問",
+      "blocks": [
+        {
+          "type": "faq",
+          "items": [
+            {
+              "q": "他社の生成AIの API を使って社内ツールを作るだけでも、汎用AIモデルの義務がかかりますか？",
+              "a": "モデルの義務は、モデルを市場に出した提供者にかかります（第53条）。他社のモデルに手を加えずに使うだけなら、自社はそのモデルの提供者ではありません（ガイドライン段落55）。ただし、AIリテラシー（第4条）など、AIシステムを使う側の義務は別にあります。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_4",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "q": "オープンウェイトで公開すれば、義務はなくなりますか？",
+              "a": "なくなりません。条件を満たしても、免除は技術文書・下流向け情報・域内代理人だけで、著作権の方針と学習データの要約は必要です（第53条2項、前文104）。システミックリスクのあるモデルには免除がなく、利用規模の制限などがあるライセンスは条件を満たしません（段落80）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_54",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_104",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+              ]
+            },
+            {
+              "q": "ファインチューニングをすると、提供者になりますか？",
+              "a": "ガイドラインの目安では、改変に使った計算量が元のモデルの学習の計算量の3分の1を超える場合に、提供者になります（段落60）。欧州委員会のFAQは、ほとんどのファインチューニングは当たらないとしています。目安に法的拘束力はなく、個別の判断が必要です（段落9）。",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+                "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+              ]
+            },
+            {
+              "q": "パラメータ数の少ない小さなモデルなら、対象外ですか？",
+              "a": "パラメータ数だけでは決まりません。ガイドラインの目安は、学習の計算量（10の23乗FLOP超）と、生成できるもの（言語・文章から画像・文章から動画）です（段落17）。目安に当たらなくても、汎用性があり幅広い作業をこなせれば、汎用AIモデルです（段落20）。",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_98"
+              ]
+            },
+            {
+              "q": "行動規範に署名しないと違法ですか？",
+              "a": "いいえ、行動規範は任意です。署名しない提供者は、ほかの適切な方法で義務の順守を示す必要があります（第53条4項・第55条2項）。ガイドラインは、措置を AI Office に報告し、行動規範との差の分析などで説明することを想定しています（段落92）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+                "https://digital-strategy.ec.europa.eu/en/faqs/signing-general-purpose-ai-code-practice"
+              ]
+            },
+            {
+              "q": "2025年8月より前に公開したモデルは、どうすればよいですか？",
+              "a": "2027年8月2日までに、必要な対応をとる必要があります（第111条3項）。過去の学習の再学習やアンラーニングまでは求められません（段落108）。手に入らない情報があるなら、その旨と理由を著作権の方針と学習データの要約に書きます（同、ひな形の説明文書 段落33）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+              ]
+            },
+            {
+              "q": "学習データの要約には、使った作品を全部書く必要がありますか？",
+              "a": "いいえ、ひな形は個々のデータや作品の詳細までは求めていません（説明文書 段落16）。主なデータセットの一覧と、ウェブから集めたデータの説明・主なドメイン名の要約などを書きます（段落15）。任意で、より詳しく書くことはできます（段落16）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_107",
+                "https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+              ]
+            },
+            {
+              "q": "モデルの提供者が、必要な情報をくれないときは？",
+              "a": "提供者には、組み込む予定の会社に情報を渡す義務があります（第53条1項(b)）。違反していると考えるなら、苦情を申し立てられます（第89条2項）。高リスクAIに組み込むなら、改正後の第25条4項で、書面の取り決めが必要です。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_89",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25"
+              ]
+            },
+            {
+              "q": "システミックリスクのあるモデルの一覧はありますか？",
+              "a": "欧州委員会は、一覧を公表し、最新に保つことになっています（第52条6項）。このページでは、公表された一覧の中身は確認していません。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_52"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "label": "規則 (EU) 2024/1689（EU AI法）英語本文（EUR-Lex）",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689",
+      "note": "第2条・第3条（3号・9号・10号・47号・49号・63〜68号）・第51〜56条・第88〜94条・第101条・第111条・第113条、附属書XI〜XIII、前文97〜99・102〜109・111・112"
+    },
+    {
+      "label": "規則 (EU) 2026/1744（Digital Omnibus on AI）英語本文（EUR-Lex）",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744",
+      "note": "第1条(12)(b)（第25条4項）・(21)（第56条6項）・(31)（第75条）・(40)（第113条）、第4条、前文31・41。第51〜55条・第88〜94条・第101条・第111条3項・附属書XI〜XIIIは改正なし"
+    },
+    {
+      "label": "欧州委員会: 汎用AIモデル提供者の義務の範囲に関するガイドライン（公表ページ）",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+      "note": "法的拘束力はない。本文中の「段落」はこの文書の段落番号。英語版 C(2025) 7719（2025-11-19付）の本文で確認。内容の承認は 2025-07-18（C(2025) 5045）"
+    },
+    {
+      "label": "同 ガイドライン 英語版PDF",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
+    },
+    {
+      "label": "欧州委員会: ガイドラインのQ&A",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+    },
+    {
+      "label": "欧州委員会: ガイドラインの概要（提出の基盤 EU SEND の案内を含む）",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers",
+      "note": "2026-04-28 更新版を確認"
+    },
+    {
+      "label": "欧州委員会: General-Purpose AI Models in the AI Act – Questions & Answers",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers",
+      "note": "委員会の公式見解ではないと明記された AI Office のQ&A"
+    },
+    {
+      "label": "欧州委員会: 汎用AIの行動規範（3つの章と署名者）",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+      "note": "2026-10-07 更新版を確認"
+    },
+    {
+      "label": "行動規範 透明性の章（PDF）",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118120"
+    },
+    {
+      "label": "行動規範 著作権の章（PDF）",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118115"
+    },
+    {
+      "label": "行動規範 安全性とセキュリティの章（PDF）",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119"
+    },
+    {
+      "label": "欧州委員会: 行動規範の作成の経緯",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-code-practice"
+    },
+    {
+      "label": "欧州委員会: 行動規範のQ&A",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/questions-and-answers-code-practice-general-purpose-ai"
+    },
+    {
+      "label": "欧州委員会: 行動規範への署名のQ&A",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/signing-general-purpose-ai-code-practice"
+    },
+    {
+      "label": "欧州委員会: 行動規範の評価（欧州委員会の意見・AI評議会の結論）",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-general-purpose-ai-code-practice",
+      "note": "欧州委員会の意見 C(2025) 5361（2025-08-01）"
+    },
+    {
+      "label": "欧州委員会: 学習データの公開要約のひな形と説明文書（公表ページ）",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models"
+    },
+    {
+      "label": "同 説明文書とひな形 英語版PDF",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118480",
+      "note": "C(2025) 8311（2025-12-05付）を確認"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-10-11",
+      "note": "初版。条文（規則 (EU) 2024/1689 と改正規則 (EU) 2026/1744）と、欧州委員会の汎用AIモデルのガイドライン・Q&A・行動規範・学習データ要約のひな形で確認した範囲で作成。自分で作った具体例は1つ（架空と明示）"
+    }
+  ]
+}

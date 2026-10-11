@@ -380,6 +380,7 @@ DRY_RUN=1 npm run validate
 | 2026-10-11 | **週1ダイジェスト原稿を追加**（公開前に darari の確認待ち）。`scripts/digest.mjs`＋`lib/digest.mjs`、`.github/workflows/digest.yml`（日曜 22:30 UTC）、`data/digests/YYYY-Www.md`、`validate.mjs` に原稿の検査、この Mac 用の `scripts/local/digest-intake.sh` と launchd 雛形（未インストール）。先週分の更新から「今週の変化3つ」の原稿を Claude（Sonnet 5.5）で作り、kiji-intake の形で HP の `65_外部原稿/` に置くだけ。実 API での品質・費用は未確認 |
 | 2026-10-11 | **EU AI法 徹底解説ページ `/eu-ai-act/` を追加**（公開前に Fable の事実確認と darari の確認待ち）。中身は `data/guides/eu-ai-act.json`（条文 EUR-Lex の規則 (EU) 2024/1689・改正規則 (EU) 2026/1744 と欧州委員会の公式ページで確認した文だけ。自動生成しない）、`schema/guide.schema.json` と `validate.mjs` の検査（出典が EUR-Lex・欧州委員会のドメインだけか、章 id、表の列数）。日程表は `deadlines.json` の EU 分を流用。Header・スマホのタブバー（5列に）・`/country/eu/` から導線。あわせて `data/regulations/eu.json` を改正後の内容（新しい禁止・機械のセクションB移動・SMC・AI Office の権限など）に更新 |
 | 2026-10-11 | **EU AI法ガイドを本体＋子ページに分割し、`/eu-ai-act/high-risk/`（高リスクAIの書類と手続き 実務ガイド）を追加**（本体と一緒に公開予定・darari 確認待ち）。データは `data/guides/eu-ai-act-high-risk.json`（`parent: eu-ai-act`、具体例は `example` ブロックで「架空の例」と明示）。描画を `GuideArticle`／`GuideBlock` コンポーネントと `src/lib/guideView.ts` に共通化し、本体は `src/pages/eu-ai-act/index.astro` へ移動（URL 不変）。`guide.schema.json` に `parent`・`summary_title`・`children`・`example`・`flow` を追加、`validate.mjs` に親ガイドの実在と流れの出典の検査。本体の6章（高リスクAI）などを要点にまとめ、子ページへの入口を付けた |
+| 2026-10-11 | EU AI法ガイドに図解5枚（立場・高リスク判定・4区分・日程の時間軸・提供者の手続き）を追加。`src/components/diagrams/` と guide の `diagram` ブロック（id は schema で列挙）。日程の日付は `src/lib/euTimeline.mjs` が guide と deadlines.json から読み、`test/euTimeline.test.mjs` が改正前の旧期限との一致を検査する |
 
 ## ライセンス
 

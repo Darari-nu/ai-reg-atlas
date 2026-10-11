@@ -1,0 +1,96 @@
+---
+// 図4: いつから何が適用？（日付順の時間軸。改正前の旧期限と改正後の新期限を並べる。今日の印つき）
+// 日付は guide の milestones と data/deadlines.json から読む（src/lib/euTimeline.mjs）。
+import DiagramFrame from './DiagramFrame.astro';
+import { getGuide, getCuratedDeadlines } from '../../lib/data';
+import { todayJst } from '../../lib/upcomingDeadlines.mjs';
+import { resolveTimeline, findNextIndex, timelineAlt } from '../../lib/euTimeline.mjs';
+
+const g = getGuide('eu-ai-act');
+const cards = resolveTimeline(g.milestones, getCuratedDeadlines());
+const today = todayJst();
+const nextIdx = findNextIndex(cards, today);
+const BASE = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689';
+const alt = timelineAlt(cards);
+---
+
+<DiagramFrame
+  id="timeline"
+  n={4}
+  title="いつから何が適用される？"
+  lead="日付順に並べています。改正で延期された高リスク義務は、改正前と改正後を並べて見られます。"
+  alt={alt}
+>
+  <ul class="dg-legend" aria-label="凡例">
+    <li><span class="dg-swatch" style="--sw:var(--diff-unique)"></span>改正規則</li>
+    <li><span class="dg-swatch" style="--sw:var(--diff-stricter)"></span>追加された禁止</li>
+    <li><span class="dg-swatch" style="--sw:var(--diff-looser)"></span>延期（改正後の期限）</li>
+    <li><span class="dg-swatch" style="--sw:var(--diff-absent);border-style:dashed"></span>改正前の期限</li>
+  </ul>
+  <ol class="dg-tl" id="dg-timeline-list" data-today={today}>
+    {cards.map((c, i) => (
+      <>
+        {i === nextIdx && (
+          <li class="dg-today" data-today-marker>
+            <span class="dg-today-in">今日: <time datetime={today} data-today-time>{today}</time></span>
+          </li>
+        )}
+        <li class={`dg-ev dg-ev-${c.kind} ${i === nextIdx ? 'dg-ev-next' : ''}`} data-date={c.date}>
+          <p class="dg-ev-date"><time datetime={c.date}>{c.date}</time> <span class="dg-next-tag">直近</span></p>
+          <div class="dg-card dg-ev-card">
+            <ul>
+              {c.items.map((it) => (
+                <li>
+                  <p class="dg-ev-text">
+                    {it.text}{' '}
+                    {it.chip && <span class={`dg-chip dg-ev-${it.kind}`}>{it.chip}</span>}
+                  </p>
+                  {it.sub && <p class="dg-ev-sub">{it.sub}</p>}
+                  {it.oldDate && (
+                    <div class="dg-cmp">
+                      <div class="dg-cmp-old"><p>改正前</p><p class="dg-cmp-d"><time datetime={it.oldDate}>{it.oldDate}</time></p></div>
+                      <div class="dg-cmp-new"><p>改正後（延期）</p><p class="dg-cmp-d"><time datetime={it.date}>{it.date}</time></p></div>
+                    </div>
+                  )}
+                  {it.oldChip && <p class="dg-old-chip">{it.oldChip}</p>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      </>
+    ))}
+    {nextIdx === -1 && (
+      <li class="dg-today" data-today-marker>
+        <span class="dg-today-in">今日: <time datetime={today} data-today-time>{today}</time></span>
+      </li>
+    )}
+  </ol>
+  <Fragment slot="notes">
+    <p>日付順の並びで、間隔は期間の長さを表しません。「発効」は法律が効力を持つ日、「適用開始」は義務がかかり始める日で、別の日です。</p>
+    <p>2026-12-02の第50条2項の猶予は、2026-08-02より前に市場に出した生成AIだけが対象で、新しいシステムの猶予ではありません。既存の汎用AIの期限は、2025-08-02より前に市場に出したモデルだけが対象です。</p>
+    <p class="dg-src">出典: <a href={`${BASE}#art_113`} target="_blank" rel="noopener">第113条（段階適用）</a><a href={`${BASE}#art_111`} target="_blank" rel="noopener">第111条（経過措置）</a><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1" target="_blank" rel="noopener">改正規則 (EU) 2026/1744</a></p>
+  </Fragment>
+</DiagramFrame>
+
+<script is:inline>
+  // 「今日」の印は、ページを開いた日（日本時間）で付け直す。時間軸は日付順なので、印を入れる位置だけが変わる。
+  (function () {
+    var list = document.getElementById('dg-timeline-list');
+    if (!list) return;
+    var today;
+    try { today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' }).format(new Date()); } catch (e) { return; }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(today)) return;
+    var marker = list.querySelector('[data-today-marker]');
+    if (!marker) return;
+    var evs = list.querySelectorAll('[data-date]');
+    var next = null;
+    for (var i = 0; i < evs.length; i++) {
+      evs[i].classList.remove('dg-ev-next');
+      if (!next && evs[i].getAttribute('data-date') >= today) next = evs[i];
+    }
+    if (next) { list.insertBefore(marker, next); next.classList.add('dg-ev-next'); } else { list.appendChild(marker); }
+    var t = marker.querySelector('[data-today-time]');
+    if (t) { t.textContent = today; t.setAttribute('datetime', today); }
+  })();
+</script>

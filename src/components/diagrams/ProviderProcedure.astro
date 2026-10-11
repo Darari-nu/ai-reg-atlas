@@ -1,0 +1,83 @@
+---
+// 図5: 高リスクAIを市場に出すまで・出した後（提供者の手続き）。文言は子ページ 1 章の流れ・11 章・12 章の範囲。
+import DiagramFrame from './DiagramFrame.astro';
+
+const BASE = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689';
+const prep = [
+  { n: 1, t: '設計・要件への対応', b: '第9〜15条' },
+  { n: 2, t: '品質管理の仕組み', b: '第17条' },
+  { n: 3, t: '技術文書を整える', b: '第11条・附属書IV' },
+];
+const before = [
+  { n: 4, t: '適合性評価', b: '第43条' },
+  { n: 5, t: 'EU適合宣言', b: '第47条' },
+  { n: 6, t: 'CEマーク', b: '第48条' },
+  { n: 7, t: 'EUデータベース登録（対象の場合）', b: '第49条' },
+];
+const alt =
+  '提供者が高リスクAIを市場に出すまでの準備（設計、品質管理、技術文書）と、市場に出す前の手続き（適合性評価、EU適合宣言、CEマーク、登録）、市場に出した後の継続的な市販後監視と、重大な事故が起きたときの報告を示した手順。';
+---
+
+<DiagramFrame
+  id="provider-flow"
+  n={5}
+  title="高リスクAIを市場に出すまでと、出した後"
+  lead="提供者の手続きです。市場に出したあとも、監視と報告が続きます。"
+  alt={alt}
+>
+  <div class="dg-proc">
+    <section class="dg-col" aria-labelledby="dg5-a">
+      <h4 class="dg-col-h" id="dg5-a">準備 <small>並行・反復して進める</small></h4>
+      <ol class="dg-steps">
+        {prep.map((s) => (
+          <li class="dg-card dg-step">
+            <span class="dg-step-n">{s.n}</span>
+            <div><p class="dg-step-t">{s.t}</p><p class="dg-basis">{s.b}</p></div>
+          </li>
+        ))}
+      </ol>
+    </section>
+    <section class="dg-col dg-col-gold" aria-labelledby="dg5-b">
+      <h4 class="dg-col-h" id="dg5-b">市場に出す前 <small>評価方法・登録先は対象で異なる</small></h4>
+      <ol class="dg-steps">
+        {before.map((s) => (
+          <li class="dg-card dg-step">
+            <span class="dg-step-n">{s.n}</span>
+            <div><p class="dg-step-t">{s.t}</p><p class="dg-basis">{s.b}</p></div>
+          </li>
+        ))}
+        <li class="dg-card dg-step dg-launch">
+          <span class="dg-step-n">8</span>
+          <div>
+            <p class="dg-step-t">市場投入・使用開始</p>
+            <p class="dg-step-s">EUの外の提供者は、事前にEU域内代理人を書面で選任します（第22条）。</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <section class="dg-col" aria-labelledby="dg5-c">
+      <h4 class="dg-col-h" id="dg5-c">市場に出した後 <small>並行して続く</small></h4>
+      <ul class="dg-steps">
+        <li class="dg-card dg-step dg-after">
+          <div>
+            <p class="dg-tag">継続</p>
+            <p class="dg-step-t">市販後監視</p>
+            <p class="dg-basis">第72条</p>
+          </div>
+        </li>
+        <li class="dg-card dg-step dg-after dg-incident">
+          <div>
+            <p class="dg-tag">発生時</p>
+            <p class="dg-step-t">重大な事故（インシデント）を報告</p>
+            <p class="dg-basis">第73条</p>
+          </div>
+        </li>
+      </ul>
+      <p class="dg-loop"><b>改善へ戻る</b> 監視の結果は設計や技術文書の改善へ。大幅な変更をしたら、適合性評価をやり直します（第43条4項）。</p>
+    </section>
+  </div>
+  <Fragment slot="notes">
+    <p>市場に出すことは終点ではありません。CEマークは、提供者が要件を満たしていると自ら示す表示で、行政の承認印ではありません。</p>
+    <p class="dg-src">出典: <a href={`${BASE}#art_43`} target="_blank" rel="noopener">第43条</a><a href={`${BASE}#art_47`} target="_blank" rel="noopener">第47条</a><a href={`${BASE}#art_48`} target="_blank" rel="noopener">第48条</a><a href={`${BASE}#art_49`} target="_blank" rel="noopener">第49条</a><a href={`${BASE}#art_72`} target="_blank" rel="noopener">第72条</a><a href={`${BASE}#art_73`} target="_blank" rel="noopener">第73条</a></p>
+  </Fragment>
+</DiagramFrame>

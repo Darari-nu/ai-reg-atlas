@@ -4,6 +4,11 @@ import type { Guide, GuideBlock } from '../lib/data';
 import { getUpcomingDeadlines, withBase, DEADLINE_KIND_LABELS } from '../lib/data';
 import { todayJst, daysUntil } from '../lib/upcomingDeadlines.mjs';
 import { labeledSources } from '../lib/guideView';
+import RolesMap from './diagrams/RolesMap.astro';
+import HighRiskCheck from './diagrams/HighRiskCheck.astro';
+import RiskBands from './diagrams/RiskBands.astro';
+import DateTimeline from './diagrams/DateTimeline.astro';
+import ProviderProcedure from './diagrams/ProviderProcedure.astro';
 
 interface Props {
   block: GuideBlock;
@@ -32,6 +37,12 @@ if (b.type === 'schedule') {
   ].sort((x, y) => (x.date < y.date ? -1 : x.date > y.date ? 1 : 0));
 }
 ---
+
+{b.type === 'diagram' && b.id === 'roles' && <RolesMap />}
+{b.type === 'diagram' && b.id === 'high-risk-check' && <HighRiskCheck />}
+{b.type === 'diagram' && b.id === 'risk-bands' && <RiskBands />}
+{b.type === 'diagram' && b.id === 'timeline' && <DateTimeline />}
+{b.type === 'diagram' && b.id === 'provider-flow' && <ProviderProcedure />}
 
 {b.type === 'p' && (
   <div>

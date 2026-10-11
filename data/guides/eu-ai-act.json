@@ -19,6 +19,11 @@
       "label": "透明性の義務 実務ガイド",
       "href": "/eu-ai-act/transparency/",
       "note": "第50条の各項（AIの告知・生成物の表示・ディープフェイク等）の対象と例外、表示のしかた"
+    },
+    {
+      "label": "AIを使う会社（導入者）向け 実務ガイド",
+      "href": "/eu-ai-act/deployers/",
+      "note": "他社のAIを業務で使う会社の義務（AIリテラシー・第50条・第26条・FRIA・説明を受ける権利・提供者になる場合）"
     }
   ],
   "summary": [
@@ -247,6 +252,16 @@
                 "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_22",
                 "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_54"
               ]
+            }
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "AIを使う会社（導入者）向け 実務ガイド",
+              "href": "/eu-ai-act/deployers/",
+              "note": "他社のAIを業務で使う会社にかかる義務を、場面別に"
             }
           ]
         },
@@ -773,6 +788,16 @@
           "text": "導入者・輸入者・販売者でも、高リスクAIに自社の名前・商標を付ける、大幅な変更を加える、高リスクでなかったAI（汎用AIシステムを含む）の用途を変えて高リスクにする、のいずれかに当たると「提供者」とみなされ、提供者の義務を負います（第25条1項）。",
           "sources": [
             "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25"
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "AIを使う会社（導入者）向け 実務ガイド",
+              "href": "/eu-ai-act/deployers/",
+              "note": "第26条の各項、FRIA（第27条）、説明を受ける権利（第86条）、提供者とみなされる場合（第25条）を詳しく"
+            }
           ]
         },
         {
@@ -1514,6 +1539,10 @@
     {
       "date": "2026-10-11",
       "note": "9章（透明性義務）から「透明性の義務 実務ガイド」への入口を追加"
+    },
+    {
+      "date": "2026-10-11",
+      "note": "1章（誰が対象か）と6章（高リスクAI）から「AIを使う会社（導入者）向け 実務ガイド」への入口を追加"
     }
   ]
 }

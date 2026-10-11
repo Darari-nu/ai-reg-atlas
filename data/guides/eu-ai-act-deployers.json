@@ -1,0 +1,1021 @@
+{
+  "id": "eu-ai-act-deployers",
+  "parent": "eu-ai-act",
+  "title": "AIを使う会社（導入者）向け 実務ガイド",
+  "description": "他社のAIを業務で使う会社（EU AI法の「導入者」）にかかる義務を、AIリテラシー（第4条）、生成AI・チャットボット（第50条）、高リスクAI（第26条）、基本的権利影響評価（第27条）、説明を受ける権利（第86条）、使う側が提供者になる場合（第25条）に分けて、条文（規則 (EU) 2024/1689・改正規則 (EU) 2026/1744）と欧州委員会の公式資料に沿って整理したページ。",
+  "last_verified": "2026-10-11",
+  "disclaimer": "このページは一般的な情報の整理で、法的助言ではありません。条文の要約と、欧州委員会のQ&A・ガイドライン（法的拘束力はなく、最終的な解釈は欧州連合司法裁判所が行います）で確認できた範囲だけを書いています。場面別の表は当てはめの目安で、結論は事実関係によって変わりえます。自分で作った例には「架空の例」と付けています。実際の判断は一次資料と専門家の確認を経てください。",
+  "summary_title": "このページの使い方",
+  "summary": [
+    {
+      "text": "導入者（deployer）は、自分の権限のもとでAIシステムを使う人や組織です。純粋に私的で職業外の利用は除かれます（第3条4号）。AIを開発し（または開発させ）、自社の名前・商標で市場に出す・使用を開始するのは提供者です（第3条3号）。他社が作ったAIを自社の業務で使う会社は導入者に当たります。ただし、高リスクAIに自社の名前を付ける、大幅に変更する、用途を変えて高リスクにする、のいずれかに当たると提供者とみなされます（第25条1項、7章）。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25"
+      ]
+    },
+    {
+      "text": "EU域内に拠点がある、またはEU域内にいる導入者は対象です（第2条1項(b)）。EUの外の導入者も、AIシステムの出力がEUで使われる場合は対象です（同(c)）。日本企業なら、EUの子会社・拠点がAIを使う場合や、日本で使ったAIの出力をEUで使う場合が考えられます。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2"
+      ]
+    },
+    {
+      "text": "義務の始まりはばらばらです。AIリテラシー（第4条）と禁止（第5条）は2025年2月2日から（改正で加わった性的ディープフェイク等の禁止は2026年12月2日から）、透明性（第50条）は2026年8月2日から、高リスクAIの導入者の義務（第26条・第27条）は改正後の日程で2027年12月2日（附属書IIIの用途型）または2028年8月2日（附属書Iの製品組み込み型）からです（第113条）。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+      ]
+    },
+    {
+      "text": "導入者の第26条の義務と第50条の透明性の義務の違反は、罰金の上限が1,500万ユーロか全世界年間売上高の3%の高い方です（第99条4項(e)(g)）。禁止の違反は3,500万ユーロか7%の高い方です（第99条3項）。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+      ]
+    }
+  ],
+  "milestones": [],
+  "sections": [
+    {
+      "id": "overview",
+      "number": 1,
+      "title": "導入者に関係する義務の全体像",
+      "blocks": [
+        {
+          "type": "note",
+          "text": "このページは、使う側（導入者）の義務を場面ごとに整理しています。高リスクかどうかの判断、禁止の各号、透明性の表示のしかたは、本体と子ページに詳しく書いているので、ここでは要点とリンクだけにしています。"
+        },
+        {
+          "type": "table",
+          "id": "deployer-obligations",
+          "heading": "導入者に関係する主な義務",
+          "caption": "条文で確認できた主なものです。1つのAIに複数の義務が重なることがあります。",
+          "columns": [
+            "義務",
+            "条文",
+            "どんなAIのとき",
+            "いつから"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "スタッフなどのAIリテラシーの向上を支援する措置をとる",
+                "第4条（改正後）",
+                "すべてのAIシステム",
+                "2025-02-02（改正後の文言は改正規則が発効した2026-07-27から）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_4",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_4",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113"
+              ]
+            },
+            {
+              "cells": [
+                "禁止されるAIの使い方をしない",
+                "第5条",
+                "第5条1項の各号に当たる使い方（職場・教育機関での感情の推定など）",
+                "2025-02-02（(ba)(bb) は2026-12-02）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_5",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "感情認識・生体分類のシステムの作動を、さらされる人に知らせる",
+                "第50条3項",
+                "感情認識システム・生体分類システム",
+                "2026-08-02"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113"
+              ]
+            },
+            {
+              "cells": [
+                "ディープフェイクや、公共の関心事を知らせる文章が、AIで生成・加工したものだと開示する",
+                "第50条4項",
+                "ディープフェイクに当たる画像・音声・映像、公表する文章を生成・加工するAI",
+                "2026-08-02"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113"
+              ]
+            },
+            {
+              "cells": [
+                "説明書どおりの使用、人による監督、入力データ、動作の監視、ログの保存、従業員と本人への通知、当局への協力など",
+                "第26条",
+                "高リスクAI（附属書III・附属書I）",
+                "2027-12-02（附属書III）／2028-08-02（附属書I）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "基本的権利影響評価（FRIA）をして、結果を市場監視当局に届け出る",
+                "第27条",
+                "公法上の機関・公共サービスを提供する民間の導入者が使う附属書IIIの高リスクAI（附属書III 2を除く）、附属書III 5(b)(c) の高リスクAI",
+                "2027-12-02"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "高リスクAIの出力に基づく決定について、本人の求めに応じて説明する",
+                "第86条",
+                "附属書IIIの高リスクAI（附属書III 2を除く）",
+                "6章を参照"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_86"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "使い方によっては、使う側が「提供者」とみなされ、提供者の義務を負います（第25条1項）。7章で説明します。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "改正で新しく入った第4a条は、高リスクAIの導入者などが、偏りの検出・是正のために厳しい条件のもとで特別な種類の個人データを例外的に扱えると定めています。偏りの検出・是正をする義務を新たに作るものではありません（第4a条2項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-literacy",
+      "number": 2,
+      "title": "AIリテラシー（第4条・改正後）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "AIシステムの提供者と導入者は、自社のスタッフや、自社に代わってAIシステムの運用・利用に携わる人のAIリテラシーの向上を支援する措置をとります。その際、その人たちの技術的な知識・経験・教育・訓練、AIシステムを使う状況、AIシステムを使う相手の人やグループを考えます。個人に特定の水準のAIリテラシーを保証することまでは求められていません（改正後の第4条1項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "改正で変わったこと",
+          "text": "改正前の第4条は「できる限り、十分な水準のAIリテラシーを確保する措置」を求めていました。改正規則の前文8は、厳しい義務はすべての提供者・導入者に合うわけではなく、特に小さな企業の負担になるという関係者の声を理由に挙げています。改正後は、欧州委員会と加盟国が、特に中小企業の取り組みを支援し、委員会が遵守のしかたの実例を単一情報プラットフォームで公表します（第4条2項）。AI会議（AI Board）は、共通の目標を含む勧告を採択します（同3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_4",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#rct_8",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "AIリテラシーとは",
+          "text": "AIリテラシーは、提供者・導入者・影響を受ける人が、それぞれの権利と義務を踏まえて、情報に基づいてAIシステムを導入し、AIの機会とリスク、起こしうる害に気づくための技能・知識・理解、と定義されています（第3条56号）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "checklist",
+          "heading": "欧州委員会のQ&Aが示す、最低限考えること",
+          "items": [
+            {
+              "text": "組織の中でAIの一般的な理解を確保する（AIとは何か、どう動くか、自社で何を使っているか、機会と危険は何か）",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+              ]
+            },
+            {
+              "text": "自社の立場を考える（AIシステムを開発しているのか、他社が作ったものを使うだけか）",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+              ]
+            },
+            {
+              "text": "使うAIシステムのリスクを考える（社員が知っておくべきこと、気をつけるべきリスクと、その軽減策）",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+              ]
+            },
+            {
+              "text": "以上を踏まえ、相手の知識・経験・教育・訓練の違いと、AIを使う分野・目的・相手に合わせて取り組みを組み立てる。法的・倫理的な面（AI法の理解など）を含めることが勧められている",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "Q&Aのそのほかのポイント",
+          "items": [
+            "社員のAIの知識を測る義務はない",
+            "修了証などの証明書は要らない。研修などの取り組みを社内で記録しておけばよい",
+            "AI責任者や専門の委員会など、特定の体制は求められていない",
+            "業種ごとの要件はない。ただし、使う分野・目的とAIのリスクは考える",
+            "社員が ChatGPT で広告文を書いたり翻訳したりしている会社も第4条の対象で、ハルシネーションなどの特有のリスクを知らせるべきとしている",
+            "多くの場合、使用説明書を読ませるだけでは足りないとしている。高リスクAIの導入者は、これとは別に、人による監督を担う人の能力・訓練を確保する義務がある（第26条2項）",
+            "委託先・サービス提供者・顧客など、社員でなくても組織の管理のもとで携わる人も「自社に代わって」携わる人に当たりうる。求められるスキルは、AIの種類とリスクによる",
+            "AI Office の実例集（living repository）の取り組みをまねても、第4条を守っていると推定されるわけではない"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "監督と執行",
+          "text": "第4条の監督・執行は AI Office ではなく、各国の市場監視当局が担い、2026年8月2日から監督・執行を始めるとQ&Aは説明しています。罰則は各加盟国が国内のルールで定めます（第99条1項）。第99条4項の罰金の列挙に第4条は入っていません。Q&Aは、制裁は個別の事情に応じて比例的に判断され、社員の研修や指導の不足による事故があると科されやすくなりうるとしています。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Q&A（2026年7月27日更新）には、監督・執行の開始を「2026年8月3日から」とする箇所と「2026年8月2日から」とする箇所があり、改正規則の発効を「2026年7月半ば」としています。条文上、改正規則は官報掲載（2026年7月24日）の3日後、2026年7月27日に発効しています（改正規則第4条）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "generative-ai",
+      "number": 3,
+      "title": "生成AI・チャットボットを使う場合（第50条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "他社の生成AIやチャットボットを使う会社に、第50条でかかりうるのは主に導入者の義務（3項・4項）です。人とやりとりするAIの告知（1項）と、生成物の機械可読な表示（2項）は提供者の義務です。欧州委員会の第50条ガイドラインは、他社のチャットボットを手を加えずに自社の業務に組み込んで使う会社は、その提供者ではなく導入者になる一方、チャットボットを自社で開発して自社の名前で使い始める会社や、既存の生成AIを改変して自社の名前で使い始める会社は提供者になる、としています（段落11とその例）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "導入者にかかる第50条の義務（要点）",
+          "items": [
+            "3項: 感情認識システム・生体分類システムを使うとき、さらされる人に作動を知らせ、個人データを GDPR などに沿って扱う",
+            "4項前段: ディープフェイクに当たる画像・音声・映像を生成・加工したら、AIで生成・加工したと開示する（明らかに芸術・風刺・フィクションなどの作品の一部なら、鑑賞を妨げない形の開示でよい）",
+            "4項後段: 公共の関心事を知らせる目的で公表する文章をAIで生成・加工したら、そう開示する（人による確認・編集上の管理を経て、誰かが編集責任を負う場合は対象外）",
+            "5項: 遅くとも最初のやりとり・接触の時点で、明確で区別できる方法で伝える"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "ガイドラインによると、会社が導入者のとき、その指示と管理のもとで作業する従業員は別の導入者になりません。外注先やフリーランスに作業させても、会社が導入者のままです（段落14）。また、社内ネットワークでの公表など組織内の文章は、4項後段の「公表」に当たらない例とされています（段落131）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "透明性の義務 実務ガイド",
+              "href": "/eu-ai-act/transparency/",
+              "note": "各項の対象と例外、ガイドラインの「当たる例・当たらない例」、表示・告知のしかた、行動規範、日本企業の場面別"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "high-risk",
+      "number": 4,
+      "title": "高リスクAIを使う場合の義務（第26条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "高リスクAIかどうかは、附属書IIIに挙がった用途（採用・人事評価、信用評価、生命・医療保険のリスク評価・価格設定など）に使うか、附属書Iの製品法令の対象製品の安全部品などに当たるかで決まります（第6条）。判断のしかたは本体の6章を見てください。導入者の義務は、改正後の日程で2027年12月2日（附属書IIIの用途型）、2028年8月2日（附属書Iの製品組み込み型）から適用されます（第113条）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_6",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "art26",
+          "heading": "第26条の各項",
+          "caption": "条文の要約です。正確な文言は第26条を見てください。",
+          "columns": [
+            "項",
+            "すること",
+            "ポイント"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "1項",
+                "使用説明書に従ってAIを使うための、適切な技術的・組織的な措置をとる",
+                "使用説明書は提供者が付けるもの（第3条15号、第13条）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_13"
+              ]
+            },
+            {
+              "cells": [
+                "2項・3項",
+                "人による監督を、必要な能力・訓練・権限と支援のある人に任せる",
+                "提供者が示す監督の措置を実行するための人員・業務の組み立ては、導入者が決められる（3項）。前文91は、担当者に十分なAIリテラシーが必要としている"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_91"
+              ]
+            },
+            {
+              "cells": [
+                "4項",
+                "入力データを管理している範囲で、使う目的に照らして関連があり十分に代表的なものにする",
+                "入力データを管理していない部分にはかからない"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+              ]
+            },
+            {
+              "cells": [
+                "5項",
+                "使用説明書に基づいて動作を監視し、必要に応じて提供者に知らせる（第72条）。リスク（第79条1項）がありうると考えたら、遅滞なく提供者か販売者と市場監視当局に知らせ、使用を止める。重大インシデントに気づいたら、直ちにまず提供者に、次に輸入者・販売者と市場監視当局に知らせる",
+                "提供者に連絡がつかない場合は、重大インシデントの報告（第73条）を準用する"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+              ]
+            },
+            {
+              "cells": [
+                "6項",
+                "高リスクAIが自動で記録したログを、自分の管理下にある範囲で、目的に応じた期間（少なくとも6か月）保存する",
+                "EU法・国内法（特に個人データ保護法）に別の定めがあれば、それによる"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+              ]
+            },
+            {
+              "cells": [
+                "7項",
+                "雇用主である導入者は、職場で使い始める前に、従業員の代表と対象になる従業員に、高リスクAIの対象になることを知らせる",
+                "EU法・国内法の手続きに従う。前文92は、他の法律の情報提供・協議の義務はそのまま残るとしている"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_92"
+              ]
+            },
+            {
+              "cells": [
+                "8項",
+                "公的機関・EUの機関などの導入者は、EUデータベースへの登録（第49条）をする。登録されていないシステムは使わず、提供者か販売者に知らせる",
+                "第49条3項は、公的機関などに代わって行動する者も登録の対象にしている"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_49"
+              ]
+            },
+            {
+              "cells": [
+                "9項",
+                "GDPR 第35条などのデータ保護影響評価（DPIA）をする必要があるときは、提供者が第13条で出した情報を使う",
+                "DPIA をするかどうかは GDPR などで決まる"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+              ]
+            },
+            {
+              "cells": [
+                "10項",
+                "法執行での事後の遠隔生体識別についての許可などのルール",
+                "法執行の分野なので、このページでは扱わない"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+              ]
+            },
+            {
+              "cells": [
+                "11項",
+                "附属書IIIの高リスクAIで人についての決定をする（決定を助ける）とき、本人に高リスクAIの対象であることを知らせる",
+                "前文93は、目的と決定の種類、説明を受ける権利も知らせるべきとしている。第50条ガイドラインは、第50条の告知とは別の情報だが1つの通知にまとめてもよいとしている（脚注14）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_93",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "12項",
+                "所管当局の対応に協力する",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "金融機関の特例",
+          "text": "EUの金融サービス法で内部ガバナンスの要件がかかる金融機関は、5項の監視の義務を金融サービス法の内部ガバナンスのルールを守ることで果たしたとみなされます（5項後段）。ログは、金融サービス法で保管する書類の一部として保存します（6項後段）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "ログはどちらが持つか",
+          "text": "ログの保存は提供者にも義務があり、提供者も自分の管理下にあるログを少なくとも6か月保存します（第19条1項）。どちらの管理下にどのログがあるかは、契約やシステムの作りで変わります。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_19",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "改正後の第111条2項では、高リスクの章の適用日（附属書III系は2027-12-02、附属書I系は2028-08-02）より前に市場に出た・使用開始された高リスクAIには、その日以降に設計の大きな変更があった場合にだけ、この規則がかかります（第5条は別）。ただし、公的機関が使う予定の高リスクAIの提供者・導入者は、2030年8月2日までに対応します。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "改正で、欧州委員会が出すガイドラインの対象に第26条が加わりました（改正後の第96条1項(a)。第25条は改正前から対象）。その公表状況は、このページでは確認していません。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_96"
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "高リスクかどうかの判断（本体の6章）",
+              "href": "/eu-ai-act/#high-risk",
+              "note": "附属書Iと附属書III、第6条3項の例外"
+            },
+            {
+              "label": "提供者が作る使用説明書の中身（高リスクAIの書類と手続き 実務ガイド）",
+              "href": "/eu-ai-act/high-risk/#instructions",
+              "note": "導入者が受け取る情報（第13条）"
+            },
+            {
+              "label": "人による監督（同ガイド）",
+              "href": "/eu-ai-act/high-risk/#human-oversight",
+              "note": "提供者が組み込む監督の仕組み（第14条）"
+            },
+            {
+              "label": "ログ（同ガイド）",
+              "href": "/eu-ai-act/high-risk/#logs",
+              "note": "自動で記録されるログの中身（第12条・第19条）"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fria",
+      "number": 5,
+      "title": "基本的権利影響評価（FRIA、第27条）",
+      "blocks": [
+        {
+          "type": "p",
+          "heading": "誰がするか",
+          "text": "附属書IIIの高リスクAI（附属書III 2の重要インフラを除く）を使い始める前に、公法上の機関、公共サービスを提供する民間の導入者は、そのAIの利用が基本的権利に与える影響を評価します。附属書III 5(b)（個人の信用評価。金融詐欺の検出用は除く）と5(c)（生命・医療保険のリスク評価・価格設定）の導入者も同じです（第27条1項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "前文96は、公共サービスを提供する民間の例として、教育・医療・社会サービス・住宅・司法の分野を挙げ、5(b)(c)の導入者の例として銀行や保険会社を挙げています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_96"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "評価する中身（第27条1項）",
+          "items": [
+            "(a) 高リスクAIを目的どおりに使う、導入者の業務の流れの説明",
+            "(b) 使う期間と頻度の説明",
+            "(c) その状況で影響を受けそうな人やグループの種類",
+            "(d) (c)の人やグループに影響しそうな具体的な害のリスク（提供者が第13条で出した情報を考慮する）",
+            "(e) 使用説明書に沿った、人による監督の措置の実施方法",
+            "(f) リスクが現実になったときの措置（社内の体制や苦情を受け付ける仕組みを含む）"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "いつ・どう届け出るか",
+          "text": "評価は最初に使うときに行います。似たケースでは、以前に行ったFRIAや提供者が行った影響評価を使えます。使っている間に(a)〜(f)のどれかが変わった、または古くなったと考えたら、更新します（第27条2項）。評価をしたら、結果を市場監視当局に届け出ます。届出には、AI Office が作るテンプレートに記入したものを含めます。第46条1項の場合は届出が免除されることがあります（第27条3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "DPIAとの関係",
+          "text": "改正後の第27条4項では、GDPR 第35条などのデータ保護影響評価（DPIA）ですでに満たしている部分があれば、FRIAの中でDPIAの該当箇所を参照する、またはその一部を取り込むことができます（改正前は「FRIAはDPIAを補完する」という書き方でした）。AI Office は、簡単に対応できるよう、自動ツールを含む質問票のテンプレートを作り、DPIAを参照・取り込みできるようにします（改正後の第27条5項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "AI Office の質問票テンプレートが公表されているかどうかは、このページでは確認していません。"
+        }
+      ]
+    },
+    {
+      "id": "explanation",
+      "number": 6,
+      "title": "説明を受ける権利（第86条）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "附属書IIIの高リスクAI（附属書III 2を除く）の出力に基づいて導入者が行った決定で、法的な効果がある、または同じくらい大きな影響を受け、健康・安全・基本的権利に悪い影響があると本人が考える場合、本人は導入者に、決定の手続きでAIが果たした役割と、決定の主な要素について、明確で意味のある説明を求められます（第86条1項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_86"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "EU法・国内法で例外や制限が定められている場合は適用されず（第86条2項）、この権利がEU法の他の規定ですでに定められている場合にも適用されません（同3項）。前文171は、説明は本人が権利を行使するための土台になるものであるべきとしています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_86",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_171"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "第26条11項で本人に高リスクAIの対象であることを知らせる際、前文93は、説明を受ける権利についても知らせるべきとしています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_93"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "苦情の申し立て",
+          "text": "AI法に違反していると考える人や組織は、誰でも市場監視当局に苦情を申し立てられます（第85条）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_85"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "第86条は第IX章にあり、第113条で適用が延期された高リスクの章（第III章第1〜3節）には含まれていません。一方、対象になる附属書IIIの高リスクAIの分類（第6条）と導入者の義務（第26条）は2027年12月2日から適用されます。実際にいつから説明を求められるかは、条文だけでは確定できないため、このページでは判断していません。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_86"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "becoming-provider",
+      "number": 7,
+      "title": "使う側が提供者になるとき（第25条）",
+      "blocks": [
+        {
+          "type": "list",
+          "heading": "導入者・輸入者・販売者などが「提供者」とみなされる3つの場合（第25条1項）",
+          "items": [
+            "(a) すでに市場に出ている・使用開始されている高リスクAIに、自社の名前や商標を付ける（義務の分担を別に決める契約はそのまま有効）",
+            "(b) すでに市場に出ている・使用開始されている高リスクAIに大幅な変更を加え、変更後も高リスクAIのままである",
+            "(c) 高リスクに分類されていないAI（汎用AIシステムを含む）の用途を変えて、高リスクAIにする"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "当たると、第16条の提供者の義務（高リスクの要件への適合、品質管理、適合性評価、登録など）を負います（第25条1項）。「大幅な変更」は、提供者の最初の適合性評価で予定されていなかった変更で、高リスクの要件への適合に影響する、または評価された目的を変えるものと定義されています（第3条23号）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "改正後の第25条2項では、最初の提供者はそのAIについて提供者とみなされなくなりますが、新しい提供者に密接に協力し、必要な情報・技術的なアクセス・支援を提供します。具体的には、(a) 第16条の要件への適合を評価できる技術文書、(b) 既知の限界や故障のしかたの情報、(c) 試験・検証のための技術的なアクセス、が挙げられています。最初の提供者が、高リスクAIに変えてはならないと明確にしていた場合、この協力の義務はかかりません。改正で、第25条2項・4項の義務の違反も罰金（第99条4項(da)）の対象になりました。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "汎用の生成AIを、採用の選考など附属書IIIの用途に使う場合は、(c) の「用途の変更」に当たりうる場面です。どこからが用途の変更になるかは条文だけでは決まりません。第25条（と改正で加わった第26条）は、欧州委員会がガイドラインを出す対象になっています（第96条1項(a)）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_96",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "提供者になったら: 高リスクAIの書類と手続き 実務ガイド",
+              "href": "/eu-ai-act/high-risk/",
+              "note": "技術文書・使用説明書・適合性評価・登録など、提供者が作る書類と手続き"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "number": 8,
+      "title": "日本企業の場面別",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "日本企業がEUで「使う側」になる典型は、EUの子会社・拠点がAIを業務に使う場合（第2条1項(b)）と、日本で使ったAIの出力がEUで使われる場合（同(c)）です。どの義務がかかるかは、AIの用途（附属書IIIに当たるか）、出力が誰に届くか、自社の名前で出すかで変わります。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "japan-scenes",
+          "caption": "条文と欧州委員会の資料で言える範囲の整理です。個別の判断は事実関係によります。",
+          "columns": [
+            "場面",
+            "関係しうる条文",
+            "条文・公式資料で言えること"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "EU子会社の人事が、他社の採用支援AI（応募書類の選別・候補者の評価）を使う",
+                "第4条・第26条・第86条",
+                "附属書III 4(a) の用途に当たり、高リスクAIの導入者になりうる。2027-12-02から、説明書どおりの使用・監督者の指定・ログの保存などがかかり、応募者には高リスクAIの対象であることを知らせる（第26条11項）。第27条の対象者（公的機関・公共サービスを提供する民間・5(b)(c)の導入者）に当たらなければ、FRIAの義務はない"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_86"
+              ]
+            },
+            {
+              "cells": [
+                "EU子会社が、従業員の業績評価や仕事の割り当てにAIを使う",
+                "第26条7項・第5条",
+                "附属書III 4(b) の用途に当たりうる。高リスクなら、使い始める前に従業員の代表と従業員に知らせる。職場で感情を推定するAIは、医療・安全目的を除き禁止（第5条1項(f)）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_5"
+              ]
+            },
+            {
+              "cells": [
+                "EUの拠点で、個人の信用評価にAIを使う（金融）",
+                "第26条・第27条",
+                "附属書III 5(b)（金融詐欺の検出用は除く）に当たり、FRIAの対象。EUの金融サービス法の内部ガバナンス要件がかかる金融機関は、監視とログの義務を金融法の仕組みで果たす（第26条5項・6項）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27"
+              ]
+            },
+            {
+              "cells": [
+                "EU向けカスタマーサポートに、他社のチャットボットをそのまま入れる",
+                "第4条・第50条",
+                "カスタマーサポートは附属書IIIに挙がった用途ではない。AIとの対話の告知（1項）は提供者の義務だが、自社で開発・改変して自社の名前で使い始めるなら自社が提供者になる（第50条ガイドライン段落11）。担当者のAIリテラシー（第4条）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "EU拠点の社員が、ChatGPT などの生成AIで文章作成や翻訳をする",
+                "第4条・第50条4項",
+                "AIリテラシーQ&Aは、こうした会社も第4条の対象で、ハルシネーションなどのリスクを知らせるべきとしている。公共の関心事を知らせる文章として公表するなら4項後段の開示（人の確認と編集責任があれば対象外）。社内ネットワークの文章は「公表」に当たらない例（第50条ガイドライン段落131）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+              ]
+            },
+            {
+              "cells": [
+                "生成AIを、採用の選考など附属書IIIの用途に使う",
+                "第25条1項(c)",
+                "高リスクでなかった汎用AIシステムの用途を変えて高リスクにすると、提供者とみなされうる。どこからが用途の変更かは条文だけでは決まらない（7章）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III"
+              ]
+            },
+            {
+              "cells": [
+                "日本の本社だけで使い、出力をEUで使わない",
+                "第2条1項",
+                "EUに拠点がなく（(b)）、出力もEUで使われない（(c)）なら、導入者としての対象にはならない。第50条ガイドラインは、第三国の導入者について、自らEUでの流通・利用を予見する場合は対象、予見できず管理外の経路で届いた場合は対象外としている（段落13）。この考え方が第50条以外の義務にも当てはまるかは確認できていないので、このページでは判断しない"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "example",
+          "title": "D社のドイツ子会社が採用支援AIを使う",
+          "items": [
+            "日本の部品メーカー「D社」（架空）のドイツ子会社が、EUの会社「E社」（架空）が2028年に新しく発売する採用支援AIを使って、応募書類を選別する予定を立てた。AIはE社の名前で提供され、子会社は手を加えずに使う。",
+            "応募書類の選別は附属書III 4(a) の用途に当たるので、子会社は高リスクAIの導入者になりうる。適用は2027-12-02からなので、使い始める時点で第26条がかかる。",
+            "子会社はまずE社に使用説明書（第13条）を求め、説明書どおりに使うための手順を決める（1項）。人事の担当者2名を監督者に指名し、AIの限界や結果の読み方の研修をする（2項、第4条）。",
+            "応募書類の書式など、子会社が管理している入力データが目的に合っているかを確かめる（4項）。自社の管理下にあるログを少なくとも6か月保存するが、応募者の個人データの保存期間はGDPRとの関係を法務と確かめる（6項）。",
+            "応募者に、選考に高リスクAIを使っていることを知らせ、説明を受ける権利についても知らせる（26条11項、前文93）。説明の求めに答える窓口を決めておく（第86条）。",
+            "本社が「D社採用AI」として自社の名前を付けて各国の子会社に配ったり、選考の基準を変える大きな改造をしたりすると、本社や子会社が提供者とみなされうる（第25条1項）。そうしない運用にする。",
+            "子会社は公的機関でも公共サービスの提供者でもなく、使う用途も附属書III 5(b)(c) ではないので、第27条のFRIAの対象者に当たらない。GDPRのDPIAが必要かどうかは別に確かめ、必要ならE社の情報（第13条）を使う（26条9項）。"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "具体例の当てはめの根拠: 第2条1項、第4条（改正後）、第13条、第25条1項、第26条1・2・4・6・9・11項、第27条1項、第86条、附属書III 4(a)、前文93、第113条（改正後）。E社のAIは高リスクの章の適用日（2027-12-02）より後に市場に出る設定なので、既存システムの経過措置（第111条2項）は考えていない。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_86",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111"
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "禁止されるAI 実務ガイド",
+              "href": "/eu-ai-act/prohibited/",
+              "note": "職場・教育機関での感情の推定（第5条1項(f)）など、使う側も禁止される使い方"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "penalties",
+      "number": 9,
+      "title": "罰則",
+      "blocks": [
+        {
+          "type": "table",
+          "id": "fines",
+          "columns": [
+            "違反の種類",
+            "罰金の上限（高い方）",
+            "根拠"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "禁止されるAI（第5条）の違反",
+                "3,500万ユーロ／全世界年間売上高の7%",
+                "第99条3項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+              ]
+            },
+            {
+              "cells": [
+                "導入者の義務（第26条）の違反",
+                "1,500万ユーロ／3%",
+                "第99条4項(e)"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+              ]
+            },
+            {
+              "cells": [
+                "透明性の義務（第50条）の違反",
+                "1,500万ユーロ／3%",
+                "第99条4項(g)"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+              ]
+            },
+            {
+              "cells": [
+                "提供者とみなされた場合の、提供者の義務（第16条）の違反",
+                "1,500万ユーロ／3%",
+                "第99条4項(a)、第25条1項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25"
+              ]
+            },
+            {
+              "cells": [
+                "第25条2項・4項の義務の違反（改正で追加）",
+                "1,500万ユーロ／3%",
+                "第99条4項(da)"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "ノーティファイドボディや所管当局の求めに対する、不正確・不完全・誤解を招く情報の提供",
+                "750万ユーロ／1%",
+                "第99条5項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "中小企業（スタートアップを含む）は、金額と割合の「低い方」が上限です（第99条6項）。改正で、中堅企業（SMC）にも第99条4項・5項の罰金について同じ扱いが入りました（第99条6a項）。罰金の額は、違反の性質・重大さ・期間などを考えて決めます（第99条7項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "第4条（AIリテラシー）、第27条（FRIA）、第86条（説明）は、第99条4項の罰金の列挙には入っていません。罰則や他の執行措置のルールは各加盟国が定め、事業者による規則の違反全般に適用されます（改正後の第99条1項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "罰則と執行（本体の10章）",
+              "href": "/eu-ai-act/#penalties",
+              "note": "監督する当局と AI Office の役割"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "number": 10,
+      "title": "よくある質問",
+      "blocks": [
+        {
+          "type": "faq",
+          "items": [
+            {
+              "q": "他社のAIを契約して使うだけでも、AI法の義務はありますか？",
+              "a": "あります。AIリテラシー（第4条）はすべてのAIシステムの導入者にかかります。使い方によって、禁止（第5条）、透明性（第50条3項・4項）、高リスクAIの導入者の義務（第26条）もかかります。EUの外の会社は、EUに拠点がある場合か、AIの出力がEUで使われる場合が対象です（第2条1項(b)(c)）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_4",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+              ]
+            },
+            {
+              "q": "AIリテラシーの研修は必須ですか？修了証は要りますか？",
+              "a": "欧州委員会のQ&Aは、決まった研修や形式はなく、相手の知識や使う状況に合わせて考えるとしています。ただし、説明書を読ませるだけでは多くの場合足りないとしています。修了証は要らず、研修などの取り組みを社内で記録しておけばよいとしています。",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+              ]
+            },
+            {
+              "q": "高リスクAIの導入者の義務は、いつから守る必要がありますか？",
+              "a": "改正後の日程で、附属書IIIの用途型は2027年12月2日、附属書Iの製品組み込み型は2028年8月2日からです（第113条）。その日より前に市場に出た・使用開始された高リスクAIは、その後に設計の大きな変更がなければ対象外ですが、公的機関が使う予定のものは2030年8月2日までに対応します（第111条2項）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111"
+              ]
+            },
+            {
+              "q": "ログは提供者のクラウドに残っています。自社でも6か月保存する必要がありますか？",
+              "a": "第26条6項の保存義務は、ログが「自分の管理下にある範囲で」かかります。提供者も、自分の管理下にあるログを少なくとも6か月保存する義務を負います（第19条1項）。どちらの管理下にあるかは契約やシステムの作りによるので、事前に提供者と確かめておくことが考えられます。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_19"
+              ]
+            },
+            {
+              "q": "民間企業もFRIA（基本的権利影響評価）をしなければなりませんか？",
+              "a": "民間企業では、公共サービスを提供する場合と、附属書III 5(b)（信用評価）・5(c)（生命・医療保険）の高リスクAIを使う場合が対象です（第27条1項）。前文96は、公共サービスの例として教育・医療・社会サービス・住宅・司法を挙げています。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_96"
+              ]
+            },
+            {
+              "q": "GDPRのDPIAをしていれば、FRIAは不要ですか？",
+              "a": "不要にはなりません。改正後の第27条4項は、DPIAですでに満たしている部分について、FRIAの中でDPIAを参照する、または取り込むことができるとしています。高リスクAIの導入者は、DPIAをするときに提供者の情報（第13条）を使います（第26条9項）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26"
+              ]
+            },
+            {
+              "q": "自社向けに少し設定を変えて使うと、提供者になりますか？",
+              "a": "高リスクAIなら、自社の名前・商標を付ける、大幅な変更（最初の適合性評価で予定されていない変更で、要件への適合に影響するか目的を変えるもの）を加える、用途を変えて高リスクにする、のいずれかで提供者とみなされます（第25条1項、第3条23号）。どの設定変更が「大幅な変更」に当たるかは事実関係によります。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "label": "規則 (EU) 2024/1689（EU AI法）英語本文（EUR-Lex）",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689",
+      "note": "第2条・第3条・第4条（改正前）・第5条・第6条・第13条・第19条・第25〜27条・第49条・第50条・第85条・第86条・第96条・第99条・第111条・第113条、附属書III、前文91〜93・96・171"
+    },
+    {
+      "label": "規則 (EU) 2026/1744（Digital Omnibus on AI）英語本文（EUR-Lex）",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744",
+      "note": "第4条の置き換え、第4a条の新設、第25条2項・4項、第27条4項・5項、第96条1項、第99条、第111条、第113条の改正、前文8"
+    },
+    {
+      "label": "欧州委員会: AIリテラシー Q&A",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
+      "note": "2026-07-27 更新版を確認"
+    },
+    {
+      "label": "欧州委員会: AIリテラシーの実例集（living repository）",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/living-repository-foster-learning-and-exchange-ai-literacy",
+      "note": "2026-08-10 更新版を確認。まねても第4条への適合は推定されない"
+    },
+    {
+      "label": "欧州委員会: 第50条の透明性の義務に関するガイドライン（公表ページ）",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+      "note": "2026-07-20 公表、法的拘束力はない。本文中の「段落」はこの文書の段落番号"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-10-11",
+      "note": "初版。条文（規則 (EU) 2024/1689 と改正規則 (EU) 2026/1744）と、欧州委員会のAIリテラシー Q&A・実例集のページ・第50条ガイドラインで確認した範囲で作成。自分で作った具体例は1つ（架空と明示）"
+    }
+  ]
+}

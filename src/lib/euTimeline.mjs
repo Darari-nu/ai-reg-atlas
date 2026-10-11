@@ -68,3 +68,18 @@ export function resolveTimeline(milestones, deadlines) {
   }
   return cards;
 }
+
+/** 今日（YYYY-MM-DD）以降で最初のカードの位置。当日のカードも「直近」に数える。無ければ -1 */
+export function findNextIndex(cards, today) {
+  return cards.findIndex((c) => c.date >= today);
+}
+
+/** 図4の代替テキスト。日付は解決結果と旧期限の定数から組み立てる */
+export function timelineAlt(cards) {
+  const items = cards.flatMap((c) => c.items);
+  const d3 = items.find((i) => i.ref.d === 'eu-annex3-highrisk').date;
+  const d1 = items.find((i) => i.ref.d === 'eu-annex1-highrisk').date;
+  const first = cards[0].date.slice(0, 4);
+  const last = cards[cards.length - 1].date.slice(0, 4);
+  return `${first}年から${last}年までの適用日を日付順に並べた時間軸。改正により、附属書IIIの高リスク義務は${OLD_ANNEX3_DATE}から${d3}へ、附属書Iの高リスク義務は${OLD_ANNEX1_DATE}から${d1}へ延期されました。今日の日付の位置も示します。`;
+}

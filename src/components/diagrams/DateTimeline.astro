@@ -4,15 +4,14 @@
 import DiagramFrame from './DiagramFrame.astro';
 import { getGuide, getCuratedDeadlines } from '../../lib/data';
 import { todayJst } from '../../lib/upcomingDeadlines.mjs';
-import { resolveTimeline } from '../../lib/euTimeline.mjs';
+import { resolveTimeline, findNextIndex, timelineAlt } from '../../lib/euTimeline.mjs';
 
 const g = getGuide('eu-ai-act');
 const cards = resolveTimeline(g.milestones, getCuratedDeadlines());
 const today = todayJst();
-const nextIdx = cards.findIndex((c) => c.date > today);
+const nextIdx = findNextIndex(cards, today);
 const BASE = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689';
-const alt =
-  '2024年から2030年までの適用日を日付順に並べた時間軸。改正により、附属書IIIの高リスク義務は2026-08-02から2027-12-02へ、附属書Iの高リスク義務は2027-08-02から2028-08-02へ延期されました。今日の日付の位置も示します。';
+const alt = timelineAlt(cards);
 ---
 
 <DiagramFrame
@@ -88,7 +87,7 @@ const alt =
     var next = null;
     for (var i = 0; i < evs.length; i++) {
       evs[i].classList.remove('dg-ev-next');
-      if (!next && evs[i].getAttribute('data-date') > today) next = evs[i];
+      if (!next && evs[i].getAttribute('data-date') >= today) next = evs[i];
     }
     if (next) { list.insertBefore(marker, next); next.classList.add('dg-ev-next'); } else { list.appendChild(marker); }
     var t = marker.querySelector('[data-today-time]');

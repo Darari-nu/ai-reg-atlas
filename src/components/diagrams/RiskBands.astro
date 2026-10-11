@@ -5,7 +5,7 @@ import DiagramFrame from './DiagramFrame.astro';
 
 const BASE = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689';
 const bands = [
-  { key: 'prohibited', name: '禁止', eg: ['社会的スコアリング', '職場・教育機関での感情の推定（医療・安全上の理由を除く）'], doing: '市場に出すことも使うことも禁止', basis: '第5条' },
+  { key: 'prohibited', name: '禁止', eg: ['一定の社会的スコアリング', '職場・教育機関での感情の推定（医療・安全上の理由を除く）'], doing: '市場に出すことも使うことも禁止', basis: '第5条' },
   { key: 'high', name: '高リスク', eg: ['採用候補者の評価', '第三者の適合性評価が必要な医療機器のAI'], doing: '要件を満たし、適合性評価を受ける', basis: '第6条、第9〜15条、第43条' },
   { key: 'transparency', name: '透明性義務', eg: ['人と直接やりとりするAI', 'ディープフェイクの画像・音声・映像'], doing: 'AIだと分かるように伝える・表示する', basis: '第50条' },
   { key: 'minimal', name: '最小リスク', eg: ['上の3つに当たらないAI'], doing: 'この法律による追加のルールはない（AIリテラシーの措置、第4条を除く）', basis: '' },

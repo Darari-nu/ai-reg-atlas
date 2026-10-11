@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { describe, it } from 'node:test';
-import { OLD_ANNEX1_DATE, OLD_ANNEX3_DATE, resolveTimeline } from '../src/lib/euTimeline.mjs';
+import { OLD_ANNEX1_DATE, OLD_ANNEX3_DATE, findNextIndex, resolveTimeline, timelineAlt } from '../src/lib/euTimeline.mjs';
 
 const guide = JSON.parse(fs.readFileSync('data/guides/eu-ai-act.json', 'utf8'));
 const deadlines = JSON.parse(fs.readFileSync('data/deadlines.json', 'utf8'));
@@ -30,6 +30,14 @@ describe('図4 日程の時間軸（src/lib/euTimeline.mjs）', () => {
     const items = cards.flatMap((c) => c.items);
     assert.equal(items.find((i) => i.ref.d === 'eu-annex3-highrisk').date, after3);
     assert.equal(items.find((i) => i.ref.d === 'eu-annex1-highrisk').date, after1);
+  });
+
+  it('当日のカードも「直近」に数え、代替テキストは解決結果から組み立てる', () => {
+    assert.equal(cards[findNextIndex(cards, '2026-12-02')].date, '2026-12-02');
+    assert.equal(cards[findNextIndex(cards, '2026-10-11')].date, '2026-12-02');
+    assert.equal(findNextIndex(cards, '2031-01-01'), -1);
+    const alt = timelineAlt(cards);
+    for (const d of [OLD_ANNEX3_DATE, OLD_ANNEX1_DATE, '2027-12-02', '2028-08-02']) assert.ok(alt.includes(d), d);
   });
 
   it('ガイドや deadlines.json から日付が消えたら、黙って進まずに落ちる', () => {

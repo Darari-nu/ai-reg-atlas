@@ -6,9 +6,9 @@ const ART = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:3202
 
 type Card = { act: string; role: string; basis: string; go: string; href: string; sup?: boolean };
 const cards: Card[] = [
-  { act: 'AIを開発する（開発を委託する）。自社の名前で市場に出す、または使い始める', role: '提供者', basis: '第3条3号', go: '提供者の義務を読む', href: '#high-risk' },
+  { act: 'AIを開発する（開発を委託する）。自社の名前で市場に出す、または使い始める', role: '提供者', basis: '第3条3号', go: '高リスクの義務を読む（提供者）', href: '#high-risk' },
   { act: '幅広い用途に使えるAIモデルを、自社の名前で提供する', role: '汎用AIモデルの提供者', basis: '第3条3号・63号', go: '汎用AIモデルの章を読む', href: '#gpai', sup: true },
-  { act: '仕事でAIを使う', role: '導入者', basis: '第3条4号', go: '導入者の義務を読む', href: '#high-risk' },
+  { act: '仕事でAIを使う', role: '導入者', basis: '第3条4号', go: '高リスクの義務を読む（導入者）', href: '#high-risk' },
   { act: 'EU域内から、EUの外の会社の名前が付いたAIをEU市場に出す', role: '輸入者', basis: '第3条6号', go: '輸入者の説明を読む（立場の表）', href: '#roles' },
   { act: '提供者・輸入者以外として、AIをEU市場で流通させる', role: '販売者', basis: '第3条7号', go: '販売者の説明を読む（立場の表）', href: '#roles' },
 ];

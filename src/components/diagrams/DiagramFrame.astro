@@ -142,7 +142,7 @@ const { id, n, title, lead, alt } = Astro.props;
   .dg-res-name { font-size: 18px; font-weight: 700; line-height: 1.4; }
   .dg-res-sub { font-size: 14px; color: var(--dg-sub); }
   .dg-link-down {
-    display: flex; align-items: center; gap: 8px; padding: 6px 0 6px 14px; font-size: 14px; color: var(--dg-sub);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; padding: 6px 0 6px 14px; font-size: 14px; color: var(--dg-sub);
     border-left: 2px solid var(--dg-line); margin-left: 13px; min-height: 40px;
   }
   .dg-link-down b { color: var(--dg-fg); font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 13px; }
@@ -155,7 +155,7 @@ const { id, n, title, lead, alt } = Astro.props;
   .dg-cond-em { font-size: 16px; font-weight: 700; text-decoration: underline; text-decoration-color: var(--star-gold); text-decoration-thickness: 3px; text-underline-offset: 3px; }
   .dg-cond ol { margin-top: 6px; display: grid; gap: 4px; font-size: 14px; }
   .dg-cond ol li { display: flex; gap: 8px; }
-  .dg-cond ol li span:first-child { font-family: 'IBM Plex Mono', monospace; color: var(--dg-sub); }
+  .dg-cond ol li span:first-child { flex: none; white-space: nowrap; font-family: 'IBM Plex Mono', monospace; color: var(--dg-sub); }
   .dg-cond p { font-size: 14px; margin-top: 2px; }
   .dg-ex-out { margin-top: 12px; display: grid; gap: 12px; }
   @media (min-width: 768px) { .dg-ex-out { grid-template-columns: 1fr 1fr; } }

@@ -1,0 +1,62 @@
+{
+  "id": "2026-10-10-in-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-11T00:20:08Z",
+  "record_id": "2026-10-10-in-001",
+  "source_kind": "media",
+  "published_at": "2026-10-11T00:20:08Z",
+  "headline": "インドSEBI委員長、資本市場のAI利用指針を近く公表と表明",
+  "lead": "インド証券取引委員会（SEBI）のパンデイ委員長は、資本市場での人工知能（AI）と機械学習の責任ある利用に関する指針を近く出すと述べました。指針は段階的なアプローチで、説明責任、データ管理、キルスイッチ、人間による監視を柱とする方針です。現時点では発言の段階で、指針の本文や施行日は示されていません。",
+  "facts": [
+    {
+      "text": "SEBIのトゥヒン・カンタ・パンデイ委員長は、資本市場におけるAIと機械学習の責任ある利用に関する指針を近く（shortly）発行すると、10月10日（土）に述べました。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/sebi-to-issue-ai-machine-learning-guidelines-shortly-eyes-expiry-day-settlement-rules-within-a-week-chairman/articleshow/134857770.cms"
+    },
+    {
+      "text": "この発言は、ボンベイ証券取引所ブローカーズ・フォーラムが主催した第2回Capital Market Confluence 2026での講演で行われました。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/sebi-to-issue-ai-machine-learning-guidelines-shortly-eyes-expiry-day-settlement-rules-within-a-week-chairman/articleshow/134857770.cms"
+    },
+    {
+      "text": "AIの枠組みは段階的（tiered）なアプローチをとり、明確な説明責任、データ管理、キルスイッチ、人間による監視を含むと説明されました。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/sebi-to-issue-ai-machine-learning-guidelines-shortly-eyes-expiry-day-settlement-rules-within-a-week-chairman/articleshow/134857770.cms"
+    },
+    {
+      "text": "この枠組みは、機動的なガバナンスを支えるため、証券監督者国際機構（IOSCO）のAI向け監督ツールキットとも整合させるとされています。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/sebi-to-issue-ai-machine-learning-guidelines-shortly-eyes-expiry-day-settlement-rules-within-a-week-chairman/articleshow/134857770.cms"
+    },
+    {
+      "text": "パンデイ委員長は、規制対象の事業者がAIの結果、データ品質、モデルのガバナンス、サイバー耐性について責任を負い続けると述べ、人間による監視の重要性を強調しました。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/sebi-to-issue-ai-machine-learning-guidelines-shortly-eyes-expiry-day-settlement-rules-within-a-week-chairman/articleshow/134857770.cms"
+    }
+  ],
+  "who_is_affected": "SEBIの規制を受ける事業者（証券会社、取引所、投資信託の運営者など）が中心になる可能性があります。ただし、記事は「規制対象の事業者（regulated entities）」としか述べておらず、具体的な対象範囲は不明です。AIを使って取引、運用、監督の業務を行う事業者や、そのITベンダーにも影響が及ぶ可能性があります。",
+  "japan_impact": "インドの資本市場に参加する日本の金融機関や、インドの規制対象事業者にAIシステムやモデルを提供する日本企業は、今後の指針の内容を確認する必要があるかもしれません。まず、自社のAIに停止手段（キルスイッチ）や人間による監視の仕組みがあるかを棚卸ししておくと、指針が出た後の対応を判断しやすくなります。インド拠点や取引先のAI利用状況も、把握しておく価値があります。なお、これは情報整理であり、法的助言ではありません。",
+  "next_steps": "資料によれば、SEBIは指針を「近く」発行するとしていますが、具体的な日付は示されていません。指針が出た際に、対象事業者、段階の分け方、義務の内容、適用開始時期を確認することが必要です。指針の形式（通達か協議文書か）や、意見募集があるかどうかは資料からは分からないため、SEBIの公式発表を注視するのが妥当と推測されます（推測）。",
+  "unknowns": [
+    "指針の正式な公表日と形式（通達、協議文書など）",
+    "適用対象となる事業者やAIの用途の範囲",
+    "段階的アプローチの具体的な区分と、各段階での要件",
+    "施行日や経過措置の有無",
+    "違反時の罰則や監督上の扱い",
+    "外国企業やインド国外の拠点に及ぶかどうか"
+  ],
+  "glossary": [
+    {
+      "term": "SEBI",
+      "explanation": "インド証券取引委員会（Securities and Exchange Board of India）の略で、インドの証券市場の規制当局です。"
+    },
+    {
+      "term": "キルスイッチ",
+      "explanation": "AIシステムに問題が起きたときに、動作を緊急停止させる仕組みのことです。"
+    },
+    {
+      "term": "IOSCO",
+      "explanation": "証券監督者国際機構（International Organization of Securities Commissions）の略で、各国の証券規制当局が参加する国際組織です。"
+    },
+    {
+      "term": "段階的アプローチ（tiered approach）",
+      "explanation": "リスクや用途に応じて、求める要件の強さを段階に分ける規制の考え方です。具体的な区分は資料に記載がありません。"
+    }
+  ]
+}

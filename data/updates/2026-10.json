@@ -298,5 +298,35 @@
       "https://www.medianama.com/2026/10/223-meity-consultation-paper-ai-regulation/"
     ],
     "country_anchor": "/country/in/#updates"
+  },
+  {
+    "id": "2026-10-10-in-001",
+    "date": "2026-10-10",
+    "country": "in",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "インド証券取引委員会（SEBI）、資本市場向けAI利用指針を公表へ",
+    "summary": {
+      "what": "資本市場向けAI・機械学習の責任ある利用指針を近く発行すると表明",
+      "who": "インド証券取引委員会（SEBI）",
+      "when_impact": "指針は近日中に公表される見込み"
+    },
+    "detail": "インド証券取引委員会（SEBI）のトゥヒン・カンタ・パンデイ委員長は、資本市場におけるAIおよび機械学習の責任ある利用に関する指針を近く公表すると明らかにした。新枠組みは段階的アプローチをとり、明確な説明責任、データ統制、キルスイッチ、人間の監視（Human oversight）を盛り込む方針で、証券監督者国際機構（IOSCO）のAI監督ツールキットとも整合させるとしている。",
+    "so_what": "インド資本市場に関与する金融事業者は、キルスイッチや人間の監督を含むAIモデルガバナンス要件への対応準備が必要となる見込み。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "SEBI to issue AI and machine learning guidelines for capital markets",
+    "publication_date": "2026-10-10",
+    "discovered_at": "2026-10-11",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://economictimes.indiatimes.com/tech/artificial-intelligence/sebi-to-issue-ai-machine-learning-guidelines-shortly-eyes-expiry-day-settlement-rules-within-a-week-chairman/articleshow/134857770.cms"
+    ],
+    "country_anchor": "/country/in/#updates"
   }
 ]

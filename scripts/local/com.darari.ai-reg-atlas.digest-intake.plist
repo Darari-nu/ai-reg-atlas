@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- 雛形。これだけでは動かない: ~/Library/LaunchAgents/ に置いて launchctl load するまで有効にならない（README「ダイジェスト原稿」参照）。
+     毎週月曜 08:00 と 12:00 の2回（GitHub Actions の生成は月曜 07:30 JST。遅れた週は 12:00 の回で拾う。2回目以降はコピー済みなので何もしない）。 -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.darari.ai-reg-atlas.digest-intake</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Volumes/DevSSD/Vibe_Website/260612_ai-reg-atlas/scripts/local/digest-intake.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Weekday</key>
+      <integer>1</integer>
+      <key>Hour</key>
+      <integer>8</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key>
+      <integer>1</integer>
+      <key>Hour</key>
+      <integer>12</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/Users/watanabehidetaka/Library/Logs/ai-reg-atlas-digest-intake.launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/watanabehidetaka/Library/Logs/ai-reg-atlas-digest-intake.launchd.log</string>
+</dict>
+</plist>

@@ -4,6 +4,7 @@ import path from 'node:path';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { isDryRun } from './lib/pipeline.mjs';
+import { checkDigestFile } from './lib/digest.mjs';
 
 const ROOT = process.cwd();
 const DATA_ROOT = isDryRun() ? '/tmp/dry/data' : path.join(ROOT, 'data');
@@ -79,6 +80,12 @@ for (const f of listDataFiles('explainers').filter((f) => f.endsWith('.json'))) 
     if (!countryCodes.has(d.country)) extra.push(`${d.id}: 未知の国コード ${d.country}`);
   }
   check('deadlines.json (id・国コード)', extra.length === 0, { errors: extra.map((message) => ({ instancePath: '', message })) });
+}
+
+// digests（週1ダイジェスト原稿。kiji-intake の形か。無ければ0件）
+for (const f of listDataFiles('digests').filter((f) => f.endsWith('.md'))) {
+  const r = checkDigestFile(fs.readFileSync(resolveData(`digests/${f}`), 'utf8'));
+  check(`digests/${f}`, r.ok, { errors: r.reasons.map((message) => ({ instancePath: '', message })) });
 }
 
 // meta

@@ -393,6 +393,7 @@ export type GuideBlock =
   | { type: 'faq'; items: { q: string; a: string; sources: string[] }[] }
   | { type: 'links'; heading?: string; items: { label: string; href: string; note?: string }[] }
   | { type: 'example'; title?: string; items: string[] }
+  | { type: 'diagram'; id: 'roles' | 'high-risk-check' | 'risk-bands' | 'timeline' | 'provider-flow' }
   | { type: 'flow'; steps: { label: string; text: string; basis: string; sources: string[] }[] };
 
 export type Guide = {

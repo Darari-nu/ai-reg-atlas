@@ -585,6 +585,28 @@
               }
             }
           }
+        },
+        {
+          "description": "コードで描く図解（src/components/diagrams/）。id は図の種類。図の中の文言は各コンポーネントが持つ",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "id"
+          ],
+          "properties": {
+            "type": {
+              "const": "diagram"
+            },
+            "id": {
+              "enum": [
+                "roles",
+                "high-risk-check",
+                "risk-bands",
+                "timeline",
+                "provider-flow"
+              ]
+            }
+          }
         }
       ]
     }

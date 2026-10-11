@@ -1,0 +1,46 @@
+---
+// 図1: あなたはどの立場？（会社の行為から、読む章を選ぶ案内）。文言は本体の「誰が対象か」表（第3条）と同じ範囲。
+import DiagramFrame from './DiagramFrame.astro';
+
+const ART = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3';
+
+type Card = { act: string; role: string; basis: string; go: string; href: string; sup?: boolean };
+const cards: Card[] = [
+  { act: 'AIを開発する（開発を委託する）。自社の名前で市場に出す、または使い始める', role: '提供者', basis: '第3条3号', go: '提供者の義務を読む', href: '#high-risk' },
+  { act: '幅広い用途に使えるAIモデルを、自社の名前で提供する', role: '汎用AIモデルの提供者', basis: '第3条3号・63号', go: '汎用AIモデルの章を読む', href: '#gpai', sup: true },
+  { act: '仕事でAIを使う', role: '導入者', basis: '第3条4号', go: '導入者の義務を読む', href: '#high-risk' },
+  { act: 'EU域内から、EUの外の会社の名前が付いたAIをEU市場に出す', role: '輸入者', basis: '第3条6号', go: '輸入者の説明を読む（立場の表）', href: '#roles' },
+  { act: '提供者・輸入者以外として、AIをEU市場で流通させる', role: '販売者', basis: '第3条7号', go: '販売者の説明を読む（立場の表）', href: '#roles' },
+];
+const alt = '会社の行為から、提供者、汎用AIモデルの提供者、導入者、輸入者、販売者に対応する解説の章を選ぶ案内。複数の立場に当たる場合があります。EU域内の代理人に当たるかどうかは、立場の表の説明へ。';
+---
+
+<DiagramFrame
+  id="roles"
+  n={1}
+  title="あなたの会社は、どの立場？"
+  lead="自社が何をしているかから、読む章を選べます。立場はひとつとは限りません。"
+  alt={alt}
+>
+  <p class="dg-roles-q">あなたの会社は何をする？</p>
+  <ul class="dg-roles-grid">
+    {cards.map((c) => (
+      <li class={`dg-card dg-high ${c.sup ? 'dg-role-sup' : ''}`}>
+        <p class="dg-role-act">{c.act}</p>
+        <p class="dg-role-name">
+          {c.role}<span class="dg-basis">{c.basis}</span>
+        </p>
+        <a class="dg-link dg-role-go" href={c.href}>{c.go} →</a>
+      </li>
+    ))}
+    <li class="dg-role-note">
+      <span>EU域内の代理人に当たる？（第3条5号）</span>
+      <a class="dg-link" href="#roles">EU域内代理人の説明へ（立場の表） →</a>
+    </li>
+  </ul>
+  <Fragment slot="notes">
+    <p><strong>複数の立場に当たることがあります。</strong>たとえば、自社の名前で出す提供者であり、自社でも使う導入者でもある、というケースです。</p>
+    <p class="dg-basis">汎用AIモデルの定義は第3条63号。立場（提供者）の根拠は第3条3号です。輸入者はEU域内にいる者に限られます。</p>
+    <p class="dg-src">出典: <a href={ART} target="_blank" rel="noopener">条文 第3条（定義）</a></p>
+  </Fragment>
+</DiagramFrame>

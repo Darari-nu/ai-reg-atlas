@@ -36,6 +36,10 @@
       "title": "全体の流れ",
       "blocks": [
         {
+          "type": "diagram",
+          "id": "provider-flow"
+        },
+        {
           "type": "flow",
           "steps": [
             {

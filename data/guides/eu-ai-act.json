@@ -163,6 +163,10 @@
           ]
         },
         {
+          "type": "diagram",
+          "id": "roles"
+        },
+        {
           "type": "table",
           "id": "roles",
           "heading": "誰が対象か（立場）",
@@ -280,6 +284,10 @@
       "number": 2,
       "title": "日程表",
       "blocks": [
+        {
+          "type": "diagram",
+          "id": "timeline"
+        },
         {
           "type": "schedule",
           "country": "eu"
@@ -469,48 +477,8 @@
       "title": "4つのリスク区分",
       "blocks": [
         {
-          "type": "risk_tiers",
-          "tiers": [
-            {
-              "key": "prohibited",
-              "label": "禁止（許容できないリスク）",
-              "basis": "第5条",
-              "text": "人の安全・暮らし・権利への明らかな脅威とされる使い方。市場に出すことも使うことも禁止。",
-              "sources": [
-                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_5",
-                "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-              ]
-            },
-            {
-              "key": "high",
-              "label": "高リスク",
-              "basis": "第6条・附属書I・附属書III",
-              "text": "健康・安全・基本的権利に重大なリスクを生みうる用途。リスク管理・データ管理・技術文書・人による監督などの義務。",
-              "sources": [
-                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_6",
-                "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-              ]
-            },
-            {
-              "key": "transparency",
-              "label": "透明性義務（限定リスク）",
-              "basis": "第50条",
-              "text": "AIと話していること、AIが作ったコンテンツであることを分かるようにする義務。",
-              "sources": [
-                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
-                "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-              ]
-            },
-            {
-              "key": "minimal",
-              "label": "最小リスク",
-              "basis": "—",
-              "text": "（AIリテラシーの措置を除き）この法律による追加のルールはない（上の3つに当たらないAI）。",
-              "sources": [
-                "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-              ]
-            }
-          ]
+          "type": "diagram",
+          "id": "risk-bands"
         },
         {
           "type": "note",
@@ -653,6 +621,10 @@
       "number": 6,
       "title": "高リスクAI",
       "blocks": [
+        {
+          "type": "diagram",
+          "id": "high-risk-check"
+        },
         {
           "type": "p",
           "heading": "2つの系統",

@@ -1,0 +1,252 @@
+---
+// 図解の共通枠: 図番号・タイトル・一文の要点・代替テキスト（スクリーンリーダー用）・注記。
+// 図の見た目（CSS）はここに一括で持つ。色は tokens.css の変数だけ。ガイドのページは今は常にライトだが、
+// `.dark` または `[data-theme="dark"]` が祖先に付けばダーク配色になる。
+interface Props {
+  id: string;
+  n: number;
+  title: string;
+  lead: string;
+  alt: string;
+}
+const { id, n, title, lead, alt } = Astro.props;
+---
+
+<section id={`diagram-${id}`} class="dg" aria-labelledby={`dg-${id}-t`} aria-describedby={`dg-${id}-d`}>
+  <p class="dg-eyebrow"><span aria-hidden="true" class="dg-eyebrow-mark"></span>図{n}</p>
+  <h3 id={`dg-${id}-t`} class="dg-title">{title}</h3>
+  <p class="dg-lead">{lead}</p>
+  <p id={`dg-${id}-d`} class="dg-sr">{alt}</p>
+  <div class="dg-body">
+    <slot />
+  </div>
+  <div class="dg-notes">
+    <slot name="notes" />
+  </div>
+</section>
+
+<style is:global>
+  .dg {
+    --dg-fg: var(--ink);
+    --dg-bg: var(--paper);
+    --dg-card: #fff;
+    --dg-line: color-mix(in srgb, var(--ink) 30%, transparent);
+    --dg-line-soft: color-mix(in srgb, var(--ink) 14%, transparent);
+    --dg-sub: color-mix(in srgb, var(--ink) 74%, transparent);
+    --dg-gold-soft: color-mix(in srgb, var(--star-gold) 22%, transparent);
+    --dg-link: var(--ink);
+    position: relative;
+    margin: 0;
+    padding: 24px 16px 20px;
+    color: var(--dg-fg);
+    background: var(--dg-bg);
+    border: 1px solid var(--dg-line);
+    border-top: 3px solid var(--star-gold);
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  :root.dark .dg,
+  :root[data-theme='dark'] .dg,
+  .dark .dg {
+    --dg-fg: var(--paper);
+    --dg-bg: var(--navy-deep);
+    --dg-card: var(--navy-soft);
+    --dg-line: rgba(250, 250, 247, 0.34);
+    --dg-line-soft: rgba(250, 250, 247, 0.16);
+    --dg-sub: rgba(250, 250, 247, 0.78);
+    --dg-gold-soft: color-mix(in srgb, var(--star-gold) 20%, transparent);
+    --dg-link: var(--paper);
+  }
+  @media (min-width: 768px) {
+    .dg { padding: 28px 28px 24px; }
+  }
+  .dg *, .dg *::before, .dg *::after { box-sizing: border-box; }
+  .dg ul, .dg ol { list-style: none; margin: 0; padding: 0; }
+  .dg p { margin: 0; }
+  .dg-sr {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  .dg-eyebrow {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em;
+    color: var(--dg-sub);
+  }
+  .dg-eyebrow-mark { width: 16px; height: 3px; background: var(--star-gold); }
+  .dg-title {
+    margin: 4px 0 0; font-family: 'Shippori Mincho', serif; font-weight: 600;
+    font-size: 20px; line-height: 1.4;
+  }
+  @media (min-width: 768px) { .dg-title { font-size: 24px; } }
+  .dg-lead { margin-top: 6px; font-size: 15px; color: var(--dg-sub); }
+  .dg-body { margin-top: 20px; }
+  .dg-notes { margin-top: 16px; display: grid; gap: 6px; font-size: 14px; line-height: 1.6; color: var(--dg-sub); }
+  .dg-notes:empty { display: none; }
+  .dg-notes a, .dg-link {
+    color: var(--dg-link); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .dg-notes a:hover, .dg-link:hover { text-decoration-thickness: 2px; }
+  .dg a:focus-visible { outline: 3px solid var(--star-gold); outline-offset: 2px; border-radius: 2px; }
+  .dg-src { margin-top: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; }
+  .dg-src a { margin-right: 12px; }
+
+  /* 共通パーツ */
+  .dg-card {
+    position: relative; background: var(--dg-card); border: 1px solid var(--dg-line-soft);
+    border-radius: 8px; padding: 16px 16px 16px 20px;
+  }
+  .dg-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    border-radius: 8px 0 0 8px; background: var(--dg-bar, var(--dg-line));
+  }
+  .dg-basis { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--dg-sub); }
+  .dg-chip {
+    display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 13px; font-weight: 500; line-height: 1.5;
+    border: 1px solid var(--dg-chip, var(--dg-line)); background: color-mix(in srgb, var(--dg-chip, var(--dg-line)) 14%, transparent);
+    color: var(--dg-fg);
+  }
+  .dg-prohibited { --dg-bar: var(--diff-stricter); --dg-chip: var(--diff-stricter); }
+  .dg-high { --dg-bar: var(--star-gold); --dg-chip: var(--star-gold); }
+  .dg-transparency { --dg-bar: var(--diff-unique); --dg-chip: var(--diff-unique); }
+  .dg-minimal { --dg-bar: var(--diff-absent); --dg-chip: var(--diff-absent); }
+  .dg-ok { --dg-bar: var(--diff-looser); --dg-chip: var(--diff-looser); }
+
+  /* 図1 立場 */
+  .dg-roles-q { font-weight: 700; font-size: 18px; }
+  .dg-roles-grid { margin-top: 12px; display: grid; gap: 12px; grid-template-columns: 1fr; }
+  @media (min-width: 768px) { .dg-roles-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
+  .dg-role-act { font-size: 15px; color: var(--dg-sub); }
+  .dg-role-name { margin-top: 6px; font-size: 18px; font-weight: 700; line-height: 1.4; }
+  .dg-role-name .dg-basis { margin-left: 6px; font-weight: 400; }
+  .dg-role-go { margin-top: 6px; display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; }
+  .dg-role-sup { border-style: dashed; border-color: var(--dg-line); }
+  .dg-role-note { font-size: 14px; color: var(--dg-sub); display: flex; flex-direction: column; justify-content: center; border: 1px dashed var(--dg-line); border-radius: 6px; padding: 12px 16px; }
+  .dg-role-note a { display: inline-flex; min-height: 44px; align-items: center; }
+
+  /* 図2 高リスク判定 */
+  .dg-flow { display: grid; gap: 0; }
+  .dg-q { display: grid; gap: 12px; grid-template-columns: 1fr; }
+  @media (min-width: 768px) { .dg-q { grid-template-columns: minmax(0, 1fr) 15rem; align-items: stretch; } }
+  .dg-q-head { display: flex; gap: 12px; align-items: flex-start; }
+  .dg-q-num {
+    flex: none; width: 28px; height: 28px; border-radius: 4px; display: grid; place-items: center;
+    background: var(--star-gold); color: var(--navy-deep); font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 14px;
+  }
+  .dg-q-text { font-weight: 700; font-size: 16px; }
+  .dg-q-sub { font-size: 14px; color: var(--dg-sub); }
+  .dg-yes { display: flex; flex-direction: column; gap: 4px; }
+  .dg-yn { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; color: var(--dg-sub); }
+  .dg-yn b { color: var(--dg-fg); }
+  .dg-res-name { font-size: 18px; font-weight: 700; line-height: 1.4; }
+  .dg-res-sub { font-size: 14px; color: var(--dg-sub); }
+  .dg-link-down {
+    display: flex; align-items: center; gap: 8px; padding: 6px 0 6px 14px; font-size: 14px; color: var(--dg-sub);
+    border-left: 2px solid var(--dg-line); margin-left: 13px; min-height: 40px;
+  }
+  .dg-link-down b { color: var(--dg-fg); font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 13px; }
+  .dg-ex { border: 2px solid var(--diff-looser); border-radius: 8px; background: var(--dg-card); padding: 16px; }
+  .dg-ex-title { font-weight: 700; font-size: 18px; }
+  .dg-ex-conds { margin-top: 12px; display: grid; gap: 12px; }
+  @media (min-width: 768px) { .dg-ex-conds { grid-template-columns: 1.4fr 1fr 1fr; } }
+  .dg-cond { border: 1px solid var(--dg-line); border-radius: 6px; padding: 12px; background: var(--dg-bg); }
+  .dg-cond-h { font-size: 14px; font-weight: 700; color: var(--dg-sub); }
+  .dg-cond-em { font-size: 16px; font-weight: 700; text-decoration: underline; text-decoration-color: var(--star-gold); text-decoration-thickness: 3px; text-underline-offset: 3px; }
+  .dg-cond ol { margin-top: 6px; display: grid; gap: 4px; font-size: 14px; }
+  .dg-cond ol li { display: flex; gap: 8px; }
+  .dg-cond ol li span:first-child { font-family: 'IBM Plex Mono', monospace; color: var(--dg-sub); }
+  .dg-cond p { font-size: 14px; margin-top: 2px; }
+  .dg-ex-out { margin-top: 12px; display: grid; gap: 12px; }
+  @media (min-width: 768px) { .dg-ex-out { grid-template-columns: 1fr 1fr; } }
+
+  /* 図3 4区分 */
+  .dg-bands-head { display: none; }
+  @media (min-width: 768px) {
+    .dg-bands-head, .dg-band { display: grid; grid-template-columns: 11rem minmax(0, 1fr) minmax(0, 1.1fr); gap: 20px; }
+    .dg-bands-head { padding: 0 20px 6px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--dg-sub); }
+  }
+  .dg-bands { display: grid; gap: 12px; }
+  .dg-band { align-items: start; }
+  .dg-band-name { font-size: 18px; font-weight: 700; line-height: 1.4; }
+  .dg-band-eg { margin-top: 8px; font-size: 14px; color: var(--dg-sub); }
+  .dg-band-eg ul { display: grid; gap: 2px; }
+  .dg-band-eg li::before { content: '・'; }
+  .dg-band-do { font-weight: 700; margin-top: 8px; }
+  .dg-label { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--dg-sub); }
+  @media (min-width: 768px) { .dg-label { display: none; } .dg-band-eg, .dg-band-do { margin-top: 0; } }
+  .dg-band .dg-cell { min-width: 0; }
+
+  /* 図4 日程 */
+  .dg-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; color: var(--dg-sub); }
+  .dg-legend li { display: inline-flex; align-items: center; gap: 6px; }
+  .dg-swatch { width: 16px; height: 12px; border: 2px solid var(--sw, var(--dg-line)); border-radius: 3px; background: color-mix(in srgb, var(--sw, var(--dg-line)) 18%, transparent); }
+  .dg-tl { margin-top: 16px; position: relative; display: grid; gap: 12px; }
+  .dg-tl::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--dg-line); }
+  @media (min-width: 768px) { .dg-tl::before { left: calc(8rem + 14px); } }
+  .dg-ev { position: relative; padding-left: 28px; display: grid; gap: 6px; }
+  .dg-ev::before { content: ''; position: absolute; left: 0; top: 10px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--ev, var(--dg-sub)); background: var(--dg-bg); }
+  @media (min-width: 768px) {
+    .dg-ev { grid-template-columns: 8rem minmax(0, 1fr); padding-left: 0; column-gap: 28px; }
+    .dg-ev::before { left: calc(8rem + 8px); }
+  }
+  .dg-ev-date { font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; }
+  @media (min-width: 768px) { .dg-ev-date { text-align: right; padding-top: 8px; } }
+  .dg-ev-card { padding: 12px 16px 12px 20px; }
+  .dg-ev-text { font-weight: 700; }
+  .dg-ev-sub { font-size: 14px; color: var(--dg-sub); }
+  .dg-ev-base { --ev: var(--dg-sub); }
+  .dg-ev-unique { --ev: var(--diff-unique); --dg-bar: var(--diff-unique); --dg-chip: var(--diff-unique); }
+  .dg-ev-stricter { --ev: var(--diff-stricter); --dg-bar: var(--diff-stricter); --dg-chip: var(--diff-stricter); }
+  .dg-ev-looser { --ev: var(--diff-looser); --dg-bar: var(--diff-looser); --dg-chip: var(--diff-looser); }
+  .dg-ev-next .dg-ev-card { box-shadow: inset 0 0 0 2px var(--dg-fg); }
+  .dg-next-tag { display: none; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; font-weight: 700; }
+  .dg-ev-next .dg-next-tag { display: inline; }
+  .dg-cmp { margin-top: 8px; display: grid; gap: 8px; }
+  @media (min-width: 520px) { .dg-cmp { grid-template-columns: 1fr 1fr; } }
+  .dg-cmp > div { border-radius: 6px; padding: 8px 12px; font-size: 14px; }
+  .dg-cmp-old { border: 2px dashed var(--diff-absent); color: var(--dg-sub); }
+  .dg-cmp-new { border: 2px solid var(--diff-looser); background: color-mix(in srgb, var(--diff-looser) 12%, transparent); }
+  .dg-cmp-new .dg-cmp-d { font-size: 18px; font-weight: 700; }
+  .dg-cmp-d { font-family: 'IBM Plex Mono', monospace; }
+  .dg-old-chip { margin-top: 8px; border: 2px dashed var(--diff-absent); border-radius: 6px; padding: 6px 12px; font-size: 14px; color: var(--dg-sub); }
+  .dg-today { position: relative; padding-left: 28px; display: grid; gap: 4px; }
+  .dg-today::before { content: ''; position: absolute; left: 0; top: 8px; width: 16px; height: 16px; background: var(--star-gold); clip-path: polygon(0 0, 100% 50%, 0 100%); }
+  .dg-today-in { display: inline-flex; align-items: center; gap: 8px; background: var(--star-gold); color: var(--navy-deep); font-weight: 700; padding: 4px 12px; border-radius: 4px; font-size: 14px; justify-self: start; }
+  @media (min-width: 768px) {
+    .dg-today { grid-template-columns: 8rem minmax(0, 1fr); column-gap: 28px; padding-left: 0; }
+    .dg-today::before { left: calc(8rem + 8px); }
+    .dg-today-in { grid-column: 2; }
+  }
+
+  /* 図5 提供者の手続き */
+  .dg-proc { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .dg-proc { grid-template-columns: 1fr 1fr 1fr; gap: 28px; } }
+  .dg-col { position: relative; }
+  .dg-col-h { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 8px; padding-bottom: 8px; border-bottom: 2px solid var(--dg-line); font-weight: 700; font-size: 18px; }
+  .dg-col-h small { font-weight: 400; font-size: 14px; color: var(--dg-sub); }
+  .dg-col-gold .dg-col-h { border-bottom-color: var(--star-gold); border-bottom-width: 3px; }
+  .dg-steps { margin-top: 12px; display: grid; gap: 12px; }
+  .dg-step { display: flex; gap: 12px; padding: 12px 12px 12px 20px; align-items: flex-start; }
+  .dg-step-n { flex: none; width: 28px; height: 28px; border-radius: 4px; display: grid; place-items: center; background: var(--dg-bg); border: 1px solid var(--dg-line); font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; }
+  .dg-step-t { font-weight: 700; line-height: 1.5; }
+  .dg-step-s { font-size: 14px; color: var(--dg-sub); }
+  .dg-launch { --dg-bar: var(--star-gold); background: var(--dg-gold-soft); border-color: var(--star-gold); }
+  .dg-launch .dg-step-n { background: var(--star-gold); color: var(--navy-deep); border-color: var(--star-gold); }
+  .dg-after { --dg-bar: var(--diff-unique); }
+  .dg-after.dg-incident { --dg-bar: var(--diff-stricter); }
+  .dg-after .dg-tag { font-size: 13px; font-weight: 700; }
+  .dg-loop { margin-top: 12px; border: 1px dashed var(--dg-line); border-radius: 6px; padding: 8px 12px; font-size: 14px; color: var(--dg-sub); }
+  .dg-loop b { color: var(--dg-fg); }
+  @media (min-width: 900px) {
+    .dg-col:not(:last-child)::after {
+      content: ''; position: absolute; top: 14px; right: -20px; width: 12px; height: 12px;
+      border-top: 2px solid var(--dg-line); border-right: 2px solid var(--dg-line); transform: rotate(45deg);
+    }
+  }
+
+  @media print {
+    .dg { break-inside: avoid; border-top-width: 1px; }
+    .dg-card, .dg-ev { break-inside: avoid; }
+  }
+</style>

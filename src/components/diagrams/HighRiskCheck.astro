@@ -1,0 +1,125 @@
+---
+// 図2: これは高リスク？（判定の順番）。質問と結果を離さず、全分岐に「はい／いいえ」を文字で出す。
+// 文言は本体 6 章（第6条1項・2項・3項・4項）と 9 章（第50条）の範囲。
+import DiagramFrame from './DiagramFrame.astro';
+
+const A6 = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_6';
+const A5 = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_5';
+const A50 = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50';
+const alt =
+  '禁止、対象製品、附属書IIIの用途、例外条件の順に高リスク該当性を確認し、第50条の透明性義務も確認する判定の流れ。附属書IIIの用途に当たっても、例外の条件をすべて確認できれば高リスクには当たりません。';
+---
+
+<DiagramFrame
+  id="high-risk-check"
+  n={2}
+  title="これは高リスク？ 4つの質問で確かめる"
+  lead="上から順に答えます。「はい」の結果はその質問の下に、「いいえ」は次の質問へ進みます。"
+  alt={alt}
+>
+  <ol class="dg-flow">
+    <li>
+      <div class="dg-q">
+        <div class="dg-card">
+          <div class="dg-q-head"><span class="dg-q-num">1</span>
+            <div><p class="dg-q-text">禁止されるAIの使い方に当たる？</p><p class="dg-basis">第5条</p></div></div>
+        </div>
+        <div class="dg-card dg-prohibited dg-yes">
+          <p class="dg-yn"><b>はい</b> →</p>
+          <p class="dg-res-name">禁止</p>
+        </div>
+      </div>
+      <p class="dg-link-down"><b>いいえ</b><span aria-hidden="true">↓</span> 次の質問へ</p>
+    </li>
+    <li>
+      <div class="dg-q">
+        <div class="dg-card">
+          <div class="dg-q-head"><span class="dg-q-num">2</span>
+            <div><p class="dg-q-text">附属書Iの製品（または製品の安全部品）で、第三者の適合性評価が必要？</p><p class="dg-q-sub">AI自体が対象製品の場合も含みます。</p><p class="dg-basis">第6条1項</p></div></div>
+        </div>
+        <div class="dg-card dg-high dg-yes">
+          <p class="dg-yn"><b>はい</b> →</p>
+          <p class="dg-res-name">高リスク</p>
+          <p class="dg-res-sub">第50条の義務が重なる場合あり</p>
+        </div>
+      </div>
+      <p class="dg-link-down"><b>いいえ</b><span aria-hidden="true">↓</span> 次の質問へ</p>
+    </li>
+    <li>
+      <div class="dg-q">
+        <div class="dg-card">
+          <div class="dg-q-head"><span class="dg-q-num">3</span>
+            <div><p class="dg-q-text">附属書IIIに挙がった用途に当たる？</p><p class="dg-basis">第6条2項</p></div></div>
+        </div>
+        <div class="dg-card dg-yes">
+          <p class="dg-yn"><b>はい</b> →</p>
+          <p class="dg-res-name">例外になるか確認</p>
+          <p class="dg-res-sub">下の枠へ</p>
+        </div>
+      </div>
+      <p class="dg-link-down"><b>いいえ</b><span aria-hidden="true">↓</span> 質問4へ</p>
+      <div class="dg-ex" role="group" aria-labelledby="dg-ex-t">
+        <p class="dg-ex-title" id="dg-ex-t">附属書IIIでも例外になる？ <span class="dg-basis">第6条3項・4項</span></p>
+        <p class="dg-q-sub">次の3つがすべて当てはまるときだけ、例外になります。</p>
+        <div class="dg-ex-conds">
+          <div class="dg-cond">
+            <p class="dg-cond-h">条件A</p>
+            <p class="dg-cond-em">次のどれか1つに当たる</p>
+            <p class="dg-q-sub">（4つ全部は不要）</p>
+            <ol>
+              <li><span>1.</span><span>狭い手続き的な作業</span></li>
+              <li><span>2.</span><span>人が終えた作業の結果を良くするだけ</span></li>
+              <li><span>3.</span><span>過去の判断の傾向やずれを見つけるだけ</span></li>
+              <li><span>4.</span><span>評価の準備作業</span></li>
+            </ol>
+          </div>
+          <div class="dg-cond">
+            <p class="dg-cond-h">条件B</p>
+            <p class="dg-cond-em">判断の結果に実質的な影響を与えない</p>
+          </div>
+          <div class="dg-cond">
+            <p class="dg-cond-h">条件C</p>
+            <p class="dg-cond-em">人のプロファイリングをしない</p>
+            <p>行う場合は常に高リスクです。</p>
+          </div>
+        </div>
+        <div class="dg-ex-out">
+          <div class="dg-card dg-ok">
+            <p class="dg-yn"><b>すべて確認できる</b> →</p>
+            <p class="dg-res-name">高リスクには当たらない</p>
+            <p class="dg-res-sub">提供者は判断を文書化し、EUデータベースに登録する。そのあと質問4へ。</p>
+          </div>
+          <div class="dg-card dg-high">
+            <p class="dg-yn"><b>確認できない</b> →</p>
+            <p class="dg-res-name">高リスク</p>
+            <p class="dg-res-sub">第50条の義務が重なる場合あり</p>
+          </div>
+        </div>
+      </div>
+      <p class="dg-link-down"><b>質問3が「いいえ」</b>、または<b>例外が成り立つ</b><span aria-hidden="true">↓</span> 質問4へ</p>
+    </li>
+    <li>
+      <div class="dg-q">
+        <div class="dg-card">
+          <div class="dg-q-head"><span class="dg-q-num">4</span>
+            <div><p class="dg-q-text">透明性の義務に当たる？（AIと話していることの案内、AI生成の表示 など）</p><p class="dg-basis">第50条</p></div></div>
+        </div>
+        <div class="dg-yes">
+          <div class="dg-card dg-transparency">
+            <p class="dg-yn"><b>はい</b> →</p>
+            <p class="dg-res-name">透明性義務を確認</p>
+          </div>
+          <div class="dg-card dg-minimal">
+            <p class="dg-yn"><b>いいえ</b> →</p>
+            <p class="dg-res-name">最小リスク</p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+  <Fragment slot="notes">
+    <p>高リスクと透明性の義務は、重なる場合があります。最小リスクでも、AIリテラシーの措置（第4条）はかかります。</p>
+    <p>該当するかは用途と条件で決まります。この図は考え方の整理で、法的助言ではありません。</p>
+    <p class="dg-src">出典: <a href={A5} target="_blank" rel="noopener">第5条</a><a href={A6} target="_blank" rel="noopener">第6条</a><a href={A50} target="_blank" rel="noopener">第50条</a></p>
+  </Fragment>
+</DiagramFrame>

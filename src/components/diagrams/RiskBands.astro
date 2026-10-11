@@ -1,0 +1,48 @@
+---
+// 図3: 4つのリスク区分（同じ幅の横帯。面積や幅は件数・危険度の比率ではない）。
+// 文言は本体 4・5・7・9 章の範囲。出典リンクは従来の risk_tiers ブロックと同じ条文。
+import DiagramFrame from './DiagramFrame.astro';
+
+const BASE = 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689';
+const bands = [
+  { key: 'prohibited', name: '禁止', eg: ['社会的スコアリング', '職場・教育機関での感情の推定（医療・安全上の理由を除く）'], doing: '市場に出すことも使うことも禁止', basis: '第5条' },
+  { key: 'high', name: '高リスク', eg: ['採用候補者の評価', '第三者の適合性評価が必要な医療機器のAI'], doing: '要件を満たし、適合性評価を受ける', basis: '第6条、第9〜15条、第43条' },
+  { key: 'transparency', name: '透明性義務', eg: ['人と直接やりとりするAI', 'ディープフェイクの画像・音声・映像'], doing: 'AIだと分かるように伝える・表示する', basis: '第50条' },
+  { key: 'minimal', name: '最小リスク', eg: ['上の3つに当たらないAI'], doing: 'この法律による追加のルールはない（AIリテラシーの措置、第4条を除く）', basis: '' },
+];
+const alt =
+  'AI法の対応を、禁止、高リスク、透明性義務、最小リスクの4区分で示した一覧。各区分に代表例と主な対応、条文を添えています。区分は重なる場合があります。';
+---
+
+<DiagramFrame
+  id="risk-bands"
+  n={3}
+  title="AIの使い方は、4つの区分で考える"
+  lead="区分は「AIの種類」ではなく「使い方」で決まります。上から、義務の重い順です。"
+  alt={alt}
+>
+  <div class="dg-bands-head" aria-hidden="true"><span>区分</span><span>代表例</span><span>主な対応・条文</span></div>
+  <ol class="dg-bands">
+    {bands.map((b) => (
+      <li class={`dg-card dg-band dg-${b.key}`}>
+        <div class="dg-cell"><p class="dg-band-name">{b.name}</p></div>
+        <div class="dg-cell dg-band-eg">
+          <p class="dg-label">代表例</p>
+          <ul>{b.eg.map((e) => <li>{e}</li>)}</ul>
+        </div>
+        <div class="dg-cell">
+          <p class="dg-label" style="margin-top:8px">主な対応・条文</p>
+          <p class="dg-band-do">{b.doing}</p>
+          {b.basis && <p class="dg-basis">{b.basis}</p>}
+        </div>
+      </li>
+    ))}
+  </ol>
+  <Fragment slot="notes">
+    <p>これは理解のための4区分です。高リスクと透明性義務は重なる場合があります。該当するかは、用途と条件で判断します。</p>
+    <p>帯の長さや並びは、件数や危険度の比率を表しません。最小リスクは「対応が要らない」という意味ではありません。汎用AIモデルの義務（第51条以下）は、この4区分とは別立てです。</p>
+    <p class="dg-src">出典:
+      <a href={`${BASE}#art_5`} target="_blank" rel="noopener">第5条</a><a href={`${BASE}#art_6`} target="_blank" rel="noopener">第6条</a><a href={`${BASE}#art_50`} target="_blank" rel="noopener">第50条</a><a href={`${BASE}#art_4`} target="_blank" rel="noopener">第4条</a><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">欧州委員会の解説</a>
+    </p>
+  </Fragment>
+</DiagramFrame>

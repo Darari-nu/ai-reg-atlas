@@ -85,7 +85,7 @@ for (const f of listDataFiles('explainers').filter((f) => f.endsWith('.json'))) 
 }
 
 // guides（一次資料で裏を取った解説ページ。無ければ0件）。スキーマに加え、
-// 出典が公式ドメイン（EUR-Lex・欧州委員会）だけか、章 id の重複、表の列数と行のセル数の一致を調べる
+// 出典が公式ドメイン（EUR-Lex・欧州委員会）だけか、章 id の重複、表の列数と行のセル数の一致、親ガイドの実在を調べる
 const GUIDE_SOURCE_HOSTS = new Set(['eur-lex.europa.eu', 'digital-strategy.ec.europa.eu', 'ec.europa.eu', 'ai-act-service-desk.ec.europa.eu']);
 for (const f of listDataFiles('guides').filter((f) => f.endsWith('.json'))) {
   const data = JSON.parse(fs.readFileSync(resolveData(`guides/${f}`), 'utf8'));
@@ -96,6 +96,7 @@ for (const f of listDataFiles('guides').filter((f) => f.endsWith('.json'))) {
   for (const s of data.summary ?? []) collect(s.sources);
   for (const m of data.milestones ?? []) collect(m.sources);
   for (const r of data.references ?? []) urls.push(r.url);
+  if (data.parent && !listDataFiles('guides').includes(`${data.parent}.json`)) extra.push(`親ガイドが無い: ${data.parent}`);
   const sectionIds = new Set();
   for (const sec of data.sections ?? []) {
     if (sectionIds.has(sec.id)) extra.push(`章 id が重複: ${sec.id}`);
@@ -103,6 +104,7 @@ for (const f of listDataFiles('guides').filter((f) => f.endsWith('.json'))) {
     for (const b of sec.blocks ?? []) {
       collect(b.sources);
       for (const t of b.tiers ?? []) collect(t.sources);
+      for (const st of b.steps ?? []) collect(st.sources);
       if (b.type === 'checklist' || b.type === 'faq') for (const it of b.items ?? []) collect(it.sources);
       if (b.type === 'table') {
         for (const [i, row] of (b.rows ?? []).entries()) {

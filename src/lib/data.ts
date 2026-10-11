@@ -391,14 +391,19 @@ export type GuideBlock =
   | { type: 'schedule'; country: string }
   | { type: 'checklist'; heading?: string; items: GuideSourced[] }
   | { type: 'faq'; items: { q: string; a: string; sources: string[] }[] }
-  | { type: 'links'; heading?: string; items: { label: string; href: string; note?: string }[] };
+  | { type: 'links'; heading?: string; items: { label: string; href: string; note?: string }[] }
+  | { type: 'example'; title?: string; items: string[] }
+  | { type: 'flow'; steps: { label: string; text: string; basis: string; sources: string[] }[] };
 
 export type Guide = {
   id: string;
+  parent?: string;
   title: string;
   description: string;
   last_verified: string;
   disclaimer: string;
+  summary_title?: string;
+  children?: { label: string; href: string; note?: string }[];
   summary: GuideSourced[];
   milestones: { date: string; event: string; sources: string[] }[];
   sections: { id: string; number: number; title: string; blocks: GuideBlock[] }[];

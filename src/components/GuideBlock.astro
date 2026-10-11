@@ -1,0 +1,243 @@
+---
+// 解説ページの1ブロックを描く（本体 /eu-ai-act/ と子ページで共有）。
+import type { Guide, GuideBlock } from '../lib/data';
+import { getUpcomingDeadlines, withBase, DEADLINE_KIND_LABELS } from '../lib/data';
+import { todayJst, daysUntil } from '../lib/upcomingDeadlines.mjs';
+import { labeledSources } from '../lib/guideView';
+
+interface Props {
+  block: GuideBlock;
+  guide: Guide;
+}
+const { block: b, guide: g } = Astro.props;
+
+const tierStyle: Record<string, { bar: string; width: string }> = {
+  prohibited: { bar: 'bg-diff-stricter', width: 'md:w-[55%]' },
+  high: { bar: 'bg-star-gold', width: 'md:w-[70%]' },
+  transparency: { bar: 'bg-diff-unique', width: 'md:w-[85%]' },
+  minimal: { bar: 'bg-diff-looser', width: 'md:w-full' },
+};
+
+// 日程表: 過去の節目（ガイドのデータ）と、先の期限（deadlines.json の該当国分＋ガイドの先の節目）
+type Row = { date: string; text: string; kind?: string; dlId?: string };
+let past: Row[] = [];
+let future: Row[] = [];
+const today = todayJst();
+if (b.type === 'schedule') {
+  past = g.milestones.filter((m) => m.date <= today).map((m) => ({ date: m.date, text: m.event }));
+  const upcoming = getUpcomingDeadlines(today).filter((d) => d.source === 'curated' && d.country === b.country);
+  future = [
+    ...upcoming.map((d) => ({ date: d.date, text: d.title, kind: DEADLINE_KIND_LABELS[d.kind] ?? d.kind, dlId: d.id })),
+    ...g.milestones.filter((m) => m.date > today).map((m) => ({ date: m.date, text: m.event })),
+  ].sort((x, y) => (x.date < y.date ? -1 : x.date > y.date ? 1 : 0));
+}
+---
+
+{b.type === 'p' && (
+  <div>
+    {b.heading && <h3 class="mb-1 font-bold">{b.heading}</h3>}
+    <p class="text-ink/85">{b.text}</p>
+  </div>
+)}
+
+{b.type === 'note' && <p class="border-l-2 border-ink/25 pl-3 text-xs text-ink/60">{b.text}</p>}
+
+{b.type === 'list' && (
+  <div>
+    {b.heading && <h3 class="mb-1 font-bold">{b.heading}</h3>}
+    <ul class="list-disc space-y-1 pl-5 text-ink/85">
+      {b.items.map((it) => <li>{it}</li>)}
+    </ul>
+  </div>
+)}
+
+{b.type === 'example' && (
+  <div class="border border-dashed border-ink/30 bg-white px-4 py-3">
+    <p class="flex flex-wrap items-baseline gap-2">
+      <span class="border border-ink/40 px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-ink/70">架空の例</span>
+      {b.title && <span class="font-bold">{b.title}</span>}
+    </p>
+    <ul class="mt-2 list-disc space-y-1 pl-5 text-ink/80">
+      {b.items.map((it) => <li>{it}</li>)}
+    </ul>
+  </div>
+)}
+
+{b.type === 'flow' && (
+  <ol class="space-y-0" aria-label="手続きの流れ">
+    {b.steps.map((s, i) => (
+      <li class="relative pb-3 pl-10 last:pb-0">
+        {i < b.steps.length - 1 && <span class="absolute left-[0.9rem] top-7 h-[calc(100%-1.25rem)] w-px bg-ink/25" aria-hidden="true"></span>}
+        <span class="absolute left-0 top-0.5 flex h-7 w-7 items-center justify-center border border-ink bg-star-gold font-mono text-xs font-medium">{i + 1}</span>
+        <div class="border border-ink/15 bg-white px-3 py-2">
+          <p class="flex flex-wrap items-baseline gap-x-2">
+            <span class="font-bold">{s.label}</span>
+            <span class="font-mono text-[10px] text-ink/50">{s.basis}</span>
+          </p>
+          <p class="mt-0.5 text-xs text-ink/75">{s.text}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+)}
+
+{b.type === 'table' && (
+  <div id={b.id} class="scroll-mt-6">
+    {b.heading && <h3 class="mb-2 font-bold">{b.heading}</h3>}
+    {/* PC: 表 */}
+    <div class="hidden overflow-x-auto md:block">
+      <table class="w-full border-collapse bg-white text-left text-xs leading-relaxed">
+        <thead>
+          <tr class="border-b-2 border-ink/20">
+            {b.columns.map((c) => <th class="px-3 py-2 font-bold">{c}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {b.rows.map((r) => (
+            <tr class="border-b border-ink/10 align-top">
+              {r.cells.map((cell, i) => (
+                <td class={`px-3 py-2.5 ${i === 0 ? 'font-medium' : 'text-ink/80'}`}>
+                  {cell}
+                  {i === r.cells.length - 1 && (
+                    <span class="mt-1 block font-mono text-[10px] text-ink/45">
+                      {labeledSources(r.sources).map((s) => (
+                        <a href={s.url} class="mr-2 underline underline-offset-2 hover:text-ink" target="_blank" rel="noopener">{s.label}</a>
+                      ))}
+                    </span>
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {/* スマホ: カード */}
+    <div class="space-y-2 md:hidden">
+      {b.rows.map((r) => (
+        <div class="border border-ink/15 bg-white p-3 text-xs leading-relaxed">
+          <p class="text-sm font-bold">{r.cells[0]}</p>
+          <dl class="mt-1.5 space-y-1.5">
+            {r.cells.slice(1).map((cell, i) => (
+              <div>
+                <dt class="font-mono text-[10px] text-ink/45">{b.columns[i + 1]}</dt>
+                <dd class="text-ink/85">{cell}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="mt-1.5 font-mono text-[10px] text-ink/45">
+            {labeledSources(r.sources).map((s) => (
+              <a href={s.url} class="mr-2 underline underline-offset-2" target="_blank" rel="noopener">{s.label}</a>
+            ))}
+          </p>
+        </div>
+      ))}
+    </div>
+    {b.caption && <p class="mt-2 text-xs text-ink/55">{b.caption}</p>}
+  </div>
+)}
+
+{b.type === 'risk_tiers' && (
+  <div class="space-y-2" role="list" aria-label="4つのリスク区分（上ほど厳しい）">
+    {b.tiers.map((t) => (
+      <div role="listitem" class={`mx-auto w-full ${tierStyle[t.key].width}`}>
+        <div class="flex items-stretch border border-ink/15 bg-white">
+          <span class={`w-2 shrink-0 ${tierStyle[t.key].bar}`} aria-hidden="true"></span>
+          <div class="px-3 py-2.5">
+            <p class="flex flex-wrap items-baseline gap-x-2">
+              <span class="font-bold">{t.label}</span>
+              <span class="font-mono text-[10px] text-ink/50">{t.basis}</span>
+            </p>
+            <p class="mt-0.5 text-xs text-ink/75">{t.text}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+    <p class="text-center font-mono text-[10px] text-ink/40">↑ 上ほど義務が重い</p>
+  </div>
+)}
+
+{b.type === 'schedule' && (
+  <div class="space-y-6" id="schedule-table">
+    <div>
+      <h3 class="mb-2 font-bold">これからの期限</h3>
+      <ul class="divide-y divide-ink/10 border-y border-ink/15 bg-white">
+        {future.map((r) => {
+          const n = daysUntil(r.date, today);
+          return (
+            <li class="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 px-3 py-2.5 md:flex-nowrap">
+              <time class="w-[5.5rem] shrink-0 font-mono text-xs text-ink/70">{r.date}</time>
+              <span class={`w-20 shrink-0 whitespace-nowrap font-mono text-xs ${n <= 90 ? 'font-medium text-ink' : 'text-ink/50'}`}>{n === 0 ? '今日まで' : `あと${n}日`}</span>
+              <span class="min-w-0 basis-full text-sm leading-snug md:basis-auto md:flex-1">
+                {r.text}
+                {r.dlId && (
+                  <a href={withBase(`/timeline/#dl-${r.dlId}`)} class="ml-2 whitespace-nowrap font-mono text-[10px] text-ink/50 underline underline-offset-2">やること →</a>
+                )}
+              </span>
+              {r.kind && <span class="shrink-0 border border-ink/20 px-1.5 py-0.5 text-[10px] text-ink/60">{r.kind}</span>}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+    <div>
+      <h3 class="mb-2 font-bold">これまでの節目</h3>
+      <ol class="relative ml-1 space-y-2 border-l border-ink/20 pl-4">
+        {past.map((r) => (
+          <li class="relative">
+            <span class="absolute -left-[1.3rem] top-1.5 h-2 w-2 rounded-full border border-ink/40 bg-paper" aria-hidden="true"></span>
+            <time class="font-mono text-xs text-ink/55">{r.date}</time>
+            <span class="ml-2 text-sm text-ink/85">{r.text}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+)}
+
+{b.type === 'checklist' && (
+  <div class="border border-ink/15 bg-white p-4">
+    {b.heading && <h3 class="mb-2 font-bold">{b.heading}</h3>}
+    <ul class="space-y-1.5">
+      {b.items.map((it) => (
+        <li class="flex gap-2">
+          <span class="mt-0.5 font-mono text-ink/40" aria-hidden="true">□</span>
+          <span class="text-ink/85">{it.text}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{b.type === 'faq' && (
+  <div class="divide-y divide-ink/10 border-y border-ink/15 bg-white">
+    {b.items.map((it) => (
+      <details class="group">
+        <summary class="flex cursor-pointer list-none items-start gap-2 px-3 py-3 font-medium [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-star-gold" aria-hidden="true">Q</span>
+          <span class="flex-1">{it.q}</span>
+          <span class="font-mono text-xs text-ink/40 transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+        </summary>
+        <div class="border-t border-ink/10 bg-paper px-3 py-3 text-ink/85">
+          <p>{it.a}</p>
+          <p class="mt-1.5 font-mono text-[10px] text-ink/45">
+            {labeledSources(it.sources).map((s) => (
+              <a href={s.url} class="mr-2 underline underline-offset-2" target="_blank" rel="noopener">{s.label}</a>
+            ))}
+          </p>
+        </div>
+      </details>
+    ))}
+  </div>
+)}
+
+{b.type === 'links' && (
+  <ul class="divide-y divide-ink/10 border-y border-ink/15 bg-white">
+    {b.items.map((it) => (
+      <li class="px-3 py-2.5">
+        <a href={withBase(it.href)} class="font-medium underline underline-offset-2">{it.label} →</a>
+        {it.note && <span class="mt-0.5 block text-xs text-ink/65">{it.note}</span>}
+      </li>
+    ))}
+  </ul>
+)}

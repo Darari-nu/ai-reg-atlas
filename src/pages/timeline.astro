@@ -35,7 +35,7 @@ for (const c of countries) {
 allEvents.sort((a, b) => (a.date < b.date ? 1 : -1));
 
 // 「これからの期限」と国＋日付が同じ未来の項目は年表から外す（重複解消）。残った未来の項目は先頭に「予定」として出す
-const events = excludeDuplicateFutureEvents(allEvents, upcoming);
+const events = excludeDuplicateFutureEvents(allEvents, curated); // 人が確認した期限と重なる未来の項目だけ外す
 const plannedEvents = events.filter((e) => e.future).sort((a, b) => (a.date < b.date ? -1 : 1));
 const pastGroups = groupByYear(events.filter((e) => !e.future));
 
@@ -44,11 +44,16 @@ const eventSuffix: Record<string, string> = {
   'derived-deadline': '（期限）',
 };
 
-// 時間軸バー: 今日 → 2028年末。点の位置は残り日数の割合
-const AXIS_END = '2028-12-31';
+// 時間軸バー: 今日 → 終端の年末。点の位置は残り日数の割合
+// 終端は「2028年末」か「最後の期限の年末」の遅い方（期限が先へ延びても右端で重ならないように）。
+// 日数が0以下（期限が無い等）のときは軸を描かない
+const lastYear = Math.max(2028, ...curated.map((d) => Number(d.date.slice(0, 4))));
+const AXIS_END = `${lastYear}-12-31`;
 const axisDays = daysUntil(AXIS_END, today);
-const pct = (date: string) => Math.max(0, Math.min(100, (daysUntil(date, today) / axisDays) * 100));
-const ticks = ['2027-01-01', '2028-01-01'].map((d) => ({ label: d.slice(0, 4), left: pct(d) }));
+const showAxis = axisDays > 0 && curated.length > 0;
+const pct = (date: string) => (showAxis ? Math.max(0, Math.min(100, (daysUntil(date, today) / axisDays) * 100)) : 0);
+const firstTickYear = Number(today.slice(0, 4)) + 1;
+const ticks = Array.from({ length: Math.max(0, lastYear - firstTickYear + 1) }, (_, i) => `${firstTickYear + i}-01-01`).map((d) => ({ label: d.slice(0, 4), left: pct(d) }));
 const dots = curated.map((d) => ({ d, left: pct(d.date) }));
 
 const usedCountries = countries.filter((c) => curated.some((d) => d.country === c.code) || allEvents.some((e) => e.cc === c.code));
@@ -90,7 +95,7 @@ const usedCountries = countries.filter((c) => curated.some((d) => d.country === 
       </h2>
 
       {/* 時間軸バー（デスクトップのみ）。点をクリックすると該当の行が開く */}
-      <div class="mt-4 hidden md:block" id="dl-axis">
+      <div class:list={["mt-4 hidden", showAxis && "md:block"]} id="dl-axis">
         <div class="relative h-9">
           <div class="absolute left-0 right-0 top-4 h-px bg-ink/25"></div>
           <span class="absolute left-0 top-0 font-mono text-[10px] text-ink/40">今日</span>
@@ -220,6 +225,7 @@ const usedCountries = countries.filter((c) => curated.some((d) => d.country === 
   function apply(cc: string) {
     for (const chip of chips) {
       const on = (chip.dataset.value ?? '') === cc;
+      chip.setAttribute('aria-pressed', String(on));
       chip.classList.toggle('bg-ink', on);
       chip.classList.toggle('text-paper', on);
       chip.classList.toggle('bg-white', !on);

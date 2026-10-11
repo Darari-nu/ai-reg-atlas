@@ -66,6 +66,13 @@
       ]
     },
     {
+      "date": "2025-11-19",
+      "event": "欧州委員会が改正（Digital Omnibus）の提案を採択",
+      "sources": [
+        "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      ]
+    },
+    {
       "date": "2026-05-07",
       "event": "改正（Digital Omnibus）について政治合意",
       "sources": [
@@ -351,7 +358,7 @@
               "cells": [
                 "既存の高リスクAIの扱い",
                 "2026-08-02 より前に市場に出たものは、その後に設計の大きな変更がなければ対象外",
-                "基準日が「第III章の適用日」に変更（公的機関向けは2030-08-02までに対応）",
+                "基準日が「第III章の適用日」（附属書III系は 2027-12-02、附属書I系は 2028-08-02）に変更（公的機関向けは2030-08-02までに対応）",
                 "第111条2項"
               ],
               "sources": [
@@ -397,12 +404,13 @@
             {
               "cells": [
                 "AI Office の監督",
-                "主に汎用AIモデル",
-                "同じ提供者が汎用AIモデルとシステムを作る場合のAIシステム、超大規模オンラインプラットフォーム等に組み込まれたAIシステムも専属で監督（例外あり）",
+                "汎用AIモデルと、同じ提供者のモデルを基盤とするAIシステムの監視・監督（専属ではない）",
+                "汎用AIモデルと、同じ提供者（グループ）のモデルを基盤とするAIシステム、超大規模オンラインプラットフォーム等に組み込まれたAIシステムを専属で監督（例外あり）",
                 "第75条1項、第75a〜75d条"
               ],
               "sources": [
-                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_75"
               ]
             },
             {
@@ -490,7 +498,7 @@
               "key": "minimal",
               "label": "最小リスク",
               "basis": "—",
-              "text": "この法律による追加のルールはない（上の3つに当たらないAI）。",
+              "text": "（AIリテラシーの措置を除き）この法律による追加のルールはない（上の3つに当たらないAI）。",
               "sources": [
                 "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
               ]
@@ -555,7 +563,7 @@
             {
               "cells": [
                 "(bb)",
-                "児童性的虐待に当たる素材を作る・加工する（改正で追加）",
+                "児童性的虐待に当たる素材を作る・加工する（国内法上の例外あり。改正で追加）",
                 "2026-12-02"
               ],
               "sources": [

@@ -1,0 +1,1302 @@
+{
+  "id": "eu-ai-act-transparency",
+  "parent": "eu-ai-act",
+  "title": "透明性の義務 実務ガイド",
+  "description": "EU AI法 第50条の透明性の義務（AIとの対話の告知、生成物の機械可読な表示、感情認識・生体分類の告知、ディープフェイクと公共の関心事の文章の表示）を、「誰が・何を・いつから・どうやって」に分けて、条文（規則 (EU) 2024/1689・改正規則 (EU) 2026/1744）と欧州委員会のガイドライン・行動規範に沿って整理したページ。",
+  "last_verified": "2026-10-11",
+  "disclaimer": "このページは一般的な情報の整理で、法的助言ではありません。「当たる例」「当たらない例」は、欧州委員会の第50条ガイドラインに載っている例を要約したもので、どれも事実関係によって結論が変わりえます。ガイドラインに法的拘束力はなく、最終的な解釈は欧州連合司法裁判所（CJEU）が行います。行動規範への参加は任意です。自分で作った例には「架空の例」と付けています。実際の判断は一次資料と専門家の確認を経てください。",
+  "summary_title": "このページの使い方",
+  "summary": [
+    {
+      "text": "第50条は2026年8月2日から適用されています。ただし、2026年8月2日より前に市場に出した生成AIシステムの提供者は、2項の機械可読な表示（マーキング）を2026年12月2日までに整えればよいとされています（改正で加わった第111条4項）。この猶予は2項だけで、1項・3項・4項にはありません。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#rct_38",
+        "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+      ]
+    },
+    {
+      "text": "義務を負うのは、AIシステムの提供者（1項・2項）と導入者（3項・4項）です。EUの外の会社でも、EUでAIシステムを市場に出す提供者や、AIの出力がEUで使われる提供者・導入者は対象です（第2条1項）。無料・オープンソースで公開したAIシステムでも、第50条の対象になるものは除外されません（第2条12項）。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2"
+      ]
+    },
+    {
+      "text": "欧州委員会は、第50条のガイドライン（2026年7月20日付 C(2026) 5054 final。法的拘束力なし）と、AI生成コンテンツの透明性に関する行動規範（最終版は2026年6月10日公表。参加は任意）を出しています。行動規範は、委員会の意見（2026年7月9日公表）で2項・4項・5項の義務に「適切」と評価されています。",
+      "sources": [
+        "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+        "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content",
+        "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-code-practice-transparency-ai-generated-content"
+      ]
+    },
+    {
+      "text": "違反の罰金の上限は、1,500万ユーロか全世界年間売上高の3%の高い方です（第99条4項(g)）。例は主に第50条ガイドラインから取り、段落番号を付けています。",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99",
+        "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+      ]
+    }
+  ],
+  "milestones": [],
+  "sections": [
+    {
+      "id": "overview",
+      "number": 1,
+      "title": "全体像: 第50条の1〜7項",
+      "blocks": [
+        {
+          "type": "table",
+          "id": "art50-overview",
+          "columns": [
+            "項",
+            "誰が",
+            "何をするか",
+            "対象・主な例外"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "1項",
+                "提供者",
+                "人と直接やりとりするAIシステムを、相手がAIとやりとりしていると知らされるように設計・開発する",
+                "チャットボット・音声アシスタント・AIエージェントなど。状況から明らかな場合と、法律で認められた犯罪捜査用（一般の人が犯罪を通報するためのものは除く）は対象外"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "2項",
+                "提供者（汎用AIシステムを含む）",
+                "音声・画像・映像・文章を生成するAIシステムの出力に、機械可読な形でAI生成・加工だと分かる表示を付け、検出できるようにする",
+                "標準的な編集の補助、入力を大きく変えない場合、法律で認められた犯罪捜査用は対象外。2026-08-02より前に市場に出したものは2026-12-02まで猶予"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "3項",
+                "導入者",
+                "感情認識システム・生体分類システムを使うとき、さらされる人にその作動を知らせる（個人データは GDPR 等に沿って扱う）",
+                "法律で認められた犯罪の検知・防止・捜査用は対象外"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+              ]
+            },
+            {
+              "cells": [
+                "4項前段",
+                "導入者",
+                "ディープフェイクに当たる画像・音声・映像を生成・加工したら、AIで生成・加工したと開示する",
+                "明らかに芸術・創作・風刺・フィクション等の作品の一部なら、鑑賞を妨げない適切な形の開示でよい。法律で認められた犯罪捜査用は対象外"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+              ]
+            },
+            {
+              "cells": [
+                "4項後段",
+                "導入者",
+                "公共の関心事を知らせる目的で公表する文章をAIで生成・加工したら、そう開示する",
+                "人による確認・編集上の管理を経て、誰かが編集責任を負う場合と、法律で認められた犯罪捜査用は対象外"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+              ]
+            },
+            {
+              "cells": [
+                "5項",
+                "1〜4項の義務者",
+                "情報は、遅くとも最初のやりとり・接触の時点で、明確で区別できる方法で伝え、アクセシビリティの要件に合わせる",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+              ]
+            },
+            {
+              "cells": [
+                "6項",
+                "—",
+                "1〜4項は高リスクAIの要件・義務（第III章）に影響せず、EU法・国内法の他の透明性義務も妨げない",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+              ]
+            },
+            {
+              "cells": [
+                "7項（改正後）",
+                "欧州委員会",
+                "AI生成・加工コンテンツの検出・マーキング・ラベル付けについて、EUレベルの行動規範づくりを促す。規範が2項・4項の義務の遵守に適切かを評価し、不十分なら実施法令で共通ルールを定められる",
+                "—"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "複数の項が重なる",
+          "text": "ガイドラインは、1つのAIシステムに複数の項が重なってかかりうるとしています。たとえば、人とやりとりしながら画像を作るシステムの提供者は1項と2項の両方を、そのシステムでディープフェイクや公共の関心事の文章を作って出す導入者は4項も守る必要がありえます（段落8）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "提供者と導入者",
+          "text": "提供者は、AIシステムを開発し（または開発させ）、自分の名前・商標で市場に出す・使用を開始する人や組織です（第3条3号）。導入者は、自分の権限のもとでAIシステムを使う人や組織で、純粋に私的で職業外の利用は除かれます（第3条4号）。ガイドラインによると、会社が導入者のとき、その指示で作業する従業員は別の導入者になりません。外注先やフリーランスに作業させても、会社が導入者のままです（段落14）。広告会社に広告を発注するだけで、AIを使うかどうか・どう使うかを決めていない会社は導入者ではないとされます（段落14）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "EUの外の会社",
+          "text": "EUの外の提供者は、EUで市場に出す・使用を開始する場合に加え、AIシステムの出力がEUで使われる場合も対象です（第2条1項(a)(c)）。ガイドラインは、EUで市場に出していない第三国の提供者について、偶発的・予見できない・許可していない下流での利用だけでは義務はかからないとしています（段落10）。EUの外の導入者は、自分でEUでの流通・利用を予見している場合（世界中から見られるネットに載せる場合を含む）に対象になり、予見できず管理外の経路でEUに届いた場合は対象外とされます（段落13）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "第50条の義務がかからない主な場面",
+          "items": [
+            "個人が純粋に私的で職業外の活動としてAIを使う場合の、導入者の義務（第2条10項）。ただし提供者の2項の義務は残る。ガイドラインは、私的なクリスマスカード用のディープフェイクでも、提供者は機械可読な表示を付けるべきとしている（段落19〜20）",
+            "科学的な研究開発だけを目的に開発・使用開始されたAIシステムとその出力（第2条6項、ガイドライン段落21）",
+            "市場に出す・使用を開始する前の研究・試験・開発（実環境での試験は除外されない。第2条8項、段落22）",
+            "軍事・防衛・国家安全保障の目的だけに使うAI（第2条3項）"
+          ],
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "無料・オープンソースのライセンスで公開されたAIシステムは原則としてAI法の対象外ですが、第50条に当たるものは除外されません（第2条12項）。ガイドラインは、それ自体はAIシステムでないオープンソースの部品（モデル・ツール等）の提供者には第50条の義務はかからないとしています（段落23〜24）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interaction",
+      "number": 2,
+      "title": "1項: 人と直接やりとりするAIの告知（提供者）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "提供者は、人と直接やりとりするAIシステムを、相手の人がAIとやりとりしていると知らされるように設計・開発しなければなりません。適度に情報を持ち、注意深く慎重な人から見て、状況と使われ方からAIだと明らかな場合は不要です。法律で認められた犯罪の検知・防止・捜査・訴追用のAIシステムも対象外ですが、一般の人が犯罪を通報するために使えるものは対象です（第50条1項）。前文132は、年齢や障害で弱い立場にある人とやりとりする場合はその特徴も考えるべきとしています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_132"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "対象になる4つの条件",
+          "text": "ガイドラインは、(i) AIシステムであること、(ii) やりとりを意図していること（双方向で、会話・応答の性質があること）、(iii) 直接であること、(iv) 相手が人であること、の4つがそろうと1項の対象になるとしています（段落30）。自動の不在通知やルールベースの定型返信はAIシステムに当たらず、顔認証の入退室管理のように受け身でデータを集めるだけのものはやりとりに当たりません（段落30）。オペレーターがAIの補助ツールを使って顧客と話す場合のように、人が間に入るものは直接のやりとりではないとされます。ただし、人が手直しできるというだけでは告知を免れず、AIの返答と人の返答が混ざるサービスでは、人が確認して自分の言葉として送るものを除き、AIの返答について告知が必要とされます（段落30）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "AIエージェント",
+          "text": "人と直接やりとりできるAIエージェントも対象です。ガイドラインは、AIエージェントはAIであることと、誰のために動いているかの両方を明らかにするよう設計すべきとし、人とやりとりするかを事前に見通せない場合は、人とやりとりしそうなあらゆる場面で名乗るよう設計すべきとしています（段落31）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "interaction-scope",
+          "caption": "ガイドライン段落31の後に挙げられた例の要約。",
+          "columns": [
+            "区分",
+            "例"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "1項の対象",
+                "音声アシスタント、チャットボット（行政サービス・カスタマーサポート・苦情対応・EC・金融・医療・教育など）、AI通報窓口、ロボット・AIコンパニオン、VR内のAIアバター、SNS上のAIボット、コーディングエージェント等の人と直接やりとりできるAIエージェント"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "1項の対象外",
+                "閉じた工場内の産業用ロボット、レコメンド、スパムフィルター、自動翻訳・文字起こしツール、内容を生成・加工しない検索、文章・コードの自動補完、認証・生体認識、人が出力を見るだけの業務用の判断支援、バーチャル試着などの商品の見え方の表示、顧客との通話の文字起こしの分析など"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "「明らかな場合」の例外",
+          "text": "ガイドラインは、明らかかどうかは、想定される相手と合理的に予見できる相手の平均的な人を基準に判断し、例外は狭く解釈すべきだとしています。一般の人や、子ども・高齢者・障害のある人が使いうるシステムでは、この例外に頼れないとしています（段落42〜45）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "obvious-examples",
+          "caption": "ガイドライン段落45の後に挙げられた例の要約。",
+          "columns": [
+            "区分",
+            "例"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "明らかで告知が不要とされる例",
+                "専門の開発者だけが使うコード補助・コードレビューのチャットボット、AIを使うと分かっている訓練済みの社員向けの社内アシスタント（人事・法務・調達・コンプライアンス・ITサポート等）、訓練を受けた医療専門職だけが使う診断支援、家電の操作に限った組み込みAI、他の人が参加できない1人用ゲームのNPC"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "明らかでなく告知が必要とされる例",
+                "本物そっくりのロボットペット、VR・AR内の人間らしいアバターや声、オンラインサービスやヘルプデスクに組み込まれ、利用者が人の返答と受け取りうるチャットボット"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "告知のしかた（ガイドラインの例）",
+          "items": [
+            "文字: 会話の最初に「AIを使ったシステムです」と伝える、入力欄の近くに分かりやすいラベルやバナーを置く（段落36〜37）",
+            "音声: 電話や音声アシスタントでは、最初に「AIのアシスタントです」と言う。長いやりとりでは、中断や役割が変わるときに繰り返す。効果音だけでは足りない（段落37）",
+            "視覚: 常に見えるアイコン・枠・「AI」の記号などで文字の告知を補う（段落37）",
+            "AIエージェントが送るメールの冒頭にAIのラベルを付ける（段落36）",
+            "多くの場合、最初のやりとりの前に1回はっきり告知すれば足りるが、子ども・高齢者が相手の場合、感情的なつながりができやすいAIコンパニオン、金融・保険・法律・健康の助言などでは、定期的な再告知が必要になりうる。AIかと聞かれたときは必ず答えられるように設計する（段落40）"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "それだけでは足りないとされる告知（段落38）",
+          "items": [
+            "利用規約・URL・説明書の中だけの告知",
+            "利用者にその場で見えない、メタデータや透かしなどの機械可読な表示だけ",
+            "「アシスタント」のようなあいまいな呼び方や、人と誤解させる見た目",
+            "「このサイトのサービスはAIを使っています」のような、どのやりとりか分からない一般的な告知",
+            "「LLMを使っています」のような技術の説明だけ"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "1項の告知とは別に、EUの消費者法（不公正取引方法指令・消費者権利指令）で、AIを使うことがサービスの主な特徴として契約前の情報提供の対象になりうるとされています。こちらは1項で「明らか」とされる場合でもかかりうるとされています（ガイドライン段落50）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marking",
+      "number": 3,
+      "title": "2項: AI生成コンテンツの機械可読な表示（提供者）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "音声・画像・映像・文章を生成するAIシステム（汎用AIシステムを含む）の提供者は、出力が機械可読な形で表示され、AIで生成・加工されたものとして検出できるようにしなければなりません。技術的な解決策は、技術的に可能な範囲で、効果的・相互運用可能・堅牢・信頼できるものにします。その際、コンテンツの種類ごとの特性と限界、実装のコスト、一般に認められた最新の技術水準を考えます（第50条2項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "表示の方法",
+          "text": "前文133は、方法の例として、電子透かし、メタデータ、来歴・真正性を証明する暗号的な方法、ログ、フィンガープリントなどと、その組み合わせを挙げています。表示はAIシステムの段階でも、汎用AIモデルを含むモデルの段階でも実装できるとしています。ガイドラインは、提供者は上流のモデル提供者や第三者の表示の仕組みに頼ってもよいが、2項を守っていることを示す責任は提供者に残るとしています（段落74）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_133",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "表示と検出の両方が必要",
+          "text": "ガイドラインは、2項には「表示（マーキング）」と「検出」の2つがあり、片方だけでは足りないとしています（段落69〜70）。提供者は、コンテンツにさらされる人が検出の手段を使えるようにし、検出結果は人が読める形で示すべきとされます（段落75・77）。「技術的に可能」は客観的な概念で、個々の提供者の資源や能力には左右されず、まだ開発・市販されていない技術を使う義務はないとされます（段落81）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "marking-scope",
+          "caption": "ガイドライン段落59〜68・87〜92の要約。",
+          "columns": [
+            "区分",
+            "内容"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "対象になる",
+                "AIで新しく作ったコンテンツと、既存のコンテンツをAIで加工したもの。人が作った部分と混ざっていても対象。3D画像・3D映像、VR・ARも対象。AIエージェントの出力のうち人が見聞きする音声・画像・映像・文章も対象（段落58〜63）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "対象外とされる出力",
+                "単語・画像のキャプション・代替テキスト・UIラベルなどの短い文字列、ソースコード（設定ファイル等を含む）、人が見ない機械どうしの通信、映画・ゲーム・広告制作などの閉じた制作工程の途中の出力（最終の出力は対象）、既存コンテンツの並べ替えだけのレコメンド（段落65・68）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "例外: 標準的な編集の補助",
+                "文法・スペルの修正、意味や文体を変えない軽い言い回しの調整、文章のAI翻訳、形式の変換・圧縮・ノイズ除去、軽いトリミングや色の補正、赤目の除去、顔のぼかし、会話の文字起こしなど（段落90〜92の後の例）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "例外にならず表示が必要な加工",
+                "文章の要約、意味や構成が変わる書き換え、意味が変わる人や物の削除・差し替え・追加、顔の差し替え、特定の人の声の合成、起きていない出来事の映像、体型や肌の色の変更、人物・出来事の描き方を変える合成（段落92の後の例）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "限られた例外的な扱い",
+                "車のナビのように閉じた環境で使う製品組み込みの生成AIは、より簡単なメタデータでも足りる場合がある（段落86）。技術的な出力だけを社内の限られた専門職が扱い、社外に出さない産業用・企業間（B2B）用途は、条件がすべてそろえば表示が不要とされる。一般向け・消費者向けは除く（段落87）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "既存の生成AIの猶予",
+          "text": "改正で加わった第111条4項により、2026年8月2日より前に市場に出した生成AIシステム（汎用AIシステムを含む）の提供者は、2項を2026年12月2日までに守ればよいとされています。改正規則の前文38は、すでに市場に出している提供者に4か月の移行期間を設ける趣旨だと説明しています。ガイドラインは、対話と生成の両方をするシステムでも、猶予は2項の表示だけで、1項の告知は2026年8月2日から必要だとしています（段落153）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#rct_38",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "第111条4項の条文は「市場に出した（placed on the market）」と書いています。ガイドライン段落153は「市場に出した、または使用を開始した」と書いており、言い方が少し違います。自社で使用を開始しただけのシステムが猶予の対象かどうかは、このページでは判断していません。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "2026年8月2日より前に生成されたコンテンツに、さかのぼって表示を付ける必要はないとされています。ただし、それより前に作った公共の関心事の文章をそれ以降に公表する場合は、4項の開示が必要とされています（ガイドライン段落154）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotion-biometric",
+      "number": 4,
+      "title": "3項: 感情認識・生体分類の告知（導入者）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "感情認識システムや生体分類システムの導入者は、そのシステムにさらされる人に作動を知らせ、個人データを GDPR などに沿って扱わなければなりません。法律で認められた犯罪の検知・防止・捜査用で、適切な保護措置がある場合は対象外です（第50条3項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "対象のシステム",
+          "text": "感情認識システムは、生体データから人の感情や意図を特定・推定するためのAIシステムです（第3条39号）。生体分類システムは、生体データで人を特定の区分に割り当てるためのAIシステムで、他の商用サービスに付随し、客観的な技術上の理由で厳密に必要なものは除かれます（第3条40号）。前文132は、区分の例として性別・年齢・髪や目の色・入れ墨・性格・民族的出身・好みや関心を挙げています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_132"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "ガイドラインが示す告知のポイント",
+          "items": [
+            "感情認識・生体分類のシステムが作動していることを知らせる。理由まで知らせることはAI法では求められていない（理由などはデータ保護法の情報提供で求められうる）（段落105）",
+            "子どもを含め、さらされるすべての人に知らせる（段落106）",
+            "リアルタイムでも、あとから処理する場合でもかかる（段落100）",
+            "方法は決まっていない。書面・標準化されたアイコン・口頭や、その組み合わせ。例として、ゲーム開始前に「顔を記録して感情を読み取ります」と出すポップアップや、展示室の入口ごとに「年齢層の判定のため顔画像を取得します」と掲示すること（段落107）",
+            "遅くとも最初に接触した時点で知らせる。事前に知らせることもできる（段落108）",
+            "GDPR の情報提供に、3項の告知を加える形でもよい場合がある（段落110）"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "感情認識システムは、職場と教育機関で使うもの（第5条1項(f)で禁止）を除き、附属書III 1(c) の高リスクAIに当たります。3項の告知は高リスクAIの要件と一緒に守る必要があります（ガイドライン段落102）。生体分類システムは、第5条1項(g) で禁止されるものを除き、高リスクかどうかに関係なく3項の対象です（段落104）。3項の告知をしても、そのシステムの利用が適法になるわけではありません（段落110）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#anx_III",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_5",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deepfake",
+      "number": 5,
+      "title": "4項前段: ディープフェイクの表示（導入者）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "ディープフェイクに当たる画像・音声・映像を生成・加工するAIシステムの導入者は、そのコンテンツがAIで生成・加工されたと開示しなければなりません。法律で認められた犯罪捜査用の場合は対象外です。明らかに芸術的・創作的・風刺的・フィクション等の作品や番組の一部なら、作品の表示や鑑賞を妨げない適切な形で、生成・加工したコンテンツがあることを開示すれば足ります（第50条4項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "ディープフェイクの定義",
+          "text": "ディープフェイクは、実在の人・物・場所・団体・出来事に似ていて、人に本物・真実だと誤って思わせるような、AIで生成・加工された画像・音声・映像です（第3条60号）。文章はディープフェイクに含まれません。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "判断の4つの要素",
+          "text": "ガイドラインは、(i) 似ていること（かなり似ていること）、(ii) 実在すること（実在する・しうる・しえたもの）、(iii) 人・物・場所・団体・出来事、(iv) 本物・真実だと誤って思わせること、の4つで判断するとしています。空を飛ぶ人やドラゴンのように物理法則に反するもので誤解のおそれがないものは対象外です（段落113）。本物らしく見えるかどうかは、似ている程度、伝える内容、使われる場面、見る人の構成と期待を合わせて客観的に判断し、だます意図は要らないとしています（段落114）。子どもや高齢者など、だまされやすい人が見ることを予見できる場合は、その人たちに本物と思われるだけで足りうるとしています（段落115）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "deepfake-examples",
+          "caption": "ガイドライン段落116の後に挙げられた例の要約。広告の例が多く載っています。",
+          "columns": [
+            "区分",
+            "例"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "ディープフェイクに当たるとされる例",
+                "実在のサッカー選手2人をスタジアム風の建物の前に合成した画像、新聞のポッドキャストの司会者の声を複製した音声、政治家に似た人物が演説する映像、有名インフルエンサーをAIで描いた広告映像、会社のCEOのリアルなアバターが社員に祝辞を述べる映像、実物と違って見える・実物より良く見えるような広告やパッケージの商品画像"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "当たらないとされる例",
+                "エッフェル塔の上を飛ぶスフィンクスの画像、チーズの広告で人の言葉でけんかするネズミの映像、語り手を偽らない架空キャラクターの声（オーディオブック・ゲーム等）、話の中身を変えない音量・ノイズの調整、歴史的な出来事の画像を漫画風にしたもの、ゲームの架空の森や城、実在の俳優がAI生成の背景の前で演じる映画、実物の商品（例: 車）をAI生成の背景に置いた広告で、商品の見え方や特徴を誤解させないもの"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "小さな加工",
+          "text": "ガイドラインは、背景の通行人を消す、照明・色の補正、ノイズ除去などの小さな加工は、多くの場合ディープフェイクにならないとしています。商品広告やパッケージでの色の補正や、見た目のための背景の差し替え・拡張は、影響が小さいことが多いとされます。一方、報道写真の背景を、通常の編集の範囲を超えて大きく加工すると、本物らしさの受け止め方に影響しうるとしています（段落116）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "開示のしかた",
+          "text": "開示は、人が特別な道具や操作なしに分かる形（目に見える・耳で聞こえるラベルなど）で行います。提供者が2項で埋め込む機械可読な表示は人にすぐ分からないので、導入者はそれに頼れないとされています（ガイドライン段落117）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_134",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "芸術・風刺・フィクションの扱い",
+          "text": "ガイドラインは、作品に当たるかどうかが見る人に「明らか」でなければならず、厳格に解釈するとしています。報道のように純粋に情報や商業の目的だと分かるものは除かれ、広告やドキュメンタリーは場合によって作品と見られることも、見られないこともあるとしています。情報と創作の性格が混ざる場合は、情報の性格が優先し、通常の開示が必要です（段落122）。軽い開示で済む場合も、第三者の権利（個人データ・知的財産など）の保護は必要です（段落124）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_134",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "artistic-examples",
+          "caption": "ガイドライン段落124の後に挙げられた例の要約。",
+          "columns": [
+            "区分",
+            "例"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "作品として軽い開示でよいとされる例",
+                "映画館や配信で公開する映画（予告編を含む）での、俳優の若返りや亡くなった俳優のデジタル複製、既存アーティストの作風に似たAI生成の音楽、政策を風刺する意図が明らかな政治家の加工画像、実在の人物を使ったゲーム画像"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "作品に当たらず通常の開示が必要とされる例",
+                "テレビショッピング風に合成した人物が商品を勧める映像、架空・風刺の目的がなく有名人が実際にはしていない活動をしているように見せる画像、合成インフルエンサーがスポンサー商品を試すだけの映像、SNSで共有されたホロコーストのリアルな生成映像"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "ラベルを付けても、ディープフェイクが適法になるわけではありません。肖像・声の権利、データ保護、著作権・商標、誤認させる広告の規制などは別に守る必要があります（ガイドライン段落127〜129、前文137）。同意のない性的な画像や児童性的虐待素材の生成は、2026年12月2日から第5条の禁止の対象にもなります。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_137",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "public-text",
+      "number": 6,
+      "title": "4項後段: 公共の関心事の文章の表示（導入者）",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "公共の関心事について公衆に知らせる目的で公表する文章をAIで生成・加工した導入者は、AIで生成・加工したと開示しなければなりません。AI生成の内容が人による確認か編集上の管理を経て、かつ自然人か法人がその公表の編集責任を負う場合は不要です。法律で認められた犯罪捜査用も対象外です（第50条4項後段）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_134"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "対象になる文章",
+          "text": "ガイドラインは、(i) 公表されていること（不特定の多くの読者が読める。有料購読でもよい）、(ii) 公衆に知らせる目的（知識・意見・事実を伝える）、(iii) 公共の関心事（政治・行政・司法・基本権・公共の安全・公衆衛生・環境・消費者の安全や、公の議論の対象になりうる経済・金融・科学・文化の動き）の3つで判断するとしています。閉じた少人数のグループ、仕事上の個別のやりとり、社内ネットワークでの社内向けの文章は公表に当たらないとされます（段落131）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "public-text-examples",
+          "caption": "ガイドライン段落131の後の例の要約。",
+          "columns": [
+            "区分",
+            "例"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "対象とされる例（人による確認がなければ開示が必要）",
+                "町議会の決定を扱う記事を新聞サイトでAI要約したもの、病気と食事についてのライフスタイルサイトの記事のAI加工部分、上場企業のサイトに載せる投資家向け情報を含む報告書のAI加工、気象機関がSNSで出すAI生成の暴風警報"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "対象外とされる例",
+                "AI生成のファンタジー小説、会社の広告や商品説明のAI加工文（健康・消費者の安全・サステナビリティなどの主張を含まないもの）、指示した本人にだけ見えるチャットボットのニュース要約、コンサルタントが顧客向けに書く規制対応の助言"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "人による確認・編集責任の例外",
+          "text": "例外には、(i) 人による確認または編集上の管理と、(ii) 編集責任の両方が必要です（段落133）。人による確認は、内容に関する知識と専門的な判断力を持つ人が中身を意図して検討することで、事実確認が最低限含まれるとされます。スペルや文法のチェックだけ、編集方針があるだけ、自動のレビュー、中身を見ない形式的な承認では足りません（段落134〜135）。編集の承認後にAIで中身を変えると、例外は使えなくなります（段落136）。編集責任を負う人・法人・部署の名前と連絡先は、サイトの法的情報などで見つけやすく公開すべきとされます（段落138）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "editorial-examples",
+          "caption": "ガイドライン段落138の後の例の要約。",
+          "columns": [
+            "区分",
+            "例"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "例外に当たるとされる例",
+                "編集長の管理を経て新聞社が編集責任を負う記事・記事要約、研究センターの内部査読を経た学術ブログ、公務員が承認して防災機関の責任で出す警報、関係部門（例: コンプライアンス）の専門家の確認を経て上場企業のサイトに載せるサステナビリティ報告書、人が確認した記事のAI翻訳"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "例外に当たらないとされる例",
+                "人の確認なしにEUの政策についてのAI記事を載せるサイト、別のAIが確認・編集し、人は文法チェックだけした記事、誰の確認もないままECサイトで自費出版した気候変動についてのAI生成の本"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "how-to-disclose",
+      "number": 7,
+      "title": "5項: 表示・告知のしかた",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1〜4項の情報は、対象の人に、明確で区別できる方法で、遅くとも最初のやりとり・接触の時点で伝え、アクセシビリティの要件に合わせます（第50条5項）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "ガイドラインの説明（段落142〜144）",
+          "items": [
+            "明確: 気づきやすく、分かりやすく、障害のある人も含めて使える。区別できる: 他の情報や周りから区別しやすい。説明書の中だけ、メニューの奥、読まれない利用規約の中だけ、は明確・区別できるとは言えない（段落142）",
+            "最初のやりとり・接触は、最初の1人だけでなく、それぞれの人にとっての最初を指す。対話では少なくともセッションの最初に1回。生成コンテンツでは出力ごと・人ごとにかかる（段落143）",
+            "映像の途中から見る人が予見できる場合は、冒頭だけでなく後の時点でも開示するのが望ましい（段落143）",
+            "例: チャットボットとの会話の開始時、ディープフェイクを含む映像の冒頭、公共の関心事のAI文章の冒頭、SNSでディープフェイクに行き当たったとき（段落143の後の例）",
+            "アクセシビリティは、ウェブアクセシビリティ指令（2016/2102）や欧州アクセシビリティ法（2019/882）など、既存の要件が適用されるかを確認する。第50条が独自の要件を追加するわけではない（段落144）",
+            "子どもが対象に含まれる場合は、子ども向けに分かりやすく、年齢に合った形にする（脚注40）"
+          ],
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "配信の流れの中で",
+          "text": "ガイドラインは、配信の流れが複雑な場合、導入者は配信先との契約条件や表示設定などで、ラベルが最初に見る人にきちんと表示されるよう、釣り合いのとれた対策をとるべきとしています（段落12）。他人が作ったAIコンテンツを流通させるだけのプラットフォームや放送局は導入者ではありませんが、表示を残すことが強く推奨されています（段落16）。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code-guidelines",
+      "number": 8,
+      "title": "行動規範とガイドラインの状況",
+      "blocks": [
+        {
+          "type": "table",
+          "id": "art50-documents",
+          "caption": "欧州委員会のサイトで2026-10-11に確認した範囲。",
+          "columns": [
+            "日付",
+            "文書・出来事",
+            "状態"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "2025-12-17",
+                "行動規範の第1次草案を公表",
+                "草案"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
+              ]
+            },
+            {
+              "cells": [
+                "2026-03-03",
+                "行動規範の第2次草案を公表",
+                "草案"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
+              ]
+            },
+            {
+              "cells": [
+                "2026-05-08",
+                "第50条ガイドラインの草案を公表し、意見募集",
+                "草案"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
+              ]
+            },
+            {
+              "cells": [
+                "2026-06-10",
+                "「AI生成コンテンツの透明性に関する行動規範」最終版を公表",
+                "最終版（参加は任意）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
+              ]
+            },
+            {
+              "cells": [
+                "2026-07-09",
+                "行動規範の評価についての欧州委員会の意見を公表。2項・4項・5項の義務を適切にカバーしていると評価。AI会議（AI Board）も適切性の評価を採択",
+                "公表済み"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-code-practice-transparency-ai-generated-content"
+              ]
+            },
+            {
+              "cells": [
+                "2026-07-20",
+                "第50条ガイドライン（C(2026) 5054 final）",
+                "欧州委員会が内容を承認した文書（法的拘束力なし）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+                "https://ec.europa.eu/newsroom/dae/redirection/document/131215"
+              ]
+            },
+            {
+              "cells": [
+                "2026-08-02",
+                "第50条の適用開始",
+                "条文"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "2026-12-02",
+                "2026-08-02より前に市場に出した生成AIシステムの2項の猶予の期限",
+                "条文（第111条4項）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "ガイドライン",
+          "text": "ガイドラインは第96条1項(d)に基づくもので、文書自身が法的拘束力はなく、AI法の権威ある解釈は最終的に CJEU が行うとしています（段落3・5）。第50条についての最初の解釈で、経験や技術の変化に応じて見直すとしています（段落155）。委員会のサイトに載っている文書は、ガイドライン案の内容を承認する委員会あての文書の附属書という形式です。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_96",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/131215"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "行動規範",
+          "text": "行動規範は2部構成です。第1部は生成AIシステムの提供者向け（2項・5項）で、表示と検出のルール、第2部は導入者向け（4項・5項）で、ディープフェイクと公表文章のラベルのルールです。署名は任意で、委員会のページによると、2026年7月末までに約190の企業・団体が署名しました。署名しないこと自体は違反ではありませんが、第50条の義務は守る必要があります。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/129555",
+            "https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act"
+          ]
+        },
+        {
+          "type": "list",
+          "heading": "行動規範の主な中身（署名者向けの約束。法律の条文ではありません）",
+          "items": [
+            "提供者: 1つの方法だけでは要件を満たせない間は、音声・画像・映像・容器に入った文章に、少なくとも2層の機械可読な表示（電子署名付きのメタデータと、目に見えない電子透かし）を付ける。メタデータを運べない自由な文章は、透かし1層でよい（第1部 措置1.1）",
+            "提供者: フィンガープリントやログは補助として使えるが、それだけでは足りない。表示を消さない努力、検出の仕組みと結果の分かりやすい表示なども約束に含まれる（第1部 約束1〜2）",
+            "導入者: 規範の附属書の「EUアイコン」か、それと同等のアイコン・ラベルで開示する。英語の大文字「AI」を主な要素にする（第2部 措置1.1）",
+            "導入者: 画像・映像では他の表示と重ならない場所（例: 右上）に置き、映像では冒頭に加え、可能なら一定間隔で、少なくとも CM などの中断の後に表示する。音声だけのものは冒頭に短い音声の断り書きを入れる。文章は見出しの近くや冒頭などに置く（第2部 措置1.2）",
+            "導入者: 社員研修など閉じた社内の場面だけで使うディープフェイクは、見る前に画面や場所で知らせる方法でもよい（第2部 措置1.2.2(c)）"
+          ],
+          "sources": [
+            "https://ec.europa.eu/newsroom/dae/redirection/document/129555"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "署名した場合・しない場合",
+          "text": "ガイドラインによると、適切と評価された規範の署名者については、委員会と市場監視当局は規範の措置を実施しているかに監督の重点を置きます。署名しない提供者・導入者は、規範の措置との差の分析などで、別の適切な方法による遵守を説明することが期待され、情報提供の要請を多く受ける可能性があります（段落147〜148）。規範の実施は、罰金の額を決めるときの軽減要素として考慮されうるとされます（段落149）。規範自身は、参加は遵守の決定的な証拠にはならないとしています。",
+          "sources": [
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/129555"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "改正後の第50条7項",
+          "text": "改正後の第50条7項は、委員会がEUレベルの行動規範づくりを促し、AI会議の意見を最大限考慮して、規範が2項・4項の義務の遵守に適切かを第56条6項の手続きで評価すると定めます。不十分と判断すれば、実施法令で共通ルールを定められます。改正前にあった「実施法令で規範を承認できる」という規定はなくなりました。改正規則の前文41は、行動規範の法的効果は限られ、適合の推定は与えないと説明しています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#rct_41",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "number": 9,
+      "title": "日本企業の場面別",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "日本の会社でも、EUで生成AIや対話AIを市場に出す、またはAIの出力がEUで使われる場合は第50条の対象になりえます（第2条1項(a)(c)）。EUの子会社などがAIを導入者として使う場合も対象です（第2条1項(b)）。どの項がかかるかは、自社が提供者か導入者か、出力が誰に届くかで変わります。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "table",
+          "id": "japan-scenes",
+          "caption": "条文と欧州委員会ガイドラインで言える範囲の整理です。個別の判断は事実関係によります。",
+          "columns": [
+            "場面",
+            "関係しうる項",
+            "条文・ガイドラインで言えること"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "EU向けサイトにカスタマーサポートのチャットボットを置く",
+                "1項",
+                "自社で開発し（開発させ）自社の名前で使用を開始すれば提供者に当たりうる（段落11）。ヘルプデスクのチャットボットは「明らか」の例外に当たらない例とされる（段落45の後の例）。会話の冒頭などで告知する"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "オペレーターがAIの返答案を見て、自分で送る",
+                "1項",
+                "人が間に入るものは直接のやりとりではないとされる。ただし、AIの返答がそのまま届く部分には告知が必要とされる（段落30）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "マーケティングで生成AIの画像・動画を使う",
+                "4項前段",
+                "実在の有名人を使った広告、実物より良く見える商品画像はディープフェイクの例。架空の動物の広告や、商品の見え方を誤解させないAI背景は当たらない例（段落116の後の例）。ディープフェイクなら見て分かる開示が必要"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "広告会社に広告を発注する",
+                "4項前段",
+                "AIを使うか・どう使うかを決めず、管理もしていない発注者は導入者ではないとされる。AIを使って作る広告会社が導入者になる（段落14）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "広報・IRの文章を生成AIで作って公表する",
+                "4項後段",
+                "投資家向け情報を含む報告書は対象の例。広告・商品説明（健康・安全・サステナビリティの主張を含まないもの）は対象外の例。専門家が中身を確認し、編集責任者を明らかにすれば例外に当たりうる（段落131・134〜138）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "社内だけでAIアシスタントを使う",
+                "1項・4項後段",
+                "自社で開発して自社の名前で使用を開始すれば提供者として1項の対象（段落11の2つ目の例）、他社製を使うだけなら導入者。訓練を受けた社員向けの社内アシスタントは「明らか」の例。社内ネットワークの文章は「公表」に当たらない（段落45・131）。EUの拠点が使う場合は導入者として AI法の対象（第2条1項(b)）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "店舗・イベントで年齢層や感情を推定するカメラを使う",
+                "3項",
+                "導入者がさらされる人に知らせる（入口の掲示など）。年齢層の推定は生体分類で、高リスクに当たらなくても3項の対象になりうる（段落104）。感情認識は高リスクAIでもあり、職場・教育機関では禁止（段落102・107）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_5",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "画像・音声・文章の生成AIサービスをEUに提供する",
+                "1項・2項",
+                "出力に機械可読な表示と検出の手段を用意する。2026-08-02より前に市場に出したものは2項だけ2026-12-02まで猶予。対話の告知（1項）は2026-08-02から（第111条4項、段落153）"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "cells": [
+                "他社の生成AIモデルを組み込んで自社サービスにする",
+                "2項",
+                "上流のモデル提供者や第三者の表示の仕組みに頼れるが、遵守を示す責任は自社に残る（段落74）。既存の生成AIを改変して自社名で使用を開始すれば、新しいシステムの提供者になる（段落11の後の例）"
+              ],
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "example",
+          "title": "C社のEU向けオンラインストア",
+          "items": [
+            "日本の化粧品メーカー「C社」（架空）が、EUの消費者向けにオンラインストアを運営している。",
+            "ストアには、外部の生成AIモデルを組み込んで自社で作り、自社の名前で出している商品相談のチャットボットがある。C社はこのチャットボットの提供者に当たりうるので（段落11）、会話の最初に「AIのアシスタントが答えます」と表示し、常に見える「AI」のラベルを付ける（1項、段落37）。チャットボットの返答の文章も生成AIの出力なので、2項の機械可読な表示の対象になりうる（単語だけの短い出力などは対象外。段落68）。外部モデルの表示の仕組みに頼る場合も、遵守を示す責任はC社に残る（段落74）。",
+            "C社はEU向けの広告に、生成AIで作ったモデルの人物写真を使う予定がある。実在しうるリアルな人物で、本物の写真と受け取られうるなら、ディープフェイクに当たりうる（第3条60号、段落113〜115）。その場合、画像の上に見て分かる「AI」の表示を付ける（4項前段、行動規範 第2部 措置1.1〜1.2）。",
+            "商品の使用前・使用後をAIで加工して効果を実際より良く見せる画像は、ガイドラインが挙げる「誤解させる商品画像」の例に近い。開示で済む話ではなく、誤認させる広告の規制にも関わりうるので、使わない判断が考えられる（段落116の後の例・129）。"
+          ]
+        },
+        {
+          "type": "note",
+          "text": "具体例の当てはめの根拠: 第3条60号、第50条1項・4項、ガイドライン段落11・37・68・74・113〜116・129、行動規範 第2部 措置1.1〜1.2。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/129555"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "high-risk-prohibited",
+      "number": 10,
+      "title": "高リスクAI・禁止との関係",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1〜4項は、高リスクAIの要件・義務（第III章）に影響せず、EU法・国内法の他の透明性義務も妨げません（第50条6項）。前文137は、透明性の義務を守っても、そのAIの利用や出力が AI法や他の法律のもとで適法だという意味にはならないとしています。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#rct_137"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "重なりうる義務",
+          "text": "ガイドラインは、第50条のAIが第5条で禁止されることもあれば（例: 職場・教育機関での感情認識）、高リスクAIに当たることもあるとしています。逆に、高リスクに当たらなくても第50条の対象になりえます（段落25）。附属書IIIの高リスクAIで人についての決定をする（決定を助ける）場合、導入者は対象の人に高リスクAIを使っていると知らせる義務もあります（第26条11項）。ガイドラインは、これは第50条とは別の情報だが、1つの通知にまとめてもよいとしています（脚注14）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_5",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "heading": "経過措置",
+          "text": "ガイドラインは、高リスクAIのための既存システムの経過措置（第111条2項）は、第50条の義務には及ばないとしています（脚注50）。高リスクAIの義務の適用が後でも、第50条は2026年8月2日から守る必要があります。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "禁止されるAI 実務ガイド",
+              "href": "/eu-ai-act/prohibited/",
+              "note": "職場・教育機関での感情推定（第5条1項(f)）や、生体分類による機微な属性の推定（(g)）など"
+            },
+            {
+              "label": "高リスクAIの書類と手続き 実務ガイド",
+              "href": "/eu-ai-act/high-risk/",
+              "note": "高リスクに当たった場合に提供者が作る書類と手続き"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "penalties",
+      "number": 11,
+      "title": "罰則と執行",
+      "blocks": [
+        {
+          "type": "table",
+          "id": "transparency-fines",
+          "columns": [
+            "対象",
+            "罰金の上限",
+            "根拠"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "第50条の義務の違反（事業者）",
+                "1,500万ユーロか、前の事業年度の全世界年間売上高の3%の高い方",
+                "第99条4項(g)"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+              ]
+            },
+            {
+              "cells": [
+                "中小企業（スタートアップを含む）",
+                "上の金額と割合の低い方",
+                "第99条6項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
+              ]
+            },
+            {
+              "cells": [
+                "中堅企業（SMC）",
+                "上の金額と割合の低い方（改正で追加）",
+                "第99条6a項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1"
+              ]
+            },
+            {
+              "cells": [
+                "EUの機関・組織",
+                "75万ユーロ",
+                "第100条3項"
+              ],
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_100"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "罰金の額は、違反の性質・重さ・期間、影響を受けた人の数、企業の規模、協力の度合いなどを考えて決めます（第99条7項）。ガイドラインは、適切と評価された行動規範に沿った取り組みを軽減要素として考慮しうるとしています（段落149）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "第50条の執行は、主に各加盟国の市場監視当局が行います。改正後は、同じ提供者（同じ企業グループ）が汎用AIモデルとシステムの両方を開発したAIシステムと、DSA で指定された超大規模オンラインプラットフォーム・検索エンジンに組み込まれたAIシステムを、欧州委員会の AI Office が監督します（改正後の第75条1項）。導入者の義務（3項・4項）について AI Office が担当するのは、その導入者が提供者でもある場合などに限られます。EUの機関については欧州データ保護監察機関（EDPS）が担当します。違反だと考える人は市場監視当局に苦情を申し立てられます（第85条）。",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_85",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+            "https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act"
+          ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "EU AI法 徹底解説: 10章 罰則と執行",
+              "href": "/eu-ai-act/#penalties",
+              "note": "第99条の罰金の区分全体と、AI Office の監督"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "number": 12,
+      "title": "よくある質問",
+      "blocks": [
+        {
+          "type": "faq",
+          "items": [
+            {
+              "q": "第50条はいつから守る必要がありますか？",
+              "a": "2026年8月2日からです（第113条）。2026年8月2日より前に市場に出した生成AIシステムの提供者に限り、2項の機械可読な表示は2026年12月2日まで猶予されています（改正で加わった第111条4項）。1項・3項・4項に猶予はありません。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_113",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "q": "生成AIで作った画像は、すべて「AI生成」と書く必要がありますか？",
+              "a": "誰が何をするかで違います。生成AIシステムの提供者は、出力に機械可読な表示を付けます（2項）。それを使う導入者が見て分かる開示をする義務は、画像がディープフェイクに当たる場合です（4項前段）。架空の動物の広告のように本物と誤解されないものは、ディープフェイクに当たらない例とされています（ガイドライン段落116の後の例）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_3",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "q": "社員が生成AIで下書きした記事を、担当者が確認して出せば表示は要りませんか？",
+              "a": "公共の関心事の文章なら、内容の知識を持つ人が事実確認を含めて中身を確認し、誰かが編集責任を負っていれば、開示は不要です（4項後段）。スペル・文法のチェックだけでは足りず、確認後にAIで中身を変えると例外は使えなくなるとされます（ガイドライン段落134〜136）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "q": "AIで翻訳した文章や、AIで文法を直した文章にも表示が必要ですか？",
+              "a": "2項について、ガイドラインは文法・スペルの修正、意味を変えない軽い調整、文章のAI翻訳を「標準的な編集」の例に挙げており、機械可読な表示は不要とされます。要約や、意味・構成が変わる書き換えは表示が必要な例です（段落90〜92の後の例）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "q": "メタデータや電子透かしを入れておけば、ディープフェイクの開示になりますか？",
+              "a": "なりません。ガイドラインは、導入者の開示は人が特別な道具なしに分かる形でなければならず、提供者が入れる機械可読な表示には頼れないとしています（段落117）。逆に、1項の告知でも、利用者に見えない機械可読な表示だけでは足りないとされます（段落38）。",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "q": "行動規範に署名しないと違反になりますか？",
+              "a": "なりません。署名は任意です。ただし第50条の義務は守る必要があり、署名しない場合は別の適切な方法で遵守を説明することが期待され、当局から情報提供を多く求められる可能性があるとされています（ガイドライン段落147〜148）。",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "q": "2026年8月2日より前に作ったAI画像や文章に、さかのぼって表示を付ける必要はありますか？",
+              "a": "ガイドラインは、それより前に生成・加工された出力やディープフェイクに、さかのぼって表示する必要はないとしています。ただし、それより前に作った公共の関心事の文章を2026年8月2日以降に公表する場合は開示が必要です（段落154）。",
+              "sources": [
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            },
+            {
+              "q": "オープンソースのモデルで作ったサービスなら対象外ですか？",
+              "a": "いいえ。無料・オープンソースで公開されたAIシステムでも、第50条に当たるものは除外されません（第2条12項）。汎用AIモデル自体には第50条は明示的にはかかりませんが、ガイドラインはモデルの段階での表示も推奨しています（段落23・27）。",
+              "sources": [
+                "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_2",
+                "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "label": "規則 (EU) 2024/1689（EU AI法）英語本文（EUR-Lex）",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689",
+      "note": "第2条・第3条・第5条・第26条・第50条・第96条・第99条・第100条・第111条・第113条、前文132〜137"
+    },
+    {
+      "label": "規則 (EU) 2026/1744（Digital Omnibus on AI）英語本文（EUR-Lex）",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744",
+      "note": "第50条7項の改正、第111条4項の追加、第75条・第99条の改正、前文38・41"
+    },
+    {
+      "label": "欧州委員会: 第50条の透明性の義務に関するガイドライン（公表ページ）",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+      "note": "2026-07-20 公表。法的拘束力はない"
+    },
+    {
+      "label": "欧州委員会: 同ガイドライン 英語版（C(2026) 5054 final、2026-07-20）",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/131215",
+      "note": "本文中の「段落」はこの文書の段落番号"
+    },
+    {
+      "label": "欧州委員会: AI生成コンテンツの透明性に関する行動規範（公表ページ）",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content",
+      "note": "2026-06-10 最終版公表。草案の経緯と署名者数"
+    },
+    {
+      "label": "欧州委員会: 同行動規範 本文（PDF）",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/129555",
+      "note": "第1部（提供者・2項・5項）と第2部（導入者・4項・5項）、附属書のEUアイコン"
+    },
+    {
+      "label": "欧州委員会: 行動規範の評価についての委員会の意見",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-code-practice-transparency-ai-generated-content",
+      "note": "2026-07-09 公表。2項・4項・5項について適切と評価"
+    },
+    {
+      "label": "欧州委員会: 第50条の透明性の義務 Q&A",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act",
+      "note": "2026-07-24 更新"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-10-11",
+      "note": "初版。条文（規則 (EU) 2024/1689 と改正規則 (EU) 2026/1744）、欧州委員会の第50条ガイドライン（C(2026) 5054）と行動規範（最終版）で確認した範囲で作成。自分で作った具体例は1つ（架空と明示）"
+    }
+  ]
+}

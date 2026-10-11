@@ -14,6 +14,11 @@
       "label": "禁止されるAI 実務ガイド",
       "href": "/eu-ai-act/prohibited/",
       "note": "第5条の各号の境界線（当たりうる例・当たらない例）と例外"
+    },
+    {
+      "label": "透明性の義務 実務ガイド",
+      "href": "/eu-ai-act/transparency/",
+      "note": "第50条の各項（AIの告知・生成物の表示・ディープフェイク等）の対象と例外、表示のしかた"
     }
   ],
   "summary": [
@@ -1082,6 +1087,16 @@
             "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
             "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_99"
           ]
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "透明性の義務 実務ガイド",
+              "href": "/eu-ai-act/transparency/",
+              "note": "各項の対象と例外、欧州委員会の第50条ガイドラインの「当たる例・当たらない例」、表示・告知のしかた、行動規範の状況、日本企業の場面別"
+            }
+          ]
         }
       ]
     },
@@ -1495,6 +1510,10 @@
     {
       "date": "2026-10-11",
       "note": "5章（禁止されるAI）から「禁止されるAI 実務ガイド」への入口を追加"
+    },
+    {
+      "date": "2026-10-11",
+      "note": "9章（透明性義務）から「透明性の義務 実務ガイド」への入口を追加"
     }
   ]
 }

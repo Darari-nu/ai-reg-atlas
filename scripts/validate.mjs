@@ -15,10 +15,12 @@ const regulationSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/regu
 const updateSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/update.schema.json'), 'utf8'));
 const explainerSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/explainer.schema.json'), 'utf8'));
 const deadlinesSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/deadlines.schema.json'), 'utf8'));
+const guideSchema = JSON.parse(fs.readFileSync(path.join(ROOT, 'schema/guide.schema.json'), 'utf8'));
 const validateRegulation = ajv.compile(regulationSchema);
 const validateExplainer = ajv.compile(explainerSchema);
 const validateUpdates = ajv.compile(updateSchema);
 const validateDeadlines = ajv.compile(deadlinesSchema);
+const validateGuide = ajv.compile(guideSchema);
 
 let errors = 0;
 
@@ -80,6 +82,42 @@ for (const f of listDataFiles('explainers').filter((f) => f.endsWith('.json'))) 
     if (!countryCodes.has(d.country)) extra.push(`${d.id}: 未知の国コード ${d.country}`);
   }
   check('deadlines.json (id・国コード)', extra.length === 0, { errors: extra.map((message) => ({ instancePath: '', message })) });
+}
+
+// guides（一次資料で裏を取った解説ページ。無ければ0件）。スキーマに加え、
+// 出典が公式ドメイン（EUR-Lex・欧州委員会）だけか、章 id の重複、表の列数と行のセル数の一致を調べる
+const GUIDE_SOURCE_HOSTS = new Set(['eur-lex.europa.eu', 'digital-strategy.ec.europa.eu', 'ec.europa.eu', 'ai-act-service-desk.ec.europa.eu']);
+for (const f of listDataFiles('guides').filter((f) => f.endsWith('.json'))) {
+  const data = JSON.parse(fs.readFileSync(resolveData(`guides/${f}`), 'utf8'));
+  check(`guides/${f}`, validateGuide(data), validateGuide);
+  const extra = [];
+  const urls = [];
+  const collect = (arr) => { if (Array.isArray(arr)) urls.push(...arr); };
+  for (const s of data.summary ?? []) collect(s.sources);
+  for (const m of data.milestones ?? []) collect(m.sources);
+  for (const r of data.references ?? []) urls.push(r.url);
+  const sectionIds = new Set();
+  for (const sec of data.sections ?? []) {
+    if (sectionIds.has(sec.id)) extra.push(`章 id が重複: ${sec.id}`);
+    sectionIds.add(sec.id);
+    for (const b of sec.blocks ?? []) {
+      collect(b.sources);
+      for (const t of b.tiers ?? []) collect(t.sources);
+      if (b.type === 'checklist' || b.type === 'faq') for (const it of b.items ?? []) collect(it.sources);
+      if (b.type === 'table') {
+        for (const [i, row] of (b.rows ?? []).entries()) {
+          collect(row.sources);
+          if (row.cells.length !== b.columns.length) extra.push(`${sec.id}: 表の${i + 1}行目のセル数 ${row.cells.length} が列数 ${b.columns.length} と違う`);
+        }
+      }
+    }
+  }
+  for (const u of urls) {
+    let host = '';
+    try { host = new URL(u).hostname; } catch { /* 下で NG */ }
+    if (!GUIDE_SOURCE_HOSTS.has(host)) extra.push(`公式ドメイン以外の出典: ${u}`);
+  }
+  check(`guides/${f} (出典ドメイン・章id・表)`, extra.length === 0, { errors: extra.map((message) => ({ instancePath: '', message })) });
 }
 
 // digests（週1ダイジェスト原稿。kiji-intake の形か。無ければ0件）

@@ -272,34 +272,71 @@ describe('checkDigestFile', () => {
   });
 });
 
-describe('digest-intake.sh（一時ディレクトリ相手）', () => {
+describe('digest-intake.sh（一時ディレクトリ相手・origin/main から読む）', () => {
   const SH = path.resolve('scripts/local/digest-intake.sh');
+  const g = (cwd, ...args) =>
+    execFileSync('git', args, { cwd, encoding: 'utf8', env: { ...process.env, GIT_AUTHOR_NAME: 't', GIT_AUTHOR_EMAIL: 't@t', GIT_COMMITTER_NAME: 't', GIT_COMMITTER_EMAIL: 't@t' } });
+  const pushDigest = (work, week, body = 'body') => {
+    fs.mkdirSync(path.join(work, 'data/digests'), { recursive: true });
+    fs.writeFileSync(path.join(work, `data/digests/${week}.md`), `---\ntitle: ${week}\n---\n${body}\n`);
+    g(work, 'add', '-A');
+    g(work, 'commit', '-q', '-m', week);
+    g(work, 'push', '-q', 'origin', 'HEAD:main');
+  };
   const setup = () => {
     const t = fs.mkdtempSync(path.join(os.tmpdir(), 'digest-intake-'));
+    const origin = path.join(t, 'origin.git');
+    const work = path.join(t, 'work');
     const atlas = path.join(t, 'atlas');
-    fs.mkdirSync(path.join(atlas, '.git'), { recursive: true });
-    fs.mkdirSync(path.join(atlas, 'data/digests'), { recursive: true });
-    fs.writeFileSync(path.join(atlas, 'data/digests/2026-W41.md'), '---\ntitle: a\n---\nbody\n');
+    g(t, 'init', '-q', '--bare', '-b', 'main', origin);
+    g(t, 'init', '-q', '-b', 'main', work);
+    g(work, 'remote', 'add', 'origin', origin);
+    fs.writeFileSync(path.join(work, 'README'), 'x');
+    pushDigest(work, '2026-W41');
+    g(t, 'clone', '-q', origin, atlas);
+    g(atlas, 'checkout', '-q', '-b', 'some-other-branch'); // 主チェックアウトが別ブランチでも影響しない
     const hpDrafts = path.join(t, 'hp/10_drafts');
     fs.mkdirSync(hpDrafts, { recursive: true });
-    const env = { ...process.env, ATLAS_DIR: atlas, HP_INBOX: path.join(hpDrafts, '65_外部原稿'), STATE_FILE: path.join(t, 'state/digest-intake.txt'), LOG_FILE: path.join(t, 'log.txt'), ATLAS_PULL: '0' };
-    return { t, atlas, env, inbox: env.HP_INBOX };
+    const env = { ...process.env, ATLAS_DIR: atlas, HP_INBOX: path.join(hpDrafts, '65_外部原稿'), STATE_FILE: path.join(t, 'state/digest-intake.txt'), LOG_FILE: path.join(t, 'log.txt') };
+    return { t, work, atlas, env, inbox: env.HP_INBOX };
   };
   const sh = (env) => execFileSync('bash', [SH], { env, encoding: 'utf8' });
+  const lastLog = (env) => fs.readFileSync(env.LOG_FILE, 'utf8').trim().split('\n').pop();
 
-  it('新規だけコピーし、2回目は何もしない。ファイル名は配信する月曜の日付', () => {
-    const { env, inbox, atlas } = setup();
+  it('新規だけコピーし、2回目は何もしない。ファイル名は配信する月曜の日付。件数をログに出す', () => {
+    const { env, inbox, work } = setup();
     sh(env);
     assert.deepEqual(fs.readdirSync(inbox), ['20261012_atlas-digest-2026-W41.md']);
     assert.equal(fs.readFileSync(env.STATE_FILE, 'utf8'), '2026-W41.md\n');
-    // 2回目: 何も増えない
+    assert.ok(lastLog(env).endsWith('done: copied=1 skipped=0'));
     sh(env);
     assert.equal(fs.readdirSync(inbox).length, 1);
-    assert.equal(fs.readFileSync(env.STATE_FILE, 'utf8'), '2026-W41.md\n');
-    // 新しい週だけ増える
-    fs.writeFileSync(path.join(atlas, 'data/digests/2026-W42.md'), '---\ntitle: b\n---\nbody\n');
+    assert.ok(lastLog(env).endsWith('done: copied=0 skipped=1'));
+    pushDigest(work, '2026-W42');
     sh(env);
     assert.deepEqual(fs.readdirSync(inbox).sort(), ['20261012_atlas-digest-2026-W41.md', '20261019_atlas-digest-2026-W42.md']);
+  });
+  it('年またぎの週のファイル名の日付（2026-W53 → 20270104、2026-W01 → 20260105）', () => {
+    const { env, inbox, work } = setup();
+    pushDigest(work, '2026-W53');
+    pushDigest(work, '2026-W01');
+    sh(env);
+    assert.ok(fs.readdirSync(inbox).includes('20270104_atlas-digest-2026-W53.md'));
+    assert.ok(fs.readdirSync(inbox).includes('20260105_atlas-digest-2026-W01.md'));
+  });
+  it('PATH を空にした env -i でも動く（node に依存しない）', () => {
+    const { env, inbox } = setup();
+    const clean = { HOME: process.env.HOME, ATLAS_DIR: env.ATLAS_DIR, HP_INBOX: env.HP_INBOX, STATE_FILE: env.STATE_FILE, LOG_FILE: env.LOG_FILE };
+    execFileSync('/usr/bin/env', ['-i', ...Object.entries(clean).map(([k, v]) => `${k}=${v}`), '/bin/bash', SH], { encoding: 'utf8' });
+    assert.deepEqual(fs.readdirSync(inbox), ['20261012_atlas-digest-2026-W41.md']);
+    assert.ok(lastLog(env).endsWith('done: copied=1 skipped=0'));
+  });
+  it('コピーの中身は origin/main のもので、主チェックアウトの作業ツリーは変えない', () => {
+    const { env, inbox, atlas, work } = setup();
+    pushDigest(work, '2026-W42', 'newer');
+    sh(env);
+    assert.ok(fs.readFileSync(path.join(inbox, '20261019_atlas-digest-2026-W42.md'), 'utf8').includes('newer'));
+    assert.equal(fs.existsSync(path.join(atlas, 'data/digests/2026-W42.md')), false); // 作業ツリーは pull されていない
   });
   it('HP 側に同じ週の原稿があればコピーしない（HP 側は変更しない）', () => {
     const { env, inbox } = setup();
@@ -316,5 +353,13 @@ describe('digest-intake.sh（一時ディレクトリ相手）', () => {
     assert.equal(fs.existsSync(path.join(t, 'unmounted')), false);
     assert.equal(fs.existsSync(env.STATE_FILE), false);
     assert.ok(fs.readFileSync(env.LOG_FILE, 'utf8').includes('未マウント'));
+  });
+  it('fetch に失敗したら何もしない（ログだけ）', () => {
+    const { env, inbox, t, atlas } = setup();
+    g(atlas, 'remote', 'set-url', 'origin', path.join(t, 'nonexistent.git'));
+    sh(env);
+    assert.equal(fs.existsSync(inbox), false);
+    assert.equal(fs.existsSync(env.STATE_FILE), false);
+    assert.ok(fs.readFileSync(env.LOG_FILE, 'utf8').includes('fetch'));
   });
 });

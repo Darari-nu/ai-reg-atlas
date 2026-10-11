@@ -42,6 +42,7 @@ jobs:
 
       - name: commit data
         run: |
+          [ -d data/digests ] || exit 0 # 原稿が無い週（キー無し・0件・検査落ち）は何もしない
           git config user.name "atlas-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data/digests

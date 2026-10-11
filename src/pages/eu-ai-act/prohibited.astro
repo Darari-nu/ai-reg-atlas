@@ -1,0 +1,20 @@
+---
+// 禁止されるAI 実務ガイド（/eu-ai-act/prohibited/）。中身は data/guides/eu-ai-act-prohibited.json。
+import LightLayout from '../../layouts/LightLayout.astro';
+import GuideArticle from '../../components/GuideArticle.astro';
+import { getGuide } from '../../lib/data';
+
+const g = getGuide('eu-ai-act-prohibited');
+---
+
+<LightLayout title={`${g.title} — EU AI法 | AI Reg Atlas`} description={g.description}>
+  <GuideArticle
+    guide={g}
+    crumbs={[
+      { label: 'AI Reg Atlas', href: '/' },
+      { label: 'EU', href: '/country/eu/' },
+      { label: 'EU AI法', href: '/eu-ai-act/' },
+      { label: '禁止されるAIの実務' },
+    ]}
+  />
+</LightLayout>

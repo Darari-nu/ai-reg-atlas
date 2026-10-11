@@ -1028,21 +1028,26 @@
         {
           "type": "p",
           "heading": "行動規範（Code of Practice）",
-          "text": "行動規範（Code of Practice）は2025-07-10に公表されました。「透明性」「著作権」の章はすべての汎用AIモデル提供者向けで、「安全性とセキュリティ」の章は最先端のモデルの少数の提供者向けです。欧州委員会とAI評議会は、行動規範を、提供者が法令順守を示すための適切な自主的手段だと確認しています。提供者は整合規格（欧州委員会の要請で作られる欧州規格）が出るまで、行動規範に頼って順守を示せます（第53条4項・第55条2項）。",
+          "text": "行動規範（Code of Practice）は2025-07-10に公表されました。「透明性」「著作権」の章はすべての汎用AIモデル提供者向けで、「安全性とセキュリティ」の章は最先端のモデルの少数の提供者向けです。欧州委員会とAI評議会は2025-08-01に、行動規範を、提供者が法令順守を示すための適切な自主的手段だと評価しました。提供者は整合規格（欧州委員会の要請で作られる欧州規格）が出るまで、行動規範に頼って順守を示せます（第53条4項・第55条2項）。なお、改正規則 (EU) 2026/1744（2026-07-27発効）で第56条6項が置き換えられ、行動規範の妥当性の評価と公表は欧州委員会（AI評議会の意見を最大限に考慮）が行う形になりました。欧州委員会が実施法（委員会が定める実施のための法令）で行動規範を承認する規定はなくなりました（改正規則 第1条(21)・前文41）。",
           "sources": [
             "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
             "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53",
-            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55"
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#rct_41",
+            "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-general-purpose-ai-code-practice"
           ]
         },
         {
           "type": "p",
           "heading": "既存モデルの経過措置と執行",
-          "text": "2025-08-02より前に市場に出した汎用AIモデルの提供者は、2027-08-02までに対応すればよいとされています（第111条3項）。欧州委員会は2026-08-02から、罰金を含めて汎用AIモデル提供者の義務を執行できます。罰金の上限は全世界年間売上高の3%か1,500万ユーロの高い方です（第101条）。委員会ガイドラインは、他社のモデルを改変・ファインチューニングした者が提供者になる目安を示しています。元のモデルの学習計算量の3分の1を超える計算量を使った場合に限り、改変した者が提供者になります。",
+          "text": "2025-08-02より前に市場に出した汎用AIモデルの提供者は、2027-08-02までに対応すればよいとされています（第111条3項）。欧州委員会は2026-08-02から、罰金を含めて汎用AIモデル提供者の義務を執行できます。罰金の上限は全世界年間売上高の3%か1,500万ユーロの高い方です（第101条）。欧州委員会のガイドラインによると、他社のモデルを改変・ファインチューニングした者が提供者になるのは、モデルの汎用性・能力・システミックリスクが大きく変わる場合だけです。その目安は、改変に使った計算量が元のモデルの学習の計算量の3分の1を超えることです（ガイドライン段落59・60。拘束力はなく、個別の判断が必要です）。",
           "sources": [
             "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_111",
             "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_101",
-            "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers"
+            "https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers",
+            "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+            "https://ec.europa.eu/newsroom/dae/redirection/document/118340"
           ]
         },
         {
@@ -1558,6 +1563,10 @@
     {
       "date": "2026-10-11",
       "note": "1章（誰が対象か）と6章（高リスクAI）から「AIを使う会社（導入者）向け 実務ガイド」への入口を追加"
+    },
+    {
+      "date": "2026-10-11",
+      "note": "8章（汎用AIモデル）から「汎用AI（GPAI）モデル 実務ガイド」への入口を追加。改変した者が提供者になる条件をガイドラインどおり（大きな変化が条件、計算量の3分の1は目安）に直し、第56条6項の改正（2026-07-27）を追記"
     }
   ]
 }

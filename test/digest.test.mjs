@@ -123,6 +123,23 @@ describe('checkDigest', () => {
     const inOfficial = buildDigestInput({ records: [rec({ summary: { what: long, who: '', when_impact: '' } })], countries, week });
     assert.equal(checkDigest(copied, inOfficial).ok, true);
   });
+  it('報道由来でも、自サイトの解説 lead の写しは合格（解説は原文との検査を済ませている）', () => {
+    const long = '韓国政府は人工知能の安全性を確保するため事業者に対し新たな義務を課す方針を明らかにしたと発表した。';
+    const inMedia = buildDigestInput({
+      records: [rec({ source_kind: 'media' })],
+      explainers: [{ id: '2026-10-06-kr-001', lead: long, facts: [{ text: long, source_url: SRC }] }],
+      countries,
+      week,
+    });
+    const copied = digest({ picks: [{ ...digest().picks[0], what: long }] });
+    assert.equal(checkDigest(copied, inMedia).ok, true);
+  });
+  it('報道由来で title を40字以上写した項目は不合格のまま', () => {
+    const title = '韓国政府は人工知能の安全性を確保するため事業者に対し新たな義務を課す方針を明らかにしたと発表した。';
+    const inMedia = buildDigestInput({ records: [rec({ source_kind: 'media', title })], countries, week });
+    const copied = digest({ picks: [{ ...digest().picks[0], what: title }] });
+    assert.ok(checkDigest(copied, inMedia).reasons.includes('copied-from-source(pick[0])'));
+  });
 });
 
 describe('Markdown 化（kiji-intake の形）', () => {
@@ -255,6 +272,50 @@ describe('run()（ダイジェスト生成）', () => {
     const d = deps({ createClient: () => mockClient(async () => okMsg(bad)) });
     assert.equal(await run(d.opts), 0);
     assert.deepEqual(d.written, {});
+  });
+  describe('不合格のときの書き直し（1回だけ）', () => {
+    const bad = () => okMsg(digest({ picks: [{ ...digest().picks[0], record_id: 'zzz' }] }));
+    const counting = (...msgs) => {
+      const calls = [];
+      const client = mockClient(async (a) => {
+        calls.push(a);
+        const m = msgs[Math.min(calls.length - 1, msgs.length - 1)];
+        if (m instanceof Error) throw m;
+        return m;
+      });
+      return { calls, client };
+    };
+    it('1回目が不合格・2回目が合格 → 保存し、2回目に理由が入る', async () => {
+      const c = counting(bad(), okMsg());
+      const d = deps({ createClient: () => c.client });
+      assert.equal(await run(d.opts), 0);
+      assert.deepEqual(Object.keys(d.written), ['2026-W41.md']);
+      assert.equal(c.calls.length, 2);
+      assert.ok(!c.calls[0].messages[0].content.includes('不合格'));
+      assert.ok(c.calls[1].messages[0].content.includes('pick[0]-record-not-in-input'));
+      assert.deepEqual(c.calls[1].system, c.calls[0].system);
+    });
+    it('2回とも不合格 → 保存せず、呼び出しは2回だけ', async () => {
+      const c = counting(bad());
+      const d = deps({ createClient: () => c.client });
+      assert.equal(await run(d.opts), 0);
+      assert.deepEqual(d.written, {});
+      assert.equal(c.calls.length, 2);
+    });
+    it('1回目が合格 → 呼び出しは1回だけ', async () => {
+      const c = counting(okMsg());
+      const d = deps({ createClient: () => c.client });
+      assert.equal(await run(d.opts), 0);
+      assert.equal(c.calls.length, 1);
+      assert.equal(Object.keys(d.written).length, 1);
+    });
+    it('1回目が api エラー → 書き直さない', async () => {
+      const c = counting(apiErr(500));
+      const d = deps({ createClient: () => c.client });
+      assert.equal(await run(d.opts), 0);
+      assert.equal(c.calls.length, 1);
+      assert.deepEqual(d.written, {});
+    });
   });
   it('予期しない例外でも exit 0', async () => {
     const d = deps({ loadRecords: () => { throw new Error('boom'); } });

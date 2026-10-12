@@ -92,17 +92,31 @@ export async function run({
     const countries = loadCountries();
     const explainers = loadExplainers();
     const input = buildDigestInput({ records, explainers, countries, week });
-    const res = await generateDigest({ client: createClient(), model, input });
-    const usage = addUsage({ input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }, res.usage ?? {});
-    log.log(`[digest] model=${model} usage=${JSON.stringify(usage)} cost~$${estimateCostUsd(usage).toFixed(3)} (Sonnet 5.5 単価換算)`);
+    const client = createClient();
+    let res = await generateDigest({ client, model, input });
+    let usage = addUsage({ input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }, res.usage ?? {});
+    const logUsage = () => log.log(`[digest] model=${model} usage=${JSON.stringify(usage)} cost~$${estimateCostUsd(usage).toFixed(3)} (Sonnet 5.5 単価換算)`);
+    logUsage();
     if (res.status !== 'ok') {
       log.warn(`[digest] ${res.status}: ${res.reason}`);
       return 0;
     }
-    const check = checkDigest(res.digest, input);
+    let check = checkDigest(res.digest, input);
     if (!check.ok) {
-      log.warn(`[digest] rejected: ${check.reasons.join(', ')}`);
-      return 0;
+      // 検査不合格のときに限り、理由を伝えて1回だけ書き直させる（最大2回。ループにしない）
+      log.warn(`[digest] rejected (try 1): ${check.reasons.join(', ')}`);
+      res = await generateDigest({ client, model, input, retryReasons: check.reasons });
+      usage = addUsage(usage, res.usage ?? {});
+      logUsage();
+      if (res.status !== 'ok') {
+        log.warn(`[digest] ${res.status}: ${res.reason}`);
+        return 0;
+      }
+      check = checkDigest(res.digest, input);
+      if (!check.ok) {
+        log.warn(`[digest] rejected: ${check.reasons.join(', ')}`);
+        return 0;
+      }
     }
     const { markdown, title } = digestToMarkdown({
       digest: res.digest,

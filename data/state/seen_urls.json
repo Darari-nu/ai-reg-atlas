@@ -2066,5 +2066,33 @@
   "https://e.vnexpress.net/news/tech/tech-news/vinfast-of-southeast-asia-s-richest-man-to-launch-ebus-platform-in-us-5129510.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-11"
+  },
+  "https://www.pm.gov.au/media/visit-australia-hashemite-kingdom-jordan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-12"
+  },
+  "https://www.pm.gov.au/media/national-reflection-25-years-australian-service-afghanistan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-12"
+  },
+  "https://www.pm.gov.au/media/25-years-australians-answered-call-afghanistan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-12"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/amazon-s-jeff-bezos-gains-102b-in-one-month-becomes-world-s-second-richest-person-5130632.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-12"
+  },
+  "https://e.vnexpress.net/news/tech/challenge-hub/which-southeast-asian-market-has-the-highest-iphone-18-pro-price-5130493.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-12"
+  },
+  "https://mst.gov.vn/bo-khoa-hoc-va-cong-nghe-cong-bo-bo-nhan-dien-ngay-chuyen-doi-so-quoc-gia-10102026-197261008171757812.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-12"
+  },
+  "https://mst.gov.vn/thu-truong-hoang-minh-can-rut-ngan-khoang-cach-tu-nghien-cuu-den-san-pham-197261010130609428.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-12"
   }
 }

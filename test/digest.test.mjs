@@ -272,7 +272,8 @@ describe('checkDigestFile', () => {
   });
 });
 
-describe('digest-intake.sh（一時ディレクトリ相手・origin/main から読む）', () => {
+// digest-intake.sh はこの Mac の launchd 専用で、日付計算に macOS の date（-j -v）を使う。Linux の CI では飛ばす
+describe('digest-intake.sh（一時ディレクトリ相手・origin/main から読む）', { skip: process.platform !== 'darwin' }, () => {
   const SH = path.resolve('scripts/local/digest-intake.sh');
   const g = (cwd, ...args) =>
     execFileSync('git', args, { cwd, encoding: 'utf8', env: { ...process.env, GIT_AUTHOR_NAME: 't', GIT_AUTHOR_EMAIL: 't@t', GIT_COMMITTER_NAME: 't', GIT_COMMITTER_EMAIL: 't@t' } });

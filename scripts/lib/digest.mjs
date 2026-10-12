@@ -171,7 +171,7 @@ const hasBreaker = (s) => /[\n\r]/.test(String(s ?? '')); // 1行のはずの項
 
 /**
  * 検査。{ ok, reasons[] }。URL はモデルに書かせない（http 等が入ったら不合格）。record_id は入力のものだけ。
- * 報道由来（official 以外）の項目は、入力の文面（要約・解説の事実）との長い連続一致を不合格にする（既存の写し防止を再利用）。
+ * 報道由来（official 以外）の項目は、入力の要約文（title・what・so_what）との長い連続一致を不合格にする（既存の写し防止を再利用）。
  */
 export function checkDigest(out, input) {
   const reasons = [];
@@ -222,7 +222,8 @@ export function checkDigest(out, input) {
     items.forEach((it, i) => {
       const rec = byId.get(it?.record_id);
       if (!rec || rec.source_kind === 'official') return;
-      const material = [rec.title, rec.what, rec.so_what, rec.explainer_lead, ...(rec.explainer_facts ?? [])].filter(Boolean).join('\n');
+      // 解説の lead/facts は、原文との写し防止を済ませた自サイトの文で、モデルは原文を見ない。比較対象にしない（要約文だけ比べる）
+      const material = [rec.title, rec.what, rec.so_what].filter(Boolean).join('\n');
       const sh = shingleSet(material);
       const fields = kind === 'pick' ? [it.headline, it.what, it.one_liner] : [it.line];
       if (fields.some((f) => hasLongCopy(f, sh))) reasons.push(`copied-from-source(${kind}[${i}])`);
@@ -238,8 +239,13 @@ export function checkDigest(out, input) {
  * 週1本のダイジェストを生成する。client は Anthropic SDK のクライアント（テストではモック）。
  * 戻り値: { status: 'ok', digest, usage } | { status: 'skip'|'abort', reason, usage? }
  */
-export async function generateDigest({ client, model = DEFAULT_MODEL, input }) {
+export async function generateDigest({ client, model = DEFAULT_MODEL, input, retryReasons = null }) {
   const format = zodOutputFormat(DigestSchema);
+  // 書き直し（検査で不合格だったとき）は user メッセージの末尾に理由を足す。system は変えない（キャッシュを効かせる）
+  let userContent = buildUserMessage(input);
+  if (Array.isArray(retryReasons) && retryReasons.length > 0) {
+    userContent += `\n\n## 前回の原稿は次の検査で不合格でした。直して書き直してください: ${retryReasons.join('、')}。copied-from-source は、入力の文をそのまま写した部分があったという意味です。自分の言葉で言い直してください。`;
+  }
   let msg;
   try {
     // temperature 等のサンプリング指定・thinking 指定・assistant prefill は Sonnet 5.5 で 400 になるので付けない
@@ -247,7 +253,7 @@ export async function generateDigest({ client, model = DEFAULT_MODEL, input }) {
       model,
       max_tokens: MAX_TOKENS,
       system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
-      messages: [{ role: 'user', content: buildUserMessage(input) }],
+      messages: [{ role: 'user', content: userContent }],
       output_config: { effort: EFFORT, format },
     });
   } catch (err) {

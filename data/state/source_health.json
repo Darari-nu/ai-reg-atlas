@@ -5,7 +5,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -15,7 +15,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -25,7 +25,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -35,7 +35,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -45,7 +45,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -55,7 +55,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -65,7 +65,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -75,7 +75,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -85,7 +85,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -95,7 +95,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -105,7 +105,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -115,7 +115,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -125,7 +125,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -135,18 +135,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=UK%20AI%20regulation&format=rss": {
     "label": "英国 ニュース検索「UK AI regulation」",
     "country": "uk",
-    "fail_days": 1,
-    "first_failed": "2026-10-12",
-    "last_failed": "2026-10-12",
-    "last_ok": "2026-10-11",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-10-13",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm": {
@@ -155,7 +155,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -165,7 +165,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -175,18 +175,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=China%20AI%20regulation%20CAC&format=rss": {
     "label": "中国 ニュース検索「China AI regulation CAC」",
     "country": "cn",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-10-13",
+    "last_failed": "2026-10-13",
     "last_ok": "2026-10-12",
-    "last_reason": null,
+    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
     "alerted": false
   },
   "https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%20AI%20%E8%A6%8F%E5%88%B6&format=rss": {
@@ -195,7 +195,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -205,7 +205,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -215,18 +215,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Korea%20AI%20Basic%20Act&format=rss": {
     "label": "韓国 ニュース検索「Korea AI Basic Act」",
     "country": "kr",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-10-13",
+    "last_failed": "2026-10-13",
     "last_ok": "2026-10-12",
-    "last_reason": null,
+    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
     "alerted": false
   },
   "https://www.bing.com/news/search?q=%E9%9F%93%E5%9B%BD%20AI%E5%9F%BA%E6%9C%AC%E6%B3%95&format=rss": {
@@ -235,18 +235,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
   "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches": {
     "label": "シンガポール scrape_hash imda.gov.sg/resources/press-releases-fac…",
     "country": "sg",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-10-13",
+    "last_failed": "2026-10-13",
     "last_ok": "2026-10-12",
-    "last_reason": null,
+    "last_reason": "no-dated-links",
     "alerted": false
   },
   "https://www.mddi.gov.sg/newsroom/": {
@@ -255,7 +255,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -265,7 +265,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -275,7 +275,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -285,7 +285,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -295,7 +295,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -305,7 +305,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -315,7 +315,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -325,7 +325,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -335,7 +335,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -345,7 +345,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -355,7 +355,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -365,7 +365,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -375,7 +375,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -385,7 +385,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -395,7 +395,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -405,7 +405,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -415,7 +415,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -425,7 +425,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -435,7 +435,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -445,7 +445,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -455,7 +455,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -465,7 +465,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -475,7 +475,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -485,7 +485,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -495,7 +495,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -505,18 +505,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=%E5%8F%B0%E6%B9%BE%20AI%E5%9F%BA%E6%9C%AC%E6%B3%95&format=rss": {
     "label": "台湾 ニュース検索「台湾 AI基本法」",
     "country": "tw",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-10-13",
+    "last_failed": "2026-10-13",
     "last_ok": "2026-10-12",
-    "last_reason": null,
+    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
     "alerted": false
   },
   "https://mptc.gov.kh/en/feed/": {
@@ -525,7 +525,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -535,7 +535,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -545,7 +545,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -555,7 +555,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -565,7 +565,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -575,7 +575,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -585,7 +585,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -595,7 +595,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
@@ -605,18 +605,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-12",
+    "last_ok": "2026-10-13",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Vietnam%20AI%20law%20MOST%20decree&format=rss": {
     "label": "ベトナム ニュース検索「Vietnam AI law MOST decree」",
     "country": "vn",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-10-13",
+    "last_failed": "2026-10-13",
     "last_ok": "2026-10-12",
-    "last_reason": null,
+    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
     "alerted": false
   }
 }

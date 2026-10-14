@@ -1,0 +1,68 @@
+{
+  "id": "2026-10-13-eu-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-14T09:45:52Z",
+  "record_id": "2026-10-13-eu-001",
+  "source_kind": "official",
+  "published_at": "2026-10-14T09:45:52Z",
+  "headline": "EDPB、スマートグラスのデータ保護に関する声明を採択",
+  "lead": "欧州データ保護会議（EDPB）は2026年10月13日、スマートグラスに関する声明を採択したと公表しました。あわせて、外部の専門家が作成したレポート「The connected gaze」も公開しています。声明は初期の暫定的な指針で、利用者・製造者・サービス提供者に向けた内容です。",
+  "facts": [
+    {
+      "text": "EDPBは直近の本会議でスマートグラスに関する声明を採択し、2026年10月13日に公表しました。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en"
+    },
+    {
+      "text": "この声明は初期のもので、利用者、製造者、サービス提供者に暫定的な指針を示し、リスクへの認識を高めることを目的としています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en"
+    },
+    {
+      "text": "利用者のGDPR上の責任は使い方によって異なり、公開SNSへの投稿や職務・政治活動での利用ではデータ管理者（コントローラー）とみなされます。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en"
+    },
+    {
+      "text": "家族や友人の撮影、私的な場での翻訳など純粋に個人的な利用にはGDPRは適用されませんが、刑事法、民事法、労働法、分野別の規則は適用される場合があります。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en"
+    },
+    {
+      "text": "製造者と連携アプリ・サービスの提供者はデータ管理者として、自らの義務を利用者に移すことができず、新たな処理が当初の収集目的と両立するようにする必要があります。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en"
+    },
+    {
+      "text": "EDPBは透明性を主な課題とし、明るいLED、音声信号、スマートフォン通知、独自のデザインなどで録画を分かるようにすることを挙げ、業界標準と啓発の取り組みも奨励しています。",
+      "source_url": "https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en"
+    }
+  ],
+  "who_is_affected": "スマートグラスの製造者や、連携アプリ・サービスの提供者が主な対象です。業務や公開SNSで使う利用者や、病院・学校・職場などで導入する事業者にも関係する場合があります。声明は暫定的な指針であり、新たな法的義務を直接定めたものかどうかは本文からは分かりません。",
+  "japan_impact": "日本からEU向けにスマートグラスやその連携サービスを提供する会社は、声明の内容を確認するとよいでしょう。録画を知らせるLEDや通知などの設計が、声明の考え方に沿っているか点検するとよいでしょう。EU拠点や取引先が機器を業務で使う場合は、GDPR上の位置づけを確認するとよいでしょう。",
+  "next_steps": "資料には、声明に続く具体的な予定や施行日は書かれていません。声明は初期のもので暫定的な指針とされています。今後、より詳しい指針が出る可能性はありますが、これは推測です。まずは声明と、レポート本文の確認をおすすめします。",
+  "unknowns": [
+    "声明に法的拘束力があるか、違反時の罰則があるか",
+    "より詳細な指針や正式なガイドラインを出す予定があるか",
+    "業界標準の具体的な内容と策定の時期",
+    "日本からEUへ機器を提供する場合の具体的な適用範囲"
+  ],
+  "glossary": [
+    {
+      "term": "EDPB（欧州データ保護会議）",
+      "explanation": "EU各国のデータ保護機関で構成される組織で、GDPRの適用について見解や指針を示します。"
+    },
+    {
+      "term": "GDPR",
+      "explanation": "EUの一般データ保護規則です。個人データの取り扱いについて、事業者などに義務を定めています。"
+    },
+    {
+      "term": "データ管理者（コントローラー）",
+      "explanation": "個人データを処理する目的や方法を決める者です。GDPR上の義務を負います。"
+    },
+    {
+      "term": "家庭内例外（household exemption）",
+      "explanation": "純粋に個人的または家庭内の活動での処理にはGDPRが適用されないという例外です。"
+    },
+    {
+      "term": "専門家プール（SPE）プログラム",
+      "explanation": "EDPBが進める取り組みで、各国のデータ保護機関の監督能力を高めるため、共通ツールの開発や専門家の活用を支援します。"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "2026-10-13-in-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-14T09:45:52Z",
+  "record_id": "2026-10-13-in-001",
+  "source_kind": "media",
+  "published_at": "2026-10-14T09:45:52Z",
+  "headline": "印MeitY傘下のC-DAC、AI計算資源1万基の事業者を募集",
+  "lead": "インドの先進計算開発センター（C-DAC）が、IndiaAIミッション向けにAI計算資源を提供する事業者の登録を募りました。最大10,000基のGPUなどが対象です。応募する事業者には、データをすべてインド国内に置くことなどが求められます。",
+  "facts": [
+    {
+      "text": "電子情報技術省（MeitY）の傘下にあるC-DACが、AIサービス提供事業者を募る事業者登録要請書（RFE）を出し、最大10,000基のAI計算ユニット（AICU）の提供を求めています。",
+      "source_url": "https://www.medianama.com/2026/10/223-meity-ai-compute-providers-gpus-indiaai-mission/"
+    },
+    {
+      "text": "RFEはAICUを、AI処理に使うGPU、TPU、アクセラレータなどのハードウェアと定義しています。",
+      "source_url": "https://www.medianama.com/2026/10/223-meity-ai-compute-providers-gpus-indiaai-mission/"
+    },
+    {
+      "text": "選ばれた事業者は、インフラ、データ、メタデータ、ログ、バックアップ、災害復旧をすべてインド国内に置く必要があります。",
+      "source_url": "https://www.medianama.com/2026/10/223-meity-ai-compute-providers-gpus-indiaai-mission/"
+    },
+    {
+      "text": "C-DACのデータは、他の顧客から物理的にも論理的にも分離する必要があります。",
+      "source_url": "https://www.medianama.com/2026/10/223-meity-ai-compute-providers-gpus-indiaai-mission/"
+    },
+    {
+      "text": "1万基は4,000基、1,000基、512基のクラスター単位などで構成し、各クラスターはインド国内の単一データセンターに512基以上を置く必要があります。",
+      "source_url": "https://www.medianama.com/2026/10/223-meity-ai-compute-providers-gpus-indiaai-mission/"
+    },
+    {
+      "text": "Vaishnaw大臣は10月8日に、需要は1万GPUで、最初の調達は5,000だと述べましたが、RFE自体は初回の調達量を示していません。",
+      "source_url": "https://www.medianama.com/2026/10/223-meity-ai-compute-providers-gpus-indiaai-mission/"
+    }
+  ],
+  "who_is_affected": "AI計算サービスを提供する事業者が、直接の対象です。インド国内にデータセンターを持つ事業者や、持つ予定の事業者が中心になる場合があります。計算資源の利用者は、各省庁、大学、研究機関、スタートアップ、産業界が想定されています。",
+  "japan_impact": "日本企業がインドで計算基盤を提供するなら、国内設置の要件を確認する必要があります。海外クラウドを使う場合は、データやログの保管先がインド国内か点検するとよいでしょう。インド拠点や現地パートナー経由で参加する場合は、データの分離方法も確認するとよいでしょう。この調達に直接参加しない企業でも、インド政府案件の基準を知る材料になります。",
+  "next_steps": "資料には、応募期限や選定の日程が書かれていません。RFEには「Stage-2」の記載があり、クラスター構成が変わる場合があります。報道によると、大臣はAI規制の意見募集文書を1か月以内に出すと述べました。実施されるかどうかは、今後の発表を待つ必要があります。応募を考える企業は、RFE原文を確認するとよいでしょう。",
+  "unknowns": [
+    "応募期限と選定の日程",
+    "初回調達の量（大臣発言は5,000ですが、RFEには記載がありません）",
+    "対象となる都市の具体名",
+    "外資系事業者や日本企業が応募できる条件の詳細",
+    "違反した場合の罰則や契約上の扱い"
+  ],
+  "glossary": [
+    {
+      "term": "RFE（事業者登録要請書）",
+      "explanation": "政府機関が事業者を登録するために出す募集文書です。ここではC-DACがAI計算の提供事業者を募っています。"
+    },
+    {
+      "term": "AICU（AI計算ユニット）",
+      "explanation": "RFEで、AI処理に使うGPU、TPU、アクセラレータなどのハードウェアを指す言葉です。"
+    },
+    {
+      "term": "IndiaAIミッション",
+      "explanation": "インド政府のAI推進事業です。計算基盤の整備もこの事業に含まれています。"
+    },
+    {
+      "term": "データ主権",
+      "explanation": "データを保管・処理する場所や管理をめぐる考え方です。今回はデータのインド国内配置などが求められます。"
+    }
+  ]
+}

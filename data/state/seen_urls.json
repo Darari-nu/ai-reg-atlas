@@ -2242,5 +2242,221 @@
   "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187857": {
     "verdict": "gemini-unusable",
     "date": "2026-10-13"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02ryutsu18_04000001_00016.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/yusei/02kiban07_04000113.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yuseijigyo_seisakuiinkai/02ryutsu14_04000224.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/digital_shokadai/02ryutsu02_04000607.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban02_04000903.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/miraishakaiomisueta/06_siryou.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/chihou_seido/singi/02gyosei01_04000511_00012.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/kaikeikijun/02gyosei04_04000206.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/chiho_jinzai_ikusei_r08/dai02kai.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001582.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/menu_kyotsuu/important/kinkyu02_000680.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/info-accessibility-portal/02ryutsu06_04000262.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/miraishakaiomisueta/07_kaisai.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/yusei/02ryutsu01_04000520.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/chiho_dx/02gyosei04_04000201.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.federalregister.gov/documents/2026/10/14/2026-20993/certain-vertical-power-delivery-systems-components-thereof-and-computing-systems-containing-the-same": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.pm.gov.au/media/opening-remarks-parliament-house-canberra-14-october-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.pm.gov.au/media/joint-leaders-statement-enhanced-cooperation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.pm.gov.au/media/television-interview-abc-afternoon-briefing-11": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/challenge-hub/can-air-conditioners-remove-harmful-pm2-5-particles-5132175.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/duke-mathematics-grads-top-us-college-earnings-ranking-at-nearly-300-000-5132112.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/how-mit-stanford-and-other-top-us-colleges-are-adapting-education-for-ai-era-5131845.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/chinese-robotic-hand-performs-magic-tricks-with-human-like-dexterity-5132048.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/singapore-aims-to-turn-ai-boom-into-better-jobs-new-capabilities-pm-wong-5132032.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/leading-materials-scientist-joins-asia-s-sixth-best-university-from-us-s-georgia-tech-5131398.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/enterprises/how-three-harvard-and-carnegie-mellon-alumni-built-2-3b-ai-mortgage-startup-5131299.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/spacex-says-starlink-is-set-to-become-a-major-mobile-carrier-after-8b-deal-5131150.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-innovation/sharing-chipmaking-facilities-helps-cut-costs-singapore-semiconductor-expert-5131569.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/hackers-overheat-supermarket-fridges-in-world-s-most-visited-country-sparking-fires-and-spoiling-food-5131581.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://mainichi.jp/articles/20261014/pr2/00m/020/341000c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.thehindu.com/business/Industry/ibm-india-pitches-digital-swaraj-with-country-specific-tools-for-sovereign-ai/article71579473.ece": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.innovationaus.com/matt-comyn-australia-must-retain-economic-value-of-ai/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://en.vietnamplus.vn/vietnam-australia-step-up-digital-technology-ai-cooperation-post353494.vnp": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei09_01000107.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001273.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.tc260.org.cn/tc260/tzgg/202610/2ac025d624a046199d8895fd6eeee5aa.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187870": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187867": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187868": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187869": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-remarks-by-minister-josephine-teo-at-the-11th-asean-ministerial-conference-on-cybersecurity/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-minister-josephine-teo-at-the-singapore-international-cyber-week--day-2-/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-the-singapore-international-cyber-week-workforce-development-panel-/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-the-singapore-international-cyber-week-securing-smart-cities-event/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.mddi.gov.sg/newsroom/keynote-address-by-minister-josephine-teo-at-smes-go-digital-day-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.mddi.gov.sg/newsroom/welcome-address-by-minister-josephine-teo-at-the-singapore-international-cyber-week-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.mddi.gov.sg/newsroom/closing-speech-by-sms-tan-kiat-how-for-the-second-reading-of-the-digital-infrastructure-bill/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/new-initiatives-to-strengthen-ai-safety-and-resilience": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/minister-valdez-announces-access-to-capital-for-women-entrepreneurs.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//c2e1bd8b-7828-427f-8210-f5e27a0ee06f": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//dafa6abf-eea2-48c8-94ab-e5c10808ae36": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-58-2026-tt-bkhcn-470640.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://congbao.chinhphu.vn/cong-bao/549-47537.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-14"
+  },
+  "https://www.federalregister.gov/documents/2026/10/14/2026-20891/division-of-program-coordination-planning-and-strategic-initiatives-office-of-the-director-notice-of": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-14"
   }
 }

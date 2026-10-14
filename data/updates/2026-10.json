@@ -328,5 +328,95 @@
       "https://economictimes.indiatimes.com/tech/artificial-intelligence/sebi-to-issue-ai-machine-learning-guidelines-shortly-eyes-expiry-day-settlement-rules-within-a-week-chairman/articleshow/134857770.cms"
     ],
     "country_anchor": "/country/in/#updates"
+  },
+  {
+    "id": "2026-10-13-eu-001",
+    "date": "2026-10-13",
+    "country": "eu",
+    "axis": "transparency",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "欧州データ保護会議（EDPB）、スマートグラスのデータ保護に関する声明を公表",
+    "summary": {
+      "what": "スマートグラスのプライバシーリスクとデータ保護上の課題に関する声明の公表",
+      "who": "欧州データ保護会議（EDPB）",
+      "when_impact": "2026年10月13日公表"
+    },
+    "detail": "欧州データ保護会議（EDPB）は、最新の本会議においてスマートグラスに関する声明を採択し、専門家プール（SPE）プログラムの一環としてレポート「The connected gaze」を公開した。スマートグラスは通信や支援などで利便性がある一方で、カメラやマイクが搭載されインターネットに接続されているため、周囲の人物が気付かないうちに録音・録画されるプライバシー上の懸念がある。EDPBは、ユーザーのGDPR上の責任や、製造者・サービス提供者の義務について整理し、病院や学校、職場などの敏感な環境でのリスクを指摘している。また、LEDライトや音声、デザイン等による録画中の明確な視覚的・聴覚的警告の重要性を強調し、業界標準や認識向上の取り組みを奨励している。",
+    "so_what": "スマートグラスの利用における隠し撮りリスクや透明性確保の要件が示されており、関連機器を扱う企業はプライバシー保護機能の実装や利用者への周知徹底が求められます。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "EDPB adopts statement and report on data protection challenges of smart glasses",
+    "publication_date": "2026-10-13",
+    "discovered_at": "2026-10-14",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en"
+    ],
+    "country_anchor": "/country/eu/#axis-transparency"
+  },
+  {
+    "id": "2026-10-14-sg-001",
+    "date": "2026-10-14",
+    "country": "sg",
+    "axis": "transparency",
+    "change_type": "guideline_draft",
+    "legal_stage": "final_guidance",
+    "source_kind": "media",
+    "title": "シンガポール情報通信メディア開発庁（IMDA）、AIエージェントの安全性検証ツールキットを発表",
+    "summary": {
+      "what": "AIエージェントの安全性と信頼性をテストするためのスターターキットの発表",
+      "who": "情報通信メディア開発庁（IMDA）およびAI Verify財団",
+      "when_impact": "2026年10月14日に公表され、組織のAIエージェントのテストに活用される"
+    },
+    "detail": "シンガポールの情報通信メディア開発庁（IMDA）長官のNg Cher Pong氏は、AIアシュアランス・エクスチェンジにて、AIエージェントの安全性と信頼性をテストするための「Starter Kit for Testing Agentic Systems for Safety and Reliability」を発表した。本ツールキットは、エージェントが使用するツール、アクセスする情報、下された決定、権限や境界線の遵守、およびセーフガードの動作を検証するものであり、AI Verify財団や業界パートナーと協力して開発された。",
+    "so_what": "AIエージェントを活用する企業は、意図しない動作やリスクを防ぐために新しい検証ツールキットを用いた安全性テストの導入が求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "既存のAI Verifyやガバナンスフレームワークに基づく実践的なテストツールの追加であり、現行のEU規制との差分項目そのものを変更するものではないため差分変化はなし。"
+    },
+    "canonical_event": "Singapore launches AI agent test kit for safety and reliability",
+    "publication_date": "2026-10-14",
+    "discovered_at": "2026-10-14",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.straitstimes.com/singapore/singapore-launches-new-tool-kit-to-help-firms-test-ai-agents-for-safety-and-reliability"
+    ],
+    "country_anchor": "/country/sg/#axis-transparency"
+  },
+  {
+    "id": "2026-10-13-in-001",
+    "date": "2026-10-13",
+    "country": "in",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "media",
+    "title": "印電子情報技術省（MeitY）、IndiaAIミッションで1万基のGPU調達を開始",
+    "summary": {
+      "what": "IndiaAIミッション下で最大1万基のAI計算資源（GPU等）を調達する事業者登録要請書（RFE）を公表。",
+      "who": "電子情報技術省（MeitY）傘下の先進計算開発センター（C-DAC）およびAI計算サービス提供事業者",
+      "when_impact": "2026年10月7日にRFE発行。選定企業提供の計算基盤は行政機関や研究者、新興企業等に提供予定。"
+    },
+    "detail": "インド電子情報技術省（MeitY）傘下の先進計算開発センター（C-DAC）は、IndiaAIミッションに基づく計算インフラ整備のため、最大10,000基のAI計算ユニット（GPU、TPU等）を提供するサービスプロバイダーの事業者登録要請書（RFE）を発行した。要件として、データ、メタデータ、ログ、バックアップ等のインフラをすべてインド国内に配置することや、C-DACのデータを他顧客と論理的・物理的に隔離することなどの厳格なデータ主権遵守が求められている。調達された計算資源は政府部門、学術研究機関、スタートアップ向けの大規模モデル訓練や推論に活用される予定である。",
+    "so_what": "インド政府の計算資源提供事業では国内データ配置や物理・論理的分離が厳格に求められ、現地基盤選定に留意が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "India MeitY issues tender for IndiaAI Mission compute infrastructure",
+    "publication_date": "2026-10-13",
+    "discovered_at": "2026-10-14",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.medianama.com/2026/10/223-meity-ai-compute-providers-gpus-indiaai-mission/"
+    ],
+    "country_anchor": "/country/in/#updates"
   }
 ]

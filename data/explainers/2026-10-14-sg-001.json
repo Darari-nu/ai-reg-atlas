@@ -1,0 +1,65 @@
+{
+  "id": "2026-10-14-sg-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-14T09:45:52Z",
+  "record_id": "2026-10-14-sg-001",
+  "source_kind": "media",
+  "published_at": "2026-10-14T09:45:52Z",
+  "headline": "IMDA、AIエージェントの安全性テスト用キットを公表",
+  "lead": "シンガポールの情報通信メディア開発庁（IMDA）は、2026年10月14日にAIエージェント向けの試験用スターターキットを発表しました。企業がエージェントの安全性と信頼性を調べる出発点として使うものです。法的な義務を定めた文書ではなく、テストの手引きと道具です。",
+  "facts": [
+    {
+      "text": "IMDAのNg Cher Pong長官は、2026年10月14日にAIエージェントの安全性と信頼性を試す「Starter Kit for Testing Agentic Systems for Safety and Reliability」を発表しました。",
+      "source_url": "https://www.straitstimes.com/singapore/singapore-launches-new-tool-kit-to-help-firms-test-ai-agents-for-safety-and-reliability"
+    },
+    {
+      "text": "キットは、リスクの洗い出しとテストの設計、活動ログの分析、挙動の監視、セーフガードの検証を行う出発点とされています。",
+      "source_url": "https://www.straitstimes.com/singapore/singapore-launches-new-tool-kit-to-help-firms-test-ai-agents-for-safety-and-reliability"
+    },
+    {
+      "text": "検証の対象は、エージェントが使うツール、アクセスした情報、途中の判断、誤った動作や無許可の動作、与えられた権限と境界の順守、セーフガードの働きです。",
+      "source_url": "https://www.straitstimes.com/singapore/singapore-launches-new-tool-kit-to-help-firms-test-ai-agents-for-safety-and-reliability"
+    },
+    {
+      "text": "キットは政府機関と、Amazon、Google、Microsoft、Singtelなど20社超の導入企業・試験事業者、およびシンガポールのAI Safety Instituteとの協議で作られました。",
+      "source_url": "https://www.straitstimes.com/singapore/singapore-launches-new-tool-kit-to-help-firms-test-ai-agents-for-safety-and-reliability"
+    },
+    {
+      "text": "キットには実例の事例集があり、利用者からの意見や新たなベストプラクティスに基づいて更新される予定です。",
+      "source_url": "https://www.straitstimes.com/singapore/singapore-launches-new-tool-kit-to-help-firms-test-ai-agents-for-safety-and-reliability"
+    },
+    {
+      "text": "キットは、2026年1月に公表されたエージェント型AI向けのModel AI Governance Frameworkと、LLM応用向けの試験キットを土台にしています。",
+      "source_url": "https://www.straitstimes.com/singapore/singapore-launches-new-tool-kit-to-help-firms-test-ai-agents-for-safety-and-reliability"
+    }
+  ],
+  "who_is_affected": "AIエージェントを開発・導入する企業が主な読者です。シンガポールで事業を行う会社や、同国の取引先にエージェント機能を提供する会社も参考にする場合があります。試験を請け負う事業者も関係する場合があります。",
+  "japan_impact": "資料からは、キットの利用が義務かどうかは分かりません。日本企業に直接の義務が生じるとは読み取れません。シンガポール向けにエージェントを提供する会社は、キットの内容を確認するとよいでしょう。権限の範囲、ログの記録、セーフガードの検証は自社の試験項目と照らして見直すとよいでしょう。取引先からキットに沿った説明を求められる可能性もあり、これは推測です。",
+  "next_steps": "資料によると、キットは利用者の意見や新たなベストプラクティスを受けて更新される予定です。施行日や提出期限などの予定は資料にありません。同日にFrontier AI Resilience and Security Taskforceが発表され、2027年上半期までに報告書を出す予定とされています。日本の担当者は、キットの原文と更新を確認するとよいでしょう。",
+  "unknowns": [
+    "キットの利用が義務か任意かは、資料に明記されていません。",
+    "キットの入手方法や利用条件、費用は、資料からは分かりません。",
+    "日本企業や海外企業が利用できるかは、資料からは分かりません。",
+    "キットを使った試験結果の提出先や、規制当局による扱いは、資料に書かれていません。",
+    "更新の時期や頻度は、資料からは分かりません。"
+  ],
+  "glossary": [
+    {
+      "term": "AIエージェント",
+      "explanation": "利用者に代わって推論し、最小限の人の監督で作業を実行するAIです。資料では、機密データへのアクセスや環境の変更も行えるとされています。"
+    },
+    {
+      "term": "IMDA",
+      "explanation": "シンガポールの情報通信メディア開発庁（Infocomm Media Development Authority）です。今回のキットを発表しました。"
+    },
+    {
+      "term": "AI Verify財団",
+      "explanation": "IMDAの子会社で、民間と連携してAIの基準を作る組織です。"
+    },
+    {
+      "term": "セーフガード",
+      "explanation": "AIの意図しない動作を防ぐための安全対策です。キットはこの対策が想定どおり働くかを検証します。"
+    }
+  ]
+}

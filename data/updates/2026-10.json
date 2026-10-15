@@ -418,5 +418,35 @@
       "https://www.medianama.com/2026/10/223-meity-ai-compute-providers-gpus-indiaai-mission/"
     ],
     "country_anchor": "/country/in/#updates"
+  },
+  {
+    "id": "2026-10-14-br-001",
+    "date": "2026-10-14",
+    "country": "br",
+    "axis": "risk_classification",
+    "change_type": "status_change",
+    "legal_stage": "bill",
+    "source_kind": "official",
+    "title": "ブラジル上院社会 assuntos 委員会、医療分野のAI活用指針案を審議",
+    "summary": {
+      "what": "医療分野におけるAI活用のガイドラインを定める法案（PL 931/2026）の審議",
+      "who": "ブラジル上院社会 assuntos 委員会（CAS）",
+      "when_impact": "2026年10月14日公表"
+    },
+    "detail": "ブラジル上院は、医療分野における人工知能（AI）の利用に関する指針を定めるPL 931/2026について、社会 assuntos 委員会（CAS）での審議状況を公表した。同法案はドラDra. Eudócia上議員により提出され、ダマレス・アルヴェス上議員が報告書を作成して代替案（修正案）をまとめた。報告では、一般的なAIガバナンスに関する規定の多くはロドリゴ・パシェコ上議員によるPL 2,338/2023ですでに規律されているとしつつ、医療分野における患者保護や臨床活動での人間による監督を確保するための個別のセーフガードが盛り込まれている。医療従事者の責任や人間の監督義務、患者への情報提供、保健政策やデータ保護当局との連携による規制・監督などが規定されている。",
+    "so_what": "医療分野でAIを利用する企業は、患者の安全確保や臨床現場における人間の監督義務に関する新たな法制化の動きに注意が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Brazil bill proposed for AI use in healthcare",
+    "publication_date": "2026-10-14",
+    "discovered_at": "2026-10-15",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www12.senado.leg.br/noticias/materias/2026/10/14/projeto-na-cas-cria-diretrizes-para-uso-da-inteligencia-artificial-na-saude"
+    ],
+    "country_anchor": "/country/br/#axis-risk_classification"
   }
 ]

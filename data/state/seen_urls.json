@@ -2458,5 +2458,141 @@
   "https://www.federalregister.gov/documents/2026/10/14/2026-20891/division-of-program-coordination-planning-and-strategic-initiatives-office-of-the-director-notice-of": {
     "verdict": "gemini-unusable",
     "date": "2026-10-14"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/kanmin/02shingi06_02001100.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban05_04000800.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02ryutsu08_04000620.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/02kiban09_04000742.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/digital_shokadai/02ryutsu02_04000606.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.pm.gov.au/media/federation-ethnic-communities-councils-australia-national-conference": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/how-alex-zhou-built-3b-startup-linkerbot-to-give-robots-human-like-hands-5131683.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/first-chinese-fields-medalist-leads-1-000-scientist-push-to-advance-ai-in-mathematics-5131357.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/southeast-asia-s-most-visited-country-among-world-s-top-5-destinations-for-digital-nomads-5131146.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.ft.com/content/3a9364ec-6930-4877-a1a2-c053dd689760?syn-25a6b1a6=1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.bloomberg.com/jp/news/articles/2026-10-14/TMWXZLKGZAJQ00": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.straitstimes.com/singapore/singapore-launches-new-tool-kit-to-help-firms-test-ai-agents-for-safety-and-reliability": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.straitstimes.com/tech/openai-backs-singapores-call-for-ai-incident-transparency": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000286.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu06_02000489.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.cac.gov.cn/2026-10/15/c_1793820656286917.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.mddi.gov.sg/newsroom/ah-gong-talks-new-dialect-drama-follows-retired-screenwriter-turned-fortune-teller-helping-residents-navigate-everyday-challenges/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-remarks-by-sms-tan-kiat-how-at-the-singapore-international-cyber-week-sg-cyber-safe-for-enterprises/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261014/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.camara.leg.br/noticias/1311131-comissao-de-constituicao-e-justica-aprova-fim-de-taxa-de-fiscalizacao-sobre-telefones-celulares": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-udupi-karnataka-coordinated-action-consumer-voluntary": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-old-delhi-delhi-federation-coummunity-radio-station": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-siaha-mizoram-mizoram-consumers-union-hqrs": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-hassan-karnataka-ro-bengaluru": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-chandigarh-chandigarh-citizens-awarness-group-1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/7e4b71cc-ef4c-496c-8bcf-1ccde9668e4d?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://moda.gov.tw/press/press-releases/21064": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://moda.gov.tw/press/press-releases/20734": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://moda.gov.tw/press/press-releases/20640": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//9c626fad-56e1-491a-a21f-4aca7c8ad2a1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//fd110103-f5d7-454e-8389-432a315c27d9": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//2757bc63-858b-4aa7-9c3b-4f6862c2eb7e": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-59-2026-tt-bkhcn-470641.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
+  },
+  "https://congbao.chinhphu.vn/cong-bao/550-47538.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-15"
   }
 }

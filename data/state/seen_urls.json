@@ -2734,5 +2734,85 @@
   "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000296.html": {
     "verdict": "gemini-unusable",
     "date": "2026-10-16"
+  },
+  "https://www.federalregister.gov/documents/2026/10/19/2026-21265/privacy-act-of-1974-system-of-records": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.federalregister.gov/documents/2026/10/19/2026-21254/notice-of-revisions-to-performance-area-one-of-the-lsc-performance-criteria": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.pm.gov.au/media/centenary-parliament-sitting": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.pm.gov.au/media/centenary-canberra-times": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/world-s-richest-man-unveils-flying-tesla-electric-sports-car-with-250k-reservation-deposit-5133247.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.bloomberg.com/jp/news/articles/2026-10-16/TMZKJSKGIFQ000": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.estadao.com.br/opiniao/inteligencia-artificial-com-responsabilidade/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.nist.gov/news-events/news/2026/10/new-chip-based-tape-measure-light-could-revolutionize-mobile-timekeeping": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12585": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-investment-in-prevost-volvo-group-canada-inc-in-sainte-claire-to-support-canadian-bus-manufacturing-and-clean-tr.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-significant-investment-to-strengthen-canadas-electricity-and-forest-products-supply-chains.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-hazaribagh-jharkhand-mahila-janshakti-sangathan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-west-godavari-andhra-pradesh-ro-hyderabad": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-nanded-maharashtra-ro-hyderabad": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-srinagar-jammu-and-kashmir-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "http://www.trai.gov.in/itu-trai-workshop-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//35513f61-dcc1-4cbe-ab2e-7e0edea50607": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//30f1f7fa-b469-4c21-8bfe-e5ef492c4c13": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//4558dbc3-6620-41d7-82f3-d793fbaab426": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
+  },
+  "https://mst.gov.vn/viet-nam-phan-lan-thuc-day-hop-tac-cong-nghe-chien-luoc-va-ha-tang-so-197261016092342358.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-17"
   }
 }

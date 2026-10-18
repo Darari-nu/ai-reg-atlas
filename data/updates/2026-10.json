@@ -448,5 +448,35 @@
       "https://www12.senado.leg.br/noticias/materias/2026/10/14/projeto-na-cas-cria-diretrizes-para-uso-da-inteligencia-artificial-na-saude"
     ],
     "country_anchor": "/country/br/#axis-risk_classification"
+  },
+  {
+    "id": "2026-10-17-cn-001",
+    "date": "2026-10-17",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "中国政府、悪意あるコード生成AIなどの技術輸出規制方針を表明",
+    "summary": {
+      "what": "AI等3分野40項目を輸出規制、悪意あるAI等14項目を輸出禁止とする方針",
+      "who": "中国政府および対象技術を輸出・移転する国内外の事業者",
+      "when_impact": "2026年10月16日に方針表明、具体的な適用日は未公表"
+    },
+    "detail": "中国政府は2026年10月16日、人工知能（AI）、バイオ医薬品、太陽光発電の3分野にわたる計40項目の技術について輸出規制の対象とする方針を示した。このうち14項目は輸出禁止とする方針であり、悪意あるプログラムを生成するAI技術などが含まれるとされている。",
+    "so_what": "中国拠点で高度AIモデルやサイバーセキュリティ関連技術を開発・移転する企業は、技術輸出管理の対象化に備えて動向注視が必要。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "China export controls on AI and sensitive technologies",
+    "publication_date": "2026-10-17",
+    "discovered_at": "2026-10-18",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.asahi.com/articles/DA3S16568293.html"
+    ],
+    "country_anchor": "/country/cn/#updates"
   }
 ]

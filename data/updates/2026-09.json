@@ -589,5 +589,35 @@
       "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/"
     ],
     "country_anchor": "/country/us/#updates"
+  },
+  {
+    "id": "2026-09-23-cn-001",
+    "date": "2026-09-23",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "official",
+    "title": "国家インターネット情報弁公室（CAC）、端末側生成AIサービス3件の届出情報を公告",
+    "summary": {
+      "what": "スマホ端末側生成AIサービス「YOYO Claw」など3件の届出情報を公表",
+      "who": "国家インターネット情報弁公室（CAC）および関連事業者",
+      "when_impact": "2026年9月23日の公告により対象3件の端末側生成AIの届出が完了"
+    },
+    "detail": "中国の国家インターネット情報弁公室（CAC）は関係部門と共同で、『生成式人工智能サービス管理暫定弁法』の要件に基づき生成AIサービスの届出作業を実施し、「YOYO Claw」をはじめとするスマートフォン端末側（オンデバイス）で提供される生成AIサービス3件の届出完了情報を公告した。",
+    "so_what": "中国内でスマホ等オンデバイスの生成AI機能を提供する場合でも、暫定弁法に基づくアルゴリズム・サービス届出の手続きが必要となる点に留意が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "China publishes generative AI service filing information announcement for mobile devices",
+    "publication_date": "2026-09-23",
+    "discovered_at": "2026-10-21",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.cac.gov.cn/2026-09/23/c_1791913977404975.htm"
+    ],
+    "country_anchor": "/country/cn/#updates"
   }
 ]

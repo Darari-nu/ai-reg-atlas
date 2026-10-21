@@ -478,5 +478,35 @@
       "https://www.asahi.com/articles/DA3S16568293.html"
     ],
     "country_anchor": "/country/cn/#updates"
+  },
+  {
+    "id": "2026-10-20-ca-001",
+    "date": "2026-10-20",
+    "country": "ca",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "legal_stage": "draft_or_consultation",
+    "source_kind": "official",
+    "title": "カナダプライバシーコミッショナー事務局（OPC）、「子どもプライバシーコード」草案を公表",
+    "summary": {
+      "what": "子どもの個人情報保護およびAIプロファイリング抑制等を定めた「子どもプライバシーコード」草案の公表と意見募集",
+      "who": "カナダプライバシーコミッショナー事務局（OPC）",
+      "when_impact": "2027年1月20日まで意見募集を実施し、その後最終版を策定予定"
+    },
+    "detail": "カナダプライバシーコミッショナー事務局（OPC）は2026年10月20日、青少年のオンライン空間における安全とプライバシーを保護するための「子どもプライバシーコード」の草案を公表した。同コードは事業者に向け、13歳未満の親の同意取得、プライバシー・バイ・デフォルト設定、AI駆動の意思決定やターゲット広告目的での子どもに対するプロファイリングの回避、デセプティブ・デザイン（ダークパターン）の禁止などを求める実務指針を示している。2027年1月20日まで意見募集を行っている。",
+    "so_what": "カナダで子ども向けサービスやアプリを提供する企業は、AIによる自動意思決定やマーケティング目的のプロファイリングを制限するガイドライン草案への対応準備が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "草案段階の発表であり、法的段階が施行・成立・確定指針のいずれでもないため差分変更は行わない。"
+    },
+    "canonical_event": "Privacy Commissioner of Canada launches Childrens Privacy Code",
+    "publication_date": "2026-10-20",
+    "discovered_at": "2026-10-21",
+    "effective_date": null,
+    "deadline_date": "2027-01-20",
+    "sources": [
+      "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261020/"
+    ],
+    "country_anchor": "/country/ca/#updates"
   }
 ]

@@ -1,68 +1,4 @@
 {
-  "https://www.soumu.go.jp/menu_news/s-news/01toukei02_01000021.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/hyouka_260917000192517.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01toukatsu01_02000276.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001258.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01onkyu01_01000094.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01onkyu01_01000093.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu14_02000175.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zeimu02_02000472.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01gyosei10_02000125.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000456.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//12844796-cc36-4796-af66-afe6d0be1a22": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.federalregister.gov/documents/2026/09/21/2026-19271/data-intermediaries-and-approaches-to-strengthen-public-health-data-exchange": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.pm.gov.au/media/press-conference-united-nations-new-york": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.pm.gov.au/media/television-interview-abc-insiders-8": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.pm.gov.au/media/press-conference-apple-park-california": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
-  "https://www.pm.gov.au/media/working-apple-online-safety": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-20"
-  },
   "https://www.cac.gov.cn/hdfw/A0938index_1.htm": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-21"
@@ -2662,5 +2598,213 @@
   "https://mst.gov.vn/khai-giang-lop-boi-duong-nhan-thuc-ve-dang-va-lop-boi-duong-ly-luan-chinh-tri-danh-cho-dang-vien-moi-197261019110402455.htm": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-20"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_seisaku/02ryutsu07_04000599.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_seisaku/02ryutsu07_04000598.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/toukei/jinkou/kaigi/02shingi05_02000839.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/yusei/02kiban03_04001192.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denwa/02kiban02_04000905.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yubinkyoku_kasseika/02ryutsu18_04000001_00017.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/yusei_gyousei/02ryutsu01_04000522.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.federalregister.gov/documents/2026/10/21/2026-21505/grant-guideline-notice": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.federalregister.gov/documents/2026/10/20/2026-21420/medicare-program-implementation-of-sections-6219-6220-and-6224-of-the-consolidated-appropriations": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.dataprivacybr.org/dadocracia-ep-212-interferencias-das-plataformas-nas-eleicoes/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.dataprivacybr.org/smart-sampa-falhas-de-seguranca-e-os-riscos-de-uma-cidade-sob-vigilancia/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.pm.gov.au/media/television-interview-news24-1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.pm.gov.au/media/radio-interview-abc-melbourne-14": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/meet-america-s-5-richest-self-made-female-billionaires-in-tech-5135005.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/how-mit-and-stanford-reject-frank-wang-once-became-asia-s-youngest-tech-billionaire-5132769.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/former-mit-scientist-wins-6m-defamation-case-against-colleague-who-accused-him-of-sexual-harassment-5134748.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/china-s-third-best-university-recruits-prize-winning-cancer-scientist-from-us-5134541.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/google-employee-takes-90-minute-flights-to-work-between-us-cities-5134930.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/singapore-s-nanyang-technological-university-ranks-world-s-second-best-for-automation-and-control-behind-only-mit-5134704.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/cheapest-new-iphone-in-vietnam-now-starts-at-770-as-older-models-vanish-5133061.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/short-drama-apps-lure-millions-with-promises-of-easy-cash-deliver-ads-and-malware-instead-5131544.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/ai-could-change-how-much-shoppers-pay-for-groceries-5131554.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/china-s-robot-trainers-repeat-household-chores-200-times-a-day-for-up-to-900-a-month-5133100.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://biz.chosun.com/jp/jp-it/2026/10/21/BVAZZLZKWJEKTGV62OFB4R4ATA/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.reuters.com/jp/economy/PB2MQ2IDENP3RJNIPCUBNRXRJM-2026-10-21/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin06_02000357.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei05_261021.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001277.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei18_02000211.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.cac.gov.cn/wxzw/A0937index_1.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.cac.gov.cn/index.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.cac.gov.cn/2026-10/21/c_1794335738058301.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187877": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187878": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187876": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-sps-syed-harun-alhabsyi-at-nus-iss-annual-luncheon-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/government-of-canada-invests-15-million-in-xona-space-systems-canada.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.camara.leg.br/noticias/1310478-projeto-cria-estatuto-de-protecao-financeira-da-pessoa-idosa": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "http://www.trai.gov.in/node/18795": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/551ffcbd-f01c-413d-98c7-5ba4ec7ce462?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//1cf0a389-a7f9-415e-92af-707afa64f8e2": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//61b59554-8e20-4af8-980b-323901136291": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//66309fd7-abfe-4a39-aa3d-c5b9dfc90870": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//fb3094e5-fd76-44de-b5a6-0c2e75615497": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://mst.gov.vn/chuyen-doi-so-huong-toi-quan-tri-thong-minh-dich-vu-cong-chu-dong-197260923223545743.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://mst.gov.vn/ket-noi-nguon-luc-thuc-day-hop-tac-cong-nghe-so-giua-viet-nam-va-bhutan-197261019210533272.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://mst.gov.vn/cong-nghe-ke-ho-hoan-kiem-bai-toan-ky-thuat-gan-voi-bao-ton-canh-quan-1972610192157535.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://mst.gov.vn/tu-cong-trinh-ho-hoan-kiem-den-huong-cong-nghiep-hoa-xay-dung-197261019220505692.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://mst.gov.vn/hung-yen-mo-rong-chi-dan-dia-ly-cho-san-pham-nhan-long-197261020163532904.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://mst.gov.vn/tu-bai-giang-mot-chieu-den-nhung-bai-hoc-bang-trai-nghiem-197261020151001966.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-21"
+  },
+  "https://www.federalregister.gov/documents/2026/10/20/2026-21447/notice-of-order-regarding-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-21"
   }
 }

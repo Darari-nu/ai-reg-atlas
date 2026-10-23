@@ -508,5 +508,35 @@
       "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261020/"
     ],
     "country_anchor": "/country/ca/#updates"
+  },
+  {
+    "id": "2026-10-22-tw-001",
+    "date": "2026-10-22",
+    "country": "tw",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "數位發展部（moda）、文化部與智慧局召開AI與著作權交流會議",
+    "summary": {
+      "what": "AI創新與著作權保護意見交流會議的召開",
+      "who": "數位發展部、文化部、經濟部智慧財產局",
+      "when_impact": "2026年10月16日（新聞發布日2026年10月22日）"
+    },
+    "detail": "數位發展部、文化部與經濟部智慧財產局於10月16日首度共同召開權利人意見交流會議，邀集內容產業代表、AI應用端業者及專家，就AI訓練資料利用、著作權保護與語料整備交換意見。智慧局與數發部分別研訂《生成式人工智慧著作權指引》草案與《促進資料創新利用發展條例》草案，作為後續政策研議基礎。",
+    "so_what": "台湾のデジタル発展部や文化部等の三部会がAI開発と著作権保護に関する利害関係者との意見交換会を開催しており、今後の関連ガイドラインや法制化に向けた動向を注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Taiwan ministries hold exchange meeting on AI innovation and copyright protection",
+    "publication_date": "2026-10-22",
+    "discovered_at": "2026-10-23",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://moda.gov.tw/press/press-releases/21142"
+    ],
+    "country_anchor": "/country/tw/#updates"
   }
 ]

@@ -1,68 +1,4 @@
 {
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187797": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187799": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187798": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12524": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_260921/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20674": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "javascript:;": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20672": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20670": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20658": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20650": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20646": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20612": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20530": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://moda.gov.tw/press/press-releases/20470": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-22"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12471": {
-    "verdict": "gemini-unusable",
-    "date": "2026-09-22"
-  },
   "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187808": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-23"
@@ -2662,5 +2598,169 @@
   "http://www.trai.gov.in/node/18796": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-22"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/denpa_kanri/kaisai/02kiban01_04000331.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/kanmin/02shingi06_02001102.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/ipnet/02kiban05_04000803.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/universal_service/02kiban07_04000114.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/docs_Broadcast/02ryutsu08_04000621.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.federalregister.gov/documents/2026/10/22/2026-21578/agency-information-collection-activities-proposed-collection-comment-request-fraudgov-tip-intake-and": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.dataprivacybr.org/eca-digital-data-defende-participacao-de-criancas-e-adolescentes-na-definicao-de-politicas-de-protecao/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/iphone-duo-listed-for-resale-at-5-times-retail-price-reaching-10-000-5135503.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/intel-vietnam-director-urges-young-chip-engineers-to-pursue-expertise-5135477.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-innovation/vietnam-to-test-digital-id-link-with-singapore-by-mid-november-5135434.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.kantei.go.jp/jp/pages/20261022choukan_aidigital.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.theguardian.com/commentisfree/2026/oct/22/the-guardian-view-on-ai-safety-the-push-for-global-regulation-must-advance": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei08_01000354.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei05_01000347.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/hyouka_261022000193158.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu14_02000180.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.tc260.org.cn/tc260/xwdt1/list.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.tc260.org.cn/tc260/xwdt1/202610/5ed247fd520f4130ae1413ff0232fa60.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187880": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187882": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187881": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12588": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.mddi.gov.sg/newsroom/welcome-address-by-minister-josephine-teo-at-govtech-s-inclusive-design-week/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://form.gov.sg/66695a32cf3daf735178a6f1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://go.gov.sg/report-vulnerability": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/minister-joly-unveils-canadas-new-venture-and-growth-capital-plan-that-will-strengthen-venture-capital-investments-in-canada-with-175-billion-in-fu.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/government-of-canada-launches-consultations-on-a-new-canadian-space-act-and-takes-action-to-strengthen-the-resiliency-of-canadas-space-infrastructu.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "http://www.trai.gov.in/node/18802": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-sepahijala-tripura-ro-kolkata": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-west-champaran-bihar-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-chamba-himachal-pradesh-indian-institute-technology": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-kulgam-jammu-and-kashmir-vodafone-idea-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-budgam-jammu-and-kashmir-indian-institute-technology": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//28285272-cb9c-4b74-889c-7b61c2ad56ba": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//fa6a169c-7407-418b-bdca-e9f60180947d": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//1f2fa9e4-61e7-4717-9bd4-35be41690e0a": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//20c3f1c0-7a57-4567-80ac-48ba7219a24a": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//174b2028-a1ba-4bf3-8b8a-37d938117bf0": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//41e79613-051f-44e4-b712-440335f38967": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://mptc.gov.kh/en/2026/10/h-e-keo-sothie-co-chairs-the-7th-asean-u-s-cyber-policy-dialogue/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-23"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/data_protection/02kiban18_02000510.html": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-23"
   }
 }

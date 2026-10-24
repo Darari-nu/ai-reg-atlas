@@ -538,5 +538,35 @@
       "https://moda.gov.tw/press/press-releases/21142"
     ],
     "country_anchor": "/country/tw/#updates"
+  },
+  {
+    "id": "2026-10-23-ca-001",
+    "date": "2026-10-23",
+    "country": "ca",
+    "axis": "transparency",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "カナダプライバシー機関（OPC）、AI透明性協議への意見書を公表",
+    "summary": {
+      "what": "ISEDのAI透明性討議文書に対し5領域の課題認識に同意する意見書公表",
+      "who": "カナダプライバシーコミッショナー事務局（OPC）",
+      "when_impact": "2026年10月23日公表。将来的な透明性要件の検討に反映の見込み"
+    },
+    "detail": "カナダプライバシーコミッショナー事務局（OPC）は、イノベーション・科学・経済開発省（ISED）の討議文書「透明性の向上を通じた人工知能（AI）への信頼向上」に対する意見提出書を公表した。OPCは、ISEDが特定した5つの領域（AI生成コンテンツ、AIとの対話、AIシステムに関する情報、AIインシデント、AIエージェント）において透明性の課題が生じることに同意し、責任あるイノベーションの推進に向けた重要ステップであると言及した。",
+    "so_what": "カナダにおけるAI生成コンテンツやAIエージェント等の透明性規制の方向性について、今後の政府指針や法制化の動きを把握しておく必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Office of the Privacy Commissioner of Canada publishes comments to government consultation on AI transparency",
+    "publication_date": "2026-10-23",
+    "discovered_at": "2026-10-24",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261023/"
+    ],
+    "country_anchor": "/country/ca/#axis-transparency"
   }
 ]

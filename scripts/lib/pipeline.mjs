@@ -554,9 +554,27 @@ export function isStaleListing(listing_date, today, maxAgeDays) {
   return isYmd(listing_date) && daysBetween(listing_date, today) > maxAgeDays;
 }
 
-/** 日本語（ひらがな・カタカナ・漢字）を1文字でも含むか。サイトに出す見出しの言語チェック用 */
+/**
+ * 日本語の文か。かなを含めば true。かなが無く漢字だけの場合は10字未満の短い表記（「中国CAC」等）だけ true。
+ * 長い文でかなが1字も無ければ中国語とみなす（2026-10-22-tw-001 で繁体字の見出し・要約がそのまま公開された）。
+ */
 export function hasJapanese(text) {
-  return /[\u3040-\u30ff\u3400-\u9fff]/.test(String(text ?? ''));
+  const s = String(text ?? '');
+  if (/[\u3040-\u30ff]/.test(s)) return true;
+  return /[\u3400-\u9fff]/.test(s) && s.length < 10;
+}
+
+/** 日本語であるべき欄（title・summary.what・detail・so_what）のうち、日本語でないものの名前を返す（空欄は対象外）。who・when_impact は固有名詞・日付だけでかな無しが普通なので見ない */
+export function findNonJapaneseFields(rec) {
+  const fields = {
+    title: rec?.title,
+    'summary.what': rec?.summary?.what,
+    detail: rec?.detail,
+    so_what: rec?.so_what,
+  };
+  return Object.entries(fields)
+    .filter(([, v]) => typeof v === 'string' && v.trim() !== '' && !hasJapanese(v))
+    .map(([k]) => k);
 }
 
 /**

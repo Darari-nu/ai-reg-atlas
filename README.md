@@ -97,7 +97,7 @@ dispatch の巡回（15分ごとの intake.mjs --scan）→ 企画室に G-xx �
 
 いずれも壊れたら中身を `{}`（`last_seen.json` / `seen_urls.json`）か `[]`（`queue.json`）に戻せば安全に再開できる（`readStateFile` は壊れたJSONを warn して fallback を返すので、パイプライン自体は止まらない）。
 
-`isSkippable` が再 triage・再要約を止める `SKIP_VERDICTS`（`scripts/lib/state.mjs`）: `gemini-unusable` / `no-ai-reg-keyword` / `body-too-short` / `stale-publication-date` / `triage-irrelevant`。`blocked-or-js-only-page` や fetch 失敗は一時的な失敗として含めず、翌日また試す。
+`isSkippable` が再 triage・再要約を止める `SKIP_VERDICTS`（`scripts/lib/state.mjs`）: `gemini-unusable` / `no-ai-reg-keyword` / `body-too-short` / `stale-publication-date` / `triage-irrelevant`。`blocked-or-js-only-page` や fetch 失敗は一時的な失敗として含めず、翌日また試す。`not-japanese`（言い直させても日本語にならなかった）もモデルの一時的な失敗とみなして含めない。
 
 公式ソース（`official_sources`）だけは、1回目の判定で `relevant=false` でもすぐには `triage-irrelevant` を記録しない。RSS（`watch_feeds`/`news_queries`）は `last_seen` の仕組みで `pub <= last_seen` の記事を二度と候補に出さないため一度きりの判定で確定してよいが、一次情報は temperature 既定(1.0)による1回ごとの判定の揺れで取りこぼすと再挑戦の機会が来ない。そこで同じ実行の中でもう一度だけ判定し（セカンドルック）、どちらかで `relevant=true` なら残す。ログは `[triage] second_look in=N rescued=M`（Nがセカンドルックに回した件数、Mが救済した件数）、救済分は `second_look rescued:`、2回とも落ちたものは `second_look still irrelevant:`（週次の確認用、それぞれ最大10行）。
 
@@ -381,6 +381,7 @@ DRY_RUN=1 npm run validate
 | 2026-10-11 | **EU AI法 徹底解説ページ `/eu-ai-act/` を追加**（公開前に Fable の事実確認と darari の確認待ち）。中身は `data/guides/eu-ai-act.json`（条文 EUR-Lex の規則 (EU) 2024/1689・改正規則 (EU) 2026/1744 と欧州委員会の公式ページで確認した文だけ。自動生成しない）、`schema/guide.schema.json` と `validate.mjs` の検査（出典が EUR-Lex・欧州委員会のドメインだけか、章 id、表の列数）。日程表は `deadlines.json` の EU 分を流用。Header・スマホのタブバー（5列に）・`/country/eu/` から導線。あわせて `data/regulations/eu.json` を改正後の内容（新しい禁止・機械のセクションB移動・SMC・AI Office の権限など）に更新 |
 | 2026-10-11 | **EU AI法ガイドを本体＋子ページに分割し、`/eu-ai-act/high-risk/`（高リスクAIの書類と手続き 実務ガイド）を追加**（本体と一緒に公開予定・darari 確認待ち）。データは `data/guides/eu-ai-act-high-risk.json`（`parent: eu-ai-act`、具体例は `example` ブロックで「架空の例」と明示）。描画を `GuideArticle`／`GuideBlock` コンポーネントと `src/lib/guideView.ts` に共通化し、本体は `src/pages/eu-ai-act/index.astro` へ移動（URL 不変）。`guide.schema.json` に `parent`・`summary_title`・`children`・`example`・`flow` を追加、`validate.mjs` に親ガイドの実在と流れの出典の検査。本体の6章（高リスクAI）などを要点にまとめ、子ページへの入口を付けた |
 | 2026-10-11 | EU AI法ガイドに図解5枚（立場・高リスク判定・4区分・日程の時間軸・提供者の手続き）を追加。`src/components/diagrams/` と guide の `diagram` ブロック（id は schema で列挙）。日程の日付は `src/lib/euTimeline.mjs` が guide と deadlines.json から読み、`test/euTimeline.test.mjs` が改正前の旧期限との一致を検査する |
+| 2026-10-24 | 台湾の更新レコード（2026-10-22-tw-001）の見出し・要約・詳細が繁体字中国語のままサイトに出た。`hasJapanese` が漢字だけで通していたのが原因。(1) `hasJapanese` を「かな必須（10字未満の漢字だけの短い表記は可）」に変更。(2) `findNonJapaneseFields` を新設し、summarize が title・summary.what・detail・so_what に日本語でない欄を見つけたら（summary.who / when_impact は固有名詞・日付だけでかな無しが普通なので見ない）1回だけ言い直させ、それでも日本語でなければ `not-japanese` で落とす（公開しない。seen には記録するが `SKIP_VERDICTS` には入れないので、再候補になれば翌日また試す）。(3) 要約プロンプトとスキーマに「全欄日本語」を明記 |
 
 ## ライセンス
 

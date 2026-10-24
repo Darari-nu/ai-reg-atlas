@@ -14,6 +14,7 @@ import {
   dedupeByEvent,
   ensureJapaneseTitle,
   existingEventKeys,
+  findNonJapaneseFields,
   findSimilarRecord,
   isDuplicateRecord,
   isGoogleNewsUrl,
@@ -69,14 +70,14 @@ const RESPONSE_SCHEMA = {
     summary: {
       type: 'OBJECT',
       properties: {
-        what: { type: 'STRING' },
-        who: { type: 'STRING' },
-        when_impact: { type: 'STRING' },
+        what: { type: 'STRING', description: '日本語' },
+        who: { type: 'STRING', description: '日本語' },
+        when_impact: { type: 'STRING', description: '日本語' },
       },
       required: ['what', 'who', 'when_impact'],
     },
-    detail: { type: 'STRING' },
-    so_what: { type: 'STRING' },
+    detail: { type: 'STRING', description: '日本語' },
+    so_what: { type: 'STRING', description: '日本語' },
     legal_stage: {
       type: 'STRING',
       enum: ['in_force', 'enacted', 'final_guidance', 'bill', 'draft_or_consultation', 'announcement', 'other'],
@@ -235,6 +236,7 @@ async function main() {
 - publication_date は公表日・発表日。YYYY-MM-DDで本文から抽出し、不明なら null
 - effective_date は施行日、deadline_date は期限日。本文に無ければ null
 - title は**必ず日本語**の見出し（40文字前後）。一次ソースが英語でも翻訳する。「主体、何をした」の形（例: 「欧州データ保護会議（EDPB）、GDPR制裁金の算定ガイドラインを採択」）。機関名は日本語の通称に略称を括弧で添える
+- title・summary（what/who/when_impact）・detail・so_what はすべて日本語で書く。一次ソースが中国語・英語など日本語以外でも翻訳する。機関名は日本語の通称（例: 數位發展部→デジタル発展部）
 - summary.what / who / when_impact は各60文字以内・体言止め可
 - so_what は企業のAIガバナンス担当者向けの実務インパクト1文
 - diff_changed（差分変化）は次の**両方**を満たすときだけ true。片方でも欠けたら false
@@ -251,17 +253,40 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
 記事URL: ${item.url}
 一次ソース本文: ${articleText}`;
 
-      const rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA, fallbackModels: FALLBACK_SUMMARIZE });
-      // 差分変化の機械ゲート（法的段階＋差分項目の変化が両方揃わなければ false に落とす。§定義参照）
-      const gatedDiff = decideDiffChanged(rec, cc);
-      if (rec.diff_changed && !gatedDiff) {
-        console.warn(`[summarize] diff_changed demoted (legal_stage=${rec.legal_stage ?? '-'} items=${rec.diff_items?.length ?? 0}): ${item.url}`);
+      let rec = await geminiJSONWithRetry({ model: MODEL_SUMMARIZE, prompt, schema: RESPONSE_SCHEMA, fallbackModels: FALLBACK_SUMMARIZE });
+      // 差分変化の機械ゲートと見出しの日本語化（呼び直しの後にも同じ処理を掛けるので関数にしてある）
+      const applyGates = () => {
+        // 差分変化の機械ゲート（法的段階＋差分項目の変化が両方揃わなければ false に落とす。§定義参照）
+        const gatedDiff = decideDiffChanged(rec, cc);
+        if (rec.diff_changed && !gatedDiff) {
+          console.warn(`[summarize] diff_changed demoted (legal_stage=${rec.legal_stage ?? '-'} items=${rec.diff_items?.length ?? 0}): ${item.url}`);
+        }
+        rec.diff_changed = gatedDiff;
+        // 見出しが日本語でなければ summary.what に差し替える（2026-09-21 に英語の見出しがサイトに出た）
+        const jaTitle = ensureJapaneseTitle(rec.title, rec.summary?.what);
+        if (jaTitle.replaced) console.warn(`[summarize] title was not Japanese, replaced with summary.what: ${item.url}`);
+        rec.title = jaTitle.title;
+      };
+      applyGates();
+      // 日本語でない欄（中国語のまま等）があれば1回だけ言い直させ、それでもだめなら公開しない（2026-10-22-tw-001）
+      let nonJa = rec.usable === false ? [] : findNonJapaneseFields(rec);
+      if (nonJa.length > 0) {
+        console.warn(`[summarize] non-Japanese fields (${nonJa.join(',')}), retrying once: ${item.url}`);
+        rec = await geminiJSONWithRetry({
+          model: MODEL_SUMMARIZE,
+          prompt: `${prompt}\n\n前回の出力は ${nonJa.join('、')} が日本語ではなかった。すべて日本語で出し直す`,
+          schema: RESPONSE_SCHEMA,
+          fallbackModels: FALLBACK_SUMMARIZE,
+        });
+        applyGates();
+        nonJa = rec.usable === false ? [] : findNonJapaneseFields(rec);
+        if (nonJa.length > 0) {
+          console.warn(`[summarize] still non-Japanese after retry (${nonJa.join(',')}), dropped: ${item.url}`);
+          appendDrop({ ...item, country: cc, reason: 'not-japanese' });
+          markSeen(seenUrls, item.url, 'not-japanese', today);
+          continue;
+        }
       }
-      rec.diff_changed = gatedDiff;
-      // 見出しが日本語でなければ summary.what に差し替える（2026-09-21 に英語の見出しがサイトに出た）
-      const jaTitle = ensureJapaneseTitle(rec.title, rec.summary?.what);
-      if (jaTitle.replaced) console.warn(`[summarize] title was not Japanese, replaced with summary.what: ${item.url}`);
-      rec.title = jaTitle.title;
       if (rec.usable === false) {
         appendDrop({ ...item, country: cc, reason: 'gemini-unusable' });
         markSeen(seenUrls, item.url, 'gemini-unusable', today);

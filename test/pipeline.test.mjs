@@ -12,6 +12,7 @@ import {
   dedupeByEvent,
   ensureJapaneseTitle,
   findSimilarRecord,
+  findNonJapaneseFields,
   hasJapanese,
   hostMatches,
   irrelevantItems,
@@ -405,6 +406,17 @@ describe('summarize: 見出しを日本語に揃える', () => {
     assert.equal(hasJapanese('EDPB Adopts Guidelines'), false);
     assert.equal(hasJapanese(''), false);
     assert.equal(hasJapanese(undefined), false);
+    assert.equal(hasJapanese('數位發展部（moda）、文化部與智慧局召開AI與著作權交流會議'), false);
+    assert.equal(hasJapanese('台湾デジタル発展部、AIと著作権の意見交換会を開催'), true);
+  });
+
+  it('findNonJapaneseFields は日本語でない欄名を返す', () => {
+    const ja = { title: '台湾、AI基本法を可決', summary: { what: '可決', who: '立法院', when_impact: '公布後に施行' }, detail: '立法院はAI基本法を可決した。', so_what: '対応を確認する' };
+    assert.deepEqual(findNonJapaneseFields(ja), []);
+    assert.deepEqual(findNonJapaneseFields({ ...ja, detail: '立法院三讀通過人工智慧基本法，明定主管機關與推動原則，並要求政府訂定相關配套措施。' }), ['detail']);
+    assert.deepEqual(findNonJapaneseFields({ ...ja, so_what: '', summary: { what: '可決', who: '', when_impact: undefined } }), []);
+    // who・when_impact は固有名詞・日付だけでかな無しが普通なので対象外
+    assert.deepEqual(findNonJapaneseFields({ ...ja, summary: { what: '可決', who: '韓国個人情報保護委員会（PIPC）', when_impact: '2026年10月13日公表' } }), []);
   });
 
   it('英語の見出しは summary.what に差し替える', () => {

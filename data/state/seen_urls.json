@@ -1,104 +1,4 @@
 {
-  "https://www8.cao.go.jp/cstp/ai/ai_topics/ai_topics.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/02gyosei04_04000203.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban06_02000141.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zeimu02_02000474.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01toukei05_01000346.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.mddi.gov.sg/newsroom/sms-tan-kiat-how-opening-remarks-at-the-futurechina-global-forum/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-a5x/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.mddi.gov.sg/newsroom/opening-address-by-mos-rahayu-mahzam-at-intelligencex-2026--the-global-quantumxai-frontier/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-the-apac-finance-forum/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-amreli-gujarat-reliance-jio-infocomm-ltd": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-kurukshetra-haryana-netplus-broadband-services-pvt-ltd": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-siddharthnagar-uttar-pradesh-rural-consumers-federation": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//e4885093-6753-427b-b47c-3149b3af51ed": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//07a89476-8b72-41f2-9d9c-c27d6c208ee1": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//b1e6ecce-22fa-43cf-b795-7b898b8743b2": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//a8244114-6cb5-4a35-ad23-34c2bbf9f4f5": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//e28c1a2e-6243-4903-a550-f9ce11bfbe55": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//6088ffb5-1d94-4935-8a31-7575ee52d8a8": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//c60bd9ce-9b12-4661-b8fd-2bd5d6d5661a": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.federalregister.gov/documents/2026/09/24/2026-19535/request-for-information-medicare-part-d-reasonable-and-relevant-pharmacy-contracting-standards": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.federalregister.gov/documents/2026/09/24/2026-19528/hud-evaluation-policy": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.pm.gov.au/media/australias-place-indo-pacific-2026-atlantic-council-global-citizen-awards-new-york": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.pm.gov.au/media/remarks-australia-ukraine-meeting": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.pm.gov.au/media/agreement-long-term-support-and-cooperation-between-australia-and-ukraine": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-24"
-  },
-  "https://www.camara.leg.br/noticias/1304004-projeto-cria-diretrizes-de-protecao-digital-e-indicador-de-desenvolvimento-para-a-primeira-infancia": {
-    "verdict": "gemini-unusable",
-    "date": "2026-09-24"
-  },
   "https://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000471.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-25"
@@ -2774,5 +2674,57 @@
   "https://www.federalregister.gov/documents/2026/10/26/2026-21786/outbound-investment-security-program-regulations": {
     "verdict": "gemini-unusable",
     "date": "2026-10-24"
+  },
+  "https://www.pm.gov.au/media/first-passengers-lift-wsi": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://www.pm.gov.au/media/australias-first-major-new-airport-has-been-decades-making": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/from-college-at-9-to-phd-at-18-the-journey-of-us-prodigy-elliott-tanner-5136326.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/chinese-ai-genius-girl-reportedly-offered-1-5m-salary-rises-to-xiaomi-s-top-rank-in-10-months-5136088.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/meet-nathan-chen-the-17-year-old-chinese-ai-prodigy-turning-heads-in-silicon-valley-5134507.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/iphone-duo-listed-for-resale-in-singapore-at-nearly-triple-retail-price-on-launch-day-5136100.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/retired-vietnamese-entrepreneur-turns-to-ai-to-manage-life-alone-in-the-countryside-5134498.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://www.cac.gov.cn/hdfw/A0938index_1.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://www.cac.gov.cn/gzzt/ztzl/A092001index_1.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://www.cac.gov.cn/2026-10/23/c_1794509028407372.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://www.cac.gov.cn/2026-10/23/c_1794509044378569.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://www.cac.gov.cn/2026-10/23/c_1794509044440601.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
+  },
+  "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700108": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-25"
   }
 }

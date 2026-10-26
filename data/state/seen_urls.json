@@ -1,84 +1,4 @@
 {
-  "https://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000471.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01gyosei18_02000210.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01gyosei18_02000209.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001268.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zeimu04_02000165.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001265.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001264.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000283.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/minister-valdez-launches-call-for-proposals-for-the-women-entrepreneurship-strategy-ecosystem-fund.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.oaic.gov.au/news/speeches": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://moda.gov.tw/press/press-releases/20702": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.pm.gov.au/media/television-interview-news24-newsday": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.pm.gov.au/media/australias-national-statement-united-states-new-york": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.pm.gov.au/media/remarks-new-york": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://opendevelopmentcambodia.net/news/cambodia-ict-camp-to-explore-ai-cybersecurity-and-digital-rights/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/09/government-of-canada-invests-in-10000-ai-related-work-placements-for-young-canadians.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "https://www.camara.leg.br/noticias/1306521-eleicoes-2026-especialistas-apontam-desafios-em-politicas-de-inclusao-diplomacia-e-inovacao": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "http://www.trai.gov.in/node/18714": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-launches-digital-connectivity-rating-platform": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
-  "http://www.trai.gov.in/node/18712": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-25"
-  },
   "https://www.reuters.com/jp/markets/japan/AA4A4OVQFFIP3IGOHNTFV73KWE-2026-09-25/": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-26"
@@ -2726,5 +2646,145 @@
   "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700108": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-25"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/shohishahogo/02kiban08_04000529.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/toukei/sangyou/kaigi/02shingi05_02000841.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.soumu.go.jp/menu_syokai/saiyou/detail/02tsushin06_04000144.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.soumu.go.jp/menu_syokai/saiyou/detail/02gyosei01_04000556.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.pm.gov.au/media/western-sydney-goes-international": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.pm.gov.au/media/helen-haines-parliament-house-canberra": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/ai-adoption-backfires-as-frustrated-customers-turn-away-from-brands-5136863.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/e-bike-bursts-into-flames-shooting-fire-several-meters-high-on-chinese-street-5136851.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/softbank-s-billionaire-founder-masayoshi-son-plans-50b-tech-investment-in-southeast-asia-s-third-richest-country-5137024.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://e.vnexpress.net/news/tech/challenge-hub/which-southeast-asian-university-named-world-s-best-for-ai-5134678.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/apple-s-iphone-duo-resells-for-4-250-in-hong-kong-as-shortages-drive-up-prices-5136801.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/six-college-dropouts-who-joined-ranks-of-world-s-youngest-self-made-tech-billionaires-5135987.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei05_02000256.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu04_02000270.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001278.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187889": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187886": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187890": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187887": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187885": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.mddi.gov.sg/newsroom/keynote-address-by-sms-tan-kiat-how-at-the-launch-of-sutd-colab/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-remarks-by-minister-josephine-teo-at-donors-appreciation-night-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "http://www.trai.gov.in/node/18817": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "http://www.trai.gov.in/node/18816": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-across-vijayanagara-district": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-recommendations-authorisation-framework-application-based": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "http://www.trai.gov.in/recommendations-authorisation-framework-application-based-linear-television-distribution-altd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-north-delhi-delhi-vodafone-idea-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-bandipora-jammu-and-kashmir-indian-institute-technology": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//a47264bc-4f45-4456-9cf2-1c8b021e3539": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//ffdec6e3-e48c-49c3-b011-7ba4d3774008": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//bfcbb4a3-6591-4160-9dba-dec1fa43f62c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-26"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187892": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-26"
+  },
+  "https://mptc.gov.kh/en/2026/10/h-e-hak-sok-heng-presides-over-the-announcement-of-winners-of-the-architectural-design-competition-for-the-national-ai-and-data-science-research-center/": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-26"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187888": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-26"
   }
 }

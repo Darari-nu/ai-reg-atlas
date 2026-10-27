@@ -1,28 +1,4 @@
 {
-  "https://www.reuters.com/jp/markets/japan/AA4A4OVQFFIP3IGOHNTFV73KWE-2026-09-25/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-26"
-  },
-  "https://iapp.org/news/a/notes-from-the-iapp-europe-children-online-future-of-ai-and-eu-digital-laws-clarifications": {
-    "verdict": "gemini-unusable",
-    "date": "2026-09-26"
-  },
-  "https://www.business-standard.com/technology/tech-news/ai-agents-safety-india-guardrails-frontier-models-hugging-face-openai-126092301026_1.html": {
-    "verdict": "gemini-unusable",
-    "date": "2026-09-26"
-  },
-  "https://mainichi.jp/articles/20260924/k00/00m/030/315000c": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-26"
-  },
-  "https://iapp.org/news/a/eu-ai-act-literacy-changes-may-complicate-more-than-simplify-compliance": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-26"
-  },
-  "https://www.politico.com/newsletters/digital-future-daily/2026/09/24/the-odds-against-global-ai-guardrails-01092268": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-26"
-  },
   "https://www.pm.gov.au/media/doorstop-sydney-9": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-27"
@@ -2786,5 +2762,65 @@
   "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187888": {
     "verdict": "gemini-unusable",
     "date": "2026-10-26"
+  },
+  "https://www.dataprivacybr.org/vaga-para-analista-de-midia-e-crm/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/marco/esther-dweck-defende-desenvolvimento-da-inteligencia-artificial-com-regulacao-inclusao-e-soberania-digital": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-apresenta-atuacao-brasileira-em-ia-e-protecao-de-criancas-durante-reuniao-da-convencao-108": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "https://www.smh.com.au/politics/federal/ai-supercharges-cyberattacks-on-australia-with-superannuation-savings-in-the-firing-line-20261026-p618mz.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-provides-its-recommendations-unified-licensing-government": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-provides-recommendations-universal-service-obligations": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-issues-recommendations-spectrum-related-issues": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-recommends-wide-ranging-reform-measures-licensing-policy-access": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-submits-its-recommendations-dot-reference-made-spectrum-charging": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-recommendations-allocation-and-pricing-23-24-ghz-25-269": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-recommendations-spectrum-management-and-licensing": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-mahendragarh-haryana-rashtriya-samuddeshiya-vikas": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-bagalkot-karnataka-reliance-jio-infocomm-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-dumka-jharkhand-indian-institute-technology-entrepreneur": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-27"
   }
 }

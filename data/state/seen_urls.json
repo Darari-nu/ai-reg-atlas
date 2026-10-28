@@ -1,12 +1,4 @@
 {
-  "https://www.pm.gov.au/media/doorstop-sydney-9": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-27"
-  },
-  "https://www.mddi.gov.sg/newsroom/sg-translate-2-0-media-factsheet/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-27"
-  },
   "https://www.pm.gov.au/media/press-conference-launceston-tas": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-28"
@@ -2822,5 +2814,113 @@
   "http://www.trai.gov.in/consumer/events/consumer-awareness-program-dumka-jharkhand-indian-institute-technology-entrepreneur": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-27"
+  },
+  "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001586.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/ICT_services/02kiban18_02000511.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/setsuzoku_seisaku/02kiban03_04001193.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/miraishakaiomisueta/07_siryou.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.federalregister.gov/documents/2026/10/27/2026-21884/critical-material-list-addition-of-helium": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.pm.gov.au/media/australian-workers-union-2026-national-conference": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.pm.gov.au/media/digital-duty-care": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://e.vnexpress.net/news/tech/challenge-hub/which-asian-institution-beats-stanford-harvard-to-rank-second-globally-for-computer-science-and-engineering-5137618.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://e.vnexpress.net/photo/vietnam-innovation/robots-play-chess-dance-in-downtown-ho-chi-minh-city-5137331.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://en.vietnamplus.vn/vietnam-china-explore-cooperation-potential-in-ai-digital-economy-post354398.vnp": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01cyber01_02000001_00308.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban03_02001027.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban05_02000409.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001282.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.nist.gov/news-events/news/2026/10/nist-report-provides-guidelines-transition-post-quantum-cryptography": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261027/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "http://www.trai.gov.in/node/18830": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-telecom-subscription-data-september-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/18fd8bda-fe19-423a-8b60-fdb273d06e5c?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://mst.gov.vn/bo-khoa-hoc-va-cong-nghe-nang-cao-nang-luc-quan-tri-va-doi-moi-sang-tao-trong-khu-vuc-cong-197261026155355058.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-29-2026-vbhn-tt-bkhcn-470867.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://congbao.chinhphu.vn/cong-bao/575-vbhn-47587.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-28-2026-vbhn-qd-bkhcn-470862.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-27-2026-vbhn-tt-bkhcn-470866.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-61-2026-tt-bkhcn-470839.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://congbao.chinhphu.vn/cong-bao/564-47574.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
+  },
+  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-60-2026-tt-bkhcn-470838.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-28"
   }
 }

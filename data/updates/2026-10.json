@@ -568,5 +568,35 @@
       "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261023/"
     ],
     "country_anchor": "/country/ca/#axis-transparency"
+  },
+  {
+    "id": "2026-10-27-jp-001",
+    "date": "2026-10-27",
+    "country": "jp",
+    "axis": "enforcement_body",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "古川デジタル相、AIセーフティ・インスティテュートの機能強化と法見直し方針を表明",
+    "summary": {
+      "what": "AISIの体制強化とAI推進法見直し方針の表明",
+      "who": "古川俊治デジタル相",
+      "when_impact": "今後の評価体制強化および法改正検討に影響する見込み"
+    },
+    "detail": "古川俊治デジタル相は2026年10月27日、AIの安全性を評価する政府機関であるAIセーフティ・インスティテュート（AISI）を視察した。AIを悪用した不正アクセスの発生などを踏まえ、米英と同等に議論できるよう予算・人員の面でバックアップし機能を強化する方針を表明。あわせて、2025年に成立したAI推進法の見直しも含めて検討を進める意向を示した。",
+    "so_what": "政府によるAI安全性評価体制の強化や法見直しの動きを受け、国内におけるガバナンス要件の変更を継続的に注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Japan digital minister strengthens AI Safety Institute functions",
+    "publication_date": "2026-10-27",
+    "discovered_at": "2026-10-28",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.nikkei.com/article/DGXZQOUA271RV0X21C26A0000000/"
+    ],
+    "country_anchor": "/country/jp/#axis-enforcement_body"
   }
 ]

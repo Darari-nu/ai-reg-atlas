@@ -598,5 +598,35 @@
       "https://www.nikkei.com/article/DGXZQOUA271RV0X21C26A0000000/"
     ],
     "country_anchor": "/country/jp/#axis-enforcement_body"
+  },
+  {
+    "id": "2026-10-28-us-001",
+    "date": "2026-10-28",
+    "country": "us",
+    "axis": "prohibited_uses",
+    "change_type": "new_regulation",
+    "legal_stage": "enacted",
+    "source_kind": "media",
+    "title": "ニューヨーク州知事、未成年者向けAIチャットボット規制法案に署名し成立",
+    "summary": {
+      "what": "未成年者向けコンパニオンAIの有害機能や対話を禁止する法律に署名し成立",
+      "who": "ニューヨーク州知事",
+      "when_impact": "2027年1月1日の施行に向け対象事業者は対応が必要"
+    },
+    "detail": "ニューヨーク州のキャシー・ホークル知事は、未成年者を保護するためのAIチャットボット安全法案（SB9051B/AB10379C）に署名し成立させた。本法律は2027年1月1日に施行される。同法は、人間になりすますこと、自傷行為を助長すること、不適切な会話を行うことなど、12の安全でない機能カテゴリを禁止している。また、事業者に対し政府発行IDに依存しない方式を含む複数の年齢確認手段の導入と、確認後の年齢データの削除を義務付ける。違反には1件あたり最大25,000ドルの民事罰や違法取得データの削除命令などが科される。",
+    "so_what": "ニューヨーク州で未成年者向けチャットボットを提供する事業者は、人間なりすまし等の禁止機能排除や年齢確認体制の構築が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "New York Governor signs youth AI chatbot safety bill",
+    "publication_date": "2026-10-28",
+    "discovered_at": "2026-10-29",
+    "effective_date": "2027-01-01",
+    "deadline_date": null,
+    "sources": [
+      "https://iapp.org/news/a/new-york-s-governor-signs-youth-ai-chatbot-safety-bill"
+    ],
+    "country_anchor": "/country/us/#axis-prohibited_uses"
   }
 ]

@@ -1,92 +1,4 @@
 {
-  "https://www.pm.gov.au/media/press-conference-launceston-tas": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.pm.gov.au/media/more-fans-closer-action-new-stand-opens-launcestons-utas-stadium": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.business-standard.com/technology/artificial-intelligence/why-india-needs-to-keep-its-ai-push-going-amid-global-calls-for-slowdown-126092800772_1.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://government.economictimes.indiatimes.com/news/digital-india/ai-agents-test-security-boundaries-strengthening-case-for-mandatory-incident-reporting/134533924": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001270.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zaisei06_02000352.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu04_02000269.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=84&nttSeqNo=3186406": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=84&nttSeqNo=3186405": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=84&nttSeqNo=3186404": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=84&nttSeqNo=3186403": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12532": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12529": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "http://www.trai.gov.in/node/18722": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-releases-telecom-subscription-data-august-2026": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "http://www.trai.gov.in/node/18720": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-across-south-delhi-and-nearby": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "http://www.trai.gov.in/node/18718": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-delhi-agra-routes-yamuna": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-jaisalmer-rajasthan-jeevan-dhara-ngo": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-durg-chhattisgarh-ro-bhopal": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//2aadda72-89be-45b0-8c3c-d3acdf801ef7": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-28"
-  },
   "https://www.govtech.com/artificial-intelligence/is-connecticut-writing-the-ai-regulations-major-companies-want": {
     "verdict": "triage-irrelevant",
     "date": "2026-09-29"
@@ -2922,5 +2834,221 @@
   "https://congbao.chinhphu.vn/van-ban/thong-tu-so-60-2026-tt-bkhcn-470838.htm": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-28"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/02kiban09_04000744.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/ai_network/02tsushin06_04000146.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/ai_network/02tsushin06_04000145.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/denki_tsusin/02ryutsu01_04000523.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/yusei/02kiban03_04001194.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001297.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02ryutsu14_04000225.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban09_04000747.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02ryutsu07_04000600.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/chiikiniokerugaikokujintonochitsujoaru/02gyosei05_04000120.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/bunkakai/02tsushin10_04000739.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.federalregister.gov/documents/2026/10/28/2026-21989/etc-tiger-pipeline-llc-notice-of-schedule-for-the-preparation-of-an-environmental-assessment-for-the": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.federalregister.gov/documents/2026/10/28/2026-21948/ncua-draft-2027-2028-budget": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.federalregister.gov/documents/2026/10/28/2026-21943/health-data-technology-and-interoperability-onc-deregulatory-actions-to-unleash-prosperity": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.federalregister.gov/documents/2026/10/28/2026-21939/exemptions-to-permit-circumvention-of-access-controls-on-copyrighted-works": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/two-of-asia-s-top-universities-in-singapore-to-launch-joint-nuclear-engineering-degree-5137963.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/xiaomi-founder-loses-21b-in-a-year-biggest-drop-among-china-s-billionaires-5137922.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/how-two-graduates-of-asia-s-third-ranked-university-became-ceos-of-intel-and-western-digital-5137103.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/deepseek-founder-joins-china-s-top-10-richest-for-first-time-with-42b-fortune-5137698.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/world-s-largest-humanoid-robot-maker-sets-guinness-record-with-110-robots-dancing-in-sync-5137720.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.bloomberg.com/professional/insights/regulation/october-2026-global-regulatory-brief-digital-finance/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.livemint.com/ai/artificial-intelligence/ai-intermediary-definition-splits-new-delhi-11793110562386.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://en.vietnamplus.vn/vietnam-sets-strategic-course-for-comprehensive-national-transformation-through-ai-minister-post354455.vnp": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei01_02000379.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001287.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001286.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zeimu05_02000100.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei05_01000348.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/02kiban14_04001374.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/imda-and-nuh-partner-in-first-open-innovation-platform-collaboration-in-public-healthcare": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/first-online-safety-assessment-report-for-app-distribution-services": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/imda-imposes-financial-penalty-on-singtel-for-mobile-service-disruptions-in-march-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/singapore-media-festival-returns-for-its-13th-edition": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/digital-for-life-festival-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/sg-media-companies-build-on-proven-track-record-of-global-partnerships-at-mipcom-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-remarks-by-minister-josephine-teo-at-the--49th-singapore-lecture/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/government-of-canada-launches-telecom-competition-roadmap-to-improve-competition-and-increase-choice-for-canadians.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.camara.leg.br/noticias/1314512-comissao-aprova-incentivo-a-startups-de-inclusao-saude-publica-e-bioeconomia-amazonica": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/node/18842": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-across-gonda-bahraich-shravasti": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/node/18839": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-rajnandgaon-chhattisgarh-samarpit-centre-poverty": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-etawah-uttar-pradesh-indian-institute-technology": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-hamirpur-uttar-pradesh-upbhokta-sanrakchhan-kalyan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-cooch-behar-west-bengal-reliance-jio-infocomm-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-garhwa-jharkhand-pragati-educational-academy": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-hnahthial-mizoram-mizoram-consumers-union-hqrs": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-aligarh-uttar-pradesh-rastriya-samuddeshiya-vikas": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/b47e92e5-6554-410f-a607-4d7a00911bc3?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://mst.gov.vn/khoi-thong-nguon-luc-khoa-hoc-cong-nghe-tao-dong-luc-tang-truong-vung-trung-du-va-mien-nui-phia-bac-197261028162541716.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://mst.gov.vn/thuc-day-nghien-cuu-ung-dung-cong-nghe-thu-giu-va-luu-tru-co-tai-viet-nam-197261027150506597.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-29"
+  },
+  "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/30-smes-recognised-at-inaugural-sme-ai-impact-awards": {
+    "verdict": "body-too-short",
+    "date": "2026-10-29"
+  },
+  "https://www.pm.gov.au/media/press-conference-canberra-32": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-29"
   }
 }

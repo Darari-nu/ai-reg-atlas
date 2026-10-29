@@ -1,0 +1,62 @@
+{
+  "id": "2026-10-28-us-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-29T01:08:24Z",
+  "record_id": "2026-10-28-us-001",
+  "source_kind": "media",
+  "published_at": "2026-10-29T01:08:24Z",
+  "headline": "NY州知事、未成年者向けAIチャットボット安全法に署名",
+  "lead": "ニューヨーク州のホークル知事は、未成年者向けAIチャットボットの安全法案に署名し、法律が成立しました。人間のなりすましなど12分類の安全でない機能を禁じる内容です。施行は2027年1月1日です。",
+  "facts": [
+    {
+      "text": "ニューヨーク州のキャシー・ホークル知事が、未成年者向けチャットボットの安全法案（上院法案9051B／州議会法案10379C）に署名しました。",
+      "source_url": "https://iapp.org/news/a/new-york-s-governor-signs-youth-ai-chatbot-safety-bill"
+    },
+    {
+      "text": "この法律は、人間のふりをすること、自傷を促すこと、不適切な会話をすることなどを含む12の大分類の安全でない機能を禁じています。",
+      "source_url": "https://iapp.org/news/a/new-york-s-governor-signs-youth-ai-chatbot-safety-bill"
+    },
+    {
+      "text": "法律は2027年1月1日に施行されます。",
+      "source_url": "https://iapp.org/news/a/new-york-s-governor-signs-youth-ai-chatbot-safety-bill"
+    },
+    {
+      "text": "チャットボットの提供者は複数の年齢確認方法を使う必要があり、そのうち1つは政府発行の身分証に頼らない方法でなければなりません。",
+      "source_url": "https://iapp.org/news/a/new-york-s-governor-signs-youth-ai-chatbot-safety-bill"
+    },
+    {
+      "text": "提供者は、確認が終わった後にユーザーの年齢データをすべて削除する必要があります。",
+      "source_url": "https://iapp.org/news/a/new-york-s-governor-signs-youth-ai-chatbot-safety-bill"
+    },
+    {
+      "text": "違反には1件あたり最大25,000ドルの罰則があり、違法に得た個人データの削除命令などの差止め的救済も含まれます。",
+      "source_url": "https://iapp.org/news/a/new-york-s-governor-signs-youth-ai-chatbot-safety-bill"
+    }
+  ],
+  "who_is_affected": "ニューヨーク州の未成年者にコンパニオン型チャットボットを提供する事業者が対象になる場合があります。開発者や提供者が、州外や米国外の会社でも対象になるかは、本文からは分かりません。",
+  "japan_impact": "日本の会社でも、ニューヨーク州の未成年者が使える対話型AIを出しているなら、確認するとよいでしょう。まず自社サービスが法の対象かを、米国の弁護士などと確認するとよいでしょう。対象の場合は、12分類に当たる機能の有無と、年齢確認の仕組みの点検が必要になる場合があります。年齢データの削除手順も、設計に入れるとよいでしょう。",
+  "next_steps": "資料によると、施行日は2027年1月1日で、準備期間は短いとされています。州司法長官室は、不安全なやり取りへの苦情を受ける窓口を設ける予定です。事業者の対応が急がれるというのは推測です。資料に、施行前の追加の指針や規則の予定は書かれていません。",
+  "unknowns": [
+    "日本など米国外の事業者への適用範囲",
+    "「未成年者」の年齢の定め",
+    "12分類それぞれの細かな定義と、通常の会話との境目",
+    "年齢確認の方法に関する具体的な基準",
+    "罰則を科す主体や手続きの詳細",
+    "施行前に出る指針やガイダンスの有無"
+  ],
+  "glossary": [
+    {
+      "term": "コンパニオンAI",
+      "explanation": "ユーザーと友人や恋人のように継続的に会話するAIチャットボットです。"
+    },
+    {
+      "term": "年齢確認（age assurance）",
+      "explanation": "利用者の年齢を確かめる方法の総称です。身分証の確認以外の方法も含みます。"
+    },
+    {
+      "term": "差止め的救済（injunctive relief）",
+      "explanation": "金銭の支払いではなく、行為の停止や是正を命じる救済です。"
+    }
+  ]
+}

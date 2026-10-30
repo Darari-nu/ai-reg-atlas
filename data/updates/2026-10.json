@@ -628,5 +628,35 @@
       "https://iapp.org/news/a/new-york-s-governor-signs-youth-ai-chatbot-safety-bill"
     ],
     "country_anchor": "/country/us/#axis-prohibited_uses"
+  },
+  {
+    "id": "2026-10-29-ca-001",
+    "date": "2026-10-29",
+    "country": "ca",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "カナダのプライバシー機関、医療分野での責任あるAI利用を求める決議を採択",
+    "summary": {
+      "what": "医療および健康研究における責任あるAIの利活用と法整備を求める共同決議を採択・公表",
+      "who": "カナダ連邦・州・準州のプライバシーコミッショナーおよびオムブズマン",
+      "when_impact": "2026年10月29日より各政府および医療AI開発者・医療機関等に適用・影響"
+    },
+    "detail": "カナダの連邦・州・準州のプライバシー規制当局は、医療機関や健康研究におけるAIの急速な導入に伴い、個人健康情報の保護と信頼維持を目的とした共同決議を採択・発表しました。各政府に対して、プライバシー保護、安全性、透明性、説明責任など6つの原則を満たす法規制の検証や改正、共同対話を呼びかけています。また、AI開発者や医療提供者に対して管理体制の整備を要請し、研究倫理委員会や研究機関に対しても指導・教育の強化を求めました。",
+    "so_what": "カナダで医療向けAIを展開する事業者は、プライバシー保護や透明性・説明責任等に配慮したAIガバナンス枠組みの構築が求められます。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "法的段階がannouncement（規制機関による提言・決議）であり、対象国のdiff_vs_eu項目を直接更新しないためdiff_changedはfalseです。"
+    },
+    "canonical_event": "Canada privacy commissioners call for responsible use of artificial intelligence in health",
+    "publication_date": "2026-10-29",
+    "discovered_at": "2026-10-30",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261029/"
+    ],
+    "country_anchor": "/country/ca/#updates"
   }
 ]

@@ -1,0 +1,176 @@
+{
+  "jurisdiction": "nz",
+  "regulation_name": "横断的なAI法なし（国家AI戦略「Investing with confidence」2025-07。既存法で対応する「軽いタッチ」の方針。法的拘束力のあるAI関連規則は生体認証処理プライバシー規約2025が中心）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "AI固有の法定リスク分類はない。2024年の閣議文書で「軽いタッチ・比例的・リスクベース」の方針を決め、プライバシー・消費者保護・人権などの既存の技術中立な法律で対応する。",
+      "detail": "科学・イノベーション・技術相の閣議文書「Approach to work on Artificial Intelligence」（2024-06-26付）は、NZが軽いタッチ・比例的・リスクベースでAIに臨むことへの合意を求める（第1・2項）。理由として、プライバシー・消費者保護などの既存の規制枠組みがあることを挙げる（第15項・15.1項）。国家AI戦略（2025-07-08公表、PDF 12頁「Commitment to stable and enabling policy」）は、軽いタッチで原則ベースの方針をとると書く。既存の枠組みは必要に応じて改正するとし、OECD AI原則の採用に既存法を超える規制の上乗せは要らないとする。MBIEの事業者向け指針（PDF 4頁）は任意の資料。リスクの起こりやすさ・大きさ・文脈に比例して扱う「閣議で合意された比例的なリスクベースの方針」に沿うとするが、EUのような階層別の区分や高リスクの指定はない。公的部門には、政府最高デジタル責任者（GCDO）の公務AIフレームワーク（2025-01-30）と、規制省の規制機関向けAI指針（2026-05-27）がある。後者は、AIは案件の振り分けなどの低リスク用途に向くとする（RNZ報道）。",
+      "sources": [
+        "https://www.mbie.govt.nz/dmsdocument/28913-approach-to-work-on-artificial-intelligence-proactiverelease-pdf",
+        "https://www.mbie.govt.nz/assets/new-zealands-strategy-for-artificial-intelligence.pdf",
+        "https://www.mbie.govt.nz/dmsdocument/30884-responsible-ai-guidance-for-businesses",
+        "https://www.dia.govt.nz/press.nsf/d77da9b523f12931cc256ac5000d19b6/dd22bbdc433e7471cc258c210072b2d1!OpenDocument",
+        "https://www.regulation.govt.nz/news/helping-regulators-use-ai-with-confidence/",
+        "https://www.rnz.co.nz/news/politics/596479/ministry-for-regulation-issues-ai-guidance-for-regulators"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の禁止用途を定めた法令はない。ただし生体認証処理プライバシー規約2025の規則10は、生体情報から健康・感情・性格・注意や疲労の状態を推定すること、人権法の差別禁止事由で人を分類することを、例外にあたらない限り禁じる（2025-11-03施行）。",
+      "detail": "生体認証処理プライバシー規約（BPPC）はプライバシー法2020に基づき、2025-07-21に発出、2025-11-03に施行された。既存の利用者の移行期間は2026-08-03に終わった。2026-03の改正第1号でIPP3A（新しい情報プライバシー原則）を反映している。規則10は、生体システムで健康情報、感情・気分・性格・精神状態・意図、注意・疲労・覚醒の状態を推定・検出することを制限する。人権法第21条1項の差別禁止事由（性別・人種・障害・政治的意見・性的指向など）で人を分類することも制限する。例外は、本人の明示的な許諾、安全衛生目的の疲労検知、アクセシビリティ支援などに限られる。OPCの指針は、規制される例として、採用面接の動画から性格を推定すること、店舗で客の感情反応を監視することを挙げる。規則1は、生体処理を始める前に、目的の適法性・必要性・保護措置・比例性（利益がプライバシーのリスクを明確に上回ること）を満たすよう求める（法律事務所の解説）。確認した範囲では、EU第5条にある社会的スコアリング、無差別な顔画像収集、プロファイリングだけに基づく犯罪予測、法執行目的のリアルタイム遠隔生体識別の禁止はNZの法令にない。同意のない性的ディープフェイクを罰する議員立法は審議中（penalties 軸を参照）。",
+      "sources": [
+        "https://www.privacy.org.nz/privacy-principles/codes-of-practice/biometric-processing-privacy-code/",
+        "https://www.privacy.org.nz/resources-and-learning/a-z-topics/biometrics/rule-10/",
+        "https://www.minterellison.co.nz/insights/biometric-processing-privacy-code-now-in-force"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）への義務はない。生成AIは、MBIEの任意の事業者向け指針と、GCDOの公務向けの生成AI指針で扱う。",
+      "detail": "国家AI戦略（PDF 4頁の大臣序文）は、高度なAI開発より、既存技術の実用的な導入に意図的に重点を置くとする。確認した範囲では、汎用モデル・システミックリスク・計算量基準を定める法令や法案はない。MBIEの事業者向け指針（2025-07）は、生成AIをOECDにならって定義し、利用者への告知や生成物のラベル表示を良い慣行として勧める（PDF 19頁）。ただし任意。公務では、公務AIフレームワークの下に、GCDOの「Responsible AI Guidance for the Public Service: GenAI」がある（政府発表）。プライバシーコミッショナー事務局は、AI生成画像への懸念を示す国際共同声明に署名した。生成AIは個人情報保護などの既存法に従って開発・利用すべきだとしたが、声明はNZの法律を変えるものではない（RNZ報道）。",
+      "sources": [
+        "https://www.mbie.govt.nz/assets/new-zealands-strategy-for-artificial-intelligence.pdf",
+        "https://www.mbie.govt.nz/dmsdocument/30884-responsible-ai-guidance-for-businesses",
+        "https://www.beehive.govt.nz/release/guidance-safe-use-ai-public-sector",
+        "https://www.rnz.co.nz/news/political/587814/ai-and-privacy-commissioner-signs-on-to-global-statement-on-potential-harms"
+      ]
+    },
+    "transparency": {
+      "summary": "AIとの対話の告知やAI生成物の表示を法律で義務づける規定はない。法的拘束力があるのは生体認証規約の規則3（収集時の通知）。MBIEの任意指針は、生成AIの利用告知とラベル表示を勧める。",
+      "detail": "BPPCの規則3は、プライバシー法のIPP3（収集時の通知）に上乗せして、目立つ形での通知を求める。通知する内容は、収集する生体情報、目的、保存期間、代替手段の有無、苦情の申立て方、規則1の比例性評価を公開しているか、試行中かどうかと期間（法律事務所の解説）。MBIEの事業者向け指針（PDF 19頁）は、生成AIを使う場面（ウェブのチャットボットなど）を利用者に知らせること、AI生成物へのラベル表示や免責表示を良い慣行とする。電子透かしは発展途上の技術として紹介するにとどまる。同指針は、AIの出力や利用が誤認を招く行為にあたれば公正取引法1986に触れるおそれがあると注意している（PDF 11頁の法令一覧、32頁の事例）。公務AIフレームワークは、公務がAI利用の透明性に取り組むことを原則の一つに置く。",
+      "sources": [
+        "https://www.minterellison.co.nz/insights/biometric-processing-privacy-code-now-in-force",
+        "https://www.mbie.govt.nz/dmsdocument/30884-responsible-ai-guidance-for-businesses",
+        "https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/artificial-intelligence/public-service-artificial-intelligence-framework"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。プライバシー法・公正取引法・刑法・有害デジタル通信法など既存法の罰則と救済で対応する。審議中のディープフェイク法案は、同意のない性的な合成画像に既存の親密映像の罪を広げる。",
+      "detail": "BPPCは法的に執行できる規則で、OPCが苦情や遵守の調査で指針を基準に使う（OPC指針）。OPCの指針には「規約に基づく苦情」の節がある。MBIEの指針は、AIの利用でも公正取引法や商業法（Commerce Act）1986第30条（カルテル）などの罰則がかかることを事例で示す（PDF 12・32頁）。議員立法「Deepfake Digital Harm and Exploitation Bill」（213-1、ACTのLaura McClure議員）は、刑法1961第216G条に1A項を加える（法案第4条）。本人の知らないうちに、または同意なく作成・合成・改変された性的・私的な映像を「親密映像」に含め、第216H〜216N条の罪を及ぼす。有害デジタル通信法2015第4条の定義も同じように広げ、第22A条の罪を及ぼす（法案第6条）。施行は国王裁可の翌日（法案第2条）。2026-05-20に全会一致で第一読会を通過し、社会サービス・コミュニティ委員会に付託された。意見募集の締切は2026-06-19。刑罰の上限額・刑期は今回の調査で条文を確認できていない。",
+      "sources": [
+        "https://www.privacy.org.nz/resources-and-learning/a-z-topics/biometrics/",
+        "https://www.mbie.govt.nz/dmsdocument/30884-responsible-ai-guidance-for-businesses",
+        "https://www.legislation.govt.nz/bill/member/2025/0213/latest/whole.html",
+        "https://www.rnz.co.nz/news/politics/595813/deepfake-bill-passes-first-reading-in-parliament",
+        "https://www3.parliament.nz/en/pb/sc/committees-press-releases/have-your-say-on-the-deepfake-digital-harm-and-exploitation-bill/"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の規制機関はない。戦略と事業者向け指針はMBIE（科学・イノベーション・技術相）、公務のAIはGCDO、生体情報と個人情報はプライバシーコミッショナー（OPC）が担う分散型。",
+      "detail": "AI政策の所管は科学・イノベーション・技術相で、2024年の閣議文書（当時はJudith Collins大臣）と2025-07-08の国家AI戦略（Shane Reti大臣）を出した。事業者向け指針はMBIEが作った。公務でのAI導入はGCDOが担い、2025-01-30に公務AIフレームワークを公表した（内務省発表）。BPPCの発出と執行はOPC。規制省は2026-05-27に規制機関向けAI指針を出した。報道によると、NZには専属のAI規制機関・監督機関がなく、当局者もNZの規制はインドなど多くの国より緩いとしている（Newsroom）。2026年の総選挙に向けて、野党労働党は首相府内のAI局の新設と、オンライン安全規制機関の権限拡大を公約した（RNZ）。どちらも政府の決定ではない。",
+      "sources": [
+        "https://www.mbie.govt.nz/dmsdocument/28913-approach-to-work-on-artificial-intelligence-proactiverelease-pdf",
+        "https://www.beehive.govt.nz/release/government-ai-strategy-boost-productivity",
+        "https://www.dia.govt.nz/press.nsf/d77da9b523f12931cc256ac5000d19b6/dd22bbdc433e7471cc258c210072b2d1!OpenDocument",
+        "https://www.privacy.org.nz/privacy-principles/codes-of-practice/biometric-processing-privacy-code/",
+        "https://www.regulation.govt.nz/news/helping-regulators-use-ai-with-confidence/",
+        "https://newsroom.co.nz/2026/06/04/nz-warned-against-ai-scepticism-as-govt-issues-new-regulatory-guidance/",
+        "https://www.rnz.co.nz/news/politics_election-2026/1309382/labour-promises-to-set-up-ai-regulator-copyright-rules-if-elected"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2024-06-26",
+        "event": "閣議文書「Approach to work on Artificial Intelligence」（軽いタッチ・比例的・リスクベースの方針。日付は文書の作成日）",
+        "source": "https://www.mbie.govt.nz/dmsdocument/28913-approach-to-work-on-artificial-intelligence-proactiverelease-pdf"
+      },
+      {
+        "date": "2025-01-30",
+        "event": "政府最高デジタル責任者（GCDO）が公務AIフレームワークを公表",
+        "source": "https://www.dia.govt.nz/press.nsf/d77da9b523f12931cc256ac5000d19b6/dd22bbdc433e7471cc258c210072b2d1!OpenDocument"
+      },
+      {
+        "date": "2025-07-08",
+        "event": "政府が初の国家AI戦略「Investing with confidence」と任意の事業者向け責任あるAI指針を公表",
+        "source": "https://www.mbie.govt.nz/about/news/artificial-intelligence-strategy-and-business-guidance-now-available"
+      },
+      {
+        "date": "2025-07-21",
+        "event": "プライバシーコミッショナーが生体認証処理プライバシー規約2025を発出",
+        "source": "https://www.privacy.org.nz/privacy-principles/codes-of-practice/biometric-processing-privacy-code/"
+      },
+      {
+        "date": "2025-11-03",
+        "event": "生体認証処理プライバシー規約が施行（規則10による感情・健康推定などの制限を含む）",
+        "source": "https://www.privacy.org.nz/privacy-principles/codes-of-practice/biometric-processing-privacy-code/"
+      },
+      {
+        "date": "2026-05-20",
+        "event": "Deepfake Digital Harm and Exploitation Bill（議員立法）が全会一致で第一読会を通過し、委員会に付託",
+        "source": "https://www.rnz.co.nz/news/politics/595813/deepfake-bill-passes-first-reading-in-parliament"
+      },
+      {
+        "date": "2026-05-27",
+        "event": "規制省が規制機関向けAI指針「Responsible AI in Action」を公表",
+        "source": "https://www.regulation.govt.nz/news/helping-regulators-use-ai-with-confidence/"
+      },
+      {
+        "date": "2026-06-19",
+        "event": "ディープフェイク法案への意見募集の締切（社会サービス・コミュニティ委員会）",
+        "source": "https://www3.parliament.nz/en/pb/sc/committees-press-releases/have-your-say-on-the-deepfake-digital-harm-and-exploitation-bill/"
+      },
+      {
+        "date": "2026-08-03",
+        "event": "生体認証処理プライバシー規約の移行期間の終了（施行前から生体処理をしていた事業者にも全面適用）",
+        "source": "https://www.privacy.org.nz/privacy-principles/codes-of-practice/biometric-processing-privacy-code/"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [
+      {
+        "topic": "感情推定・生体分類の制限の範囲",
+        "note": "BPPC規則10は、感情・性格・健康・注意や疲労の推定と、差別禁止事由による分類を、職場・教育に限らず店舗などでも制限する。EU第5条1項(f)の感情推定の禁止は職場・教育に限られる。ただしNZには本人の明示的な許諾などの例外がある",
+        "source": "https://www.privacy.org.nz/resources-and-learning/a-z-topics/biometrics/rule-10/"
+      }
+    ],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "国家AI戦略と事業者向け指針は任意。既存法を超える規制の上乗せはしない方針で、EUのような事業者義務を課すAI横断法はない",
+        "source": "https://www.mbie.govt.nz/assets/new-zealands-strategy-for-artificial-intelligence.pdf"
+      },
+      {
+        "topic": "AI生成物の表示",
+        "note": "AIとの対話の告知や生成物の表示は任意指針で勧めるだけ。EU第50条は告知と機械可読表示を義務づける",
+        "source": "https://www.mbie.govt.nz/dmsdocument/30884-responsible-ai-guidance-for-businesses"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "横断的なリスク分類と高リスク義務",
+        "note": "法定のリスク区分、高リスクAIの指定、適合性評価、技術文書の義務がない",
+        "source": "https://www.mbie.govt.nz/dmsdocument/28913-approach-to-work-on-artificial-intelligence-proactiverelease-pdf"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデル・システミックリスク・計算量基準の規定がない。戦略は高度な開発より導入に重点を置く",
+        "source": "https://www.mbie.govt.nz/assets/new-zealands-strategy-for-artificial-intelligence.pdf"
+      },
+      {
+        "topic": "AI専属の監督機関とAI固有の罰則",
+        "note": "専属のAI規制機関がなく、売上高に連動する制裁金のようなAI固有の罰則もない。既存法の罰則で対応する",
+        "source": "https://newsroom.co.nz/2026/06/04/nz-warned-against-ai-scepticism-as-govt-issues-new-regulatory-guidance/"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "生体認証専用の拘束力ある規約",
+        "note": "プライバシー法に基づく規約で、生体処理を始める前の比例性評価（規則1）、目立つ形での通知と試行の告知（規則3）、用途の制限（規則10）を課す。EU AI法本体にこの形の規則はない",
+        "source": "https://www.privacy.org.nz/privacy-principles/codes-of-practice/biometric-processing-privacy-code/"
+      },
+      {
+        "topic": "性的ディープフェイクの刑事罰化（議員立法・審議中）",
+        "note": "同意のない性的な合成映像を既存の親密映像の罪（刑法第216H〜216N条、有害デジタル通信法第22A条）に含め、作成・配布した個人を罰する。EUの新しい禁止（第5条1項(ba)）は、そうした生成を目的とするAIシステムの市場投入を対象にする",
+        "source": "https://www.legislation.govt.nz/bill/member/2025/0213/latest/whole.html"
+      },
+      {
+        "topic": "政府自身のAI利用の枠組み",
+        "note": "GCDOの公務AIフレームワークと規制省の規制機関向けAI指針で、民間への規制より先に、政府・規制機関がAIを使うときの原則（透明性・人間による責任）を定める",
+        "source": "https://www.dia.govt.nz/press.nsf/d77da9b523f12931cc256ac5000d19b6/dd22bbdc433e7471cc258c210072b2d1!OpenDocument"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

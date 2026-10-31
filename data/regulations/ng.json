@@ -1,0 +1,151 @@
+{
+  "jurisdiction": "ng",
+  "regulation_name": "横断法なし（国家デジタル経済・電子ガバナンス法案（National Digital Economy and E-Governance Bill）の第5章がAI規制。国会で審議中・成立前。国家AI戦略（NAIS）は拘束力なし）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAIリスク分類はない。審議中の法案では、NITDAが大臣の承認を得て規則でAIをリスク水準ごとに分類し、義務をリスクに見合ったものにする。区分そのものは法案に書かれていない。",
+      "detail": "国会サイトに載っている2025年版法案の第65条1項によると、規制機関（第83条の定義でNITDA＝国家情報技術開発庁）は、大臣の承認を得て規則でAIをリスク水準で分類できる。考慮する要素は、(a)利用目的と文脈、(b)適用の性質と範囲、(c)損害の起こりやすさと重さ、(d)権利への影響を元に戻せるか、(e)自律性の程度と人による監督の可能性、(f)事業者がどこまで制御しているか、(g)事業者のリスク軽減能力、(h)影響を受ける集団（特に脆弱な集団）。同条2項は、分類に応じて義務の重さを決めるとする。第64条2項も、義務はリスク水準・開発段階・事業者の技術力と経済力に見合う形で果たせばよいとする。EUのような禁止・高リスクなどの区分や、付属書での分野の列挙は法案本文にない。2026-07には、上院ICT・サイバーセキュリティ委員長が「法案はAIを4〜5区分に分け、区分ごとに導入の要件が違う」と述べたと報じられた。版が改まった可能性があり、今の版の条文は未確認。報道では、金融・行政・監視・自動化された意思決定に使うAIをより厳しく審査するとされる。施行中のものでは、データ保護法（NDPA 2023）第28条とNDPCのGAID第28条が、自動化された意思決定・プロファイリングなどリスクの高い処理の前にデータ保護影響評価（DPIA）を求めている。",
+      "sources": [
+        "https://nass.gov.ng/documents/billdownload/11219.pdf",
+        "https://www.thisdaylive.com/2026/07/09/national-digital-economy-and-e-governance-act-2026-ready-in-weeks/",
+        "https://businessday.ng/technology/article/nigeria-set-to-pass-ai-law-among-first-in-africa-to-regulate-sector/",
+        "https://www.legal500.com/intelligence/nigeria/privacy/beyond-compliance-audits-managing-high-risk-ai-profiling-and-automated-decision-making-under-the-ndpa-and-gaid"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "施行中のAI固有の禁止規定はなく、2025年版法案にも禁止用途の一覧はない。法案はNITDAに、差し迫った・重大なリスクのあるAIについて個別に活動停止を命じる権限を与える。",
+      "detail": "2025年版法案の第5章（第63〜78条）には、EU第5条のような禁止用途（社会的スコアリング、職場・教育での感情推定、リアルタイム遠隔生体識別など）の条文がない。代わりに、第67条(d)がNITDAに、差し迫った・重大なリスクをもたらすAIシステムについて是正措置や活動の停止を決める権限を与える。第63条1項(a)は、差別の防止を全てのAIに共通の原則とする。施行中のNDPA第37条は、法的またはそれと同じくらい重大な影響を与える決定を、自動処理だけで受けない権利を定める（契約の締結・履行に必要な場合などは例外）。ただし、これはAIの用途そのものを禁止する規定ではない。",
+      "sources": [
+        "https://nass.gov.ng/documents/billdownload/11219.pdf",
+        "https://www.legal500.com/intelligence/nigeria/privacy/beyond-compliance-audits-managing-high-risk-ai-profiling-and-automated-decision-making-under-the-ndpa-and-gaid"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）だけに課す義務は、施行中の法令にも2025年版法案にもない。法案は生成AI・大規模言語モデルを「AIシステム」の定義に含め、一般の義務の対象にしているだけ。",
+      "detail": "2025年版法案の第83条は、「AIシステム」の定義の例に(d)生成AI（深層・大規模言語モデルを含む）を挙げる。このため生成AIの提供者も「AIエージェント」として、第63条の原則と第64条の義務（リスクに見合ったガバナンスと影響評価、記録の保存など）を負う。一方、EU第53〜55条にあたる定め（汎用モデル、システミックリスク、計算量の基準、学習データの要約公表、著作権方針）はない。国家AI戦略（NAIS）は2025-09に公表された5か年（2025〜2029年）の戦略で、FMCIDE（通信・イノベーション・デジタル経済省）が主導し、NITDAが実施を担う。拘束力はない。草案は2024-08にNITDA傘下のNCAIR（国立AI・ロボット工学センター）が公表していた。NAIS本文の生成AIに関する記述は未確認。",
+      "sources": [
+        "https://nass.gov.ng/documents/billdownload/11219.pdf",
+        "https://oecd.ai/en/dashboards/national/nigeria",
+        "https://ncair.nitda.gov.ng/wp-content/uploads/2024/08/National-AI-Strategy_01082024-copy.pdf"
+      ]
+    },
+    "transparency": {
+      "summary": "施行中のAI表示義務はない。2025年版法案は、全てのAIに透明性・説明可能性・追跡可能性を原則として求める。そのうえで利用者への機能・限界・影響の説明と、提供者の身元の開示を義務付ける。AIとの対話の告知や、生成物のラベル表示の規定はない。",
+      "detail": "第63条1項(b)は、AIシステムが透明で説明でき、理解でき、追跡できることを求める。仕組みと判断の根拠は、文書と技術的な手段で裏付けなければならない。第64条1項はAIエージェントに次の義務を課す。(c)利用者と影響を受ける人に、機能・限界・起こりうる影響を明確かつ十分に知らせる。(f)独立した監督・監査・追跡ができるだけの文書と記録を保つ。(g)問い合わせや救済のために、提供者・運用者の身元と連絡先を開示する。第63条1項(e)は、決定への異議申立てと救済の仕組みも原則に含める。EU第50条のような、チャットボットであることの告知、合成コンテンツの機械可読な表示、ディープフェイクの明示は、法案本文に見当たらない。施行中のNDPA第37条3項は、自動化された意思決定について、人の介入・意見表明・異議申立ての権利を守る措置を管理者に求める。",
+      "sources": [
+        "https://nass.gov.ng/documents/billdownload/11219.pdf",
+        "https://www.legal500.com/intelligence/nigeria/privacy/beyond-compliance-audits-managing-high-risk-ai-profiling-and-automated-decision-making-under-the-ndpa-and-gaid"
+      ]
+    },
+    "penalties": {
+      "summary": "施行中のAI固有の罰則はない。2025年版法案では、NITDAが調査のうえ、是正・被害者への補償・違反で得た利益の清算・制裁金を命じられる。制裁金の上限は、1,000万ナイラとナイジェリア国内の前年度総収入の2%のうち高い方。AIによる損害の民事責任の規定もある。",
+      "detail": "第68条1項によると、NITDAは調査の結果AIエージェントの法律・規則違反を認めたとき、執行命令や制裁を出せる。同条2項が挙げる内容は、(a)違反の是正、(b)被害者への補償の支払い、(c)違反で得た利益の清算、(d)制裁金の支払い（上限は1,000万ナイラと、前会計年度にナイジェリアから得た年間総収入の2%のうち高い方）。同条3項は、AIの開発・導入・利用で生じた物質的・精神的損害について、裁判所が定める民事責任をAIエージェントに負わせる。行政制裁の権限は第67条(e)。報道によれば、制裁金をどう算定し、どう執行するかは法案に書かれていない。上限額は、EU（禁止違反で3,500万ユーロまたは全世界売上高の7%）よりかなり低い。",
+      "sources": [
+        "https://nass.gov.ng/documents/billdownload/11219.pdf",
+        "https://businessday.ng/technology/article/nigeria-set-to-pass-ai-law-among-first-in-africa-to-regulate-sector/"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はまだない。2025年版法案はNITDAを規制機関とし、分類・監視・検査・制裁・AI監査人の認定・サンドボックスを任せる。現行では、FMCIDEが国家AI戦略を主導し、データ保護委員会（NDPC）がNDPAとGAIDでAIによる個人データの処理を監督する。",
+      "detail": "第83条は、「規制機関」をNITDA、「大臣」を通信・デジタル経済担当の大臣と定義する。第66条が定めるNITDAの任務は、遵守の監視、国内のAIリスクの評価と監視、業界への聞き取りを含む動向調査、独立したAIシステム監査人の認定、検査・監査・調査、制裁と執行、啓発、人材育成、試験環境とサンドボックスの支援。第67条が定める権限は、情報・文書の提出要求、警告・勧告、監査・影響評価の要求、是正措置・活動停止、行政制裁、規則の制定。第69条により、大臣はNITDAの勧告に基づいて年次の影響評価報告を公表する。第82条により、大臣はNITDAに政策上の一般的な指示を出せる。第64条1項(j)は、NITDAとNDPCへの協力を義務とする。適用対象は、ナイジェリアで使われる・使われる予定の・頼りにされるAIを開発・導入・市場に出す・運用する者で、国外の事業者も含む（第2条(d)・第83条）。第70〜77条は、NITDAが分野ごとの規制当局と組んで運営するサンドボックスと試験環境を定める。応募者のうち、ナイジェリアで登録したスタートアップ・中小企業や、国内に所有・研究開発の実体がある者を優先する（第73条）。審議の経過は次のとおり。2025-11-10に上下両院の委員会が合同公聴会を開き、当時は数日のうちに大統領へ送って署名されると報じられた。しかし2026-10-27の国会図書館信託基金（NALTF）の記事では、上院ICT・サイバーセキュリティ委員長が「法案は第三読会に達した。年内の可決を目指す」と述べている。このほかにも、国家AI委員会設置法案（2025-05提出）など、AIに関する議員提出法案が複数ある。現行の規律としては、NDPCのGAID（2025-03公表、2025-09-19全面適用）の第43条がある。AIなどの新技術で個人データを処理する管理者・処理者に、データ保護バイデザイン、DPIA、リスクの低い環境での試験、導入後の監視、技術的・組織的な条件の文書化と届出を求めるもの。",
+      "sources": [
+        "https://nass.gov.ng/documents/billdownload/11219.pdf",
+        "https://naltf.gov.ng/senate-targets-year-end-passage-of-digital-economy-bill/",
+        "https://naltf.gov.ng/digital-economy-bill-poised-for-presidential-assent/",
+        "https://oecd.ai/en/dashboards/national/nigeria",
+        "https://www.techhiveadvisory.africa/insights/nigeria-a-2025-retrospective-and-2026-outlook",
+        "https://www.legal500.com/intelligence/nigeria/privacy/compliance-made-easy-a-review-of-the-nigeria-data-protection-commission-ndpc-general-application-and-implementation-directive-gaid"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2025-09-19",
+        "event": "NDPCの一般適用・実施指令（GAID）が全面適用。AIなど新技術による個人データの処理に、DPIAなどを求める第43条を含む",
+        "source": "https://www.techhiveadvisory.africa/insights/nigeria-a-2025-retrospective-and-2026-outlook"
+      },
+      {
+        "date": "2025-11-10",
+        "event": "国会の上下両院の委員会が、国家デジタル経済・電子ガバナンス法案（AI規制の章を含む）の合同公聴会を開催",
+        "source": "https://naltf.gov.ng/digital-economy-bill-poised-for-presidential-assent/"
+      },
+      {
+        "date": "2026-10-27",
+        "event": "上院ICT・サイバーセキュリティ委員長が、法案は第三読会に達し年内の可決を目指すと表明（NALTF掲載）",
+        "source": "https://naltf.gov.ng/senate-targets-year-end-passage-of-digital-economy-bill/"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI横断法はない。国家AI戦略（NAIS）も拘束力のない政策文書にとどまる。EUのような事業者の義務は、法案が成立するまで生じない",
+        "source": "https://oecd.ai/en/dashboards/national/nigeria"
+      },
+      {
+        "topic": "制裁金の上限（法案）",
+        "note": "上限は、1,000万ナイラとナイジェリアから得た前年度の総収入の2%のうち高い方（第68条2項(d)）。EUは、禁止違反で3,500万ユーロまたは全世界売上高の7%、その他の義務違反で1,500万ユーロまたは3%",
+        "source": "https://nass.gov.ng/documents/billdownload/11219.pdf"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・義務・制裁を定める法案は、2026-10時点でまだ上院で審議中で、成立も施行もしていない",
+        "source": "https://naltf.gov.ng/senate-targets-year-end-passage-of-digital-economy-bill/"
+      },
+      {
+        "topic": "法律で決めたリスク区分（法案）",
+        "note": "2025年版法案は、分類をNITDAの規則（大臣の承認つき）に任せる（第65条）。高リスクの分野の列挙や、高リスクだけに課す要件の一覧は法案本文にない",
+        "source": "https://nass.gov.ng/documents/billdownload/11219.pdf"
+      },
+      {
+        "topic": "禁止用途（法案）",
+        "note": "EU第5条にあたる用途の禁止一覧がない。あるのは、差し迫った・重大なリスクについてNITDAが個別に出す停止命令だけ（第67条(d)）",
+        "source": "https://nass.gov.ng/documents/billdownload/11219.pdf"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "生成AI・大規模言語モデルは「AIシステム」の定義の例として出てくるだけ（第83条）。汎用モデル・システミックリスク・計算量基準の規定はない",
+        "source": "https://nass.gov.ng/documents/billdownload/11219.pdf"
+      },
+      {
+        "topic": "生成物の表示義務（法案）",
+        "note": "AIとの対話の告知、合成コンテンツの機械可読な表示、ディープフェイクの明示の規定がない。あるのは、利用者への機能・限界の説明と、提供者の身元の開示（第64条1項(c)(g)）",
+        "source": "https://nass.gov.ng/documents/billdownload/11219.pdf"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "全てのAIに共通の原則と義務（法案）",
+        "note": "リスク区分に関係なく、全てのAIエージェントに、公平性・説明可能性・人による監督・異議申立てと救済の原則（第63条）と、リスクに見合った影響評価・記録・身元開示の義務（第64条）を課す。EUは主に区分ごとに義務を課す",
+        "source": "https://nass.gov.ng/documents/billdownload/11219.pdf"
+      },
+      {
+        "topic": "AIによる損害の民事責任と補償命令（法案）",
+        "note": "NITDAが被害者への補償や違反で得た利益の清算を命じられ、AIエージェントは物質的・精神的損害について民事責任を負う（第68条2項(b)(c)・3項）。EU AI法本体には損害賠償の規定がない",
+        "source": "https://nass.gov.ng/documents/billdownload/11219.pdf"
+      },
+      {
+        "topic": "サンドボックスでの国内事業者の優先（法案）",
+        "note": "サンドボックスへの参加は、ナイジェリアで登録したスタートアップ・中小企業、国内での研究開発、手薄な層や国内課題に向けた応募を優先する（第73条）",
+        "source": "https://nass.gov.ng/documents/billdownload/11219.pdf"
+      },
+      {
+        "topic": "デジタル経済法の一部としてのAI規制（法案）",
+        "note": "電子取引・電子署名・電子政府を定める包括的な法律の中に、AIの章を置く。NITDAがデジタル経済全体の「スーパー規制機関」になる形",
+        "source": "https://www.techhiveadvisory.africa/insights/nigeria-a-2025-retrospective-and-2026-outlook"
+      },
+      {
+        "topic": "新技術を使う処理でのDPIA事前提出（施行中）",
+        "note": "GAIDは、AIなど新技術で個人データを処理する前にDPIAを行うよう求める。DPIAはNDPCが認定したDPOが署名し、NDPCに提出する（GAID第28・43条）",
+        "source": "https://www.legal500.com/intelligence/nigeria/privacy/beyond-compliance-audits-managing-high-risk-ai-profiling-and-automated-decision-making-under-the-ndpa-and-gaid"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

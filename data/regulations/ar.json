@@ -1,0 +1,162 @@
+{
+  "jurisdiction": "ar",
+  "regulation_name": "横断法なし（AI規制の議員立法が複数あるが、いずれも委員会段階。施行中は公的部門向けの「信頼できるAIのための推奨」（Disposición 2/2023）、SIGEN決議197/2026のAI統制ガイド、AAIPのAIガイドが中心）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中の法令にAIのリスク分類はない。議会にはEU型のリスク分類を置く議員立法が複数出ているが、成立したものはない。",
+      "detail": "国の施行中の文書は公的部門向けの手引きにとどまる。Disposición 2/2023（内閣官房 情報技術次官室、2023-06-02官報掲載）は「信頼できるAIのための推奨」（附属書I）とAIプロジェクトの段階図（附属書II）を承認した（第1・2条）。附属書Iは、公的部門でAIプロジェクトを率いる人、開発する人、調達仕様を書く人向けの手引きで、事業者を拘束するリスク区分は置いていない。AAIP（公共情報アクセス庁。個人データ保護法25.326号の執行機関）のガイドは、アルゴリズムの透明性と個人データ保護の2点から、AIのライフサイクル全体（設計・導入・保守）への推奨を示す。議会では、2026年4月にジュリアーノ下院議員が全国AIシステム登録簿を設ける法案を提出した。7月にはブリュッゲ下院議員が、EUを参考に3段階のリスク分類と禁止用途を置く法案を提出し、科学技術・一般立法・人権の3委員会に付託された。大手法律事務所の一覧には、2026年の下院法案として0004-D-2026、0664-D-2026（リスクに応じた監督と全国AIシステム登録簿）、3330-D-2026が載っている。",
+      "sources": [
+        "https://www.argentina.gob.ar/normativa/nacional/disposici%C3%B3n-2-2023-384656/texto",
+        "https://www.argentina.gob.ar/noticias/guia-de-la-aaip-para-usar-la-inteligencia-artificial-de-manera-responsable",
+        "https://elintransigente.com/2026/04/presentan-proyecto-de-ley-para-regular-la-inteligencia-artificial-en-la-argentina/",
+        "https://diariolaopinion.com.ar/nacionales/cual-es-el-ultimo-proyecto-de-ley-para-regular-la-inteligencia-artificial-en-la-argentina-y-cuales-son-sus-pilares.htm",
+        "https://urgente24.com/actualidad/politica/la-inteligencia-artificial-podria-tener-nuevas-reglas-argentina-que-cambios-impulsa-el-congreso-n628744",
+        "https://www.mofo.com/artificial-intelligence/argentina"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "施行中のAI固有の禁止規定はない。むしろ治安省の決議710/2024は、リアルタイムの顔認識と犯罪予測を治安当局のAI部門の任務にしている。",
+      "detail": "治安省決議710/2024（2024-07-29官報掲載）は、AI応用治安ユニット（UIAAS）を設けた（第1条）。その任務は、SNS・ダークウェブの巡回（第4条a）、防犯カメラ映像のリアルタイム解析と顔認識による手配者の特定（同c）、過去の犯罪データを使った機械学習による将来の犯罪の予測（同d）、SNS上の動向分析による騒乱の予測（同j）など。EU第5条は、法執行目的の公共空間でのリアルタイム遠隔生体識別を限られた例外を除いて禁止し、プロファイリングだけに基づく個人の犯罪リスク予測も禁止している。検察庁は検事総長決議PGN 64/2026（2026-09-04）で、AI利用の指針を全職員に義務付けた。同時に、公開されたAIツールに捜査中の事件の情報や個人データを入れることを禁止した（主文III）。ただしこれは組織内の規則。性的ディープフェイクについては、国の刑法に専用の犯罪類型がないと報じられている。州レベルでは、チャコ州が軽犯罪法典に操作・合成されたデジタルコンテンツの章を加える法律を公布した（2026-08）。審議中のブリュッゲ案は禁止用途を置く。二次情報の要約によると、禁止の対象は社会的スコアリング、脆弱な人の操作、本人の同意がない性的な画像・音声・動画の生成、リアルタイム遠隔生体識別（例外あり）とされる。",
+      "sources": [
+        "https://www.argentina.gob.ar/normativa/nacional/norma-402139/texto",
+        "https://www.mpf.gob.ar/resoluciones/pgn/2026/PGN-0064-2026-001.pdf",
+        "https://ciberlatam.com/noticias/argentina-tiene-figura-penal-deepfakes",
+        "https://www.infobae.com/politica/2026/08/28/promulgan-ley-anti-deepfake-habra-multas-y-dias-de-arresto-en-chaco-por-casos-de-violencia-digital-con-ia/",
+        "https://urgente24.com/actualidad/politica/la-inteligencia-artificial-podria-tener-nuevas-reglas-argentina-que-cambios-impulsa-el-congreso-n628744"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AI・生成AIへの個別義務はない。政権は事前規制をしない方針を示し、AIエージェントが運営する「自動化会社」を認める会社法改正案とAI・データセンター向けの投資優遇を進めている。",
+      "detail": "ミレイ大統領は2026-09の国連総会で、税の優遇、AIエージェントで運営する会社の有限責任、AIを事前に規制しないことを約束したと報じられた。政府提出の会社法全面改正案（上院 PE-193/26、教書187/26、2026-06-01受付）は「自動化会社」を新設する。報道によると、これはAIが専ら運営する会社で、定款でその旨を示し、自律的なアルゴリズムやAIエージェントが生んだ損害に会社財産で責任を負う。法律事務所の解説では第14条とされる。上院一般立法委員会は2026-06-24に審議を始めた。8月には、政府が人間の責任者を求める修正を表明したと報じられたが、2026-10末の論評時点でも委員会報告は出ていない。AI・データセンター等の新産業向けの大型投資優遇制度（Súper RIGI）は、2026-06-24に下院で可決され（賛成130・反対106・棄権7）、上院の審議を待っている。汎用モデル・システミックリスク・計算量基準の定めはどこにもない。",
+      "sources": [
+        "https://americasquarterly.org/article/what-argentina-needs-to-fulfill-its-ai-ambitions/",
+        "https://www.senado.gob.ar/parlamentario/comisiones/verExp/193.26/PE/PL",
+        "https://www.senado.gob.ar/micrositios/nota/24010/noticias",
+        "https://buenosairesherald.com/business/milei-looks-to-lay-the-foundations-to-create-non-human-companies",
+        "https://rojaspascual.com.ar/sociedades-automatizadas-por-ia-en-argentina-que-son-como-funcionarian-y-que-cambia-con-la-nueva-ley-general-de-sociedades/",
+        "https://ninolegal.com/novedad/proyecto-sociedades-automatizadas-dao-responsable-humano-senado",
+        "https://www.hcdn.gob.ar/prensa/noticia/DIPUTADOS-LE-DIO-MEDIA-SANCION-AL-SUPER-RIGI-QUE-INCENTIVA-GRANDES-INVERSIONES-EN-NUEVAS-INDUSTRIAS/"
+      ]
+    },
+    "transparency": {
+      "summary": "AIとの対話の告知や生成物の表示を義務付ける法令はない。AAIPのガイドがアルゴリズムの透明性を推奨し、個人データ保護法は自動化された判断を裁判と行政行為についてだけ規律する。",
+      "detail": "AAIPのガイド（2024-09-27に暫定版を公表し、2024-10-30まで意見を募集。最終版は2025年版PDF）は、AAIPの「AI利用における透明性と個人データ保護の国家プログラム」（AAIP決議161/2023）の一環。官民の組織に、アルゴリズムの透明性とデータ保護を推奨するもので、表示義務ではない。2000年の個人データ保護法25.326号は同意を原則の根拠とし、自動化された判断を規律するのは裁判と行政機関の判断だけだと論評されている（2023年にAAIPが用意した改正案は、自動化判断の人による見直しの権利や高リスク利用の影響評価を含んでいたが、議会で廃案）。審議中のブリュッゲ案は、AI生成コンテンツの出所を識別できるようにすること、AIで利用者とやり取りするサービスや自動化された判断を行うサービスに告知を求めること、を定める。",
+      "sources": [
+        "https://www.argentina.gob.ar/noticias/guia-de-la-aaip-para-usar-la-inteligencia-artificial-de-manera-responsable",
+        "https://americasquarterly.org/article/what-argentina-needs-to-fulfill-its-ai-ambitions/",
+        "https://urgente24.com/actualidad/politica/la-inteligencia-artificial-podria-tener-nuevas-reglas-argentina-que-cambios-impulsa-el-congreso-n628744"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。関連する個人データ保護法の罰金上限は10万ペソ（約65米ドル）と低い。",
+      "detail": "個人データ保護法25.326号の罰金の上限は10万ペソ（約65米ドル）と論評されている。会社法改正案（PE-193/26）の自動化会社は、自律システムによる損害に会社財産の範囲で責任を負う。報道では、損害が資本を超えた分は誰も払わず、原因を調べるコードの開示には裁判所の命令が要る、と専門家が指摘している。州レベルでは、チャコ州の反ディープフェイク法がデジタル暴力への罰金と拘留日数を定める。審議中のブリュッゲ案は罰金などの制裁と損害賠償請求の道を定めるとされるが、金額は確認できていない。",
+      "sources": [
+        "https://americasquarterly.org/article/what-argentina-needs-to-fulfill-its-ai-ambitions/",
+        "https://buenosairesherald.com/business/milei-looks-to-lay-the-foundations-to-create-non-human-companies",
+        "https://www.infobae.com/politica/2026/08/28/promulgan-ley-anti-deepfake-habra-multas-y-dias-de-arresto-en-chaco-por-casos-de-violencia-digital-con-ia/",
+        "https://urgente24.com/actualidad/politica/la-inteligencia-artificial-podria-tener-nuevas-reglas-argentina-que-cambios-impulsa-el-congreso-n628744"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。個人データ面はAAIP、国の公的部門のAI統制はSIGEN（国家監察総局）の指針が担い、会社法改正案は規制緩和・国家改革省が主導する。",
+      "detail": "SIGEN決議197/2026（2026-06-16決定、06-22官報掲載）は「AI統制ガイド」を承認し（第1条）、法律24.156号第8条の国の公的部門全体に適用するとした（第2条）。AAIPはAI利用の国家プログラム（決議161/2023）のもとでAIガイドを出した。治安省のUIAASは規制機関ではなく、AIの利用者側。会社法改正案は、規制緩和・国家改革省（ステュルツェネゲル大臣）が上院委員会で説明した。審議中のブリュッゲ案は、国立工業技術院（INTI）を執行機関とし、AI諮問評議会を置くとしている。",
+      "sources": [
+        "https://www.argentina.gob.ar/normativa/nacional/norma-426859/texto",
+        "https://www.argentina.gob.ar/noticias/guia-de-la-aaip-para-usar-la-inteligencia-artificial-de-manera-responsable",
+        "https://www.argentina.gob.ar/normativa/nacional/norma-402139/texto",
+        "https://www.senado.gob.ar/micrositios/nota/24010/noticias",
+        "https://urgente24.com/actualidad/politica/la-inteligencia-artificial-podria-tener-nuevas-reglas-argentina-que-cambios-impulsa-el-congreso-n628744"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2023-06-02",
+        "event": "内閣官房 情報技術次官室の Disposición 2/2023「信頼できるAIのための推奨」（公的部門向け）が官報に掲載・発効",
+        "source": "https://www.argentina.gob.ar/normativa/nacional/disposici%C3%B3n-2-2023-384656/texto"
+      },
+      {
+        "date": "2024-07-29",
+        "event": "治安省決議710/2024（AI応用治安ユニット UIAAS の創設）が官報に掲載",
+        "source": "https://www.argentina.gob.ar/normativa/nacional/norma-402139/texto"
+      },
+      {
+        "date": "2024-09-27",
+        "event": "AAIPが「責任あるAIのための透明性と個人データ保護に関する官民向けガイド」の暫定版を公表（2024-10-30まで意見募集）",
+        "source": "https://www.argentina.gob.ar/noticias/guia-de-la-aaip-para-usar-la-inteligencia-artificial-de-manera-responsable"
+      },
+      {
+        "date": "2026-06-01",
+        "event": "政府の会社法全面改正案（PE-193/26、AIが運営する「自動化会社」を新設）を上院が受付",
+        "source": "https://www.senado.gob.ar/parlamentario/comisiones/verExp/193.26/PE/PL"
+      },
+      {
+        "date": "2026-06-22",
+        "event": "SIGEN決議197/2026「AI統制ガイド」（国の公的部門に適用）が官報に掲載",
+        "source": "https://www.argentina.gob.ar/normativa/nacional/norma-426859/texto"
+      },
+      {
+        "date": "2026-06-24",
+        "event": "上院一般立法委員会がPE-193/26の審議を開始（規制緩和・国家改革相が説明）",
+        "source": "https://www.senado.gob.ar/micrositios/nota/24010/noticias"
+      },
+      {
+        "date": "2026-09-04",
+        "event": "検事総長決議PGN 64/2026。検察のAI利用指針を義務化し、公開AIツールへの事件情報・個人データの入力を禁止",
+        "source": "https://www.mpf.gob.ar/resoluciones/pgn/2026/PGN-0064-2026-001.pdf"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI文書は、公的部門向けの推奨（Disposición 2/2023）と、AAIPの推奨ガイドにとどまる。事業者に義務を課す横断法はない",
+        "source": "https://www.argentina.gob.ar/normativa/nacional/disposici%C3%B3n-2-2023-384656/texto"
+      },
+      {
+        "topic": "自動化された判断の規律",
+        "note": "個人データ保護法25.326号が自動化判断を規律するのは裁判と行政機関の判断だけと論評されており、罰金の上限も10万ペソと低い",
+        "source": "https://americasquarterly.org/article/what-argentina-needs-to-fulfill-its-ai-ambitions/"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・禁止用途・高リスクの義務・表示義務・AI固有の罰則は、どれも議員立法の段階で施行されていない",
+        "source": "https://urgente24.com/actualidad/politica/la-inteligencia-artificial-podria-tener-nuevas-reglas-argentina-que-cambios-impulsa-el-congreso-n628744"
+      },
+      {
+        "topic": "禁止用途",
+        "note": "AI固有の禁止はない。治安省決議710/2024は、リアルタイム顔認識と犯罪予測を治安当局の任務にしている（第4条c・d）。EU第5条では、これらは禁止または厳しく制限される用途",
+        "source": "https://www.argentina.gob.ar/normativa/nacional/norma-402139/texto"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデル・システミックリスク・計算量基準の定めがない。政権はAIを事前に規制しない方針と報じられている",
+        "source": "https://americasquarterly.org/article/what-argentina-needs-to-fulfill-its-ai-ambitions/"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "AIが運営する「自動化会社」（法案）",
+        "note": "政府の会社法改正案が、AIエージェントが運営する会社に法人格と有限責任を与え、定款での明示と会社財産による損害責任を定める（上院委員会で審議中）",
+        "source": "https://buenosairesherald.com/business/milei-looks-to-lay-the-foundations-to-create-non-human-companies"
+      },
+      {
+        "topic": "公的部門のAI統制ガイドの義務化",
+        "note": "国家監察総局（SIGEN）が、AI統制ガイドを国の公的部門全体に適用する（決議197/2026第2条）",
+        "source": "https://www.argentina.gob.ar/normativa/nacional/norma-426859/texto"
+      },
+      {
+        "topic": "検察のAI利用ルール",
+        "note": "検事総長決議で、AI利用指針を検察の全職員に義務付け、公開AIツールへの事件情報・個人データの入力を禁止",
+        "source": "https://www.mpf.gob.ar/resoluciones/pgn/2026/PGN-0064-2026-001.pdf"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

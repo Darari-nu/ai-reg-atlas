@@ -1,0 +1,159 @@
+{
+  "jurisdiction": "ke",
+  "regulation_name": "AIの横断法はまだない（上院の人工知能法案 2026〔Senate Bills No.4 of 2026〕は審議中で、上院ICT委員会が2026-10に審議を進めないよう勧告。ほかに国家AI戦略2025-2030と、AI・その他新興技術政策2026の草案がある）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAIリスク分類はない。上院の人工知能法案 2026 はEUと同じ4段階（許容できないリスク・高リスク・限定リスク・最小リスク）を置くが、具体的な分類基準は政令に任せている。",
+      "detail": "現行法にはAI固有のリスク区分がない。法案の第25条は、健康・安全・基本的権利・環境・社会福祉へのリスクの大きさで、AIを4つに分ける。(a) 許容できないリスク（深刻な脅威）、(b) 高リスク（医療・教育・農業・金融・安全保障・雇用・行政といった重要分野で使うもの）、(c) 限定リスク（中程度）、(d) 最小リスク（無視できる程度）。分類の詳しい基準・例・手続きは、所管閣僚（Cabinet Secretary）がAIコミッショナーの勧告を受けて政令で定める（第25条2項・第36条）。コミッショナーは国際標準を参考に分類を定期的に見直す。高リスクの義務は第26条にある。主なものは、導入前と導入後のリスク評価と軽減措置、人権影響評価、透明性・追跡可能性・説明可能性、データ入力・学習データ・出力・性能指標の記録を5年以上残すこと、データ保護法の順守、堅牢性・サイバーセキュリティ、毎年の順守報告。高リスクAIの公開登録簿は第27条（郡政府が使うものも載せる）。2026年の政策草案もリスクベースの考え方をとり、「ケニアAI安全研究所」が試験とリスク分類を担う構想になっている。",
+      "sources": [
+        "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf",
+        "https://mmsadvocates.co.ke/the-artificial-intelligence-bill-2026/",
+        "https://techweez.com/2026/07/28/kenya-ai-policy-2026-public-consultation/"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "施行中のAI固有の禁止規定はない。法案は「許容できないリスク」のAIを禁止するが、何が当たるかを条文で列挙していない。本人が明示的に同意していない肖像・声を使った有害な合成メディアは犯罪にする。",
+      "detail": "法案の第25条3項は、許容できないリスクのAIを禁止する。ただし「深刻な脅威」の中身は書いておらず、EU第5条のような個別の類型（社会的スコアリング、無差別な顔画像の収集、職場・教育での感情推定、リアルタイムの遠隔生体識別など）は条文にない。罰則条項（官報に載った本文では第35条1項(a)）は「政令で定める場合を除き」許容できないリスクのAIの導入・運用を犯罪とする。そのため、第25条3項の全面禁止との関係がはっきりしないと法律事務所は指摘している。罰則条項(i)は、他人の画像・声・肖像を本人の明示的な同意なしに使ったAI生成コンテンツ（合成メディアを含む）を作る・使う・広めることを犯罪とする。対象は、害・誤情報・名誉毀損・プライバシー侵害を生む、または生むおそれがある場合。",
+      "sources": [
+        "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf",
+        "https://mmsadvocates.co.ke/the-artificial-intelligence-bill-2026/"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）への個別の義務は、施行中の法令にも法案にもない。法案は「生成AI」を定義するだけで、上院ICT委員会は汎用AIモデルを扱っていない点を欠陥に挙げた。",
+      "detail": "法案の第2条は「生成AI」を、学習したデータのパターンをもとに文章・画像・音声・動画などを作れるAIシステムと定義している。しかし、汎用モデル・システミックリスク・計算量基準を対象にした義務は置いていない。報道によると、上院ICT委員会は報告書で、国境を越えるAIシステム・汎用AIモデル・新しい技術リスクを十分に扱っていないと法案を批判した。ODPCの「AIガイダンスノート」草案（2026年7月付）は「基盤モデル提供者」を、大規模言語モデルを含む、幅広いデータで大規模に学習したAIモデルを開発・提供する事業者と定義する。そのうえで、AIのライフサイクル全体を通じてデータ保護法を守るよう求めている。ただし、これは2026-08-17まで意見を募った草案で、確定したかどうかは未確認。",
+      "sources": [
+        "https://mmsadvocates.co.ke/the-artificial-intelligence-bill-2026/",
+        "https://www.the-star.co.ke/news/2026-10-15-senate-committee-shoots-down-nyamus-bill-on-ai",
+        "https://www.odpc.go.ke/wp-content/uploads/2026/07/AI-Guidance-Note.July-2026.pdf",
+        "https://posts.kictanet.or.ke/draft-odpc-guidance-notes-on-ai-emerging-technology-and-privacy-enhancing-technologies/",
+        "https://vellum.co.ke/the-odpcs-proposed-guidance-note-on-ai/"
+      ]
+    },
+    "transparency": {
+      "summary": "施行中のAI表示義務はない。法案は、全ての提供者・導入者に、システムの目的・自動化の程度・偏りの対策などの開示を求める。他人の肖像・声を生成・加工するAIには、明示的な同意とAI生成であることの表示を求める。",
+      "detail": "法案の第28条は、高リスクに限らず全ての提供者・導入者に、利用者への開示を求める。開示するのは、システムの性質と目的、限界、どこまで自動化されているか、偏りの軽減と公平性の対策。法的に重大な影響、またはそれに近い影響を及ぼす自動決定には、データ保護法（Cap. 411C）の保護（人の介入を求める権利、意見を述べる権利、決定を争う権利）を当てはめる。第26条1項(g)は、高リスクAIが人の画像・声・肖像を生成・加工するとき、明示的な同意と生成物の明確な表示を求める。第30条2項(f)の倫理指針は、有害な合成メディアと、肖像の同意のない利用の防止を扱う。表示の手続きは政令で定める（第36条）。開示義務に違反すると罰金100万シリング以下または6か月以下の懲役。EU第50条のような、AIとの対話の告知や合成コンテンツの機械可読な表示の一般義務はない。",
+      "sources": [
+        "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf",
+        "https://mmsadvocates.co.ke/the-artificial-intelligence-bill-2026/",
+        "https://www.ey.com/en_gl/technical/tax-alerts/kenya-publishes-artificial-intelligence-bill-2026-proposing-a-formal-framework-for-ai-governance"
+      ]
+    },
+    "penalties": {
+      "summary": "施行中のAI固有の罰則はない。法案は刑事罰を定め、重い違反は罰金500万シリング以下か2年以下の懲役（または両方）、軽い違反は罰金100万シリング以下か6か月以下の懲役（または両方）。",
+      "detail": "罰則条項（官報に載った本文では第35条、上院の法案ダイジェストでは第34条と書かれている）は9つの犯罪類型を置く。重い区分（罰金500万シリング以下、2年以下の懲役、またはその両方）は、許容できないリスクのAIの導入、評価や軽減措置なしでの高リスクAIの導入、サンドボックスの条件違反、労働影響評価をしないこと、法律に反する公共部門でのAI利用、同意のない有害な合成メディア。軽い区分（罰金100万シリング以下、6か月以下の懲役、またはその両方）は、開示・透明性義務違反、倫理指針に反して偏り・差別・害を生じさせること、コミッショナーの職務の妨害（虚偽の情報提供を含む）。法人の犯罪では、違反を知りながら相当の注意を尽くさなかった取締役・役員も罪に問われる。コミッショナーは執行通知を出し、罰金を科すこともできる（第11条）。罰金は定額の上限で、売上高に連動しない。上院ICT委員会は、こうした罰則が実験段階の地元開発者に重すぎると批判した。",
+      "sources": [
+        "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf",
+        "https://mmsadvocates.co.ke/the-artificial-intelligence-bill-2026/",
+        "https://www.the-star.co.ke/news/2026-10-15-senate-committee-shoots-down-nyamus-bill-on-ai"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。ICT・デジタル経済省（MICDE）が戦略と政策をまとめ、ODPCがデータ保護法の範囲でAI指針の草案を出している。法案は独立した「AIコミッショナー事務局」を新しく作るが、上院ICT委員会は「スーパー規制機関」になると反対した。",
+      "detail": "法案の第4条以下は、AIコミッショナー事務局を憲法第260条(q)の国家機関として置く。コミッショナーは、公務員委員会（PSC）の選考を経て大統領が指名し、議会の承認を得て任命する。任期は5年で、再任は1回まで。権限は第11条にあり、立入検査、情報提出の要求、執行通知と罰金、証人の召喚、不服申立ての仕組みを自分で作ることが含まれる。分野ごとの規制機関に権限を委ねることもできる（第14条）。助言委員会は第17〜20条で、ICT省、ODPC、国家科学技術イノベーション委員会（NACOSTI）、郡知事会の推薦者などで構成する。上院ICT委員会は143の関係者の意見をもとに、新しい事務局がODPCや通信庁と役割が重なり、財政負担も大きいと判断した。そのうえで、まず国の政策をまとめるよう勧告した。政策草案（2026年）は、中心となる「国家AI・新興技術評議会」、「ケニアAI安全研究所」、公開のAI登録簿を作る構想を示し、今後の「AIガバナンス法」の土台になるとしている。草案はそれ自体で法的な義務を生まない。",
+      "sources": [
+        "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf",
+        "https://mmsadvocates.co.ke/the-artificial-intelligence-bill-2026/",
+        "https://www.the-star.co.ke/news/2026-10-15-senate-committee-shoots-down-nyamus-bill-on-ai",
+        "https://www.the-star.co.ke/news/2026-07-24-state-tightens-rules-on-ai-use-of-kenyans-data",
+        "https://cioafrica.co/kenyas-draft-ai-policy-widens-regulatory-reach/",
+        "https://techweez.com/2026/07/28/kenya-ai-policy-2026-public-consultation/"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2024-04-08",
+        "event": "ケニア標準局（KEBS）が、AI応用の行動規範の規格案 DKS 3007:2024 の意見募集を開始（任意の規格）",
+        "source": "https://digitalpolicyalert.org/event/28241-kenya-bureau-of-standards-opened-consultation-on-the-draft-kenya-standard-titled-information-technology-artificial-intelligence-code-of-practice-for-ai-applications-dks-30072024-including-testing-requirement"
+      },
+      {
+        "date": "2025-03-27",
+        "event": "ICT・デジタル経済省（MICDE）が国家AI戦略2025-2030を発表",
+        "source": "https://digitalpolicyalert.org/event/28710-government-released-kenya-artificial-intelligence-strategy-2025-2030"
+      },
+      {
+        "date": "2026-02-19",
+        "event": "人工知能法案 2026（Senate Bills No.4 of 2026、Karen Nyamu 上院議員が提出）が官報補遺 No.15 で公表",
+        "source": "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf"
+      },
+      {
+        "date": "2026-04-02",
+        "event": "人工知能法案 2026 が上院で第一読会。上院ICT委員会に付託（報告期限は付託から30日）",
+        "source": "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf"
+      },
+      {
+        "date": "2026-07-21",
+        "event": "MICDE が「AI・その他新興技術政策2026」草案の意見募集を開始",
+        "source": "https://digitalpolicyalert.org/change/19229-artificial-intelligence-and-emerging-technologies-policy"
+      },
+      {
+        "date": "2026-08-04",
+        "event": "AI・その他新興技術政策2026 草案の意見募集の締切",
+        "source": "https://digitalpolicyalert.org/change/19229-artificial-intelligence-and-emerging-technologies-policy"
+      },
+      {
+        "date": "2026-08-17",
+        "event": "ODPC のAIガイダンスノート草案（新興技術・プライバシー強化技術の草案と同時）の意見募集の締切",
+        "source": "https://posts.kictanet.or.ke/draft-odpc-guidance-notes-on-ai-emerging-technology-and-privacy-enhancing-technologies/"
+      },
+      {
+        "date": "2026-10-15",
+        "event": "上院ICT委員会が報告書で人工知能法案 2026 の審議を進めないよう勧告したと報道（報告書の提出日と本会議での扱いは未確認）",
+        "source": "https://www.the-star.co.ke/news/2026-10-15-senate-committee-shoots-down-nyamus-bill-on-ai"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI横断法はない。国家AI戦略と政策草案はそれ自体で法的な義務を生まず、EUのような事業者義務は法律ができるまで生じない",
+        "source": "https://cioafrica.co/kenyas-draft-ai-policy-widens-regulatory-reach/"
+      },
+      {
+        "topic": "罰金の水準（法案）",
+        "note": "罰金は定額の上限（最大500万シリング）で、売上高に連動しない。EU第99条は最大3,500万ユーロまたは全世界売上高の7%",
+        "source": "https://mmsadvocates.co.ke/the-artificial-intelligence-bill-2026/"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・禁止用途・高リスクの義務・開示義務・罰則は、どれも法案の段階にとどまる。法案も上院の委員会で否決勧告を受けた",
+        "source": "https://www.the-star.co.ke/news/2026-10-15-senate-committee-shoots-down-nyamus-bill-on-ai"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "施行中の法令にも法案にも、汎用モデル・システミックリスク・計算量基準の規定がない。上院ICT委員会もこの点を欠陥に挙げた",
+        "source": "https://www.the-star.co.ke/news/2026-10-15-senate-committee-shoots-down-nyamus-bill-on-ai"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "労働影響評価の義務（法案）",
+        "note": "雇用に影響しそうなAIの提供者・導入者に、失業リスクを含む労働影響評価と再訓練などの軽減措置を義務付け、評価をしなければ犯罪とする",
+        "source": "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf"
+      },
+      {
+        "topic": "同意のない肖像・声の合成メディアの刑事罰（法案）",
+        "note": "他人の画像・声・肖像を明示的な同意なしに使い、害・誤情報・名誉毀損・プライバシー侵害を生むAI生成コンテンツを作る・広めることを、罰金・懲役の対象にする。性的な内容に限らない",
+        "source": "https://www.parliament.go.ke/sites/default/files/2026-04/Bill%20Digest%20-%20The%20Artificial%20Intelligence%20Bill%2C%20No.4%20of%202026.pdf"
+      },
+      {
+        "topic": "郡政府（地方分権）との統合（法案）",
+        "note": "郡政府が使う高リスクAIも公開登録簿に載せ、郡知事会の推薦者を助言委員会に入れ、郡レベルでのAIリテラシー教育を事務局に義務付ける",
+        "source": "https://mmsadvocates.co.ke/the-artificial-intelligence-bill-2026/"
+      },
+      {
+        "topic": "域外適用とデータ主権（政策草案）",
+        "note": "ケニアで調達・利用されるか、国内に直接の影響を及ぼす外国のAI提供者も対象にする。国内で生まれたデータをケニア法の下で管理することを求め、AI安全研究所が高リスクAIを導入前に評価する構想",
+        "source": "https://www.the-star.co.ke/news/2026-07-24-state-tightens-rules-on-ai-use-of-kenyans-data"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

@@ -1,0 +1,172 @@
+{
+  "jurisdiction": "pe",
+  "regulation_name": "人工知能利用促進法（Ley N° 31814）と同法施行規則（Decreto Supremo N° 115-2025-PCM）",
+  "status": "in_force",
+  "approach": "risk_based",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行規則第22条は、AIの利用を「不当な利用（禁止）」「高リスク」「許容可能なリスク」の3つに分ける。高リスクの範囲は第24条の列挙と一般条項で決まり、EUのような事前の適合性評価や登録の制度はない。",
+      "detail": "法律（Ley 31814、2023-07-05官報公布）は、序章唯一条a)で「リスクに基づく安全基準」を原則に掲げるだけ。区分そのものは施行規則（DS 115-2025-PCM、2025-09-09官報公布）が定める。第22条1項は、基本的権利や人の福祉に取り返しのつかない重大な悪影響を与える利用を「不当な利用」（禁止）とする。生命・尊厳・自由・身体の安全などの基本的権利にリスクを伴う利用は「高リスク」で、条件や管理のもとでなら使える。第22条2項は、どちらにも当たらないものを「許容可能なリスク」とする。第24条1項が挙げる高リスクは次のとおり。重要インフラ資産の管理、児童生徒の教育評価（人による評価を置き換えない補助機能は除く）、採用・評価・解雇と労働条件の決定、社会プログラムの受給判断、与信審査（不正検知は除く）、医療へのアクセスの判断や診断支援など。これに加え、生命や基本的権利にリスクがあり、差別の可能性が高いか人による監督が難しい利用全般（j号）も高リスクになる。開発者・実装者は、該当するかどうかをSGTDに照会できる（第23条3項・第24条2項）。なお、官報掲載の条文では第24条1項の号がb)からe)に飛んでいる。",
+      "sources": [
+        "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1",
+        "https://busquedas.elperuano.pe/dispositivo/NL/2192926-1",
+        "https://www.araya.pe/2026/10/inteligencia-artificial-en-el-peru-que-deben-cumplir-las-empresas-y-en-que-plazos/"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "施行規則第23条1項は6類型を禁止する。欺瞞・操作による意思決定への影響、民生分野での自律的な致死能力、法的根拠のない大規模監視、生体データからのセンシティブ属性の推定と差別的な評価・分類、公共空間でのリアルタイム生体識別（例外あり）、人物像だけに基づく犯罪予測。",
+      "detail": "禁止の内容は次の6つ。a) サブリミナルや欺瞞的な手法、認知・感情・社会経済的な脆弱性を突いて意思決定をゆがめる利用。b) 人の監督なしに判断し、民生分野で身体・生命を害しうる自律的な致死能力。c) 法的根拠のない大規模監視、または基本的権利の行使に不釣り合いな影響を与える大規模監視。d) 生体データから人種・政治的意見・労働組合への加入・信条・性生活や性的指向を推定する利用と、差別的・不釣り合いな結果を生む人や集団の評価・分類。e) 公共空間で人を分類するためのリアルタイム生体識別。例外は、デジタルIDの本人認証と、殺人・誘拐・人身取引・強盗・恐喝・公務に対する罪・資金洗浄・麻薬取引・違法採掘・組織犯罪などの重大犯罪の予備的な捜査。f) プロファイリングや性格特性の評価だけに基づく犯罪予測。客観的な事実に基づき、人の監督と監査可能性を備えた捜査支援は不当な利用に当たらない（第23条4項）。監視の仕組みはSGTDが定める（第23条2項）。職場・教育機関での感情推定は禁止ではなく高リスクの側に置かれている（第24条1項i号）。EU第5条にある無差別な顔画像収集の禁止に当たる号は見当たらない。個人的な利用は適用外で、国防・国家安全保障も第7条の原則を守る限り適用外（第4条）。違反に対する固有の罰則はない（「罰則」の軸を参照）。",
+      "sources": [
+        "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1",
+        "https://www.araya.pe/2026/10/inteligencia-artificial-en-el-peru-que-deben-cumplir-las-empresas-y-en-que-plazos/"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）や生成AIに特有の義務はない。法律はAIを「汎用的な新興技術」と定義するだけ。",
+      "detail": "法律第3条a)はAIを「汎用的な新興技術」と定義する。しかし、汎用モデルの提供者の義務、システミックリスク、計算量基準、学習データの要約、著作権方針を定める条文は、法律にも施行規則にもない。施行規則は、第7条d)で開発・実装・利用の各段階での著作権・隣接権の尊重を原則に掲げ、第21条でオープンソースのモデルやデータの自主的な公開を奨励するにとどまる。生成物の表示も、高リスク向けの任意の手段（第25条2項）として出てくるだけ。ENIA 2026-2030（RM 152-2026-PCM）は公的機関向けの戦略で、企業などは参考にできるとされるだけ（同RM第2条）。",
+      "sources": [
+        "https://busquedas.elperuano.pe/dispositivo/NL/2192926-1",
+        "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1",
+        "https://busquedas.elperuano.pe/dispositivo/NL/2511535-1"
+      ]
+    },
+    "transparency": {
+      "summary": "施行規則第25条の「アルゴリズムの透明性」は高リスクAIの開発者・実装者だけが対象。目的・主な機能・判断の種類の事前説明と、人権に影響する判断の結果説明を求めるが、AIであることの表示（ラベル）は任意の手段の一つにとどまる。",
+      "detail": "第25条1項は、高リスクAIの開発者または実装者に、システムの目的・用途、主な機能、下しうる判断の種類を、利用者に事前に分かりやすく知らせる仕組みを求める（営業秘密は尊重する）。2項は、その仕組みに「含めることができる」ものとして目に見える表示を挙げる。製品・サービス・生成コンテンツがAIで動いていることを事前に知らせる表示で、人の権利に直接影響しない内部の事務処理は除く。3項は、人権に影響する判断をする場合に、影響を受けた利用者へ判断の基準と主な要素を分かりやすく説明できるようにすることを求める。細目はSGTDが「アルゴリズムの透明性の指針」で定める（第25条4項）。民間への適用は第1補足最終規定で分野ごとに段階的に始まる。期限は公布翌日から数えて、保健・教育・司法・治安・経済金融が1年、運輸・商業・労働が2年、生産・農業・エネルギー・鉱業が3年、その他が4年。小企業は2年、零細企業は3年。法律事務所の解説では、2026年9月から2029年9月にかけて順に期限が来る。全てのチャットボットにAIであることを告げる義務や、ディープフェイク・合成コンテンツを機械可読形式で表示する義務はない。",
+      "sources": [
+        "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1",
+        "https://www.araya.pe/2026/10/inteligencia-artificial-en-el-peru-que-deben-cumplir-las-empresas-y-en-que-plazos/",
+        "https://www.ey.com/es_pe/technical/tax-alert/reglamento-ley-promueve-uso-inteligencia-artificial"
+      ]
+    },
+    "penalties": {
+      "summary": "AIの法律と施行規則には、罰則も制裁金もない。違反はSGTDが所管の当局に知らせ、個人データ保護法などの既存制度で処分される。別に、刑法の改正でAIの使用を一部の犯罪の加重事由にした（Ley 32314）。",
+      "detail": "法律（Ley 31814）は本則5条だけの振興法で、罰則の規定を置かない。施行規則では、SGTDが規則の遵守を監督し、違反があれば所管の当局に知らせる（第8条g号）。公務員の不履行は会計検査院（CGR）に報告する（第34条1項）。知的財産・個人データ・基本的権利の侵害の疑いも、所管の当局に通報する（第34条2項）。個人データ保護の違反には、個人データ保護法（Ley 29733）の制裁制度が使われる（第26条2項）。被害を受けた人は、INDECOPI（競争・知的財産保護庁）、警察のサイバー犯罪捜査部、個人データ保護庁などに申し立てられる（第36条2項）。これとは別に、Ley 32314（2025-04-29官報公布）が刑法とサイバー犯罪法（Ley 30096）を改正し、AIの使用を犯罪の加重事由に加えた。さらに、同意のないAI生成コンテンツの作成・拡散を最長10年の拘禁刑で罰する法案（14760/2025-CR）を議会が審議していると、2026-06に報じられた。",
+      "sources": [
+        "https://busquedas.elperuano.pe/dispositivo/NL/2192926-1",
+        "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1",
+        "https://leyes.congreso.gob.pe/Documentos/2021_2026/ADLP/Texto_Consolidado/32314-TXM.pdf",
+        "https://diariocorreo.pe/politica/congreso-plantea-sancionar-con-hasta-10-anos-de-carcel-los-contenidos-creados-con-ia-sin-consentimiento-noticia/"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "首相府（PCM）の政府デジタル変革事務局（SGTD）が、国の技術・規範当局（法律第4条）。監督・監視と拘束力のある解釈意見を担うが、自ら制裁する権限はない。",
+      "detail": "法律第4条は、PCMがSGTDを通じて、AIと新興技術の利用・振興を指揮・評価・監督する国の技術・規範当局になると定める。施行規則第8条によるSGTDの役割は、指針・基準の承認（b号）、不当な利用とされるAIの監視（c号）、AI規範の解釈についての拘束力のある意見（f号）、遵守の監督と所管当局への通知（g号）、毎年3月末までの議会への報告（h号）など。不当な利用と高リスクの監視は、SGTDのデジタル技術・安全次官室が運営する国家デジタルセキュリティセンター（CNSD）が受け持ち、情報の提出要求や技術的な警告ができる（第35条）。市民は、PCMのAI専用窓口（gob.pe/iaperu）から通報できる（第36条1項）。公的機関には次の義務がある（第28〜30条）。AI利用方針の策定、AI開発でのNTP-ISO/IEC 42001:2025の使用、公費で作ったAIのソースコード公開、高リスクAIの事前影響評価、導入前と運用中のセキュリティ監査。その後、2026-05-01にENIA 2026-2030（RM 152-2026-PCM）が、2026-10-21に公的機関の「AI担当官（Oficial de Inteligencia Artificial）」の指令（Directiva 002-2026-PCM/SGTD）が官報に載った。",
+      "sources": [
+        "https://busquedas.elperuano.pe/dispositivo/NL/2192926-1",
+        "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1",
+        "https://busquedas.elperuano.pe/dispositivo/NL/2511535-1",
+        "https://busquedas.elperuano.pe/dispositivo/NL/2566694-1"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2023-07-05",
+        "event": "Ley 31814（人工知能利用促進法）が官報に公布",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2192926-1"
+      },
+      {
+        "date": "2025-04-29",
+        "event": "Ley 32314が官報に公布。刑法とサイバー犯罪法を改正し、AIの使用を犯罪の加重事由に加えた",
+        "source": "https://leyes.congreso.gob.pe/Documentos/2021_2026/ADLP/Texto_Consolidado/32314-TXM.pdf"
+      },
+      {
+        "date": "2025-09-09",
+        "event": "施行規則（DS 115-2025-PCM）が官報に公布。施行は90営業日後（ENIAの策定など一部の補足最終規定は公布の翌日から）",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "date": "2026-01-22",
+        "event": "施行規則が施行（EYの解説による。2026-01-23とする法律事務所もある）。民間のアルゴリズムの透明性と事業者義務は、分野と企業規模に応じて2026年9月から2029年9月にかけて段階的に適用",
+        "source": "https://www.ey.com/es_pe/technical/tax-alert/reglamento-ley-promueve-uso-inteligencia-artificial"
+      },
+      {
+        "date": "2026-05-01",
+        "event": "国家AI戦略（ENIA）2026-2030（RM 152-2026-PCM、2026-04-29付）が官報に掲載",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2511535-1"
+      },
+      {
+        "date": "2026-10-21",
+        "event": "公的機関の「AI担当官」の指令（Directiva 002-2026-PCM/SGTD、SGTD決議004-2026-PCM/SGTD）が官報に掲載",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2566694-1"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [
+      {
+        "topic": "公的機関のAI全般へのセキュリティ監査",
+        "note": "公的機関は、リスク区分にかかわらず、AIの導入前と運用中に定期的なセキュリティ監査を義務として行う（施行規則第29条c号）。EUでは高リスク以外のAIに同様の義務はない",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      }
+    ],
+    "looser": [
+      {
+        "topic": "職場・教育での感情推定",
+        "note": "EUは第5条1項(f)で禁止する（医療・安全目的を除く）。ペルーは禁止ではなく高リスク扱いで、医療・安全目的は除く（第24条1項i号）",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "topic": "リアルタイム生体識別の例外",
+        "note": "例外となる捜査の対象犯罪に、公務に対する罪・資金洗浄・違法採掘・恐喝などが入る。条文には事前の司法許可の定めが見当たらない（第23条1項e号）。EUは対象を限定し、原則として事前の許可を求める（第5条2〜3項）",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "topic": "高リスクAIの手続き",
+        "note": "民間の影響評価は任意（第32条1項）。適合性評価・CEマーク・データベース登録の制度はなく、記録の保持と人による監督が中心（第31条）",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "topic": "透明性の対象",
+        "note": "アルゴリズムの透明性は高リスクAIだけが対象で、AIであることの表示も任意の手段の一つ（第25条）。EU第50条は、高リスクかどうかにかかわらず、対話型AIの告知と合成コンテンツの機械可読表示を求める",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "topic": "監督機関の権限",
+        "note": "SGTDは監視・情報の提出要求・解釈意見までで、違反は所管の当局に知らせるだけ（第8条g号・第34条）。EUの市場監視当局やAI Officeには是正命令・制裁金の権限がある",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデル・システミックリスク・計算量基準・学習データ要約の規定がない",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "topic": "AI固有の罰則・制裁金",
+        "note": "法律にも施行規則にも罰則がなく、個人データ保護法など既存制度による処分と、会計検査院への報告に委ねる（第26条2項・第34条）",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "民生分野の自律的な致死能力の禁止",
+        "note": "人の監督なしに判断し、民生分野で生命・身体を害しうる自律的な致死能力を禁止として明記する（第23条1項b号）",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "topic": "SGTDへの事前照会と市民通報窓口",
+        "note": "事業者は、自分のAIが禁止・高リスクに当たるかSGTDに照会できる（第23条3項・第24条2項）。市民はPCMのAI窓口（gob.pe/iaperu）から通報できる（第36条）",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "topic": "公的機関のAIのソースコード公開と国内規格の義務化",
+        "note": "公費で作ったAIのソースコードを公開ライセンスで公開し、AI開発にNTP-ISO/IEC 42001:2025を使うことを公的機関に義務づける（第28条2項・8項）",
+        "source": "https://busquedas.elperuano.pe/dispositivo/NL/2436426-1"
+      },
+      {
+        "topic": "分野・企業規模ごとの段階適用",
+        "note": "民間の義務は、分野（保健・金融などは1年、運輸・商業・労働は2年、生産・鉱業などは3年、その他は4年）と企業規模（小企業2年・零細企業3年）で適用時期が分かれる（第1補足最終規定）",
+        "source": "https://www.araya.pe/2026/10/inteligencia-artificial-en-el-peru-que-deben-cumplir-las-empresas-y-en-que-plazos/"
+      },
+      {
+        "topic": "刑法でのAI加重",
+        "note": "AI規制とは別の法律（Ley 32314）で、AIを使った犯罪を加重処罰する",
+        "source": "https://leyes.congreso.gob.pe/Documentos/2021_2026/ADLP/Texto_Consolidado/32314-TXM.pdf"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

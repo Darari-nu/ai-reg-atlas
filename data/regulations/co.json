@@ -1,0 +1,169 @@
+{
+  "jurisdiction": "co",
+  "regulation_name": "横断法なし（国家AI政策 CONPES 4144・SIC外部通達002/2024。包括AI法案は下院法案025/2026C などが審議中で、旧政府法案043/2025S–324/2025Cは2026-06に廃案）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAIリスク分類はない。下院法案025/2026Cの第一読会向け修正案は、禁止（許容不能リスク）・高影響・透明性義務・最小リスクの4区分を置く。",
+      "detail": "現行法にAI固有のリスク区分はない。国家AI政策 CONPES 4144（2025-02-14承認、2030年までに100超の施策・約4,790億ペソ）は政策文書で、事業者に直接の義務を課す法令ではない。SIC外部通達002/2024は個人データ保護の観点から、AIでの処理を適合性・必要性・合理性・狭義の比例性の4基準で判断し、高リスクの処理では設計前にプライバシー影響評価を文書化するよう求める。2026-07-21に下院へ提出された法案025/2026Cは、提出時の第5条で「重大リスク・高リスク・透明性義務・最小／無リスク」を定めていた。2026-09の第一読会向け報告書の修正案では、第5条を「許容不能リスク（第6条で禁止）・高影響・透明性義務・最小リスク」に改めた。高影響の例は、雇用、教育の入学・評価、医療、与信・保険、社会給付、行政の個別決定、司法、法的効果のある生体識別、重要インフラ。追加の分類はMinCienciasとMinTICの共同の行政行為で定め、30営業日以上の意見公募、4年ごとの見直し、12か月以上の改定間隔、既存システムへの12か月の猶予、遡及の禁止を条件とする。補助的・準備的な機能で最終判断に実質的な影響を与えないシステムは高影響に当たらない（第5条パラグラフ1）。高影響システムの責任者は、リスク管理と導入前・大幅変更時の影響評価、データ品質、文書・記録、人による監督、重大インシデントの所管当局への報告を負う（第7条）。",
+      "sources": [
+        "https://colaboracion.dnp.gov.co/CDT/Conpes/Econ%C3%B3micos/4144.pdf",
+        "https://www.dnp.gov.co/publicaciones/Planeacion/Paginas/conpes-4144-hoja-de-ruta-colombia-inteligencia-artificial-retos-actuales-transformacion-futura.aspx",
+        "https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?dt=S&i=161918",
+        "https://www.cuatrecasas.com/es/spain/tecnologia-medios-digitales/art/guia-uso-responsable-ia-datos-personales-colombia",
+        "https://www.camara.gov.co/wp-content/uploads/2026/07/proyectos-ley/documentos/proyecto-36127/P.L.025-2026SC-INTELIGENCIA-ARTIFICIAL.pdf",
+        "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "施行中のAI固有の禁止規定はない。法案025/2026Cの修正案は、公的機関の社会的スコアリング、大規模監視目的のリアルタイム遠隔生体識別、潜在意識への操作、生体からの機微属性の推定、人の判断なしに標的を攻撃する兵器の5類型を禁止する。",
+      "detail": "修正案の第6条は5類型を禁止する。(1) 公的機関が無関係な文脈の行動で人を評価し不当に扱う社会的スコアリング。(2) 公共空間での大規模監視目的のリアルタイム遠隔生体識別（行方不明者の捜索・差し迫った生命への脅威・重大犯罪の捜査で、事前の理由付き司法許可がある場合を除く）。(3) 潜在意識への操作や集団の脆弱性の悪用で重大な損害を生むもの。(4) 生体情報から民族・政治的意見・組合加入・信条・性的指向を推定し、差別や大規模監視に使うもの。(5) 人の事前の具体的な判断なしに標的を選んで力を行使するシステム。違反は「きわめて重大な違反」となり、罰金とシステムの停止・閉鎖の対象（第30条3号・第32条4号）。倫理委員会の承認を得てサンドボックス内で行う研究は除外（第6条パラグラフ2）。児童の脆弱性を突く商業的な行動操作も禁止する（第12条）。提出時の第5条は「重大リスク」として操作・脆弱性の悪用、社会的スコアリング、司法許可のないリアルタイム遠隔生体識別を例示し、研究などの例外条件付きで一般利用を認めないとしていた。EU第5条にある職場・教育での感情推定、顔画像の無差別収集、プロファイリングのみによる犯罪予測は、修正案の第6条に入っていない。施行中のLey 2502 de 2025はAIを使ったなりすましの罰金を加重するが、AIの用途を禁止する規定ではない。",
+      "sources": [
+        "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf",
+        "https://www.camara.gov.co/wp-content/uploads/2026/07/proyectos-ley/documentos/proyecto-36127/P.L.025-2026SC-INTELIGENCIA-ARTIFICIAL.pdf",
+        "http://www.secretariasenado.gov.co/senado/basedoc/ley_2502_2025.html"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデルへの個別義務は施行中の法令になく、下院法案025/2026Cにも汎用モデルやシステミックリスクの規定はない。上院法案138/2026Sは汎用モデルの提供者を適用対象に挙げるが、児童保護の措置と公開報告が中心で罰則はない。",
+      "detail": "法案025/2026C（提出時・修正案とも）には、汎用AI（propósito general）や生成AIを特別に扱う条文がない。生成物は第5条の透明性区分と第8条の合成コンテンツの表示で扱われる。修正案の第24条は、著作物を学習に使うときに権利者の明示の同意か有効な法的根拠を求め、民族共同体の伝統知識を学習に使うときには事前の自由なインフォームドコンセントを求める。上院法案138/2026S（MIRA党、2026-07提出）は、第3条1号で「汎用AIモデルの提供者」を適用対象とする。第12条2号はAIモデル・クラウドの提供者に、違法用途を禁じる利用規約、AIガバナンスとリスク管理の公開報告、司法当局への協力を求め、エンドユーザーの監視義務は負わせない（同パラグラフ1）。同法案に罰則の規定はない。施行中のものとしては、SICが2026-02-23に60か国のデータ保護当局と共同で、生成AIによる同意のない親密画像の生成・拡散への警告を出した（法的拘束力のない声明）。",
+      "sources": [
+        "https://www.camara.gov.co/wp-content/uploads/2026/07/proyectos-ley/documentos/proyecto-36127/P.L.025-2026SC-INTELIGENCIA-ARTIFICIAL.pdf",
+        "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf",
+        "https://leyes.senado.gov.co/p-ley/2026-2027/PL%20138-2026%20-%20USO%20RESPONSABLE%20IA.pdf",
+        "https://sedeelectronica.sic.gov.co/noticias/sic-lidera-alerta-internacional-por-riesgos-de-la-ia-generativa-en-la-creacion-de-imagenes-intimas-manipuladas-y-no-consentidas"
+      ]
+    },
+    "transparency": {
+      "summary": "施行中のAI表示義務はない。法案025/2026Cの修正案は、AIとの対話の告知と、ディープフェイク（政治・選挙の内容を含む）の表示を義務付け、表示の技術基準は施行から12か月以内に定めるとする。",
+      "detail": "修正案の第5条の透明性区分は2つの義務を置く。人と直接対話するシステムは、遅くとも対話の開始時に、AIであることを分かりやすく伝える。実在の人物・物・場所・出来事に似せた画像・音声・動画（ディープフェイク）は、人工的に生成・加工された旨を明示する。政治・選挙の内容も対象と明記し、芸術・風刺・フィクションは文脈に合った表示で足りる。第8条は、人物・事実・場所を写実的に表す合成コンテンツ全般に表示を求め、省庁間委員会が12か月以内に技術基準とディープフェイク報告の指針を出す。高影響システムには導入者・利用者・当局への情報提供（第7条6号）を求める。重要な決定の対象者には、告知を受ける権利・説明を求める権利・人による再審査を求める権利がある（第11条。民間は15営業日以内に回答）。表示義務の違反は軽微な違反で、罰金は最大500 SMMLV（第30条1号・第32条2号）。上院法案138/2026Sの第13条は、電子透かし・メタデータの「任意の利用を促進」するにとどまる。",
+      "sources": [
+        "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf",
+        "https://leyes.senado.gov.co/p-ley/2026-2027/PL%20138-2026%20-%20USO%20RESPONSABLE%20IA.pdf"
+      ]
+    },
+    "penalties": {
+      "summary": "施行中のAI固有の行政罰はない。AIを使ったなりすまし（刑法第296条の偽装）は罰金が最大3分の1加重される。法案025/2026Cの修正案は、最大3,000 SMMLVか不当利得の150%の罰金と、システムの停止・閉鎖を定める。",
+      "detail": "Ley 2502 de 2025（2025-07-31官報 No.53.198 掲載）は刑法第296条（偽装）を改め、AIを使った偽装の罰金を、他の犯罪に当たらない限り最大3分の1加重する。改正部分は公布から1年後に施行する（第6条）。検察庁にAI利用の偽装事件の追跡を義務付け（第5条）、政府・検察庁・警察に2年以内の施策の策定を求める。法案025/2026Cの修正案（第30〜32条）は、違反を軽微・重大・きわめて重大の3段階に分ける。罰金の上限は、軽微が500 SMMLV、重大が1,500 SMMLVか不当利得の100%、きわめて重大が3,000 SMMLVか不当利得の150%（いずれも高い方）。きわめて重大な違反には停止・閉鎖を併科できる。罰則は民間の者だけに適用し、公的機関の違反は国家監察総局（Procuraduría）に送る（第32条パラグラフ1）。提出時の第32条は、最大3,000 SMMLVの罰金（違反が続く間は繰り返し科す）、最長24か月の活動停止、国内での遮断を含む閉鎖を定めていた。EUのような世界売上高連動の上限はない。",
+      "sources": [
+        "http://www.secretariasenado.gov.co/senado/basedoc/ley_2502_2025.html",
+        "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf",
+        "https://www.camara.gov.co/wp-content/uploads/2026/07/proyectos-ley/documentos/proyecto-36127/P.L.025-2026SC-INTELIGENCIA-ARTIFICIAL.pdf"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。政策は国家AI政策（CONPES 4144）のもとMinCienciasなどが担う。AIでの個人データ処理は、SIC（産業商業監督庁）が既存のデータ保護法で監督する。",
+      "detail": "法律事務所CMSの解説では、コロンビアに単一のAI規制当局はなく、監督は既存機関に分散している。SICは個人データ保護当局として外部通達002/2024を出した。2026-07-09付の法務局見解では、ChatGPTなどのAIサービスとの消費関係に消費者法（Ley 1480 de 2011）が補充的に及ぶ範囲を整理した。法案025/2026Cは、提出時の第7条でMinCienciasを国家AI当局とし、リスク水準について拘束力のある技術的見解を出せるとしていた。修正案の第14条は、これをMinCiencias・MinTIC・SICの調整の場「AI省庁間委員会」（新しい法人・予算を持たない）に改めた。検査・監督・処分は分野別の当局が担う（第16条）。所管の当局がない場合は、SICが補充的に監督し（第16条）、両省が補充的に規則制定と制裁の権限を持つ（第14条パラグラフ4）。ほかに、高影響の担い手の公開登録簿（第19条）、規制サンドボックス（第17条）、諮問の国家AI委員会（第15条）を置く。旧政府法案043/2025S–324/2025Cは、大統領の緊急審議要請つきで2025-12-03に第一読会の報告書が出されたが、議会組織法（Ley 5 de 1992）第190条により廃案となった。新議会では025/2026Cのほかに審議中の法案がある。上院の138/2026Sは、大統領府付属の諮問機関CON-IAを創設する。保健分野の216/2026Sは2026-10-19に公聴会を開いた。上院は10件超のAI法案が係属していると伝える。",
+      "sources": [
+        "https://cms.law/en/int/expert-guides/ai-regulation-scanner/colombia",
+        "https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?dt=S&i=161918",
+        "https://sedeelectronica.sic.gov.co/publicaciones/boletin-juridico/boletin/tratamiento-juridico-y-regulatorio-de-sistemas-de-inteligencia-artificial-en-materia-de-proteccion-al",
+        "https://www.camara.gov.co/wp-content/uploads/2026/07/proyectos-ley/documentos/proyecto-36127/P.L.025-2026SC-INTELIGENCIA-ARTIFICIAL.pdf",
+        "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf",
+        "https://minciencias.gov.co/sala_de_prensa/colombia-avanza-hacia-un-marco-moderno-y-habilitante-para-la-inteligencia-artificial",
+        "https://leyes.senado.gov.co/p-ley/2026-2027/PL%20138-2026%20-%20USO%20RESPONSABLE%20IA.pdf",
+        "https://www.senado.gov.co/index.php/el-senado/noticias/7657-comision-septima-del-senado-avanza-en-la-regulacion-de-la-inteligencia-artificial-en-salud"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2024-08-21",
+        "event": "SICが外部通達002/2024（AIシステムでの個人データ処理の指針）を発出",
+        "source": "https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?dt=S&i=161918"
+      },
+      {
+        "date": "2025-02-14",
+        "event": "国家AI政策 CONPES 4144 を承認（2030年までの行動計画）",
+        "source": "https://colaboracion.dnp.gov.co/CDT/Conpes/Econ%C3%B3micos/4144.pdf"
+      },
+      {
+        "date": "2025-07-31",
+        "event": "Ley 2502 de 2025（AIを使った偽装の罰金加重、刑法第296条改正）が官報に掲載。改正部分は公布から1年後に施行",
+        "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_2502_2025.html"
+      },
+      {
+        "date": "2025-12-03",
+        "event": "政府の包括AI法案043/2025S–324/2025C の第一読会向け報告書（賛成）が上下両院の第6委員会に提出",
+        "source": "https://minciencias.gov.co/sala_de_prensa/colombia-avanza-hacia-un-marco-moderno-y-habilitante-para-la-inteligencia-artificial"
+      },
+      {
+        "date": "2026-06-19",
+        "event": "法案043/2025S–324/2025C が第一読会を経ずに廃案（日付は報道による。一次資料は議会組織法第190条による廃案とだけ記す）",
+        "source": "https://contextomedia.com/pagara-colombia-el-precio-de-no-tener-una-ley-para-la-inteligencia-artificial/"
+      },
+      {
+        "date": "2026-07-21",
+        "event": "下院に包括AI法案025/2026C（リスクベース）を提出。第6委員会に付託",
+        "source": "https://www.camara.gov.co/inteligencia-artificial-2/"
+      },
+      {
+        "date": "2026-10-19",
+        "event": "上院第7委員会が保健分野のAI法案216/2026S の公聴会を開催",
+        "source": "https://www.senado.gov.co/index.php/el-senado/noticias/7657-comision-septima-del-senado-avanza-en-la-regulacion-de-la-inteligencia-artificial-en-salud"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [
+      {
+        "topic": "自律型の攻撃システムの禁止（法案）",
+        "note": "法案025/2026Cの修正案第6条5号は、人の事前の具体的な判断なしに標的を選んで力を行使するシステムを禁止する。EU AI法は軍事・防衛目的のAIを適用対象外とする（第2条3項）",
+        "source": "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      }
+    ],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI横断法はない。国家AI政策 CONPES 4144は政策文書で、SIC通達002/2024は個人データ保護法の枠内の指針。EUのような事業者義務は法案が成立するまで生じない",
+        "source": "https://cms.law/en/int/expert-guides/ai-regulation-scanner/colombia"
+      },
+      {
+        "topic": "罰金の上限（法案）",
+        "note": "修正案の上限は3,000 SMMLVか不当利得の150%の高い方。EU（3,500万ユーロまたは世界売上高7%）のような売上高連動の上限はない",
+        "source": "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      },
+      {
+        "topic": "禁止類型の範囲（法案）",
+        "note": "修正案の第6条に、EU第5条にある職場・教育での感情推定、顔画像の無差別収集、プロファイリングのみによる犯罪予測は入っていない",
+        "source": "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・禁止用途・高リスク義務・表示義務・行政罰はどれも法案の段階。政府の包括法案043/2025S–324/2025Cは第一読会を経ずに廃案になった",
+        "source": "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "施行中の法令にも、下院法案025/2026C（提出時・修正案）にも、汎用モデル・システミックリスク・計算量基準の規定はない",
+        "source": "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "AIを使ったなりすましの刑罰加重（施行中）",
+        "note": "Ley 2502 de 2025が刑法第296条（偽装）を改め、AIを使った場合の罰金を最大3分の1加重し、検察庁に事件の追跡を義務付けた。EU AI法は刑事罰を定めない",
+        "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_2502_2025.html"
+      },
+      {
+        "topic": "域外適用の数値基準（法案）",
+        "note": "修正案第2条は、国外の責任者への適用を、世界の営業収入4,000万UVT超・国内収入45万UVT超・国内月間利用者50万人以上のいずれかで線引きする。該当する高影響の担い手には国内に住所のある法定代理人を求める",
+        "source": "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      },
+      {
+        "topic": "学習データの同意（法案）",
+        "note": "修正案第24条は、著作物の学習利用に権利者の明示の同意か有効な法的根拠を求め、民族共同体の伝統知識の学習利用には事前の自由なインフォームドコンセントを求める",
+        "source": "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      },
+      {
+        "topic": "分類権限への手続の歯止め（法案）",
+        "note": "高影響などの追加分類は、30営業日以上の意見公募・規制影響評価・4年ごとの見直し・12か月以上の改定間隔・既存システムへの12か月の猶予・遡及禁止を条件とし、行政裁判での取消しの対象と明記する（修正案第5条）",
+        "source": "https://www.camara.gov.co/wp-content/uploads/2026/09/proyectos-ley/publicaciones/proyecto-36127/PPD-PL-025-26C-CON-FIRMAS.pdf"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

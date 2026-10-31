@@ -1,0 +1,147 @@
+{
+  "jurisdiction": "za",
+  "regulation_name": "横断法なし（国家AI政策の改訂版を起草中。2026-04-10に官報で意見募集した「南アフリカ国家AI政策草案」は2026-06-12に正式撤回。拘束力のあるAI関連規定は個人情報保護法（POPIA）第71条の自動化された意思決定のみ）",
+  "status": "draft",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAIリスク分類はない。2026-04に意見募集にかけた国家AI政策草案はEU AI法を参考にリスクベースを掲げたが、同年6月に正式撤回され、改訂版は起草中。",
+      "detail": "拘束力のあるAI横断法・リスク区分はない。撤回された「南アフリカ国家AI政策草案」（官報54477号・告示3880号、2026-04-10）は、7.3節で潜在的な害の程度によりAIシステムを分類するリスクベースを採り、EU AI法を参考に高リスク用途へ厳格な規制を置くとした。7.1節は信用スコアリング・法執行・医療を高リスクの場面の例に挙げる。冒頭の実施計画は、1年目（2025/26）に許容できないリスクに対処する規制要件案の公表、2年目（2026/27）に高リスク用途の規制要件の実施と中・低リスクの要件案の公表、分野別AI戦略の策定を予定していた。ただし草案は法律ではなく、閣議の公表承認を経た意見募集段階の政策文書で、2026-06-12の官報で全体が撤回された。改訂版について通信・デジタル技術省（DCDT）の担当者は、国は指針を示すにとどめ、各分野が自らAI戦略を作る「軽いタッチ」にすると報道で説明している。リスク区分が改訂版に残るかは未確認。",
+      "sources": [
+        "https://www.gov.za/sites/default/files/gcis_document/202604/54477gen3880.pdf",
+        "https://www.itweb.co.za/article/sas-draft-ai-policy-officially-retracted/LPp6V7rBVwJ7DKQz",
+        "https://techcentral.co.za/radical-rethink-for-south-africas-national-ai-policy/284284/"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の禁止用途はない。拘束力のある規定はPOPIA第71条だけで、プロファイリング目的の自動処理だけに基づく、法的効果や重大な影響を及ぼす決定を、例外を除いて禁じる。",
+      "detail": "個人情報保護法（POPIA、2013年法律第4号）第71条1項は、勤務成績・信用力・信頼性・所在・健康・嗜好・行動などのプロファイル作成を目的とする個人情報の自動処理だけに基づいて、法的効果を生じる決定や重大な影響を与える決定の対象とされないことを定める。2項の例外は、(a)契約の締結・履行に関連し、本人の求めが満たされたか本人の正当な利益を守る適切な措置がとられた場合と、(b)適切な措置を定めた法令・行動規範に基づく場合。第71条は2020-07-01に施行（布告R21/2020）。EU AI法第5条のような用途の類型禁止（社会的スコアリング、無差別な顔画像収集、職場・教育での感情推定、リアルタイム遠隔生体識別など）はない。撤回された草案も、許容できないリスクへの規制要件を1年目に特定するとしただけで、禁止用途は列挙していなかった。草案7.3節はリスク軽減策として、ディープフェイク・名誉を傷つけるAI・子どもを狙う操作的なシステムへの法的・技術的な救済を挙げていた。",
+      "sources": [
+        "https://lawlibrary.org.za/akn/za/act/2013/4",
+        "https://www.gov.za/sites/default/files/gcis_document/202604/54477gen3880.pdf"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）への義務はない。撤回された草案も、高性能な基盤モデルについては今後の政策検討が要るとするにとどまった。",
+      "detail": "施行中の法令に、汎用AI・基盤モデルを定義・規制する規定はない。撤回された草案の9.2節（戦略の柱2）は、高性能な基盤モデルには予測できないリスクを持つものがあり、一律の規制を避けるために規制の閾値を定める追加の政策検討が必要とした。9.3節（戦略の柱3）は、知的財産の保護として大規模言語モデル（LLM）への透かし（watermarking）の義務化を挙げていた。EU第53〜55条のような技術文書・学習データ要約・システミックリスク評価の義務や計算量基準はない。改訂版の議論では計算資源とデータの主権、LLMが南アフリカの公用語を取り込む「モデル主権」が焦点と報じられているが、事業者の義務の形をとるかは未確認。",
+      "sources": [
+        "https://www.gov.za/sites/default/files/gcis_document/202604/54477gen3880.pdf",
+        "https://techcentral.co.za/south-africa-national-ai-policy-deadline-cabinet-march-2027/287817/"
+      ]
+    },
+    "transparency": {
+      "summary": "AIとの対話の告知やAI生成物の表示の義務はない。POPIA第71条3項は、契約関連の例外で自動決定を行う場合に、本人が意見を述べる機会と、処理の論理についての十分な情報の提供を求める。",
+      "detail": "第71条2項(a)(ii)の「適切な措置」は、本人が決定について意見を述べる機会を与えること、そのために自動処理の基礎にある論理について十分な情報を提供することを含まなければならない（同条3項）。これは自動決定の場面に限った規定で、EU第50条のようなチャットボットの開示、合成コンテンツの機械可読マーキング、ディープフェイクの明示の義務はない。撤回された草案の7.2節は「十分な説明可能性」「十分な透明性」を原則とし、公共部門と高リスクのAIを監査可能にすること、自動決定の影響を受ける個人への平易な通知、AI監査結果の公開を掲げていたが、拘束力はなく撤回された。",
+      "sources": [
+        "https://lawlibrary.org.za/akn/za/act/2013/4",
+        "https://www.gov.za/sites/default/files/gcis_document/202604/54477gen3880.pdf"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。POPIA第71条違反は情報規制庁の執行通知の対象で、通知に従わなければ犯罪（10年以下の拘禁または罰金）になる。行政罰金の上限は1,000万ランド。",
+      "detail": "第71条の不遵守は個人情報保護への「干渉」に当たり（第73条(b)）、苦情（第74条）などを経て、情報規制庁が是正や処理の停止を命じる執行通知を出せる（第95条）。執行通知に従わないことは犯罪で（第103条1項）、罰金もしくは10年以下の拘禁、またはその併科（第107条(a)）。情報規制庁は、違反の疑いのある者に1,000万ランドを上限とする行政罰金を記した違反通知を出せる（第109条2項(c)。相手方は裁判を選べる）。本人または情報規制庁は、故意・過失を問わず損害賠償の民事訴訟を起こせる（第99条1項）。EU AI法のような売上高連動の上限はない。撤回された草案は罰則を定めず、責任の所在が分からない場合の被害者補償として、道路事故基金に倣う「AI保険基金」を提案していた（4.6節(e)）。",
+      "sources": [
+        "https://lawlibrary.org.za/akn/za/act/2013/4",
+        "https://www.gov.za/sites/default/files/gcis_document/202604/54477gen3880.pdf"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専門の監督機関はない。国家AI政策はDCDTが所管して改訂版を起草中。自動化された意思決定は、情報規制庁がPOPIAに基づいて執行する。",
+      "detail": "国家AI政策の起草はDCDTが担う。2026-04-26、通信・デジタル技術相が、参考文献に架空の出典が含まれていたとして草案の撤回を表明した。閣議も撤回を承認し（2026-06-05の閣議後会見で公表）、2026-06-12の官報で告示3880号が撤回された。2026-05に大臣が7人の独立専門家パネル（座長はウィッツ大学のベンジャミン・ロスマン氏）を任命した。DCDTが率いる政府の起草チーム（大統領府・科学技術イノベーション省・国家安全保障局・貿易産業競争省を含む）が改訂版を作っている。DCDT担当者の2026-10-29の報道上の説明では、起草チームの大臣への提出期限は11月30日。12〜2月に政府内協議を行い、2027年3月までに閣議に出す。この閣議承認は主に意見募集のための官報公示が目的という。撤回された草案は7機関の新設を提案していた（国家AI委員会、AI倫理委員会、AI規制庁、AIオンブズパーソン、AI保険基金、国家AI安全研究所、AI監視センター。4.6節）。あわせて、ICASAの役割拡大とDCDT主宰の国家AI規制フォーラムも掲げた（4.7節）。これに対し議会の委員長は既存の規制機関（ICASA・情報規制庁・競争委員会・国家消費者委員会）の強化を求めており、新機関案は見直し中と報じられている。現行の拘束力ある規律では、情報規制庁がPOPIA（第71条を含む）の苦情処理と執行を担う（第74条・第95条）。金融分野では、準備銀行の健全性規制機構（PA）と金融行為監督機構（FSCA）が2025-11-24にAI利用の調査報告を出した。これは調査・分析で、拘束力のある指針ではないと法律事務所は解説している。",
+      "sources": [
+        "https://www.sanews.gov.za/south-africa/minister-announces-withdrawal-draft-ai-policy",
+        "https://www.sanews.gov.za/south-africa/cabinet-approves-withdrawal-ai-policy",
+        "https://www.itweb.co.za/article/sas-draft-ai-policy-officially-retracted/LPp6V7rBVwJ7DKQz",
+        "https://www.cnbcafrica.com/2026/south-africa-targets-january-2027-for-revised-ai-policy-after-earlier-withdrawal",
+        "https://techcentral.co.za/south-africa-national-ai-policy-deadline-cabinet-march-2027/287817/",
+        "https://techcentral.co.za/radical-rethink-for-south-africas-national-ai-policy/284284/",
+        "https://www.gov.za/sites/default/files/gcis_document/202604/54477gen3880.pdf",
+        "https://lawlibrary.org.za/akn/za/act/2013/4",
+        "https://mjkinc.co.za/software-technology-law/ai-governance"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2020-07-01",
+        "event": "POPIA第8章（第69〜71条。第71条は自動化された意思決定）などが施行（布告R21/2020）",
+        "source": "https://lawlibrary.org.za/akn/za/act/2013/4"
+      },
+      {
+        "date": "2024-08-14",
+        "event": "DCDTが「南アフリカ国家AI政策枠組み」を公表（国家AI政策の策定に向けた枠組み）",
+        "source": "https://www.ellipsis.co.za/artificial-intelligence-regulation-in-south-africa/"
+      },
+      {
+        "date": "2026-03-25",
+        "event": "閣議が国家AI政策草案の意見募集のための公表を承認（2026-04-01の臨時閣議と合わせて）",
+        "source": "https://www.sanews.gov.za/south-africa/minister-announces-withdrawal-draft-ai-policy"
+      },
+      {
+        "date": "2026-04-10",
+        "event": "通信・デジタル技術相が「南アフリカ国家AI政策草案」を官報（54477号・告示3880号）で公表し、意見募集を開始（締切2026-06-10）",
+        "source": "https://www.gov.za/sites/default/files/gcis_document/202604/54477gen3880.pdf"
+      },
+      {
+        "date": "2026-04-26",
+        "event": "通信・デジタル技術相が、参考文献に架空の出典が含まれていたとして草案の撤回を表明",
+        "source": "https://www.sanews.gov.za/south-africa/minister-announces-withdrawal-draft-ai-policy"
+      },
+      {
+        "date": "2026-05-26",
+        "event": "大臣が独立専門家パネルを設け、改訂版の閣議提出を2026-11、意見募集を2027-01とする目標を議会委員会に示す（報道）",
+        "source": "https://www.cnbcafrica.com/2026/south-africa-targets-january-2027-for-revised-ai-policy-after-earlier-withdrawal"
+      },
+      {
+        "date": "2026-06-05",
+        "event": "閣議が草案の撤回を承認したと大統領府担当相が閣議後会見で公表",
+        "source": "https://www.sanews.gov.za/south-africa/cabinet-approves-withdrawal-ai-policy"
+      },
+      {
+        "date": "2026-06-12",
+        "event": "官報で告示3880号（国家AI政策草案）を全体として撤回（報道）",
+        "source": "https://www.itweb.co.za/article/sas-draft-ai-policy-officially-retracted/LPp6V7rBVwJ7DKQz"
+      },
+      {
+        "date": "2026-10-29",
+        "event": "DCDT担当者が、改訂版の大臣への提出期限を2026-11-30、閣議提出を2027-03までと説明（報道）",
+        "source": "https://techcentral.co.za/south-africa-national-ai-policy-deadline-cabinet-march-2027/287817/"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "AI横断法はなく、中心となる国家AI政策も法律ではない政策文書（草案は撤回）。改訂版は国の指針にとどめ、各分野にAI戦略を作らせる方針と報じられている",
+        "source": "https://techcentral.co.za/radical-rethink-for-south-africas-national-ai-policy/284284/"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・禁止用途・高リスク義務・AI表示義務・AI固有の罰則は、どれも施行されていない。唯一の草案も2026-06-12に撤回された",
+        "source": "https://www.itweb.co.za/article/sas-draft-ai-policy-officially-retracted/LPp6V7rBVwJ7DKQz"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデル・システミックリスク・計算量基準の規定がない。撤回された草案も、高性能な基盤モデルは今後の政策検討が要るとしただけ",
+        "source": "https://www.gov.za/sites/default/files/gcis_document/202604/54477gen3880.pdf"
+      },
+      {
+        "topic": "AI専門の監督機関",
+        "note": "AI Officeや市場監視当局に当たる機関はない。撤回された草案の7機関新設案は改訂作業で見直し中",
+        "source": "https://techcentral.co.za/radical-rethink-for-south-africas-national-ai-policy/284284/"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "自動化された意思決定の原則禁止（POPIA第71条）",
+        "note": "プロファイリング目的の自動処理だけに基づく、法的効果や重大な影響を及ぼす決定を、契約関連・法令や行動規範の例外を除いて禁じる。例外を使う場合は本人に意見を述べる機会と処理の論理の情報を与える（同条3項）。EU AI法本体にはない（EUではGDPR第22条が相当）",
+        "source": "https://lawlibrary.org.za/akn/za/act/2013/4"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

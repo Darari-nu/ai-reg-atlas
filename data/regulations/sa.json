@@ -1,0 +1,177 @@
+{
+  "jurisdiction": "sa",
+  "regulation_name": "横断的なAI法なし（SDAIAのAI倫理原則・生成AI指針・ディープフェイク指針・国家AIリスク管理枠組み＋責任あるAI政策案（2026年に意見募集済み））",
+  "status": "draft",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "法律で決めたリスク分類はない。SDAIAのAI倫理原則と国家AIリスク管理枠組み（2026-07公表・助言的）が、各組織が「起こりやすさ×影響の大きさ」で自分でリスクを評価する方法を示している段階。",
+      "detail": "SDAIAのAI倫理原則は、国内でAIを設計・開発・導入・利用する、またはAIの影響を受けるすべての関係者（公的・民間・非営利の組織、研究者、個人など）に適用されるとし、AIの開発・利用にともなうリスクの区分と水準を定めている。ただし拘束力のない指針である。SDAIAは2026-07-14に国家AIリスク管理枠組みを公表した（文書の日付は2026年4月）。政府・民間の組織向けの統一手法で、(1)対象と範囲を決める、(2)リスクを洗い出して評価する、(3)対処する、(4)継続して監視・見直す、の段階で進める。リスクの水準は起こりやすさと影響の大きさを掛け合わせた表で決め、7つの原則と7種類のリスク類型を置く。Gowling WLGの解説によると、起こりやすさ4段階×影響4段階（低・中・高・壊滅的）で1〜16点を出し、予測モデル・自然言語処理・画像や動画の解析・汎用モデル（LLMなど）といった影響の大きいシステムを重点に置く。技術標準ではなく、組織の管理に使う助言的な道具という位置づけである。SDAIAは2026-04-02に責任あるAI政策案への意見募集を告知した（Istitlaa、締切2026-05-03）。この案は政府・民間・非営利・個人に適用され、予防的で継続的な評価と、AIのライフサイクル全体での役割と責任の明確化を柱にする。Digital Policy Alertの整理では、事業者の登録・試験・性能監視などの要件を含む。最終版が公表されたかは確認できていない。",
+      "sources": [
+        "https://sdaia.gov.sa/en/SDAIA/about/Documents/ai-principles.pdf",
+        "https://www.spa.gov.sa/en/N2633781",
+        "https://gowlingwlg.com/en/insights-resources/articles/2026/what-saudi-arabias-ai-risk-management-framework-means-for-organisations",
+        "https://www.spa.gov.sa/en/N2551533",
+        "https://digitalpolicyalert.org/change/19003-responsible-ai-policy"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AIに固有の、拘束力のある禁止規定はない。SDAIAのディープフェイク指針が、詐欺・なりすまし・名誉毀損に使わないよう求めているのが近いところ。",
+      "detail": "CMSの整理（2026-02時点）では、サウジにAI固有の法律はなく、SDAIAの指針類はPDPLなどの法律と結びつかない限り拘束力を持たない。EU第5条のように禁止する使い方を並べた一覧（社会的スコアリング、職場での感情推定など）は法令にない。SDAIAのディープフェイク指針（SPAが2026-05-08に公表を報道）は、開発者と制作者に倫理面・規制面の基準を守ること、つまり個人データの保護、明示の同意、電子透かしや出所確認といった技術的な対策を求める。Arab Newsによると、開発者にはPDPLとサイバー犯罪対策法、さらにGDPRなど海外の基準を守ることを求め、制作者にはディープフェイクを詐欺・なりすまし・名誉毀損に使うことを禁じている。ただしこれは指針であり、指針そのものに制裁の定めがあるかは確認できていない。",
+      "sources": [
+        "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia",
+        "https://www.spa.gov.sa/en/N2580753",
+        "https://www.arabnews.jp/en/saudi-arabia/sdaia-issues-deepfakes-guidelines-to-regulate-responsible-ai-use-169797"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデルに対する法的な義務はない。生成AI指針（2024-01、政府向けと一般向け）は拘束力なし。2026年8月施行の新著作権法が、AI開発のための著作物利用を例外として認めた。",
+      "detail": "SDAIAは2024年1月に生成AI指針を2本公表した。政府向けは2024-01-10、一般の利用者・開発者向けは2024-01-11（Digital Policy Alert）。政府向けは、政府機関に対し、生成AIツールを使う全段階でAI倫理原則を守ることを求め、扱うデータを「公開」区分のものに限る。一般向けは、人が介入する条件をあらかじめ組み込むこと、偏りがないか試験すること、AIを使っていることを利用者と公衆にはっきり伝えることなどを示す。どちらも拘束力はない。EU第53・55条にあたる、技術文書・学習データの要約・システミックリスク評価といった基盤モデル提供者の義務はない（CMS）。国家AIリスク管理枠組みは汎用モデル（LLMなど）を重点対象に含めるが、あくまで助言的。Latham & Watkinsによると、新著作権法第26条4項は、適法に公表された著作物で、原本を適法に取得し、必要な範囲での複製にとどめる場合に限り、著作者の許諾も対価もなしにAI製品・アルゴリズムの開発に使うことを認める。同法は2026-08-12に施行され、施行規則は2026-07-31に官報（ウンム・アル・クラー）に載った。",
+      "sources": [
+        "https://digitalpolicyalert.org/event/17196-published-sdaia-generative-ai-guidelines",
+        "https://digitalpolicyalert.org/event/17277-published-sdaia-generative-artificial-intelligence-guidelines-for-optimal-adoption-in-government-entities",
+        "https://sdaia.gov.sa/en/SDAIA/about/Files/GenAIGuidelinesForGovernmentENCompressed.pdf",
+        "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia",
+        "https://gowlingwlg.com/en/insights-resources/articles/2026/what-saudi-arabias-ai-risk-management-framework-means-for-organisations",
+        "https://www.lw.com/en/insights/saudi-arabia-new-copyright-regulations-what-ai-companies-should-know"
+      ]
+    },
+    "transparency": {
+      "summary": "法律で決めた表示義務はない。生成AI指針はAIを使っていることの明示を、ディープフェイク指針は電子透かしと出所確認を求めるが、どちらも拘束力のない指針。",
+      "detail": "一般向けの生成AI指針（2024-01-11）は、AIを使っていることを利用者と公衆にはっきり伝えるよう求める（Digital Policy Alert）。ディープフェイク指針（SPAが2026-05-08に報道）は、開発者と制作者に明示の同意と、電子透かし・出所確認などの技術的な対策を求める。Arab Newsによると、すべての合成コンテンツに、目に見えて改ざんしにくい透かしを付けることを求めている。CMSの整理では、生成AI指針はディープフェイクやコンテンツの信頼性への対策も扱い、ディープフェイク指針は透明性・透かし・同意についての良い実践例を示すものとされる。EU第50条のような、法的な開示義務・機械で読める表示の義務と、その適用日はない。",
+      "sources": [
+        "https://digitalpolicyalert.org/event/17196-published-sdaia-generative-ai-guidelines",
+        "https://www.spa.gov.sa/en/N2580753",
+        "https://www.arabnews.jp/en/saudi-arabia/sdaia-issues-deepfakes-guidelines-to-regulate-responsible-ai-use-169797",
+        "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia"
+      ]
+    },
+    "penalties": {
+      "summary": "AIに固有の罰則はない。AIで個人データを扱えば、個人データ保護法（PDPL、SDAIAが施行規則を制定）など既にある法律の罰則がかかる。",
+      "detail": "CMSの整理では、サウジのAIは分野横断の法律（PDPLなど）と分野ごとの規制の組み合わせで規律されており、SDAIAの指針類はそれらと結びつかない限り拘束力がない。PDPLは個人データの収集・処理・国外移転、本人の権利、管理者・処理者の義務を定めており、AIの学習・推論・導入に直接かかわる。施行規則と国外移転規則はSDAIAが定めている。ディープフェイク指針も、開発者にPDPLとサイバー犯罪対策法を守るよう求めている（Arab News）。つまり、ディープフェイクの悪用などには既にある法律の範囲で対応する形で、指針や枠組みそのものに罰則はない。EU第99条のような、全世界売上高に連動した上限額もない。PDPLの罰金額は条文で確認できていない。",
+      "sources": [
+        "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia",
+        "https://www.arabnews.com/saudi-arabia/sdaia-issues-deepfakes-guidelines-to-regulate-responsible-ai-use-2642878"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "サウジデータ・AI庁（SDAIA）が、データとAIを担う国の当局として指針や枠組みを出し、PDPLの規則も定める。分野ごとにSAMA（金融）・SFDA（医療）・NCA（サイバー）・CST（通信・クラウド）が関わる。",
+      "detail": "Gowling WLGによると、ヒジュラ暦1441年4月27日付の閣議決定第292号が、SDAIAをデータとAIに関するすべての事項（規制・開発・監督・分野をまたぐ調整）の主たる当局とした。SDAIAの理事会議長は皇太子兼首相が務め、閣議は2026-03-10に2026年を「AIの年」に指定した（SPA）。CMSによると、分野別の規制当局（SAMA・SFDA・GACAなど）が担当分野でAIの利用にも要件を課しはじめており、NCAとCSTはサイバーセキュリティとクラウドを規制している。CSTは2025-04-14に「グローバルAIハブ法」案を意見募集にかけた。中身は、外国政府などが自国の法律の下でサウジ国内にデータを置ける「データ大使館」の枠組みで、AIシステムそのものを規制するものではない。2026-02時点では成立していない（CMS）。SPAは2026-09-29、SDAIAが進めるAI統治の道具立てとして、AI倫理原則・AI導入枠組み・政府向け生成AI指針・国家AI指数・国家AIリスク管理枠組みを挙げている。",
+      "sources": [
+        "https://gowlingwlg.com/en/insights-resources/articles/2026/what-saudi-arabias-ai-risk-management-framework-means-for-organisations",
+        "https://www.spa.gov.sa/en/N2533339",
+        "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia",
+        "https://cms.law/en/sau/legal-updates/shaping-the-future-of-data-sovereignty-saudi-arabia-issues-new-draft-global-ai-hub-law",
+        "https://www.spa.gov.sa/en/N2688337"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2024-01-10",
+        "event": "SDAIAが政府機関向けの生成AI指針を公表（翌11日に一般の利用者・開発者向けも公表）",
+        "source": "https://digitalpolicyalert.org/event/17277-published-sdaia-generative-artificial-intelligence-guidelines-for-optimal-adoption-in-government-entities"
+      },
+      {
+        "date": "2025-04-14",
+        "event": "CSTが「グローバルAIハブ法」案（データ大使館の枠組み）を公表し、意見募集を開始（2025-05-14まで）",
+        "source": "https://cms.law/en/sau/legal-updates/shaping-the-future-of-data-sovereignty-saudi-arabia-issues-new-draft-global-ai-hub-law"
+      },
+      {
+        "date": "2026-03-10",
+        "event": "閣議が2026年を「AIの年」に指定",
+        "source": "https://www.spa.gov.sa/en/N2533339"
+      },
+      {
+        "date": "2026-04-02",
+        "event": "SDAIAが責任あるAI政策案への意見募集を告知（Istitlaa）",
+        "source": "https://www.spa.gov.sa/en/N2551533"
+      },
+      {
+        "date": "2026-05-03",
+        "event": "責任あるAI政策案の意見募集が終了",
+        "source": "https://digitalpolicyalert.org/change/19003-responsible-ai-policy"
+      },
+      {
+        "date": "2026-05-08",
+        "event": "SDAIAのディープフェイク指針の公表をSPAが報道",
+        "source": "https://www.spa.gov.sa/en/N2580753"
+      },
+      {
+        "date": "2026-07-14",
+        "event": "SDAIAが国家AIリスク管理枠組みを公表（官民の組織向けの助言的な手法）",
+        "source": "https://www.spa.gov.sa/en/N2633781"
+      },
+      {
+        "date": "2026-07-31",
+        "event": "著作権法の施行規則が官報（ウンム・アル・クラー）に掲載",
+        "source": "https://www.lw.com/en/insights/saudi-arabia-new-copyright-regulations-what-ai-companies-should-know"
+      },
+      {
+        "date": "2026-08-12",
+        "event": "新著作権法が施行（第26条4項で、AI開発のための著作物利用を例外として認める）",
+        "source": "https://www.lw.com/en/insights/saudi-arabia-new-copyright-regulations-what-ai-companies-should-know"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "AIに固有のルールはSDAIAの指針と枠組みだけで、PDPLなどの法律と結びつかない限り拘束力がない。EUは規則として直接適用される",
+        "source": "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia"
+      },
+      {
+        "topic": "リスク分類の方法",
+        "note": "国家AIリスク管理枠組みは、各組織が起こりやすさ×影響の大きさで自分で評価する助言的な手法。EUのように、禁止・高リスクなどの区分とそれぞれの義務を法律で決めてはいない",
+        "source": "https://www.spa.gov.sa/en/N2633781"
+      },
+      {
+        "topic": "透明性・合成コンテンツの表示",
+        "note": "AI利用の明示（生成AI指針）や電子透かし・出所確認（ディープフェイク指針）は指針の中の要請にとどまる。EUは第50条で法的義務にしている（2026-08-02から適用）",
+        "source": "https://www.spa.gov.sa/en/N2580753"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "禁止用途の法定",
+        "note": "EU第5条にあたる、AIの使い方の法的な禁止一覧がない",
+        "source": "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）の規制",
+        "note": "技術文書・学習データの要約・システミックリスク評価にあたる提供者の義務がない。生成AI指針は拘束力がない",
+        "source": "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia"
+      },
+      {
+        "topic": "AIに固有の罰則と執行",
+        "note": "AI専用の制裁の仕組みがなく、PDPLなど既にある法律と分野別の規制で対応する",
+        "source": "https://cms.law/en/int/expert-guides/ai-regulation-scanner/kingdom-of-saudi-arabia"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "著作権法のAI開発例外",
+        "note": "新著作権法第26条4項は、適法に公表・取得した著作物を必要な範囲で、許諾も対価もなしにAI開発に使うことを認める（2026-08-12施行）。EU AI法は汎用AI提供者に、EU著作権法を守る方針を持つことを求めている（第53条）",
+        "source": "https://www.lw.com/en/insights/saudi-arabia-new-copyright-regulations-what-ai-companies-should-know"
+      },
+      {
+        "topic": "データとAIをまとめて担う単一の国家当局",
+        "note": "閣議決定第292号により、SDAIAがデータとAIの規制・開発・監督・調整を担う主たる当局になった。PDPLの規則づくりも担う。EUはAI Officeと加盟国当局の二層構造",
+        "source": "https://gowlingwlg.com/en/insights-resources/articles/2026/what-saudi-arabias-ai-risk-management-framework-means-for-organisations"
+      },
+      {
+        "topic": "イスラム的価値に基づく原則",
+        "note": "国家AIリスク管理枠組みの一般原則は、公正・透明性・権利の保護・人間の尊厳・害をなさないことといったイスラム的価値に基づいている",
+        "source": "https://gowlingwlg.com/en/insights-resources/articles/2026/what-saudi-arabias-ai-risk-management-framework-means-for-organisations"
+      },
+      {
+        "topic": "データ大使館（グローバルAIハブ法案）",
+        "note": "外国政府などが自国の法律の下でサウジ国内にデータを置ける枠組みの法案（2025-04に意見募集、2026-02時点で未成立）。AIシステムの規制ではない",
+        "source": "https://cms.law/en/sau/legal-updates/shaping-the-future-of-data-sovereignty-saudi-arabia-issues-new-draft-global-ai-hub-law"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

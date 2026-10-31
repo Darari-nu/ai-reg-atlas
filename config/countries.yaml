@@ -328,3 +328,352 @@ countries:
     watch_feeds:
       - { url: "https://e.vnexpress.net/rss/tech.rss", type: rss }   # VnExpress International テック(英語。政府機関ではない報道)
     news_queries: ["Vietnam Law on Artificial Intelligence", "Vietnam AI law MOST decree"]
+  - code: th
+    name_ja: タイ
+    name_en: Thailand
+    flag: "🇹🇭"
+    lat: 13.76
+    lng: 100.50
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心は MDES・ETDA が起草したAI法草案（ร่างพระราชบัญญัติว่าด้วยปัญญาประดิษฐ์ พ.ศ. ....）。2026-07 に意見募集、成立・施行前。
+    # official_sources は GitHub Actions 上で未実測。ETDA の報道発表一覧は調査時に開けたが、取得できた本文は 2024〜25 年の記事説明だけで日付付きリンクを読めなかった（no-dated-links で3日後に止まった通知が出るおそれ）。
+    # ETDA の記事 URL に ?rss= / ?feed= が付くので公式 RSS はあるとみられるが、フィードの URL は特定できていない（見つかれば rss に差し替える）。law.go.th（法令意見募集の中央システム）は調査環境から取得できず入れていない。
+    # .go.th は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に go.th と etda.or.th を足す前提。
+    # 未確認: 草案の公表日（7/2 と 7/9 で割れる）、意見募集後に法制委員会・閣議へ進んだか、条番号、高リスク指定が勅令か委員会か、「規制当局」がどの機関か、罰金の違反類型ごとの額。
+    official_sources: []   # 監視できる公式ページが今は無い（下のコメント参照）
+      # 2026-10-31 Mac から取得失敗（タイムアウト）のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://www.etda.or.th/th/newsevents/pr-news.aspx", type: scrape_hash }   # ETDA(電子取引開発機構、AI法草案の起草元・AI Governance Center)報道発表一覧。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["Thailand draft AI Act ETDA", "ร่าง พ.ร.บ. ปัญญาประดิษฐ์"]
+  - code: id
+    name_ja: インドネシア
+    name_en: Indonesia
+    flag: "🇮🇩"
+    lat: -6.21
+    lng: 106.85
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心になる法律は無く、AI倫理と国家AIロードマップ2026–2029の大統領令案2本が署名待ち（2026-10-30時点で「署名手続き中」と報道）。
+    # JDIH Komdigi のニュース詳細（berita/view/113・116）は本文・掲載日を web_fetch で取得できた。一覧ページの日付付きリンク抽出と GitHub Actions からの到達は未実測。
+    # .go.id は政府系TLD規則に無いため、source_domains.yaml の official に komdigi.go.id・kominfo.go.id・ojk.go.id 等を足す。
+    # 未確認: 大統領令2本の署名日・番号・施行日、最終条文（参照したのは2026-01-27付草案の法律事務所解説）、ロードマップの期間（2026–2029 と 2026–2030 で割れる）、ラベル・透かしの大臣規則。
+    # komdigi.go.id の報道発表一覧・公式RSSは今回開けていないので入れていない。JDIH の法令案一覧（dokumen-pembentukan-puu/kategori/rancangan-puu）は日付付きか未確認のため候補止まり。
+    official_sources:
+      - { url: "https://jdih.komdigi.go.id/berita/beranda", type: scrape_hash }   # 通信デジタル省(Komdigi) 法令情報(JDIH)ニュース一覧。大統領令案の進捗の発表元
+      - { url: "https://ojk.go.id/id/publikasi/roadmap-dan-pedoman/itsk/default.aspx", type: scrape_hash }   # 金融サービス庁(OJK) フィンテック(ITSK)向けロードマップ・指針一覧（日付付き）
+    watch_feeds: []
+    news_queries: ["Indonesia AI presidential regulation Komdigi", "Perpres etika kecerdasan artifisial"]
+  - code: my
+    name_ja: マレーシア
+    name_en: Malaysia
+    flag: "🇲🇾"
+    lat: 3.14
+    lng: 101.69
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心はデジタル省のAIガバナンス法案（Rang Undang-Undang Tadbir Urus Kecerdasan Buatan）。
+    # 2026-07-10〜08-01 に意見募集（UPC）、09-10 に草案完成、10-29 の国会答弁で「2027年初頭に下院上程」。現行のAI固有ルールは任意のAIGE（2024年9月・MOSTI）だけ。
+    # .gov.my は政府系TLD規則（OFFICIAL_TLD_RE）に入らないので、source_domains.yaml の official に個別ドメインを足すこと。
+    # ai.gov.my のニュース一覧は日付が本文テキスト（例: 11 Sept 2026）で、リンク先は strapi.naio.okie.my のPDFか外部報道。更新は月1回程度（直近 2026-09-11）。
+    # digital.gov.my はNext.js製（govtechmy/kd-portal）。個別記事は本文が取れたが、一覧ページの日付付きリンク抽出と GitHub Actions からの到達性は未実測。
+    # 未確認: 法案本文（未公表。意見募集文書PDFもUPCから直接は取れず、法律事務所の要約で補った）、罰則の案、汎用AIの個別規律の有無、中央AI当局とAI Malaysia Berhadの関係、ONSAでのAI生成物ラベル義務化（2025-07に検討表明）のその後。
+    # MCMC（ONSA所管）の報道発表一覧・RSS は今回URLを確かめられなかったので入れていない。
+    official_sources:
+      - { url: "https://ai.gov.my/media-centre/news/", type: scrape_hash }     # AI Malaysia Berhad（旧NAIO。デジタル省傘下の国家AI機関）AI関連ニュース一覧
+      - { url: "https://www.digital.gov.my/en-GB/siaran", type: scrape_hash }  # デジタル省 報道発表一覧（AIガバナンス法案の所管省。抽出可否は要実測）
+    watch_feeds: []
+    news_queries: ["Malaysia AI Governance Bill", "Rang Undang-Undang Tadbir Urus Kecerdasan Buatan"]
+  - code: ph
+    name_ja: フィリピン
+    name_en: Philippines
+    flag: "🇵🇭"
+    lat: 14.60
+    lng: 120.98
+    # 2026-10-31 追加（AI下書き・人の確認前）。包括AI法は未成立（SB 25・SB 852・HB 7627 等が第20議会の委員会に係属）。拘束力のある枠組みは政府部門向けの DICT・CSC 合同覚書回状 No.003 s.2026（2026-06-09）と、個人データを扱うAIへの NPC 勧告 No.2024-04（2024-12-19）。
+    # NPC の勧告・回状一覧は検索結果で実在を確認しただけ。GitHub Actions からの取得と日付付きリンクの抽出（PDF名の 2024.12.19 形式・アップロード年月 /2025/02/）は未実測。
+    # DICT のニュース一覧（記事 dict.gov.ph/news-and-updates/<番号> の実在は確認）、上院・下院・官報の新着一覧は一覧ページの URL を確認できていないので入れていない（確認してから足す）。
+    # 未確認: JMC 003 の一次本文・条番号・実施指針の発出、NPC 勧告の条項、COMELEC 決議 No.11064（選挙のAI規律）の一次本文、2026-06以降の法案の進捗（調査中に検索上限に達した）。
+    official_sources: []   # 監視できる公式ページが今は無い（下のコメント参照）
+      # 2026-10-31 Mac から取得失敗（403）のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://privacy.gov.ph/pips-and-pics/advisories-circulars/", type: scrape_hash }   # 国家プライバシー委員会(NPC) 勧告・回状一覧（AI指針 2024-04 の発出元）
+    watch_feeds: []
+    news_queries: ["Philippines artificial intelligence bill", "Philippines AI regulation DICT"]
+  - code: ae
+    name_ja: アラブ首長国連邦
+    name_en: United Arab Emirates
+    flag: "🇦🇪"
+    lat: 24.45
+    lng: 54.38
+    # 2026-10-31 追加（AI下書き・人の確認前）。横断的なAI法は無く（2026-10時点）、2026-06-14 設置承認の AI・データ庁（内閣直属）と既存法（個人データ保護法・サイバー犯罪法・メディア法・子どものデジタル安全法）で読む。
+    # official_sources の2本は、GitHub Actions からの取得と日付付きリンクの抽出をまだ実測していない。mediaoffice.ae の記事URLは /news/2026/may/18-05/ 形式の日付を持つが、collect が「月名/日-月」を読めるかは未確認（読めなければ一覧が全件落ちる。vn の en.baochinhphu.vn と同じ確認が要る）。
+    # 公式 RSS は見つけられなかった（WAM・内閣 uaecabinet.ae・AI Office とも）。ai.gov.ae/news/ は更新が止まっているようで、AI Office は新庁へ統合されたため入れていない。内閣のニュース（uaecabinet.ae）は日付が dd.mm.yyyy 表記で、一覧ページURLが未確認のため見送り。
+    # 未確認: AI・データ庁の設置根拠（連邦政令法か内閣決定か）と民間への執行権限、個人データ保護法の施行規則、サイバー犯罪法でディープフェイクに当たる条番号と罰金額（出典で割れる）、AI開発・利用憲章の公表日、DIFC Regulation 10 の義務内容と認証制度の時期、メディア評議会から「国家メディア庁」への改組の有無。
+    official_sources:
+      - { url: "https://mediaoffice.ae/future/artificial-intelligence", type: scrape_hash }   # ドバイ政府メディアオフィス AI 欄（連邦内閣の決定も載る）
+      # 2026-10-31 Mac から取得失敗（403）のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://uaelegislation.gov.ae/en/news", type: scrape_hash }                  # 連邦法令ポータル ニュース。新しい連邦法令の公布
+    watch_feeds: []
+    news_queries: ["UAE AI regulation law", "UAE Artificial Intelligence and Data Authority"]
+  - code: sa
+    name_ja: サウジアラビア
+    name_en: Saudi Arabia
+    flag: "🇸🇦"
+    lat: 24.71
+    lng: 46.68
+    # 2026-10-31 追加（AI下書き・人の確認前）。横断的なAI法はない。中心は SDAIA の指針・枠組み（拘束力なし）と、責任あるAI政策案（2026-05-03 に意見募集終了、最終版は未確認）。
+    # 調査環境から sdaia.gov.sa を開くと「Request Rejected」（WAF）が返り、中身を読めていない。GitHub Actions から取れるか、日付付きリンクを抜き出せるかは未実測。入れる前に DRY_RUN で確かめること。
+    # spa.gov.sa（国営通信 SPA）は、記事ページは取れたがトップは JS だけで本文が空。RSS も見つからなかったので入れていない。
+    # 未確認: 責任あるAI政策案の本文と最終版の有無、AI倫理原則のリスク区分の段階名、ディープフェイク指針の確定版の日付（2025-05 と 2026-05 で割れる）、新著作権法の施行日（08-01 と 08-12 で割れる）、PDPL の罰則額。
+    official_sources:
+      - { url: "https://sdaia.gov.sa/en/SDAIA/about/Pages/RegulationsAndPolicies.aspx", type: scrape_hash }   # SDAIA 法令・政策一覧（新しい指針・政策の掲載を拾う。日付付きリンクがあるかは未確認）
+      - { url: "https://sdaia.gov.sa/en/MediaCenter/Pages/ai-year.aspx", type: scrape_hash }   # SDAIA「AIの年2026」ページ（発表のまとめ。日付付きリンクがあるかは未確認）
+    watch_feeds: []
+    news_queries: ["Saudi Arabia SDAIA AI regulation", "سدايا الذكاء الاصطناعي"]
+  - code: tr
+    name_ja: トルコ
+    name_en: Türkiye
+    flag: "🇹🇷"
+    lat: 39.93
+    lng: 32.86
+    # 2026-10-31 追加（AI下書き・人の確認前）。AI横断法はなく、AI法案4件（2/2234・2/3358・2/3404・2/3465）がTBMM（大国民議会）の委員会に係属中。政策の柱は大統領通達2026/9の「トルコAI行動計画（2026-2030）」（官報 2026-08-18 第33344号）。
+    # official_sources は GitHub Actions 上で未実測。TBMM 着信文書一覧は日付が dd/mm/yyyy なので抽出できるが、リンク名が「19. GELEN KAĞIT」だけで中身が分からず triage で落ちやすい（新法案は本文を見ないと分からない）。
+    # KVKK 告知一覧は日付を「28 Ekim 2026」のようにトルコ語の月名で書くため、今の日付抽出（scrape.mjs の datePattern）に合わない。タイトルに 16/09/2026 の形を含む項目しか拾えず、no-dated-links で「止まった」通知が出るおそれ（トルコ語の月名に対応するまで様子見）。
+    # TBMM の旧 RSS 案内（www5.tbmm.gov.tr/rss.htm）は新サイトのトップに転送され、フィードの URL を確認できなかった。官報（resmigazete.gov.tr/rss）は調査環境から取得できず入れていない。
+    # .gov.tr は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.tr を足す前提。
+    # 未確認: 行動計画本文（sanayi.gov.tr）、調査委員会報告書（S.Sayısı 260）本文、OVP 2027-2029 のAI法令整備の時期、刑法217/A条の刑の幅（CMSの解説のみ）、2026-10以降の新法案の有無。
+    official_sources:
+      - { url: "https://www.tbmm.gov.tr/Gundem/GelenKagitlarListe", type: scrape_hash }   # TBMM 着信文書（Gelen Kağıtlar）一覧。法案の受理を日付つきで載せる
+      - { url: "https://www.kvkk.gov.tr/Icerik/2015/Duyurular", type: scrape_hash }        # KVKK（個人データ保護機関）告知一覧。AI指針・AIシンポジウムの告知が載る。日付抽出に難あり（上記）
+    watch_feeds: []
+    news_queries: ["Turkey artificial intelligence law", "yapay zeka kanun teklifi"]
+  - code: mx
+    name_ja: メキシコ
+    name_en: Mexico
+    flag: "🇲🇽"
+    lat: 19.43
+    lng: -99.13
+    # 2026-10-31 追加（AI下書き・人の確認前）。AIを横断的に規律する法律はまだない。中心は上院AI委員会（委員長 Zapata Bello）がまとめたAI一般法草案（223条・14編）で、審議中。
+    # 議会にはAI一般法を出す明示の憲法上の権限がなく、権限を足す憲法73条改正案もまだ可決されていない。今効いているのは分野別の法律（新しい個人データ保護法の自動決定への異議権、著作権法第118条の声・演技のAI複製の禁止、映画・視聴覚法第29条の吹替へのAI使用の禁止）。
+    # official_sources は GitHub Actions 上で未実測。下院の2本はホスト（トップページ）しか確かめられず、新着一覧ページや RSS の URL は特定できていない（見つかれば差し替える）。.gob.mx は政府系TLD規則（gob.xx）で自動的に公式扱いになる。
+    # 法案の中心は上院だが、上院広報と官報 DOF（dof.gob.mx）の一覧ページ・RSS は URL を確かめられず入れていない。確認でき次第ここに足す。
+    # 未確認: 上院草案の正式提出（「2026-05-07 上院へ送付」と「委員会で作業中」で割れる）、草案の条番号・汎用AI規定・罰則額、2026-09〜10 の会期での進み具合、連邦刑法改正（第199条octies・nonies）の上院審議、Circular 1/2026 を出した機関。
+    official_sources: []   # 監視できる公式ページが今は無い（下のコメント参照）
+      # 2026-10-31 Mac から取得失敗（タイムアウト）のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://comunicacionsocial.diputados.gob.mx/", type: scrape_hash }   # 下院 広報（Notilegis）。トップページ。日付抽出は未確認
+      # 2026-10-31 Mac から取得失敗（タイムアウト）のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://gaceta.diputados.gob.mx/", type: scrape_hash }   # 下院 議会公報（Gaceta Parlamentaria）。号のURLに日付（例 20260922）が入る。トップページ。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["Mexico artificial intelligence law", "ley general de inteligencia artificial México"]
+  - code: pe
+    name_ja: ペルー
+    name_en: Peru
+    flag: "🇵🇪"
+    lat: -12.05
+    lng: -77.04
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心は Ley 31814（2023-07-05 公布の振興法）と施行規則 DS 115-2025-PCM（2025-09-09 公布、2026-01 施行）。所管は PCM の SGTD。
+    # official_sources は GitHub Actions 上で未実測。gob.pe/iaperu は施行規則の第36条・第3補足最終規定が定める PCM の AI 専用窓口だが、調査環境からは gob.pe の個別ページも取得できず（url_not_accessible）、日付付きリンクが読めるかは未確認（no-dated-links で3日後に止まった通知が出るおそれ）。
+    # 公式 RSS は見つかっていない。PCM の規範一覧（個別規範は gob.pe/institucion/pcm/normas-legales/ 配下にある）と官報 busquedas.elperuano.pe の新着一覧は、一覧ページの URL と取得可否を確かめてから足す。
+    # gob.pe・congreso.gob.pe は政府系 TLD 規則（gob.xx）で公式扱いになる。官報の elperuano.pe は規則に無いので、source_domains.yaml の official に足す前提。
+    # 未確認: 施行日（2026-01-22 と 01-23 で割れる）、第24条1項の号の欠け（b→e）に正誤表が出たか、倫理指針・透明性指針・高リスク影響評価の細則が出たか、Ley 31814 改正法案群とディープフェイクの刑罰法案 14760/2025-CR の審議状況、Ley 32314 の対象犯罪と加重の幅。
+    official_sources:
+      - { url: "https://www.gob.pe/iaperu", type: scrape_hash }   # PCM の AI 専用窓口（施行規則第36条・第3補足最終規定）。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["Peru artificial intelligence regulation Law 31814", "Perú inteligencia artificial reglamento Ley 31814"]
+  - code: kz
+    name_ja: カザフスタン
+    name_en: Kazakhstan
+    flag: "🇰🇿"
+    lat: 51.17
+    lng: 71.45
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心は人工知能法 No.230-VIII（2025-11-17署名、2026-01-18施行、法 No.326-VIII で用語を改正し2026-08-25施行）。所管は人工知能・デジタル発展省（MAIDD）とみられる。
+    # official_sources は GitHub Actions 上で未実測。RSS は MAIDD 英語版ページ（gov.kz）に載っていたリンクで、フィード本体は調査環境の取得上限に達して開けていない。gov.kz は JS で描画する部分が多く、ニュース一覧の scrape_hash は no-dated-links になるおそれがある（RSS が動けば外してよい）。
+    # 公式の法令DB adilet.zan.kz は調査環境から本文を開けなかった（検索結果で実在だけ確認）。条文は民間の法令DB（prg.kz は改正を反映した版、zakon.mybuh.kz は原文）で読んだ。
+    # .gov.kz は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.kz・zan.kz・akorda.kz・primeminister.kz を足す前提。
+    # 未確認: 授権機関を MAIDD とする政府決定、КоАП 第641-1条の条文そのもの（報道2本で確認）、下位規則（リスク分類規則・文書一覧・信頼リストの手続・機械可読形式）の中身、議会での可決日、公式公表日。
+    official_sources:
+      - { url: "https://www.gov.kz/api/v1/public/rss/maidd/news/en", type: rss }   # MAIDD（人工知能・デジタル発展省）英語ニュースの公式RSS（省ページのリンクから取得。本体は未実測）
+      - { url: "https://www.gov.kz/org/maidd/press/news/1?lang=en", type: scrape_hash }   # MAIDD ニュース一覧（RSS の予備。日付を抽出できるかは未確認）
+    watch_feeds: []
+    news_queries: ["Kazakhstan artificial intelligence law", "Казахстан закон об искусственном интеллекте"]
+  - code: ch
+    name_ja: スイス
+    name_en: Switzerland
+    flag: "🇨🇭"
+    lat: 46.95
+    lng: 7.45
+    # 2026-10-31 追加（AI下書き・人の確認前）。AI専用の横断法はない。連邦参事会は2025-02-12に、欧州評議会AI条約を批准して国内法に取り込み、法改正はできるだけ分野別で行う方針を決めた。
+    # 拘束力のある部分は、連邦司法局（BJ/OFJ）がDETEC（BAKOM）・DFAEと連邦法案を起草中。意見聴取（Vernehmlassung）は2027年春の予定で、2025年の決定時の「2026年末まで」から後ろにずれた（2026-10-28 連邦参事会発表）。拘束力のない部分（自主規制・業界指針）はBAKOMが調整する。
+    # official_sources の3本は、どれも GitHub Actions 上で取得を試していない。調査環境ではどれも開けた。BAKOM のページは「26 octobre 2026」と「28.10.2026」、BJ のページは「17. Dezember 2025」、FDPIC のページは「16 October 2026」の形で日付が付く。
+    # collect の日付読み取りが、仏語・独語の月名や dd.mm.yyyy を正しく読めるかは試していない（vn の mm/dd 誤読と同じ型の問題が起きるおそれ）。
+    # admin.ch の報道発表 RSS は URL を特定できなかった（見つかれば rss に差し替える）。admin.ch は政府系 TLD 規則（OFFICIAL_TLD_RE）に入らないため、source_domains.yaml の official に admin.ch を足す前提。
+    # 未確認: 連邦法案が私人にどこまで及ぶか、条約の批准時期、DSG の罰則の額と条番号、データ保護影響評価の条番号、FINMA 監督通知 08/2024 の公式ページ（日付は法律事務所の記事で確認）。
+    official_sources:
+      - { url: "https://www.bakom.admin.ch/fr/intelligence-artificielle", type: scrape_hash }   # BAKOM(連邦通信庁) AI規制の状況ページ。報告書・手引き・連邦参事会発表への日付付きリンクが並ぶ
+      - { url: "https://www.bj.admin.ch/de/kuenstliche-intelligenz", type: scrape_hash }       # 連邦司法局(BJ) AI立法ページ。条約を実施する法案と意見聴取資料が載る見込み
+      - { url: "https://www.edoeb.admin.ch/en/ai-and-data-protection", type: scrape_hash }     # 連邦データ保護・情報コミッショナー(FDPIC) 「AIとデータ保護」の告知一覧（英語）
+    watch_feeds: []
+    news_queries: ["Switzerland AI regulation Federal Council", "KI-Regulierung Schweiz Bundesrat"]
+  - code: il
+    name_ja: イスラエル
+    name_en: Israel
+    flag: "🇮🇱"
+    lat: 31.77
+    lng: 35.21
+    # 2026-10-31 追加（AI下書き・人の確認前）。AIの横断法はなく、中心は MIST・法務省のAI規制・倫理政策（2023-12、分野別・ソフトロー）。法的義務は選挙宣伝のディープフェイク表示（選挙（宣伝方法）法 第2A2条の時限規定、中央選挙委員会規則 2026-07-26 官報）くらい。
+    # official_sources は GitHub Actions 上で未実測。下の政府決議一覧は、調査中に取得の上限に達して開けていない。サーバー側で本文を返すか、日付付きリンクを読めるかは未確認（読めなければ no-dated-links で3日後に停止通知が出る）。PPA・MIST・首相府 国家AI本部の新着一覧と公式 RSS の URL は今回の調査では特定できず入れていない（見つかれば差し替える）。
+    # .gov.il は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.il を足す前提（knesset.gov.il・embassies.gov.il・new.isa.gov.il もサブドメインとして入る）。
+    # 未確認: 第2A2条を入れた選挙法改正の成立日・施行日（7/16 は報道のみ）と罰則の有無、PPA のAI指針案の公表日（4/28・4/30・5月で割れる）と確定版の有無、国家AI計画の政府承認の日付（5/17・6月で割れる）、第13次改正の制裁金額。
+    official_sources: []   # 監視できる公式ページが今は無い（下のコメント参照）
+      # 2026-10-31 Mac から取得失敗（403）のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://www.gov.il/en/departments/policies/", type: scrape_hash }   # gov.il 政府決議（policies）の一覧とみられる。決議3375（国家AI本部）のような決定を拾う狙い。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["Israel AI regulation", "רגולציה בינה מלאכותית"]
+  - code: cl
+    name_ja: チリ
+    name_en: Chile
+    flag: "🇨🇱"
+    lat: -33.45
+    lng: -70.67
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心は AI規制法案（Boletín 16821-19「Regula los sistemas de inteligencia artificial」、15869-19 と統合）。2025-10-13 に下院を通過し、上院の Comisión de Desafíos del Futuro が 2026-10-26 に一般承認（報道）。成立・施行前。
+    # 2026-03 発足の Kast 政権（MinCiencia の Lincolao 大臣）は、リスク分類をやめる差し替え案を準備中。2026-10-26 時点で議会に未提出（報道）。法案の中身が大きく変わりうる。
+    # official_sources は GitHub Actions 上で未実測。MinCiencia の新着一覧は調査時に開けた。各記事に「27 Octubre 2026」形式の日付と、画像パスの 2026-10-27 形式の日付がある。
+    # DATE_RE は Octubre/Septiembre 等の英語と同じ3文字で始まる月名しか読めない（Agosto/Diciembre/Enero/Febrero/Abril は読めない）。そのため、それらの月は画像パスの日付が頼り。
+    # 上院の法案経過 XML（tramitacion.senado.cl/wspublico/tramitacion.php?boletin=16821）は <a> リンクが無く、scrape_hash では no-dated-links になるので入れていない（人が経過を確認するときの一次資料として使う）。
+    # 上院 RSS（tramitacion.senado.cl/prontus_senado/site/tax/port/all/rss_14___1.xml 等）は公式の RSS 一覧ページに載っている。ただ調査環境から開けず、旧サイトのニュース一覧は 2024 年で止まっているので入れていない。
+    # senado.cl・camara.cl・bcn.cl・leychile.cl は政府系 TLD 規則に無い。source_domains.yaml の official に足す前提。gob.cl は .gob.xx で自動判定される。
+    # 未確認: 下院可決版（Oficio 20.843）の条文の一次確認、個人データ保護庁（APDP）の監督・制裁権限が残ったか（報道で割れる）、誰が制裁金を科すか、上院委員会の一般承認の公式記録、差し替え案の提出日と中身、Ley 21.719 延期法案（Boletín 18.623-07）の成否と新しい施行日。
+    official_sources:
+      - { url: "https://www.minciencia.gob.cl/noticias/", type: scrape_hash }   # 科学技術知識イノベーション省(MinCiencia、AI法案・国家AI政策の所管省) ニュース一覧。日付抽出は未実測
+    watch_feeds: []
+    news_queries: ["Chile AI bill Senate", "proyecto de ley inteligencia artificial Chile Senado"]
+  - code: co
+    name_ja: コロンビア
+    name_en: Colombia
+    flag: "🇨🇴"
+    lat: 4.71
+    lng: -74.07
+    # 2026-10-31 追加（AI下書き・人の確認前）。施行中の横断AI法はない。中心は国家AI政策 CONPES 4144 と SIC 外部通達002/2024、審議中の下院法案025/2026C（2026-07-21提出、2026-09に第一読会向け報告書、第6委員会で審議中）。
+    # 旧政府法案043/2025S–324/2025C は議会組織法（Ley 5 de 1992）第190条で廃案（025/2026C の報告書に記載）。
+    # official_sources は GitHub Actions 上で未実測。MinCiencias の RSS は調査時に開け、pubDate 付きの新着（2026-10-30 まで）を確認した。
+    # Cámara の法案ページは一覧ではなく1法案の記録ページ。日付付きリンク（URL の /2026/09/ や dd/m/yyyy 表記）を読めるかは未確認（no-dated-links で3日後に止まった通知が出るおそれ）。
+    # SIC のニュース一覧は検索結果で実在を確かめただけで、本文は開けていない（日付抽出は未確認）。senado.gov.co（上院ニュース）は調査環境から取得できず（url_not_accessible）入れていない。
+    # .gov.co は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.co を足す前提。
+    # 未確認: 043/2025 の廃案日（報道は 6/19）、025/2026C の第一読会の採決の有無、修正案第34条（段階施行）の後半、上院のAI法案の番号の対応（報道に 065/2026 の表記）、216/2026S の条文、Ley 2502 改正部分の施行日。
+    official_sources:
+      - { url: "https://minciencias.gov.co/rss.xml", type: rss }   # 科学技術イノベーション省(MinCiencias) 公式RSS（全ニュース。AI法案とCONPES 4144の担当省）
+      # 2026-10-31 Mac から取得失敗（タイムアウト）のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://www.camara.gov.co/inteligencia-artificial-2/", type: scrape_hash }   # 下院 法案025/2026C の記録ページ（報告書・審議段階の追加を検知）。日付抽出は未確認
+      - { url: "https://sedeelectronica.sic.gov.co/noticias", type: scrape_hash }   # SIC(産業商業監督庁＝個人データ保護当局) ニュース一覧。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["Colombia artificial intelligence bill", "proyecto de ley inteligencia artificial Colombia"]
+  - code: ar
+    name_ja: アルゼンチン
+    name_en: Argentina
+    flag: "🇦🇷"
+    lat: -34.60
+    lng: -58.38
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心になるAI法は無い（議員立法は複数あるが、いずれも委員会段階で成立していない）。ミレイ政権はAIを事前に規制しない方針で、AIが運営する「自動化会社」を含む会社法全面改正案（上院 PE-193/26）を提出した。
+    # 施行中なのは、公的部門向けの Disposición 2/2023、SIGEN 決議197/2026（AI統制ガイド）、AAIP（個人データ保護の執行機関）のAIガイド、治安省決議710/2024（治安当局のAI部門）。
+    # official_sources は GitHub Actions 上で未実測。3本とも日付がスペイン語の長い形（例 "24 de junio de 2026"）で、scrape.mjs の datePattern（英語の月名と数字形式だけ）に合わないとみられる。no-dated-links で3日後に止まった通知が出るおそれがある（スペイン語の月名に対応するか、公式RSSが見つかれば rss に差し替える）。
+    # .gob.ar は政府系TLD規則で公式扱いになる。上院の旧ドメイン senado.gov.ar は規則に入らないので、source_domains.yaml の official に足す前提。
+    # 未確認: 下院法案の番号と提出者の対応（0664-D-2026 はジュリアーノ案か、ブリュッゲ案の番号）、PE-193/26 の条番号と上院での修正文言、Disposición 2/2023 が今も効力を持つか、AAIPガイド最終版の公表日、Boletín Oficial・下院・上院の公式RSSの有無。
+    official_sources:
+      - { url: "https://www.argentina.gob.ar/aaip", type: scrape_hash }        # AAIP(公共情報アクセス庁。個人データ保護の執行機関でAIガイドの発行元)。新着の日付抽出は未確認
+      - { url: "https://www.hcdn.gob.ar/prensa/", type: scrape_hash }           # 下院(HCDN) 報道「最新ニュース」一覧(AI法案・Súper RIGI の審議)。日付抽出は未確認
+      - { url: "https://www.senado.gob.ar/prensa/eventos", type: scrape_hash }  # 上院 プレスリリース一覧(PE-193/26 会社法改正案の委員会審議)。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["Argentina artificial intelligence regulation", "Argentina ley inteligencia artificial"]
+  - code: nz
+    name_ja: ニュージーランド
+    name_en: New Zealand
+    flag: "🇳🇿"
+    lat: -41.29
+    lng: 174.78
+    # 2026-10-31 追加（AI下書き・人の確認前）。横断的なAI法はない。国家AI戦略（2025-07、MBIE）と任意の事業者向け指針による「軽いタッチ」の方針。法的拘束力のあるAI関連規則は、OPC の生体認証処理プライバシー規約2025（2025-11-03施行）が中心。
+    # 審議中: 議員立法 Deepfake Digital Harm and Exploitation Bill（2026-05-20 第一読会、社会サービス・コミュニティ委員会に付託）。
+    # NZ 政府のドメインは .govt.nz で、OFFICIAL_TLD_RE の gov.nz には当たらない（beehive・mbie・legislation などが media 扱いになる）。source_domains.yaml の official に govt.nz・parliament.nz・privacy.org.nz を足す前提。
+    # official_sources は GitHub Actions 上で未実測。どちらの一覧も日付付きリンクを読めるかは未確認（no-dated-links で3日後に止まった通知が出るおそれ）。beehive は全大臣の発表でノイズが多いので triage 前提。
+    # beehive.govt.nz/feeds と privacy.org.nz/rss-feeds へのリンクがページにあることは確認したが、どちらも開いておらず、個別の RSS URL は特定できていない（見つかれば rss に差し替える）。法案ページ（legislation.govt.nz）にも RSS があるが URL は未特定。
+    # 未確認: ディープフェイク法案の委員会報告の時期と、2026総選挙（Wikipedia では 2026-11-07）後に法案が復活するか、刑罰の上限、閣議決定の日付と番号（閣議文書は 2024-06-26 付）、GCDO の現在の所属機関。
+    official_sources:
+      - { url: "https://www.privacy.org.nz/tuhono-connect/statements-media-releases/", type: scrape_hash }   # プライバシーコミッショナー(OPC)声明・報道発表一覧(生体認証規約・AIの所管)。日付抽出は未確認
+      # 2026-10-31 Mac から取得失敗（本文212バイト（bot 拒否とみられる））のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://www.beehive.govt.nz/releases", type: scrape_hash }   # 政府公式(Beehive)大臣発表一覧(AI戦略・法案方針の閣僚発表)。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["New Zealand AI regulation", "New Zealand deepfake bill AI"]
+  - code: za
+    name_ja: 南アフリカ
+    name_en: South Africa
+    flag: "🇿🇦"
+    lat: -25.75
+    lng: 28.19
+    # 2026-10-31 追加（AI下書き・人の確認前）。AI横断法なし。中心は通信・デジタル技術省（DCDT）の国家AI政策。草案は 2026-04-10 に官報（54477号・告示3880号）で意見募集にかけたが、架空の参考文献が見つかり 2026-06-12 の官報で正式撤回。改訂版は起草中（閣議提出は 2027-03 までと報道）。
+    # 拘束力のある AI 関連規定は POPIA（個人情報保護法）第71条（自動化された意思決定）だけ。執行は情報規制庁（Information Regulator）。
+    # official_sources は GitHub Actions 上で未実測。SAnews（政府通信情報システム GCIS の通信社）の RSS は公式記事ページの RSS リンクで実在を確認したが、フィード本体は調査時に開けていない。総合ニュースなのでノイズが多い（triage 前提）。
+    # DCDT（dcdt.gov.za）の報道発表一覧・gov.za の閣議声明一覧・情報規制庁の新着一覧は URL を特定できず入れていない（見つかれば scrape_hash で足す。改訂版の公表は閣議声明と官報に出る見込み）。
+    # .gov.za は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.za を足す前提。
+    # 未確認: 改訂版の閣議提出時期（5月の議会説明は 2026-11 閣議・2027-01 意見募集、10月の DCDT 担当者発言は 2027-03 までに閣議）、新設7機関案の存廃、撤回を承認した閣議の開催日、撤回告示の告示番号、情報規制庁の第71条・AI ガイダンスの有無。
+    official_sources:
+      - { url: "https://www.sanews.gov.za/south-africa-news-stories.xml", type: rss }   # SAnews(GCIS 政府通信社) 南アフリカ国内ニュース公式RSS。閣議後会見・DCDT大臣発表を拾う。取得は未実測
+    watch_feeds: []
+    news_queries: ["South Africa national AI policy", "South Africa artificial intelligence regulation DCDT"]
+  - code: ng
+    name_ja: ナイジェリア
+    name_en: Nigeria
+    flag: "🇳🇬"
+    lat: 9.06
+    lng: 7.50
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心は国家デジタル経済・電子ガバナンス法案（National Digital Economy and E-Governance Bill）の第5章（AI規制。NITDA を規制機関とする）。2026-10-27 時点で上院は第三読会・年内可決が目標で、成立・施行の前。
+    # 国家AI戦略（NAIS。OECD.AI によれば 2025-09 公表）は拘束力なし。施行中で AI に効くのはデータ保護法（NDPA 2023）と NDPC の GAID（2025-09-19 全面適用）だけ。
+    # official_sources は GitHub Actions 上で未実測。NALTF（国会図書館信託基金）の上院ニュース一覧は調査時に開けて、各記事に「October 30, 2026」の形の日付が付いていた（scrape.mjs の datePattern に合う）。WordPress なので RSS（/feed/）がありそうだが未確認（確認できたら rss に差し替える）。
+    # NITDA・NDPC・FMCIDE（通信・イノベーション・デジタル経済省）の新着一覧と RSS は、調査中に検索の上限に達して URL を確かめられず、入れていない（見つかれば足す）。
+    # .gov.ng は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.ng を足す前提。
+    # 未確認: 法案の今の版と条番号（nass.gov.ng の 2025 年版で書いた。2026-07 に上院委員長は「4〜5区分」と発言したが、2025 年版は区分を規則に任せている）、2025-11 の「今週大統領へ送付」報道と 2026-10 の「上院第三読会」の食い違いの経緯、下院の可決の有無、NAIS 最終版の公表日と本文。
+    official_sources:
+      - { url: "https://naltf.gov.ng/category/the-senate/", type: scrape_hash }   # NALTF(国会図書館信託基金) 上院ニュース一覧。法案審議の公式発信。日付抽出は未実測
+    watch_feeds: []
+    news_queries: ["Nigeria Digital Economy and E-Governance Bill AI", "Nigeria artificial intelligence regulation NITDA"]
+  - code: eg
+    name_ja: エジプト
+    name_en: Egypt
+    flag: "🇪🇬"
+    lat: 30.04
+    lng: 31.24
+    # 2026-10-31 追加（AI下書き・人の確認前）。施行中のAI法はない。中心は国家AI・量子計算・新興技術評議会（NCAI）の「国家AIガバナンス枠組みガイド」（2026-03、4段階リスク分類）、国家AI戦略第2版（2025–2030）、責任あるAI憲章（2023）。AI法は政府が起草中で、法案本文は未公表。
+    # official_sources は GitHub Actions 上で未実測。ai.gov.eg（NCAI公式。指針PDFの掲載元）は調査環境から直接取得できなかった（PDFの実在は検索結果で確認）。新着一覧・RSS の URL は特定できておらず、トップを仮に入れている（日付付きリンクが無ければ no-dated-links で3日後に止まった通知が出るおそれ）。
+    # mcit.gov.eg/en/Artificial_Intelligence は取得できたが、刊行物の一覧で日付付きリンクは未確認。MCIT 報道発表は個別ページ（/en/Media_Center/Press_Room/Press_Releases/66939）は開けたが一覧ページの URL は未確認のため入れていない（見つかれば差し替える）。
+    # .gov.eg は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.eg を足す前提。
+    # 未確認: AI法案の段階（法務省で8割完成→閣議→委員会付託と報道。Legal 500 は「議会の議題」と書き、割れている）、ガイドの法的拘束力と高リスク適合性評価の義務化の時期、首相令207/2026の本文（官報）、国家AI戦略第2版の公表日、PDPL施行規則（MCIT決定816/2025）の施行日と猶予期限（法律事務所の解説だけ）。
+    official_sources:
+      # 2026-10-31 Mac から取得失敗（本文1.6KB（中身なし））のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://ai.gov.eg/", type: scrape_hash }   # NCAI（国家AI・量子計算・新興技術評議会）公式サイト。トップ。日付抽出は未確認
+      - { url: "https://mcit.gov.eg/en/Artificial_Intelligence", type: scrape_hash }   # 通信情報技術省(MCIT) AIページ（NCAIの戦略・指針の刊行物一覧）。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["Egypt AI law draft", "قانون الذكاء الاصطناعي مصر"]
+  - code: ke
+    name_ja: ケニア
+    name_en: Kenya
+    flag: "🇰🇪"
+    lat: -1.29
+    lng: 36.82
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心は上院の人工知能法案 2026（Senate Bills No.4 of 2026、Karen Nyamu 上院議員が提出）。2026-02-19 に官報補遺 No.15 で公表、04-02 に第一読会。上院ICT委員会が「審議を進めない」よう勧告した（2026-10-15 の The Star 報道）。成立・施行前。
+    # 並行して、ICT・デジタル経済省（MICDE）の国家AI戦略2025-2030（2025-03-27 発表）、「AI・その他新興技術政策2026」草案（2026-07-21〜08-04 に意見募集）、データ保護委員会事務局（ODPC）のAIガイダンスノート草案（意見の締切は 08-17）がある。
+    # official_sources は GitHub Actions 上で試していない。調査中にツールの回数上限に当たり、ict.go.ke・parliament.go.ke・odpc.go.ke の RSS や新着一覧の URL を確かめきれなかった。そのため、存在を確認できた ODPC の草案ガイダンス一覧だけを仮に入れた（日付付きリンクがあるかは未確認。no-dated-links で3日後に「止まった」通知が出るおそれがある）。MICDE の報道発表一覧か上院の法案一覧が見つかれば差し替える。
+    # .go.ke は政府系 TLD 規則（OFFICIAL_TLD_RE）に入っていない。source_domains.yaml の official に go.ke・kenyalaw.org・kebs.org を足す前提。
+    # 未確認: 委員会報告の提出日と本会議での扱い（採択・撤回・修正の有無）、条番号のずれ（罰則が第34条か第35条か、労働影響評価が第32条か第33条か）、懲役の上限（2年と3年で出典が割れる）、政策草案と ODPC ガイダンスが確定したかどうか。
+    official_sources: []   # 監視できる公式ページが今は無い（下のコメント参照）
+      # 2026-10-31 Mac から取得失敗（404）のため外した。Actions か中継で取れるか確かめてから戻す:
+      # - { url: "https://www.odpc.go.ke/draft-guidance-notes/", type: scrape_hash }   # ODPC(データ保護委員会事務局) 草案ガイダンス一覧(AIガイダンスノート草案の掲載先)。日付抽出は未確認・暫定
+    watch_feeds: []
+    news_queries: ["Kenya Artificial Intelligence Bill", "Kenya AI Emerging Technologies Policy"]
+  - code: ru
+    name_ja: ロシア
+    name_en: Russia
+    flag: "🇷🇺"
+    lat: 55.76
+    lng: 37.62
+    # 2026-10-31 追加（AI下書き・人の確認前）。中心は連邦法 No.243-FZ「ロシア連邦における人工知能技術の発展支援について」（2026-07-26署名、09-01施行。第5条2項3〜5号・第6条2〜5項・第8〜10条は2027-03-01施行）。対象は10億パラメータ以上の大規模基盤モデルだけ。
+    # 条文は Garant（base.garant.ru）掲載の本文で確認した。公布の原本（pravo.gov.ru、公布番号 0001202607260003）は直接開いていない。第2条・第7条は文字化けで読めず、第9条（生成物の表示）は取得に失敗した。
+    # official_sources は GitHub Actions 上で未実測。入れたのは大統領府英語版の文書一覧だけ（法律の署名発表が日付つきで並ぶ。大統領令なども混じるのでノイズ多め・triage 前提）。日付の抽出は未確認。ロシア政府系サイトは国外 IP からの接続が制限されるおそれがある。
+    # デジタル発展省（digital.gov.ru）・公布ポータル（publication.pravo.gov.ru）・国家院（duma.gov.ru）の新着一覧と RSS は、URL を確認できず入れていない（見つかれば足す。RSS があれば優先）。
+    # .gov.ru は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.ru・kremlin.ru・government.ru・cbr.ru を足す前提。
+    # 未確認: 第9条の中身（報道で割れる。大規模プラットフォームに利用者のラベル機能を求める説、生成音声・映像の表示義務説、表示は義務ではない説）、政府の下位規範（地位の付与、価値への適合確認、国産モデル限定の場面）の公布状況、第5条3項の所管機関の名指し、本法違反の罰則の有無。
+    official_sources:
+      - { url: "http://en.kremlin.ru/acts/news", type: scrape_hash }   # 大統領府（英語）文書一覧。法律の署名発表（例: 2026-07-26 の 243-FZ）。日付抽出は未確認
+    watch_feeds: []
+    news_queries: ["Russia AI law foundation models", "закон об искусственном интеллекте 243-ФЗ"]

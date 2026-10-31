@@ -1,0 +1,138 @@
+{
+  "jurisdiction": "th",
+  "regulation_name": "横断法なし（AI法草案「ร่างพระราชบัญญัติว่าด้วยปัญญาประดิษฐ์ พ.ศ. ....」2026-07に意見募集・成立前。EU型リスクベース）",
+  "status": "draft",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAIリスク分類はない。2026-07に意見募集にかけたAI法草案は、禁止AI・高リスクAI・事前の届出/登録/許可が要る指定AIに分け、生成物などには別に透明性義務を置く。",
+      "detail": "現行法にAI固有のリスク区分はない。デジタル経済社会省（MDES）とETDA（電子取引開発機構）が意見募集にかけたAI法草案は、要旨の第3章（リスク管理）で、3.1 禁止AIと勅令による届出・登録・許可制、3.2 高リスクAI、3.3 行政機関のAI、3.4 合成コンテンツを定める。高リスクAIは、国家安全・保健・環境・エネルギー・通信・運輸・公益事業に影響するものとして勅令で指定される。分野ごとの規制当局が既存法で足りるかを検討し、国家AI計画推進特別委員会に高リスク指定と追加措置を提案する（3.2(1)）。高リスクAIの提供者は、目的への適合・透明性・人による実質的な制御・公平性を満たす必要がある。規制当局は、リスク管理・偏り防止・サイバーセキュリティ・人による監督など13分野のリスク監督指針を告示できる。実施者は、リスク管理体制、提供者の指示の遵守、監督要員の配置、ログの最低6か月保存（タイ語本文）、予見外リスクの当局への通知を負う。適用除外は、個人・家庭内の利用、倫理委員会の承認を得た高等教育機関の研究、市販前の研究開発、勅令で定めるもの。草案の条番号は未確認（章番号は要旨のもの）。",
+      "sources": [
+        "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/",
+        "https://policywatch.thaipbs.or.th/article/government-364",
+        "https://www.hlc.com/en/publications/thailand-moves-towards-comprehensive-ai-regulation-with-new-draft-ai-act",
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/thailand-draft-ai-act--seven-key-implications"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "施行中のAI固有の禁止規定はない。草案は、潜在意識に働きかける認知・行動の操作と、無関係なデータの処理による広範な不公正な差別を禁止し、禁止類型は後から追加できる。",
+      "detail": "草案の要旨3.1は、基本的な権利へのアクセスの判断に直接関係しない大量データを処理して、広い範囲で人を不公正に差別する利用と、隠れた伝達手法で利用者が自分で判断する力を損なう利用を禁止とし、禁止行為を追加できる仕組みを置く。法律事務所の解説では、追加の禁止類型は国家AI計画を担う委員会の告示で定めるとされる。解説で確認した範囲では、EU第5条にある無差別な顔画像収集、職場・教育での感情推定、法執行目的のリアルタイム遠隔生体識別などの個別類型は挙がっていない。",
+      "sources": [
+        "https://policywatch.thaipbs.or.th/article/government-364",
+        "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/",
+        "https://www.hlc.com/en/publications/thailand-moves-towards-comprehensive-ai-regulation-with-new-draft-ai-act"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）への個別義務は、施行中の法令にも、解説で確認した範囲の草案にもない。生成AIは草案の透明性義務（生成物の機械可読マーク等）で扱われる。",
+      "detail": "草案の透明性義務の対象には、ディープフェイク、チャットボット、生成AIが含まれる。画像・音声・動画を生成・加工できるAIの開発者は、リスクを評価して軽減措置をとり、AI生成物を識別できる機械可読マークを埋め込む。解説で確認した範囲では、汎用モデル・システミックリスク・計算量基準の定めは見当たらない。施行中のものとしては、個人情報保護委員会（PDPC）がAIの開発・利用に個人情報保護法（PDPA）をどう当てはめるかの指針を公表した。指針は生成AI・エージェント型AIを含む全てのAIに及ぶが、法的拘束力のない助言的なもの。プロンプト、ログ、埋め込み、出力も個人データに当たり得るとし、個人データで学習したモデルを自動的に匿名データ扱いにはしない。",
+      "sources": [
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/thailand-draft-ai-act--seven-key-implications",
+        "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/",
+        "https://www.tilleke.com/insights/thailand-issues-personal-data-protection-guidelines-for-ai-systems"
+      ]
+    },
+    "transparency": {
+      "summary": "施行中のAI表示義務はない。草案は4層の透明性義務を置く。提供者の機械可読マーク、リスクのある話題での利用者の開示、実施者のリスク管理、プラットフォームの検知・ラベル表示の4つ。",
+      "detail": "草案の要旨3.4が定める4層は次のとおり。(1) 提供者は全ての出力を機械で検知できる形にし、記録を残す。(2) 利用者は、決められたリスクのある話題に関わるAI出力をプラットフォーム等に載せるとき、AIによるものと受け手に分かるようにする。(3) 実施者はこれに加えてリスク管理を行う。(4) プラットフォームはAI出力の検知の仕組みと、通報を受けて確認中のものへのラベル表示の手続きを用意する。法律事務所の解説では、開示が要る話題は国家安全・選挙・投資の信用・食品や医薬品の効能・なりすまし・違法行為。プラットフォーム事業者には、リスク評価・通報窓口・AIコンテンツの確認・ラベル表示・年次の運用概要の作成が課される。",
+      "sources": [
+        "https://policywatch.thaipbs.or.th/article/government-364",
+        "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/",
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/thailand-draft-ai-act--seven-key-implications"
+      ]
+    },
+    "penalties": {
+      "summary": "施行中のAI固有の罰則はない。草案は100万〜500万バーツの行政罰金、裁判所命令によるサービス停止・回収・ISPでの遮断、故意・過失を問わない連帯の損害賠償責任を定める。",
+      "detail": "解説によると、規制当局はまず提供者・実施者に不十分な措置の是正を命じる。大臣の承認を得れば、裁判所にサービスの一時停止・製品回収・導入停止の命令を求められる。従わない場合は、ISPにタイ国内でのAIシステムの配信遮断を命じるよう裁判所に求められる。行政罰金は違反の性質に応じて100万〜500万バーツ（最大約15万米ドル）。損害には故意・過失を問わず連帯で責任を負い（厳格責任）、免責は不可抗力・被害者自身の行為や不作為・公的命令への服従に限られる。違反類型ごとの金額と条番号は未確認。",
+      "sources": [
+        "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/",
+        "https://www.hlc.com/en/publications/thailand-moves-towards-comprehensive-ai-regulation-with-new-draft-ai-act",
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/thailand-draft-ai-act--seven-key-implications"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。草案はMDES・ETDAが起草した。国家AI計画推進特別委員会が方針と高リスク指定を担い、分野ごとの規制当局が自分の分野を監督する分散型。現行ではPDPCが助言的なAI指針を出している。",
+      "detail": "草案の要旨第1章は、委員会を「国家AI計画推進特別委員会」と定義する。3.2は分野規制当局を主体とする分散型の監督（Decentralized Regulation）を採る。国内に拠点のない外国の提供者は国内の連絡担当者を置き、高リスクなど特定のサービスでは法定代理人が要る場合がある（3.2(5)）。委員会は、政府や重要インフラ向けのサービスを「契約規制AI事業」に指定して必須の契約条項を定められ、国にとって重要なAIにはタイ国内でのデータ処理を求められる（3.5）。行政機関がAIを公共サービスに使うときは倫理影響評価を行い、利用状況を登録する（3.3）。振興策として、サンドボックス、ビッグデータ研究所を通じたデータ共有、業界の自主規制を委員会が承認して法的な措置に格上げする仕組みがある（第2章）。施行は段階的で、製品投入に関する中核の措置は公布後すぐ、リスク管理・監督・重大事故の規定は公布から180日後。手続きは、意見募集の後に法制委員会事務局（Council of State）の審査、閣議、下院の順に進む予定で、政府は2026-09までに立法手続きに入る目標としていた。ETDAは2025年に前段階の「AI法の原則（草案）」でも意見を募っていた。",
+      "sources": [
+        "https://policywatch.thaipbs.or.th/article/government-364",
+        "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/",
+        "https://www.hlc.com/en/publications/thailand-moves-towards-comprehensive-ai-regulation-with-new-draft-ai-act",
+        "https://www.etda.or.th/th/pr-news/law_ai.aspx",
+        "https://www.tilleke.com/insights/thailand-issues-personal-data-protection-guidelines-for-ai-systems"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2025-06-05",
+        "event": "MDES・ETDAが「AI法の原則（草案）」の意見聴取を開始（高リスク利用の規律が中心）",
+        "source": "https://www.etda.or.th/th/pr-news/law_ai.aspx"
+      },
+      {
+        "date": "2026-07-02",
+        "event": "ETDAが改訂版のAI法草案（ร่างพระราชบัญญัติว่าด้วยปัญญาประดิษฐ์ พ.ศ. ....）を公表し、意見募集を開始",
+        "source": "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/"
+      },
+      {
+        "date": "2026-08-14",
+        "event": "AI法草案の意見募集の締切",
+        "source": "https://www.bakermckenzie.com/en/insight/publications/2026/07/thailand-draft-ai-act--seven-key-implications"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI横断法はなく、PDPCのAI指針も法的拘束力のない助言にとどまる。EUのような事業者義務は草案が成立するまで生じない",
+        "source": "https://www.tilleke.com/insights/thailand-issues-personal-data-protection-guidelines-for-ai-systems"
+      },
+      {
+        "topic": "生成物の開示の範囲（草案）",
+        "note": "利用者の開示義務は、国家安全・選挙・投資・食品や医薬品・なりすまし・違法行為など決められた話題に限られる。EU第50条4項はディープフェイク全般に開示を求める",
+        "source": "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・禁止用途・高リスク義務・表示義務・罰則は、どれも草案の段階で施行されていない",
+        "source": "https://policywatch.thaipbs.or.th/article/government-364"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "施行中の法令になく、法律事務所の解説で確認した範囲では草案にも汎用モデル・システミックリスク・計算量基準の規定はない",
+        "source": "https://www.bakermckenzie.com/en/insight/publications/2026/07/thailand-draft-ai-act--seven-key-implications"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "厳格な連帯責任（草案）",
+        "note": "AIによる損害に、故意・過失を問わない連帯責任を法律で負わせる。免責は不可抗力・被害者の行為・公的命令に限る。EU AI法本体には損害賠償責任の規定がない",
+        "source": "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/"
+      },
+      {
+        "topic": "契約規制AI事業と国内データ処理（草案）",
+        "note": "委員会が、政府・重要インフラ向けAIに必須の契約条項を課し、国にとって重要なAIにタイ国内でのデータ処理を求められる",
+        "source": "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/"
+      },
+      {
+        "topic": "プラットフォームの検知・ラベル表示義務（草案）",
+        "note": "AI法の中で、プラットフォームにAI生成物の検知、通報を受けて確認中のもののラベル表示、年次の運用概要の作成を課す",
+        "source": "https://policywatch.thaipbs.or.th/article/government-364"
+      },
+      {
+        "topic": "分散型監督と自主規制の法的格上げ（草案）",
+        "note": "分野ごとの規制当局が高リスク指定を委員会に提案する。業界の自主規制・ベストプラクティスを委員会が承認して法的な措置に格上げできる",
+        "source": "https://policywatch.thaipbs.or.th/article/government-364"
+      },
+      {
+        "topic": "裁判所命令によるISP遮断（草案）",
+        "note": "是正命令に従わない提供者のAIシステムについて、規制当局が裁判所を通じてISPに国内での遮断を命じさせられる",
+        "source": "https://www.tilleke.com/insights/thailand-releases-new-draft-artificial-intelligence-act/"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

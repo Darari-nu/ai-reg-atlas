@@ -1,0 +1,178 @@
+{
+  "jurisdiction": "my",
+  "regulation_name": "横断法なし（AIガバナンス法案（AI Governance Bill）を起草済み・2027年初頭に下院上程予定＋国家AIガバナンス・倫理ガイドライン（AIGE、任意））",
+  "status": "draft",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "現行の法定リスク分類はない。AIガバナンス法案の意見募集文書は、加害の意図の有無で分ける3段階（許容不能・高・低）を示している。",
+      "detail": "法案の条文は未公表のため、2026-07-10公表の意見募集文書（PCP）の項目名で示す。PCP「Risk Framework」は、死亡・身体傷害・連邦憲法に基づく基本的自由の不法な剥奪・成文法違反の4つを基準となる害とし、害を与える意図で開発・導入するAIを第1層（許容不能・全面禁止）、意図はないが害のリスクを生むAIを第2層（高リスク。リスク評価・文書化・内部統制・人間の監督・監視・低減策）、予見可能な重大な害がないAIを第3層（低リスク。原則への配慮と軽い対応）とする。リスクは固定のラベルではなく、発生可能性・深刻度と規模・継続期間と回復可能性で評価するとしている。対象はマレーシアで市場投入・供用されるAI、国内で設計・開発・利用されるAI、国内に拠点を置く導入者が使うAI（サーバーの所在地は問わない）。個人利用と、国防・安全保障だけに使うAIは対象外。現行のAIGE（2024年9月、MOSTI）は7原則を掲げる任意の指針で、リスク分類は持たない。",
+      "sources": [
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill",
+        "https://www.hlc.com/en/publications/malaysia-consults-on-ai-governance-bill",
+        "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Mulakan-Libat-Urus-Cadangan-Rang-Undang-Undang-Tadbir-Urus-Kecerdasan-Buatan-(AI)",
+        "https://www.malaysia.gov.my/en/my-initiative/perkhidmatan-digital-keseluruhan-kerajaan/tadbir-urus/national-guidelines-on-artificial-intelligence-governance-and-ethics-aige"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の禁止規定は施行されていない。法案のPCPは、害を与える意図で開発・導入するAIを「許容不能」として全面禁止する案を示す。",
+      "detail": "PCPの第1層（許容不能リスク）は、用途の類型ではなく「害を与える意図」で定義されている。EU第5条のような用途の列挙（社会的スコアリング・感情認識・遠隔生体識別など）は、公開された要約からは確認できない。現状では、AIで作った児童性的搾取物・なりすまし・同意のない性的コンテンツの拡散などは、2017年児童性犯罪法、2025年オンライン安全法（Act 866）、1998年通信マルチメディア法で取り締まるとデジタル相が国会で答弁している（2026-06-22）。詐欺・ディープフェイク・虚偽情報への対応には、刑法・2024年サイバーセキュリティ法も挙げている（2026-10-29答弁）。",
+      "sources": [
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill",
+        "https://www.thestar.com.my/news/nation/2026/06/22/proposed-ai-governance-bill-to-curb-deepfakes-and-synthetic-content-says-gobind",
+        "https://www.bernama.com/en/general/news.php?id=2627235"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AI（基盤モデル）への個別義務はない。法案のPCPの公開要約にも、汎用AIを独立した区分にする案は見当たらない。",
+      "detail": "PCPの規律対象は「AIシステム」で、単体・組込み・API連携・1つ以上のAIモデルで動くアプリケーションなどを広く含む。規律を受ける側は、能力・性能・制約を実質的に形づくる開発者（モデルを学習させる者、用途に合わせて調整する者、統合・改変する者を含む）と、システムを現実に動かす導入者の2つに分け、関与と支配の度合いに応じて責任を割り振る。汎用AI・システミックリスク・計算量基準のような区分は、法律事務所の要約（Baker McKenzie・HLC）には出てこない。デジタル相は2026-10-28の国会答弁で、自律型AIのリスク（指示に反する行動・停止の回避）に触れ、安全性評価の枠組みとしてMY-AISafe・AI倫理規範（AICE）・MY-AI Standardsを挙げた。",
+      "sources": [
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill",
+        "https://www.hlc.com/en/publications/malaysia-consults-on-ai-governance-bill",
+        "https://www.bernama.com/en/general/news.php?id=2626984"
+      ]
+    },
+    "transparency": {
+      "summary": "AI生成物の表示・AIとの対話の開示を義務付ける法令はない。法案のPCPは「透明性と説明可能性」を、開発者・導入者が配慮すべき5原則の1つとして示すにとどまる。",
+      "detail": "PCPの原則2（透明性と説明可能性）は、重大な影響を持つAIシステムについて、文脈・リスク・用途・関係者に応じた透明性と説明可能性を求める。開発者・導入者は5原則（人間の尊厳・透明性と説明可能性・説明責任・安全とセキュリティ・データガバナンス）に「相応の配慮（due regard）」を払う。デジタル省は2026-07-10の発表で、6月24日の大臣の国会発言として、法案はAIの出力を直接は規制せず、違法コンテンツは既存法で扱うと説明した。AI生成物のラベル表示は、通信相が2025-07-29にオンライン安全法（Act 866）を通じた義務化を検討していると答弁した。ただし2026年8月時点の地域比較（Bower Group Asia）では、マレーシアにAI生成物の表示・電子透かしを独立して義務付ける規定はないとされる。AIGE（任意）も透明性を7原則の1つに置く。",
+      "sources": [
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill",
+        "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Mulakan-Libat-Urus-Cadangan-Rang-Undang-Undang-Tadbir-Urus-Kecerdasan-Buatan-(AI)",
+        "https://www.bernama.com/en/news.php/?id=2450513",
+        "https://bowergroupasia.com/ai-generated-content-labeling-an-indo-pacific-overview/",
+        "https://www.malaysia.gov.my/en/my-initiative/perkhidmatan-digital-keseluruhan-kerajaan/tadbir-urus/national-guidelines-on-artificial-intelligence-governance-and-ethics-aige"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。法案の罰則案は、公開資料からは確認できない。",
+      "detail": "PCPの公開要約（Baker McKenzie・HLC）には、制裁金の額や刑事罰の案は出てこない。デジタル相は2026-09-10、法律を施行する前に、遵守を監視し調査・執行する機関と体制をつくる必要があると述べた（具体的な罰則には触れていない）。法案が成立するまでは、詐欺・ディープフェイク・コンテンツ操作・虚偽情報を、刑法・1998年通信マルチメディア法・2025年オンライン安全法・2024年サイバーセキュリティ法で扱うとしている（2026-10-29答弁）。",
+      "sources": [
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill",
+        "https://www.hlc.com/en/publications/malaysia-consults-on-ai-governance-bill",
+        "https://www.malaymail.com/news/malaysia/2026/09/10/digital-minister-says-malaysias-draft-ai-governance-bill-complete-hopes-to-table-it-by-q1-2027/234656",
+        "https://www.bernama.com/en/general/news.php?id=2627235"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の規制当局はまだない。デジタル省が法案を所管し、傘下の国家AI機関 AI Malaysia Berhad（2026-07-28に旧NAIOを引き継ぎ）が推進と調整を担う。法案では「中央AI当局」の新設を提案している。",
+      "detail": "PCPは中央AI当局（Central AI Authority）を設け、3つの機能を持たせるとする。AI安全（リスク枠組みの維持・評価の監督・試験支援・インシデント報告の仕組み）、調査・執行（事故時の技術的な事実調査）、AI推進（指針・研修・サンドボックスの運営や監督）の3つ。既存の分野別当局（Sectoral Lead）に権限を委ね、分野ごとの規律に落とし込む二層の体制も示している。開発者・導入者にはAIインシデント（ニアミスを含む）の報告義務を課す案。AI Malaysia Berhadは2026-07-28に発足し、NAIOを制度として引き継いだ（初代取締役会の発表は2026-09-11）。中央AI当局との関係は公開資料では未確認。現行のAIGEは科学技術革新省（MOSTI）が2024年9月に公表した。オンライン安全法（Act 866、2026-01-01施行）は通信マルチメディア委員会（MCMC）が執行する。",
+      "sources": [
+        "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill",
+        "https://www.hlc.com/en/publications/malaysia-consults-on-ai-governance-bill",
+        "https://theedgemalaysia.com/node/812301",
+        "https://ai.gov.my/media-centre/news/",
+        "https://ai.gov.my/faq/ai-governance-policy/",
+        "https://www.malaysia.gov.my/en/my-initiative/perkhidmatan-digital-keseluruhan-kerajaan/tadbir-urus/national-guidelines-on-artificial-intelligence-governance-and-ethics-aige",
+        "https://www.mcmc.gov.my/en/legal/acts/communications-and-multimedia-amendment-act-20-1"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2025-07-29",
+        "event": "通信相が国会で、オンライン安全法（Act 866）を通じたAI生成物のラベル表示義務化を検討中と答弁",
+        "source": "https://www.bernama.com/en/news.php/?id=2450513"
+      },
+      {
+        "date": "2026-01-01",
+        "event": "オンライン安全法 2025（Act 866）が施行（MCMC所管。2025-05-06裁可、05-22官報掲載）",
+        "source": "https://www.mcmc.gov.my/en/legal/acts/communications-and-multimedia-amendment-act-20-1"
+      },
+      {
+        "date": "2026-03-16",
+        "event": "デジタル省がMY-AI Standards（信頼できるAI開発とディープフェイク対策の標準）の発足を発表",
+        "source": "https://www.digital.gov.my/en-GB/siaran/Standard-My-AI-Menjadi-Teras-Pembangunan-AI-Yang-Dipercayai-Dan-Menangani-Risiko-'Deepfake'"
+      },
+      {
+        "date": "2026-06-22",
+        "event": "デジタル相が国会で、AIガバナンス法案はAIのライフサイクル全体を対象にし、既存法に重ねる予防の層になると答弁",
+        "source": "https://www.thestar.com.my/news/nation/2026/06/22/proposed-ai-governance-bill-to-curb-deepfakes-and-synthetic-content-says-gobind"
+      },
+      {
+        "date": "2026-07-10",
+        "event": "NAIOがAIガバナンス法案の意見募集文書（PCP）を公表し、UPCポータルで意見募集を開始（期間は08-01まで）",
+        "source": "https://upc.mpc.gov.my/view-consultation/264"
+      },
+      {
+        "date": "2026-07-28",
+        "event": "国家AI機関 AI Malaysia Berhad が発足し、NAIOを引き継ぐ（デジタル省傘下）",
+        "source": "https://theedgemalaysia.com/node/812301"
+      },
+      {
+        "date": "2026-09-10",
+        "event": "デジタル相が、AIガバナンス法案の草案は完成し閣議に提出すると表明（「今四半期か2027年第1四半期」の上程を目指すと発言）",
+        "source": "https://www.malaymail.com/news/malaysia/2026/09/10/digital-minister-says-malaysias-draft-ai-governance-bill-complete-hopes-to-table-it-by-q1-2027/234656"
+      },
+      {
+        "date": "2026-10-29",
+        "event": "デジタル相が国会で、法案は完成しており近く閣議に提出し、2027年初頭に下院へ上程する予定と答弁",
+        "source": "https://www.bernama.com/en/general/news.php?id=2627235"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "AI固有の現行ルールは任意のAIGE（7原則）だけで、事業者への法的義務はない。拘束力のある法案はまだ国会に出ていない",
+        "source": "https://www.malaysia.gov.my/en/my-initiative/perkhidmatan-digital-keseluruhan-kerajaan/tadbir-urus/national-guidelines-on-artificial-intelligence-governance-and-ethics-aige"
+      },
+      {
+        "topic": "AI出力の規制",
+        "note": "法案はAIの出力を直接は規制せず、違法コンテンツは既存法（刑法・通信マルチメディア法・オンライン安全法など）で扱う方針。EUは第50条で生成物の表示を直接義務付ける",
+        "source": "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Mulakan-Libat-Urus-Cadangan-Rang-Undang-Undang-Tadbir-Urus-Kecerdasan-Buatan-(AI)"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断的AI法",
+        "note": "専用のAI法はない（AI Malaysia のFAQ）。AIガバナンス法案は2027年初頭の上程予定",
+        "source": "https://ai.gov.my/faq/ai-governance-policy/"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用AI・システミックリスク・計算量基準の規定はない。法案のPCPの公開要約にも独立した区分は見当たらない",
+        "source": "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill"
+      },
+      {
+        "topic": "AI生成物の表示義務",
+        "note": "AI生成物の表示・電子透かしを独立して義務付ける規定はない（2025年にオンライン安全法を通じた義務化を検討と表明したのみ）",
+        "source": "https://bowergroupasia.com/ai-generated-content-labeling-an-indo-pacific-overview/"
+      },
+      {
+        "topic": "制裁金額の法定",
+        "note": "AI固有の罰則がなく、法案の罰則案も公開資料では確認できない",
+        "source": "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "加害の意図で分けるリスク区分（法案の提案）",
+        "note": "害を与える意図があれば第1層（許容不能・禁止）、意図はないがリスクがあれば第2層（高リスク）とする3段階案。EUのような用途列挙（第5条・附属書III）ではなく意図と害で区分する",
+        "source": "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill"
+      },
+      {
+        "topic": "中央AI当局と分野別当局の二層体制（法案の提案）",
+        "note": "中央AI当局がAI安全・調査執行・AI推進の3機能で基準となる枠組みを運用し、分野別当局（Sectoral Lead）に権限を委ねて分野ごとの規律に落とし込む",
+        "source": "https://www.hlc.com/en/publications/malaysia-consults-on-ai-governance-bill"
+      },
+      {
+        "topic": "ニアミスを含むインシデント報告（法案の提案）",
+        "note": "開発者・導入者に、害が出た事故だけでなくニアミスも含むAIインシデントの報告を求める案。EUの重大インシデント報告は主に高リスクAIの提供者が対象（第73条）",
+        "source": "https://www.bakermckenzie.com/en/insight/publications/2026/07/malaysia-public-consultation-on-the-ai-governance-bill"
+      },
+      {
+        "topic": "既存法による取締りと法案によるシステム統治の二層",
+        "note": "違法な生成物は既存法で取り締まり、法案は設計・データ・学習・監督などシステムのライフサイクルの予防と説明責任を担うと大臣が説明",
+        "source": "https://www.thestar.com.my/news/nation/2026/06/22/proposed-ai-governance-bill-to-curb-deepfakes-and-synthetic-content-says-gobind"
+      },
+      {
+        "topic": "会社形態の国家AI機関",
+        "note": "デジタル省傘下の AI Malaysia Berhad（会社形態）が旧NAIOを引き継ぎ、国のAI施策を推進・調整する",
+        "source": "https://theedgemalaysia.com/node/812301"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

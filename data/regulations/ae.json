@@ -1,0 +1,171 @@
+{
+  "jurisdiction": "ae",
+  "regulation_name": "横断的なAI法なし（AI開発・利用憲章（非拘束）＋既存法〔個人データ保護法・サイバー犯罪法・メディア法・子どものデジタル安全法〕＋連邦AI・データ庁（2026-06-14設置承認））",
+  "status": "proposed",
+  "approach": "sectoral",
+  "axes": {
+    "risk_classification": {
+      "summary": "法定のリスク分類はない。非拘束の「AI開発・利用憲章」が安全・アルゴリズムの偏り・人間の監督などの原則を掲げる段階。",
+      "detail": "連邦レベルにAIシステムの開発・導入・利用を規律する単独のAI法はなく、AIはサイバー犯罪法・刑法・民事取引法・個人データ保護法などの既存法の中で扱われる（Al Tamimi、2026-09時点）。EU AI法のような包括的な水平法は無く、AI開発・利用憲章は非拘束の文書とされる（Legal 500、2026-10時点）。憲章は12の原則を置き、原則2「安全」でリスクのあるシステムの修正・撤去を促し、原則3でアルゴリズムの偏り、原則6で人間による監督を掲げるが、リスクの段階分けや分類の手続きはない。分野別には内閣が2026-05-18に保健分野のデジタル医療・AI推進の国家政策を承認した（政策文書で、事業者義務は未確認）。",
+      "sources": [
+        "https://www.tamimi.com/law_update_articles/uae-establishes-new-federal-authority-for-ai-and-data-a-significant-step-in-the-evolution-of-digital-regulation/",
+        "https://www.legal500.com/intelligence/united-arab-emirates/strategy/the-uae-artificial-intelligence-and-data-authority-what-it-means-for-ai-data-and-digital-governance",
+        "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/policies/Ai/The-UAE-Charter-for-the-Development-and-Use-of-Artificial-Intelligence",
+        "https://mediaoffice.ae/en/news/2026/may/18-05/mohammed-bin-rashid-chairs-uae-cabinet-meeting"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "EU第5条のような用途別の禁止規定はない。メディア評議会が、国家の象徴や公人をAIで描くことは事前の公式承認がなければメディアの内容基準に違反すると表明している。",
+      "detail": "UAEメディア評議会は2025-09-25、AIなどで国家の象徴や公人を事前の公式承認なく描くことは内容基準への明確な違反であり、AIによる偽情報の拡散・憎悪の扇動・名誉毀損は「メディア違反規則」の対象として罰金・行政処分になり得ると警告した。根拠はメディア規制に関する連邦政令法2023年第55号とされる（Lexis Middle East）。ディープフェイクを扱う単独の法律はなく、偽情報・名誉毀損・プライバシー侵害などとして噂及びサイバー犯罪対策に関する連邦政令法2021年第34号や刑法で処罰される（Lexology掲載の法律事務所記事。該当条番号は出典で割れる）。社会的スコアリング・感情認識・遠隔生体識別などの用途を名指しで禁じる規定は確認できなかった。",
+      "sources": [
+        "https://www.thenationalnews.com/news/uae/2025/09/25/uae-warns-against-use-of-ai-to-depict-public-figures-for-online-misinformation/",
+        "https://www.lexismiddleeast.com/news/2025-09-26_36/en",
+        "https://www.lexology.com/library/detail.aspx?g=a2f64e14-52be-45b6-aa0e-34f8e89d6c98"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AI（基盤モデル）・生成AIの提供者に固有の義務はない。",
+      "detail": "単独のAI法がなく（Al Tamimi・Legal 500）、汎用モデル・システミックリスク・学習データの開示などを定める規定は確認できなかった。2026-05-18に内閣が承認した「エージェントAI」の連邦枠組みは、連邦の行政サービス・業務の少なくとも50%をエージェントAIの仕組みに移すための政府内の実施体制（各省に大臣を長とするチーム）で、民間の提供者に義務を課すものではない。2026-06-14に設置が承認されたAI・データ庁は、データとAIの管理の基準・指針づくりを任務に含むが、指針の形式や民間への拘束力は公表されていない（Legal 500）。",
+      "sources": [
+        "https://www.tamimi.com/law_update_articles/uae-establishes-new-federal-authority-for-ai-and-data-a-significant-step-in-the-evolution-of-digital-regulation/",
+        "https://www.legal500.com/intelligence/united-arab-emirates/strategy/the-uae-artificial-intelligence-and-data-authority-what-it-means-for-ai-data-and-digital-governance",
+        "https://mediaoffice.ae/en/news/2026/may/18-05/mohammed-bin-rashid-chairs-uae-cabinet-meeting",
+        "https://uaecabinet.ae/en/news/mohammed-bin-rashid-approves-establishing-artificial-intelligence-and-data-authority"
+      ]
+    },
+    "transparency": {
+      "summary": "連邦法上、AI生成物への一般的な表示義務は確認できない。憲章が透明性を原則に掲げ、ドバイは人とAIの関与度を示す「Human–Machine Collaboration（HMC）アイコン」を2025-07に導入した。",
+      "detail": "AI開発・利用憲章は原則5「透明性」で、AIの仕組みと判断の理解を促すとするが拘束力はない（Legal 500）。ドバイでは2025-07-16、ハムダン皇太子がドバイ未来財団の開発したHMCアイコン（主アイコン5種と、制作のどの段階で機械が関わったかを示す機能アイコン9種）の導入を承認し、ドバイの政府機関に研究・知識系の成果物での採用を促した（義務の範囲は報道・法律事務所で表現が割れる）。子どものデジタル安全法（連邦政令法2025年第26号）は、プラットフォームにAI・機械学習を使った有害コンテンツの能動的な検知・削除・報告を求める（表示義務ではなく検知義務）。",
+      "sources": [
+        "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/policies/Ai/The-UAE-Charter-for-the-Development-and-Use-of-Artificial-Intelligence",
+        "https://www.legal500.com/intelligence/united-arab-emirates/strategy/the-uae-artificial-intelligence-and-data-authority-what-it-means-for-ai-data-and-digital-governance",
+        "https://www.khaleejtimes.com/uae/dubai-launches-new-system-to-clearly-classify-content-produced-by-humans-ai",
+        "https://www.nortonrosefulbright.com/en/knowledge/publications/2f90d4d8/an-analysis-of-dubais-new-human-machine-collaboration-classification-system",
+        "https://www.zawya.com/en/press-release/government-news/dubai-launches-worlds-first-human-machine-icon-classification-system-n0nyp7qm",
+        "https://u.ae/en/information-and-services/social-affairs/Priority-groups/children/Childrens-digital-safety",
+        "https://www.hoganlovells.com/en/publications/uae-introduces-new-child-digital-safety-law-what-online-platforms-need-to-know"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。AIの悪用は既存のサイバー犯罪法・刑法・メディア違反規則の罰則で処罰される。",
+      "detail": "AIを使った偽情報・名誉毀損などは、メディア評議会によればメディア違反規則（内閣決定2025年第42号とされる）の罰金・行政処分の対象（The National、Clyde & Co）。ディープフェイクによる詐欺・名誉毀損・プライバシー侵害は連邦政令法2021年第34号（サイバー犯罪法）等の拘禁刑・罰金の対象だが、条番号と罰金額は出典で割れるため確定値として扱わない。個人データ保護法（連邦政令法2021年第45号、2022-01-02施行）は施行規則が未発出で、執行体制は不透明なまま（Al Tamimi・Legal 500）。EUのような売上連動の上限額はない。",
+      "sources": [
+        "https://www.thenationalnews.com/news/uae/2025/09/25/uae-warns-against-use-of-ai-to-depict-public-figures-for-online-misinformation/",
+        "https://www.clydeco.com/en/insights/2026/01/uae-issues-landmark-child-digital-safety-law",
+        "https://www.lexology.com/library/detail.aspx?g=a2f64e14-52be-45b6-aa0e-34f8e89d6c98",
+        "https://www.tamimi.com/law_update_articles/uae-establishes-new-federal-authority-for-ai-and-data-a-significant-step-in-the-evolution-of-digital-regulation/",
+        "https://www.legal500.com/intelligence/united-arab-emirates/strategy/the-uae-artificial-intelligence-and-data-authority-what-it-means-for-ai-data-and-digital-governance"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "2026-06-14に、データ・AI・デジタル政府を一元的に担う「AI・データ庁」の設置が承認された。内閣直属で、AI担当国務大臣オマル・スルタン・アル・オラマ氏が長。",
+      "detail": "同庁は、AI・デジタル経済・リモートワーク応用局（AI Office）、電気通信・デジタル政府規制庁（TDRA）のデジタル政府部門、UAEデータ局の3つの機能を統合し、国の政策・法令・戦略の提案、国家AI戦略の策定と主導、データとAIの管理の基準・指針の策定、連邦機関の遵守確保などを担う（内閣発表）。ただし設置の根拠となる法的手段、民間への直接の執行権限の有無、首長国・フリーゾーンの規制当局との関係は公式に示されていない（Legal 500）。TDRAは通信規制当局として存続する（Morgan Lewis）。分野ごとには、メディアはUAEメディア評議会、子どものデジタル安全は家族相が議長の子どものデジタル安全評議会（Clyde & Co）、フリーゾーンのDIFC・ADGMはそれぞれのデータ保護コミッショナーが独自に執行する（Morgan Lewis）。DIFCは2023年にデータ保護規則を改正し、自律・半自律システムによる個人データ処理の規定（Regulation 10）を置いた（Baker Botts）。",
+      "sources": [
+        "https://uaecabinet.ae/en/news/mohammed-bin-rashid-approves-establishing-artificial-intelligence-and-data-authority",
+        "https://www.legal500.com/intelligence/united-arab-emirates/strategy/the-uae-artificial-intelligence-and-data-authority-what-it-means-for-ai-data-and-digital-governance",
+        "https://www.morganlewis.com/pubs/2026/06/uae-establishes-federal-authority-for-artificial-intelligence-and-data",
+        "https://www.clydeco.com/en/insights/2026/01/uae-issues-landmark-child-digital-safety-law",
+        "https://www.bakerbotts.com/thought-leadership/publications/2023/october/difc-addresses-autonomous-and-semi-autonomous-data-processing-through-new-amendments"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2022-01-02",
+        "event": "個人データ保護法（連邦政令法2021年第45号）施行（施行規則は2026-10時点で未発出）",
+        "source": "https://www.tamimi.com/law_update_articles/uae-establishes-new-federal-authority-for-ai-and-data-a-significant-step-in-the-evolution-of-digital-regulation/"
+      },
+      {
+        "date": "2025-07-16",
+        "event": "ドバイが人とAIの関与度を示すHMCアイコン（主5種・機能9種）の導入を承認",
+        "source": "https://www.khaleejtimes.com/uae/dubai-launches-new-system-to-clearly-classify-content-produced-by-humans-ai"
+      },
+      {
+        "date": "2025-09-25",
+        "event": "UAEメディア評議会が、国家の象徴・公人を事前承認なくAIで描くことはメディア内容基準違反と警告",
+        "source": "https://www.thenationalnews.com/news/uae/2025/09/25/uae-warns-against-use-of-ai-to-depict-public-figures-for-online-misinformation/"
+      },
+      {
+        "date": "2025-10-01",
+        "event": "子どものデジタル安全法（連邦政令法2025年第26号）発出（AIによる有害コンテンツの能動検知をプラットフォームに求める）",
+        "source": "https://bsalaw.com/insight/uae-federal-decree-law-no-26-of-2025-on-child-digital-safety-liability-for-digital-platforms-and-internet-service-providers/"
+      },
+      {
+        "date": "2026-01-01",
+        "event": "子どものデジタル安全法が施行（1年の猶予期間つき）",
+        "source": "https://www.bakermckenzie.com/en/insight/publications/2026/01/uae-issues-new-child-digital-safety-law"
+      },
+      {
+        "date": "2026-05-18",
+        "event": "内閣がエージェントAI計画の連邦実施枠組み（連邦サービス・業務の50%以上をエージェントAI化）と保健分野AI推進の国家政策を承認",
+        "source": "https://mediaoffice.ae/en/news/2026/may/18-05/mohammed-bin-rashid-chairs-uae-cabinet-meeting"
+      },
+      {
+        "date": "2026-06-14",
+        "event": "AI・データ庁の設置を承認（AI Office・TDRAデジタル政府部門・UAEデータ局を統合、内閣直属）",
+        "source": "https://uaecabinet.ae/en/news/mohammed-bin-rashid-approves-establishing-artificial-intelligence-and-data-authority"
+      },
+      {
+        "date": "2027-01-01",
+        "event": "子どものデジタル安全法の猶予期間が終わり全面執行（Baker McKenzie は「2027年1月」とする。日付は要確認）",
+        "source": "https://www.bakermckenzie.com/en/insight/publications/2026/01/uae-issues-new-child-digital-safety-law"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [
+      {
+        "topic": "公人・国家の象徴のAI描写",
+        "note": "メディア評議会は、国家の象徴や公人をAIで描くには事前の公式承認が要り、無承認は内容基準違反とする。EUはディープフェイクの開示（第50条4項）を求めるが、事前承認制ではない",
+        "source": "https://www.thenationalnews.com/news/uae/2025/09/25/uae-warns-against-use-of-ai-to-depict-public-figures-for-online-misinformation/"
+      }
+    ],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "横断的なAI法はなく、AI開発・利用憲章は非拘束。拘束力のある規律は既存法（サイバー犯罪法・メディア法・子どものデジタル安全法等）経由に限られる",
+        "source": "https://www.legal500.com/intelligence/united-arab-emirates/strategy/the-uae-artificial-intelligence-and-data-authority-what-it-means-for-ai-data-and-digital-governance"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "リスク分類・用途別禁止・GPAI義務",
+        "note": "リスクの段階分け、EU第5条型の用途禁止、汎用AIモデル提供者の義務、AI固有の罰則のいずれも法令にない",
+        "source": "https://www.tamimi.com/law_update_articles/uae-establishes-new-federal-authority-for-ai-and-data-a-significant-step-in-the-evolution-of-digital-regulation/"
+      },
+      {
+        "topic": "民間向けの執行権限",
+        "note": "AI・データ庁の公表された任務は主に連邦政府向けで、民間への直接の監督・執行権限は示されていない",
+        "source": "https://www.legal500.com/intelligence/united-arab-emirates/strategy/the-uae-artificial-intelligence-and-data-authority-what-it-means-for-ai-data-and-digital-governance"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "AI・データ・デジタル政府の単一連邦機関",
+        "note": "AI担当国務大臣が長を務め、内閣直属でAI・データ・デジタル政府を一元的に所管する庁を設置（2026-06-14承認）",
+        "source": "https://uaecabinet.ae/en/news/mohammed-bin-rashid-approves-establishing-artificial-intelligence-and-data-authority"
+      },
+      {
+        "topic": "政府業務のエージェントAI化",
+        "note": "内閣が連邦サービス・業務の少なくとも50%をエージェントAIへ移す実施枠組みを承認。規制より政府自身の導入を軸にする",
+        "source": "https://mediaoffice.ae/en/news/2026/may/18-05/mohammed-bin-rashid-chairs-uae-cabinet-meeting"
+      },
+      {
+        "topic": "人とAIの関与度アイコン（ドバイ）",
+        "note": "「AI生成か否か」の二択でなく、人と機械の関与の度合い（5段階）と工程（9種）をアイコンで示す分類をドバイが導入",
+        "source": "https://www.zawya.com/en/press-release/government-news/dubai-launches-worlds-first-human-machine-icon-classification-system-n0nyp7qm"
+      },
+      {
+        "topic": "AIによる有害コンテンツ検知の義務",
+        "note": "子どものデジタル安全法が、プラットフォームにAI・機械学習を使った有害コンテンツの能動検知を求める（AIを規制対象でなく義務の手段として定める）",
+        "source": "https://www.hoganlovells.com/en/publications/uae-introduces-new-child-digital-safety-law-what-online-platforms-need-to-know"
+      },
+      {
+        "topic": "フリーゾーンの独自規律",
+        "note": "DIFCは独自のデータ保護規則で自律・半自律システムによる個人データ処理を規律し、連邦法と別に執行する",
+        "source": "https://www.bakerbotts.com/thought-leadership/publications/2023/october/difc-addresses-autonomous-and-semi-autonomous-data-processing-through-new-amendments"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

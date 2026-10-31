@@ -1,0 +1,160 @@
+{
+  "jurisdiction": "id",
+  "regulation_name": "横断法なし（通信情報大臣通達 SE 9/2023 のAI倫理指針。AI倫理と国家AIロードマップ2026–2029の大統領令案2本が署名待ち）",
+  "status": "draft",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "法定のリスク分類はまだない。署名待ちのAI倫理大統領令案（2026-01-27付の草案）は、許容不能・高・低の3区分を置く。",
+      "detail": "現行の通信情報大臣通達 SE 9/2023（AI倫理、2023-12-19制定）は、AIを使ったプログラミング事業（KBLI 62015）の事業者と電子システム運営者に向けた非拘束の倫理指針で、リスク分類はない。草案（法律事務所による草案本文の解説で確認）は第6条でリスクを許容不能・高・低の3区分とし、第7条2項で、特定個人データ（健康・生体・遺伝・犯罪歴・子ども・個人の金融データ等。個人データ保護法 No.27/2022 の区分とほぼ同じ）を使うAIと、人権・安全・必須の公共サービス・雇用・保健・教育・法執行・金融アクセス等に重大な影響を与え得るAIを高リスクとする。第7条3項の低リスクの例は、一般情報を答える公共案内チャットボットやEコマースの商品推薦。第9条は省庁・機関・事業者に倫理の実施状況の監視・評価を求め、手段は自己評価・事案報告・分野別報告・統合監視システム。国防・安全保障の戦略的事項と非商業の研究開発は監視・評価の対象外（第10条）、省庁等は施行から2年以内に実施を準備する（第11条1項）。Komdigi の幹部は、新たな許認可は設けず自己評価だけになると説明し（2026-10-30）、ChatGPTのような利用は軽いリスク区分、保健・金融は監督を厚くすると述べている（2026-09-03）。",
+      "sources": [
+        "https://jdih.kominfo.go.id/produk_hukum/view/id/883/t/surat+edaran+menteri+komunikasi+dan+informatika+nomor+9+tahun+2023",
+        "https://www.mondaq.com/new-technology/1795604/indonesian-ethics-on-artificial-intelligence--presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026",
+        "https://www.cnbcindonesia.com/tech/20261030162941-37-781009/ri-atur-ai-sesuai-risiko-komdigi-beberkan-isi-regulasinya",
+        "https://www.liputan6.com/tekno/read/8284183/perpres-etik-ai-ditargetkan-terbit-tahun-ini-bagaimana-dengan-roadmap-ai"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の禁止規定はない。草案は「許容不能リスク」の例として、法的根拠のない公共空間でのリアルタイム顔認識による監視と、公的な社会的スコアリングを附属書に挙げる。",
+      "detail": "草案第7条1項は、利用者の安全と人権を脅かすAI利用を許容不能リスクとする。附属書は例として、法的根拠なしに公共空間で人の動きを監視するリアルタイム顔認識と、特定の個人データを組み合わせてサービスや施設を使えるかを決める公的な社会的スコアリングを挙げる（草案本文の解説で確認。限定列挙か例示かは不明）。Komdigi の AI・新技術エコシステム局長は2026-10-30に、安全や市民の権利を害するAIは禁止されると述べ、法的根拠のない公共空間での大規模な顔認識監視を例に挙げた。草案は罰則を置かない方針なので、違反したときの扱いは未確認。EU第5条の操作的手法・脆弱性の悪用・犯罪リスク予測・職場や教育での感情認識・顔画像の無差別収集に当たる類型は、確認できた草案解説には出てこない。",
+      "sources": [
+        "https://www.mondaq.com/new-technology/1795604/indonesian-ethics-on-artificial-intelligence--presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026",
+        "https://www.cnbcindonesia.com/tech/20261030162941-37-781009/ri-atur-ai-sesuai-risiko-komdigi-beberkan-isi-regulasinya"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AI・基盤モデルに固有の義務は、現行の通達にも、確認できた範囲の草案にもない。",
+      "detail": "SE 9/2023 は事業者と電子システム運営者に倫理価値を守るよう求める一般的な通達で、モデルの種類による区別はない。AI倫理大統領令案の名宛人は、分野の事業者・データ提供者・AI開発者・AIシステム提供者・AIシステム運営者（まとめて「AI事業者」）と政府・利用者。草案本文の解説で確認した範囲では、汎用AIモデル・システミックリスク・計算量基準の規定はない。Komdigi のデジタルエコシステム総局長は2026-09-03、ChatGPTのような利用は軽いリスク区分に入るが、利用者は個人データを入力しないよう求められると述べた。生成AIへの規律は、生成物のラベル表示（透明性の軸）と各省庁の分野別規則に委ねられる見込み。",
+      "sources": [
+        "https://jdih.kominfo.go.id/produk_hukum/view/id/883/t/surat+edaran+menteri+komunikasi+dan+informatika+nomor+9+tahun+2023",
+        "https://www.mondaq.com/new-technology/1795604/indonesian-ethics-on-artificial-intelligence--presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026",
+        "https://www.liputan6.com/tekno/read/8284183/perpres-etik-ai-ditargetkan-terbit-tahun-ini-bagaimana-dengan-roadmap-ai"
+      ]
+    },
+    "transparency": {
+      "summary": "現行は SE 9/2023 が透明性を倫理価値の一つに挙げるだけで、拘束力はない。草案にはAI生成物のラベル規定があり、大臣は署名後の最初の大臣規則でプラットフォームにラベルか透かしを義務付けると表明している。",
+      "detail": "SE 9/2023 は、包摂性・人間性・プライバシーと個人データの安全・アクセシビリティ・透明性・信頼性と説明責任・個人データ保護・持続可能な開発・知的財産保護を倫理価値として示す非拘束の指針。メウティア通信デジタル大臣は2026-01-26の国会第1委員会で、大統領令の署名後に各省庁が所管分野のAI規則を作るとし、最初に出す大臣規則はデジタルプラットフォームにAI生成コンテンツのラベルか透かしを義務付けるものになると述べた。Komdigi 局長は2026-10-30、AI倫理大統領令にAI生成物へのラベル規定が入ると説明した。草案の倫理原則には、データの出所・偏りの可能性・報告の仕組みを公開する透明性と説明責任が含まれる（会計事務所による草案解説）。ラベルの対象・方式（機械可読か等）・義務を負う主体は条文で未確認。",
+      "sources": [
+        "https://www.mondaq.com/new-technology/1813656/is-ai-regulated-in-indonesia-understanding-the-current-legal-framework",
+        "https://www.cnnindonesia.com/teknologi/20260126203143-185-1321329/menkomdigi-sebut-perpres-ai-segera-disahkan-presiden-awal-tahun-ini",
+        "https://indonesiabusinesspost.com/5992/cyber-and-espionage/indonesia-prioritizes-ai-regulation-in-2026-says-communications-minister",
+        "https://www.cnbcindonesia.com/tech/20261030162941-37-781009/ri-atur-ai-sesuai-risiko-komdigi-beberkan-isi-regulasinya",
+        "https://www.crowe.com/id/news/tata-kelola-berbasis-risiko-dalam-rancangan-perpres-etika-ai"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。大統領令2本も制裁を置かない方針（制裁は法律でしか科せないため）で、罰則は将来のAI法と既存の分野別法令に委ねられる。",
+      "detail": "政府は、大統領令には罰則を入れず、制裁を科せるのは法律だけだと説明している（2025年の報道）。Komdigi のデジタルエコシステム総局長も2026-09-03、2本の大統領令は全分野向けの指針で、産業向けの特別な制裁は置かないと述べた。現状で制裁を科せるのは各分野の監督当局で、通常は警告書から始め、是正されなければ当局の裁量で重い処分に進む（法律事務所の解説）。ネザル通信デジタル副大臣は2026-07に、大統領令をAIガバナンスの当面の枠組みとし、その後に個人データ保護法・電子情報取引法・計画中のサイバーセキュリティ法と統合した包括的なAI法を起草すると表明した（AI法の時期・内容は未定）。",
+      "sources": [
+        "https://asianews.network/ai-rules-pushed-to-2026-as-indonesian-government-charts-next-move/",
+        "https://uzone.id/2-perpres-ai-ditargetkan-terbit-2026-atur-data-retina-hingga-watermark",
+        "https://www.mondaq.com/new-technology/1813656/is-ai-regulated-in-indonesia-understanding-the-current-legal-framework",
+        "https://www.mlex.com/mlex/artificial-intelligence/articles/2506990"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。通信デジタル省（Komdigi）が大統領令案を主導し、具体的な規律は各省庁と分野別の規制当局（金融は金融サービス庁 OJK）に委ねる設計。",
+      "detail": "Komdigi が主導官庁として、国家官房（Setneg）・法務省・政治治安調整府などと2026-04-27と05-05に省庁間協議を行い、2本の大統領令案の中身を合意して大統領への提出段階に進めた。草案は、省庁・機関・事業者による倫理の実施状況の監視・評価（第9条）と、通信情報担当省が調整役となる国家AI倫理フォーラムの設置（第13条）を定める。大臣は、署名後に各省庁が所管分野のAI規則を作ると説明している。金融では OJK が、フィンテック業界団体と共同で「責任ある信頼できるAIの行動規範ガイド」（2023-11-24）を、銀行向けに「インドネシア銀行業AIガバナンス」（2025-04-29、SP 67/GKPB/OJK/IV/2025）を公表済み（いずれも指針）。",
+      "sources": [
+        "https://jdih.komdigi.go.id/berita/view/116",
+        "https://www.mondaq.com/new-technology/1795604/indonesian-ethics-on-artificial-intelligence--presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026",
+        "https://www.cnnindonesia.com/teknologi/20260126203143-185-1321329/menkomdigi-sebut-perpres-ai-segera-disahkan-presiden-awal-tahun-ini",
+        "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-Bersama-Asosiasi-Fintech-Luncurkan-Panduan-Kode-Etik-Kecerdasan-Buatan-(Artificial-Intelligence)-di-Industri-Teknologi.aspx",
+        "https://www.ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Documents/Pages/Peluncuran-Tata-Kelola-Kecerdasan-Artifisial-Perbankan-Indonesia/SP%2067%20Peluncuran%20Tata%20Kelola%20Kecerdasan%20Artifisial%20Perbankan%20Indonesia.pdf"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2023-11-24",
+        "event": "OJK とフィンテック業界4団体が「フィンテック業界における責任ある信頼できるAIの行動規範ガイド」を公表",
+        "source": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-Bersama-Asosiasi-Fintech-Luncurkan-Panduan-Kode-Etik-Kecerdasan-Buatan-(Artificial-Intelligence)-di-Industri-Teknologi.aspx"
+      },
+      {
+        "date": "2023-12-19",
+        "event": "通信情報大臣通達 SE 9/2023（AI倫理）制定",
+        "source": "https://jdih.kominfo.go.id/produk_hukum/view/id/883/t/surat+edaran+menteri+komunikasi+dan+informatika+nomor+9+tahun+2023"
+      },
+      {
+        "date": "2025-04-29",
+        "event": "OJK が「インドネシア銀行業AIガバナンス」を公表",
+        "source": "https://www.ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Documents/Pages/Peluncuran-Tata-Kelola-Kecerdasan-Artifisial-Perbankan-Indonesia/SP%2067%20Peluncuran%20Tata%20Kelola%20Kecerdasan%20Artifisial%20Perbankan%20Indonesia.pdf"
+      },
+      {
+        "date": "2025-12-22",
+        "event": "大統領令制定計画（大統領決定 Keppres 38/2025）にAI倫理と国家AIロードマップの大統領令案2本が入る",
+        "source": "https://www.kompas.id/artikel/program-perpres-2026-ditetapkan-dua-rancangan-atur-etika-dan-peta-jalan-ai-nasional"
+      },
+      {
+        "date": "2026-01-27",
+        "event": "AI倫理大統領令案（この日付の草案。3区分のリスク分類・自己評価・国家AI倫理フォーラム）",
+        "source": "https://www.mondaq.com/new-technology/1795604/indonesian-ethics-on-artificial-intelligence--presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026"
+      },
+      {
+        "date": "2026-02-11",
+        "event": "国家AIロードマップ2026–2029 大統領令案の省庁間委員会（30超の省庁・機関）全体会合",
+        "source": "https://jdih.komdigi.go.id/berita/view/113"
+      },
+      {
+        "date": "2026-05-05",
+        "event": "AI倫理・国家AIロードマップの大統領令案2本の省庁間協議が終わり、大統領への提出段階へ",
+        "source": "https://jdih.komdigi.go.id/berita/view/116"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "横断的なAI規律は非拘束の通達（SE 9/2023）と業界指針だけ。大統領令2本は2026-10-30時点でも署名手続き中",
+        "source": "https://www.cnbcindonesia.com/tech/20261030162941-37-781009/ri-atur-ai-sesuai-risiko-komdigi-beberkan-isi-regulasinya"
+      },
+      {
+        "topic": "高リスクAIの手続き（草案）",
+        "note": "新たな許認可を設けず、事業者の自己評価と事案・分野別報告が中心（草案第9条、Komdigi説明）。EUは高リスクに適合性評価・技術文書・登録などを求める（第16・43・49条）",
+        "source": "https://www.cnbcindonesia.com/tech/20261030162941-37-781009/ri-atur-ai-sesuai-risiko-komdigi-beberkan-isi-regulasinya"
+      },
+      {
+        "topic": "監督体制",
+        "note": "Komdigi の調整と各省庁・分野別当局（金融は OJK）の派生規則に委ねる。EUの市場監視当局やAI Officeに当たるAI専属の機関はない",
+        "source": "https://jdih.komdigi.go.id/berita/view/116"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "罰則",
+        "note": "大統領令は制裁を置かない方針（制裁は法律でしか科せない）。EU第99条のような売上連動の制裁金はない",
+        "source": "https://asianews.network/ai-rules-pushed-to-2026-as-indonesian-government-charts-next-move/"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用AIモデル・システミックリスク・計算量基準の規定は、現行の通達にも確認できた範囲の草案にもない",
+        "source": "https://www.mondaq.com/new-technology/1795604/indonesian-ethics-on-artificial-intelligence--presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "特定個人データを使うAIは高リスク（草案）",
+        "note": "健康・生体・遺伝・犯罪歴・子ども・個人の金融データ等の特定個人データを使うこと自体を高リスクの判定基準にする（草案第7条2項）。EUは用途（附属書III）と製品（附属書I）で決める",
+        "source": "https://www.mondaq.com/new-technology/1795604/indonesian-ethics-on-artificial-intelligence--presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026"
+      },
+      {
+        "topic": "倫理とロードマップの大統領令2本立て",
+        "note": "AI倫理の大統領令を実体規範、国家AIロードマップの大統領令を実施の段取りを定める枠組みとして対で作る（Komdigi 法務局長は刑法と刑事訴訟法の関係にたとえた）",
+        "source": "https://jdih.komdigi.go.id/berita/view/113"
+      },
+      {
+        "topic": "国家AI倫理フォーラム（草案）",
+        "note": "通信情報担当省が政府・産業・学界・市民社会・メディアの協働による倫理実施を調整する場を設ける（草案第12・13条）",
+        "source": "https://www.mondaq.com/new-technology/1795604/indonesian-ethics-on-artificial-intelligence--presidential-regulation-draft-on-ethics-of-artificial-intelligence-dated-27-january-2026"
+      },
+      {
+        "topic": "金融当局の指針が横断ルールに先行",
+        "note": "OJK がフィンテック（2023）と銀行（2025）向けにAIガバナンスの指針を先に出している",
+        "source": "https://www.ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Documents/Pages/Peluncuran-Tata-Kelola-Kecerdasan-Artifisial-Perbankan-Indonesia/SP%2067%20Peluncuran%20Tata%20Kelola%20Kecerdasan%20Artifisial%20Perbankan%20Indonesia.pdf"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

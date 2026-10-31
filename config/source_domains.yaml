@@ -20,6 +20,94 @@ official:
   - chinhphu.vn
   - baochinhphu.vn
   - mst.gov.vn
+  # タイ（2026-10-31 追記・AI下書き）
+  - go.th
+  - etda.or.th
+  # インドネシア（2026-10-31 追記・AI下書き）
+  - komdigi.go.id
+  - kominfo.go.id
+  - ojk.go.id
+  - setneg.go.id
+  - jdihn.go.id
+  # マレーシア（2026-10-31 追記・AI下書き）
+  - digital.gov.my
+  - ai.gov.my
+  - mcmc.gov.my
+  - mpc.gov.my
+  - malaysia.gov.my
+  # フィリピン（2026-10-31 追記・AI下書き）
+  - dict.gov.ph
+  - privacy.gov.ph
+  - csc.gov.ph
+  - comelec.gov.ph
+  - senate.gov.ph
+  - congress.gov.ph
+  - docs.congress.hrep.online
+  - officialgazette.gov.ph
+  - pna.gov.ph
+  - dost.gov.ph
+  - dti.gov.ph
+  # アラブ首長国連邦（2026-10-31 追記・AI下書き）
+  - gov.ae
+  - u.ae
+  - uaecabinet.ae
+  - mediaoffice.ae
+  - wam.ae
+  # サウジアラビア（2026-10-31 追記・AI下書き）
+  - sdaia.gov.sa
+  - spa.gov.sa
+  - ncc.gov.sa
+  - cst.gov.sa
+  - saip.gov.sa
+  - uqn.gov.sa
+  # トルコ（2026-10-31 追記・AI下書き）
+  - gov.tr
+  # メキシコ（2026-10-31 追記・AI下書き）
+  - ine.mx
+  # ペルー（2026-10-31 追記・AI下書き）
+  - elperuano.pe
+  # カザフスタン（2026-10-31 追記・AI下書き）
+  - gov.kz
+  - zan.kz
+  - akorda.kz
+  - primeminister.kz
+  # スイス（2026-10-31 追記・AI下書き）
+  - admin.ch
+  - parlament.ch
+  - finma.ch
+  # イスラエル（2026-10-31 追記・AI下書き）
+  - gov.il
+  # チリ（2026-10-31 追記・AI下書き）
+  - senado.cl
+  - camara.cl
+  - bcn.cl
+  - leychile.cl
+  # コロンビア（2026-10-31 追記・AI下書き）
+  - gov.co
+  # アルゼンチン（2026-10-31 追記・AI下書き）
+  - senado.gov.ar
+  # ニュージーランド（2026-10-31 追記・AI下書き）
+  - govt.nz
+  - parliament.nz
+  - privacy.org.nz
+  - tikatangata.org.nz
+  # 南アフリカ（2026-10-31 追記・AI下書き）
+  - gov.za
+  - gpwonline.co.za
+  - resbank.co.za
+  # ナイジェリア（2026-10-31 追記・AI下書き）
+  - gov.ng
+  # エジプト（2026-10-31 追記・AI下書き）
+  - gov.eg
+  # ケニア（2026-10-31 追記・AI下書き）
+  - go.ke
+  - kenyalaw.org
+  - kebs.org
+  # ロシア（2026-10-31 追記・AI下書き）
+  - gov.ru
+  - kremlin.ru
+  - government.ru
+  - cbr.ru
 trusted_media:
   # 国際・EU
   - reuters.com
@@ -112,3 +200,145 @@ trusted_media:
   - vir.com.vn
   - vietnamnews.vn
   - tuoitrenews.vn
+  # タイ（2026-10-31 追記・AI下書き）
+  - bangkokpost.com
+  - nationthailand.com
+  - thaipbs.or.th
+  - bangkokbiznews.com
+  - thairath.co.th
+  - thansettakij.com
+  # インドネシア（2026-10-31 追記・AI下書き）
+  - thejakartapost.com
+  - antaranews.com
+  - tempo.co
+  - kompas.com
+  - cnbcindonesia.com
+  - jakartaglobe.id
+  # マレーシア（2026-10-31 追記・AI下書き）
+  - bernama.com
+  - thestar.com.my
+  - malaymail.com
+  - theedgemalaysia.com
+  - nst.com.my
+  - thesun.my
+  # フィリピン（2026-10-31 追記・AI下書き）
+  - inquirer.net
+  - rappler.com
+  - mb.com.ph
+  - philstar.com
+  - gmanetwork.com
+  - manilatimes.net
+  # アラブ首長国連邦（2026-10-31 追記・AI下書き）
+  - thenationalnews.com
+  - gulfnews.com
+  - khaleejtimes.com
+  - aletihad.ae
+  - arabianbusiness.com
+  # サウジアラビア（2026-10-31 追記・AI下書き）
+  - arabnews.com
+  - saudigazette.com.sa
+  - aawsat.com
+  - sabq.org
+  - al-jazirah.com
+  # トルコ（2026-10-31 追記・AI下書き）
+  - aa.com.tr
+  - dailysabah.com
+  - hurriyetdailynews.com
+  - hurriyet.com.tr
+  - milliyet.com.tr
+  - turkiyetoday.com
+  # メキシコ（2026-10-31 追記・AI下書き）
+  - eluniversal.com.mx
+  - milenio.com
+  - elfinanciero.com.mx
+  - eleconomista.com.mx
+  - jornada.com.mx
+  - mexiconewsdaily.com
+  # ペルー（2026-10-31 追記・AI下書き）
+  - andina.pe
+  - elcomercio.pe
+  - gestion.pe
+  - larepublica.pe
+  - rpp.pe
+  - diariocorreo.pe
+  # カザフスタン（2026-10-31 追記・AI下書き）
+  - astanatimes.com
+  - inform.kz
+  - tengrinews.kz
+  - zakon.kz
+  - kt.kz
+  - kapital.kz
+  # スイス（2026-10-31 追記・AI下書き）
+  - swissinfo.ch
+  - nzz.ch
+  - srf.ch
+  - rts.ch
+  - letemps.ch
+  - tagesanzeiger.ch
+  # イスラエル（2026-10-31 追記・AI下書き）
+  - timesofisrael.com
+  - haaretz.com
+  - jpost.com
+  - globes.co.il
+  - ynetnews.com
+  # チリ（2026-10-31 追記・AI下書き）
+  - latercera.com
+  - df.cl
+  - biobiochile.cl
+  - cnnchile.com
+  - emol.com
+  # コロンビア（2026-10-31 追記・AI下書き）
+  - eltiempo.com
+  - elespectador.com
+  - semana.com
+  - larepublica.co
+  - portafolio.co
+  - ambitojuridico.com
+  # アルゼンチン（2026-10-31 追記・AI下書き）
+  - buenosairesherald.com
+  - infobae.com
+  - lanacion.com.ar
+  - clarin.com
+  - ambito.com
+  - perfil.com
+  # ニュージーランド（2026-10-31 追記・AI下書き）
+  - rnz.co.nz
+  - nzherald.co.nz
+  - stuff.co.nz
+  - newsroom.co.nz
+  - 1news.co.nz
+  - odt.co.nz
+  # 南アフリカ（2026-10-31 追記・AI下書き）
+  - news24.com
+  - dailymaverick.co.za
+  - timeslive.co.za
+  - ewn.co.za
+  - techcentral.co.za
+  - itweb.co.za
+  # ナイジェリア（2026-10-31 追記・AI下書き）
+  - guardian.ng
+  - businessday.ng
+  - thisdaylive.com
+  - vanguardngr.com
+  - channelstv.com
+  - techcabal.com
+  # エジプト（2026-10-31 追記・AI下書き）
+  - ahram.org.eg
+  - egypttoday.com
+  - youm7.com
+  - masrawy.com
+  - dostor.org
+  # ケニア（2026-10-31 追記・AI下書き）
+  - nation.africa
+  - businessdailyafrica.com
+  - standardmedia.co.ke
+  - the-star.co.ke
+  - citizen.digital
+  - kbc.co.ke
+  # ロシア（2026-10-31 追記・AI下書き）
+  - tass.com
+  - interfax.ru
+  - kommersant.ru
+  - vedomosti.ru
+  - rbc.ru
+  - meduza.io

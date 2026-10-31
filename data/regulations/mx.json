@@ -1,0 +1,157 @@
+{
+  "jurisdiction": "mx",
+  "regulation_name": "横断法なし（上院AI委員会のAI一般法草案「Ley General de Inteligencia Artificial」223条・審議中。現行は個人データ保護法・著作権法・映画法など分野別にAIを規律）",
+  "status": "proposed",
+  "approach": "sectoral",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAIリスク分類はない。上院の超党派草案（223条・14編）など、生きている包括法案の多くはEU AI法に似たリスク階層・高リスク登録制をとる（報道・法律事務所の解説による）。",
+      "detail": "法律事務所 Galicia Abogados の解説（2026年7月時点）では、メキシコにはAI固有の包括的な規制がなく、2020年以降100本を超えるAI関連法案が出ているが成立していない。寄稿記事によると、まだ審議中の包括法案10本のうち7本が、リスク階層、新しい国の当局、高リスクシステムの登録、監査、制裁というEU AI法の骨組みを写している。中でも最も進んでいるのは上院の超党派草案（223条・14編）。報道では、草案が成立すると、企業はすでに使っているAIシステムを2年以内に登録・分類しなければならない。草案の階層の数・条番号は確かめられていない。現行法では、2025-03-20に官報（DOF）で公布された新しい個人データ保護法（LFPDPPP）がある。本人に大きく影響する判断を、人が関わらず自動処理だけで下すことに異議を唱える権利を定め、事業者に人による見直しの仕組みを求める（条番号は未確認）。",
+      "sources": [
+        "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/",
+        "https://mexicobusiness.news/cloudanddata/news/mexicos-ai-law-223-articles-zero-budget",
+        "https://mexicobusiness.news/cloudanddata/news/private-sectors-role-mexican-ai-and-cloud-regulations",
+        "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "連邦レベルで施行中のEU第5条型の禁止はない。代わりに分野別の禁止がある。映画・視聴覚法第29条で吹替へのAI使用を禁じ、著作権法第118条で本人の許可のない声・演技のAI複製を禁じる。",
+      "detail": "新しい連邦映画・視聴覚法は2026-04-15に上院で可決され、官報掲載を経て5月末に施行された。第29条は、映画・視聴覚作品をスペイン語や国内の言語に吹き替えるのは自然人に限るとし、AIの使用をはっきり除いている。2026-05-14公布の連邦労働法（LFT）・連邦著作権法（LFDA）改正では、LFDA第118条が、明示・十分な説明・報酬のある許可なしにAIで人の演技（声・演技）を「複製」したりなりすましたりすることを禁じる。上院AI委員会の草案には、禁止用途の一覧（社会的スコアリング、認知の操作、法的根拠のない大量の生体識別）と、精神のプライバシーなど最大5つの「神経権」が入るとされるが、成立していない。刑事面では、シナロア、タバスコ、タマウリパス、モレロス、サン・ルイス・ポトシ、コリマ、アグアスカリエンテスの州刑法がAIを使った一部の行為を処罰したり刑を重くしたりしている。ハリスコ州刑法第176条Bisは、AIで作った性的コンテンツを性的プライバシー侵害罪に含める。連邦では、AIによるデジタル暴力（女性に暴力のない生活を保障する一般法第20条Quáter・連邦刑法）の改正が2026-02-17に下院を全会一致で通った。性的プライバシー侵害罪（連邦刑法第199条octies・nonies）を新設する改正も2026-04-29に下院を通ったが、上院では審議中。",
+      "sources": [
+        "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/",
+        "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/",
+        "https://artificialintelligenceregulations.com/jurisdictions/mexico.html"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）への個別の義務はない。生成AIには、著作権法の声・演技のAI複製規定と、AI生成物には著作権がないとした最高裁判決が及ぶ。",
+      "detail": "法律事務所の解説（2026年7月時点）では、AI固有の包括的な規制はなく、汎用AIモデルに技術文書の作成や学習データの開示を課す規定もない。草案に汎用AI・システミックリスクの規定があるかどうかは、確認できた報道・解説からは分からない。生成AIに関する現行のルールは次のとおり。2026-05-14のLFDA改正では、声が明示的に保護される対象になった。AIによる「複製」や「本人と分かる模倣」には事前の書面同意と個別の報酬が必要で、LFDAの権利侵害に使われたAIプログラムは自らの著作権保護を失う。LFT新第305条Bisは、実演家との雇用契約に、声・肖像をAIで使う条件と報酬を明記するよう求める。最高裁第二小法廷は Amparo Directo 6/2025 で、著作者は自然人だけであり、AIの出力は著作物ではなく「生成物」だと判断した。",
+      "sources": [
+        "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/",
+        "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      ]
+    },
+    "transparency": {
+      "summary": "EU第50条のようなAIとの対話の告知や生成物表示の一般義務はない。透明性の規定は場面ごとに分かれている。プラットフォーム労働の割り当てアルゴリズムの透明性、自動決定への異議権、司法でのAI利用の開示と人による監督。",
+      "detail": "連邦労働法のデジタルプラットフォーム労働者に関する改正は、アルゴリズムによる仕事の割り当てルールを透明・明確にし、労働者が見られるようにすることを求める。プラットフォームには、アルゴリズムによる労務管理方針を文書にして契約に組み込み、開示する義務がある。異議の受付は自動システムではなく人が担う（条番号は未確認）。2024-01-26公布の裁判外紛争解決の一般法（LGMASC）は、オンライン紛争解決の章で、自動化システムとアルゴリズムの透明性を定義する。司法では、判例（Tesis II.2o.C.8 K (11a.)）が、裁判で使うAIは説明・再現ができること、人が監督すること、利用を開示することを求めた。報道では Circular 1/2026 が、検証されていない作業や完全に自動化された作業をAIで行うことを裁判官に禁じている。科学技術省とデジタル変革・通信庁（ATDT）の「チャプルテペック原則」は透明性や事前の影響評価をうたうが、拘束力はない。",
+      "sources": [
+        "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/",
+        "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      ]
+    },
+    "penalties": {
+      "summary": "AI専用の制裁金の制度はない。著作権法・産業財産権法の既存の制裁がAIを使った侵害にも及ぶ。審議中の連邦刑法改正は、同意のないAI性的コンテンツの共有に4〜8年の禁錮を予定する。",
+      "detail": "2026年4月の連邦産業財産権保護法（LFPPI）改正で、禁止行為はAIを使って行っても同じ制裁の対象になると定められた（執行例は報告されていない）。IMPI（産業財産権庁）は、営利目的で行われた実演家の肖像・声のAI利用（AI出力を含む）やAIによるなりすましに、著作権法違反として制裁金を科せる。下院を通過し上院で審議中の連邦刑法改正（第199条octies・nonies）は、本人と分かる人物のAI生成の性的コンテンツを同意なく共有した場合に、4〜8年の禁錮と400〜1,000 UMA日額の罰金を定める。州レベルでは、ハリスコ州刑法第176条Bisが1〜8年の禁錮と23万4千ペソを超える罰金を定める。上院の包括草案は、悪用への禁錮刑を含むと報じられたが、金額・量刑・条番号は確認できていない。",
+      "sources": [
+        "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/",
+        "https://artificialintelligenceregulations.com/jurisdictions/mexico.html",
+        "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/",
+        "https://mexiconewsdaily.com/news/ai-regulation-in-mexico-senate-bill/"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はなく、分野ごとの当局が既存法で対応する。上院草案は、法律の公布から90日以内に国のAI当局を立ち上げるとする。",
+      "detail": "2026年7月時点で、AIを直接規制・監督する当局はない。分野ごとの担当は次のとおり。個人データ保護は、INAI（2025-03-20に業務終了）の機能を引き継いだ反汚職・良い統治省。消費者保護はProfeco、知財はIMPIとINDAUTOR、競争法は新しい国家競争庁（CNA）。2025年の新しい通信放送法（LFTR）で連邦通信庁（IFT）は廃止され、大統領直属のATDTが通信・放送・デジタルプラットフォームを所管しているが、AIについての明示の権限はない。上院AI委員会（委員長 Rolando Zapata Bello 上院議員）の草案は、6回のフォーラムと72人の専門家の意見をもとに作られ、国家AI当局を置く。2026-02-25に予定されていた本会議での採決は行われなかった。議会にはAI一般法を出す明示の憲法上の権限がない。権限を足す憲法73条改正案は2023年以降16本出ており、うち6本は2026年8〜9月に出されたが、どれも可決されていない。上院は2026年末までの成立を目指していると報じられている。大統領府は、AIと未成年のSNS利用について2026-08-19〜09-17に地域協議を開き、結論を議会に送るとした。",
+      "sources": [
+        "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/",
+        "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/",
+        "https://mexicobusiness.news/cloudanddata/news/mexicos-ai-law-223-articles-zero-budget",
+        "https://mexicobusiness.news/cloudanddata/news/private-sectors-role-mexican-ai-and-cloud-regulations"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2024-04-02",
+        "event": "Ricardo Monreal 上院議員（Morena）が「AIを規制する連邦法」（Ley Federal que Regula la Inteligencia Artificial）の法案を上院に提出",
+        "source": "https://infosen.senado.gob.mx/sgsp/gaceta/65/3/2024-04-02-1/assets/documentos/Inic_Morena_Sen_Monreal_Ley_Fed_Inteligencia_Artificial_02042024.pdf"
+      },
+      {
+        "date": "2025-03-20",
+        "event": "新しい個人データ保護法（LFPDPPP）が官報で公布（自動処理だけの判断に異議を唱える権利を含む）。INAI が業務を終えた",
+        "source": "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      },
+      {
+        "date": "2026-02-17",
+        "event": "下院が、AIで作られたデジタル暴力を女性に暴力のない生活を保障する一般法第20条Quáterと連邦刑法に加える改正を全会一致（442票）で可決",
+        "source": "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      },
+      {
+        "date": "2026-04-15",
+        "event": "上院が新しい連邦映画・視聴覚法を可決（第29条で吹替へのAI使用を禁止。5月末に施行）",
+        "source": "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      },
+      {
+        "date": "2026-04-29",
+        "event": "下院が、AI生成の性的コンテンツを対象に性的プライバシー侵害罪（連邦刑法第199条octies・nonies、4〜8年の禁錮）を新設する改正を可決",
+        "source": "https://artificialintelligenceregulations.com/jurisdictions/mexico.html"
+      },
+      {
+        "date": "2026-05-14",
+        "event": "連邦労働法・連邦著作権法の改正が官報で公布（LFDA第118条で声・演技のAI複製を禁止、LFT第305条Bis。翌日施行）",
+        "source": "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      },
+      {
+        "date": "2026-09-02",
+        "event": "上院が連邦刑法改正（第199条octies・nonies）の下院可決案を受け取り、司法・AI・立法研究の各委員会に回付",
+        "source": "https://artificialintelligenceregulations.com/jurisdictions/mexico.html"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [
+      {
+        "topic": "実在の実演家の声・演技のAI複製",
+        "note": "LFDA第118条は、本人の明示・十分な説明・報酬のある許可がなければ、AIでの声・演技の複製やなりすましを禁じる。EU AI法はディープフェイクに表示（第50条4項）を求めるだけで、同意や報酬は求めない",
+        "source": "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      }
+    ],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI横断法はない。チャプルテペック原則（科学技術省・ATDT）も拘束力のない宣言にとどまる。EUのような事業者義務は、一般法が成立するまで生じない",
+        "source": "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・用途の禁止・高リスク義務・生成物の表示義務・制裁金の制度はどれも法案の段階で、2026年7月時点では包括的なAI規制がない",
+        "source": "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデルへの技術文書・学習データ開示・システミックリスクの規定がない。上院草案にこうした規定があるかどうかは未確認",
+        "source": "https://www.legal500.com/guides/chapter/mexico-artificial-intelligence/"
+      },
+      {
+        "topic": "AI専属の監督当局",
+        "note": "AIを直接監督する当局がない。上院草案が公布から90日以内に国のAI当局を立ち上げるとしているだけ",
+        "source": "https://mexicobusiness.news/cloudanddata/news/private-sectors-role-mexican-ai-and-cloud-regulations"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "吹替へのAI使用の禁止",
+        "note": "連邦映画・視聴覚法第29条は、映画・視聴覚作品の吹替を自然人に限り、AIの使用を除く。一つの産業でAIの使用そのものを法律で禁じる規定はEU AI法にない",
+        "source": "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      },
+      {
+        "topic": "AI一般法の憲法上の権限",
+        "note": "議会にはAI一般法を出す明示の憲法上の権限がなく、憲法73条改正（2023年以降16本の案、どれも未可決）が先に必要だと議論されている",
+        "source": "https://mexicobusiness.news/cloudanddata/news/mexicos-ai-law-223-articles-zero-budget"
+      },
+      {
+        "topic": "AI生成の性的コンテンツの刑事処罰（州法・審議中の連邦法）",
+        "note": "ハリスコ州など複数の州刑法が、AIで作った性的コンテンツを禁錮刑の対象にしている。連邦でも4〜8年の禁錮を定める刑法改正が下院を通った。EUはAI法の禁止（第5条1項(ba)）で対処し、刑罰は定めない",
+        "source": "https://artificialintelligenceregulations.com/jurisdictions/mexico.html"
+      },
+      {
+        "topic": "神経権（草案）",
+        "note": "上院AI委員会の草案は、精神のプライバシーや認知の完全性など最大5つの「神経権」を法律で認めるとされる",
+        "source": "https://www.heraldo.mx/sin-una-ley-con-su-nombre-la-inteligencia-artificial-ya-tiene-reglas-en-mexico/"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

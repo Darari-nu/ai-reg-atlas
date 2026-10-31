@@ -2,7 +2,7 @@
 
 > 世界のAI規制を、EU基準の「差分」で読む。
 
-EU AI Actを基準に、14カ国・地域（EU・日本・米国・英国・中国・韓国・シンガポール・カナダ・ブラジル・インド・豪州・台湾・カンボジア・ベトナム）のAI規制の差分が一目でわかる、毎日自動更新される静的サイト。
+EU AI Actを基準に、35カ国・地域（EU・日本・米国・英国・中国・韓国・シンガポール・カナダ・ブラジル・インド・豪州・台湾・カンボジア・ベトナム・タイ・インドネシア・マレーシア・フィリピン・UAE・サウジアラビア・トルコ・メキシコ・ペルー・カザフスタン・スイス・イスラエル・チリ・コロンビア・アルゼンチン・ニュージーランド・南アフリカ・ナイジェリア・エジプト・ケニア・ロシア）のAI規制の差分が一目でわかる、毎日自動更新される静的サイト。
 
 - **サイト（本番）**: https://darari-nu.com/atlas/
 - **サイト（予備・中継を通さない直URL）**: https://ai-reg-atlas.pages.dev/atlas/
@@ -330,7 +330,7 @@ DRY_RUN=1 npm run validate
 
 ## データの注意
 
-`data/` のシード（14カ国・地域の規制サマリー）はAIが下書きした**人間レビュー前のドラフト**を含む。
+`data/` のシード（35カ国・地域の規制サマリー）はAIが下書きした**人間レビュー前のドラフト**を含む。
 誤りを見つけたらPRかIssueで指摘してほしい。出典のない記述は受け付けない。
 
 更新レコードには `discovered_at`（サイトが発見した日。`summarize.mjs` がレコード生成時に `buildUpdateRecord` 経由で付与）を持つものがある。無い旧レコードはトップのNEW欄や鮮度計算で `date`（公表日）を代用する（`src/lib/freshness.mjs` の `discoveryDate`）。年表（`/timeline` や国別ページ）に○で出る「派生イベント」は、更新レコードから機械的に生成した**更新フィード由来・人間による確認前の自動検知**であり、`axes.timeline` に人手で載せた種データ（seed）とは扱いが異なる（`src/lib/derivedTimeline.mjs`）。
@@ -374,6 +374,7 @@ DRY_RUN=1 npm run validate
 | 2026-10-07 | 稼働監視の初回通知で、9月から1件も取れていなかった情報源3本（韓国 MSIT RSS bbsSeqNo=84・インド medianama の watch_feeds 2本）を `countries.yaml` から外した。medianama.com は `trusted_media` にあるので Bing ニュース経由の記事は引き続き出典にできる |
 | 2026-10-07 | シンガポール IMDA 報道発表一覧（scrape_hash）を読めるようにした。GitHub Actions からの取得は 200 でも本文が script だけで、一覧のハッシュが 8/6 から空文字列のSHA256のまま、中継（jina）へのフォールバックも例外時しか働かなかった。(1) 直接取得が成功しても `stripHtml` 後に本文が空なら、r.jina.ai を HTML 形式（`X-Return-Format: html`）で取り直す（ログ `via jina proxy (empty body, html)`。markdown 形式は aria-label だけの空アンカーが落ちるため使わない。既存の「例外時に markdown 形式で中継」は不変）。(2) `countries.yaml` の scrape_hash に任意の `context_window`（既定400）を追加し、IMDA だけ 800（日付 div がアンカーの約470字後ろにあるため）。抽出関数は単体テストのため `scripts/lib/scrape.mjs` に移した（`test/scrape.test.mjs`）。他の情報源の抽出結果は不変（全情報源の DRY_RUN で変更前後を比較）。初回はハッシュが「変化した」扱いで直近30日の記事が候補に出る |
 | 2026-10-09 | 解説記事（Claude API）を追加。`explain.mjs`＋`lib/explainer.mjs`＋`explainer-publish.mjs`、`schema/explainer.schema.json`、`/explain/<id>/` ページ、更新カードの「解説を読む」リンク、`pipeline.yml` の `explain` ステップ（`continue-on-error`、キー無しなら何もしない）。下書き運用で開始（公開は `explainer-publish.mjs`）。`summarize.mjs` の本文取得を `lib/fetchArticle.mjs` に出した（挙動は不変）。依存に `@anthropic-ai/sdk`・`zod` を追加。実 API での品質・費用・キャッシュ効果は未確認（キー発行後） |
+| 2026-10-31 | 21カ国を一度に追加（35カ国・地域に）: タイ・インドネシア・マレーシア・フィリピン・UAE・サウジアラビア・トルコ・メキシコ・ペルー・カザフスタン・スイス・イスラエル・チリ・コロンビア・アルゼンチン・ニュージーランド・南アフリカ・ナイジェリア・エジプト・ケニア・ロシア。下調べは Claude API（Opus 5.5・Web 検索つき、手元の読み取り専用ツール api-worker）で1国ずつ行い、`data/regulations/<cc>.json`・`countries.yaml` のブロック・`source_domains.yaml`（政府系 TLD 規則に無い公式ドメインと各国の主要報道）・比較表の行を作った。**どれも人の確認前のドラフト**で、割れている点・未確認の点は各国ブロックのコメントに残した。中心になる法律が施行済みなのはペルー・カザフスタン・ロシアで、ほかは法案・戦略・指針の段階。情報源は Mac から1本ずつ取得を試し、403・404・タイムアウト・中身なしの10本はコメントにして外した（タイ・ケニアなどは公式の監視先が今は無く `official_sources: []`。報道検索だけで拾う）。GitHub Actions 上での取得は未実測 |
 | 2026-10-09 | ベトナムを追加（14カ国目）。`countries.yaml` に vn（MOST デジタル変革ニュースと官報 MOST 分の scrape_hash 2本、VnExpress 英語RSS、Bing ニュース検索2語）、`source_domains.yaml` に .gov.vn 系3ドメイン（chinhphu.vn・baochinhphu.vn・mst.gov.vn）と英語版のある主要紙5社を追加。政府英語ニュース（en.baochinhphu.vn）の scrape_hash は米国式 mm/dd/yyyy を dd/mm と誤読して全件が古い扱いになるため入れていない（`date_order` オプションを足してから戻す）。`data/regulations/vn.json` は人工知能法 No.134/2025/QH15 と政令142/2026/ND-CP を、政府英語ニュース掲載の法本文英訳・法律事務所の記事で確認した範囲だけで書いた**人の確認前のドラフト**（制裁金額・首相の高リスク一覧・処罰政令は未確認）。比較表に vn の行を追加 |
 | 2026-10-10 | 解説記事の初回3本（Sonnet 5.5・1本約$0.027）を darari が確認して公開し、以後は自動公開に切り替えた（リポジトリ変数 `EXPLAINER_AUTO_PUBLISH=1`。下書き運用に戻すときはこの変数を消す）。解説がある更新カードに「解説あり」の印を追加 |
 | 2026-10-10 | **「これからの期限」（施行日カウントダウン）を追加**（公開前に darari の確認待ち）。仕様: (1) `data/deadlines.json` は**人が出典を開いて確認した期限だけ**を手で育てる一覧（日付・対象・「やること（解釈）」・出典URL・確認日。`schema/deadlines.schema.json` と `validate.mjs` で検査）。(2) 加えて、更新レコードのうち**意見募集・案の段階**（`legal_stage` が `draft_or_consultation`、または `change_type` が `guideline_draft`）の `deadline_date`（意見募集の締切）が今日以降のものだけを**自動**で拾い（`effective_date` は拾わない）、「更新から自動」の印と `summary.when_impact` の1行を付ける（やることは付けない）。確定した法令の日付は自動で拾わず、人が確認して curated に入れる。(3) 同じ**国＋日付**は curated を優先して1件にする（出典URLが違っても）。(4) 「今日」は Asia/Tokyo の日付（`todayJst`）。当日の期限は「今日まで」と表示して残し、翌日から消える。残り日数はビルド時に計算するので毎日の再ビルドで更新される。(5) トップは**人が確認した期限だけ**を日付順に3件（`NEXT`「次の期限」）。年表ページ先頭に全件（`DeadlineList.astro`）。90日以内の金の罫線の強調は人が確認した期限だけ。ロジックは `src/lib/upcomingDeadlines.mjs`、`getUpcomingDeadlines`。確認できなかった候補は入れない運用 |

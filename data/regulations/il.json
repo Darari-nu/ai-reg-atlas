@@ -1,0 +1,180 @@
+{
+  "jurisdiction": "il",
+  "regulation_name": "横断法なし（AI規制・倫理政策「Responsible Innovation: Israel's Policy on Artificial Intelligence Regulation and Ethics」2023-12。分野別規制・ソフトロー中心）",
+  "status": "proposed",
+  "approach": "sectoral",
+  "axes": {
+    "risk_classification": {
+      "summary": "法律に基づくAIのリスク分類はない。2023年のAI政策はリスクベースを原則に掲げるだけで、金融分野の省庁横断タスクフォース最終報告（2025-12）が「低・中リスク」と「高リスク」の2区分を提言している。",
+      "detail": "イノベーション・科学技術省（MIST）と法務省が作ったAI政策は、推奨1の6つの規制原則の一つに「リスクベース」を置く。規制の要否は分野ごとの規制当局が判断し、横断的な立法より優先するとする（横断立法の要否は定期的に見直す）。金融分野のタスクフォース最終報告（2025-12、イスラエル証券庁と法務省が共同座長）は、中間報告の低・中・高の3段階を改めて「低・中リスク」と「高リスク」の2区分とした。EUの4区分は採らないと明記している（最終報告 pp.202-203）。分類はまず規制対象の事業者が行い、規制当局は将来、特定の機能・分野のシステムを高リスクとみなす規則を定められるとする。法律事務所の解説では、与信スコア・保険料算定・投資ポートフォリオ運用が高リスクの例とされる。プライバシー保護庁（PPA）のAI指針案も、固定の区分ではなく既存のプライバシー原則とリスク評価で義務を組み立てる。",
+      "sources": [
+        "https://www.gov.il/BlobFolder/policy/ai_2023/en/Israels%20AI%20Policy%202023.pdf",
+        "https://www.new.isa.gov.il/en/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6547a86b2d6b6/AI_FINANCIAL_SECTOR.pdf",
+        "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "EU第5条のようなAI固有の禁止用途リストはない。プライバシー・消費者保護・差別禁止・分野別規制など既存法が、AIを使った行為にもそのまま及ぶ。",
+      "detail": "法律事務所の解説（2026-07時点）は、AI固有の禁止行為リストは採用されていないとする。個人データについては、PPAの指針案がプライバシー保護法（1981年）をAIの学習・試験・導入に当てはめている。違法な処理、過剰な収集、目的外の利用は、AIかどうかに関係なく同法違反になる。指針案はAI学習のためのウェブスクレイピングも制限の対象に挙げる。選挙では、AI生成物の利用を禁止せず、表示を求める方式を採った（選挙（宣伝方法）法 第2A2条）。表示義務より前に投稿された動画については、中央選挙委員会の委員長が、既存の不公正な干渉の禁止を根拠に削除を命じた例が報じられている。",
+      "sources": [
+        "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL",
+        "https://www.ebnlaw.co.il/media-center/draft-guidance-from-the-israeli-privacy-protection-authority/",
+        "https://www.timesofisrael.com/liveblog_entry/new-rules-requiring-labels-on-ai-generated-election-content-take-effect/",
+        "https://aiandgpp.com/2026/10/19/israel-knesset-election-ai-label-rules-look-ahead/"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AI・基盤モデル・生成AIを対象とする横断的な法的義務はない。2023年のAI政策は、基盤モデルとフロンティアAIを今後の検討課題とするにとどまる。",
+      "detail": "AI政策の英語要約は、基盤モデルとフロンティアAIの影響を今後の作業として想定すると述べるだけで、義務は定めない。法務省は2022-12-18に、機械学習での著作物利用についての意見書を公表した（AI政策は大規模AIモデルの知財課題に関する法的意見として参照）。法律事務所の解説では、生成AIに特化した横断的な義務（一律の電子透かし・ラベル表示など）は制定されていない。金融分野の最終報告は、生成AIや汎用AIの定義を必要に応じて追加できる方式を提案する。生成AIについては、情報の信頼性や出典の開示を厚くすることも検討に値するとしている。マネーロンダリング・テロ資金供与禁止庁（IMPA）は2025年、生成AIやディープフェイクを使った不審な取引（本人確認書類の偽造など）の積極的な報告を求めた。",
+      "sources": [
+        "https://www.gov.il/BlobFolder/policy/ai_2023/en/Israels%20AI%20Policy%202023.pdf",
+        "https://www.legal500.com/guides/chapter/israel-artificial-intelligence/",
+        "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL",
+        "https://www.new.isa.gov.il/en/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6547a86b2d6b6/AI_FINANCIAL_SECTOR.pdf",
+        "https://barlaw.co.il/2025-year-end-review-privacy-protection-and-artificial-intelligence/"
+      ]
+    },
+    "transparency": {
+      "summary": "横断的なAI表示義務はない。例外は選挙運動で、本物と誤認され得るAI生成・改変コンテンツへの表示義務がある（選挙（宣伝方法）法 第2A2条の時限規定）。中央選挙委員会の規則が2026-07-26に官報で公布された。",
+      "detail": "選挙（宣伝方法）法（1959年）第2A2条は、デジタル手段で作成・実質的に改変され、実際に記録されたものと誤認され得る選挙宣伝（「ディープ・セムブランス」）に開示を義務付ける。2026年選挙のための時限規定で、投票日の1年後に失効すると報じられている。委員長（最高裁副長官ソルベルグ判事）は第2A2条(b)に基づき規則（5786-2026、規則公報12484号、2026-07-26）を定めた。規則第2条は開示表示を、文言（全体または特定部分がデジタル手段で作成・改変された旨）か、付録の2種類のシンボル（音声は除く）とする。第3条は無地の背景・高コントラスト・目立つ位置・同じ言語を求める。第4条は印刷物・画像の文字を高さの5%か10ポイントの大きい方以上、第5条は音声のみの場合に冒頭と末尾での読み上げ、第6条は動画で全編を通じた表示（画面の高さか幅の5%以上）を定める。第7条は規則どおり表示すれば義務を果たしたと推定し、第8条は他の法令の表示義務を妨げない。選挙以外では、AI政策の倫理原則d（AIとの対話の告知、AIが関わる判断の通知、説明）が拘束力のない指針として、金融の最終報告がリスクに応じた告知・開示として示すにとどまる。",
+      "sources": [
+        "https://www.gov.il/BlobFolder/news/dover_5/he/%D7%A7%D7%95%D7%91%D7%A5%20%D7%94%D7%AA%D7%A7%D7%A0%D7%95%D7%AA-12484.pdf",
+        "https://www.pearlcohen.com/israel-issues-deepfake-disclosure-rules-for-election-campaign-publications/",
+        "https://www.timesofisrael.com/liveblog_entry/new-rules-requiring-labels-on-ai-generated-election-content-take-effect/",
+        "https://aiandgpp.com/2026/10/19/israel-knesset-election-ai-label-rules-look-ahead/",
+        "https://www.gov.il/BlobFolder/policy/ai_2023/en/Israels%20AI%20Policy%202023.pdf",
+        "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則・制裁金はない。AIを使った違反は、プライバシー保護法など既存法の罰則・執行で扱う。選挙のディープフェイク表示規則は罰則を定めていない。",
+      "detail": "法律事務所の解説は、AI固有の罰則はなく、AI関連の違反はAI以外の法令で処理されるとする。個人データについては、2025年8月に施行されたプライバシー保護法の第13次改正でPPAの監督・執行権限が大きく広がった。法律事務所はPPAが市場全体での執行を始めたとしている（制裁金の額は未確認）。選挙の表示規則（規則公報12484号）は罰則を置かず、執行は中央選挙委員会委員長への申立てと削除命令による（専門メディアの解説）。委員会は、表示のない宣伝物は法律違反とみなされ得ると警告した。",
+      "sources": [
+        "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL",
+        "https://barlaw.co.il/2025-year-end-review-privacy-protection-and-artificial-intelligence/",
+        "https://www.gov.il/BlobFolder/news/dover_5/he/%D7%A7%D7%95%D7%91%D7%A5%20%D7%94%D7%AA%D7%A7%D7%A0%D7%95%D7%AA-12484.pdf",
+        "https://aiandgpp.com/2026/10/19/israel-knesset-election-ai-label-rules-look-ahead/",
+        "https://www.timesofisrael.com/liveblog_entry/new-rules-requiring-labels-on-ai-generated-election-content-take-effect/"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の規制当局はない。政策はMIST（法務省と連携）が担い、首相府の国家AI本部（政府決議3375、2025-09-21）が戦略を調整する。監督は分野ごとの規制当局が既存の権限で行い、個人データはPPAが監督する。",
+      "detail": "AI政策（推奨1・3・5）は、分野別の規制当局に規制の要否の判断を委ねる。MISTと法務省の法律顧問・立法局がAI政策調整センターを置いて規制当局を助言・調整し、規制当局の会議体と官民の会議体を設けることを提言した。法律事務所の解説では、MISTが2023年に規制・AI政策センターを設けたとされる。政府決議3375（2025-09-21）は首相府の下に国家AI本部を置き、国家戦略・加速計画の策定と、規制面での各省への助言を任務とした（金融最終報告 p.43）。ただし同本部は法定の規制当局ではない。2026-08-10には首相と本部長（エレズ・エスケル准将（予備役））が国家AIプログラムを発表した。個人データの処理はPPA、金融は証券庁・イスラエル銀行・資本市場庁などが既存の権限で扱う。法令上「AI当局」に指定された規制当局はない。選挙の表示義務は中央選挙委員会が執行する。",
+      "sources": [
+        "https://www.gov.il/BlobFolder/policy/ai_2023/en/Israels%20AI%20Policy%202023.pdf",
+        "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL",
+        "https://www.new.isa.gov.il/en/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6547a86b2d6b6/AI_FINANCIAL_SECTOR.pdf",
+        "https://embassies.gov.il/boston/en/news/israel-s-national-ai-program-launched-10-aug-2026",
+        "https://www.gov.il/BlobFolder/news/dover_5/he/%D7%A7%D7%95%D7%91%D7%A5%20%D7%94%D7%AA%D7%A7%D7%A0%D7%95%D7%AA-12484.pdf"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2022-11-17",
+        "event": "MISTがAI規制・倫理政策の白書（政策の第1次案）を公表し意見募集",
+        "source": "https://www.gov.il/BlobFolder/policy/ai_2023/en/Israels%20AI%20Policy%202023.pdf"
+      },
+      {
+        "date": "2022-12-18",
+        "event": "法務省が機械学習での著作物利用についての意見書を公表",
+        "source": "https://www.legal500.com/guides/chapter/israel-artificial-intelligence/"
+      },
+      {
+        "date": "2023-12-17",
+        "event": "MISTと法務省がAI規制・倫理政策「Responsible Innovation」を公表（分野別・リスクベース・ソフトロー）",
+        "source": "https://www.gov.il/BlobFolder/policy/ai_2023/en/Press%20Release%20AI%2018.12.23%20docx.pdf"
+      },
+      {
+        "date": "2025-06-05",
+        "event": "PPAの「プライバシー保護法のAIシステムへの適用」指針案の意見募集締切",
+        "source": "https://www.ebnlaw.co.il/media-center/draft-guidance-from-the-israeli-privacy-protection-authority/"
+      },
+      {
+        "date": "2025-09-21",
+        "event": "政府決議3375で首相府に国家AI本部を設置",
+        "source": "https://www.new.isa.gov.il/en/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6547a86b2d6b6/AI_FINANCIAL_SECTOR.pdf"
+      },
+      {
+        "date": "2026-07-16",
+        "event": "選挙（宣伝方法）法の第43次改正（第2A2条：選挙宣伝のディープフェイク開示義務、時限規定）が施行（報道ベース）",
+        "source": "https://www.jfeed.com/news-israel/deepfake-election-law-israel"
+      },
+      {
+        "date": "2026-07-26",
+        "event": "中央選挙委員会がディープフェイク選挙宣伝の開示規則（5786-2026）を規則公報12484号で公布、同日から適用",
+        "source": "https://www.gov.il/BlobFolder/news/dover_5/he/%D7%A7%D7%95%D7%91%D7%A5%20%D7%94%D7%AA%D7%A7%D7%A0%D7%95%D7%AA-12484.pdf"
+      },
+      {
+        "date": "2026-08-10",
+        "event": "首相と国家AI本部長が国家AIプログラムを発表",
+        "source": "https://embassies.gov.il/boston/en/news/israel-s-national-ai-program-launched-10-aug-2026"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "中心のAI政策は分野別規制当局への指針で、倫理原則は規制当局も事業者も法的に拘束しないと明記している。EUのような事業者への横断的な義務はない",
+        "source": "https://www.gov.il/BlobFolder/policy/ai_2023/en/Israels%20AI%20Policy%202023.pdf"
+      },
+      {
+        "topic": "リスク分類",
+        "note": "法定の区分はない。金融分野の最終報告が「低・中」と「高」の2区分を提言し、分類はまず事業者が行うとする（EUの4区分は採らないと明記）",
+        "source": "https://www.new.isa.gov.il/en/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6547a86b2d6b6/AI_FINANCIAL_SECTOR.pdf"
+      },
+      {
+        "topic": "AI生成物の表示の範囲",
+        "note": "法的な表示義務は選挙宣伝で本物と誤認され得るものに限られ、時限規定。EU第50条はチャットボットの告知・生成物の機械可読表示・ディープフェイク全般の開示を求める",
+        "source": "https://www.gov.il/BlobFolder/news/dover_5/he/%D7%A7%D7%95%D7%91%D7%A5%20%D7%94%D7%AA%D7%A7%D7%A0%D7%95%D7%AA-12484.pdf"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "禁止用途リスト",
+        "note": "EU第5条相当のAI固有の禁止行為はない。既存法で対応",
+        "source": "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデル・システミックリスク・計算量基準の規定はなく、生成AI特化の横断義務もない",
+        "source": "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL"
+      },
+      {
+        "topic": "AI固有の制裁",
+        "note": "AI固有の罰則・制裁金はなく、既存法の違反として扱う",
+        "source": "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL"
+      },
+      {
+        "topic": "単一のAI監督機関",
+        "note": "法定のAI当局はなく、首相府の国家AI本部も法定の規制当局ではない。EUのAI Office・加盟国の市場監視当局にあたるものはない",
+        "source": "https://intelligence.dlapiper.com/artificial-intelligence/guide.pdf?c=IL"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "選挙宣伝のディープフェイク表示（書式指定つき）",
+        "note": "本物と誤認され得る選挙宣伝に、文言か2種類のシンボルでの開示を課し、文字の大きさ（5%か10ポイント）、動画は全編表示、音声は冒頭・末尾での読み上げまで規則で定める。規則どおりなら義務を果たしたと推定（規則第2〜7条）",
+        "source": "https://www.gov.il/BlobFolder/news/dover_5/he/%D7%A7%D7%95%D7%91%D7%A5%20%D7%94%D7%AA%D7%A7%D7%A0%D7%95%D7%AA-12484.pdf"
+      },
+      {
+        "topic": "首相府の国家AI本部",
+        "note": "政府決議3375（2025-09-21）で首相府に本部を置き、国家戦略・加速計画の策定と規制面での各省への助言を担わせる（規制権限ではなく推進・調整）",
+        "source": "https://www.new.isa.gov.il/en/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6547a86b2d6b6/AI_FINANCIAL_SECTOR.pdf"
+      },
+      {
+        "topic": "分野別規制当局主導と政策調整センター",
+        "note": "横断立法の代わりに、規制の要否を分野別の規制当局に判断させ、MISTと法務省の調整センターと規制当局の会議体で一貫性を保つ設計（AI政策の推奨1・3・5）",
+        "source": "https://www.gov.il/BlobFolder/policy/ai_2023/en/Israels%20AI%20Policy%202023.pdf"
+      },
+      {
+        "topic": "金融分野の「AIウォッシング」対策",
+        "note": "AIの利用を誇張した誤解を招く宣伝を、既存の規制手段（開示指導・執行）で扱うよう提言",
+        "source": "https://www.new.isa.gov.il/en/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6547a86b2d6b6/AI_FINANCIAL_SECTOR.pdf"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

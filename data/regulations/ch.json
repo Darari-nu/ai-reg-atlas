@@ -1,0 +1,150 @@
+{
+  "jurisdiction": "ch",
+  "regulation_name": "AI専用の横断法なし（欧州評議会AI条約を実施する連邦法案を連邦司法局が起草中。意見聴取は2027年春の予定。分野別アプローチ）",
+  "status": "proposed",
+  "approach": "sectoral",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAI固有のリスク分類はない。現行法では、データ保護法（DSG）が高リスクのデータ処理にデータ保護影響評価を求め、FINMAが監督対象の金融機関にAIの一覧化とリスク分類を求めている。",
+      "detail": "BAKOMは、スイスには一般的なAI専用の法律がまだないと明記している。連邦参事会の2025-02-12の決定は、EU型の横断規制ではなく、欧州評議会AI条約の国内実施と分野別の法改正を選んだ。BJが起草中の連邦法案には、透明性・データ保護・差別禁止・監督・リスク評価の規定が入る予定（2026-10-28発表）。ただし案文は未公表で、EUのような禁止・高リスク・限定リスクの階層を置くかは分からない。現行法では、FDPICが「DSGは技術中立でAIによるデータ処理に直接適用される」とし、高リスクの処理はデータ保護影響評価を行えば原則として許されるとする。金融では、FINMAが監督通知08/2024（2024-12-18）で、監督対象の機関にAIツールの一覧化、リスクの分類、責任の割り当てを求めている。",
+      "sources": [
+        "https://www.bakom.admin.ch/fr/intelligence-artificielle",
+        "https://www.admin.ch/fr/newnsb/s2TQiUUjrA5D",
+        "https://www.edoeb.admin.ch/en/ai-and-data-protection",
+        "https://www.lenzstaehelin.com/news-and-insights/browse-thought-leadership-insights/insights-detail/finma-issues-guidance-on-ai-use-in-financial-institutions/"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の禁止用途の一覧はない。FDPICは、包括的なリアルタイム顔認識や社会的スコアリングのように私生活と情報の自己決定を損なう処理は、現行のデータ保護法の下で禁じられると解釈している。",
+      "detail": "法律の条文としてAIの禁止用途を列挙したものはない。FDPICの告知（2023-11-09、2025-05-08更新）は、権威主義国家で見られるようなAIによるデータ処理を例に挙げる。具体的には、包括的なリアルタイム顔認識と、生活様式を包括的に観察・評価する「社会的スコアリング」で、これらはDSGが守る私生活と情報の自己決定を損なうものとして禁じられるとする。これは監督機関の解釈であり、EU第5条のような類型の列挙（職場・教育での感情推定、無差別な顔画像収集など）とは違う。特定できる人物の顔・画像・音声を操作するプログラムについては、刑法上の禁止により違法になる場合もあると述べている（該当条文は未確認）。",
+      "sources": [
+        "https://www.edoeb.admin.ch/en/ai-and-data-protection",
+        "https://www.edoeb.admin.ch/en/09112023-current-data-protection-legislation-is-directly-applicable-to-ai"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）に固有の義務はない。生成AIには、個人データを扱う範囲でDSGの一般義務がかかるだけ。",
+      "detail": "調べた範囲の公式資料（BAKOMのAIページ、BJのAI立法ページ、2026-10-28の連邦参事会発表）には、汎用AIモデル・システミックリスク・計算量基準を対象にした規定も計画も出てこない。生成AIへの対応は、FDPICのDSG解釈（AIと対話していることの告知、入力データを学習に使うかの告知）を通じて行われる。2026年10月のサイバーセキュリティ月間では、FDPICと国家サイバーセキュリティセンター（NCSC）が職場での生成AIのデータ保護上の課題について共同で啓発した。ただし新しい義務を課すものではない。",
+      "sources": [
+        "https://www.bakom.admin.ch/fr/intelligence-artificielle",
+        "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+      ]
+    },
+    "transparency": {
+      "summary": "AI専用の表示義務はない。FDPICの解釈では、DSGの下でAI処理の目的・仕組み・データ源の透明化、機械と対話していることの告知、実在の人物の顔や声を操作したものの明示が必要になる。",
+      "detail": "FDPICによると、DSGの要件から、AIシステムの製造者・提供者・利用者は、AIによる処理の目的・機能・データ源を明らかにしなければならない。この透明性は、自動化されたデータ処理に異議を述べる権利や、自動化された個別決定を人に見直させる権利と結びついている。自動化された個別決定は DSG第21条で定められている（連邦の論点整理報告書による）。利用者と直接やり取りする言語モデルでは、利用者には、相手が機械かどうかと、入力したデータが学習などに使われるかを知る権利がある。特定できる人物の顔・画像・音声を操作するプログラムを使ったときは、常に明示しなければならない。いずれも個人データの処理に伴う義務で、EU第50条のような機械可読表示の義務はない。起草中の連邦法案には透明性の規定が入る予定（2026-10-28発表）。",
+      "sources": [
+        "https://www.edoeb.admin.ch/en/ai-and-data-protection",
+        "https://www.bj.admin.ch/dam/bj/de/data/staat/gesetzgebung/kuenstliche-intelligenz/ber-bakom-ki.pdf.download.pdf/ber-bakom-ki-d.pdf",
+        "https://www.admin.ch/fr/newnsb/s2TQiUUjrA5D"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。AIによる個人データ処理にはDSGの制裁が及ぶが、AIの規律の中心は自主規制など拘束力のない措置で、起草中の法案の罰則は未公表。",
+      "detail": "公式資料で確認した範囲では、AIを対象とした罰金・制裁の定めはない。FDPICが言うようにDSGはAIによる処理に直接適用されるので、違反にはDSGの制裁がかかる。ただし、金額と条番号は今回の調査で一次資料を確認できていない。連邦参事会が2026-10-28に進捗を確認した非拘束の措置（AI行動規範づくりの手引き、業界ごとの自主的な約束）には、制裁がない。拘束力のある法案は2027年春に意見聴取にかける予定で、罰則の有無と中身は分からない。",
+      "sources": [
+        "https://www.edoeb.admin.ch/en/ai-and-data-protection",
+        "https://www.admin.ch/fr/newnsb/s2TQiUUjrA5D"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。連邦司法局（BJ）が拘束力のある法案を起草し、連邦通信庁（BAKOM）が非拘束の措置を調整する。現行法の執行は、FDPIC（データ保護）やFINMA（金融）などの分野ごとの機関が担う。",
+      "detail": "2025-02-12の決定で、連邦参事会は連邦司法警察省（EJPD/BJ）に、AI利用の新しいルールの意見聴取案づくりを任せた。期限は当初2026年末だった。2026-10-28には、BJがDETEC（BAKOM）・DFAEと連邦法案を作っており、意見聴取は2027年春の予定だと公表した。BJは、連邦外部と内部の専門家による同行グループを置き、2025-10-27には約60人が参加する参加型の作業会議を開いた。非拘束の措置はBAKOMがEJPD・DFAE・WBFと調整する。連邦参事会は、BAKOMに、2028年3月末までに業界の自主規制について行政内で知見を共有する仕組みを作ることと、AI行動規範の手引きを改良し続けることを命じた。分野別の対話も進んでいる。連邦文化庁は2025年11月から文化分野の対話を開き、連邦エネルギー庁は電力業界に指針づくりを求め、BAKOMは2026年5月に報道業界と自主宣言について話し合った。現行法の執行では、FDPICがDSGを監督する。X（旧Twitter）がGrokの学習に個人データを使った件でも予備調査を行い、2025-03-20に結論を出した。条約には2025-03-27に署名した。批准は、国内法を整えた後に行う。",
+      "sources": [
+        "https://www.bj.admin.ch/de/kuenstliche-intelligenz",
+        "https://www.admin.ch/fr/newnsb/s2TQiUUjrA5D",
+        "https://www.bakom.admin.ch/fr/intelligence-artificielle",
+        "https://www.admin.ch/en/nsb?id=104646",
+        "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2023-11-09",
+        "event": "FDPICが「現行のデータ保護法（DSG）はAIに直接適用される」と告知",
+        "source": "https://www.edoeb.admin.ch/en/09112023-current-data-protection-legislation-is-directly-applicable-to-ai"
+      },
+      {
+        "date": "2024-12-18",
+        "event": "FINMAが監督通知08/2024（AI利用時のガバナンスとリスク管理）を公表",
+        "source": "https://www.lenzstaehelin.com/news-and-insights/browse-thought-leadership-insights/insights-detail/finma-issues-guidance-on-ai-use-in-financial-institutions/"
+      },
+      {
+        "date": "2025-02-12",
+        "event": "連邦参事会が規制の方針を決定（欧州評議会AI条約を批准して国内法に取り込み、法改正はできるだけ分野別に。EJPDに意見聴取案の作成を指示）",
+        "source": "https://www.news.admin.ch/fr/nsb?id=104110"
+      },
+      {
+        "date": "2025-03-27",
+        "event": "スイスが欧州評議会AI条約（人工知能と人権・民主主義・法の支配に関する条約）に署名（ストラスブール、レスティ連邦参事）",
+        "source": "https://www.admin.ch/en/nsb?id=104646"
+      },
+      {
+        "date": "2025-05-08",
+        "event": "FDPICが、DSGはAIに直接適用されるとの告知を更新",
+        "source": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+      },
+      {
+        "date": "2026-10-28",
+        "event": "連邦参事会がAI規制の進捗を確認。BAKOMの分野別措置報告書とAI行動規範の手引きを公表し、条約実施の連邦法案の意見聴取は2027年春の予定とした",
+        "source": "https://www.admin.ch/fr/newnsb/s2TQiUUjrA5D"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI専用法はない。拘束力のある連邦法案はまだ意見聴取前（2027年春の予定）で、今動いているのは指針・業界基準・自主的な約束といった非拘束の措置。EUのような事業者義務は生じていない",
+        "source": "https://www.admin.ch/fr/newnsb/s2TQiUUjrA5D"
+      },
+      {
+        "topic": "禁止用途の範囲",
+        "note": "包括的なリアルタイム顔認識と社会的スコアリングがDSGの下で禁じられるという監督機関（FDPIC）の解釈があるだけ。EU第5条のような法定の類型列挙はない",
+        "source": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+      },
+      {
+        "topic": "透明性義務の根拠と範囲",
+        "note": "AIとの対話の告知や、実在の人物を操作した画像・音声の明示は、DSG（個人データの処理）の解釈として求められるだけ。EU第50条のような生成物全般への機械可読表示の義務はない",
+        "source": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデル・システミックリスク・計算量基準を扱う規定も計画も、公式資料に出てこない",
+        "source": "https://www.bakom.admin.ch/fr/intelligence-artificielle"
+      },
+      {
+        "topic": "リスク階層と高リスクAIの適合性評価",
+        "note": "AI固有のリスク区分も高リスク要件もない。法案にはリスク評価の規定が入る予定だが、案文は未公表",
+        "source": "https://www.admin.ch/fr/newnsb/s2TQiUUjrA5D"
+      },
+      {
+        "topic": "AI固有の罰則と専属の監督機関",
+        "note": "AIを対象とする制裁金の定めも、AI Officeや市場監視当局にあたる専属機関もない。監督は分野ごとの既存機関が担う",
+        "source": "https://www.bj.admin.ch/de/kuenstliche-intelligenz"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "欧州評議会AI条約の国内実施を軸にする",
+        "note": "EU AI法ではなく、人権・民主主義・法の支配を目的とする欧州評議会AI条約の批准と国内実施を規制の柱にする。一般的な規制は、データ保護など基本権に関わる主要分野に限る",
+        "source": "https://www.bakom.admin.ch/fr/intelligence-artificielle"
+      },
+      {
+        "topic": "国が用意するAI行動規範の手引きと業界ごとの自主規制",
+        "note": "BAKOMが、10のテーマについて3段階の詳しさで選べる文例と作成手順を収めたAI行動規範の手引きを公表した。文化・電力・報道など業界ごとの対話で自主的な約束づくりを進める",
+        "source": "https://www.admin.ch/fr/newnsb/s2TQiUUjrA5D"
+      },
+      {
+        "topic": "金融監督当局による監督通知",
+        "note": "FINMAが監督通知08/2024で、監督対象の金融機関にAIツールの一覧化、リスク分類、責任の割り当て、独立した検証を求める。AI法ではなく、既存の監督法の延長として運用している",
+        "source": "https://www.lenzstaehelin.com/news-and-insights/browse-thought-leadership-insights/insights-detail/finma-issues-guidance-on-ai-use-in-financial-institutions/"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

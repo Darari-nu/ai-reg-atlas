@@ -1,0 +1,193 @@
+{
+  "jurisdiction": "tr",
+  "regulation_name": "横断法なし（AI法案4件〈2/2234・2/3358・2/3404・2/3465〉がTBMMの委員会で審議待ち。政策の柱は「トルコAI行動計画（2026-2030）」＝大統領通達2026/9）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAIリスク分類はない。審議待ちの法案2/2234は、全AIのリスク評価と、高リスクAIの監督機関への登録・適合性評価を求めるだけで、区分の定義を置いていない。",
+      "detail": "大国民議会（TBMM）の記録では、野党HEDEPのÖmer Faruk Gergerlioğlu議員が出した「人工知能法案」（2/2234、2024-06-24受理）は委員会に係属したまま。第4条は、開発・利用の際のリスク評価と、高リスクAIへの特別な措置を求める。高リスクAIは監督機関に登録し、適合性評価を受けるとする。ただし第2条の定義にリスク区分はなく、高リスクの基準も監督機関も特定していない。MHPのHalil Öztürk議員の法案（2/3358、2025-11-07受理）の第6条は、サイバーセキュリティ法7545号の第7条を改める案で、「高リスク用途」での人の承認による監督に触れる。ここにも高リスクの定義はない。TBMMのAI調査委員会（2025-01-14に活動開始）は、報告書（約900頁・提言100項目）を2026-02-26に議長へ提出した。委員長は会見で、委員会がリスクベースの規制モデルづくりを提言したと説明している。行動計画（2026-2030）も、比例的でリスクベースのガバナンス枠組みを目標に掲げる（法律事務所CMSの解説）。中期計画（OVP 2027-2029）には、EUとの整合に配慮して国内のAI法令の基盤を整えると書かれている。",
+      "sources": [
+        "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/e21539a0-888a-4500-81be-01904a918c53",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y2/T2/WebOnergeMetni/e50ccc8a-ab90-45fa-a553-76b880c78fb8.pdf",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf",
+        "https://www.tbmm.gov.tr/Haber/Detay?Id=a5cf661f-e7c5-47e6-a9ae-019d2b862b3c",
+        "https://cms.law/en/tur/legal-updates/turkiye-unveils-new-ai-action-plan",
+        "https://www.sbb.gov.tr/wp-content/uploads/2026/09/Orta-Vadeli-Program-2027-2029.pdf"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AI固有の禁止規定は、施行中の法令にも法案にもない。法案2/2234は「禁止されたAI利用」に最大3,500万TLまたは年間売上高7%の罰金を定めるが、何を禁止するかは列挙していない。",
+      "detail": "2/2234の第6条は、EU第99条と同じ形の罰金段階を置く。しかし法案（全8条）のどこにも禁止行為の一覧はない。2/3358は禁止ではなく責任の規定を置く。第2条は刑法5237号第125条（侮辱）に第6項を足す案で、AIに犯罪行為をさせた利用者を正犯とし、設計・学習で犯罪を可能にした開発者の刑を2分の1加重する。第8条は5651号（インターネット法）第8条1項を改め、アクセス遮断の対象に侮辱（第125条）・脅迫・人道に対する罪などを加える。EU第5条にある社会的スコアリング、無差別な顔画像収集、感情推定、リアルタイム遠隔生体識別などの個別類型は、4法案の本文に出てこない。",
+      "sources": [
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y2/T2/WebOnergeMetni/e50ccc8a-ab90-45fa-a553-76b880c78fb8.pdf",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデルへの義務はない。4法案の本文にも、汎用モデル・システミックリスク・計算量基準の規定はない。生成AIは、個人データ保護機関（KVKK）の拘束力のない指針で扱われている。",
+      "detail": "2/3358の第6条（7545号第7条に第3項を足す案）は、モデル単位ではなく「AIシステムのサービス提供者」一般に次の5つを求める。学習データの透明性と監査可能性、誤った情報や操作的な情報を防ぐ検証の仕組み、ハルシネーションを減らす制御、高リスク用途での人の承認による監督、定期的な脆弱性テスト。違反には最大500万TLの過料を科し、公共の秩序を脅かす重大な違反には一時的な業務停止を命じられる。施行中のものとしてはKVKKの指針がある。2025-11に「15の質問で見る生成AIと個人データ保護の指針」を、2026-03-12に「エージェント型AI（Etken Yapay Zekâ）」の指針を出した。どちらも6698号（個人データ保護法）をどう当てはめるかの解説で、新しい義務は作らない。行動計画は、分野別の基盤モデルの開発と輸出を産業政策として支援する。",
+      "sources": [
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf",
+        "https://www.kvkk.gov.tr/SharedFolderServer/CMSFiles/MTY5MjNmNmIwZWY3YTE.pdf",
+        "https://www.aa.com.tr/tr/bilim-teknoloji/kvkk-15-soruda-uretken-yapay-zeka-ve-kisisel-verilerin-korunmasi-rehberi-hazirladi/3752568",
+        "https://www.mondaq.com/turkey/data-protection/1757810/kvkk-etken-yapay-zek%C3%A2-sistemlerine-%C4%B0li%C5%9Fkin-rehber-yay%C4%B1mlad%C4%B1",
+        "https://cms.law/en/tur/legal-updates/turkiye-unveils-new-ai-action-plan"
+      ]
+    },
+    "transparency": {
+      "summary": "施行中のAI表示義務はない。法案の段階で、ディープフェイクへの「Yapay Zekâ Tarafından Üretilmiştir（AIにより生成）」表示（2/3358）や、AI生成の音声・文章・映像すべてへの表示と刑法217/A条による処罰（2/3404）が提案されている。",
+      "detail": "2/3358の第7条は、5651号に追加条項5を新設する案。AIで偽って作った画像・音声・文章（ディープフェイク）に、消せない明確な表示「Yapay Zekâ Tarafından Üretilmiştir」を義務付ける。違反したコンテンツ提供者や開発者には、情報通信技術庁（BTK）が50万〜500万TLの過料を科す。組織的・故意の違反ではアクセスを遮断する。BTKには監督・技術的監視・指針策定の権限を与える。MHPのİsmail Özdemir議員の2/3404（2025-12-03受理）は1条だけの改正案。5651号第4条に第4項を足し、コンテンツ提供者に、AIで作った音声・文章・映像のすべてについて、印・ロゴ・文言でAI生成と見えるように示すよう求める。違反は刑法217/A条（公衆を誤導する情報の流布）で処罰する。法律事務所CMSの解説では、同条の刑は1〜3年の拘禁刑。2/2234の第3条は「透明性」を基本原則に挙げ、AIの仕組みについて分かりやすい情報を出すよう求める。ただし具体的な開示義務はない。EU第50条1項のような、チャットボットがAIであることを告げる義務は、4法案の本文に見当たらない。",
+      "sources": [
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf",
+        "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/c6d96014-55f7-45fe-a014-019ae46fb0f0",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/a6cf57b6-85be-4fbb-a01a-41316f52d855.pdf",
+        "https://cms.law/en/tur/legal-updates/turkiye-s-parliament-receives-first-criminal-regulation-on-ai-generated-content",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y2/T2/WebOnergeMetni/e50ccc8a-ab90-45fa-a553-76b880c78fb8.pdf"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則は施行されていない。法案ごとに、EUと同じ3段階の罰金（2/2234）、BTKの最大1,000万TLの過料（2/3358）、刑事罰（2/3404）、プラットフォームの売上高5%の過料（2/3465）が提案されている。",
+      "detail": "2/2234の第6条は3段階。禁止されたAI利用は3,500万TLまたは年間売上高の7%、義務違反は1,500万TLまたは3%、誤った情報の提供は750万TLまたは1.5%まで。2/3358は次の3つを定める。BTKはAIによる公共の秩序や選挙の安全への脅威に緊急の遮断を命じられ、従わない者には最大1,000万TLの過料（第5条。電子通信法5809号第6条の改正案）。ディープフェイクの無表示には50万〜500万TL（第7条）。サービス提供者の安全対策違反には最大500万TLと一時的な業務停止（第6条）。2/3404は、表示義務の違反を刑法217/A条で処罰する。2/3465（2026-01-08受理）は、個人データ保護法6698号第18条に第5項を足す案。本人の同意なく共有されたAI生成の音声・文章・映像について、共有を許したSNSやデジタルプラットフォームに、前年の売上高の5%の過料を投稿ごとに科す。いずれの法案もTBMMの記録で「委員会に係属中」。",
+      "sources": [
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y2/T2/WebOnergeMetni/e50ccc8a-ab90-45fa-a553-76b880c78fb8.pdf",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/a6cf57b6-85be-4fbb-a01a-41316f52d855.pdf",
+        "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/90b549a1-3c01-4789-a768-019b9e131772",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/84f5c865-95cf-4c07-8cda-681abdccea66.pdf"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。行動計画（2026-2030）は調整型の体制をとる。大統領が議長の国家AI評議会が最高意思決定機関で、実施は産業技術省（国家技術・AI総局）のプログラム事務局が担う。拘束力のある監督・制裁の権限は、既存の分野別規制当局に残る。",
+      "detail": "大統領通達2026/9（2026-08-17署名）は、2026-08-18の官報33344号に載った。通達は、産業技術省の調整で作った「トルコAI行動計画（2026-2030）」の実施を全ての公的機関に指示する。法律事務所CMSの解説では、計画は16の施策を4つの柱（認識・活用・生産・統治）に分ける。国家AI評議会は、優先順位と年次計画を承認し、毎年「国家AI政策書簡」を出す。ほかに国家AI倫理委員会を置き、技術的な安全評価はサイバーセキュリティ庁がTÜBİTAK AI研究所と連携して担う。進捗は透明性ポータルで公開し、最初の報告は公表から12か月以内に出す。規制のサンドボックスは少なくとも5つの優先分野に設ける。計画は、大統領が2026-06-13のトルコAIサミットで先に発表していた。前身は「国家AI戦略（2021-2025）」で、大統領府デジタル変革局と産業技術省が作り、2021-08-20の官報31574号に載った（2/3358の提案理由書の記載）。法案の担い手は分かれる。2/3358はBTKに、2/3465はKVKKに権限を与える。2/2234は「監督機関」と書くだけで、どの機関かを定めない。4法案は、産業・商業・エネルギー・天然資源・情報技術委員会、司法委員会、デジタルメディア委員会に付託されている。",
+      "sources": [
+        "https://www.resmigazete.gov.tr/eskiler/2026/08/20260818-8.pdf",
+        "https://cms.law/en/tur/legal-updates/turkiye-unveils-new-ai-action-plan",
+        "https://www.hurriyetdailynews.com/amp/turkiye-sets-new-targets-in-artificial-intelligence-action-plan-erdogan-223242",
+        "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf",
+        "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/e21539a0-888a-4500-81be-01904a918c53",
+        "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/12d348f9-77ee-4f09-8b78-019a5e27521f",
+        "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/c6d96014-55f7-45fe-a014-019ae46fb0f0",
+        "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/90b549a1-3c01-4789-a768-019b9e131772"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2021-08-20",
+        "event": "国家AI戦略（2021-2025）が官報31574号に掲載",
+        "source": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf"
+      },
+      {
+        "date": "2024-06-24",
+        "event": "人工知能法案（2/2234、HEDEPのGergerlioğlu議員）をTBMMが受理。委員会に係属",
+        "source": "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/e21539a0-888a-4500-81be-01904a918c53"
+      },
+      {
+        "date": "2025-01-14",
+        "event": "TBMMのAI調査委員会が活動を開始",
+        "source": "https://www.tbmm.gov.tr/Haber/Detay?Id=a5cf661f-e7c5-47e6-a9ae-019d2b862b3c"
+      },
+      {
+        "date": "2025-11-07",
+        "event": "AI関連の5法律を改める法案（2/3358、MHPのÖztürk議員）をTBMMが受理。ディープフェイクの表示、6時間以内の削除、BTKの緊急遮断などを含む",
+        "source": "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/12d348f9-77ee-4f09-8b78-019a5e27521f"
+      },
+      {
+        "date": "2025-11-24",
+        "event": "KVKKが「15の質問で見る生成AIと個人データ保護の指針」を公表（報道日）",
+        "source": "https://www.aa.com.tr/tr/bilim-teknoloji/kvkk-15-soruda-uretken-yapay-zeka-ve-kisisel-verilerin-korunmasi-rehberi-hazirladi/3752568"
+      },
+      {
+        "date": "2025-12-03",
+        "event": "AI生成物の表示を義務付け、違反を刑法217/A条で処罰する5651号改正案（2/3404、MHPのÖzdemir議員）をTBMMが受理",
+        "source": "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/c6d96014-55f7-45fe-a014-019ae46fb0f0"
+      },
+      {
+        "date": "2026-01-08",
+        "event": "同意のないAI生成物の共有にプラットフォームの売上高5%の過料を科す個人データ保護法改正案（2/3465）をTBMMが受理",
+        "source": "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/90b549a1-3c01-4789-a768-019b9e131772"
+      },
+      {
+        "date": "2026-02-26",
+        "event": "TBMMのAI調査委員会が報告書（提言100項目）を議長に提出",
+        "source": "https://www.tbmm.gov.tr/Haber/Detay?Id=a5cf661f-e7c5-47e6-a9ae-019d2b862b3c"
+      },
+      {
+        "date": "2026-03-12",
+        "event": "KVKKがエージェント型AI（Etken Yapay Zekâ）の指針を公表",
+        "source": "https://www.mondaq.com/turkey/data-protection/1757810/kvkk-etken-yapay-zek%C3%A2-sistemlerine-%C4%B0li%C5%9Fkin-rehber-yay%C4%B1mlad%C4%B1"
+      },
+      {
+        "date": "2026-06-13",
+        "event": "エルドアン大統領がトルコAIサミットでAI行動計画（2026-2030）を発表",
+        "source": "https://www.hurriyetdailynews.com/amp/turkiye-sets-new-targets-in-artificial-intelligence-action-plan-erdogan-223242"
+      },
+      {
+        "date": "2026-08-18",
+        "event": "大統領通達2026/9（トルコAI行動計画2026-2030）が官報33344号に掲載",
+        "source": "https://www.resmigazete.gov.tr/eskiler/2026/08/20260818-8.pdf"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI横断法はない。行動計画は公的機関への通達で、KVKKの指針は既存法の解説にとどまる。EUのような事業者義務は、法案が成立するまで生じない",
+        "source": "https://cms.law/en/tur/legal-updates/turkiye-unveils-new-ai-action-plan"
+      },
+      {
+        "topic": "監督体制",
+        "note": "AI専属の監督機関を置かない。国家AI評議会による調整型で、拘束力のある監督・制裁は分野別の規制当局に残る。EUはAI Officeと加盟国の市場監視当局の二層",
+        "source": "https://cms.law/en/tur/legal-updates/turkiye-unveils-new-ai-action-plan"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・禁止用途・高リスク義務・表示義務・罰則は、どれも法案の段階。4法案ともTBMMの記録で委員会に係属中",
+        "source": "https://www.tbmm.gov.tr/Yasama/KanunTeklifi/e21539a0-888a-4500-81be-01904a918c53"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "施行中の法令になく、4法案の本文にも汎用モデル・システミックリスク・計算量基準の規定はない",
+        "source": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf"
+      },
+      {
+        "topic": "禁止用途の列挙（法案）",
+        "note": "2/2234は「禁止されたAI利用」に罰金を定めるが、禁止の中身を列挙していない。EU第5条の個別類型にあたるものはない",
+        "source": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y2/T2/WebOnergeMetni/e50ccc8a-ab90-45fa-a553-76b880c78fb8.pdf"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "AI生成物の無表示を刑事罰に（法案）",
+        "note": "2/3404は、AI生成の音声・文章・映像すべてへの表示を義務付け、違反を刑法217/A条（公衆を誤導する情報の流布）で処罰する。EU第50条の違反は行政上の罰金",
+        "source": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/a6cf57b6-85be-4fbb-a01a-41316f52d855.pdf"
+      },
+      {
+        "topic": "プラットフォームへの売上高連動・投稿ごとの過料（法案）",
+        "note": "2/3465は、同意なく共有されたAI生成物について、共有を許したプラットフォームに前年売上高の5%を投稿ごとに科す（個人データ保護法第18条の改正案）",
+        "source": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/84f5c865-95cf-4c07-8cda-681abdccea66.pdf"
+      },
+      {
+        "topic": "6時間以内の削除とBTKの緊急遮断（法案）",
+        "note": "2/3358は、人格権侵害・公共の安全への脅威・ディープフェイクのAIコンテンツを6時間以内に遮断・削除させ、コンテンツ提供者とAI開発者に連帯して責任を負わせる。選挙の安全を脅かすAIコンテンツにはBTKの緊急遮断権限を置く",
+        "source": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf"
+      },
+      {
+        "topic": "AI利用者・開発者の刑事責任（法案）",
+        "note": "2/3358は、AIに犯罪行為をさせた利用者を正犯とし、設計・学習で犯罪を可能にした開発者の刑を2分の1加重する（刑法第125条に第6項を足す案）",
+        "source": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D28/Y4/T2/WebOnergeMetni/5b8d2dc6-9dee-41e8-98c6-ee5b28ca9608.pdf"
+      },
+      {
+        "topic": "大統領が議長の国家AI評議会",
+        "note": "行動計画は、大統領を議長とする国家AI評議会を最高の意思決定機関とし、毎年「国家AI政策書簡」を出させる",
+        "source": "https://cms.law/en/tur/legal-updates/turkiye-unveils-new-ai-action-plan"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

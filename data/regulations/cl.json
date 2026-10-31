@@ -1,0 +1,191 @@
+{
+  "jurisdiction": "cl",
+  "regulation_name": "横断法なし（AI規制法案 Boletín 16821-19「Regula los sistemas de inteligencia artificial」上院で第二読会の審議中・成立前。EU型リスクベース）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "施行中のAIリスク分類はない。下院を通過した法案は、AIの「用途」を許容できないリスク・高リスク・限定リスク・明白なリスクなしの4区分に分け、リスクが高いほど義務を重くする。",
+      "detail": "下院可決版（Oficio 20.843）の解説によると、第6条が4区分を定め、許容できないリスクの用途は禁止（第7条）。高リスク（第8条）は、自律的に動くAIシステムや製品の安全部品のうち、基本的権利を損なう「重大なリスク」があるものの用途で、故障時や不適切な使用時の影響を特に考える。重大なリスクは、重さ・強さ・起こる確率・続く期間・影響を受ける人数の組み合わせで定義される（第3条4号）。高リスクには、リスク管理、データガバナンス、技術文書、記録、人による監督、正確性・堅牢性・サイバーセキュリティが義務付けられる（第9条）。導入後の監視（第10条）も求められる。下院採決前の版への解説では、高リスク・限定リスクの具体的な一覧は規則（reglamento）に委ねられていた。政府（MinCiencia）が準備中の差し替え案は、このリスク分類をやめるとされる（報道。2026-10 時点で未提出）。",
+      "sources": [
+        "https://eurolatinstudies.com/en/la-regulacion-de-la-inteligencia-artificial-avanza-en-chile/",
+        "https://iapp.org/news/a/se-aprueba-en-primer-tr-mite-constitucional-el-proyecto-que-regula-los-sistemas-de-ia-en-chile",
+        "https://iapp.org/news/a/contin-a-la-tramitaci-n-del-proyecto-de-ley-sobre-ia-en-chile",
+        "https://www.malaespinacheck.cl/pais/2026/10/27/ley-de-ia-avanza-en-el-senado-que-usos-prohibiria-y-como-afectaria-a-colegios-empresas-y-al-estado/",
+        "https://www.df.cl/df-lab/tech-empresas/los-planes-de-la-ministra-lincolao-para-instalar-a-chile-en-el-circuito"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "施行中のAI固有の禁止規定はない。法案第7条は、サブリミナル操作、社会的スコアリング、公共空間でのリアルタイム遠隔生体識別、顔画像の無差別収集、職場・教育などでの感情推定を禁止用途とする。",
+      "detail": "下院可決版の解説によると、第7条で禁止される用途は次のとおり。サブリミナルな操作。個人の特性につけ込んで有害な行動を起こさせること。センシティブな個人データに基づく分類で差別を生むこと。一般的な社会的スコアリング（違法・恣意的な差別を生むもの）。公共空間でのリアルタイム遠隔生体識別。顔画像の無差別な収集（インターネットや監視カメラからの顔認識DB作り）。刑事手続・国境管理・職場・教育機関での感情の評価・推定。EU第5条とほぼ重なる。ただし確認した解説では、プロファイリングだけに基づく個人の犯罪リスク予測の禁止と、EUが2026-12-02から加える同意のない性的ディープフェイク・児童性的虐待素材の生成AIの禁止は挙がっていない。条文はまだ動いており、政府の差し替え案は禁止の範囲も見直しうる。",
+      "sources": [
+        "https://eurolatinstudies.com/en/la-regulacion-de-la-inteligencia-artificial-avanza-en-chile/",
+        "https://www.malaespinacheck.cl/pais/2026/10/27/ley-de-ia-avanza-en-el-senado-que-usos-prohibiria-y-como-afectaria-a-colegios-empresas-y-al-estado/",
+        "https://iapp.org/news/a/contin-a-la-tramitaci-n-del-proyecto-de-ley-sobre-ia-en-chile"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル（基盤モデル）への個別義務は、施行中の法令にも、解説で確認した範囲の法案にもない。生成AIは法案の合成コンテンツ表示義務（第5条）で扱われる。",
+      "detail": "確認した解説（下院可決版・採決前版）では、汎用モデル・システミックリスク・計算量基準を定義し規制する条文は見当たらない。生成AIへの規律は、合成の音声・画像・動画・テキストを生成するシステムの運用者に、出力が人工的に生成・加工されたと識別できるようにさせる第5条を通じて及ぶ。学習データについては、採決前の版にあったテキスト・データマイニングの著作権例外と、学習データを権利者に開示する義務は下院の採決で削除された。著作権侵害は「インシデント」の一例として残るだけ（第3条16号）。政府は差し替え案にデータマイニングを入れないとしている（報道）。",
+      "sources": [
+        "https://iapp.org/news/a/se-aprueba-en-primer-tr-mite-constitucional-el-proyecto-que-regula-los-sistemas-de-ia-en-chile",
+        "https://iapp.org/news/a/contin-a-la-tramitaci-n-del-proyecto-de-ley-sobre-ia-en-chile",
+        "https://eurolatinstudies.com/en/la-regulacion-de-la-inteligencia-artificial-avanza-en-chile/",
+        "https://www.df.cl/df-lab/tech-empresas/los-planes-de-la-ministra-lincolao-para-instalar-a-chile-en-el-circuito"
+      ]
+    },
+    "transparency": {
+      "summary": "施行中のAI表示義務はない。法案は合成コンテンツの識別可能化（第5条）と、AIと対話していると分かるようにすることを求める。個人データ保護法（Ley 21.719）は自動化された決定に異議・説明・人の介入を求める権利を定め、2026-12-01 施行予定。",
+      "detail": "下院可決版で新設された第5条は、合成の音声・画像・動画・テキストを生成するAIシステムの全運用者に、出力が人工的に生成・加工されたと識別できるようにすることを求める（ディープフェイクを含む）。人がAIシステムと対話しているときに、それが人間ではないと分かるようにすることも求める。施行が決まっているものとしては、Ley 21.719 で改正後の個人データ保護法第8条 bis がある。法的効果を生む、または重大な影響を及ぼす自動化された決定（プロファイリングを含む）に異議を述べ、その対象とならない権利を定める。契約・明示の同意・法律に基づく例外の場合も、管理者は情報提供・説明・人の介入・意見表明・再審査の権利を確保しなければならない。施行は2026-12-01（公布から24か月目の月の初日）だが、政府は施行を延ばす法案（Boletín 18.623-07）を2026-09-01に上院へ出している。これとは別に、ディープフェイクを規律し「デジタル上の完全性」の権利を認める議員立法が2026-07-23に下院で一般承認された（委員会審議中）。",
+      "sources": [
+        "https://iapp.org/news/a/se-aprueba-en-primer-tr-mite-constitucional-el-proyecto-que-regula-los-sistemas-de-ia-en-chile",
+        "https://www.malaespinacheck.cl/pais/2026/10/27/ley-de-ia-avanza-en-el-senado-que-usos-prohibiria-y-como-afectaria-a-colegios-empresas-y-al-estado/",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1209272",
+        "https://tramitacion.senado.cl/appsenado/index.php?mo=tramitacion&ac=getDocto&iddocto=19307&tipodoc=mensaje_mocion",
+        "https://www.pauta.cl/actualidad/2026/07/23/camara-aprueba-proyecto-que-regula-deepfakes-contempla-multas-de-hasta-716-millones.html"
+      ]
+    },
+    "penalties": {
+      "summary": "施行中のAI固有の罰則はない。法案は違反を軽微・重大・最重大に分け、最大5,000〜20,000 UTM の制裁金と民事責任を定める。ただし誰が制裁を科すかは下院採決で不明確になった。",
+      "detail": "下院可決版の解説によると、第16〜17条が違反を軽微・重大・最重大に分ける。制裁金は軽微で最大5,000 UTM、最重大（禁止用途の利用など）で最大20,000 UTM（解説の試算で約140万米ドル）。金額は、事業者の規模、影響を受けた人数、緩和措置、協力の度合いに加え、違反で得た経済的利益と再犯（第17条(f)(g)、下院で追加）を考えて決める。被害者は、損害を生む行為の差止めと賠償を求められる（第18条の民事責任）。規制のサンドボックス（第12条）の参加者は、制裁金は免れるが損害賠償責任は免れない。一方で、下院の採決では、インシデント報告、個人データ保護庁の監督権限、違反処理の手続きが削られ、民事責任の手続きだけが残ったとされる。そのため行政上の制裁金を誰がどの手続きで科すかは条文上はっきりしない。EUのような売上高比例の上限はない。",
+      "sources": [
+        "https://eurolatinstudies.com/en/la-regulacion-de-la-inteligencia-artificial-avanza-en-chile/",
+        "https://iapp.org/news/a/se-aprueba-en-primer-tr-mite-constitucional-el-proyecto-que-regula-los-sistemas-de-ia-en-chile",
+        "https://iapp.org/news/a/contin-a-la-tramitaci-n-del-proyecto-de-ley-sobre-ia-en-chile",
+        "https://www.senado.cl/comunicaciones/noticias/proyecto-que-regula-sistemas-de-inteligencia-artificial-sera-estudiado-por",
+        "https://www.malaespinacheck.cl/pais/2026/10/27/ley-de-ia-avanza-en-el-senado-que-usos-prohibiria-y-como-afectaria-a-colegios-empresas-y-al-estado/"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。法案は科学技術知識イノベーション省（MinCiencia）を推進・リテラシーの調整役とする。個人データ保護庁（APDP）は Ley 21.719 で設けられたが、まだ稼働前。",
+      "detail": "下院可決版第14条は、MinCiencia にAIの倫理的な発展の推進と、市民向けのAIリテラシー・普及の計画づくりを任せる。採決前の版にあった諮問機関「AI技術諮問評議会」は下院の採決で否決された（上院の案内記事は評議会を含む説明をしており、食い違う）。解説によっては、個人データ保護庁とサイバーセキュリティ庁（ANCI）に、原則の取り込みと監督の役割があるとされる。個人データ保護庁は Ley 21.719（2024-12-13公布）で設けられ、法の施行（2026-12-01予定）に合わせて動き出す。政府の延期法案（Boletín 18.623-07）は、施行を1年遅らせ、同庁の評議会を3人から5人に増やす内容。法案は上院の Comisión de Desafíos del Futuro で審議中で、2026-10-26 に一般承認され、修正案の提出期限を12月4日とする案がまとまった（報道）。Kast 政権の Lincolao 大臣は2026-05に、革新・生産性・競争力のための6本柱の「AI枠組み法」の構想を委員会に示した。それを条文にした差し替え案は大統領府（Segpres）で止まり、2026-10-26 時点で未提出（報道）。国家AI政策（2021年に最高令で承認、2024-05-02 に177の行動を含む更新版）は拘束力のない政策文書。",
+      "sources": [
+        "https://iapp.org/news/a/se-aprueba-en-primer-tr-mite-constitucional-el-proyecto-que-regula-los-sistemas-de-ia-en-chile",
+        "https://www.latercera.com/politica/noticia/inteligencia-artificial-camara-despacha-al-senado-proyecto-que-fija-marco-regulatorio-para-su-uso-en-chile/",
+        "https://www.senado.cl/comunicaciones/noticias/proyecto-que-regula-sistemas-de-inteligencia-artificial-sera-estudiado-por",
+        "https://eurolatinstudies.com/en/la-regulacion-de-la-inteligencia-artificial-avanza-en-chile/",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1209272",
+        "https://tramitacion.senado.cl/appsenado/index.php?mo=tramitacion&ac=getDocto&iddocto=19307&tipodoc=mensaje_mocion",
+        "https://www.senado.cl/comunicaciones/noticias/senadores-conocen-propuesta-del-ejecutivo-para-ley-marco-de-ia",
+        "https://www.malaespinacheck.cl/pais/2026/10/27/ley-de-ia-avanza-en-el-senado-que-usos-prohibiria-y-como-afectaria-a-colegios-empresas-y-al-estado/",
+        "https://www.latercera.com/nacional/noticia/incertidumbre-por-ley-ia-indicacion-del-gobierno-lleva-meses-lista-pero-aun-no-llega-al-congreso-y-tensiona-a-lincolao/",
+        "https://www.df.cl/df-lab/tech-empresas/los-planes-de-la-ministra-lincolao-para-instalar-a-chile-en-el-circuito",
+        "https://www.minciencia.gob.cl/noticias/con-mas-de-100-acciones-comprometidas-para-2026-ministra-de-ciencia-presenta-nueva-politica-de-inteligencia-artificial/",
+        "https://cms.law/en/int/expert-guides/ai-regulation-scanner/chile"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2024-05-02",
+        "event": "MinCiencia が国家AI政策の更新版を公表（177の行動、14省が半年ごとに進み具合を確認）",
+        "source": "https://www.minciencia.gob.cl/noticias/con-mas-de-100-acciones-comprometidas-para-2026-ministra-de-ciencia-presenta-nueva-politica-de-inteligencia-artificial/"
+      },
+      {
+        "date": "2024-05-07",
+        "event": "政府がAI規制法案（Boletín 16821-19）を下院に提出（のちに議員立法 15869-19 と統合）",
+        "source": "https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=16821"
+      },
+      {
+        "date": "2024-12-13",
+        "event": "個人データ保護法の改正法 Ley 21.719 が公布（自動化された決定への異議権〔第8条 bis〕、個人データ保護庁の設置）",
+        "source": "https://www.bcn.cl/leychile/navegar?idNorma=1209272"
+      },
+      {
+        "date": "2025-08-04",
+        "event": "下院本会議がAI規制法案を一般承認",
+        "source": "https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=16821"
+      },
+      {
+        "date": "2025-10-13",
+        "event": "下院本会議がAI規制法案を逐条承認し、上院へ送付",
+        "source": "https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=16821"
+      },
+      {
+        "date": "2025-10-14",
+        "event": "上院が法案を受理し、Comisión de Desafíos del Futuro, Ciencia, Tecnología e Innovación に付託",
+        "source": "https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=16821"
+      },
+      {
+        "date": "2026-07-23",
+        "event": "下院がディープフェイクを規律する法案（デジタル上の完全性の権利、制裁金5,000〜10,000 UTM）を一般承認し、委員会に戻す",
+        "source": "https://www.pauta.cl/actualidad/2026/07/23/camara-aprueba-proyecto-que-regula-deepfakes-contempla-multas-de-hasta-716-millones.html"
+      },
+      {
+        "date": "2026-09-01",
+        "event": "政府が Ley 21.719 の施行延期と個人データ保護庁の評議会拡大の法案（Boletín 18.623-07、2026-08-31付の大統領教書）を上院に提出",
+        "source": "https://tramitacion.senado.cl/appsenado/index.php?mo=tramitacion&ac=getDocto&iddocto=19307&tipodoc=mensaje_mocion"
+      },
+      {
+        "date": "2026-10-26",
+        "event": "上院委員会がAI規制法案を全会一致（4対0）で一般承認し、修正案の提出期限を12月4日とする案に合意（報道。政府の差し替え案は未提出）",
+        "source": "https://www.malaespinacheck.cl/pais/2026/10/27/ley-de-ia-avanza-en-el-senado-que-usos-prohibiria-y-como-afectaria-a-colegios-empresas-y-al-estado/"
+      },
+      {
+        "date": "2026-12-01",
+        "event": "Ley 21.719（改正個人データ保護法）の施行予定日（延期法案が成立すれば変わる）",
+        "source": "https://www.bcn.cl/leychile/navegar?idNorma=1209272"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI横断法はなく、国家AI政策も拘束力のない政策文書にとどまる。EUのような事業者義務は法案が成立するまで生じない",
+        "source": "https://cms.law/en/int/expert-guides/ai-regulation-scanner/chile"
+      },
+      {
+        "topic": "制裁金の上限（法案）",
+        "note": "最大20,000 UTM（解説の試算で約140万米ドル）の定額上限で、EU第99条の3,500万ユーロまたは全世界売上高7%のような売上高比例の上限はない",
+        "source": "https://eurolatinstudies.com/en/la-regulacion-de-la-inteligencia-artificial-avanza-en-chile/"
+      },
+      {
+        "topic": "行政執行の仕組み（法案）",
+        "note": "下院の採決で個人データ保護庁の監督権限と違反処理の手続きが削られ、行政上の執行主体がはっきりしない。EUは加盟国の市場監視当局とAI Officeが執行する",
+        "source": "https://iapp.org/news/a/se-aprueba-en-primer-tr-mite-constitucional-el-proyecto-que-regula-los-sistemas-de-ia-en-chile"
+      },
+      {
+        "topic": "リスク分類からの離脱（政府方針・未提出）",
+        "note": "Kast 政権の差し替え案はリスク分類をやめ、日本・シンガポール・韓国を参考にした振興型の枠組み法を目指すとされる（報道。条文は未公表）",
+        "source": "https://www.df.cl/df-lab/tech-empresas/los-planes-de-la-ministra-lincolao-para-instalar-a-chile-en-el-circuito"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "施行中の横断規制全般",
+        "note": "リスク分類・禁止用途・高リスク義務・表示義務・罰則は、どれも上院審議中の法案の段階で施行されていない",
+        "source": "https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=16821"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "解説で確認した範囲では、法案に汎用モデル・システミックリスク・計算量基準の規定はない",
+        "source": "https://eurolatinstudies.com/en/la-regulacion-de-la-inteligencia-artificial-avanza-en-chile/"
+      },
+      {
+        "topic": "AI専属の監督機関",
+        "note": "法案はMinCienciaを推進の調整役にするだけで、下院はAI技術諮問評議会の設置も否決した",
+        "source": "https://iapp.org/news/a/se-aprueba-en-primer-tr-mite-constitucional-el-proyecto-que-regula-los-sistemas-de-ia-en-chile"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "AIによる損害の民事責任（法案）",
+        "note": "第18条で、被害者が差止めと損害賠償を求められる民事責任を定める。EU AI法本体には損害賠償責任の規定がない",
+        "source": "https://eurolatinstudies.com/en/la-regulacion-de-la-inteligencia-artificial-avanza-en-chile/"
+      },
+      {
+        "topic": "AI法より先に施行される自動化決定の権利",
+        "note": "Ley 21.719 による改正後の個人データ保護法第8条 bis が、自動化された決定への異議・説明・人の介入の権利を2026-12-01から定める（延期法案あり）。EUではGDPR第22条が対応し、AI法本体の外にある",
+        "source": "https://www.bcn.cl/leychile/navegar?idNorma=1209272"
+      },
+      {
+        "topic": "ディープフェイクとデジタル上の完全性の権利（別法案）",
+        "note": "本人の同意なく画像・身体・声のリアルな模造を作ることを規律し、5,000〜10,000 UTM の制裁金とプラットフォームの義務を置く議員立法が、2026-07-23に下院で一般承認された",
+        "source": "https://www.pauta.cl/actualidad/2026/07/23/camara-aprueba-proyecto-que-regula-deepfakes-contempla-multas-de-hasta-716-millones.html"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

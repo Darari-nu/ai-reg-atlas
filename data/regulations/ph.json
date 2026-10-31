@@ -1,0 +1,123 @@
+{
+  "jurisdiction": "ph",
+  "regulation_name": "包括AI法なし（政府のAI利用に関する DICT・CSC 合同覚書回状 No.003 s.2026 と、NPC 勧告 No.2024-04。包括AI法案は第20議会で審議中）",
+  "status": "proposed",
+  "approach": "sectoral",
+  "axes": {
+    "risk_classification": {
+      "summary": "法定のリスク分類はない。政府のAI利用を定める DICT・CSC 合同覚書回状（JMC No.003 s.2026）が、リスクがある場合の評価と、高リスクな決定への人の監督を求める段階。",
+      "detail": "横断的なAI法は未成立で、EUのような段階別の分類と義務の表はない。2026-06-09 に情報通信技術省（DICT）と公務員委員会（CSC）が出した JMC No.003 s.2026 は、政府機関のAIの開発・導入・利用に原則ベースの枠組みを置き、「比例性・害をなさない」原則でリスクがある場合の安全策とリスク評価を、「人間中心」原則で高リスクな決定への人の監督を求める（法律事務所の解説で確認。JMC の条番号は一次本文未読のため未確認）。分類を法定する案は法案段階で、下院 HB 7627（国家AI法典、2026-02提出）はAIシステム局（BAIS）を新設して高リスクAIを分類させる案。2026-05時点で下院ICT委員会に係属（その後の進捗は未確認）。",
+      "sources": [
+        "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued",
+        "https://fma.ph/regulating-risk-the-20th-congress-of-the-philippines-response-to-artificial-intelligence/",
+        "https://docs.congress.hrep.online/legisdocs/basic_20/HB07627.pdf"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "AIの用途を全国一律に禁止する成立法令はない。政府機関向けの JMC が人権・プライバシーを侵害する利用の禁止を原則として掲げ、具体的な禁止類型は審議中の法案にとどまる。",
+      "detail": "JMC No.003 s.2026 は政府機関に、プライバシーや人権を侵害する利用の厳格な禁止と、操作的・欺瞞的な手法の回避を原則として求める（政府部門のみ。条番号は未確認）。法案では、下院 HB 7627 が欺瞞的AI・脆弱な集団の悪用・無断のなりすましの禁止、上院 SB 852（AI規制法、2025-08提出）が性別・ジェンダー自認・社会経済的地位などによるAIの差別の禁止、上院 SB 758（2025-08）と SB 1714（2026-01）がディープフェイクの規律、下院 HB 3905（2025-08）がAIを使った犯罪の刑を1等級重くする案を出している。いずれも2026-05時点で委員会に係属。確認した範囲の成立法令には、EU第5条のような社会的スコアリング・生体識別・感情認識の類型禁止はない。",
+      "sources": [
+        "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued",
+        "https://fma.ph/regulating-risk-the-20th-congress-of-the-philippines-response-to-artificial-intelligence/"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "汎用AIモデル・生成AIの提供者に課す法的義務はない。",
+      "detail": "JMC No.003 s.2026 はAIシステムの定義に機械学習・生成AI・自律システムを含めるが、対象は政府機関とその職員・業務委託者で、ベンダーにはリスクと限界の開示などが及ぶにとどまる。モデル提供者一般への技術文書・著作権方針・学習データ要約・システミックリスク評価のような義務はない。生成AIへの規律は審議中のディープフェイク法案（上院 SB 758 はAI生成コンテンツの開示と、確認された苦情から24時間以内の削除をプラットフォームに求める案）で構想されている段階。",
+      "sources": [
+        "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued",
+        "https://fma.ph/regulating-risk-the-20th-congress-of-the-philippines-response-to-artificial-intelligence/"
+      ]
+    },
+    "transparency": {
+      "summary": "AI生成物の一般的な表示義務はない。政府機関には JMC No.003 s.2026 がAI利用の目的・入力・リスク・限界の開示を求め、個人データを扱うAIには NPC 勧告 No.2024-04 がデータプライバシー法を当てはめる。",
+      "detail": "JMC は「透明性と説明可能性」原則として、AIの処理と出力を理解できるようにし、目的・入力・リスク・限界を明確に開示することを政府機関に求め、開発者・実施者にはAI利用の開示、ベンダーにはリスクと限界の開示を課す（法律事務所の解説で確認、条番号は未確認）。国家プライバシー委員会（NPC）の勧告 No.2024-04（2024-12-19）は、データプライバシー法（RA 10173）を個人データを処理するAIシステムに適用する指針（本文の条項は未読のため未確認）。EU第50条のような、チャットボットの告知・合成コンテンツの機械可読表示・ディープフェイク明示の横断義務はなく、上院 SB 758 などの法案でAI生成コンテンツの開示義務が提案されている段階。",
+      "sources": [
+        "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued",
+        "https://privacy.gov.ph/wp-content/uploads/2025/02/Advisory-2024.12.19-Guidelines-on-Artificial-Intelligence-w-SGD.pdf",
+        "https://fma.ph/regulating-risk-the-20th-congress-of-the-philippines-response-to-artificial-intelligence/"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。JMC の違反は既存の法令の罰則で扱い、個人データを扱うAIはデータプライバシー法の執行の対象。",
+      "detail": "JMC No.003 s.2026 は違反に既存の法令の罰則を適用するとし、独自の制裁は定めない。個人データを扱うAIは RA 10173 と NPC の執行の枠内（罰則額は今回の調査では未確認）。法案では上院 SB 758 がAI生成の開示を怠った者への罰金、SB 1714 がより重い罰金上限を構想（金額は未確認）。EUのような売上高連動の制裁金はない。",
+      "sources": [
+        "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued",
+        "https://fma.ph/regulating-risk-the-20th-congress-of-the-philippines-response-to-artificial-intelligence/"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "AI専属の監督機関はない。政府のAI利用は DICT と CSC（JMC）、個人データを扱うAIは NPC が担い、包括法案はフィリピンAI評議会やAIシステム局の新設を構想する。",
+      "detail": "JMC No.003 s.2026 は、各政府機関にIT・法務・業務部門の代表からなる内部委員会を置かせ、機関の長が承認の責任を負う。AIの取り組みを情報システム戦略計画と調達に組み込み、遵守を継続して監視させる。DICT と CSC は発効から90日以内に実施指針を出すとされた（発出の有無は未確認）。NPC は RA 10173 に基づく監督機関として勧告 No.2024-04 を出している。DICT は 2026-09 に8年間のAIインフラ計画（投資見込み344億ドル）を出したと報じられた（計画の正式名称・法形式は未確認）。法案では上院 SB 852 がフィリピンAI評議会、下院 HB 7627 がAIシステム局（BAIS）の新設を提案。",
+      "sources": [
+        "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued",
+        "https://privacy.gov.ph/wp-content/uploads/2025/02/Advisory-2024.12.19-Guidelines-on-Artificial-Intelligence-w-SGD.pdf",
+        "https://fma.ph/regulating-risk-the-20th-congress-of-the-philippines-response-to-artificial-intelligence/",
+        "https://newsbytes.ph/2026/09/09/dict-rolls-out-8-year-ai-infra-roadmap-eyes-34-4-billion-investments/"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2024-12-19",
+        "event": "国家プライバシー委員会（NPC）が勧告 No.2024-04（個人データを処理するAIシステムへのデータプライバシー法の適用指針）を発出",
+        "source": "https://privacy.gov.ph/wp-content/uploads/2025/02/Advisory-2024.12.19-Guidelines-on-Artificial-Intelligence-w-SGD.pdf"
+      },
+      {
+        "date": "2025-07-02",
+        "event": "上院に SB 25「人工知能規制法（AIRA）」が提出され、第1読会後に持続可能な開発目標・イノベーション・未来思考委員会へ付託",
+        "source": "https://www.legal500.com/guides/chapter/philippines-artificial-intelligence/?export-pdf="
+      },
+      {
+        "date": "2026-06-09",
+        "event": "DICT と公務員委員会（CSC）が合同覚書回状 No.003 s.2026（政府部門のAIの倫理的・責任ある開発・導入・利用の枠組み）を発出",
+        "source": "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力の範囲",
+        "note": "拘束的な枠組みは政府部門向けの JMC と個人データ保護に限られ、民間のAI提供者・実施者一般への義務はない（政府に納入するベンダーには発注機関を通じて及ぶ）",
+        "source": "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued"
+      },
+      {
+        "topic": "透明性義務の対象",
+        "note": "AI利用の開示は政府機関（JMC）に限られる。EU第50条のようなAIとの対話の告知・合成コンテンツの機械可読表示・ディープフェイク明示の横断義務はない",
+        "source": "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "横断的AI法とリスク分類",
+        "note": "包括AI法は未成立。上院 SB 25（AIRA）・SB 852、下院 HB 7627 などが委員会に係属（2026-05時点）",
+        "source": "https://fma.ph/regulating-risk-the-20th-congress-of-the-philippines-response-to-artificial-intelligence/"
+      },
+      {
+        "topic": "汎用AI（基盤モデル）規制",
+        "note": "汎用モデル・システミックリスク・計算量基準の規定はない",
+        "source": "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued"
+      },
+      {
+        "topic": "AI固有の制裁",
+        "note": "JMC は違反を既存の法令の罰則で扱い、AI固有の制裁金はない",
+        "source": "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued"
+      },
+      {
+        "topic": "AI専属の監督機関",
+        "note": "既存の DICT・CSC・NPC が分担。フィリピンAI評議会（SB 852）やAIシステム局（HB 7627）は法案段階",
+        "source": "https://fma.ph/regulating-risk-the-20th-congress-of-the-philippines-response-to-artificial-intelligence/"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "公務員委員会と組んだ政府部門先行のAI統治",
+        "note": "DICT と公務員委員会（CSC）の合同回状で、国の機関・憲法機関・政府系企業・地方政府・国立大学の職員と業務委託者に原則を適用し、各機関にAIの内部委員会を置かせる。委託しても発注機関が責任を負い、ベンダーに要件が及ぶ",
+        "source": "https://www.quisumbingtorres.com/en/alerts/2026/07/framework-for-ethical-and-responsible-ai-use-in-govt-issued"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

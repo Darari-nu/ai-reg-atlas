@@ -1,0 +1,166 @@
+{
+  "jurisdiction": "eg",
+  "regulation_name": "横断法なし（国家AI戦略第2版2025–2030＋国家AIガバナンス枠組みガイド（2026-03）・責任あるAI憲章。AI法は政府が起草中で法案本文は未公表）",
+  "status": "proposed",
+  "approach": "soft_law",
+  "axes": {
+    "risk_classification": {
+      "summary": "法律上のAIリスク分類はない。2026-03に国家AI評議会が承認した「国家AIガバナンス枠組みガイド」が、禁止・高リスク・限定リスク・最小リスクの4段階を置く（EUとほぼ同じ形）。",
+      "detail": "ガイドの4.1〜4.2節は、規制を技術そのものではなく用途の文脈と影響に比例させるとし、規模・対象者の脆弱性・不可逆性・発生確率の4基準でリスクを判定する。Tier 1（禁止）、Tier 2（高リスク。要旨では重要インフラと生体情報を例示）、Tier 3（限定リスク。チャットボット・感情認識・ディープフェイク等の生成AI）、Tier 4（最小リスク。スパムフィルタ・ゲーム等、追加義務なし）の4段階。分類結果はAIリスク登録簿に記録する。高リスクは市場投入・供用の前に、AI倫理影響評価（AIEIA）と技術適合性評価（TEVV監査）の「二重チェック」を受ける（5.2節）。供用後は継続監視と重大インシデントの所管規制当局への報告を求める（5.3節。報告期限の数字は書かれていない）。適用範囲はエジプト市場・国民に影響する全AIで、国外の提供者も含む。国家安全保障・研究開発・サンドボックスは除外（1.7節）。ただし文書は法律ではなく指針であり、拘束力のある横断的なAI法はない（法律事務所の解説）。詳細な分類指針は第1段階（12か月以内）に出す予定（8.2節）。高リスクの適合性評価の義務化は第2段階（12〜24か月目）とされる（8.1節）。",
+      "sources": [
+        "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf",
+        "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/",
+        "https://www.middleeastainews.com/p/egypt-publishes-ai-governance-framework"
+      ]
+    },
+    "prohibited_uses": {
+      "summary": "法律上のAI禁止規定はない。ガイドのTier 1は、社会的プロファイリング・子どもの搾取・操作的な行動への干渉を例に、許容できないリスクのAIを「禁止」とする。",
+      "detail": "ガイドの4.2節は、個人の安全・生計・基本的権利に許容できないリスクを生むAIを禁止とする。例示は、社会的プロファイリング、子どもの搾取、操作的な行動への干渉の3つ。要旨では、主権または基本的権利への許容できないリスクと書く。EU第5条にある、無差別な顔画像収集、職場・教育での感情推定、センシティブ属性の生体分類、法執行目的のリアルタイム遠隔生体識別といった個別の類型は挙がっていない。感情認識はTier 3（透明性義務）に入る。いずれも法律による禁止ではなく、罰則もない。",
+      "sources": [
+        "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf",
+        "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      ]
+    },
+    "gpai_obligations": {
+      "summary": "法律上の汎用AI義務はない。ガイドは、システミックな汎用AIを高リスク（Tier 2）に格上げし、標準的な汎用AIには学習・データ来歴・著作権遵守の文書化（Tier 3）を求める。生成AIには別に国家生成AI指針（2026-03）がある。",
+      "detail": "ガイドの4.3節は、大規模言語モデルなどの汎用AI（GPAI）を特別扱いする。強力な汎用AIが高リスクの用途に影響し、社会に広い害を及ぼし得る場合は「システミックリスクモデル」としてTier 2に分類し直し、サイバーセキュリティと敵対的テストを厳しく見る。それ以外の標準的な汎用AIは、Tier 3の透明性義務として、学習・データ来歴・著作権遵守の文書化の対象とする。6.3節は、汎用AIの提供者に学習に使った著作物の詳細な記録を求める。計算量などの数値基準は書かれていない。国家AI評議会が承認した「国家生成AI指針」（2026-03、第1.0版）は原則ベースの指針。生成AIを自律的な意思決定者ではなく補助の道具と位置づけ、教育・研究、公共の情報、エージェント型AI、ディープフェイクやリップシンクを注意の要る用途に挙げる。国家AI戦略第2版は、国産アラビア語大規模言語モデル（国家基盤モデル）の開発を掲げる。",
+      "sources": [
+        "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf",
+        "https://ai.gov.eg/SynchedFiles/ar/Resources/EGYPT%20National%20Guidlines%20for%20Generative%20AI.pdf",
+        "https://mcit.gov.eg/en/Publication/Publication_Summary/10550",
+        "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      ]
+    },
+    "transparency": {
+      "summary": "法律上のAI表示義務はない。憲章（2023）は、利用者がAIと対話していることを知る権利を定める。ガイドは、限定リスク（チャットボット・感情認識・ディープフェイク）に、機械との対話の開示とAI生成物のラベル・透かしを求める。",
+      "detail": "責任あるAI憲章の一般指針2は、自動応答のコールセンターなどで、利用者が人間でなくAIとやり取りしていることを知る基本的な権利を定める。一般指針4は、AIの判断で不利益を受けた人が、判断の論理について分かりやすい情報をもとに異議を申し立てられるようにすることを求める（法律事務所の解説）。ガイドの4.2節は、Tier 3のチャットボット・感情認識・生成AI（ディープフェイク等）に、機械との対話の開示と、AI生成物へのラベル表示または透かしを求める。3.3節も、AIとの対話の告知と説明可能性を全てのAI関係者への運用上の指示とする。国家生成AI指針も透明性と開示を柱の一つとする。いずれも法律ではなく、違反への罰則はない。個人データを扱うAIには、個人情報保護法（法律151/2020）の同意・目的の限定などがかかる。",
+      "sources": [
+        "https://ai.gov.eg/SynchedFiles/en/Resources/Egyptian%20Charter%20For%20Responsible%20AI.pdf",
+        "https://mcit.gov.eg/en/Media_Center/Press_Room/Press_Releases/66939",
+        "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf",
+        "https://ai.gov.eg/SynchedFiles/ar/Resources/EGYPT%20National%20Guidlines%20for%20Generative%20AI.pdf",
+        "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      ]
+    },
+    "penalties": {
+      "summary": "AI固有の罰則はない。違反は、サイバー犯罪法（法律175/2018）・個人情報保護法（法律151/2020）・消費者保護法・民法など既存法で扱う。AIを使った名誉毀損やディープフェイクを罰する議員提出の法案がある。",
+      "detail": "法律事務所の解説によると、AI固有の法律は施行されていない。サイバー犯罪法は、サービス提供者にログの180日保存などを課し、保存義務違反には500万〜1,000万エジプト・ポンドの罰金がある（第2条・第33条）。個人情報保護センター（PDPC）は、警告や許可の停止・取消しができる。民事は民法第163条（過失責任）と第178条（物の保管者の推定責任）などで扱う。議会では、AIを使ったうわさの拡散や名誉毀損の罰則を重くするサイバー犯罪法改正案（2026-05-02報道）や、AIによるネット恐喝とディープフェイク対策の法案が議員から出された。審議の状況は確認できていない。政府が準備中のAI法は罰則を含むと委員長が述べているが、内容は公表されていない。",
+      "sources": [
+        "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/",
+        "https://www.youm7.com/story/2026/5/2/%D8%A8%D8%B1%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A9-%D8%AA%D8%AA%D9%82%D8%AF%D9%85-%D8%A8%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%A7%D9%84%D8%AA%D8%B4%D9%87%D9%8A%D8%B1-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A-%D8%A8%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A/7399555",
+        "https://www.dostor.org/5569279",
+        "https://www.dostor.org/5180260"
+      ]
+    },
+    "enforcement_body": {
+      "summary": "執行権限を持つAI専属の規制機関はない。国家AI・量子計算・新興技術評議会（通信情報技術大臣が議長）が政策の司令塔、MCITの責任あるAIセンター（ECRAI）が実務、ITIDA傘下のSECCが適合性評価を担い、執行は分野ごとの規制当局に分散する。",
+      "detail": "国家AI評議会は首相令2889/2019（2019-11-24官報）で設置された。首相令207/2026（2026-01-18官報）で「国家AI・量子計算・新興技術評議会」に改組され、国防・内務・総合情報庁・行政監察庁なども構成員に加わった。評議会は月1回開き、半年ごとに首相へ報告する（第5条）。いずれも法律事務所の解説による。法律事務所は、評議会には執行権限がないとする。ガイドの第2章は役割を次のように分ける。評議会は戦略・リスク定義・基準を出す。ECRAI（MCIT）は枠組みの運用と政府機関への助言を担う。ITIDA傘下のソフトウェア工学能力センター（SECC）は、国のAI適合性評価機関として、TEVV監査、民間監査会社の認定、高リスクの市場投入に必要な「技術適合証明」の発行を担う。NTRA・EG-CERTは機器の型式認証とサイバー耐性、PDPCは個人データを受け持つ。CBE・FRA・医薬品庁などの分野規制当局が、評議会と調整して執行と適合性評価を行う。憲章は、政府のAI案件をMCITが監督し、評議会に定期報告すると定める。国家AI戦略第2版（2025-01公表）は、ガバナンスの柱にAIの規制枠組みづくりを置く。AI法は政府と下院通信情報技術委員会が準備中で、委員長は2025-08に条文の約70%ができたと述べた。法案本文・提出日・規制機関の設計は未公表。",
+      "sources": [
+        "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/",
+        "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf",
+        "https://mcit.gov.eg/en/Media_Center/Press_Room/Press_Releases/66939",
+        "https://mcit.gov.eg/en/Publication/Publication_Summary/10550",
+        "https://english.ahram.org.eg/News/539743.aspx",
+        "https://www.dostor.org/5180260"
+      ]
+    },
+    "timeline": [
+      {
+        "date": "2019-11-24",
+        "event": "首相令2889/2019が官報に掲載され、国家AI評議会（NCAI）が発足（法律事務所の解説による）",
+        "source": "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      },
+      {
+        "date": "2023-04-20",
+        "event": "国家AI評議会が「責任あるAIのためのエジプト憲章」を公表（一般指針13・実施指針16。法的拘束力なし）",
+        "source": "https://mcit.gov.eg/en/Media_Center/Press_Room/Press_Releases/66939"
+      },
+      {
+        "date": "2025-11-01",
+        "event": "個人情報保護法（法律151/2020）の施行規則（MCIT決定816/2025）が施行。1年の猶予期間が始まる（法律事務所の解説による）",
+        "source": "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      },
+      {
+        "date": "2026-01-18",
+        "event": "首相令207/2026が官報に掲載され、評議会が「国家AI・量子計算・新興技術評議会」に改組（法律事務所の解説による）",
+        "source": "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      },
+      {
+        "date": "2026-03-15",
+        "event": "「国家AIガバナンス枠組みガイド」第2.0版をMCIT大臣（評議会議長）が承認（4段階のリスク分類・高リスクの二重チェック。同月に信頼できる責任あるAIの国家指針と国家生成AI指針も公表）",
+        "source": "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf"
+      },
+      {
+        "date": "2026-11-01",
+        "event": "個人情報保護法の施行規則の猶予期間が終わり、PDPCによる本格的な執行が始まる予定（法律事務所の解説による）",
+        "source": "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      }
+    ]
+  },
+  "diff_vs_eu": {
+    "stricter": [],
+    "looser": [
+      {
+        "topic": "拘束力",
+        "note": "施行中のAI横断法はなく、リスク分類・禁止・透明性は国家AI評議会のガイド・憲章・指針（法律ではない）で定められている。罰則で担保されたEU型の事業者義務は生じていない",
+        "source": "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      },
+      {
+        "topic": "禁止用途の範囲",
+        "note": "ガイドのTier 1の例示は、社会的プロファイリング・子どもの搾取・操作的な行動への干渉の3つ。EU第5条の顔画像の無差別収集・生体分類・リアルタイム遠隔生体識別は挙がっていない。職場・教育での感情推定はEUでは禁止だが、ガイドでは感情認識全般がTier 3（透明性義務）",
+        "source": "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf"
+      },
+      {
+        "topic": "汎用AIの基準",
+        "note": "システミックな汎用AIを高リスクに格上げする考え方はあるが、計算量などの数値基準、実践規範、AI Officeのような直接の監督はない",
+        "source": "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf"
+      }
+    ],
+    "absent": [
+      {
+        "topic": "AI固有の罰則",
+        "note": "AIに固有の制裁金・罰則の定めがない。違反はサイバー犯罪法・個人情報保護法・民法などの既存法で扱う",
+        "source": "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      },
+      {
+        "topic": "執行権限を持つAI監督機関",
+        "note": "国家AI・量子計算・新興技術評議会には執行権限がなく、執行は既存の分野規制当局に分散。EUのAI Officeや加盟国の市場監視当局にあたる専属の機関はない（AI法で設ける構想）",
+        "source": "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      }
+    ],
+    "unique": [
+      {
+        "topic": "Frugal AI（省資源AI）の説明義務",
+        "note": "高リスクAIの開発者は、技術的にできる範囲で小型言語モデルなどの軽量モデルを優先する。資源を多く使うモデルを選ぶときは、軽量モデルでは足りない技術的理由を文書にする（遵守か説明か。ガイド5.4節）",
+        "source": "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf"
+      },
+      {
+        "topic": "外国モデルの現地データ学習",
+        "note": "エジプトで製品を展開する外国企業に、エジプト市場に関係するデータで学習させ、現地の慣習・社会規範を尊重することを求める（憲章、ガイド3.3節）",
+        "source": "https://ai.gov.eg/SynchedFiles/en/Resources/Egyptian%20Charter%20For%20Responsible%20AI.pdf"
+      },
+      {
+        "topic": "デュアルユースAIの輸出許可",
+        "note": "高度な監視システム・自律兵器・高性能な基盤モデルなどデュアルユースのAI技術の輸出に、国家安全保障当局の個別許可を求める（ガイド7.3節）",
+        "source": "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf"
+      },
+      {
+        "topic": "最高AI責任者（CAIO）の設置",
+        "note": "政府機関と高リスクAIを扱う企業に、CAIOまたは同等の責任者を置き、認定を受けることを求める（ガイド6.2節）",
+        "source": "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf"
+      },
+      {
+        "topic": "高リスクAIの倫理影響評価を「倫理ライセンス」に",
+        "note": "高リスクAIの提供者は、市場投入前に技術監査（TEVV）に加えて、偏り・差別・雇用喪失・憲章との整合を見るAI倫理影響評価（AIEIA）を行う。AIEIAが開発を進める「倫理ライセンス」、技術監査が市場投入の「技術ライセンス」になる（ガイド5.2節）。EUの基本権影響評価（第27条）は一部の導入者だけが対象",
+        "source": "https://ai.gov.eg/SynchedFiles/ar/Resources/Guide%20to%20Egypt%E2%80%99s%20National%20AI%20Governance%20Framework.pdf"
+      },
+      {
+        "topic": "安全保障機関が加わる国家評議会",
+        "note": "AI政策の最上位機関に、国防省・内務省・総合情報庁・行政監察庁の代表が加わり、量子計算・新興技術も所管する（首相令207/2026）",
+        "source": "https://www.legal500.com/guides/chapter/egypt-artificial-intelligence/"
+      }
+    ]
+  },
+  "last_checked": "2026-10-31T00:00:00Z",
+  "last_changed": "2026-10-31T00:00:00Z"
+}

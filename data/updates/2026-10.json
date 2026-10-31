@@ -658,5 +658,95 @@
       "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261029/"
     ],
     "country_anchor": "/country/ca/#updates"
+  },
+  {
+    "id": "2026-10-30-cn-001",
+    "date": "2026-10-30",
+    "country": "cn",
+    "axis": "transparency",
+    "change_type": "status_change",
+    "legal_stage": "other",
+    "source_kind": "official",
+    "title": "中国国家インターネット情報オフィス、第19批ディープフェイク算法の备案情報を公表",
+    "summary": {
+      "what": "第19批国内ディープフェイクサービス算法の备案情報の公表",
+      "who": "中国国家インターネット情報オフィス（CAC）",
+      "when_impact": "2026年10月30日公表"
+    },
+    "detail": "中国国家インターネット情報オフィス（CAC）は、『インターネット情報サービスディープフェイク管理規定』に基づき、第19批となる国内ディープフェイクサービス算法の备案情報を公表した。該当するサービス提供者や技術支持者は、公式システムを通じて確認が可能であり、未だ备案手続きを完了していない事業者に対しては速やかな申請が呼びかけられている。",
+    "so_what": "中国国内でディープフェイクや生成AI関連サービスを提供する企業は、算法に関する事前备案の履行状況を定期的なリスト更新を通じて確認し、未了の場合は速やかに手続きを行う必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "China publishes deep synthesis service algorithm filing information",
+    "publication_date": "2026-10-30",
+    "discovered_at": "2026-10-31",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.cac.gov.cn/2026-10/30/c_1795114304542687.htm"
+    ],
+    "country_anchor": "/country/cn/#axis-transparency"
+  },
+  {
+    "id": "2026-10-30-in-001",
+    "date": "2026-10-30",
+    "country": "in",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "legal_stage": "draft_or_consultation",
+    "source_kind": "official",
+    "title": "インド電気通信規制庁（TRAI）、通信分野のAI利用ガイドライン草案を公表",
+    "summary": {
+      "what": "通信ネットワークとサービスにおけるAIの責任ある利用に関するガイドライン草案の公表",
+      "who": "インド電気通信規制庁（TRAI）",
+      "when_impact": "2026年10月30日に公表され、11月27日までパブリックコメントを募集"
+    },
+    "detail": "インド電気通信規制庁（TRAI）は2026年10月30日、「電気通信ネットワークおよび電気通信サービス提供における人工知能（AI）の責任ある利用に関するガイドライン草案」を公表した。通信セクターにおけるAI適用の安全性や倫理的利用を目的としており、2026年11月27日まで関係者からの意見募集（コンサルテーション）を実施している。",
+    "so_what": "インドで通信インフラや通信サービス関連AIを扱う事業者は、草案の遵守事項を確認し必要に応じて意見提出を行う必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "TRAI releases draft guidelines on responsible AI use in telecommunication networks",
+    "publication_date": "2026-10-30",
+    "discovered_at": "2026-10-31",
+    "effective_date": null,
+    "deadline_date": "2026-11-27",
+    "sources": [
+      "http://www.trai.gov.in/draft-guidelines-responsible-use-artificial-intelligence-ai-telecommunication-networks-and"
+    ],
+    "country_anchor": "/country/in/#updates"
+  },
+  {
+    "id": "2026-10-30-kr-001",
+    "date": "2026-10-30",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "韓国科学技術情報通信部、フィジカルAI産業の育成加速に向け専門家との意見交換を推進",
+    "summary": {
+      "what": "フィジカルAI（物理的AI）産業の育成加速に向け、専門家との意見交換や対話を推進すること。",
+      "who": "韓国科学技術情報通信部（MSIT）",
+      "when_impact": "2026年10月30日の発表以降、フィジカルAI関連施策の検討が進む見込み。"
+    },
+    "detail": "韓国の科学技術情報通信部（MSIT）は、国内におけるフィジカルAI（物理的人工知能）産業の育成を加速させるため、専門家との意見交換およびコミュニケーションの推進を発表した。ロボティクスや製造業等とAIを融合するフィジカルAI分野の支援体制構築に向けた取り組みの一環とされる。",
+    "so_what": "フィジカルAI分野における韓国政府の支援施策や技術動向の具体化を注視し、関連事業での対応方針を検討する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea promotes physical AI industry development",
+    "publication_date": "2026-10-30",
+    "discovered_at": "2026-10-31",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187900"
+    ],
+    "country_anchor": "/country/kr/#updates"
   }
 ]

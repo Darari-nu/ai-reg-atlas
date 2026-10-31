@@ -1,140 +1,4 @@
 {
-  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_kankyou/wpt/wpt_wg_12th_data.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/main_sosiki/singi/kanmin/02shingi06_02001096.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001578.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/main_sosiki/kenkyu/immersive_technology/04_kaisai.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_kankyou/02kiban16_04000964.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/main_sosiki/singi/yusei/02kiban03_04001190.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/denpa_kanri/kaisai/02kiban01_04000330.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02ryutsu07_04000592.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/denki_tsusin/02ryutsu01_04000519.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.federalregister.gov/documents/2026/09/29/2026-19860/implementing-the-federal-reserve-boards-responsibilities-under-the-genius-act": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.federalregister.gov/documents/2026/09/29/2026-19835/proposed-revision-of-information-collection-national-longitudinal-survey-of-youth-1979": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.pm.gov.au/media/press-conference-adelaide-8": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.pm.gov.au/media/accelerating-delivery-more-homes-south-australians": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.politico.eu/article/eu-to-trump-we-will-keep-pushing-for-global-ai-safety-rules/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://global.chinadaily.com.cn/a/202609/29/WS6abb5a0ee4b06d4aa0560cac.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kanbo01_02001181.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000460.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000459.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000458.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01gyosei14_02000127.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zaisei06_02000350.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01gyosei01_02000376.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01toukei03_01000142.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01toukei03_01000141.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu16_02000079.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zaisei02_02000378_00028.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187813": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187814": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187817": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-tech-week-singapore/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-uob-finlab-ai-ready-changemakers-summit-/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-the-national-translation-committee--ntc--conference-2026--reimagining-translation-in-the-age-of-ai/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.nstc.gov.tw/folksonomy/detail/9aa2415d-b902-45c6-9a7d-dd6df1efb49f?l=CH": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-09-30"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187815": {
-    "verdict": "gemini-unusable",
-    "date": "2026-09-30"
-  },
   "https://www.soumu.go.jp/menu_syokai/saiyou/117566.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-01"
@@ -3110,5 +2974,185 @@
   "https://www.ey.gov.tw/Page/9277F759E41CCD91//13a268ad-c0cd-419f-b4a9-0527c6ac0506": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-30"
+  },
+  "https://www.federalregister.gov/documents/2026/10/30/2026-22174/accreditation-innovation-and-modernization-the-secretarys-recognition-of-accrediting-agencies": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.dataprivacybr.org/a-agenda-de-direitos-digitais-no-quarto-governo-lula-o-que-esperar/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/malaysian-island-beats-25-global-cities-to-become-cheapest-destination-for-digital-nomads-5138851.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/world-s-largest-crypto-exchange-binance-confirms-major-hack-more-than-2-5b-frozen-5138631.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/china-s-nvidia-founder-enters-country-s-10-richest-as-ai-chip-demand-surges-5138646.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kanbo01_02001187.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kanbo01_02001184.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zeimu02_02000477.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001301.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei01_02000380.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban06_02000143.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei14_02000129.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001300.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei08_02000335.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban14_02000810.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban14_02000809.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu09_02000399.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu14_02000181.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei17_02000276.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei07_02000185.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.cac.gov.cn/2026-10/29/c_1795027496346051.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187906": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187903": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187907": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187904": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187902": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187905": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187899": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187901": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187897": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187894": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187893": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187896": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187895": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "http://www.trai.gov.in/notifications/press-release/extension-last-date-submission-comments-stakeholders-draft": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-kathua-jammu-and-kashmir-vodafone-idea-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-amritsar-punjab-indian-institute-technology-entrepreneur": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-adoni-mantralayam-hyderabad-and": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "http://www.trai.gov.in/node/18849": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "http://www.trai.gov.in/node/18848": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-leh-and-nearby-areas-ladakh": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "http://www.trai.gov.in/node/18845": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/eccab6a5-72fa-487a-a01a-0d5d31553f18?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://mst.gov.vn/tuan-le-so-quoc-te-viet-nam-2026-quy-tu-nhieu-cong-nghe-va-giai-phap-so-197261028165906525.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-10-31"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187898": {
+    "verdict": "gemini-unusable",
+    "date": "2026-10-31"
   }
 }

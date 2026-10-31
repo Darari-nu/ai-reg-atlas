@@ -1,0 +1,58 @@
+{
+  "id": "2026-10-30-in-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-10-31T01:02:47Z",
+  "record_id": "2026-10-30-in-001",
+  "source_kind": "official",
+  "published_at": "2026-10-31T01:02:47Z",
+  "headline": "インドTRAI、通信分野のAI利用ガイドライン草案を公表",
+  "lead": "インド電気通信規制庁（TRAI）は2026年10月30日、通信分野のAI利用に関するガイドライン草案を公表しました。意見募集は2026年11月27日までです。草案は現時点では協議の段階で、確定した規則ではありません。",
+  "facts": [
+    {
+      "text": "TRAIは2026年10月30日に「電気通信ネットワークおよび電気通信サービス提供における人工知能（AI）の責任ある利用に関するガイドライン草案」を公表しました。",
+      "source_url": "http://www.trai.gov.in/draft-guidelines-responsible-use-artificial-intelligence-ai-telecommunication-networks-and"
+    },
+    {
+      "text": "この草案は、TRAIのNetwork, Spectrum and Licensing部門が担当する協議（Consultation）の案件として掲載されています。",
+      "source_url": "http://www.trai.gov.in/draft-guidelines-responsible-use-artificial-intelligence-ai-telecommunication-networks-and"
+    },
+    {
+      "text": "意見募集の締め切りは2026年11月27日で、ページの状態は「Open（受付中）」と表示されています。",
+      "source_url": "http://www.trai.gov.in/draft-guidelines-responsible-use-artificial-intelligence-ai-telecommunication-networks-and"
+    },
+    {
+      "text": "草案の文書（Draft Consultation Paper、235.41 KB）がページからダウンロードできます。",
+      "source_url": "http://www.trai.gov.in/draft-guidelines-responsible-use-artificial-intelligence-ai-telecommunication-networks-and"
+    },
+    {
+      "text": "コメントを出すには、TRAIのアカウントでログインする必要があります。コメントは、サイト管理者の承認後に公開されます。",
+      "source_url": "http://www.trai.gov.in/draft-guidelines-responsible-use-artificial-intelligence-ai-telecommunication-networks-and"
+    }
+  ],
+  "who_is_affected": "インドで通信ネットワークや通信サービスにAIを使う事業者が主な対象になる場合があります。通信事業者のほか、AIを通信事業者に提供するベンダーも含まれる場合があります。ただし、対象範囲は草案の本文で確認する必要があります。",
+  "japan_impact": "インドで通信サービスを提供する日本企業や、インドの通信事業者にAI製品を納める日本企業は、草案の内容を確認するとよいでしょう。インド拠点や取引先が影響を受けるかも、早めに確認するとよいでしょう。ネットワーク運用や顧客対応でAIを使っている場合は、草案がその用途に当たるかを見ておくとよいでしょう。草案は確定前なので、現時点で遵守が必要になるとは言えません。",
+  "next_steps": "資料に書かれている予定は、2026年11月27日までの意見募集だけです。意見を出す場合は、TRAIのアカウントでログインして提出します。最終版の公表時期や施行日は、資料に書かれていません。推測ですが、意見募集の後に内容が修正される可能性があります。",
+  "unknowns": [
+    "草案が定める具体的な遵守事項の内容",
+    "草案が対象とする事業者やAIの用途の範囲",
+    "最終版の公表時期と施行日",
+    "最終版が法的な拘束力を持つかどうか",
+    "違反した場合の罰則の有無",
+    "外国企業が提供するサービスにも適用されるかどうか"
+  ],
+  "glossary": [
+    {
+      "term": "TRAI",
+      "explanation": "インド電気通信規制庁（Telecom Regulatory Authority of India）です。インドの通信と放送の分野を所管する規制機関です。"
+    },
+    {
+      "term": "コンサルテーション",
+      "explanation": "規則や方針を決める前に、関係者から意見を集める手続きです。今回は2026年11月27日が締め切りです。"
+    },
+    {
+      "term": "ガイドライン草案",
+      "explanation": "正式に決まる前の案です。意見募集の結果によって内容が変わる場合があります。"
+    }
+  ]
+}

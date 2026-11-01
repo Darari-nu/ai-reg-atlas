@@ -2,11 +2,11 @@
   "https://artificialintelligenceact.eu/feed/": {
     "label": "EU watch_feed artificialintelligenceact.eu/feed/",
     "country": "eu",
-    "fail_days": 1,
-    "first_failed": "2026-10-31",
-    "last_failed": "2026-10-31",
-    "last_ok": "2026-10-30",
-    "last_reason": "Request timed out after 15000ms",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
     "alerted": false
   },
   "https://edpb.europa.eu/feed/news_en": {
@@ -15,7 +15,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -25,7 +25,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -35,7 +35,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -45,7 +45,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -55,7 +55,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -65,7 +65,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -75,7 +75,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -85,7 +85,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -95,7 +95,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -105,7 +105,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -115,7 +115,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -125,7 +125,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -135,7 +135,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -145,7 +145,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -155,7 +155,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -165,7 +165,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -175,7 +175,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -185,7 +185,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -195,7 +195,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -205,7 +205,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -215,7 +215,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -225,7 +225,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -235,16 +235,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
   "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches": {
     "label": "シンガポール scrape_hash imda.gov.sg/resources/press-releases-fac…",
     "country": "sg",
-    "fail_days": 1,
+    "fail_days": 2,
     "first_failed": "2026-10-31",
-    "last_failed": "2026-10-31",
+    "last_failed": "2026-11-01",
     "last_ok": "2026-10-30",
     "last_reason": "no-dated-links",
     "alerted": false
@@ -255,7 +255,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -265,7 +265,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -275,7 +275,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -285,7 +285,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -295,7 +295,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -305,7 +305,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -315,7 +315,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -325,7 +325,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -335,7 +335,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -345,7 +345,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -355,7 +355,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -365,7 +365,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -375,7 +375,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -385,7 +385,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -395,7 +395,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -405,7 +405,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -415,7 +415,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -425,7 +425,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -435,7 +435,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -445,7 +445,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -455,7 +455,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -465,7 +465,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -475,7 +475,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -485,7 +485,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -495,7 +495,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -505,7 +505,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -515,7 +515,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -525,7 +525,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -535,7 +535,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -545,7 +545,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -555,7 +555,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -565,7 +565,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -575,7 +575,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -585,7 +585,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -595,7 +595,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -605,7 +605,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   },
@@ -615,7 +615,687 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-10-31",
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Thailand%20draft%20AI%20Act%20ETDA&format=rss": {
+    "label": "タイ ニュース検索「Thailand draft AI Act ETDA」",
+    "country": "th",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%E0%B8%A3%E0%B9%88%E0%B8%B2%E0%B8%87%20%E0%B8%9E.%E0%B8%A3.%E0%B8%9A.%20%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B4%E0%B8%A9%E0%B8%90%E0%B9%8C&format=rss": {
+    "label": "タイ ニュース検索「ร่าง พ.ร.บ. ปัญญาประดิษฐ์」",
+    "country": "th",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://jdih.komdigi.go.id/berita/beranda": {
+    "label": "インドネシア scrape_hash jdih.komdigi.go.id/berita/beranda",
+    "country": "id",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://ojk.go.id/id/publikasi/roadmap-dan-pedoman/itsk/default.aspx": {
+    "label": "インドネシア scrape_hash ojk.go.id/id/publikasi/roadmap-dan-pedom…",
+    "country": "id",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Indonesia%20AI%20presidential%20regulation%20Komdigi&format=rss": {
+    "label": "インドネシア ニュース検索「Indonesia AI presidential regulation Komdigi」",
+    "country": "id",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Perpres%20etika%20kecerdasan%20artifisial&format=rss": {
+    "label": "インドネシア ニュース検索「Perpres etika kecerdasan artifisial」",
+    "country": "id",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://ai.gov.my/media-centre/news/": {
+    "label": "マレーシア scrape_hash ai.gov.my/media-centre/news/",
+    "country": "my",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.digital.gov.my/en-GB/siaran": {
+    "label": "マレーシア scrape_hash digital.gov.my/en-GB/siaran",
+    "country": "my",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Malaysia%20AI%20Governance%20Bill&format=rss": {
+    "label": "マレーシア ニュース検索「Malaysia AI Governance Bill」",
+    "country": "my",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Rang%20Undang-Undang%20Tadbir%20Urus%20Kecerdasan%20Buatan&format=rss": {
+    "label": "マレーシア ニュース検索「Rang Undang-Undang Tadbir Urus Kecerdasan Buatan」",
+    "country": "my",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Philippines%20artificial%20intelligence%20bill&format=rss": {
+    "label": "フィリピン ニュース検索「Philippines artificial intelligence bill」",
+    "country": "ph",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Philippines%20AI%20regulation%20DICT&format=rss": {
+    "label": "フィリピン ニュース検索「Philippines AI regulation DICT」",
+    "country": "ph",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://mediaoffice.ae/future/artificial-intelligence": {
+    "label": "アラブ首長国連邦 scrape_hash mediaoffice.ae/future/artificial-intelli…",
+    "country": "ae",
+    "fail_days": 1,
+    "first_failed": "2026-11-01",
+    "last_failed": "2026-11-01",
+    "last_ok": null,
+    "last_reason": "no-dated-links",
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=UAE%20AI%20regulation%20law&format=rss": {
+    "label": "アラブ首長国連邦 ニュース検索「UAE AI regulation law」",
+    "country": "ae",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=UAE%20Artificial%20Intelligence%20and%20Data%20Authority&format=rss": {
+    "label": "アラブ首長国連邦 ニュース検索「UAE Artificial Intelligence and Data Authority」",
+    "country": "ae",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://sdaia.gov.sa/en/SDAIA/about/Pages/RegulationsAndPolicies.aspx": {
+    "label": "サウジアラビア scrape_hash sdaia.gov.sa/en/SDAIA/about/Pages/Regula…",
+    "country": "sa",
+    "fail_days": 1,
+    "first_failed": "2026-11-01",
+    "last_failed": "2026-11-01",
+    "last_ok": null,
+    "last_reason": "no-dated-links",
+    "alerted": false
+  },
+  "https://sdaia.gov.sa/en/MediaCenter/Pages/ai-year.aspx": {
+    "label": "サウジアラビア scrape_hash sdaia.gov.sa/en/MediaCenter/Pages/ai-yea…",
+    "country": "sa",
+    "fail_days": 1,
+    "first_failed": "2026-11-01",
+    "last_failed": "2026-11-01",
+    "last_ok": null,
+    "last_reason": "no-dated-links",
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Saudi%20Arabia%20SDAIA%20AI%20regulation&format=rss": {
+    "label": "サウジアラビア ニュース検索「Saudi Arabia SDAIA AI regulation」",
+    "country": "sa",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%D8%B3%D8%AF%D8%A7%D9%8A%D8%A7%20%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1%20%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A&format=rss": {
+    "label": "サウジアラビア ニュース検索「سدايا الذكاء الاصطناعي」",
+    "country": "sa",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitlarListe": {
+    "label": "トルコ scrape_hash tbmm.gov.tr/Gundem/GelenKagitlarListe",
+    "country": "tr",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.kvkk.gov.tr/Icerik/2015/Duyurular": {
+    "label": "トルコ scrape_hash kvkk.gov.tr/Icerik/2015/Duyurular",
+    "country": "tr",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Turkey%20artificial%20intelligence%20law&format=rss": {
+    "label": "トルコ ニュース検索「Turkey artificial intelligence law」",
+    "country": "tr",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=yapay%20zeka%20kanun%20teklifi&format=rss": {
+    "label": "トルコ ニュース検索「yapay zeka kanun teklifi」",
+    "country": "tr",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Mexico%20artificial%20intelligence%20law&format=rss": {
+    "label": "メキシコ ニュース検索「Mexico artificial intelligence law」",
+    "country": "mx",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=ley%20general%20de%20inteligencia%20artificial%20M%C3%A9xico&format=rss": {
+    "label": "メキシコ ニュース検索「ley general de inteligencia artificial México」",
+    "country": "mx",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.gob.pe/iaperu": {
+    "label": "ペルー scrape_hash gob.pe/iaperu",
+    "country": "pe",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Peru%20artificial%20intelligence%20regulation%20Law%2031814&format=rss": {
+    "label": "ペルー ニュース検索「Peru artificial intelligence regulation Law 31814」",
+    "country": "pe",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Per%C3%BA%20inteligencia%20artificial%20reglamento%20Ley%2031814&format=rss": {
+    "label": "ペルー ニュース検索「Perú inteligencia artificial reglamento Ley 31814」",
+    "country": "pe",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.gov.kz/api/v1/public/rss/maidd/news/en": {
+    "label": "カザフスタン rss gov.kz/api/v1/public/rss/maidd/news/en",
+    "country": "kz",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.gov.kz/org/maidd/press/news/1?lang=en": {
+    "label": "カザフスタン scrape_hash gov.kz/org/maidd/press/news/1",
+    "country": "kz",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Kazakhstan%20artificial%20intelligence%20law&format=rss": {
+    "label": "カザフスタン ニュース検索「Kazakhstan artificial intelligence law」",
+    "country": "kz",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%20%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%20%D0%BE%D0%B1%20%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B5&format=rss": {
+    "label": "カザフスタン ニュース検索「Казахстан закон об искусственном интеллекте」",
+    "country": "kz",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bakom.admin.ch/fr/intelligence-artificielle": {
+    "label": "スイス scrape_hash bakom.admin.ch/fr/intelligence-artificie…",
+    "country": "ch",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bj.admin.ch/de/kuenstliche-intelligenz": {
+    "label": "スイス scrape_hash bj.admin.ch/de/kuenstliche-intelligenz",
+    "country": "ch",
+    "fail_days": 1,
+    "first_failed": "2026-11-01",
+    "last_failed": "2026-11-01",
+    "last_ok": null,
+    "last_reason": "no-dated-links",
+    "alerted": false
+  },
+  "https://www.edoeb.admin.ch/en/ai-and-data-protection": {
+    "label": "スイス scrape_hash edoeb.admin.ch/en/ai-and-data-protection",
+    "country": "ch",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Switzerland%20AI%20regulation%20Federal%20Council&format=rss": {
+    "label": "スイス ニュース検索「Switzerland AI regulation Federal Council」",
+    "country": "ch",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=KI-Regulierung%20Schweiz%20Bundesrat&format=rss": {
+    "label": "スイス ニュース検索「KI-Regulierung Schweiz Bundesrat」",
+    "country": "ch",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Israel%20AI%20regulation&format=rss": {
+    "label": "イスラエル ニュース検索「Israel AI regulation」",
+    "country": "il",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%D7%A8%D7%92%D7%95%D7%9C%D7%A6%D7%99%D7%94%20%D7%91%D7%99%D7%A0%D7%94%20%D7%9E%D7%9C%D7%90%D7%9B%D7%95%D7%AA%D7%99%D7%AA&format=rss": {
+    "label": "イスラエル ニュース検索「רגולציה בינה מלאכותית」",
+    "country": "il",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.minciencia.gob.cl/noticias/": {
+    "label": "チリ scrape_hash minciencia.gob.cl/noticias/",
+    "country": "cl",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Chile%20AI%20bill%20Senate&format=rss": {
+    "label": "チリ ニュース検索「Chile AI bill Senate」",
+    "country": "cl",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=proyecto%20de%20ley%20inteligencia%20artificial%20Chile%20Senado&format=rss": {
+    "label": "チリ ニュース検索「proyecto de ley inteligencia artificial Chile Senado」",
+    "country": "cl",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://minciencias.gov.co/rss.xml": {
+    "label": "コロンビア rss minciencias.gov.co/rss.xml",
+    "country": "co",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://sedeelectronica.sic.gov.co/noticias": {
+    "label": "コロンビア scrape_hash sedeelectronica.sic.gov.co/noticias",
+    "country": "co",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Colombia%20artificial%20intelligence%20bill&format=rss": {
+    "label": "コロンビア ニュース検索「Colombia artificial intelligence bill」",
+    "country": "co",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=proyecto%20de%20ley%20inteligencia%20artificial%20Colombia&format=rss": {
+    "label": "コロンビア ニュース検索「proyecto de ley inteligencia artificial Colombia」",
+    "country": "co",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.argentina.gob.ar/aaip": {
+    "label": "アルゼンチン scrape_hash argentina.gob.ar/aaip",
+    "country": "ar",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.hcdn.gob.ar/prensa/": {
+    "label": "アルゼンチン scrape_hash hcdn.gob.ar/prensa/",
+    "country": "ar",
+    "fail_days": 1,
+    "first_failed": "2026-11-01",
+    "last_failed": "2026-11-01",
+    "last_ok": null,
+    "last_reason": "no-dated-links",
+    "alerted": false
+  },
+  "https://www.senado.gob.ar/prensa/eventos": {
+    "label": "アルゼンチン scrape_hash senado.gob.ar/prensa/eventos",
+    "country": "ar",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Argentina%20artificial%20intelligence%20regulation&format=rss": {
+    "label": "アルゼンチン ニュース検索「Argentina artificial intelligence regulation」",
+    "country": "ar",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Argentina%20ley%20inteligencia%20artificial&format=rss": {
+    "label": "アルゼンチン ニュース検索「Argentina ley inteligencia artificial」",
+    "country": "ar",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.privacy.org.nz/tuhono-connect/statements-media-releases/": {
+    "label": "ニュージーランド scrape_hash privacy.org.nz/tuhono-connect/statements…",
+    "country": "nz",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=New%20Zealand%20AI%20regulation&format=rss": {
+    "label": "ニュージーランド ニュース検索「New Zealand AI regulation」",
+    "country": "nz",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=New%20Zealand%20deepfake%20bill%20AI&format=rss": {
+    "label": "ニュージーランド ニュース検索「New Zealand deepfake bill AI」",
+    "country": "nz",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.sanews.gov.za/south-africa-news-stories.xml": {
+    "label": "南アフリカ rss sanews.gov.za/south-africa-news-stories.…",
+    "country": "za",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=South%20Africa%20national%20AI%20policy&format=rss": {
+    "label": "南アフリカ ニュース検索「South Africa national AI policy」",
+    "country": "za",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=South%20Africa%20artificial%20intelligence%20regulation%20DCDT&format=rss": {
+    "label": "南アフリカ ニュース検索「South Africa artificial intelligence regulation DCDT」",
+    "country": "za",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://naltf.gov.ng/category/the-senate/": {
+    "label": "ナイジェリア scrape_hash naltf.gov.ng/category/the-senate/",
+    "country": "ng",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Nigeria%20Digital%20Economy%20and%20E-Governance%20Bill%20AI&format=rss": {
+    "label": "ナイジェリア ニュース検索「Nigeria Digital Economy and E-Governance Bill AI」",
+    "country": "ng",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Nigeria%20artificial%20intelligence%20regulation%20NITDA&format=rss": {
+    "label": "ナイジェリア ニュース検索「Nigeria artificial intelligence regulation NITDA」",
+    "country": "ng",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://mcit.gov.eg/en/Artificial_Intelligence": {
+    "label": "エジプト scrape_hash mcit.gov.eg/en/Artificial_Intelligence",
+    "country": "eg",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Egypt%20AI%20law%20draft&format=rss": {
+    "label": "エジプト ニュース検索「Egypt AI law draft」",
+    "country": "eg",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1%20%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A%20%D9%85%D8%B5%D8%B1&format=rss": {
+    "label": "エジプト ニュース検索「قانون الذكاء الاصطناعي مصر」",
+    "country": "eg",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Kenya%20Artificial%20Intelligence%20Bill&format=rss": {
+    "label": "ケニア ニュース検索「Kenya Artificial Intelligence Bill」",
+    "country": "ke",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Kenya%20AI%20Emerging%20Technologies%20Policy&format=rss": {
+    "label": "ケニア ニュース検索「Kenya AI Emerging Technologies Policy」",
+    "country": "ke",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "http://en.kremlin.ru/acts/news": {
+    "label": "ロシア scrape_hash en.kremlin.ru/acts/news",
+    "country": "ru",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=Russia%20AI%20law%20foundation%20models&format=rss": {
+    "label": "ロシア ニュース検索「Russia AI law foundation models」",
+    "country": "ru",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
+    "last_reason": null,
+    "alerted": false
+  },
+  "https://www.bing.com/news/search?q=%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%20%D0%BE%D0%B1%20%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B5%20243-%D0%A4%D0%97&format=rss": {
+    "label": "ロシア ニュース検索「закон об искусственном интеллекте 243-ФЗ」",
+    "country": "ru",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-01",
     "last_reason": null,
     "alerted": false
   }

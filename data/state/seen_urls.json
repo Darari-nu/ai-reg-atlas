@@ -1,124 +1,4 @@
 {
-  "https://www.soumu.go.jp/menu_syokai/saiyou/detail/02ryutsu15_04000026.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.federalregister.gov/documents/2026/10/01/2026-20143/rule-on-impersonation-of-government-and-businesses": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.dataprivacybr.org/governanca-de-dados-e-a-construcao-de-um-ecossistema-informacional-justo/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.dataprivacybr.org/dadocracia-ep-210-bets-design-manipulativo-e-saude-mental/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.politico.eu/article/uk-ai-minister-focus-building-tech-not-regulating-it/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.politico.eu/article/uk-financial-watchdogs-dont-want-to-regulate-ai/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.asahi.com/articles/ASV9Z644YV9ZULZU006M.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01toukei04_01000305.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01toukei08_01000353.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000473.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01gyosei08_02000332.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01toukei04_01000306.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001266.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "http://www.stat.go.jp/whatsnew/index.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12551": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12549": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "http://www.trai.gov.in/what-s-new/direction-regarding-publication-tariff-offers-etc": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "http://www.trai.gov.in/direction-regarding-publication-tariff-offers-etc": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "http://www.trai.gov.in/node/18730": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "http://www.trai.gov.in/node/18729": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.nstc.gov.tw/folksonomy/detail/589306a3-c925-4f97-aa73-7a1e769f0a8d?l=CH": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.nstc.gov.tw/folksonomy/detail/b92ffe9b-1ab0-455b-8173-f9b2bba51186?l=CH": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//180700d8-1416-4f56-8e6c-c827ac029bfa": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//94a792d1-05db-4bdf-8f88-672ed9d01232": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//9bf57fb4-d5e8-4337-9416-70d1f8e8e364": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//48d6ed2f-4d0b-44ce-9f38-1c5ac98d67e4": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//9f078171-ca09-45a7-9a2e-92edf390159b": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//59848ab4-676b-41b7-898e-9f5207325f0a": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//4d7b8a90-f834-4035-ab54-7728b91f243b": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//93b80cbd-0c98-40ee-a7a8-a47db089ad9c": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-02"
-  },
   "https://www.federalregister.gov/documents/2026/10/02/2026-20321/inaugurating-the-era-of-super-intelligence": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-03"
@@ -3158,5 +3038,165 @@
   "https://www.sanews.gov.za/south-africa/saps-ready-ensure-safe-elections": {
     "verdict": "triage-irrelevant",
     "date": "2026-11-01"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/how-german-billionaire-skipped-college-and-learned-robotics-on-youtube-to-build-7b-company-5138827.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/world-s-best-airport-upgrades-ai-surveillance-to-spot-runway-debris-as-small-as-4-cm-5139043.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/no-more-chores-the-female-tsinghua-graduate-behind-dreame-s-push-to-automate-housework-5139081.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/no-point-professor-at-world-s-top-10-university-stops-grading-homework-for-accuracy-amid-ai-use-5137994.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/chinese-professor-challenges-world-to-solve-1-000-math-problems-offers-cash-rewards-5138378.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-needs-smart-infrastructure-to-boost-competitiveness-wef-expert-5138933.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/indonesia-warns-undersea-cable-cuts-could-threaten-80-of-singapore-s-internet-connectivity-5138869.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.politico.eu/article/eu-quantum-act-boost-europe-tech-competitiveness/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.wam.ae/en/article/c31bwl4-ministry-finance-federal-authority-for-government": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.spa.gov.sa/en/N2480268": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.milliyet.com.tr/haberleri/bilgi-teknolojileri-ve-iletisim-kurumu": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kanbo01_02001186.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001279.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/government-of-canada-to-promote-trade-and-investment-with-sweden-and-northern-europe.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/natjoints-ready-safeguard-local-government-elections": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/weather-alerts-issued-ahead-special-voting": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/natjoints-no-campaigning-permitted-voting-day": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/iec-assures-readiness-special-votes-and-voting-day": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/special-voters-urged-remain-home-until-iec-officials-arrive": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/gcis-welcomes-appointment-new-director-general": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/gauteng-reports-progress-implementing-gbvf-directives": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/electoral-commission-hold-media-briefing-ahead-special-votes": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/lge-2026-call-peaceful-free-elections": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://www.sanews.gov.za/south-africa/eskom-confirms-retirement-calib-cassim": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-president-akpabio-urges-germany-to-convert-diplomatic-ties-into-industrial-powerhouse/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/author/maliyu/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-president-akpabio-calls-for-unity-bags-arewa-par-excellence-award/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/category/news/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/category/the-senate/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-plenary-highlights-for-october-28-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/bill-to-transform-nilds-into-west-african-university-scales-first-reading/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-confirms-7-frc-board-nominees-appointed-by-president-tinubu/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-committee-clears-nominees-for-national-human-rights-commission-board/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-president-akpabio-urges-african-self-reliance-in-defence/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-demands-immediate-military-and-security-crackdown-following-tragic-taraba-banditry-attacks/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-receives-executive-bill-on-transfer-of-nigerians-jailed-abroad/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-passes-bill-to-jail-oil-polluters-and-impose-heavier-fines-to-protect-niger-delta-environment/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-receives-executive-bill-on-transfer-of-convicted-offenders/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/senate-vows-state-police-law-enactment-before-year-end/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
+  },
+  "https://naltf.gov.ng/speaker-abbas-to-present-10th-house-scorecard-tinubus-achievements-at-monday-media-briefing/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-02"
   }
 }

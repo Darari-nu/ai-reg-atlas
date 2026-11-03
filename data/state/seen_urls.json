@@ -1,60 +1,4 @@
 {
-  "https://www.federalregister.gov/documents/2026/10/02/2026-20321/inaugurating-the-era-of-super-intelligence": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.federalregister.gov/documents/2026/10/02/2026-20281/global-benchmark-for-efficient-drug-pricing-globe-model": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://opendevelopmentcambodia.net/news/china-pushes-ai-training-joint-projects-as-central-to-asean-cooperation/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.straitstimes.com/tech/use-ai-to-fight-ai-threats-as-part-of-singapores-multi-layered-approach-urges-josephine-teo": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01gyosei01_02000377.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01tsushin06_02000353.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001269.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01cyber01_02000001_00305.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187843": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187842": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187841": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187840": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12555": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
-  "https://www.nstc.gov.tw/folksonomy/detail/4a5f837f-fa4a-4b08-a4ad-95e6145b4511?l=CH": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-03"
-  },
   "https://www.federalregister.gov/documents/2026/10/05/2026-20311/potential-designation-of-chartered-financial-analyst-designation-as-qualifying-natural-persons-for": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-04"
@@ -3198,5 +3142,405 @@
   "https://naltf.gov.ng/speaker-abbas-to-present-10th-house-scorecard-tinubus-achievements-at-monday-media-briefing/": {
     "verdict": "triage-irrelevant",
     "date": "2026-11-02"
+  },
+  "https://www.pm.gov.au/media/chogm-joint-forums-and-side-events-official-launch": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.pm.gov.au/media/commonwealth-nature-initiative-side-event": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.pm.gov.au/media/press-conference-saint-johns-antigua-and-barbuda": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/fridge-cyberattack-hits-supermarkets-across-europe-5139981.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-innovation/vietnam-urged-to-embrace-smart-infrastructure-to-sustain-manufacturing-growth-5139670.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/southeast-asia-s-largest-bank-backs-hong-kong-s-second-richest-billionaire-lee-family-s-green-hydrogen-projects-5139803.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/4-chinese-tech-billionaires-among-world-s-5-biggest-daily-wealth-gainers-5139762.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/5-year-old-boy-with-iq-of-141-reads-3-000-books-takes-university-run-science-courses-5139672.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/engineering-technologies-among-college-majors-with-lowest-unemployment-rates-5139527.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/chipmaker-micron-named-singapore-s-best-workplace-for-second-straight-year-5139601.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://indianexpress.com/article/explained/explained-ai/trai-ai-guidelines-telecom-companies-accountability-10946914/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.milliyet.com.tr/haberleri/uretici-maliyetleri": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://techcabal.com/2026/11/02/sa-ai-policy-enforcement-challenge/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www8.cao.go.jp/cstp/ai/ai_topics/ai_topics.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kanbo01_02001183.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001280.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kanbo01_02001189.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei04_02000191.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban03_02001028.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000476.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001285.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "http://www.stat.go.jp/whatsnew/index.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.nist.gov/news-events/news/2026/11/self-employed-solopreneur-nist-has-cybersecurity-guide-just-you": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187914": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187913": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187912": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.mddi.gov.sg/newsroom/minister-josephine-teo-opening-address-at-ncs-ai-mission-centre/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261102/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/ma_2601102/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-issues-telecom-consumers-complaint-redressal-fourth-amendment": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "http://www.trai.gov.in/telecom-consumers-complaint-redressal-fourth-amendment-regulations-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-simdega-jharkhand-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-ranchi-jharkhand-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-ramgarh-jharkhand-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-bagalkot-karnataka-coordinated-action-consumer-voluntary": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "http://www.trai.gov.in/node/18856": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://moda.gov.tw/press/press-releases/21226": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "javascript:;": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-62-2026-tt-bkhcn-470858.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://congbao.chinhphu.vn/cong-bao/568-47588.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/sitemap.xml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/pencapaian": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/en-GB/siaran": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Program-Sekolah-Angkat-MADANI:Kementerian-Digital-Pacu-Transformasi-Dan-Literasi-Digital-Di-SK-Jalan-Residensi": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Tambah-25,000-Lesen-Pas-Pembelajaran-Global-(GLP)-Rakyat-Digital,Menjadikan-Jumlah-Keseluruhan-50,000-Lesen": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Program-Jelajah-Digital,Kampung-Angkat-MADANI-(KAM)-Dan-Sekolah-Angkat-MADANI-(SAM)-Kementerian-Digital-Rapatkan-Jurang-Digital-Komuniti-Limbang": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Dassault-Syst%C3%A8mes-Malaysia-Offcice-Opening": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Fifth-MADANI-Budget-Drives-Malaysia&": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/en-GB/penafian": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.digital.gov.my/en-GB/dasar-privasi": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/53b280b5-93cb-463f-a01f-01a18b87c45e": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/35427ded-2928-4e25-a8cc-01a18132aaef": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/c0d09e88-63aa-495c-98ed-01a17cf9ab66": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/f2994a70-884d-482d-8ac7-01a1771c47d4": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/ef13e007-e5e7-44da-a2b1-01a167d32d03": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/cfa20ad1-6674-4173-bef3-01a15e29ddef": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/6ae1f2a2-1fa8-4b1e-b7de-01a1581aec36": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/fbb2dab0-5bd0-4875-ba25-01a152fed87b": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/67e1c1d5-e97c-4e6f-8d6a-01a143781906": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/6017370c-0f2c-4cde-9cd7-01a1437697be": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/87ae4f73-adbb-4772-92b1-01a1393c7022": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/5b9e3fc9-c32b-4e1c-b62e-01a13408b400": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/484021f9-8e64-46fa-b5c5-01a12ee5e27f": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/c0b82a6b-5af4-462f-a722-01a11f6539cf": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/588bc5c7-0234-4551-9ad5-01a11a5ea47f": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/042612b1-5df1-4451-9447-01a116be3ec4": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/642497ec-8eec-458a-820e-01a110227d32": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/9067411b-1ce7-4b78-8bcb-01a10ae75964": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.minciencia.gob.cl/noticias/ministerio-de-ciencia-tecnologia-conocimiento-e-innovacion-impulsa-el-proyecto-paleontologico-de-atacama-junto-a-expertos-internacionales/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.minciencia.gob.cl/noticias/ministerio-ctci-y-sag-firman-memorandum-para-fortalecer-la-colaboracion-entre-ciencia-y-politicas-publicas-basadas-en-evidencia/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.minciencia.gob.cl/noticias/ministerio-ctci-gobierno-regional-de-aysen-y-fraunhofer-chile-research-impulsan-alianza-para-fortalecer-el-desarrollo-tecnologico-regional/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.minciencia.gob.cl/noticias/tres-emprendimientos-regionales-obtienen-el-premio-inspiratec-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.minciencia.gob.cl/noticias/se-extiende-el-plazo-de-postulacion-de-concursos-ciencia-publica-y-par-explora/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.minciencia.gob.cl/noticias/festival-de-ciencia-y-tecnologia-2026-reunio-realidad-virtual-astronomia-y-robotica-en-jornada-gratuita-en-region-metropolitana/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.minciencia.gob.cl/noticias/chile-se-suma-a-nueva-agenda-cientifica-internacional-ministra-lincolao-adhiere-a-la-vision-de-kioto-para-una-edad-dorada-de-la-ciencia/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.argentina.gob.ar/noticias/la-aaip-sanciono-empresas-por-incumplimientos-la-ley-ndeg-25326": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.argentina.gob.ar/noticias/la-xviii-asamblea-general-del-consejo-federal-para-la-transparencia-se-realizara-en-la": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.argentina.gob.ar/noticias/la-aaip-conmemoro-los-diez-anos-de-la-ley-de-acceso-la-informacion-en-argentina": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24590/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24583/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24572/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24571/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24569/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24565/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24561/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24558/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24557/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.senado.gob.ar/prensa/24554/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/fpb-refuses-classify-film-hebrews-negroes-wake-black-america": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/new-appointments-magistracy-leadership": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/special-voting-gets-positive-start": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/mpumalanga-expects-292-775-voters-cast-special-votes": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/mhlauli-urges-young-people-participate-local-government-elections": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/imc-engages-civic-formations-law-enforcement-and-local-government-elections": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/sa-host-wef-special-meeting-2028": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/n-west-premier-calls-peaceful-high-turnout-elections": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/first-day-special-votes-kicks-without-hindrance-akasia": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://www.sanews.gov.za/south-africa/government-considers-import-controls-stabilise-sugar-industry": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://naltf.gov.ng/naltf-strengthens-institutional-partnership-with-ecowas-parliament-library/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
+  },
+  "https://naltf.gov.ng/senate-receives-president-tinubus-request-to-confirm-six-nmdpra-executive-directors/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-03"
   }
 }

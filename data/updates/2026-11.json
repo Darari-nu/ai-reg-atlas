@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2026-11-03-kr-001",
+    "date": "2026-11-03",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "個人情報保護委員会（PIPC）、AIセキュリティ対応を議論する政策フォーラムの開催を発表",
+    "summary": {
+      "what": "AI脅威への対応や予防中心の保護体系革新をテーマとする「2026年個人情報政策フォーラム」の開催を発表。",
+      "who": "個人情報保護委員会（PIPC）、韓国個人情報保護責任者協議会",
+      "when_impact": "2026年11月9日にフォーラムを開催予定。"
+    },
+    "detail": "韓国の個人情報保護委員会（PIPC）と韓国個人情報保護責任者協議会は、2026年11月9日に「2026年個人情報政策フォーラム」を共同開催することを発表した。本フォーラムでは、予防中心の個人情報保護体系への規制転換、CEO・CPOの責任性強化、過徴金減免につながる先制的なセキュリティ投資促進策のほか、AIによる攻撃速度への対応やAI基盤の侵害脅威時代におけるガバナンス課題などが議論される予定である。",
+    "so_what": "韓国における個人情報保護およびAIセキュリティに関する当局の政策方向性や民間・公的な対応事例を把握する機会となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea PIPC seminar on proactive AI security and personal information protection response",
+    "publication_date": "2026-11-03",
+    "discovered_at": "2026-11-03",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12607"
+    ],
+    "country_anchor": "/country/kr/#updates"
+  }
+]

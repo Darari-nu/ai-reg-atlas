@@ -1,16 +1,4 @@
 {
-  "https://www.federalregister.gov/documents/2026/10/05/2026-20311/potential-designation-of-chartered-financial-analyst-designation-as-qualifying-natural-persons-for": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-04"
-  },
-  "https://www.nstc.gov.tw/folksonomy/detail/f5da4f94-cf30-4fe1-9280-1112e9022e42?l=CH": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-04"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//b88d7356-c0b9-49c0-ad65-437b1be8ae77": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-04"
-  },
   "https://www.pm.gov.au/media/pre-cop-leaders-event-fiji-and-tuvalu": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-05"
@@ -3542,5 +3530,337 @@
   "https://naltf.gov.ng/senate-receives-president-tinubus-request-to-confirm-six-nmdpra-executive-directors/": {
     "verdict": "triage-irrelevant",
     "date": "2026-11-03"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/02kiban09_04000746.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.soumu.go.jp/menu_syokai/saiyou/117566.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/setsuzoku_seisaku/02kiban03_04001195.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.federalregister.gov/documents/2026/11/03/2026-22443/streamlining-contested-adjudications-in-licensing-proceedings": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.federalregister.gov/documents/2026/11/03/2026-22396/pipeline-safety-amendments-to-liquefied-natural-gas-facilities": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.dataprivacybr.org/a-quem-se-aplica-o-eca-digital-os-avancos-do-novo-guia-orientativo-da-anpd/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.pm.gov.au/media/commonwealth-heads-government-2026-statement-between-uk-and-australia": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/us-police-unveil-world-s-first-148-000-electric-flying-patrol-vehicle-5140335.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/chinese-eye-scientist-leaves-johns-hopkins-after-24-years-to-join-asia-s-sixth-ranked-university-5140005.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187921": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187920": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187919": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187916": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187917": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187915": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187918": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.mddi.gov.sg/newsroom/singapore-police-force-is-first-government-agency-to-launch-single-caller-id----6000-0999----to-protect-public-against-scams-impersonating-singapore-government-officials/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/minister-solomon-concludes-visit-to-germany-to-advance-canadas-international-ai-partnerships.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.camara.leg.br/noticias/1315402-projeto-que-permite-convenios-para-reduzir-o-prazo-de-concessao-de-patentes-segue-para-analise-do-senado": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-deogarh-odisha-bhanja-institute-rural-development-bird": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-nizamabad-telangana-society-health-and-agriculture-rural": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-dhenkanal-odisha-paribartan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-cuttack-odisha-federation-consumer-organisations-odisha": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-sri-potti-sriramulu-nellore-andhra-pradesh-rural-action": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-solapur-maharashtra-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-jangaon-telangana-reliance-jio-infocomm-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-krishna-andhra-pradesh-vodafone-idea-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-nirmal-telangana-bharat-sanchar-nigam-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-sundargarh-odisha-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://moda.gov.tw/press/press-releases/21234": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//45815338-5ea3-4f40-860f-0e90502b355e": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Majlis-Penyerahan-Portal-Sekolahku": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Melalui-GovTech-Malaysia-Serah-Portal-Sekolahku-Kepada-Kementerian-Pendidikan-Malaysia:Transformasi-Akses-Data-Pendidikan-Negara": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/fe80ead1-d070-44c5-ae2b-01a19b3a4cef": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://indicelatam.cl/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.gob.pe/iaperu": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/ocad-ciencia-tecnologia-e-innovacion-aprobo-dos-convocatorias-por-mas-14-billones": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/mision-milagro-protegiendo-territorio-llevara-orientacion-gratuita-los-consumidores-de-buenaventura": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/taxonomy/term/392": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/comunicado/la-sic-aprobo-la-operacion-de-integracion-entre-el-grupo-nutresa-sa-y-franquicias-y-concesiones-sas-propietaria-de-la-marca-presto": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/taxonomy/term/393": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/comunicado/la-sic-requirio-nueve-empresas-generadoras-de-energia-termica-para-verificar-el-cumplimiento-del-regimen-de-libre-competencia": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/la-sic-fortalece-la-articulacion-institucional-en-bogota-con-capacitacion-sobre-el-regimen-sancionatorio-de-la-ley-1480-de-2011": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/la-sic-invita-la-ciudadania-participar-en-la-preparacion-de-los-temas-de-interes-para-su-rendicion-de-cuentas-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/sic-lidera-programa-internacional-al-servicio-de-la-innovacion": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/se-moderniza-el-sistema-de-propiedad-industrial-en-colombia-la-sic-emite-instrucciones-para-la-presentacion-de-marcas-holograficas": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/mision-milagro-llega-armenia-para-acercar-la-oferta-institucional-la-ciudadania": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/proteccion-al-consumidor-y-proteccion-de-la-competencia-papeles-estrategicos-para-los-ciudadanos-y-los-mercados": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://sedeelectronica.sic.gov.co/comunicado/la-sic-impulsa-la-proteccion-marcaria-en-el-mundo": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.senado.gob.ar/prensa/24594/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.senado.gob.ar/prensa/24592/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/police-crackdown-special-voting-incidents": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/natjoints-readiness-lge-2026-highest-operational-level": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/all-systems-go-election-day": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/day-2-special-votes-concludes": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/iec-terminates-kzn-presiding-officers-services-over-election-material-transportation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/law-enforcement-steps-readiness-election-day": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/iec-condemns-election-related-intimidation-and-disruptions": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/over-13-million-cast-special-votes-iec-warns-against-misinformation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/special-voters-call-residents-use-their-ballots-bring-change-communities": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://www.sanews.gov.za/south-africa/chikunga-calls-stronger-partnerships-advance-disability-rights": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://naltf.gov.ng/senate-passes-bills-defining-abia-federal-university-college-locations/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "https://naltf.gov.ng/senate-rejects-nigeria-air-contracts-demands-direct-china-flights/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81165": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81155": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81153": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81150": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81069": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81067": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81055": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81056": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81054": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81032": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81005": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81004": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81003": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81001": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/81000": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/80977": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/80976": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/80973": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
+  },
+  "http://en.kremlin.ru/acts/news/80971": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-04"
   }
 }

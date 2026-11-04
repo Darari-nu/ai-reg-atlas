@@ -35,6 +35,10 @@ import {
   sortForTriage,
   titleBigramSimilarity,
   unwrapBingNewsUrl,
+  isBingNewsFeedUrl,
+  looksLikeFeed,
+  bodyHead,
+  readFeedWithRetry,
 } from '../scripts/lib/pipeline.mjs';
 import { TIMELINE_LEGAL_STAGES } from '../src/lib/derivedTimeline.mjs';
 
@@ -524,6 +528,126 @@ describe('legal_stage の enum 整合（schema / pipeline / derivedTimeline / su
 
   it('(c) summarize.mjs の RESPONSE_SCHEMA.legal_stage.enum は LEGAL_STAGES と一致', () => {
     assert.deepEqual(responseSchemaEnum, LEGAL_STAGES);
+  });
+});
+
+describe('Bing ニュースRSSの応答チェック（HTMLが返ったら取り直す）', () => {
+  it('isBingNewsFeedUrl: www.bing.com/news/search?format=rss だけ真', () => {
+    assert.equal(isBingNewsFeedUrl('https://www.bing.com/news/search?q=AI&format=rss'), true);
+    assert.equal(isBingNewsFeedUrl('https://www.bing.com/news/search?q=AI'), false);
+    assert.equal(isBingNewsFeedUrl('https://cn.bing.com/news/search?q=AI&format=rss'), false);
+    assert.equal(isBingNewsFeedUrl('https://www.bing.com/news/apiclick.aspx?url=x'), false);
+    assert.equal(isBingNewsFeedUrl('https://example.com/news/search?q=AI'), false);
+    assert.equal(isBingNewsFeedUrl('not a url'), false);
+  });
+
+  it('looksLikeFeed: XML宣言・rss・feed・RDF は真（BOM・先頭空白つきも）', () => {
+    assert.equal(looksLikeFeed('<?xml version="1.0"?><rss>'), true);
+    assert.equal(looksLikeFeed('﻿<?xml version="1.0"?>'), true);
+    assert.equal(looksLikeFeed('\n  <rss version="2.0">'), true);
+    assert.equal(looksLikeFeed('<feed xmlns="http://www.w3.org/2005/Atom">'), true);
+    assert.equal(looksLikeFeed('<rdf:RDF xmlns:rdf="x">'), true);
+  });
+
+  it('looksLikeFeed: HTML・空は偽', () => {
+    assert.equal(looksLikeFeed('<!DOCTYPE html><html lang=ja>'), false);
+    assert.equal(looksLikeFeed('<html lang=en><head>'), false);
+    assert.equal(looksLikeFeed('<rssfoo>'), false);
+    assert.equal(looksLikeFeed(''), false);
+    assert.equal(looksLikeFeed(undefined), false);
+  });
+
+  it('bodyHead: 空白を詰めて切り詰める', () => {
+    assert.equal(bodyHead('  <html>\n\n  <head> x  '), '<html> <head> x');
+    assert.equal(bodyHead('a'.repeat(200)).length, 120);
+    assert.equal(bodyHead('abcdef', 3), 'abc');
+  });
+});
+
+describe('readFeedWithRetry（RSSでない応答・解析失敗・通信例外を取り直す）', () => {
+  const RSS = '<?xml version="1.0"?><rss version="2.0"><channel></channel></rss>';
+  const HTML = '<!DOCTYPE html><html lang=en><head><meta content=hoge>';
+  const ok = (text, status = 200) => ({ status, ok: status < 400, contentType: 'text/html', text });
+
+  function harness(responses, budgetLeft = 10) {
+    const calls = { fetch: 0, sleeps: [], retries: [] };
+    const deps = {
+      fetchText: async () => {
+        const r = responses[calls.fetch++];
+        if (r instanceof Error) throw r;
+        return r;
+      },
+      parse: async (text) => {
+        if (!text.includes('<rss')) throw new Error('Feed not recognized as RSS 1 or 2.');
+        return { items: [] };
+      },
+      sleep: async (ms) => calls.sleeps.push(ms),
+      waits: [5000, 15000],
+      budget: { left: budgetLeft },
+      onRetry: (n) => calls.retries.push(n),
+    };
+    return { calls, deps };
+  }
+
+  it('HTML→RSS で回復（2回取得・待ち5秒）', async () => {
+    const { calls, deps } = harness([ok(HTML), ok(RSS)]);
+    assert.deepEqual(await readFeedWithRetry('u', deps), { items: [] });
+    assert.equal(calls.fetch, 2);
+    assert.deepEqual(calls.sleeps, [5000]);
+  });
+
+  it('HTML→HTML→RSS で回復（3回取得・待ち5秒,15秒）', async () => {
+    const { calls, deps } = harness([ok(HTML), ok(HTML), ok(RSS)]);
+    await readFeedWithRetry('u', deps);
+    assert.equal(calls.fetch, 3);
+    assert.deepEqual(calls.sleeps, [5000, 15000]);
+  });
+
+  it('3回とも HTML なら回数・HTTP・content-type・本文の頭を理由に入れて投げる', async () => {
+    const { calls, deps } = harness([ok(HTML), ok(HTML), ok(HTML)]);
+    await assert.rejects(readFeedWithRetry('u', deps), (e) => {
+      assert.match(e.message, /（3回）/);
+      assert.match(e.message, /HTTP 200 text\/html: <!DOCTYPE html>/);
+      return true;
+    });
+    assert.equal(calls.fetch, 3);
+  });
+
+  it('503→RSS で回復', async () => {
+    const { calls, deps } = harness([ok('Service Unavailable', 503), ok(RSS)]);
+    await readFeedWithRetry('u', deps);
+    assert.equal(calls.fetch, 2);
+  });
+
+  it('XML宣言つきHTMLは解析失敗として取り直し、理由に解析エラーを残す', async () => {
+    const xmlHtml = '<?xml version="1.0"?><html><body>blocked</body></html>';
+    const { deps } = harness([ok(xmlHtml), ok(xmlHtml), ok(xmlHtml)]);
+    await assert.rejects(readFeedWithRetry('u', deps), /解析失敗 Feed not recognized.*<\?xml/);
+  });
+
+  it('途中の通信例外も取り直し、直前の応答の診断を残す', async () => {
+    const abort = Object.assign(new Error('aborted'), { name: 'AbortError' });
+    const { calls, deps } = harness([ok(HTML), abort, abort]);
+    await assert.rejects(readFeedWithRetry('u', deps), (e) => {
+      assert.match(e.message, /通信失敗 timeout/);
+      assert.match(e.message, /前回 .*<!DOCTYPE html>/);
+      return true;
+    });
+    assert.equal(calls.fetch, 3);
+  });
+
+  it('予算が尽きたら取り直さず1回で終える（予算は呼び出し間で共有）', async () => {
+    const budget = { left: 1 };
+    const a = harness([ok(HTML), ok(HTML)]);
+    a.deps.budget = budget;
+    await assert.rejects(readFeedWithRetry('u', a.deps));
+    assert.equal(a.calls.fetch, 2);
+    assert.equal(budget.left, 0);
+    const b = harness([ok(HTML)]);
+    b.deps.budget = budget;
+    await assert.rejects(readFeedWithRetry('u', b.deps), /（1回）/);
+    assert.equal(b.calls.fetch, 1);
+    assert.deepEqual(b.calls.sleeps, []);
   });
 });
 

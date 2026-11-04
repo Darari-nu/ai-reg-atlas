@@ -9,12 +9,14 @@ import {
   JINA_READER_PREFIX,
   classifySourceKind,
   dataPath,
+  isBingNewsFeedUrl,
   isGoogleNewsUrl,
   isStaleListing,
   isTrustedMediaUrl,
   listingDate,
   loadJSON,
   loadSourceDomains,
+  readFeedWithRetry,
   readerBody,
   resolveFeedLink,
   unwrapBingNewsUrl,
@@ -131,8 +133,36 @@ async function fetchScrapeHashContent(url) {
   }
 }
 
+// Bing ニュースRSSは Actions の IP に時々 HTML を返す（2026-11 に 69本中15本）。RSS でなければ間を置いて取り直す
+const BING_RETRY_WAITS_MS = [5_000, 15_000];
+const bingRetryBudget = { left: 40 }; // 巡回1回で取り直す上限（15本×2回＋余裕）。全滅の日も待ちは最大 約7分
+
+// fetchWithTimeout は応答ヘッダーで期限が切れるので、本文の受信まで含めて期限をかける
+async function fetchTextWithTimeout(url) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': USER_AGENT } });
+    const text = await res.text();
+    return { status: res.status, ok: res.ok, contentType: res.headers.get('content-type'), text };
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+function readBingFeed(url) {
+  return readFeedWithRetry(url, {
+    fetchText: fetchTextWithTimeout,
+    parse: (text) => parser.parseString(text),
+    sleep: (ms) => new Promise((r) => setTimeout(r, ms)),
+    waits: BING_RETRY_WAITS_MS,
+    budget: bingRetryBudget,
+    onRetry: (n) => console.warn(`[collect] retry bing feed (${n}/${BING_RETRY_WAITS_MS.length}): ${url}`),
+  });
+}
+
 async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
-  const feed = await parser.parseURL(url);
+  const feed = await (isBingNewsFeedUrl(url) ? readBingFeed(url) : parser.parseURL(url));
   const now = new Date();
   // 遡り上限つき: 状態が古くても now − LAST_SEEN_MAX_LOOKBACK_DAYS 日より前は再収集しない
   const prev = clampLookback(lastSeen[url], now);

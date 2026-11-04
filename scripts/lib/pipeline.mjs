@@ -90,6 +90,62 @@ export function unwrapBingNewsUrl(link) {
   }
 }
 
+/** Bing ニュース検索のRSS（www.bing.com/news/search?...&format=rss）か */
+export function isBingNewsFeedUrl(raw) {
+  try {
+    const url = new URL(raw);
+    return url.hostname.toLowerCase() === 'www.bing.com' && url.pathname === '/news/search' && url.searchParams.get('format') === 'rss';
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * フィードを取り、RSSでない応答・解析失敗・通信例外なら waits の間隔で取り直す。
+ * budget は巡回1回ぶんの取り直し回数の残り（{ left }）。Bing 全体が落ちた日に巡回が延々と待たないよう共有する。
+ * fetchText(url) → { status, ok, contentType, text }（本文受信まで含めて期限つき）、parse(text) → feed、sleep(ms)。
+ */
+export async function readFeedWithRetry(url, { fetchText, parse, sleep, waits, budget, onRetry = () => {} }) {
+  let last = '';
+  let tries = 0;
+  for (let attempt = 0; attempt <= waits.length; attempt++) {
+    if (attempt > 0) {
+      if (budget.left <= 0) break;
+      budget.left--;
+      onRetry(attempt);
+      await sleep(waits[attempt - 1]);
+    }
+    tries++;
+    try {
+      const res = await fetchText(url);
+      last = `HTTP ${res.status} ${res.contentType ?? ''}: ${bodyHead(res.text)}`;
+      if (!res.ok || !looksLikeFeed(res.text)) continue;
+      try {
+        return await parse(res.text);
+      } catch (e) {
+        last = `解析失敗 ${String(e.message).split('\n')[0]} / ${last}`;
+      }
+    } catch (e) {
+      last = `通信失敗 ${e.name === 'AbortError' ? 'timeout' : e.message}${last ? ` / 前回 ${last}` : ''}`;
+    }
+  }
+  throw new Error(`RSSでない応答（${tries}回）${last}`);
+}
+
+/**
+ * 応答本文が RSS/Atom/RDF に見えるか（BOM・先頭空白は無視）。
+ * Bing は GitHub Actions の IP に時々 HTML を返すので、解析する前にこれで見分けて取り直す。
+ */
+export function looksLikeFeed(text) {
+  const head = String(text ?? '').replace(/^﻿/, '').trimStart();
+  return /^<(\?xml|rss[\s>]|feed[\s>]|rdf:RDF[\s>])/i.test(head);
+}
+
+/** 失敗理由に残す本文の頭（空白を1つに詰めて n 字まで。生HTMLは保存しない §8-2 ので短く） */
+export function bodyHead(text, n = 120) {
+  return String(text ?? '').replace(/\s+/g, ' ').trim().slice(0, n);
+}
+
 /** host が domain 自身か、そのサブドメインか（先頭の www. は無視。部分文字列一致はしない） */
 export function hostMatches(host, domain) {
   const h = String(host || '').toLowerCase().replace(/^www\./, '');

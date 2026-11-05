@@ -1,0 +1,69 @@
+{
+  "id": "2026-11-04-sg-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-05T01:40:59Z",
+  "record_id": "2026-11-04-sg-001",
+  "source_kind": "media",
+  "published_at": "2026-11-05T01:40:59Z",
+  "headline": "シンガポール政府、AIエージェント識別にDNS活用を検討",
+  "lead": "シンガポールのIMDAは、AIエージェントの識別と検証にDNSを使えるか、IT企業と調べています。政府技術庁(GovTech)は、公的機関向けの内部登録簿も作っています。2026年11月4日の議会答弁で、ジャスミン・ロー上級国務大臣が説明しました。",
+  "facts": [
+    {
+      "text": "IMDAは、GoDaddy、Infoblox、Cloudflare、Googleと協力し、DNSをAIエージェントの識別と検証に転用できるか調べています。",
+      "source_url": "https://www.straitstimes.com/singapore/politics/singapore-explores-adapting-web-domain-name-system-to-track-ai-agents-assesses-need-for-national"
+    },
+    {
+      "text": "GovTechは、公的機関が使うAIエージェントと担当職員を把握するための内部登録簿を開発しています。",
+      "source_url": "https://www.straitstimes.com/singapore/politics/singapore-explores-adapting-web-domain-name-system-to-track-ai-agents-assesses-need-for-national"
+    },
+    {
+      "text": "ロー上級国務大臣は、これらの取り組みが国家登録簿など追加の共通インフラが要るかどうかの判断材料になると、議会で述べました。",
+      "source_url": "https://www.straitstimes.com/singapore/politics/singapore-explores-adapting-web-domain-name-system-to-track-ai-agents-assesses-need-for-national"
+    },
+    {
+      "text": "同大臣の答弁は、ティン・ペイリン議員が出した、AIエージェント向けの国家デジタルID基盤を検討するよう求める動議への回答でした。",
+      "source_url": "https://www.straitstimes.com/singapore/politics/singapore-explores-adapting-web-domain-name-system-to-track-ai-agents-assesses-need-for-national"
+    },
+    {
+      "text": "政府は、産業界と実際に機能する方法を探り、既存の基盤や国際標準を土台にし、産業界で埋められない部分に共通の標準や基盤を設ける方針だと述べました。",
+      "source_url": "https://www.straitstimes.com/singapore/politics/singapore-explores-adapting-web-domain-name-system-to-track-ai-agents-assesses-need-for-national"
+    },
+    {
+      "text": "民間ではVisaのTrusted Agent ProtocolやGoogleのAgent Payments Protocolが、AIエージェントの取引を支える取り組みとして挙げられました。",
+      "source_url": "https://www.straitstimes.com/singapore/politics/singapore-explores-adapting-web-domain-name-system-to-track-ai-agents-assesses-need-for-national"
+    }
+  ],
+  "who_is_affected": "当面の直接の対象は、シンガポールの公的機関とIMDAの協力企業です。将来は、シンガポールでAIエージェントを提供する企業や、エージェントによる決済・取引を受け付ける事業者に関係する場合があります。現時点で民間企業への義務は資料にありません。",
+  "japan_impact": "日本企業に直接の義務が生じるとは、資料からは言えません。ただしシンガポールにAIエージェント関連サービスを出す企業や現地拠点を持つ企業は、動向を追うとよいでしょう。自社エージェントの身元、権限、責任者を記録できる体制を整えておくと、将来の標準にも対応しやすくなります。",
+  "next_steps": "資料には、国家登録簿の導入時期や今後の手続きの予定は書かれていません。政府は産業界との調査の結果を見て、追加の共通インフラが要るかを判断するとしています。推測ですが、IMDAやGovTechの続報が今後出る可能性があるため、公表資料の確認が有効です。",
+  "unknowns": [
+    "国家登録簿を実際に作るかどうか、作る場合の時期",
+    "DNS活用の調査の期間と、結果の公表予定",
+    "民間企業に登録や識別の義務が課されるかどうか",
+    "法規制や罰則を設けるかどうか",
+    "日本企業を含む海外事業者が対象になるかどうか"
+  ],
+  "glossary": [
+    {
+      "term": "DNS(ドメインネームシステム)",
+      "explanation": "人が読めるウェブサイト名を、機械が読むIPアドレスに変換するインターネットの仕組みです。記事では「インターネットの住所録」と呼ばれています。"
+    },
+    {
+      "term": "AIエージェント",
+      "explanation": "人の細かな指示なしに、自分で作業や操作を進めるAIです。記事では最小限の人の監督で動くボットとされています。"
+    },
+    {
+      "term": "IMDA",
+      "explanation": "シンガポールの情報通信メディア開発庁です。情報通信分野を所管する政府機関です。"
+    },
+    {
+      "term": "GovTech",
+      "explanation": "シンガポールの政府技術庁です。政府のデジタル基盤を担っています。"
+    },
+    {
+      "term": "Singpass",
+      "explanation": "シンガポールの国民向けデジタルIDです。記事では、AIエージェント向けにも似た仕組みが提案されたと書かれています。"
+    }
+  ]
+}

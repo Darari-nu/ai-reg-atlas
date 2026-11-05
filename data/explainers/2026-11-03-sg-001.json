@@ -1,0 +1,57 @@
+{
+  "id": "2026-11-03-sg-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-05T01:40:59Z",
+  "record_id": "2026-11-03-sg-001",
+  "source_kind": "official",
+  "published_at": "2026-11-05T01:40:59Z",
+  "headline": "シンガポールMDDI、AI調達の判断原則を国会で回答",
+  "lead": "シンガポールのデジタル発展情報省（MDDI）は、2026年11月3日の国会で、AI能力の確保に関する考え方を書面で回答しました。海外プロバイダーの活用と国内能力の強化を並行して進める方針です。AI導入では、リスクベースのアプローチを採ると述べています。",
+  "facts": [
+    {
+      "text": "MDDIは2026年11月3日の国会で、議員の質問（口頭回答を求める質問113番）に答えました。この質問は書面回答に切り替えられました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-ai-capabilities-that-require-domestic-ability-to-operate-and-that-can-be-diversified-to-foreign-providers/"
+    },
+    {
+      "text": "質問は、国家AI戦略が、海外プロバイダーへの分散で足りる能力と、国内に独立した運用能力を残すべき重要な能力を区別しているかを尋ねるものです。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-ai-capabilities-that-require-domestic-ability-to-operate-and-that-can-be-diversified-to-foreign-providers/"
+    },
+    {
+      "text": "MDDIは、必要なAI能力に安全で信頼できるかたちでアクセスすることが目的だと述べています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-ai-capabilities-that-require-domestic-ability-to-operate-and-that-can-be-diversified-to-foreign-providers/"
+    },
+    {
+      "text": "MDDIは、世界で使える能力を活用しつつ、複数のプロバイダーとの連携とシンガポール国内での能力づくりで回復力を高めるとしています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-ai-capabilities-that-require-domestic-ability-to-operate-and-that-can-be-diversified-to-foreign-providers/"
+    },
+    {
+      "text": "AIの導入では、ユースケースの重要度、必要な能力、費用対効果、適切な代替手段の有無などを考慮するリスクベースのアプローチを採るとしています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-ai-capabilities-that-require-domestic-ability-to-operate-and-that-can-be-diversified-to-foreign-providers/"
+    }
+  ],
+  "who_is_affected": "主にシンガポール政府のAI導入や調達に関わる機関が対象と読めます。政府向けにAIサービスを提供する事業者にも関係する場合があります。民間企業への直接の義務は、資料からは読み取れません。",
+  "japan_impact": "シンガポールの政府案件に関わる日本企業は、評価の観点を知っておくとよいでしょう。用途の重要度や代替手段の有無を説明できる資料を用意すると役立つ場合があります。特定の海外プロバイダーだけに依存しない構成かどうかも、確認するとよいでしょう。これは答弁の読み方であり、新しい規制ではありません。",
+  "next_steps": "資料には、今後の予定や期限は書かれていません。推測ですが、個別の調達方針や基準が後日示される場合があります。MDDIの発表を継続して確認するとよいでしょう。",
+  "unknowns": [
+    "重要な能力と分散できる能力を分ける具体的な基準",
+    "リスクベースのアプローチを適用する範囲（政府機関のみか、民間も含むか）",
+    "法的な義務や罰則の有無",
+    "今後の指針や調達条件の公表予定",
+    "国内に残すと判断された具体的なAI能力"
+  ],
+  "glossary": [
+    {
+      "term": "MDDI",
+      "explanation": "シンガポールのデジタル発展情報省です。デジタル分野の政策を担当する政府機関です。"
+    },
+    {
+      "term": "リスクベースのアプローチ",
+      "explanation": "一律の扱いにせず、用途の重要度などリスクの大きさに応じて対応を変える考え方です。"
+    },
+    {
+      "term": "国家AI戦略",
+      "explanation": "シンガポールがAIの活用や能力づくりについて定めた国の戦略です。この資料に内容の詳細はありません。"
+    }
+  ]
+}

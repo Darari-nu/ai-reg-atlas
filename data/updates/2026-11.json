@@ -28,5 +28,95 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12607"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-11-05-kr-001",
+    "date": "2026-11-05",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "韓国科学技術情報通信部、AIを活用した토지개발 인허가 지원 발표",
+    "summary": {
+      "what": "AIを活用した複雑な土地開発・許認可支援策の発表",
+      "who": "科学技術情報通信部などの関係省庁",
+      "when_impact": "2026年11月5日（報道日）以降"
+    },
+    "detail": "韓国の科学技術情報通信部は関係省庁合同で、複雑な土地開発や許認可業務を人工知能（AI）で容易に行えるようにする取り組みに関する報道資料を公表した。具体的なAI規制の変更や新設ではなく、行政分野におけるAI活用事例の発表である。",
+    "so_what": "行政手続きやサービスへのAI活用事例であり、直接的なAI法規制の義務や差分には影響しない。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea applies AI to land development approval process",
+    "publication_date": "2026-11-05",
+    "discovered_at": "2026-11-05",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187925"
+    ],
+    "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-11-04-sg-001",
+    "date": "2026-11-04",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "シンガポール政府、AIエージェント識別・追跡のためのDNS活用と国家登録簿の検討を発表",
+    "summary": {
+      "what": "AIエージェント識別・追跡へのDNS活用検討および公的機関向け内部登録簿の構築",
+      "who": "シンガポール情報通信メディア開発庁（IMDA）、政府技術庁（GovTech）等",
+      "when_impact": "2026年11月4日の議会答弁で発表。技術検討・内部開発段階で時期未定"
+    },
+    "detail": "シンガポール情報通信メディア開発庁（IMDA）は、GoDaddy、Infoblox、Cloudflare、GoogleなどのIT企業と共同で、既存のDNS（ドメインネームシステム）を応用してプラットフォームを跨ぐAIエージェントの識別・検証を行う手法の調査を開始しました。あわせて政府技術庁（GovTech）は、公的機関が運用するAIエージェントとその責任者を管理・追跡するための政府内部用登録簿を構築しています。2026年11月4日の議会答弁にて、デジタル開発情報省のジャスミン・ロー上級国務大臣がこれらの取り組みを説明し、自律的に動作するAIエージェントの信頼性と説明責任を確保する共通インフラの必要性を評価する方針を示しました。",
+    "so_what": "AIエージェントの身元・権限・責任追跡の標準化に向けた検討であり、将来的な自律型AI活用時のガバナンス設計に影響を与える可能性があります。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本件は議会における方針表明（announcement）段階であり、現行の差分項目（diff_vs_eu）に変更を生じさせないためdiff_changedはfalseとなります。"
+    },
+    "canonical_event": "Singapore explores DNS and national registry for tracking AI agents",
+    "publication_date": "2026-11-04",
+    "discovered_at": "2026-11-05",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.straitstimes.com/singapore/politics/singapore-explores-adapting-web-domain-name-system-to-track-ai-agents-assesses-need-for-national"
+    ],
+    "country_anchor": "/country/sg/#updates"
+  },
+  {
+    "id": "2026-11-03-sg-001",
+    "date": "2026-11-03",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "デジタル発展情報省（MDDI）、国内AI能力保持と海外連携の判断原則を国会で回答",
+    "summary": {
+      "what": "国家AI戦略における国内AI能力の保持と海外プロバイダー活用に関するリスクベースの評価原則を答弁したこと",
+      "who": "デジタル発展情報省（MDDI）",
+      "when_impact": "2026年11月3日の国会答弁にて公開"
+    },
+    "detail": "シンガポールデジタル発展情報省（MDDI）は、2026年11月3日の国会答弁において、国家AI戦略における国内運用能力の保持と海外プロバイダーの活用に関する方針を説明した。MDDIは、複数の海外プロバイダー活用による回復力の確保と国内機能の強化を並行して進めているとし、AI導入においてはユースケースの重要度、必要な能力、費用対効果、適切な代替手段の有無を評価するリスクベースのアプローチを採用していると回答した。",
+    "so_what": "シンガポールでのAI活用・調達において、ユースケースの重要度や代替可能性に応じたリスクベースの評価方針が示されています。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Singapore parliament response on AI capabilities and operational requirements",
+    "publication_date": "2026-11-03",
+    "discovered_at": "2026-11-05",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-ai-capabilities-that-require-domestic-ability-to-operate-and-that-can-be-diversified-to-foreign-providers/"
+    ],
+    "country_anchor": "/country/sg/#updates"
   }
 ]

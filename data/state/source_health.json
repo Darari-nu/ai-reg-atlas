@@ -5,18 +5,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://edpb.europa.eu/feed/news_en": {
     "label": "EU watch_feed edpb.europa.eu/feed/news_en",
     "country": "eu",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-11-05",
+    "last_failed": "2026-11-05",
     "last_ok": "2026-11-04",
-    "last_reason": null,
+    "last_reason": "Status code 500",
     "alerted": false
   },
   "https://www.bing.com/news/search?q=EU%20AI%20Act&format=rss": {
@@ -25,7 +25,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -35,7 +35,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -45,7 +45,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -55,7 +55,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -65,28 +65,28 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=%E6%97%A5%E6%9C%AC%20AI%20%E8%A6%8F%E5%88%B6%20%E6%B3%95%E5%BE%8B&format=rss": {
     "label": "日本 ニュース検索「日本 AI 規制 法律」",
     "country": "jp",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=AI%E6%8E%A8%E9%80%B2%E6%B3%95&format=rss": {
     "label": "日本 ニュース検索「AI推進法」",
     "country": "jp",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Feed not recognized as RSS 1 or 2.",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.nist.gov/news-events/news/rss.xml": {
@@ -95,7 +95,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -105,7 +105,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -115,7 +115,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -125,7 +125,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -135,7 +135,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -145,7 +145,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -155,7 +155,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -165,7 +165,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -175,7 +175,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -185,7 +185,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -195,7 +195,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -205,7 +205,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -215,7 +215,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -225,26 +225,26 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=%E9%9F%93%E5%9B%BD%20AI%E5%9F%BA%E6%9C%AC%E6%B3%95&format=rss": {
     "label": "韓国 ニュース検索「韓国 AI基本法」",
     "country": "kr",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches": {
     "label": "シンガポール scrape_hash imda.gov.sg/resources/press-releases-fac…",
     "country": "sg",
-    "fail_days": 5,
+    "fail_days": 6,
     "first_failed": "2026-10-31",
-    "last_failed": "2026-11-04",
+    "last_failed": "2026-11-05",
     "last_ok": "2026-10-30",
     "last_reason": "no-dated-links",
     "alerted": true
@@ -255,7 +255,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -265,7 +265,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -275,7 +275,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -285,7 +285,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -295,7 +295,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -305,7 +305,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -315,7 +315,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -325,7 +325,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -335,19 +335,19 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Canada%20artificial%20intelligence%20law&format=rss": {
     "label": "カナダ ニュース検索「Canada artificial intelligence law」",
     "country": "ca",
-    "fail_days": 3,
-    "first_failed": "2026-11-02",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-01",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
-    "alerted": true
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
+    "alerted": false
   },
   "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233": {
     "label": "ブラジル scrape_hash www25.senado.leg.br/web/atividade/materi…",
@@ -355,7 +355,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -365,7 +365,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -375,7 +375,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -385,7 +385,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -395,7 +395,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -405,7 +405,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -415,7 +415,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -425,7 +425,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -435,7 +435,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -445,7 +445,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -455,7 +455,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -465,7 +465,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -475,7 +475,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -485,7 +485,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -495,7 +495,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -505,7 +505,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -515,7 +515,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -525,7 +525,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -535,7 +535,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -545,7 +545,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -555,7 +555,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -565,18 +565,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://mst.gov.vn/tin-tuc-su-kien/chuyen-doi-so.htm": {
     "label": "ベトナム scrape_hash mst.gov.vn/tin-tuc-su-kien/chuyen-doi-so…",
     "country": "vn",
-    "fail_days": 2,
-    "first_failed": "2026-11-03",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-02",
-    "last_reason": "no-dated-links",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://congbao.chinhphu.vn/van-ban-dang-cong-bao/bo-khoa-hoc-va-cong-nghe-c13.htm": {
@@ -585,7 +585,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -595,7 +595,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -605,7 +605,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -615,7 +615,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -625,7 +625,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -635,7 +635,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -645,7 +645,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -655,7 +655,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -665,7 +665,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -675,7 +675,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -685,7 +685,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -695,18 +695,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Malaysia%20AI%20Governance%20Bill&format=rss": {
     "label": "マレーシア ニュース検索「Malaysia AI Governance Bill」",
     "country": "my",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Rang%20Undang-Undang%20Tadbir%20Urus%20Kecerdasan%20Buatan&format=rss": {
@@ -715,19 +715,19 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Philippines%20artificial%20intelligence%20bill&format=rss": {
     "label": "フィリピン ニュース検索「Philippines artificial intelligence bill」",
     "country": "ph",
-    "fail_days": 3,
-    "first_failed": "2026-11-02",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-01",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
-    "alerted": true
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
+    "alerted": false
   },
   "https://www.bing.com/news/search?q=Philippines%20AI%20regulation%20DICT&format=rss": {
     "label": "フィリピン ニュース検索「Philippines AI regulation DICT」",
@@ -735,16 +735,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://mediaoffice.ae/future/artificial-intelligence": {
     "label": "アラブ首長国連邦 scrape_hash mediaoffice.ae/future/artificial-intelli…",
     "country": "ae",
-    "fail_days": 4,
+    "fail_days": 5,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-04",
+    "last_failed": "2026-11-05",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -755,7 +755,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -765,16 +765,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://sdaia.gov.sa/en/SDAIA/about/Pages/RegulationsAndPolicies.aspx": {
     "label": "サウジアラビア scrape_hash sdaia.gov.sa/en/SDAIA/about/Pages/Regula…",
     "country": "sa",
-    "fail_days": 4,
+    "fail_days": 5,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-04",
+    "last_failed": "2026-11-05",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -782,9 +782,9 @@
   "https://sdaia.gov.sa/en/MediaCenter/Pages/ai-year.aspx": {
     "label": "サウジアラビア scrape_hash sdaia.gov.sa/en/MediaCenter/Pages/ai-yea…",
     "country": "sa",
-    "fail_days": 4,
+    "fail_days": 5,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-04",
+    "last_failed": "2026-11-05",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -795,7 +795,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -805,7 +805,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -815,7 +815,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -825,7 +825,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -835,7 +835,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -845,28 +845,28 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Mexico%20artificial%20intelligence%20law&format=rss": {
     "label": "メキシコ ニュース検索「Mexico artificial intelligence law」",
     "country": "mx",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=ley%20general%20de%20inteligencia%20artificial%20M%C3%A9xico&format=rss": {
     "label": "メキシコ ニュース検索「ley general de inteligencia artificial México」",
     "country": "mx",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Feed not recognized as RSS 1 or 2.",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.gob.pe/iaperu": {
@@ -875,7 +875,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -885,18 +885,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Per%C3%BA%20inteligencia%20artificial%20reglamento%20Ley%2031814&format=rss": {
     "label": "ペルー ニュース検索「Perú inteligencia artificial reglamento Ley 31814」",
     "country": "pe",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.gov.kz/api/v1/public/rss/maidd/news/en": {
@@ -905,7 +905,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -915,7 +915,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -925,7 +925,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -935,7 +935,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -945,16 +945,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bj.admin.ch/de/kuenstliche-intelligenz": {
     "label": "スイス scrape_hash bj.admin.ch/de/kuenstliche-intelligenz",
     "country": "ch",
-    "fail_days": 4,
+    "fail_days": 5,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-04",
+    "last_failed": "2026-11-05",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -965,7 +965,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -975,7 +975,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -985,7 +985,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -995,7 +995,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1005,7 +1005,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1015,7 +1015,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1025,18 +1025,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=proyecto%20de%20ley%20inteligencia%20artificial%20Chile%20Senado&format=rss": {
     "label": "チリ ニュース検索「proyecto de ley inteligencia artificial Chile Senado」",
     "country": "cl",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://minciencias.gov.co/rss.xml": {
@@ -1045,7 +1045,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1055,7 +1055,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1065,18 +1065,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=proyecto%20de%20ley%20inteligencia%20artificial%20Colombia&format=rss": {
     "label": "コロンビア ニュース検索「proyecto de ley inteligencia artificial Colombia」",
     "country": "co",
-    "fail_days": 2,
-    "first_failed": "2026-11-03",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-02",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.argentina.gob.ar/aaip": {
@@ -1085,16 +1085,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.hcdn.gob.ar/prensa/": {
     "label": "アルゼンチン scrape_hash hcdn.gob.ar/prensa/",
     "country": "ar",
-    "fail_days": 4,
+    "fail_days": 5,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-04",
+    "last_failed": "2026-11-05",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -1105,7 +1105,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1115,7 +1115,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1125,7 +1125,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1135,7 +1135,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1145,18 +1145,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=New%20Zealand%20deepfake%20bill%20AI&format=rss": {
     "label": "ニュージーランド ニュース検索「New Zealand deepfake bill AI」",
     "country": "nz",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.sanews.gov.za/south-africa-news-stories.xml": {
@@ -1165,7 +1165,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1175,18 +1175,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=South%20Africa%20artificial%20intelligence%20regulation%20DCDT&format=rss": {
     "label": "南アフリカ ニュース検索「South Africa artificial intelligence regulation DCDT」",
     "country": "za",
-    "fail_days": 2,
-    "first_failed": "2026-11-03",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-02",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://naltf.gov.ng/category/the-senate/": {
@@ -1195,18 +1195,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Nigeria%20Digital%20Economy%20and%20E-Governance%20Bill%20AI&format=rss": {
     "label": "ナイジェリア ニュース検索「Nigeria Digital Economy and E-Governance Bill AI」",
     "country": "ng",
-    "fail_days": 2,
-    "first_failed": "2026-11-03",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-02",
-    "last_reason": "Feed not recognized as RSS 1 or 2.",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Nigeria%20artificial%20intelligence%20regulation%20NITDA&format=rss": {
@@ -1215,7 +1215,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1225,7 +1225,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1235,7 +1235,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1245,7 +1245,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1255,18 +1255,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Kenya%20AI%20Emerging%20Technologies%20Policy&format=rss": {
     "label": "ケニア ニュース検索「Kenya AI Emerging Technologies Policy」",
     "country": "ke",
-    "fail_days": 1,
-    "first_failed": "2026-11-04",
-    "last_failed": "2026-11-04",
-    "last_ok": "2026-11-03",
-    "last_reason": "Unquoted attribute value\nLine: 0\nColumn: 42\nChar: h",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-05",
+    "last_reason": null,
     "alerted": false
   },
   "http://en.kremlin.ru/acts/news": {
@@ -1275,7 +1275,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1285,7 +1285,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   },
@@ -1295,7 +1295,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-04",
+    "last_ok": "2026-11-05",
     "last_reason": null,
     "alerted": false
   }

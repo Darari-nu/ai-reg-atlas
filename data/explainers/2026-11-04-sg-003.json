@@ -1,0 +1,69 @@
+{
+  "id": "2026-11-04-sg-003",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-06T01:48:45Z",
+  "record_id": "2026-11-04-sg-003",
+  "source_kind": "official",
+  "published_at": "2026-11-06T01:48:45Z",
+  "headline": "シンガポールMDDI、AIエージェントの自己複製リスクに答弁",
+  "lead": "シンガポールのデジタル発展情報省（MDDI）は、2026年11月4日の国会で、AIエージェントの自己複製リスクについて書面で答弁しました。新しい規制や義務は示されていません。既存のセキュリティ対策や支援策を活用する方針が説明されています。",
+  "facts": [
+    {
+      "text": "MDDIは2026年11月4日の国会審議で、ジョアン・ペレイラ議員の質問に答える形でこの答弁を公表しました（口頭質問を書面回答に切り替えたもの）。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-assessment-of-risk-of-ai-systems-replicating-across-internet-connected-devices-in-singapore/"
+    },
+    {
+      "text": "MDDIは、自己複製型マルウェアは新しくないと述べ、インターネット接続機器間で複製できるAIエージェントには追加のリスクがありうるとしています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-assessment-of-risk-of-ai-systems-replicating-across-internet-connected-devices-in-singapore/"
+    },
+    {
+      "text": "MDDIによると、AIエージェントは環境に合わせて動き、人の関与が少ないまま弱点を突く可能性があり、検知と封じ込めが難しくなるとされています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-assessment-of-risk-of-ai-systems-replicating-across-internet-connected-devices-in-singapore/"
+    },
+    {
+      "text": "MDDIは、最近の研究で事前設定の条件下では複製できると示されたものの、現実の環境で容易に侵害や拡散ができるとは限らないとしています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-assessment-of-risk-of-ai-systems-replicating-across-internet-connected-devices-in-singapore/"
+    },
+    {
+      "text": "MDDIは、既存のサイバーセキュリティ対策は引き続き有効だとし、製造業者には初期設定の安全性と適時の更新提供が求められると述べています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-assessment-of-risk-of-ai-systems-replicating-across-internet-connected-devices-in-singapore/"
+    },
+    {
+      "text": "政府の支援策として、CSAのサイバーセキュリティ・ラベリング・スキーム、SGサイバーセーフ・プログラム、サイバー・エッセンシャルズ・マーク、中小企業向けのCISO-as-a-Serviceが挙げられています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-assessment-of-risk-of-ai-systems-replicating-across-internet-connected-devices-in-singapore/"
+    }
+  ],
+  "who_is_affected": "シンガポール向けにスマート機器を製造・販売する企業が主な関係者です。同国で機器を使う企業や中小企業にも関わる場合があります。今回は法的義務の新設ではなく、方針の説明です。",
+  "japan_impact": "日本からシンガポールへIoT機器を輸出する企業は、初期設定の安全性と更新体制を確認するとよいでしょう。ラベリング制度の対象や取得状況も確認するとよいでしょう。現地拠点を持つ企業は、支援プログラムの利用を検討できます。AIエージェントを自社で運用する場合も、機器や網の脆弱性対策を見直すとよいでしょう。",
+  "next_steps": "資料には、今後の法改正や新たな措置の予定は書かれていません。推測ですが、当面は既存の制度と支援策を軸に対応が進むとみられます。最新の動きはMDDIとCSAの発表で確認するとよいでしょう。",
+  "unknowns": [
+    "新たな規制やガイドラインを作る予定があるか",
+    "ラベリング制度の対象範囲や、義務化の予定があるか",
+    "自己複製型AIエージェントを想定した追加の技術基準があるか",
+    "罰則や執行の有無",
+    "日本企業に特有の扱いがあるか"
+  ],
+  "glossary": [
+    {
+      "term": "MDDI",
+      "explanation": "シンガポールのデジタル発展情報省です。デジタル政策や情報分野を担当する省庁です。"
+    },
+    {
+      "term": "CSA",
+      "explanation": "シンガポールのサイバーセキュリティ庁です。ラベリング制度などを運営しています。"
+    },
+    {
+      "term": "サイバーセキュリティ・ラベリング・スキーム（CLS）",
+      "explanation": "スマート機器の安全性の水準を消費者が見分けやすくする制度です。製造業者に製品の安全性向上を促します。"
+    },
+    {
+      "term": "CISO-as-a-Service",
+      "explanation": "中小企業が、最高情報セキュリティ責任者に相当する助言を外部から受けられるプログラムです。"
+    },
+    {
+      "term": "自己複製型AIエージェント",
+      "explanation": "機器から機器へ自分自身を複製し、環境に合わせて動くAIを指します。この答弁ではリスクとして取り上げられています。"
+    }
+  ]
+}

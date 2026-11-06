@@ -118,5 +118,125 @@
       "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-ai-capabilities-that-require-domestic-ability-to-operate-and-that-can-be-diversified-to-foreign-providers/"
     ],
     "country_anchor": "/country/sg/#updates"
+  },
+  {
+    "id": "2026-11-05-kr-002",
+    "date": "2026-11-05",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "個人情報保護委員会（PIPC）、AI時代の個人情報制度革新に向け国民討論結果を公表",
+    "summary": {
+      "what": "AI時代の個人情報制度に関し事前同意依存から明確な告知と拒否権確保への転換を求める議論結果を公表",
+      "who": "韓国個人情報保護委員会（PIPC）、行政安全部、AI開発・サービス提供事業者",
+      "when_impact": "2026年年内に制度革新策を策定する見込み"
+    },
+    "detail": "韓国の個人情報保護委員会（PIPC）と行政安全部は2026年11月5日、11月1日に開催された「AI時代、個人情報をどのように保護し活用するか」をテーマとする国民討論会の結果を公表しました。参加者の約90%がAI時代に即した個人情報制度の変更が必要と回答し、従来の形式的な事前同意の繰り返しよりも「事前告知と確実な拒否権（オプトアウト）」やリスクに応じた保護措置の導入を支持する意見が多数を占めました。PIPCはこれらの意見を反映し、AI時代に即した個人情報制度革新策を2026年年内にまとめる方針です。",
+    "so_what": "AI開発・運用時の個人情報処理が厳格な事前同意主義から事後拒否権等の柔軟な枠組みへ改編される可能性があるため、年内に公表される制度革新策の注視が必要です。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea public discussion on AI personal information protection and usage",
+    "publication_date": "2026-11-05",
+    "discovered_at": "2026-11-06",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12622"
+    ],
+    "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-11-04-sg-002",
+    "date": "2026-11-04",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "デジタル発展情報省（MDDI）、自律型AIのインシデント報告強化を検討中と国会答弁",
+    "summary": {
+      "what": "自律型AIの事故やニアミスに関する報告・情報共有体制の強化を検討中と表明",
+      "who": "シンガポールデジタル発展情報省（MDDI）",
+      "when_impact": "2026年11月4日の国会答弁にて表明"
+    },
+    "detail": "2026年11月4日の国会答弁において、デジタル発展情報省（MDDI）は、自律型AIシステムやAIエージェントによる意図しない動作などの事故およびニアミスの報告義務化に関する質問に対し答弁した。現行の個人データ保護やサイバーセキュリティ等の報告体制ではカバーしきれない事例があるため、情報通信メディア開発庁（IMDA）とサイバーセキュリティ庁（CSA）が国際的な動向を踏まえ、自律型AI関連インシデントの報告・情報共有の仕組みの強化に向けて検討を行っている。",
+    "so_what": "将来的にシンガポールでAI事故やニアミスの報告が義務化・強化される可能性があるため、同国でAIを展開する企業は監視体制の準備に注視が必要。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "法的段階がannouncement（国会答弁）であり、確定した規制変更ではないためdiff_changedはfalse。"
+    },
+    "canonical_event": "Singapore parliamentary response on reporting of incidents involving autonomous AI systems",
+    "publication_date": "2026-11-04",
+    "discovered_at": "2026-11-06",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-reporting-of-serious-and-near-miss-incidents-involving-autonomous-ai-systems/"
+    ],
+    "country_anchor": "/country/sg/#updates"
+  },
+  {
+    "id": "2026-11-04-sg-003",
+    "date": "2026-11-04",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "official",
+    "title": "シンガポールデジタル発展情報省（MDDI）、AIエージェントの自己複製リスクに関する答弁を公表",
+    "summary": {
+      "what": "インターネット接続機器間で自己複製するAIエージェントのリスク評価とサイバーセキュリティ対策に関する国会答弁。",
+      "who": "デジタル発展情報省（MDDI）",
+      "when_impact": "2026年11月4日の国会審議において公表された。"
+    },
+    "detail": "シンガポールのデジタル発展情報省（MDDI）は、2026年11月4日の国会審議において、インターネット接続機器間でAIシステムが自律的に複製するリスクについての質問に対する回答を公表した。自己複製型マルウェア自体は新規のものではないが、環境に適応して人的介入を減らして脆弱性を突くAIエージェントのリスクについて見解を示している。現実世界の環境において簡単に侵害や拡散ができるわけではないとしつつも、製造業者によるセキュリティ確保や、サイバーセキュリティ庁（CSA）によるサイバーセキュリティ・ラベリングスキーム（CLS）、SGサイバーセーフ・プログラム、CISO-as-a-Serviceプログラムなどの既存の支援策を活用した対策の重要性が強調されている。",
+    "so_what": "自己複製型AIエージェントの脅威に対しては現行のサイバーセキュリティ要件が引き続き有効とされており、中小企業等は既存のセキュリティ認証や支援プログラムを活用した対策が求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Singapore parliamentary response on assessment of risk of AI systems",
+    "publication_date": "2026-11-04",
+    "discovered_at": "2026-11-06",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-assessment-of-risk-of-ai-systems-replicating-across-internet-connected-devices-in-singapore/"
+    ],
+    "country_anchor": "/country/sg/#updates"
+  },
+  {
+    "id": "2026-11-04-sg-004",
+    "date": "2026-11-04",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "デジタル発展・情報省（MDDI）、自律型AIの検証推進と国際標準化方針を回答",
+    "summary": {
+      "what": "自律型AIの検証手法開発やISO等における国際標準化推進の方針を国会答弁で公表",
+      "who": "デジタル発展・情報省（MDDI）",
+      "when_impact": "2026年11月4日"
+    },
+    "detail": "デジタル発展・情報省（MDDI）は、サイバーセキュリティ庁（CSA）による自律型AI（Agentic AI）セキュリティ補足文書の発表を受け、国会質問に対する回答を公表した。シンガポールを自律型AIのセキュリティおよびアシュアランスにおけるグローバルリーダーとするため、AI Verify Foundationの「AIテスター認定プログラム」を通じた国内アシュアランス事業者の育成や、生成AIシステムのテスト方法論に関する「ISO/IEC 42119-8」の国際標準提案を進めていると説明した。",
+    "so_what": "シンガポールにおけるAI検証ツールや評価基準の国際標準化動向を把握し、自社AIのアシュアランス体制整備に役立てることが望ましい。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "法的段階がannouncement（国会答弁・方針表明）であるため、diff_changedはfalseとなる。"
+    },
+    "canonical_event": "Singapore parliamentary response on agentic AI security and assurance",
+    "publication_date": "2026-11-04",
+    "discovered_at": "2026-11-06",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-establishing-singapore-as-global-leader-in-agentic-ai-security-and-assurance/"
+    ],
+    "country_anchor": "/country/sg/#updates"
   }
 ]

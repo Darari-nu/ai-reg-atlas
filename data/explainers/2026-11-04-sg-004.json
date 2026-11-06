@@ -1,0 +1,65 @@
+{
+  "id": "2026-11-04-sg-004",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-06T01:48:45Z",
+  "record_id": "2026-11-04-sg-004",
+  "source_kind": "official",
+  "published_at": "2026-11-06T01:48:45Z",
+  "headline": "シンガポールMDDI、自律型AIの検証と国際標準化を説明",
+  "lead": "シンガポールのデジタル発展・情報省（MDDI）は、2026年11月4日の国会質問に書面で回答しました。自律型AIの検証手法づくりと、国際標準への提案を進める方針を示しています。新たな義務や規制の導入は、この回答には書かれていません。",
+  "facts": [
+    {
+      "text": "MDDIは2026年11月4日の国会質問への回答を公表しました。質問は、サイバーセキュリティ庁（CSA）が出した「Securing Agentic AI Addendum」を受けたものです。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-establishing-singapore-as-global-leader-in-agentic-ai-security-and-assurance/"
+    },
+    {
+      "text": "MDDIは、AIの普及に伴い、自律型AIを含むAIの検証・保証サービスへの企業の需要が増えると述べました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-establishing-singapore-as-global-leader-in-agentic-ai-security-and-assurance/"
+    },
+    {
+      "text": "MDDIは、AI保証の拠点が育つ可能性があるとしつつ、産業の形や構造はまだ分からないと述べました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-establishing-singapore-as-global-leader-in-agentic-ai-security-and-assurance/"
+    },
+    {
+      "text": "現段階でMDDIは、AIを導入する業界と協力し、テスト手法を開発して検証することに力を入れています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-establishing-singapore-as-global-leader-in-agentic-ai-security-and-assurance/"
+    },
+    {
+      "text": "AI Verify Foundationの「AI Tester Accreditation Programme」は、企業が能力のあるテスト事業者を見つける助けになるとMDDIは説明しました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-establishing-singapore-as-global-leader-in-agentic-ai-security-and-assurance/"
+    },
+    {
+      "text": "シンガポールは、生成AIシステムのテスト手法に関するISO/IEC 42119-8を提案しており、国際標準づくりに貢献しているとMDDIは述べました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-establishing-singapore-as-global-leader-in-agentic-ai-security-and-assurance/"
+    }
+  ],
+  "who_is_affected": "直接の義務を課す内容ではありません。シンガポールで自律型AIや生成AIを提供する企業は、将来の評価基準に関わる場合があります。AIの検証サービスを使う企業や、提供を考える企業にも関係する場合があります。",
+  "japan_impact": "日本企業への直接の義務は、この回答からは読み取れません。シンガポールで事業をする企業は、同国のテスト手法や認定の動きを確認するとよいでしょう。ISO/IEC 42119-8の議論は、自社AIの評価方法を考える手がかりになる場合があります。取引先から検証の説明を求められる場合に備え、社内の評価体制を点検するとよいでしょう。",
+  "next_steps": "資料には、今後の具体的な日程や施行日は書かれていません。MDDIは、業界と協力したテスト手法の開発と検証、国際標準への貢献を続ける方針です。標準案の進み方やCSA文書の扱いを追うことをおすすめします。これは推測であり、資料の予定ではありません。",
+  "unknowns": [
+    "ISO/IEC 42119-8の審議状況と採択の時期",
+    "AI Tester Accreditation Programmeの認定要件や対象範囲",
+    "自律型AIの検証や認証を企業に義務づける予定の有無",
+    "CSAのSecuring Agentic AI Addendumの詳しい内容",
+    "検証手法の開発で優先されるリスクの種類"
+  ],
+  "glossary": [
+    {
+      "term": "自律型AI（Agentic AI）",
+      "explanation": "人が細かく指示しなくても、目標に向けて自ら判断し、行動するAIを指します。"
+    },
+    {
+      "term": "AIアシュアランス",
+      "explanation": "AIが安全で意図どおりに動くことを、テストや評価で確かめ、信頼を示す取り組みです。"
+    },
+    {
+      "term": "AI Verify Foundation",
+      "explanation": "AIのテストや検証を進める、シンガポールの組織です。資料では、テスト事業者の認定プログラムを運営しています。"
+    },
+    {
+      "term": "ISO/IEC 42119-8",
+      "explanation": "生成AIシステムのテスト手法に関する国際標準案です。資料によれば、シンガポールが提案しています。"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "2026-11-05-kr-002",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-06T01:48:45Z",
+  "record_id": "2026-11-05-kr-002",
+  "source_kind": "official",
+  "published_at": "2026-11-06T01:48:45Z",
+  "headline": "韓国PIPC、AI時代の個人情報で討論結果を公表",
+  "lead": "韓国の個人情報保護委員会（PIPC）と行政安全部は、2026年11月5日に国民討論会の結果を公表しました。約90%の参加者が、AI時代には個人情報制度の変更が必要と答えました。PIPCは意見を反映した制度革新策を、年内にまとめる計画です。",
+  "facts": [
+    {
+      "text": "PIPCと行政安全部は、11月1日に開いた第3回「モスドゥの討論会」の結果を、2026年11月5日付の報道資料で公表しました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12622"
+    },
+    {
+      "text": "当日の現場アンケートでは、参加者の89.7%が個人情報制度の変更が必要と答えました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12622"
+    },
+    {
+      "text": "事前のオンライン討論（1,333人）では、「事前同意より分かりやすい告知と、いつでもできる拒否が重要」との回答が94%でした。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12622"
+    },
+    {
+      "text": "同じ調査では、繰り返される同意を形式的に処理した経験があるとの回答が88%でした。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12622"
+    },
+    {
+      "text": "個人情報が必要なサービスの処理方法を話し合った25グループのうち、20グループ（80%）が「事前に知らせ、いつでも止められる」方式を選びました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12622"
+    },
+    {
+      "text": "PIPCは、国民と専門家の意見を反映した個人情報制度の革新策を、年内に用意する計画です。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12622"
+    }
+  ],
+  "who_is_affected": "韓国でAIの開発やサービス提供をする事業者に関係する場合があります。韓国の利用者の個人情報を扱う海外企業も、将来の制度次第で対象になる場合があります。現時点では法改正の内容は決まっていません。",
+  "japan_impact": "今回の公表は意見の集約で、新しい義務はまだありません。韓国向けにAIサービスを出す日本企業は、同意取得の方法を点検しておくとよいでしょう。告知の分かりやすさと、拒否や削除の受付手段も確認するとよいでしょう。制度案が出た段階で、自社への影響を見直すことが必要です。",
+  "next_steps": "資料には、PIPCが制度革新策を年内にまとめる計画だと書かれています。法改正の時期や手続きは、資料に書かれていません。案の公表後に意見募集がある可能性は、推測です。",
+  "unknowns": [
+    "制度革新策の具体的な内容",
+    "法改正が必要になるかどうか",
+    "新しい制度が始まる時期",
+    "対象となる事業者の範囲",
+    "違反時の罰則の有無"
+  ],
+  "glossary": [
+    {
+      "term": "オプトアウト",
+      "explanation": "事前の同意は求めず、本人が後から拒否できる仕組みです。"
+    },
+    {
+      "term": "個人情報保護委員会（PIPC）",
+      "explanation": "韓国で個人情報保護の政策や監督を担う機関です。"
+    },
+    {
+      "term": "モスドゥの討論会",
+      "explanation": "行政安全部などが開く国民参加の討論会です。資料では「모두의 토론회」と書かれています。"
+    }
+  ]
+}

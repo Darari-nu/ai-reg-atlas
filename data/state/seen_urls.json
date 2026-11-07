@@ -1,72 +1,4 @@
 {
-  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/02kiban09_04000739.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.federalregister.gov/documents/2026/10/06/2026-20474/investment-adviser-performance-based-compensation-modernization": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.federalregister.gov/documents/2026/10/06/2026-20466/adviser-and-regulated-fund-custody-rules-crypto-custody-rules": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.pm.gov.au/media/vale-richard-morecroft": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.pm.gov.au/media/third-anniversary-october-7-attacks": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.pm.gov.au/media/statement-death-australian-army-soldier": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://convergenciadigital.com.br/governo/e-mandatorio-que-anatel-e-anpd-participem-de-forma-efetiva-na-regulacao-das-plataformas-digitais/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01zaisei02_02000423.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12562": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12560": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.camara.leg.br/noticias/1309774-projeto-pune-divulgacao-de-crueldade-contra-animais-na-internet-e-responsabiliza-redes-sociais": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-dhar-madhya-pradesh-ro-bhopal": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-kullu-himachal-pradesh-himachal-upbhokta-sanrakchan": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-south-east-delhi-delhi-reliance-jio-infocomm-ltd": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-sirmaur-himachal-pradesh-bharti-airtel-limited": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://moda.gov.tw/press/press-releases/20954": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//87b157f6-40a1-4d4d-af98-4a8717216297": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-07"
-  },
   "https://www.federalregister.gov/documents/2026/10/07/2026-20537/music-streaming-fraud": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-08"
@@ -4354,5 +4286,241 @@
   "https://www.federalregister.gov/documents/2026/11/05/2026-22593/medical-devices-hematology-and-pathology-devices-classification-of-the-digital-cervical-cytology": {
     "verdict": "gemini-unusable",
     "date": "2026-11-06"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/chizai/02zaisei02_04001397_00977.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_kyotsuu/important/kinkyu02_000683.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban15_04000615.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/ninshousagyo/02kiban16_04000969.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001590.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.federalregister.gov/documents/2026/11/06/2026-22739/medicare-program-hospital-outpatient-prospective-payment-and-ambulatory-surgical-center-payment": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.federalregister.gov/documents/2026/11/06/2026-22680/prohibiting-illegal-discrimination-in-registered-apprenticeship-programs": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.pm.gov.au/media/departmental-ministerial-appointment": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/chinese-smartphone-brands-pulled-from-vietnam-store-shelves-over-alleged-illegal-map-display-5141076.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/stanford-dropout-s-1-6b-ai-startup-claims-to-have-built-world-s-largest-computer-verified-math-library-5141588.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/tiktok-cofounder-zhang-yiming-tops-china-s-rich-list-for-first-time-with-84b-fortune-5141429.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/tech-billionaire-wang-xin-becomes-only-female-newcomer-on-china-s-100-richest-list-5141014.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/5-us-tech-billionaires-suffer-world-s-biggest-daily-wealth-losses-shedding-136b-5141445.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://gate.ahram.org.eg/daily/NewsPrint/1034941.aspx": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.the-star.co.ke/news/africa/2026-11-06-kenyas-ai-ambitions-face-infrastructure-test-as-2-billion-subsea-cable-takes-shape": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban14_02000812.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000300.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin07_02000008.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000288.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001302.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000287.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001293.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001288.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187932": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187933": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187931": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187930": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187928": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187927": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187926": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-mr-tan-kiat-how-at-govtech-stack-conference-2026-on-5-nov/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261106/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.camara.leg.br/noticias/1316238-comissao-debate-atuacao-da-rede-nacional-de-fisica-de-altas-energias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "http://www.trai.gov.in/register-interconnect-agreement-fourth-amendment-regulation-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-released-register-interconnect-agreements-fourth-amendment": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://mst.gov.vn/phat-dong-thang-hanh-dong-vi-binh-dang-gioi-va-phong-ngua-ung-pho-voi-bao-luc-tren-co-so-gioi-nam-2026-197261105140513894.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://mst.gov.vn/iriff-2026-mo-rong-ket-noi-thuc-day-hop-tac-khoa-hoc-va-cong-nghe-quoc-te-197261106000748512.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-63-2026-tt-bkhcn-470884.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://congbao.chinhphu.vn/cong-bao/572-47594.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Google&": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Mantap-Malaysia-Bersama-AI": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/b51df55a-d2e2-4395-9156-01a1ab76ea13": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/minciencias-propone-corea-tres-lineas-cooperacion-en-inteligencia-artificial": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.senado.gob.ar/prensa/24608/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.senado.gob.ar/prensa/24607/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/iec-achieves-91-completion-rate-local-election-results": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/gcis-dg-visits-roc-observe-election-results-process": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/guidelines-strengthen-coalition-governance": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/government-reiterates-warning-against-election-misinformation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/shorter-queues-positive-voter-experiences-mark-2026-elections-hsrc": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/hsrc-survey-finds-voters-viewed-elections-free-and-fair": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/kzn-iec-captures-88-election-results-slips": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/gauteng-disaster-teams-standby-severe-thunderstorms-loom": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/chikunga-pushes-accelerate-disability-employment": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.sanews.gov.za/south-africa/mpumalanga-powering-south-africas-future-through-skills": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://naltf.gov.ng/house-advances-bill-to-mandate-emergency-treatment-and-triage-protocols-hb-2739-to-second-reading/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://naltf.gov.ng/abuja-rent-regulation-bill-scales-second-reading-in-house-of-reps/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "http://en.kremlin.ru/acts/news/81191": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-07"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12617": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-07"
   }
 }

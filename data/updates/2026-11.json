@@ -238,5 +238,35 @@
       "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-establishing-singapore-as-global-leader-in-agentic-ai-security-and-assurance/"
     ],
     "country_anchor": "/country/sg/#updates"
+  },
+  {
+    "id": "2026-11-06-kr-001",
+    "date": "2026-11-06",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "final_guidance",
+    "source_kind": "official",
+    "title": "科学技術情報通信部（MSIT）、自律型AI環境へのゼロトラスト適用ガイドラインを発刊",
+    "summary": {
+      "what": "自律型（エージェンティック）AI利用環境でのゼロトラスト認証適用に関するガイドラインの発刊",
+      "who": "韓国・科学技術情報通信部（MSIT）",
+      "when_impact": "2026年11月6日公表。自律型AIを導入・運用する企業に影響"
+    },
+    "detail": "韓国の科学技術情報通信部（MSIT）は、エージェンティックAI（자율형 인공지능）利用環境において高度な認証やアクセス管理を適用するためのゼロトラスト指針（ガイドライン）を発刊した。自律的に動作するAIエージェントの利用拡大に伴うセキュリティ上の懸念に対応し、安全なAI利用環境を構築するための具体的認証手法などを提示している。",
+    "so_what": "エージェンティックAIを自社システムやサービスに導入・開発する企業は、認証・アクセス制御に関するゼロトラストセキュリティ対策指針を確認する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea issues guidance on security authentication for autonomous AI environments",
+    "publication_date": "2026-11-06",
+    "discovered_at": "2026-11-07",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187929"
+    ],
+    "country_anchor": "/country/kr/#updates"
   }
 ]

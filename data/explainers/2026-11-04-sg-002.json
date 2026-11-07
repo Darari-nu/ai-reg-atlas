@@ -1,0 +1,70 @@
+{
+  "id": "2026-11-04-sg-002",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-07T01:03:17Z",
+  "record_id": "2026-11-04-sg-002",
+  "source_kind": "official",
+  "published_at": "2026-11-07T01:03:17Z",
+  "headline": "シンガポールMDDI、自律型AI事故の報告強化を検討",
+  "lead": "シンガポールのデジタル発展情報省（MDDI）は、2026年11月4日の国会で、自律型AIの事故やニアミスの報告を強める検討に触れました。IMDAとCSAが、追加の報告や情報共有の仕組みが必要かを調べています。報告の義務化は決まっておらず、現時点は検討の段階です。",
+  "facts": [
+    {
+      "text": "MDDIは2026年11月4日の国会で、自律型AIの重大事故とニアミスの報告義務化を問う2件の質問（書面回答に切り替え）に答えました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-reporting-of-serious-and-near-miss-incidents-involving-autonomous-ai-systems/"
+    },
+    {
+      "text": "シンガポールには、個人データ、サイバーセキュリティ、重要サービスや規制対象サービスの停止に関する重大事故の報告要件があり、AIが関わったかどうかを問わず適用されます。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-reporting-of-serious-and-near-miss-incidents-involving-autonomous-ai-systems/"
+    },
+    {
+      "text": "MDDIは、自律性の高いAIが意図しない動作をしても、報告の基準に届かない場合があると述べました。特に、報告対象となる被害が出ていないときです。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-reporting-of-serious-and-near-miss-incidents-involving-autonomous-ai-systems/"
+    },
+    {
+      "text": "IMDAとCSAは、AI関連の重大事故の報告を強める方法を検討しており、追加の報告や情報共有の仕組みが必要かも調べています。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-reporting-of-serious-and-near-miss-incidents-involving-autonomous-ai-systems/"
+    },
+    {
+      "text": "MDDIは、国際的な手法を参考にし、CSAによる主要テクノロジー事業者や重要情報インフラ事業者とのサイバー情報交換など既存の仕組みを土台にすると述べました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-reporting-of-serious-and-near-miss-incidents-involving-autonomous-ai-systems/"
+    },
+    {
+      "text": "MDDIは、追加の仕組みは対象を絞り、負担を抑えたものにし、安全保障上や商業上の機微にも配慮すると述べました。",
+      "source_url": "https://www.mddi.gov.sg/newsroom/mddi-s-response-to-pq-on-reporting-of-serious-and-near-miss-incidents-involving-autonomous-ai-systems/"
+    }
+  ],
+  "who_is_affected": "シンガポールで自律型AIやAIエージェントを提供する会社が、将来の対象になる場合があります。重要インフラの事業者や、規制対象サービスを運営する会社も関係する場合があります。ただし対象範囲は示されていません。",
+  "japan_impact": "日本からシンガポールへAIサービスを出す会社は、動向を確認するとよいでしょう。現地拠点や取引先がある場合も同様です。AIの意図しない動作やニアミスを社内で記録し、共有する体制を点検するとよいでしょう。現時点で新たな義務はありません。",
+  "next_steps": "資料には、検討の結果を出す時期や、規則の施行日の記載がありません。MDDIは、関心のあるパートナーとAI事故とニアミスの共通理解づくりを進める考えを示しています。IMDAとCSAの今後の発表を確認するとよいでしょう。",
+  "unknowns": [
+    "報告が義務になるかどうか",
+    "報告の対象となる事故やニアミスの定義と基準",
+    "対象になる事業者の範囲",
+    "罰則の有無",
+    "検討結果が出る時期と施行日",
+    "国際的な連携の具体的な相手と内容"
+  ],
+  "glossary": [
+    {
+      "term": "MDDI",
+      "explanation": "シンガポールのデジタル発展情報省です。今回の国会答弁を行いました。"
+    },
+    {
+      "term": "IMDA",
+      "explanation": "情報通信メディア開発庁です。CSAとともに報告強化の方法を検討しています。"
+    },
+    {
+      "term": "CSA",
+      "explanation": "サイバーセキュリティ庁です。サイバー情報を事業者と交換する仕組みを持っています。"
+    },
+    {
+      "term": "ニアミス",
+      "explanation": "被害には至らなかったものの、事故につながりかねなかった出来事を指します。"
+    },
+    {
+      "term": "自律型AI",
+      "explanation": "人の細かな指示なしに判断し、動作するAIシステムです。AIエージェントを含みます。"
+    }
+  ]
+}

@@ -268,5 +268,35 @@
       "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187929"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-11-03-pe-001",
+    "date": "2026-11-03",
+    "country": "pe",
+    "axis": "risk_classification",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "media",
+    "title": "ペルーのAI法施行規則における採用選考AIの高リスク分類と民間企業の義務範囲に関する解説",
+    "summary": {
+      "what": "採用や人事評価へのAI利用が高リスクに分類される中、民間企業における事前影響分析義務の適用範囲や課題を解説",
+      "who": "ペルーの企業および雇用・採用関係者",
+      "when_impact": "2026年1月22日の最高令第115-2025-PCM号（法施行規則）施行以降"
+    },
+    "detail": "ペルーの人工知能利用促進法（Ley N° 31814）施行規則（最高令第115-2025-PCM号）第24条に基づき、採用選考、評価、雇用締結・終了、労働条件設定へのAI利用は高リスクに分類されている。高リスクAIシステムには運用ログやアルゴリズムのロジックの記録保持、セキュリティ・プライバシー・説明責任の方針策定、職員研修、利用者への事前通知などが義務付けられているが、事前影響分析の実施は公的機関のみ義務化され、民間企業については任意とされている。解説記事では、民間企業の努力義務に委ねられた現状と個人情報保護法や労働監察庁（Sunafil）による法的対応リスクについて警鐘を鳴らしている。",
+    "so_what": "ペルーで採用や労働評価にAIツールを利用する企業は、運用ログの保存や事前通知等の義務を履行し、自主的な事前影響評価の実施を検討することが求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Peru regulation implementation on high-risk AI in recruitment",
+    "publication_date": "2026-11-03",
+    "discovered_at": "2026-11-08",
+    "effective_date": "2026-01-22",
+    "deadline_date": null,
+    "sources": [
+      "https://www.infobae.com/peru/2026/11/03/la-ia-redacta-el-cv-y-la-ia-lo-descarta-en-el-medio-ningun-humano-evaluo-al-candidato/"
+    ],
+    "country_anchor": "/country/pe/#axis-risk_classification"
   }
 ]

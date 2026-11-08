@@ -1,1 +1,9 @@
-{}
+{
+  "2026-11-03-pe-001": {
+    "tries": 1,
+    "last": "2026-11-08",
+    "reasons": [
+      "rejected: fact[0]-source-not-in-record,fact[1]-source-not-in-record,fact[2]-source-not-in-record,fact[3]-source-not-in-record,fact[4]-source-not-in-record,fact[5]-source-not-in-record"
+    ]
+  }
+}

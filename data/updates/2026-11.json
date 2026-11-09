@@ -298,5 +298,35 @@
       "https://www.infobae.com/peru/2026/11/03/la-ia-redacta-el-cv-y-la-ia-lo-descarta-en-el-medio-ningun-humano-evaluo-al-candidato/"
     ],
     "country_anchor": "/country/pe/#axis-risk_classification"
+  },
+  {
+    "id": "2026-11-09-ph-001",
+    "date": "2026-11-09",
+    "country": "ph",
+    "axis": "general",
+    "change_type": "new_regulation",
+    "legal_stage": "bill",
+    "source_kind": "media",
+    "title": "フィリピン上院議員、AIによる失職を防ぐ労働法改正法案を提出",
+    "summary": {
+      "what": "AI導入に伴う人員削減前のリスキリング義務化や離職手当増額等を盛り込んだ労働法改正法案の提出",
+      "who": "フィリピン上院（アーウィン・トゥルフォ上院議員）",
+      "when_impact": "法案可決および施行後、AI導入により人員削減を行う事業者に適用"
+    },
+    "detail": "フィリピンのアーウィン・トゥルフォ上院議員は、AIや自動化による労働者の解雇を防止することを目的とした労働法改正法案（上院法案第2563号）を提出した。同法案は、AI導入により人員削減を行う企業に対し、労働雇用省（DOLE）へ少なくとも6か月前に通知すること、解雇の前に従業員のリスキリングプログラムを優先することを義務付けている。また、解雇が不可避な場合の離職手当を「少なくとも給与2か月分、または勤続年数1年につき2か月分」に引き上げることなどを規定している。",
+    "so_what": "フィリピン国内でAI導入による人員削減を行う際、事前通知やリスキリング要件、退職手当増額など厳格な労務規制が課される可能性があるため、法案動向の注視が必要である。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Philippines bill filed to protect workers from AI job displacement",
+    "publication_date": "2026-11-09",
+    "discovered_at": "2026-11-09",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.philstar.com/headlines/2026/11/09/2568852/bill-vs-ai-job-displacement-filed"
+    ],
+    "country_anchor": "/country/ph/#updates"
   }
 ]

@@ -1,0 +1,69 @@
+{
+  "id": "2026-11-03-pe-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-09T01:05:04Z",
+  "record_id": "2026-11-03-pe-001",
+  "source_kind": "media",
+  "published_at": "2026-11-09T01:05:04Z",
+  "headline": "ペルー、採用選考へのAI利用を高リスクに分類",
+  "lead": "ペルーのAI法（Ley 31814）の施行規則が、採用や人事評価へのAI利用を高リスクに分類しています。規則は2026年1月22日から施行されています。事前影響分析は公的機関のみ義務で、民間企業は任意です。これを論じたInfobaeの解説記事（2026年11月3日）をもとに整理します。",
+  "facts": [
+    {
+      "text": "施行規則（最高令115-2025-PCM号）は2026年1月22日から施行されています。",
+      "source_url": "https://www.infobae.com/peru/2026/11/03/la-ia-redacta-el-cv-y-la-ia-lo-descarta-en-el-medio-ningun-humano-evaluo-al-candidato/"
+    },
+    {
+      "text": "第24条は、労働者や応募者の選考、評価、雇用の締結と終了、労働条件の設定にAIを使うことを高リスクとしています。",
+      "source_url": "https://www.infobae.com/peru/2026/11/03/la-ia-redacta-el-cv-y-la-ia-lo-descarta-en-el-medio-ningun-humano-evaluo-al-candidato/"
+    },
+    {
+      "text": "高リスクのシステムでは、運用やデータ源、アルゴリズムの論理の記録、安全・プライバシー・説明責任の社内方針、職員研修、利用者への目的と判断の種類の事前通知が求められます。",
+      "source_url": "https://www.infobae.com/peru/2026/11/03/la-ia-redacta-el-cv-y-la-ia-lo-descarta-en-el-medio-ningun-humano-evaluo-al-candidato/"
+    },
+    {
+      "text": "事前影響分析は公的部門のみ義務で、民間部門では任意です。",
+      "source_url": "https://www.infobae.com/peru/2026/11/03/la-ia-redacta-el-cv-y-la-ia-lo-descarta-en-el-medio-ningun-humano-evaluo-al-candidato/"
+    },
+    {
+      "text": "規則は、人による監督を行う担当者に、AIの判断を止める、直す、無効にする権限を持たせるよう求めています。",
+      "source_url": "https://www.infobae.com/peru/2026/11/03/la-ia-redacta-el-cv-y-la-ia-lo-descarta-en-el-medio-ningun-humano-evaluo-al-candidato/"
+    },
+    {
+      "text": "記事によると、個人情報保護法（Ley 29733）の重大な違反は最大100UIT（約53.5万ソル）で、差別的な求人は労働監察庁（Sunafil）の下で極めて重大な違反です。",
+      "source_url": "https://www.infobae.com/peru/2026/11/03/la-ia-redacta-el-cv-y-la-ia-lo-descarta-en-el-medio-ningun-humano-evaluo-al-candidato/"
+    }
+  ],
+  "who_is_affected": "ペルーで採用や人事評価にAIを使う企業が対象の場合があります。応募者の履歴書の順位付けや選別を行う採用管理システム（ATS）を使う会社も含まれる場合があります。",
+  "japan_impact": "ペルーに拠点や採用活動を持つ日本企業は、使っているAIツールの確認が必要です。順位付けや選別の機能があるか、洗い出すとよいでしょう。ログの保存と事前通知の体制も確認するとよいでしょう。事前影響分析は民間では任意です。ただ記事は、実施して記録を残すよう勧めています。AIの提供元に頼っても、雇用主の責任は残ると記事は述べています。",
+  "next_steps": "資料に、今後の予定や期限は書かれていません。推測ですが、Sunafilや個人情報保護当局の運用が今後の焦点になる場合があります。",
+  "unknowns": [
+    "高リスクの義務に違反した民間企業への具体的な罰則",
+    "外国企業やペルー国外から提供されるサービスへの適用範囲",
+    "運用ログの保存期間の詳細",
+    "民間企業の事前影響分析が将来義務化されるかどうか",
+    "記事が挙げる罰金額が、AI規則そのものの罰則かどうか"
+  ],
+  "glossary": [
+    {
+      "term": "高リスクAI",
+      "explanation": "人の権利や生活に大きく影響しうるとして、追加の義務が課されるAIの区分です。"
+    },
+    {
+      "term": "事前影響分析",
+      "explanation": "AIを使う前に、偏りなどの影響を調べて記録する手続きです。"
+    },
+    {
+      "term": "Sunafil",
+      "explanation": "ペルーの労働監察庁で、労働法の順守を監督します。"
+    },
+    {
+      "term": "ATS",
+      "explanation": "応募者を管理する採用管理システムです。記事では、多くがAIを使うとされています。"
+    },
+    {
+      "term": "UIT",
+      "explanation": "ペルーの税の基準単位です。記事では100UITを約535,000ソルとしています。"
+    }
+  ]
+}

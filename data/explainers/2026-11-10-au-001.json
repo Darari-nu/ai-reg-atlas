@@ -1,0 +1,62 @@
+{
+  "id": "2026-11-10-au-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-10T03:43:12Z",
+  "record_id": "2026-11-10-au-001",
+  "source_kind": "official",
+  "published_at": "2026-11-10T03:43:12Z",
+  "headline": "豪政府、フロンティアAI企業への安全義務を法制化へ",
+  "lead": "オーストラリア政府は2026年11月10日、フロンティアAI企業に安全・セキュリティ保護措置を義務づける方針を発表しました。措置はAI規格法（AI Standards legislation）で定める予定です。新しい規制機関を置き、違反には重い罰則を科せるようにする案です。法案の詳細は、政府が検討と協議を終えた後に示されます。",
+  "facts": [
+    {
+      "text": "アルバニージー政権は、強い義務的な安全・セキュリティ保護措置をAI規格法で法制化すると、2026年11月10日に発表しました。",
+      "source_url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+    },
+    {
+      "text": "この措置は、オーストラリアでの事業を望むすべてのフロンティアAI企業に適用されるとされています。",
+      "source_url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+    },
+    {
+      "text": "政府は、AI安全に特化した新しい規制機関が執行を担う案を示し、同機関はオーストラリアAIセーフティ・インスティテュートと協力するとしています。",
+      "source_url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+    },
+    {
+      "text": "規制機関は、義務を守らないAI企業に対し、重い罰則を科せるようになる見込みです。",
+      "source_url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+    },
+    {
+      "text": "企業には、開発から展開までの全段階でのセキュリティ管理、重大リスクの特定と管理、モデルの独立評価の受け入れが求められる予定です。",
+      "source_url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+    },
+    {
+      "text": "企業にはさらに、政府へのインシデントの迅速な通知、安全・セキュリティ枠組みの維持と公表、基準の更新への対応も求められる予定です。",
+      "source_url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+    }
+  ],
+  "who_is_affected": "対象は、オーストラリアで事業を行うフロンティアAI（最先端モデル）の開発・提供企業です。自社でモデルを開発する企業が中心になる場合があります。モデルを組み込んで使う企業が対象に入るかは、資料からは分かりません。",
+  "japan_impact": "日本企業がフロンティアAIを開発し、オーストラリアで提供する場合は、対象になる可能性があります。まず自社モデルが「フロンティアAI」に当たるかを確認するとよいでしょう。豪州向けの提供がある場合は、インシデント通知の体制や第三者評価の受け入れ方を社内で整理しておくとよいでしょう。海外の AI を使う日本企業は、提供元が豪州でどう対応するかを取引先に確認するとよいでしょう。なお、これは情報整理であり、法的助言ではありません。",
+  "next_steps": "資料によると、法案の詳細は政府が検討と協議を終えた後に公表されます。時期は示されていません。法案の可決や施行の日程も、資料には書かれていません。今後は法案の公表と協議の動きを確認する必要があります。",
+  "unknowns": [
+    "法案の提出時期、可決時期、施行日",
+    "「フロンティアAI」の具体的な定義や対象となる基準",
+    "罰則の種類や金額",
+    "新しい規制機関の名称、権限、設置時期",
+    "豪州に拠点のない海外企業への適用の範囲",
+    "独立評価を行う機関の要件や、インシデント通知の期限"
+  ],
+  "glossary": [
+    {
+      "term": "フロンティアAI",
+      "explanation": "現在の技術水準の最前線にある、最も高度なAIモデルを指す言葉です。資料では、安全に使われない場合のリスクが最も高いとされています。"
+    },
+    {
+      "term": "AI規格法（AI Standards legislation）",
+      "explanation": "オーストラリア政府が準備しているAI関連の法律です。今回の安全・セキュリティ義務はこの法律に盛り込まれる予定です。"
+    },
+    {
+      "term": "オーストラリアAIセーフティ・インスティテュート（AISI）",
+      "explanation": "オーストラリアのAI安全に関する機関です。新しい規制機関に技術的な専門知識と監督面の支援を提供するとされています。"
+    }
+  ]
+}

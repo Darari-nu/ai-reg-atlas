@@ -328,5 +328,95 @@
       "https://www.philstar.com/headlines/2026/11/09/2568852/bill-vs-ai-job-displacement-filed"
     ],
     "country_anchor": "/country/ph/#updates"
+  },
+  {
+    "id": "2026-11-10-au-001",
+    "date": "2026-11-10",
+    "country": "au",
+    "axis": "gpai_obligations",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "豪政府、フロンティアAIを対象とした義務的AI安全規制の法制化方針を発表",
+    "summary": {
+      "what": "フロンティアAI企業に対する義務的な安全・セキュリティ保護措置の法制化方針の発表",
+      "who": "オーストラリア政府（アルバニージー政権）",
+      "when_impact": "今後のAI規格法案の策定・可決・施行後"
+    },
+    "detail": "オーストラリアのアルバニージー政権は、同国で事業を展開するすべてのフロンティアAI（最先端モデル）企業を対象に、AI規格法（AI Standards legislation）を通じて強固な法的拘束力のある安全・セキュリティ保護措置を導入する方針を発表した。新たな専門のAI安全規制機関を設置し、オーストラリアAIセーフティ・インスティテュート（AISI）と連携して監督を行う。対象企業には、全段階でのセキュリティ管理、モデルのリスク管理、独立機関による評価の受入れ、政府への迅速なインシデント通知、安全枠組みの公表などが義務付けられ、違反には罰則が科される見込みである。",
+    "so_what": "オーストラリアで最先端AIモデルを展開する企業は、将来的にインシデント報告や第三者評価などの法的義務に直面する見込みです。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本公表は政府の方針表明（announcement）段階であるため、法的差分（diff_vs_eu）の変更はありません。"
+    },
+    "canonical_event": "Australia announces mandatory AI safety and security standards legislation",
+    "publication_date": "2026-11-10",
+    "discovered_at": "2026-11-10",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+    ],
+    "country_anchor": "/country/au/#axis-gpai_obligations"
+  },
+  {
+    "id": "2026-11-09-kr-001",
+    "date": "2026-11-09",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "韓国の個人情報保護委員会（PIPC）、AI侵害脅威への対応と保護体系定着に向けた政策フォーラムを開催",
+    "summary": {
+      "what": "AI侵害脅威への対応や予防中心の個人情報保護体系定着に向けた政策フォーラムの開催",
+      "who": "個人情報保護委員会（PIPC）および韓国個人情報保護責任者協議会",
+      "when_impact": "2026年11月9日に開催されたフォーラムで議論"
+    },
+    "detail": "韓国の個人정보保護委員会（PIPC）は、韓国個人情報保護責任者協議会と共同で2026年11月9日に「個人情報政策フォーラム」を開催した。フォーラムでは、AIに基づく個人情報侵害脅威に対する防御策、予防中心の保護体系への転換、企業・機関の責任経営強化、重大・反復違反に対する課徴金体系の改定方針や予防投資努力に対する課徴金減軽措置などが議論された。",
+    "so_what": "韓国で事業を展開する企業は、AI活用における個人情報侵害リスクの事前予防対策や責任体制の強化に関する当局の動向を注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea PIPC cooperates with private sector on AI privacy protection framework",
+    "publication_date": "2026-11-09",
+    "discovered_at": "2026-11-10",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12629"
+    ],
+    "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-11-08-cn-001",
+    "date": "2026-11-08",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "media",
+    "title": "南京大学、批判を受けAIによる学生の授業集中度監視を停止",
+    "summary": {
+      "what": "AIカメラによる学生の授業中の集中度測定の運用停止を発表",
+      "who": "南京大学（中国）",
+      "when_impact": "2026年11月4日に停止を発表"
+    },
+    "detail": "中国の南京大学は、授業中の学生の顔の向きから集中度（顔上げ率）をリアルタイムで測定するAIシステムの運用を、プライバシーおよび監視への懸念から批判が相次いだことを受けて停止したと2026年11月4日に発表した。同大学は約3,000万元を投じてスマート教室システムを整備し、教室内のカメラとAIアルゴリズムを用いて自動出席確認や注意度の計測を行っていた。個人情報収集や顔認証に対する懸念が受講生から上がったため集中度測定の運用を取りやめたが、講義の配信や授業評価を目的としたシステム自体は引き続き維持される。",
+    "so_what": "教育や職場環境でAI監視・分析システムを導入する際、プライバシー保護や透明性、利用者の同意に関する事前の検証が不可欠となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "China university stops AI classroom attention tracking due to privacy backlash",
+    "publication_date": "2026-11-08",
+    "discovered_at": "2026-11-10",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://e.vnexpress.net/news/tech/tech-news/top-chinese-university-stops-using-ai-to-track-students-attention-after-privacy-backlash-5142383.html"
+    ],
+    "country_anchor": "/country/cn/#updates"
   }
 ]

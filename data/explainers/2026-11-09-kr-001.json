@@ -1,0 +1,61 @@
+{
+  "id": "2026-11-09-kr-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-10T03:43:12Z",
+  "record_id": "2026-11-09-kr-001",
+  "source_kind": "official",
+  "published_at": "2026-11-10T03:43:12Z",
+  "headline": "韓国PIPC、AI侵害への対応を議論する政策フォーラムを開催",
+  "lead": "韓国の個人情報保護委員会（PIPC）は、2026年11月9日に「個人情報政策フォーラム」を開きました。韓国個人情報保護責任者協議会と共同で主催しています。AIによる侵害の脅威への対応や、予防を中心にした保護体系が議論されました。新しい義務を定めた発表ではありません。",
+  "facts": [
+    {
+      "text": "PIPCは韓国個人情報保護責任者協議会と共同で、2026年11月9日にソウルの엘タワーで「個人情報政策フォーラム」を開きました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12629"
+    },
+    {
+      "text": "フォーラムには産学官の個人情報保護責任者（CPO）や専門家など、450人以上が参加しました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12629"
+    },
+    {
+      "text": "PIPCは、個人情報保護法の改正などで予防中心の保護体系への転換が本格化し、AI基盤の侵害の脅威も高まっていると説明しています。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12629"
+    },
+    {
+      "text": "PIPCの担当者は、重大・反復違反に対する懲罰的課徴金（全体売上高の最大10%）や、事前の予防投資の努力を認めた場合の課徴金の必須減軽など、課徴金体系の見直しの方向を説明しました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12629"
+    },
+    {
+      "text": "PIPCは、機関長とCPOを中心にした責任経営に保護の力を集中するよう求めました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12629"
+    },
+    {
+      "text": "PIPCは、フォーラムの意見や提言をもとに、AIの広がりに対応してリスクの水準に応じた柔軟な管理体系をつくる計画です。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12629"
+    }
+  ],
+  "who_is_affected": "韓国で個人情報を扱う企業や公的機関が関係します。大規模な個人情報を持つ事業者は、課徴金の方向性の影響を受ける場合があります。CPOを置く組織は、責任経営の議論に注意が必要です。",
+  "japan_impact": "韓国向けにサービスを出す日本企業は、自社の個人情報保護体制を点検するとよいでしょう。予防的なセキュリティ投資の記録を整えておくと、課徴金の減軽の議論に備えられる場合があります。韓国拠点の責任者や現地の取引先とも、対応方針を共有するとよいでしょう。ただし、本フォーラムは政策の議論であり、日本企業への直接の義務は資料にありません。",
+  "next_steps": "資料によると、PIPCはフォーラムの意見をもとに、リスクに応じた柔軟な管理体系を整える計画です。具体的な日程や改正の時期は、資料に書かれていません。今後のPIPCの発表を確認するとよいでしょう。",
+  "unknowns": [
+    "課徴金体系の見直しが、いつ、どのような形で適用されるか",
+    "懲罰的課徴金（最大10%）の対象となる違反の具体的な範囲",
+    "予防投資の努力として認められる内容の基準",
+    "AIに特化した新たな義務が設けられるかどうか",
+    "外国企業への適用の範囲"
+  ],
+  "glossary": [
+    {
+      "term": "PIPC（個人情報保護委員会）",
+      "explanation": "韓国の個人情報保護を担当する政府機関です。資料では「개인정보위」と表記されています。"
+    },
+    {
+      "term": "CPO（個人情報保護責任者）",
+      "explanation": "組織内で個人情報の保護を担う責任者です。"
+    },
+    {
+      "term": "課徴金",
+      "explanation": "違反した事業者に行政機関が課す金銭的な制裁です。"
+    }
+  ]
+}

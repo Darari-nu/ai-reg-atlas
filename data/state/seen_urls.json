@@ -1,88 +1,4 @@
 {
-  "https://www.edpb.europa.eu/news/italian-dpa-fines-iqvia-eur-7-000-000-for-unlawful-processing-of-patients-health-data_en": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.edpb.europa.eu/news/italian-dpa-fines-security-company-eur-39-000-for-violations-concerning-employees-data_en": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.edpb.europa.eu/news/italian-dpa-fines-emirates-eur-180-000-for-infringements-concerning-passengers-health-data_en": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.edpb.europa.eu/news/italian-dpa-fines-bbva-eur-5-508-000-for-failing-to-respect-a-customers-objection-to-direct_en": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.dataprivacybr.org/egd-turma-2-cinco-dias-construindo-pontes-na-governanca-de-dados/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001260.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001275.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban04_02000285.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban13_02000138.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban13_02000137.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001274.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban14_02000806.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban07_02000130.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban07_02000129.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01gyosei12_02000168.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.mddi.gov.sg/newsroom/keynote-address-by-sms-tan-kiat-how-at-elevenlabs--a-singapore-exclusive-/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "http://www.trai.gov.in/draft-telecommunication-broadcasting-cable-services-drm-based-digital-addressable-systems-audit": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-releases-draft-telecommunication-broadcasting-and-cable-services-0": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://mptc.gov.kh/en/2026/10/announcement-on-the-organization-of-the-side-event-francotech-2026-from-14-16-november-2026-in-phnom-penh/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.federalregister.gov/documents/2026/10/13/2026-20890/project-level-predecisional-administrative-review-process": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
-  "https://www.federalregister.gov/documents/2026/10/13/2026-20888/regulation-crypto-asset-transactions-and-regulation-crypto-asset-markets": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-10"
-  },
   "https://e.vnexpress.net/news/tech/vietnam-innovation/vietnam-ranks-second-in-southeast-asia-in-cryptocurrencies-5130634.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-11"
@@ -4354,5 +4270,205 @@
   "https://www.arabnews.com/saudi-arabia/saudi-arabia-sets-out-ai-principles-for-media-calls-for-disclosure-of-synthetic-content-3010195": {
     "verdict": "body-too-short",
     "date": "2026-11-09"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/miraishakaiomisueta/08_kaisai_00001.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/inside-nvidia-billionaire-jensen-huang-s-41-year-marriage-to-wife-lori-5142548.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/chinese-electric-supercar-breaks-500-kph-barrier-sets-guinness-world-records-5142308.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/nvidia-ceo-jensen-huang-s-daughter-cancels-south-korea-trip-amid-father-s-affair-revelations-5142338.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/from-ai-to-semiconductors-six-executives-join-forbes-asia-s-power-businesswomen-list-5140574.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.channelnewsasia.com/brand-studio/making-ai-work-singapore-enterprises-6518716": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://businessday.ng/technology/article/wall-street-quietly-freezes-data-center-loans-ahead-of-13-4bn-ai-debt-wall/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.youm7.com/story/2026/11/9/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%B5%D8%AD%D8%A9-%D9%85%D8%B5%D8%B1-%D8%A3%D8%B5%D8%A8%D8%AD%D8%AA-%D9%85%D8%B7%D9%88%D8%B1%D9%8B%D8%A7-%D9%84%D9%84%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7-%D9%88%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%88%D9%84%D9%8A%D8%B3-%D9%85%D8%AC%D8%B1%D8%AF/7611840": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei07_01000296.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01cyber01_02000001_00310.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001294.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187942": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187944": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187937": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187936": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187934": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187938": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187941": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187935": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12644": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12628": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.mddi.gov.sg/newsroom/keynote-address-by-sms-tan-kiat-how-at-the-launch-of-equinix-s-data-centre-sg6-/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "http://www.trai.gov.in/telecommunication-interconnection-port-charges-third-amendment-regulations-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-telecommunication-interconnection-port-charges-third": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.oaic.gov.au/news/blog/privacy-impact-assessments": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.oaic.gov.au/news/blog/smart-glasses-under-the-microscope": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.oaic.gov.au/news/speeches/law-council-of-australia": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//2e50c1f3-7a72-49d1-8795-0868b814a667": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.gov.kz/memleket/entities/maidd/press/news/details/1325776?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.gov.kz/org/maidd/press/news/details/1325776?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.minciencia.gob.cl/noticias/ministerio-de-ciencia-tecnologia-conocimiento-e-innovacion-financia-con-1000-millones-tres-expediciones-antarticas-del-rompehielos-almirante-viel/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/minciencias-invita-empresas-todo-el-pais-postular-sus-innovaciones-al-milagro-del": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/la-sic-implemento-una-nueva-funcionalidad-en-la-plataforma-servicios-en-linea": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/la-sic-impulsa-la-transformacion-de-la-red-cati-para-conectar-conocimiento-propiedad-industrial-y-aprovechamiento": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.senado.gob.ar/prensa/24610/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.senado.gob.ar/prensa/24609/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.privacy.org.nz/tuhono-connect/statements-media-releases/final-report-into-manage-my-health-inquiry-a-wake-up-call-for-agencies/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/sas-export-credit-insurance-corporation-mark-25-year-anniversary": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/incoming-councillors-urged-serve-communities": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/strengthening-state-capability-key-africas-inclusive-growth": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/hot-conditions-parts-sa": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/nsg-hosts-economic-governance-school-programme-public-sector-leaders": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/access-justice-conference-get-underway": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/new-councillors-urged-prioritise-service-delivery": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/eskom-turns-sustaining-gains": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/police-arrest-more-400-suspects-tshwane": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.sanews.gov.za/south-africa/festive-season-eastern-cape-steps-crime-prevention-efforts": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://naltf.gov.ng/deputy-speaker-benjamin-kalu-hails-flamingos-fifa-u17-world-cup-triumph/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "http://en.kremlin.ru/acts/news/81193": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-10"
+  },
+  "https://www.itnews.com.au/news/gov-proposes-ai-safety-regulator-630244": {
+    "verdict": "blocked-or-js-only-page",
+    "date": "2026-11-10"
   }
 }

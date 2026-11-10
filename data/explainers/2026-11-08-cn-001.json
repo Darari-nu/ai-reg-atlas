@@ -1,0 +1,60 @@
+{
+  "id": "2026-11-08-cn-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-10T03:43:12Z",
+  "record_id": "2026-11-08-cn-001",
+  "source_kind": "media",
+  "published_at": "2026-11-10T03:43:12Z",
+  "headline": "南京大学、AIによる授業集中度の測定を停止",
+  "lead": "中国の南京大学は、AIで学生の授業中の集中度を測る仕組みをやめました。2026年11月4日に発表しています。プライバシーと監視への批判が広がったことが背景です。法規制の変更ではなく、大学の運用判断の報道です。",
+  "facts": [
+    {
+      "text": "南京大学は2026年11月4日に、学生の「顔上げ率」の算出をやめると発表しました。",
+      "source_url": "https://e.vnexpress.net/news/tech/tech-news/top-chinese-university-stops-using-ai-to-track-students-attention-after-privacy-backlash-5142383.html"
+    },
+    {
+      "text": "顔上げ率は、学生が講師の方を向いているか、スマートフォンや机を見ているかで授業への関与を測る指標でした。",
+      "source_url": "https://e.vnexpress.net/news/tech/tech-news/top-chinese-university-stops-using-ai-to-track-students-attention-after-privacy-backlash-5142383.html"
+    },
+    {
+      "text": "授業の映像とリアルタイムの統計を示す画面のスクリーンショットが出回り、顔認識、個人データの収集、学生の同意の欠如を巡る批判が起きました(SCMP報道として記載)。",
+      "source_url": "https://e.vnexpress.net/news/tech/tech-news/top-chinese-university-stops-using-ai-to-track-students-attention-after-privacy-backlash-5142383.html"
+    },
+    {
+      "text": "大学は、システムが許可なく顔などの生体データを集めたり顔認識を行ったりしてはいないと説明しています。",
+      "source_url": "https://e.vnexpress.net/news/tech/tech-news/top-chinese-university-stops-using-ai-to-track-students-attention-after-privacy-backlash-5142383.html"
+    },
+    {
+      "text": "大学は3,000万元超をかけてスマート教室を更新し、100超の教室などに機器を入れました。",
+      "source_url": "https://e.vnexpress.net/news/tech/tech-news/top-chinese-university-stops-using-ai-to-track-students-attention-after-privacy-backlash-5142383.html"
+    },
+    {
+      "text": "大学は、講義の配信、キャンパス間の交流、録画の見直し、授業評価の支援という目的で、システム全体は維持すると述べています。",
+      "source_url": "https://e.vnexpress.net/news/tech/tech-news/top-chinese-university-stops-using-ai-to-track-students-attention-after-privacy-backlash-5142383.html"
+    }
+  ],
+  "who_is_affected": "直接の対象は南京大学の学生と教員です。学校や職場で、カメラとAIで人の行動を測るサービスを提供する会社にも参考になる場合があります。",
+  "japan_impact": "日本の会社が教育や職場向けにAI分析を提供する場合、目的や取得データを利用者に説明する必要性を考える材料になります。中国の拠点や取引先で似た仕組みを使っていないか、確認するとよいでしょう。同意の取り方や、データを外部企業に渡す範囲も点検するとよいでしょう。ただし、本件は法規制の変更ではありません。",
+  "next_steps": "資料には、今後の予定や追加の規制の記載がありません。大学は顔上げ率以外の機能を続けると述べています。そのため、出席の自動記録などへの批判が続くかが焦点になる可能性があります(推測)。",
+  "unknowns": [
+    "中国政府や教育当局が、この件で指導や調査をしたかどうかは分かりません。",
+    "大学が生体データを実際に扱っていたかは、大学の説明のみで、独立した確認は資料にありません。",
+    "出席の自動記録が今後も続く範囲や、同意の取り方の見直しは分かりません。",
+    "関連する中国の法令や罰則の適用は、資料に記載がありません。"
+  ],
+  "glossary": [
+    {
+      "term": "顔上げ率",
+      "explanation": "学生が講師の方を向いている割合などで、授業への集中度を測る指標です。"
+    },
+    {
+      "term": "スマート教室",
+      "explanation": "教室のカメラとAIで、人数の把握、出席の記録、講義の配信などを行う仕組みです。"
+    },
+    {
+      "term": "生体データ",
+      "explanation": "顔の特徴など、個人の身体に基づく情報です。"
+    }
+  ]
+}

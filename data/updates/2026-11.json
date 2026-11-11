@@ -418,5 +418,65 @@
       "https://e.vnexpress.net/news/tech/tech-news/top-chinese-university-stops-using-ai-to-track-students-attention-after-privacy-backlash-5142383.html"
     ],
     "country_anchor": "/country/cn/#updates"
+  },
+  {
+    "id": "2026-11-06-my-001",
+    "date": "2026-11-06",
+    "country": "my",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "マレーシアデジタル省、AI人材育成と2030国家目標推進の予算方針を発表",
+    "summary": {
+      "what": "2027年予算を受けたAI人材育成や安全なAIエコシステム推進方針を発表",
+      "who": "マレーシアデジタル省およびAI Malaysia Berhad等の関係機関",
+      "when_impact": "2027年度予算に基づき2030年に向けた国家AI行動計画を推進"
+    },
+    "detail": "マレーシアデジタル省は2026年11月6日、2027年度予算の発表を受けて、2030年までに「AI国家」を目指すアジェンダの推進と現地AI人材育成の強化方針を発表しました。単なる技術利用者から開発・創出側への転換を掲げ、AI Malaysia Berhadによる安全で信頼できるAIエコシステムの推進や、国家デジタル局（JDN）による公共部門のガバナンス・標準策定など、関係機関が連携して安全かつ倫理的なAIガバナンス体制を強化する方針を示しています。",
+    "so_what": "マレーシア政府が支援するAIエコシステム構築や安全・責任あるAIガバナンス方針の最新動向を確認できます。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Malaysia Budget 2027 and National AI Agenda 2030",
+    "publication_date": "2026-11-06",
+    "discovered_at": "2026-11-11",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.digital.gov.my/en-GB/siaran/Belanjawan-2027-Pacu-Agenda-Negara-AI-2030:Kementerian-Digital-Perkukuh-Pembangunan-Bakat-Tempatan-Daripada-Pengguna-Kepada-Pencipta-Teknologi"
+    ],
+    "country_anchor": "/country/my/#updates"
+  },
+  {
+    "id": "2026-11-10-br-001",
+    "date": "2026-11-10",
+    "country": "br",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "ブラジル国立計量・品質・技術研究所（Inmetro）、AI規制と規格に関するブラジル・欧州フォーラムを開催",
+    "summary": {
+      "what": "AIの安全性や規制、適合性評価規格、GPAIガバナンス等を議論する国際フォーラムの開催",
+      "who": "国立計量・品質・技術研究所（Inmetro）",
+      "when_impact": "2026年11月11日〜12日"
+    },
+    "detail": "ブラジル国立計量・品質・技術研究所（Inmetro）は、ブラジリアで「データガバナンス、AI規制および規格に関するブラジル・欧州フォーラム」を2026年11月11日・12日に開催すると発表した。本会合ではブラジルと欧州の専門家や政府機関が集まり、AIの安全性、評価・検証手法、汎用AI（GPAI）のガバナンス、ならびに両国・地域間の協力ロードマップについて協議が行われる。",
+    "so_what": "ブラジルにおけるAI適合性評価や技術標準化の検討動向を把握する機会となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Brazil Inmetro event on AI regulation and reliability",
+    "publication_date": "2026-11-10",
+    "discovered_at": "2026-11-11",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil"
+    ],
+    "country_anchor": "/country/br/#updates"
   }
 ]

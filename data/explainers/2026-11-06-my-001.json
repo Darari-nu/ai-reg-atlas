@@ -1,0 +1,61 @@
+{
+  "id": "2026-11-06-my-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-11T01:26:46Z",
+  "record_id": "2026-11-06-my-001",
+  "source_kind": "official",
+  "published_at": "2026-11-11T01:26:46Z",
+  "headline": "マレーシアデジタル省、AI人材育成の強化方針を発表",
+  "lead": "マレーシアデジタル省は2026年11月6日、AI人材育成を強める方針を発表しました。2027年度予算の発表を受けたもので、2030年までに「AI国家」を目指す取り組みの一部です。規制や義務を定める内容ではなく、政府の方針を示す発表です。",
+  "facts": [
+    {
+      "text": "マレーシアデジタル省は2026年11月6日、2027年度予算の発表を受けて、現地のデジタル人材とAI人材の育成を強める方針を示しました。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Belanjawan-2027-Pacu-Agenda-Negara-AI-2030:Kementerian-Digital-Perkukuh-Pembangunan-Bakat-Tempatan-Daripada-Pengguna-Kepada-Pencipta-Teknologi"
+    },
+    {
+      "text": "この方針は、マレーシアデジタル2030行動計画(MD2030)と国家AI行動計画2026〜2030に沿ったものです。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Belanjawan-2027-Pacu-Agenda-Negara-AI-2030:Kementerian-Digital-Perkukuh-Pembangunan-Bakat-Tempatan-Daripada-Pengguna-Kepada-Pencipta-Teknologi"
+    },
+    {
+      "text": "同省は、技術の利用者にとどまらず、国民と地元企業がデジタルやAIの解決策を作る力を育てると述べています。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Belanjawan-2027-Pacu-Agenda-Negara-AI-2030:Kementerian-Digital-Perkukuh-Pembangunan-Bakat-Tempatan-Daripada-Pengguna-Kepada-Pencipta-Teknologi"
+    },
+    {
+      "text": "国家デジタル局(JDN)は、公共部門のデジタル化に関する政策、標準、デジタル設計、技術支援を担います。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Belanjawan-2027-Pacu-Agenda-Negara-AI-2030:Kementerian-Digital-Perkukuh-Pembangunan-Bakat-Tempatan-Daripada-Pengguna-Kepada-Pencipta-Teknologi"
+    },
+    {
+      "text": "AI Malaysia Berhadは、国のAI計画の実施を進め、安全で信頼でき、責任あるAIの生態系を作る役割を担います。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Belanjawan-2027-Pacu-Agenda-Negara-AI-2030:Kementerian-Digital-Perkukuh-Pembangunan-Bakat-Tempatan-Daripada-Pengguna-Kepada-Pencipta-Teknologi"
+    },
+    {
+      "text": "同省は、地元企業、新興企業、大学、研修機関、技術コミュニティとの協力を広げる用意があると述べています。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Belanjawan-2027-Pacu-Agenda-Negara-AI-2030:Kementerian-Digital-Perkukuh-Pembangunan-Bakat-Tempatan-Daripada-Pengguna-Kepada-Pencipta-Teknologi"
+    }
+  ],
+  "who_is_affected": "直接の義務を負う主体は、資料からは読み取れません。マレーシアの人材育成事業や公共部門のAI導入に関わる企業、大学、研修機関が関係する場合があります。",
+  "japan_impact": "日本企業に新たな義務が生じるとは、この資料からは言えません。マレーシアに拠点や取引先がある企業は、政府系機関との協力や公共案件の機会を確認するとよいでしょう。公共部門の標準や調達条件が今後示される場合に備え、JDNなどの動きを見ておくとよいでしょう。",
+  "next_steps": "施行日や期限は、資料に書かれていません。2027年度予算に基づき、2030年に向けた計画を進める方針が示されています。具体的な制度や公募が出るかは、推測の域を出ません。同省と関係機関の発表を継続して確認するとよいでしょう。",
+  "unknowns": [
+    "2027年度予算でAI人材育成に充てられる金額や配分",
+    "法的な義務や罰則を伴う規制が予定されているか",
+    "JDNが定める標準の内容と公表時期",
+    "外国企業が協力や支援の対象になるか",
+    "各機関の具体的なプログラムの開始時期"
+  ],
+  "glossary": [
+    {
+      "term": "AI Malaysia Berhad",
+      "explanation": "資料では、国のAI計画の実施を進め、安全で責任あるAIの生態系を作る機関として紹介されています。"
+    },
+    {
+      "term": "国家デジタル局(JDN)",
+      "explanation": "公共部門のデジタル化について、政策、標準、デジタル設計、技術支援を担う機関です。"
+    },
+    {
+      "term": "MD2030",
+      "explanation": "マレーシアデジタル2030行動計画の略称です。今回の人材育成方針の土台の一つとされています。"
+    }
+  ]
+}

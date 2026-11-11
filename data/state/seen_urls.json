@@ -1,44 +1,4 @@
 {
-  "https://e.vnexpress.net/news/tech/vietnam-innovation/vietnam-ranks-second-in-southeast-asia-in-cryptocurrencies-5130634.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/e-commerce-growth-drives-demand-for-multichannel-software-in-southeast-asia-5130529.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/vietnamese-firms-struggle-to-hire-ai-engineers-despite-salaries-50-above-other-tech-roles-5129806.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/world-s-second-most-visited-country-named-fourth-best-destination-for-british-digital-nomads-5130401.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/southeast-asia-s-third-richest-country-builds-artificial-silicon-island-to-expand-chip-industry-5129881.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/china-s-ai-boom-turns-students-at-asia-s-top-university-into-multimillion-dollar-startup-founders-5129602.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/5-tech-leaders-among-asia-s-10-most-powerful-women-5130027.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/singapore-ranks-asia-s-second-smartest-city-5130211.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/philippines-most-expensive-place-in-southeast-asia-to-buy-iphone-18-pro-5129935.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/vinfast-of-southeast-asia-s-richest-man-to-launch-ebus-platform-in-us-5129510.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-11"
-  },
   "https://www.pm.gov.au/media/visit-australia-hashemite-kingdom-jordan": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-12"
@@ -4470,5 +4430,177 @@
   "https://www.itnews.com.au/news/gov-proposes-ai-safety-regulator-630244": {
     "verdict": "blocked-or-js-only-page",
     "date": "2026-11-10"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/toukei/kijun/kaigi/02shingi05_02000843.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.federalregister.gov/documents/2026/11/10/2026-22838/notice-of-intent-to-reorganize-hud-and-revise-headquarters-and-field-operating-model": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.pm.gov.au/media/remembrance-day-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.pm.gov.au/media/remarks-changi-chapel-singapore": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/iphone-18-pro-max-gets-first-discounts-in-vietnam-5143051.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-innovation/vietnam-has-27-2-million-5g-subscribers-5142875.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/what-nvidia-ceo-jensen-huang-said-in-apology-letter-over-extramarital-affair-5142727.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/nvidia-ceo-jensen-huang-hired-crisis-pr-firm-a-year-before-admitting-affair-5142796.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.manilatimes.net/2026/11/10/tmt-newswire/globenewswire/fear-of-compliance-not-compliance-is-holding-european-ai-back-opsiocloud-opens-ai-for-business-efficiency-with-compliance-training-and-follow-up-as-standard/2466782": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.politico.com/newsletters/canberra-playbook/2026/11/10/albaneses-ai-guardrails-promises-now-details-later-01022132": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000477.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei04_01000308.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban13_02000139.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei09_01000109.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/minister-solomon-highlights-government-of-canada-investments-from-budget-2026-masters-of-our-destiny.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-vellore-tamil-nadu-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-tirupathur-tamil-nadu-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-saharanpur-uttar-pradesh-ro-bhopal": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-bharuch-gujarat-bhavnagar-grahak-suraksha-mandal": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-rajouri-jammu-and-kashmir-bharat-sanchar-nigam-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "http://www.trai.gov.in/node/18917": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "http://www.trai.gov.in/node/18915": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-across-railway-route-between-new": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//008fe836-d6f6-4636-8805-2d8066f35e97": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://mst.gov.vn/chuong-trinh-nexus-giai-doan-2025-2026-tai-tro-11-du-an-nghien-cuu-voi-tong-gia-tri-gan-500-ty-dong-197261110112458081.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://mst.gov.vn/11-ten-mien-vn-hai-ky-tu-lan-dau-duoc-mo-dang-ky-tu-do-197261110075944123.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://sedeelectronica.sic.gov.co/comunicado/sic-atiende-observaciones-de-la-procuraduria-y-acoge-recomendacion-del-consejo-asesor-para-archivar-investigacion-contra-ecopetrol": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/iec-orders-revote-bongani-gemeenskapsaal-voting-district": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/south-africas-new-nuclear-build-be-anchored-science": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/president-ramaphosa-determines-salary-increases-public-office-bearers": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/hlabisa-urges-parties-prioritise-stability-hung-municipalities": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/employment-and-labour-host-occupational-health-and-hygiene-symposium": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/unemployment-marginally-increases-third-quarter": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/mec-hlalele-condemns-murders-two-women-theunissen": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/focus-shifts-building-stable-accountable-municipal-councils": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/high-court-postpones-trial-former-acting-national-police-commissioner": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.sanews.gov.za/south-africa/saps-operations-yield-over-24-000-arrests-nationwide": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://naltf.gov.ng/senate-passes-bill-to-regulate-systemically-important-fintechs/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://naltf.gov.ng/senate-warns-of-potential-aviation-disaster-over-uncoordinated-vip-airport-restrictions/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://naltf.gov.ng/senate-urges-compensation-flamingos-n100m-donation/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://naltf.gov.ng/empowering-nigerias-youth-highlights-from-the-2026-national-youth-conference/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-11"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12646": {
+    "verdict": "no-ai-reg-keyword",
+    "date": "2026-11-11"
+  },
+  "https://www.camara.leg.br/noticias/1305070-projeto-cria-credencial-digital-no-gov-br-para-comprovar-maioridade-em-sites-adultos": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-11"
   }
 }

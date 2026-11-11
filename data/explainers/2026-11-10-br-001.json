@@ -1,0 +1,68 @@
+{
+  "id": "2026-11-10-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-11T01:26:46Z",
+  "record_id": "2026-11-10-br-001",
+  "source_kind": "official",
+  "published_at": "2026-11-11T01:26:46Z",
+  "headline": "Inmetro、AI規制と規格のブラジル・欧州フォーラムを開催",
+  "lead": "ブラジルのInmetroは、2026年11月11日と12日にブラジリアで「ブラジル・欧州フォーラム」を開きます。テーマはAIのデータガバナンス、規制、規格です。これは新しい法的義務の決定ではなく、議論の場の開催です。",
+  "facts": [
+    {
+      "text": "Inmetroは、AIのデータガバナンス・規制・規格に関するフォーラムを2026年11月11日と12日にブラジリアのイタマラチ宮殿で開きます。",
+      "source_url": "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil"
+    },
+    {
+      "text": "会合には政府機関、研究者、産業界の代表が参加し、AIの安全性と開発上の課題を話し合います。",
+      "source_url": "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil"
+    },
+    {
+      "text": "参加者には外務省、科学技術革新省、開発産業商業サービス省の代表のほか、ANPD、Anvisa、CNIの関係者が含まれます。",
+      "source_url": "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil"
+    },
+    {
+      "text": "初日はガバナンス、公共政策、規制を扱い、ブラジルAI計画（PBIA）や汎用AIのガバナンスも議題です。",
+      "source_url": "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil"
+    },
+    {
+      "text": "2日目は、AI規格の産業への適用、試験・評価・検証・認証、AI向けの品質インフラを扱い、最後にブラジルと欧州の協力ロードマップを話し合います。",
+      "source_url": "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil"
+    },
+    {
+      "text": "形式は対面で、チケットは完売しています。",
+      "source_url": "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil"
+    }
+  ],
+  "who_is_affected": "このフォーラム自体が企業に義務を課すことはありません。ただし、ブラジルでAIを提供する企業や、AIの試験・認証に関わる企業には、今後の議論の方向を知る材料になる場合があります。",
+  "japan_impact": "ブラジルにAIサービスを出す日本企業は、評価や認証の議論を注視するとよいでしょう。現地拠点や取引先に、Inmetroや規格団体の動きを確認してもらうのも有効です。欧州と協力する方向が示されるため、EU向けの対応との整合も確認するとよいでしょう。",
+  "next_steps": "資料に書かれた予定は、2026年11月11日・12日の開催と、最終パネルでの協力ロードマップの議論です。その後の規制や規格づくりの日程は、資料にありません。フォーラムの結果を受けて議論が進むかは推測であり、確定していません。",
+  "unknowns": [
+    "フォーラムの結論や成果文書が出るかどうか",
+    "ブラジルで新たな規制や規格が導入される時期",
+    "適合性評価が義務になるかどうか",
+    "民間企業が議論に意見を出す方法"
+  ],
+  "glossary": [
+    {
+      "term": "Inmetro",
+      "explanation": "ブラジルの国立計量・品質・技術研究所です。開発産業商業サービス省に属しています。"
+    },
+    {
+      "term": "GPAI（汎用AI）",
+      "explanation": "文書の要約やプログラム作成など、さまざまな作業をこなせるAIです。"
+    },
+    {
+      "term": "適合性評価",
+      "explanation": "製品やサービスが、定められた要件や規格を満たすかを確認する仕組みです。"
+    },
+    {
+      "term": "品質インフラ",
+      "explanation": "計量、規格、試験、認証など、品質を確かめる技術的な仕組みの総称です。"
+    },
+    {
+      "term": "PBIA",
+      "explanation": "ブラジルAI計画です。本文ではブラジルの国家戦略として挙げられています。"
+    }
+  ]
+}

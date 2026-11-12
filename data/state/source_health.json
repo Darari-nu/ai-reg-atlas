@@ -5,16 +5,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://edpb.europa.eu/feed/news_en": {
     "label": "EU watch_feed edpb.europa.eu/feed/news_en",
     "country": "eu",
-    "fail_days": 7,
+    "fail_days": 8,
     "first_failed": "2026-11-05",
-    "last_failed": "2026-11-11",
+    "last_failed": "2026-11-12",
     "last_ok": "2026-11-04",
     "last_reason": "Status code 503",
     "alerted": true
@@ -25,7 +25,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -35,7 +35,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -45,7 +45,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -55,7 +55,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -65,7 +65,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -75,7 +75,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -85,7 +85,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -95,7 +95,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -105,7 +105,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -115,7 +115,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -125,7 +125,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -135,7 +135,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -145,7 +145,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -155,7 +155,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -165,7 +165,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -175,7 +175,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -185,7 +185,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -195,7 +195,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -205,7 +205,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -215,7 +215,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -225,7 +225,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -235,16 +235,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches": {
     "label": "シンガポール scrape_hash imda.gov.sg/resources/press-releases-fac…",
     "country": "sg",
-    "fail_days": 12,
+    "fail_days": 13,
     "first_failed": "2026-10-31",
-    "last_failed": "2026-11-11",
+    "last_failed": "2026-11-12",
     "last_ok": "2026-10-30",
     "last_reason": "no-dated-links",
     "alerted": true
@@ -255,7 +255,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -265,7 +265,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -275,7 +275,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -285,7 +285,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -295,7 +295,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -305,7 +305,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -315,7 +315,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -325,7 +325,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -335,7 +335,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -345,7 +345,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -355,7 +355,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -365,7 +365,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -375,7 +375,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -385,7 +385,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -395,7 +395,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -405,7 +405,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -415,7 +415,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -425,7 +425,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -435,7 +435,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -445,7 +445,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -455,7 +455,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -465,7 +465,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -475,7 +475,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -485,7 +485,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -495,7 +495,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -505,7 +505,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -515,7 +515,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -525,7 +525,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -535,7 +535,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -545,7 +545,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -555,7 +555,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -565,18 +565,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://mst.gov.vn/tin-tuc-su-kien/chuyen-doi-so.htm": {
     "label": "ベトナム scrape_hash mst.gov.vn/tin-tuc-su-kien/chuyen-doi-so…",
     "country": "vn",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-11-12",
+    "last_failed": "2026-11-12",
     "last_ok": "2026-11-11",
-    "last_reason": null,
+    "last_reason": "no-dated-links",
     "alerted": false
   },
   "https://congbao.chinhphu.vn/van-ban-dang-cong-bao/bo-khoa-hoc-va-cong-nghe-c13.htm": {
@@ -585,7 +585,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -595,7 +595,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -605,7 +605,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -615,7 +615,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -625,7 +625,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -635,18 +635,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://jdih.komdigi.go.id/berita/beranda": {
     "label": "インドネシア scrape_hash jdih.komdigi.go.id/berita/beranda",
     "country": "id",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-11-12",
+    "last_failed": "2026-11-12",
     "last_ok": "2026-11-11",
-    "last_reason": null,
+    "last_reason": "no-dated-links",
     "alerted": false
   },
   "https://ojk.go.id/id/publikasi/roadmap-dan-pedoman/itsk/default.aspx": {
@@ -655,7 +655,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -665,7 +665,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -675,7 +675,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -685,7 +685,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -695,7 +695,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -705,7 +705,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -715,7 +715,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -725,7 +725,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -735,16 +735,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://mediaoffice.ae/future/artificial-intelligence": {
     "label": "アラブ首長国連邦 scrape_hash mediaoffice.ae/future/artificial-intelli…",
     "country": "ae",
-    "fail_days": 11,
+    "fail_days": 12,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-11",
+    "last_failed": "2026-11-12",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -755,7 +755,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -765,16 +765,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://sdaia.gov.sa/en/SDAIA/about/Pages/RegulationsAndPolicies.aspx": {
     "label": "サウジアラビア scrape_hash sdaia.gov.sa/en/SDAIA/about/Pages/Regula…",
     "country": "sa",
-    "fail_days": 11,
+    "fail_days": 12,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-11",
+    "last_failed": "2026-11-12",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -782,9 +782,9 @@
   "https://sdaia.gov.sa/en/MediaCenter/Pages/ai-year.aspx": {
     "label": "サウジアラビア scrape_hash sdaia.gov.sa/en/MediaCenter/Pages/ai-yea…",
     "country": "sa",
-    "fail_days": 11,
+    "fail_days": 12,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-11",
+    "last_failed": "2026-11-12",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -795,7 +795,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -805,7 +805,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -815,18 +815,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://www.kvkk.gov.tr/Icerik/2015/Duyurular": {
     "label": "トルコ scrape_hash kvkk.gov.tr/Icerik/2015/Duyurular",
     "country": "tr",
-    "fail_days": 0,
-    "first_failed": null,
-    "last_failed": null,
+    "fail_days": 1,
+    "first_failed": "2026-11-12",
+    "last_failed": "2026-11-12",
     "last_ok": "2026-11-11",
-    "last_reason": null,
+    "last_reason": "fetch failed",
     "alerted": false
   },
   "https://www.bing.com/news/search?q=Turkey%20artificial%20intelligence%20law&format=rss": {
@@ -835,7 +835,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -845,7 +845,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -855,7 +855,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -865,7 +865,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -875,7 +875,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -885,7 +885,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -895,7 +895,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -905,7 +905,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -915,7 +915,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -925,7 +925,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -935,7 +935,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -945,16 +945,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://www.bj.admin.ch/de/kuenstliche-intelligenz": {
     "label": "スイス scrape_hash bj.admin.ch/de/kuenstliche-intelligenz",
     "country": "ch",
-    "fail_days": 11,
+    "fail_days": 12,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-11",
+    "last_failed": "2026-11-12",
     "last_ok": null,
     "last_reason": "no-dated-links",
     "alerted": true
@@ -962,9 +962,9 @@
   "https://www.edoeb.admin.ch/en/ai-and-data-protection": {
     "label": "スイス scrape_hash edoeb.admin.ch/en/ai-and-data-protection",
     "country": "ch",
-    "fail_days": 1,
+    "fail_days": 2,
     "first_failed": "2026-11-11",
-    "last_failed": "2026-11-11",
+    "last_failed": "2026-11-12",
     "last_ok": "2026-11-10",
     "last_reason": "no-dated-links",
     "alerted": false
@@ -975,7 +975,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -985,7 +985,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -995,7 +995,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1005,7 +1005,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1015,7 +1015,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1025,7 +1025,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1035,18 +1035,18 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://minciencias.gov.co/rss.xml": {
     "label": "コロンビア rss minciencias.gov.co/rss.xml",
     "country": "co",
-    "fail_days": 1,
-    "first_failed": "2026-11-11",
-    "last_failed": "2026-11-11",
-    "last_ok": "2026-11-10",
-    "last_reason": "Request timed out after 15000ms",
+    "fail_days": 0,
+    "first_failed": null,
+    "last_failed": null,
+    "last_ok": "2026-11-12",
+    "last_reason": null,
     "alerted": false
   },
   "https://sedeelectronica.sic.gov.co/noticias": {
@@ -1055,7 +1055,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1065,7 +1065,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1075,7 +1075,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1085,16 +1085,16 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
   "https://www.hcdn.gob.ar/prensa/": {
     "label": "アルゼンチン scrape_hash hcdn.gob.ar/prensa/",
     "country": "ar",
-    "fail_days": 11,
+    "fail_days": 12,
     "first_failed": "2026-11-01",
-    "last_failed": "2026-11-11",
+    "last_failed": "2026-11-12",
     "last_ok": null,
     "last_reason": "fetch failed",
     "alerted": true
@@ -1105,7 +1105,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1115,7 +1115,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1125,7 +1125,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1135,7 +1135,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1145,7 +1145,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1155,7 +1155,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1165,7 +1165,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1175,7 +1175,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1185,7 +1185,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1195,7 +1195,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1205,7 +1205,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1215,7 +1215,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1225,7 +1225,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1235,7 +1235,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1245,7 +1245,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1255,7 +1255,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1265,7 +1265,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1275,7 +1275,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1285,7 +1285,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   },
@@ -1295,7 +1295,7 @@
     "fail_days": 0,
     "first_failed": null,
     "last_failed": null,
-    "last_ok": "2026-11-11",
+    "last_ok": "2026-11-12",
     "last_reason": null,
     "alerted": false
   }

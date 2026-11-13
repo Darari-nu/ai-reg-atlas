@@ -478,5 +478,35 @@
       "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/brasilia-recebe-evento-para-debater-seguranca-e-desenvolvimento-da-inteligencia-artificial-no-brasil"
     ],
     "country_anchor": "/country/br/#updates"
+  },
+  {
+    "id": "2026-11-06-kr-002",
+    "date": "2026-11-06",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "韓国国家AI委員会、超知能TF設置とAI立法フレームワーク準備を発表",
+    "summary": {
+      "what": "超知能対応など7つのTF設置と省庁向けAI立法フレームワークの策定方針を発表",
+      "who": "韓国国家人工知能委員会",
+      "when_impact": "2026年11月末よりTF活動を開始し2027年6月までに10の重点課題を提示予定"
+    },
+    "detail": "韓国の国家人工知能委員会は第3回全体会議を開催し、超知能時代に備える国家超知能対応TFなど7つのタスクフォース（TF）の設置を発表した。また、国会で相次ぐAI関連法案の整合性を保つため、各省庁が法律を制定・改正する際の検討基準となる「韓国AI立法フレームワーク」を準備した。同フレームワークはAI基本法を中心とした立法や、防衛・安保分野の独立立法の優先推進などを基本方針として掲げている。",
+    "so_what": "韓国でのAI法案審査の整合性を高める方針が示されたため、今後のAI基本法改正や個別法の動向を注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea Presidential Committee on AI forms task force for superintelligence era",
+    "publication_date": "2026-11-06",
+    "discovered_at": "2026-11-13",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://biz.chosun.com/en/en-it/2026/11/06/XFFZAE3ZQVHNBEY4AK35YO6BCM/"
+    ],
+    "country_anchor": "/country/kr/#updates"
   }
 ]

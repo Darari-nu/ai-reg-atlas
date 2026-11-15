@@ -9,6 +9,7 @@ import {
   globeMarkers,
   latestDateByCountry,
   sortByDiscovery,
+  sortByPublished,
 } from '../src/lib/freshness.mjs';
 
 /** 更新レコードの最小形 */
@@ -197,5 +198,18 @@ describe('globeMarkers', () => {
 
   it('subregions が無くても落ちない', () => {
     assert.equal(globeMarkers([{ code: 'jp', name_ja: '日本', flag: '🇯🇵', lat: 36.2, lng: 138.25 }], {}, '2026-09-19').length, 1);
+  });
+});
+
+describe('sortByPublished', () => {
+  it('公表日降順、同日は発見日降順 → id降順', () => {
+    const list = [
+      { id: 'a', date: '2026-11-06', discovered_at: '2026-11-13', country: 'kr' },
+      { id: 'b', date: '2026-11-10', discovered_at: '2026-11-11', country: 'br' },
+      { id: 'c', date: '2026-11-06', discovered_at: '2026-11-11', country: 'my' },
+      { id: 'd', date: '2026-11-10', country: 'au' },
+    ];
+    assert.deepEqual(sortByPublished(list).map((x) => x.id), ['b', 'd', 'a', 'c']);
+    assert.equal(list[0].id, 'a'); // 元配列は変えない
   });
 });

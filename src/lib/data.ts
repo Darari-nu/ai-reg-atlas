@@ -9,6 +9,7 @@ import {
   globeMarkers,
   latestDateByCountry,
   sortByDiscovery,
+  sortByPublished,
 } from './freshness.mjs';
 import { deriveTimelineEvents, mergeTimeline } from './derivedTimeline.mjs';
 import { buildUpcomingDeadlines, todayJst } from './upcomingDeadlines.mjs';
@@ -269,7 +270,7 @@ export function fmtDateTime(iso: string): string {
 /* ---------- 鮮度・発見日順（純ロジックは freshness.mjs） ---------- */
 
 // 純ロジックの再エクスポート（後続ページはここから import する）
-export { daysAgo, fmtDaysAgo, countWithin, ageTier, sortByDiscovery };
+export { daysAgo, fmtDaysAgo, countWithin, ageTier, sortByDiscovery, sortByPublished };
 
 // ビルド時の日付。サイトは毎日再ビルドされるので「今日」として扱ってよい
 export function todayYmd(): string {

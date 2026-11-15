@@ -64,6 +64,19 @@ export function sortByDiscovery(updates) {
 }
 
 /**
+ * 公表日順（新しい順）に並べた新しい配列を返す。元配列は変えない。
+ * 同じ公表日なら発見日降順 → id降順。トップの「直近の更新」用（カードに出す日付と並びを揃える）。
+ * @param {UpdateLike[]} updates
+ * @returns {UpdateLike[]}
+ */
+export function sortByPublished(updates) {
+  const cmp = (a, b) => (a < b ? 1 : a > b ? -1 : 0); // 降順
+  return [...updates].sort(
+    (a, b) => cmp(a.date, b.date) || cmp(discoveryDate(a), discoveryDate(b)) || cmp(a.id, b.id)
+  );
+}
+
+/**
  * 国ごとの最新の発見日。
  * @param {UpdateLike[]} updates
  * @returns {Record<string, string>}

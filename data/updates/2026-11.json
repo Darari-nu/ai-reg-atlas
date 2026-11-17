@@ -508,5 +508,35 @@
       "https://biz.chosun.com/en/en-it/2026/11/06/XFFZAE3ZQVHNBEY4AK35YO6BCM/"
     ],
     "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-11-16-tw-001",
+    "date": "2026-11-16",
+    "country": "tw",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "国家科学技術委員会（NSTC）、第24回会議でAI生態系育成と科学技術白書草案を発表",
+    "summary": {
+      "what": "科学技術白書草案の報告やAI生態系育成の5大政策・防災AI活用計画を発表",
+      "who": "国家科学技術委員会（NSTC）、デジタル発展部（MODA）等",
+      "when_impact": "2026年11月16日の第24回委員会会議にて公表"
+    },
+    "detail": "台湾の国家科学技術委員会（NSTC）は2026年11月16日、第24回委員会会議を開催した。会議ではデジタル発展部（MODA）が計算資源・データ・人材・マーケティング・資金の5大政策によるAI生態系構築とAI産業化を報告したほか、災害管理におけるAI活用の取り組みが共有された。また、NSTCは2027年〜2030年（民国116〜119年）を対象とする「科学技術白書」草案を報告し、主権AIや半導体、信頼されるサプライチェーン構築などを重点議題として掲げた。",
+    "so_what": "台湾政府の主権AI推進やAI産業支援施策の方向性を把握できるが、民間企業に対する新たな法的規制義務の導入はない。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "本発表は国家政策・白皮書草案およびAI活用施策に関する会議報告であり、法的義務を課すものではないため現行のEU差分項目に変更はない。"
+    },
+    "canonical_event": "Taiwan NSTC committee meeting focuses on AI industrialization and disaster management application",
+    "publication_date": "2026-11-16",
+    "discovered_at": "2026-11-17",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.nstc.gov.tw/folksonomy/detail/27017634-1807-44b7-b299-d795dab6f372?l=CH"
+    ],
+    "country_anchor": "/country/tw/#updates"
   }
 ]

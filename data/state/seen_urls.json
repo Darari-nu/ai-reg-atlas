@@ -1,84 +1,4 @@
 {
-  "https://www.federalregister.gov/documents/2026/10/19/2026-21265/privacy-act-of-1974-system-of-records": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.federalregister.gov/documents/2026/10/19/2026-21254/notice-of-revisions-to-performance-area-one-of-the-lsc-performance-criteria": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.pm.gov.au/media/centenary-parliament-sitting": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.pm.gov.au/media/centenary-canberra-times": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/world-s-richest-man-unveils-flying-tesla-electric-sports-car-with-250k-reservation-deposit-5133247.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.bloomberg.com/jp/news/articles/2026-10-16/TMZKJSKGIFQ000": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.estadao.com.br/opiniao/inteligencia-artificial-com-responsabilidade/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.nist.gov/news-events/news/2026/10/new-chip-based-tape-measure-light-could-revolutionize-mobile-timekeeping": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12585": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-investment-in-prevost-volvo-group-canada-inc-in-sainte-claire-to-support-canadian-bus-manufacturing-and-clean-tr.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-significant-investment-to-strengthen-canadas-electricity-and-forest-products-supply-chains.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-hazaribagh-jharkhand-mahila-janshakti-sangathan": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-west-godavari-andhra-pradesh-ro-hyderabad": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-nanded-maharashtra-ro-hyderabad": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-srinagar-jammu-and-kashmir-bharti-airtel-limited": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "http://www.trai.gov.in/itu-trai-workshop-2026": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//35513f61-dcc1-4cbe-ab2e-7e0edea50607": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//30f1f7fa-b469-4c21-8bfe-e5ef492c4c13": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//4558dbc3-6620-41d7-82f3-d793fbaab426": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
-  "https://mst.gov.vn/viet-nam-phan-lan-thuc-day-hop-tac-cong-nghe-chien-luoc-va-ha-tang-so-197261016092342358.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-17"
-  },
   "https://www.pm.gov.au/media/2026-telethon-gala-ball": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-18"
@@ -4798,5 +4718,209 @@
   "https://www.sanews.gov.za/south-africa/chikunga-represent-sa-copenhagen-summit": {
     "verdict": "triage-irrelevant",
     "date": "2026-11-16"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/denki_tsusin/02ryutsu01_04000526.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/keitai_yukoriyo/02kiban14_04001380.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/toukei/jinkou/kaigi/02shingi05_02000845.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.dataprivacybr.org/vaga-para-estagio-em-operacoes-comerciais/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.pm.gov.au/media/asia-zero-emissions-community-leaders-meeting": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.pm.gov.au/media/asean-australia-summit-opening-remarks-1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.pm.gov.au/media/kasandigan-philippines-australia-leaders-statement-expanded-security-and-defense-cooperation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.pm.gov.au/media/asean-australia-joint-leaders-statement-5th-anniversary-asean-australia-comprehensive": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/singapore-ai-startup-founder-named-jensen-huang-gets-business-boost-from-ex-nvidia-ceo-s-affair-scandal-5145158.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/how-four-malaysian-school-friends-built-a-1b-solar-energy-empire-5142433.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/malaysia-considers-mandatory-identity-checks-for-whatsapp-users-to-combat-scams-5145113.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.jiji.com/jc/article?k=000000309.000021559&g=prt": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://mainichi.jp/articles/20261116/pr2/00m/020/713000c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.koreatimes.co.kr/foreignaffairs/20261117/senior-s-korean-us-diplomats-discuss-ai-cooperation-strategic-investment": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.nytimes.com/2026/11/16/business/trump-paxsilica-philippines-ai.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001313.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187972": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12657": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12656": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-acting-minister-for-manpower-and-senior-minister-of-state-for-digital-development-and-information-jasmin-lau-at-govtech-s-stack-conference/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.camara.leg.br/noticias/1319658-comissao-aprova-incentivo-a-empresas-que-desenvolvem-tecnologias-assistivas": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-dehradun-uttarakhand-rastriya-samuddeshiya-vikas": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-bhilwara-rajasthan-maruti-seva-samiti": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-bokaro-jharkhand-sudhindra-nath-and-milina-mukherjee": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-kutch-gujarat-shree-jagruti-grahak-suraksha-mahila": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://moda.gov.tw/press/press-releases/21450": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//6fbb449f-ff98-4e02-9133-bff21db15033": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://mst.gov.vn/tong-bi-thu-chu-tich-nuoc-cung-lanh-dao-cac-quoc-gia-tham-quan-gian-hang-viet-nam-tai-francotech-2026-197261116091415263.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-66-2026-tt-bkhcn-470931.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://congbao.chinhphu.vn/cong-bao/581-47604.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/MDKD-2026-Edisi-Lembah-Klang-Perkasa-Komuniti-Sentul-Dengan-AI-Dan-Keselamatan-Digital": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Malaysia-Melonjak-Dalam-Kedudukan-Digital-Dan-AI-Global,Memacu-Langkah-Ke-Arah-Negara-AI-2030": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/cd66b84c-6cd4-44e6-90d8-01a1d39a68a2": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.gov.kz/memleket/entities/maidd/press/news/details/1329803?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.gov.kz/org/maidd/press/news/details/1329803?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.argentina.gob.ar/noticias/la-aaip-encabezo-el-acto-por-la-declaracion-federal-para-la-transparencia-en-la-gestion": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.senado.gob.ar/prensa/24615/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/masemola-condemns-mass-shootings-claimed-17-lives": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/government-steps-investment-western-cape-water-security": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/western-cape-water-users-face-allocation-cuts-amid-el-nino-risks": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/lesufi-condemns-jeffsville-shooting": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/kubayi-congratulates-prof-madlingozi-un-appointment": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/call-alternative-sewage-solutions-johannesburg": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/eskom-makes-strides-towards-ending-load-reduction": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/support-matric-learners": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/sa-harness-ai-revolution-inclusive-growth-and-jobs": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.sanews.gov.za/south-africa/gauteng-provides-update-grade1-and-8-learner-placement": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "http://en.kremlin.ru/acts/news/81256": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "http://en.kremlin.ru/events/president/news/81113": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "http://en.kremlin.ru/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-17"
+  },
+  "https://www.mddi.gov.sg/newsroom/mddi-meti-joint-media-statement-on-us-interim-final-rule-on-addressing-remote-access-to-advanced-semiconductors/": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-17"
   }
 }

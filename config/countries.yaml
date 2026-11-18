@@ -405,7 +405,8 @@ countries:
     # 公式 RSS は見つけられなかった（WAM・内閣 uaecabinet.ae・AI Office とも）。ai.gov.ae/news/ は更新が止まっているようで、AI Office は新庁へ統合されたため入れていない。内閣のニュース（uaecabinet.ae）は日付が dd.mm.yyyy 表記で、一覧ページURLが未確認のため見送り。
     # 未確認: AI・データ庁の設置根拠（連邦政令法か内閣決定か）と民間への執行権限、個人データ保護法の施行規則、サイバー犯罪法でディープフェイクに当たる条番号と罰金額（出典で割れる）、AI開発・利用憲章の公表日、DIFC Regulation 10 の義務内容と認証制度の時期、メディア評議会から「国家メディア庁」への改組の有無。
     official_sources:
-      - { url: "https://mediaoffice.ae/future/artificial-intelligence", type: scrape_hash }   # ドバイ政府メディアオフィス AI 欄（連邦内閣の決定も載る）
+      # 2026-11-18 休止（darari）: ページの中身を JavaScript で出す作りで記事一覧が読めず、11/1 から日付付きリンク0件のまま。代わりの入口が見つかるまでニュース検索で拾う
+      # - { url: "https://mediaoffice.ae/future/artificial-intelligence", type: scrape_hash }   # ドバイ政府メディアオフィス AI 欄（連邦内閣の決定も載る）
       # 2026-10-31 Mac から取得失敗（403）のため外した。Actions か中継で取れるか確かめてから戻す:
       # - { url: "https://uaelegislation.gov.ae/en/news", type: scrape_hash }                  # 連邦法令ポータル ニュース。新しい連邦法令の公布
     watch_feeds: []
@@ -421,8 +422,9 @@ countries:
     # spa.gov.sa（国営通信 SPA）は、記事ページは取れたがトップは JS だけで本文が空。RSS も見つからなかったので入れていない。
     # 未確認: 責任あるAI政策案の本文と最終版の有無、AI倫理原則のリスク区分の段階名、ディープフェイク指針の確定版の日付（2025-05 と 2026-05 で割れる）、新著作権法の施行日（08-01 と 08-12 で割れる）、PDPL の罰則額。
     official_sources:
-      - { url: "https://sdaia.gov.sa/en/SDAIA/about/Pages/RegulationsAndPolicies.aspx", type: scrape_hash }   # SDAIA 法令・政策一覧（新しい指針・政策の掲載を拾う。日付付きリンクがあるかは未確認）
-      - { url: "https://sdaia.gov.sa/en/MediaCenter/Pages/ai-year.aspx", type: scrape_hash }   # SDAIA「AIの年2026」ページ（発表のまとめ。日付付きリンクがあるかは未確認）
+      # 2026-11-18 休止（darari）: 下の2本はニュース一覧ではない説明ページで、日付付きリンクが無く 11/1 から0件のまま。SDAIA のニュースページ（MediaCenter/News）も JavaScript 描画で読めない。代わりの入口が見つかるまでニュース検索で拾う
+      # - { url: "https://sdaia.gov.sa/en/SDAIA/about/Pages/RegulationsAndPolicies.aspx", type: scrape_hash }   # SDAIA 法令・政策一覧（新しい指針・政策の掲載を拾う。日付付きリンクがあるかは未確認）
+      # - { url: "https://sdaia.gov.sa/en/MediaCenter/Pages/ai-year.aspx", type: scrape_hash }   # SDAIA「AIの年2026」ページ（発表のまとめ。日付付きリンクがあるかは未確認）
     watch_feeds: []
     news_queries: ["Saudi Arabia SDAIA AI regulation", "سدايا الذكاء الاصطناعي"]
   - code: tr
@@ -505,8 +507,11 @@ countries:
     # 未確認: 連邦法案が私人にどこまで及ぶか、条約の批准時期、DSG の罰則の額と条番号、データ保護影響評価の条番号、FINMA 監督通知 08/2024 の公式ページ（日付は法律事務所の記事で確認）。
     official_sources:
       - { url: "https://www.bakom.admin.ch/fr/intelligence-artificielle", type: scrape_hash }   # BAKOM(連邦通信庁) AI規制の状況ページ。報告書・手引き・連邦参事会発表への日付付きリンクが並ぶ
-      - { url: "https://www.bj.admin.ch/de/kuenstliche-intelligenz", type: scrape_hash }       # 連邦司法局(BJ) AI立法ページ。条約を実施する法案と意見聴取資料が載る見込み
-      - { url: "https://www.edoeb.admin.ch/en/ai-and-data-protection", type: scrape_hash }     # 連邦データ保護・情報コミッショナー(FDPIC) 「AIとデータ保護」の告知一覧（英語）
+      # 2026-11-18 BJ と EDÖB はページの日付（独語の月名・リンクから遠い位置）が読めず0件が続いたため、News Service Bund の RSS（org-nr: BJ=403・EDÖB=107。一覧は d-nsbc-p.admin.ch/NSBSubscriber/export?query=orgs&flat=true）に差し替え
+      - { url: "https://www.newsd.admin.ch/newsd/feeds/rss?lang=de&org-nr=403", type: rss }   # 連邦司法局(BJ) の報道発表すべて（AI以外も入る。triage で絞る）
+      - { url: "https://www.newsd.admin.ch/newsd/feeds/rss?lang=de&org-nr=107", type: rss }   # 連邦データ保護・情報コミッショナー(EDÖB/FDPIC) の報道発表
+      # - { url: "https://www.bj.admin.ch/de/kuenstliche-intelligenz", type: scrape_hash }       # 連邦司法局(BJ) AI立法ページ。条約を実施する法案と意見聴取資料が載る見込み
+      # - { url: "https://www.edoeb.admin.ch/en/ai-and-data-protection", type: scrape_hash }     # 連邦データ保護・情報コミッショナー(FDPIC) 「AIとデータ保護」の告知一覧（英語）
     watch_feeds: []
     news_queries: ["Switzerland AI regulation Federal Council", "KI-Regulierung Schweiz Bundesrat"]
   - code: il

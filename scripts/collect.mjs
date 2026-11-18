@@ -222,8 +222,8 @@ async function collectScrapeHash(url, countryHint, hashes, opts = {}) {
   hashes[url] = hash;
   // 稼働監視のため、ハッシュの変化に関係なく毎回抽出して件数を数える（候補にするのは変化した時だけ）
   const extracted = format === 'markdown'
-    ? extractDatedLinksMarkdown(html, url, countryHint, contextWindow)
-    : extractDatedLinks(html, url, countryHint, contextWindow);
+    ? extractDatedLinksMarkdown(html, url, countryHint, contextWindow, { linkInclude: opts.linkInclude })
+    : extractDatedLinks(html, url, countryHint, contextWindow, { linkInclude: opts.linkInclude });
   const extractedCount = extracted.length;
   if (!changed || isFirst) return { items: [], extractedCount };
   const fresh = extracted.filter((c) => !isStaleListing(c.listing_date, TODAY, SCRAPE_HASH_MAX_AGE_DAYS));
@@ -262,7 +262,7 @@ async function main() {
         if (src.type === 'rss') {
           candidates.push(...(await collectRss(src.url, country.code, lastSeen, 'rss', 'official_sources')));
         } else if (src.type === 'scrape_hash') {
-          const { items, extractedCount } = await collectScrapeHash(src.url, country.code, hashes, { contextWindow: src.context_window });
+          const { items, extractedCount } = await collectScrapeHash(src.url, country.code, hashes, { contextWindow: src.context_window, linkInclude: src.link_include });
           candidates.push(...items);
           // ページは取れたのに日付付きリンクが1件も取れない＝構造が変わった（または空ページ）
           if (extractedCount === 0) outcome = { ok: false, reason: 'no-dated-links' };

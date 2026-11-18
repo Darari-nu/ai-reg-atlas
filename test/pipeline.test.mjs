@@ -28,6 +28,7 @@ import {
   needsSecondLook,
   OFFICIAL_TLD_RE,
   parseLooseDate,
+  hasLooseDate,
   readerBody,
   publicationDateGate,
   resolveFeedLink,
@@ -375,6 +376,36 @@ describe('collect: 一覧リンクの日付と古いリンクの除外', () => {
     assert.equal(parseLooseDate('22/07/2026'), '2026-07-22');
     assert.equal(parseLooseDate('c_1788889498173657'), null);
     assert.equal(parseLooseDate(undefined), null);
+  });
+
+  it('parseLooseDate は欧州語（西・仏・独）の月名を読み、英語の既存は変えない', () => {
+    assert.equal(parseLooseDate('03 de noviembre de 2026'), '2026-11-03');
+    assert.equal(parseLooseDate('3 noviembre 2026'), '2026-11-03');
+    assert.equal(parseLooseDate('1er novembre 2026'), '2026-11-01');
+    assert.equal(parseLooseDate('26 octobre 2026'), '2026-10-26');
+    assert.equal(parseLooseDate('12. Februar 2025'), '2025-02-12');
+    assert.equal(parseLooseDate('17. Dezember 2025'), '2025-12-17');
+    assert.equal(parseLooseDate('5 août 2026'), '2026-08-05');
+    assert.equal(parseLooseDate('5 aout 2026'), '2026-08-05');
+    assert.equal(parseLooseDate('1. März 2026'), '2026-03-01');
+    // 英語の既存
+    assert.equal(parseLooseDate('Jul 22, 2026'), '2026-07-22');
+    assert.equal(parseLooseDate('22 July 2026'), '2026-07-22');
+    assert.equal(parseLooseDate('2026-08-20'), '2026-08-20');
+    assert.equal(parseLooseDate('22/07/2026'), '2026-07-22');
+    // 誤一致しない（日が無い・年が無い・別の語）
+    assert.equal(parseLooseDate('mayo 2026'), null);
+    assert.equal(parseLooseDate('Mai Tai 2026'), null);
+    assert.equal(parseLooseDate('12 de mayo'), null);
+    assert.equal(parseLooseDate('12 maiz 2026'), null);
+    assert.equal(parseLooseDate('12 de mai 20260'), null);
+    assert.equal(parseLooseDate('12 de mai 2026'), '2026-05-12');
+  });
+
+  it('hasLooseDate は日付が1つでも読めれば true', () => {
+    assert.equal(hasLooseDate('Publicado el 03 de noviembre de 2026'), true);
+    assert.equal(hasLooseDate('mayo 2026'), false);
+    assert.equal(hasLooseDate(undefined), false);
   });
 
   it('nearestDate はアンカーに一番近い日付を選ぶ', () => {
@@ -1005,5 +1036,14 @@ describe('findSimilarRecord（同じ出来事らしい既存レコードを探�
       );
       assert.equal(found, null, `expected no match: ${existingTitle} / ${newTitle}`);
     }
+  });
+});
+
+describe('5桁の年は日付にしない', () => {
+  it('parseLooseDate は 20260 を拒否する', () => {
+    for (const t of ['12 novembre 20260', '12 Februar 20260', 'Nov 12, 20260', '12 November 20260', '12/11/20260']) {
+      assert.equal(parseLooseDate(t), null, t);
+    }
+    assert.equal(parseLooseDate('12 November 2026'), '2026-11-12');
   });
 });

@@ -14,10 +14,11 @@ countries:
     flag: "🇪🇺"
     lat: 50.85
     lng: 4.35
-    official_sources: []   # 旧EC related-content RSSは破損(Attribute without value)のため削除。EU AI Actトラッカー等のwatch_feedsで代替
+    official_sources:   # 旧EC related-content RSSは破損(Attribute without value)のため削除
+      # 2026-11-18 EDPB の RSS（edpb.europa.eu/feed/news_en）が 11/5 から 503 を返すため、ニュース一覧の scrape_hash に差し替え（watch_feeds は rss しか扱えないので official_sources へ移した）
+      - { url: "https://www.edpb.europa.eu/news/news_en", type: scrape_hash }   # 欧州データ保護会議(EDPB) ニュース一覧（記事リンクは空アンカー。直前の見出しを題名にする）
     watch_feeds:
       - { url: "https://artificialintelligenceact.eu/feed/", type: rss }   # EU AI Act専門トラッカー
-      - { url: "https://edpb.europa.eu/feed/news_en", type: rss }          # 欧州データ保護会議(EDPB)
     news_queries: ["EU AI Act", "EU AI Act guidelines"]
     subregions:   # EU加盟国。AI法（規則）は直接適用だが、国内実施法と所管当局は加盟国ごとに違う
       - code: eu-de
@@ -580,7 +581,7 @@ countries:
     # 未確認: 下院法案の番号と提出者の対応（0664-D-2026 はジュリアーノ案か、ブリュッゲ案の番号）、PE-193/26 の条番号と上院での修正文言、Disposición 2/2023 が今も効力を持つか、AAIPガイド最終版の公表日、Boletín Oficial・下院・上院の公式RSSの有無。
     official_sources:
       - { url: "https://www.argentina.gob.ar/aaip", type: scrape_hash }        # AAIP(公共情報アクセス庁。個人データ保護の執行機関でAIガイドの発行元)。新着の日付抽出は未確認
-      - { url: "https://www.hcdn.gob.ar/prensa/", type: scrape_hash }           # 下院(HCDN) 報道「最新ニュース」一覧(AI法案・Súper RIGI の審議)。日付抽出は未確認
+      - { url: "https://www.hcdn.gob.ar/prensa/", type: scrape_hash, link_include: "/prensa/noticia/" }           # 下院(HCDN) 報道「最新ニュース」一覧(AI法案・Súper RIGI の審議)。日付抽出は未確認（link_include: 記事ページ /prensa/noticia/ のリンクだけ拾う。2026-11-18）
       - { url: "https://www.senado.gob.ar/prensa/eventos", type: scrape_hash }  # 上院 プレスリリース一覧(PE-193/26 会社法改正案の委員会審議)。日付抽出は未確認
     watch_feeds: []
     news_queries: ["Argentina artificial intelligence regulation", "Argentina ley inteligencia artificial"]

@@ -538,5 +538,35 @@
       "https://www.nstc.gov.tw/folksonomy/detail/27017634-1807-44b7-b299-d795dab6f372?l=CH"
     ],
     "country_anchor": "/country/tw/#updates"
+  },
+  {
+    "id": "2026-11-17-my-001",
+    "date": "2026-11-17",
+    "country": "my",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "マレーシアデジタル省、AIガバナンス法案を来年初頭に上程する方針を発表",
+    "summary": {
+      "what": "既存の分野別法を補完するリスクベースのAIガバナンス法案を来年初頭に議会へ上程する方針を発表した。",
+      "who": "マレーシアのウィルソン・ウガック・アン・クンボング副デジタル大臣",
+      "when_impact": "2026年11月17日の発表、法案の議会上程は2027年初頭の見込み"
+    },
+    "detail": "マレーシアのウィルソン・ウガック・アン・クンボング副デジタル大臣は、スマート・ネーション・エキスポ2026の開会式での基調講演において、リスクベースの人工知能（AI）ガバナンス法案を2027年初頭に議会へ上程する予定であることを発表した。同法案は既存の分野別法を補完するものとなる。デジタル省の主導機関であるAIマレーシア社が提案されているAI法制の執行枠組みを策定中であり、強力かつ自律的なシステムに対しては使用拡大前のテスト、監視、人間の監督が最優先される。また、AIマレーシア社の下に設立されるマレーシアAI安全研究所が、安全性ベンチマーク、リスク評価、インシデント報告に注力するほか、SIRIM社との協力によるマレーシアのMY-AI標準の策定も進められている。",
+    "so_what": "マレーシアで事業を展開する企業は、2027年初頭に上程されるリスクベースのAIガバナンス法案や、AIマレーシア社が構築中の執行・安全基準の動向に備える必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Malaysia Ministry of Digital announces risk-based AI Governance Bill to be tabled in Parliament",
+    "publication_date": "2026-11-17",
+    "discovered_at": "2026-11-18",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.bernama.com/en/news.php?id=2635804"
+    ],
+    "country_anchor": "/country/my/#updates"
   }
 ]

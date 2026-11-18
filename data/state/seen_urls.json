@@ -1,20 +1,4 @@
 {
-  "https://www.pm.gov.au/media/2026-telethon-gala-ball": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-18"
-  },
-  "https://www.pm.gov.au/media/albanese-government-delivers-6-million-telethon": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-18"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//0302260d-7c9b-40ac-941b-cde69e63b286": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-18"
-  },
-  "https://mst.gov.vn/dang-bo-bo-khoa-hoc-va-cong-nghe-hoc-tap-quan-triet-nghi-quyet-hoi-nghi-trung-uong-4-khoa-xiv-197261016155745467.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-18"
-  },
   "https://www.soumu.go.jp/main_sosiki/kenkyu/digital_shokadai/02ryutsu02_04000608.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-19"
@@ -4922,5 +4906,257 @@
   "https://www.mddi.gov.sg/newsroom/mddi-meti-joint-media-statement-on-us-interim-final-rule-on-addressing-remote-access-to-advanced-semiconductors/": {
     "verdict": "gemini-unusable",
     "date": "2026-11-17"
+  },
+  "https://www.federalregister.gov/documents/2026/11/17/2026-23370/modernizing-the-labor-market-test-and-improving-protections-for-us-workers-in-the-perm-immigrant": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.dataprivacybr.org/pl-4-675-2025-e-a-regulacao-das-big-techs-sao-tema-de-participacao-de-rafael-zanatta-no-cafe-da-manha-da-folha/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.pm.gov.au/media/doorstop-manila-philippines": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/jensen-huang-breaks-silence-days-after-resigning-as-nvidia-ceo-5145871.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/pi-cryptocurrency-plunges-to-all-time-low-of-0-05-5145782.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/women-sharing-name-with-jensen-huang-s-alleged-mistress-alice-huang-turn-unwanted-attention-to-advantage-5145633.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://e.vnexpress.net/news/tech/hcmc-firms-may-access-public-resources-to-test-new-technologies-5145632.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/world-s-largest-china-built-unmanned-cargo-aircraft-completes-maiden-flight-5145498.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.bloomberg.com/jp/news/articles/2026-11-18/TON1L3T9NJLS00": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001311.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zeimu02_02000479.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei03_02000116.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kanbo01_02001190.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin06_02000363.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.cac.gov.cn/2026-11/09/c_1795978604463007.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187975": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187976": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187974": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.mddi.gov.sg/newsroom/minister-josephine-teo-meeting-with-us-under-secretary-of-commerce-for-industry-and-security-jeffrey-kessler-on-17-november-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.mddi.gov.sg/newsroom/remarks-by-minister-josephine-teo-at-semafor-silicon-valley---the-world--world-stage-/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/lets-talk-money-get-debt-help-you-can-trust.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.camara.leg.br/noticias/1320096-ministra-destaca-investimentos-de-r-37-bilhoes-em-ciencia-e-tecnologia-com-lei-do-setor": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "http://www.trai.gov.in/notifications/press-release/extension-last-date-submission-comments-stakeholders-draft-0": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-ferozepur-punjab-reliance-jio-infocomm-ltd": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "http://www.trai.gov.in/node/18945": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/e4e78677-3423-4835-9b2f-2000667f1102?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/1df9adf0-5fd6-44a9-a5ed-959171876e8b?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//bd9aa504-ece8-4da5-998a-917aaa66130c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://mst.gov.vn/thanh-hoa-day-manh-tuyen-truyen-nang-cao-nhan-thuc-ve-di-cu-an-toan-197261117193223423.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://mst.gov.vn/cao-bang-lan-toa-kinh-te-so-va-xa-hoi-so-tu-co-so-1972611101703006.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://mst.gov.vn/khanh-hoa-tang-toc-chuyen-doi-so-197261110170125795.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://mst.gov.vn/tay-ninh-chuyen-doi-so-tu-co-so-197261110165956323.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://mst.gov.vn/che-bien-sau-nong-san-mo-huong-gia-tang-gia-tri-cho-doanh-nghiep-viet-197261116185103709.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://mst.gov.vn/tieu-chuan-do-luong-va-chat-luong-don-bay-nang-cao-nang-luc-canh-tranh-cua-doanh-nghiep-197261115211152641.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://mst.gov.vn/chinh-sach-mo-loi-doanh-nghiep-manh-dan-dau-tu-cho-doi-moi-cong-nghe-197261116184740932.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/4d7fe45a-0122-4d98-8bb5-01a1e87bb4a9": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.gov.kz/memleket/entities/maidd/press/news/details/1331036?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.gov.kz/org/maidd/press/news/details/1331036?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/los-100-dias-del-milagro-del-conocimiento-una-apuesta-por-convocar-el-talento": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/minciencias-completa-la-conformacion-del-conacti-y-fortalece-el-sistema-ciencia-con": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/localidad-de-fontibon-en-bogota-recibira-jornada-de-orientacion-sobre-el-optimo-consumo-del-agua": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.senado.gob.ar/prensa/24623/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.senado.gob.ar/prensa/24622/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.senado.gob.ar/prensa/24618/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.senado.gob.ar/prensa/24616/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/joburg-roads-agency-emergency-services-high-alert-amid-flooding": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/government-committed-eliminating-cervical-cancer": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/ethekwini-advances-cannabis-and-hemp-sector-development-plan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/dffe-promotes-green-career-opportunities-young-people": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/features-south-africa/government-balances-wage-pressures-stronger-public-service": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/trade-and-industry-department-lead-outward-selling-mission-uganda": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/manamela-eyes-stronger-university-partnerships-through-us-engagements": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/bma-host-third-border-management-conference-and-expo": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/ndabeni-highlights-role-universities-entrepreneurs-driving-innovation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.sanews.gov.za/south-africa/south-african-students-inspired-take-ai-innovation-lessons-back-home": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://naltf.gov.ng/senate-considers-promissory-notes-yobe-airport-takeover/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://naltf.gov.ng/senate-check-rising-political-violence-nigeria/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://naltf.gov.ng/senate-considers-report-nmdpra-executive-director-nominees/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://naltf.gov.ng/36-states-endorse-state-police-bill-set-for-presidential-assent/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://naltf.gov.ng/reps-move-urgent-motion-to-probe-unpaid-pensions-in-22-states/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-18"
+  },
+  "https://www.bakom.admin.ch/dam/fr/sd-web/ih2vAdRDvcyk/Bericht%20%C3%BCber%20sektorielle%20Massnahmen%20zur%20Regulierung%20von%20k%C3%BCnstlicher%20Intelligenz%20FR.pdf": {
+    "verdict": "no-ai-reg-keyword",
+    "date": "2026-11-18"
+  },
+  "https://www.bakom.admin.ch/dam/fr/sd-web/PmtwViJrHW7Q/Beilage%2002%20Handreichung%20f%C3%BCr%20einen%20KI-Kodex%20FR%20zu%20BRA%20UVEK.pdf": {
+    "verdict": "missing-publication-date",
+    "date": "2026-11-18"
+  },
+  "https://www.bloomberg.com/jp/news/articles/2026-11-18/TONTR8T9NJLS00": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-18"
   }
 }

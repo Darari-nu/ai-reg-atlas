@@ -1,0 +1,66 @@
+{
+  "id": "2026-11-17-my-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-18T03:12:25Z",
+  "record_id": "2026-11-17-my-001",
+  "source_kind": "media",
+  "published_at": "2026-11-18T03:12:25Z",
+  "headline": "マレーシア副デジタル相、AIガバナンス法案の来年初頭の上程を発表",
+  "lead": "マレーシアのウィルソン・ウガック・アン・クンボング副デジタル大臣は、リスクベースのAIガバナンス法案を議会に上程する方針を発表しました。発表は2026年11月17日の展示会の基調講演で行われました。法案は既存の分野別法を補完するもので、上程は2027年初頭の見込みです。",
+  "facts": [
+    {
+      "text": "副デジタル大臣は2026年11月17日、リスクベースのAIガバナンス法案を来年初頭に議会へ上程する予定だと発表しました。",
+      "source_url": "https://www.bernama.com/en/news.php?id=2635804"
+    },
+    {
+      "text": "この法案は、既存の分野別法を補完する位置づけだと説明されました。",
+      "source_url": "https://www.bernama.com/en/news.php?id=2635804"
+    },
+    {
+      "text": "デジタル省の主導機関であるAI Malaysia Bhdが、提案中のAI法制のための執行の枠組みを作成しています。",
+      "source_url": "https://www.bernama.com/en/news.php?id=2635804"
+    },
+    {
+      "text": "副大臣は、強力で自律的なシステムでは、使用を広げる前にテスト、監視、人間による監督を行うと述べました。",
+      "source_url": "https://www.bernama.com/en/news.php?id=2635804"
+    },
+    {
+      "text": "AI Malaysia Bhdの下に設けられるMalaysia AI Safety Instituteは、安全性ベンチマーク、リスク評価、インシデント報告に取り組む予定です。",
+      "source_url": "https://www.bernama.com/en/news.php?id=2635804"
+    },
+    {
+      "text": "MY-AI Standardsは、SIRIM Bhdと協力して策定が進められています。",
+      "source_url": "https://www.bernama.com/en/news.php?id=2635804"
+    }
+  ],
+  "who_is_affected": "マレーシアでAIを開発・提供・利用する企業が対象になる場合があります。特に、自律的に動く強力なAIを扱う事業者は、テストや監視、人間の監督を求められる可能性があります。対象範囲は資料からは確定できません。",
+  "japan_impact": "マレーシアに拠点や顧客を持つ日本企業は、自社のAIサービスの提供状況を整理しておくとよいでしょう。自律的に動くAIがある場合は、テストや監視の記録、人間の関与の仕組みを確認するとよいでしょう。MY-AI Standardsが出た時点で、自社の運用との差を比べる準備も有効です。現時点で法的な義務は示されていません。",
+  "next_steps": "資料によると、法案は2027年初頭に議会へ上程される予定です。執行の枠組みとMY-AI Standardsは、現在作成中です。それ以降の審議日程や施行時期は、資料に書かれていません。推測ですが、法案の条文が公開された段階で、対象範囲や義務の内容が具体的になるとみられます。",
+  "unknowns": [
+    "法案の対象となる事業者やAIの範囲",
+    "リスク区分の具体的な基準",
+    "罰則の有無や内容",
+    "法案が成立する時期と施行日",
+    "外国企業や海外から提供されるサービスへの適用の有無",
+    "MY-AI Standardsの内容と法的な位置づけ"
+  ],
+  "glossary": [
+    {
+      "term": "リスクベース",
+      "explanation": "AIの危険度に応じて、求める対応の重さを変える考え方です。"
+    },
+    {
+      "term": "AI Malaysia Bhd",
+      "explanation": "デジタル省の主導機関で、AI法制の執行の枠組みを作成しています。"
+    },
+    {
+      "term": "Malaysia AI Safety Institute",
+      "explanation": "AI Malaysia Bhdの下に設けられる機関で、安全性の評価やインシデント報告を担う予定です。"
+    },
+    {
+      "term": "MY-AI Standards",
+      "explanation": "SIRIM Bhdと協力して作成が進むマレーシアのAI標準です。"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+---
+// 週報（各週）。中身は data/digests/YYYY-Www.md（週1で自動作成）を src/lib/digests.mjs で分解したもの。
+// 図解はビルド時に SVG で組む: 図1 動いた国の地図・図2 変化3つのカード・図3 週ごとの件数。
+import DarkLayout from '../../layouts/DarkLayout.astro';
+import DigestMap from '../../components/digest/DigestMap.astro';
+import DigestChanges from '../../components/digest/DigestChanges.astro';
+import DigestWeekBars from '../../components/digest/DigestWeekBars.astro';
+import { getCountries, getUpdates, withBase } from '../../lib/data';
+import { loadDigests, weeklyCounts } from '../../lib/digests.mjs';
+
+export function getStaticPaths() {
+  const all = loadDigests();
+  return all.map((d, i) => ({
+    params: { week: d.week },
+    props: { digest: d, newer: all[i - 1]?.week ?? null, older: all[i + 1]?.week ?? null },
+  }));
+}
+
+const { digest: d, newer, older } = Astro.props;
+const countries = getCountries();
+const updates = getUpdates();
+const records = Object.fromEntries(updates.map((u) => [u.id, u]));
+const ccOf = (id: string | null) => (id ? records[id]?.country ?? id.match(/^\d{4}-\d{2}-\d{2}-([a-z]+)/)?.[1] ?? null : null);
+
+const mainCodes = d.changes.map((c) => ({ code: ccOf(c.recordId), n: c.n })).filter((m) => m.code) as { code: string; n: number }[];
+const otherCodes = d.others.map((o) => ccOf(o.recordId)).filter(Boolean) as string[];
+const weeks = weeklyCounts(updates, d.week, 8);
+const md = (ymd: string) => `${Number(ymd.slice(5, 7))}月${Number(ymd.slice(8, 10))}日`;
+---
+
+<DarkLayout title={`${d.title} | AI Reg Atlas`} description={d.summary}>
+  <main class="dark mx-auto max-w-6xl px-4 py-8 md:px-5">
+    <nav class="font-mono text-xs text-paper/50">
+      <a href={withBase('/digest/')} class="hover:text-star-gold">週報</a> / {d.week}
+    </nav>
+    <header class="mt-4 max-w-3xl">
+      <p class="font-mono text-sm text-star-gold">{md(d.from)}〜{md(d.to)} の週</p>
+      <h1 class="mt-2 font-display text-2xl font-semibold leading-snug md:text-3xl">{d.shortTitle}</h1>
+      <p class="mt-3 leading-relaxed text-paper/80">{d.summary}</p>
+    </header>
+
+    <div class="mt-8 grid gap-6">
+      <DigestMap countries={countries} mainCodes={mainCodes} otherCodes={otherCodes} n={1} />
+      <DigestChanges changes={d.changes} records={records} n={2} />
+
+      <div class="grid gap-6 lg:grid-cols-2">
+        <DigestWeekBars weeks={weeks} current={d.week} n={3} />
+
+        {d.deadlines.length > 0 && (
+          <section class="dark-rule bg-navy-soft/60 p-5">
+            <h2 class="font-display text-xl font-semibold">これからの期限（90日以内）</h2>
+            <p class="mt-1 text-xs text-paper/50">この週報を作った時点で数えた日数です。</p>
+            <ul class="mt-4 space-y-3 text-sm">
+              {d.deadlines.map((x) => (
+                <li class="flex gap-3">
+                  <time class="w-24 shrink-0 font-mono text-star-gold">{x.date}</time>
+                  <span class="min-w-0">
+                    <span class="text-paper/50">{x.country}</span>{' '}
+                    {x.href ? <a href={withBase(x.href)} class="underline underline-offset-2 hover:text-star-gold">{x.text}</a> : x.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
+
+      {d.others.length > 0 && (
+        <section class="dark-rule bg-navy-soft/60 p-5">
+          <h2 class="font-display text-xl font-semibold">今週のその他の動き</h2>
+          <ul class="mt-4 space-y-3 text-sm leading-relaxed">
+            {d.others.map((o) => (
+              <li class="flex gap-3">
+                <span class="text-lg leading-none" aria-hidden="true">{o.flag}</span>
+                <span class="min-w-0">
+                  <span class="text-paper/50">{o.countryName}</span>{' '}
+                  {o.text}{' '}
+                  {o.href && <a href={withBase(o.href)} class="whitespace-nowrap font-mono text-xs text-star-gold underline underline-offset-2">詳しく →</a>}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
+
+    <nav class="mt-10 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 font-mono text-sm">
+      {older ? <a href={withBase(`/digest/${older}/`)} class="text-paper/70 hover:text-star-gold">← 前の週（{older}）</a> : <span />}
+      <a href={withBase('/digest/')} class="text-paper/70 hover:text-star-gold">週報の一覧</a>
+      {newer ? <a href={withBase(`/digest/${newer}/`)} class="text-paper/70 hover:text-star-gold">次の週（{newer}）→</a> : <span />}
+    </nav>
+    <p class="mt-6 text-xs text-paper/40">法的助言ではありません。詳しくは各解説ページと元資料を確認してください。</p>
+  </main>
+</DarkLayout>

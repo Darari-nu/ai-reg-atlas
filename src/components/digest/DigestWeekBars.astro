@@ -1,0 +1,56 @@
+---
+// 週報の図3: 直近8週の更新件数（拾った日で数える。週報の対象週と同じ数え方）。その週だけ金。
+import DiagramFrame from '../diagrams/DiagramFrame.astro';
+
+interface Props {
+  weeks: { week: string; from: string; count: number }[];
+  current: string;
+  n: number;
+}
+const { weeks, current, n } = Astro.props;
+
+const W = 640;
+const H = 220;
+const top = 28;
+const bottom = 36;
+const max = Math.max(1, ...weeks.map((w) => w.count));
+const slot = W / Math.max(1, weeks.length);
+const bw = Math.min(48, slot * 0.6);
+const cur = weeks.find((w) => w.week === current);
+const prev = weeks[weeks.indexOf(cur as (typeof weeks)[number]) - 1];
+const md = (ymd: string) => `${Number(ymd.slice(5, 7))}/${Number(ymd.slice(8, 10))}`;
+const lead = cur
+  ? `この週は ${cur.count} 件${prev ? `（前の週は ${prev.count} 件）` : ''}。Atlas が拾った更新の数です。`
+  : 'Atlas が拾った更新の数です。';
+const alt = `直近${weeks.length}週の更新件数の棒グラフ。` + weeks.map((w) => `${md(w.from)}週 ${w.count}件`).join('、');
+---
+
+<DiagramFrame id="digest-bars" n={n} title="週ごとの更新件数" lead={lead} alt={alt}>
+  <svg viewBox={`0 0 ${W} ${H}`} class="dgb-svg" aria-hidden="true">
+    <line x1="0" x2={W} y1={H - bottom} y2={H - bottom} class="dgb-axis" />
+    {weeks.map((w, i) => {
+      const h = ((H - top - bottom) * w.count) / max;
+      const x = slot * i + (slot - bw) / 2;
+      const on = w.week === current;
+      return (
+        <g>
+          <rect x={x} y={H - bottom - h} width={bw} height={Math.max(h, 1)} rx="2" class={on ? 'dgb-bar dgb-on' : 'dgb-bar'} />
+          <text x={x + bw / 2} y={H - bottom - h - 8} text-anchor="middle" class={on ? 'dgb-val dgb-val-on' : 'dgb-val'}>{w.count}</text>
+          <text x={x + bw / 2} y={H - 12} text-anchor="middle" class={on ? 'dgb-x dgb-x-on' : 'dgb-x'}>{md(w.from)}</text>
+        </g>
+      );
+    })}
+  </svg>
+  <p slot="notes">日付はその週の月曜。数は監視している国の公式発表と許可した報道から拾った件数で、規制の重さではありません。</p>
+</DiagramFrame>
+
+<style is:global>
+  .dgb-svg { display: block; width: 100%; height: auto; max-height: 260px; }
+  .dgb-axis { stroke: var(--dg-line); stroke-width: 1; }
+  .dgb-bar { fill: var(--dg-line); }
+  .dgb-on { fill: var(--star-gold); }
+  .dgb-val { fill: var(--dg-sub); font-family: 'IBM Plex Mono', monospace; font-size: 15px; }
+  .dgb-val-on { fill: var(--dg-fg); font-weight: 500; }
+  .dgb-x { fill: var(--dg-sub); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
+  .dgb-x-on { fill: var(--dg-fg); }
+</style>

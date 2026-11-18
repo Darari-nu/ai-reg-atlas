@@ -226,7 +226,8 @@ countries:
     lat: 1.35
     lng: 103.82
     official_sources:   # トップページはNext.js SPAで本文が空(ハッシュ固定)のため2026-08に差し替え。pdpc.gov.sgは代替ページも常に空だったため削除
-      - { url: "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches", type: scrape_hash, context_window: 800 }  # IMDA報道発表（日付divがアンカーの約470字後ろにあるため文脈幅を広げる）
+      # 2026-11-16〜 AWS WAF のロボット確認でデータセンターから読めないため休止（2026-11-18 darari）
+      # - { url: "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches", type: scrape_hash, context_window: 800 }  # IMDA報道発表（日付divがアンカーの約470字後ろにあるため文脈幅を広げる）
       - { url: "https://www.mddi.gov.sg/newsroom/", type: scrape_hash }                                         # MDDI(IMDA/PDPC上位省庁)ニュースルーム
       - { url: "https://aiverifyfoundation.sg/news/", type: scrape_hash }                                       # AI Verify Foundation(政府非公式。IMDAとGenAI版Model AI Governance Framework等を共同策定)
     news_queries: ["Singapore AI governance IMDA", "Singapore Model AI Governance Framework"]
@@ -307,8 +308,8 @@ countries:
     lat: 11.56
     lng: 104.92
     official_sources:   # 2026-08に強化。MPTCは既存(健全)＋公式RSSを追加
-      - { url: "https://mptc.gov.kh/en/feed/", type: rss }    # MPTC(郵電通信省)英語版 公式RSS
-      - { url: "https://mptc.gov.kh/en/", type: scrape_hash } # MPTC既存(取りこぼし防止のバックアップ)
+      - { url: "https://mptc.gov.kh/en/feed/", type: rss }    # MPTC(郵電通信省)英語版 公式RSS（2026-11-16〜 ボット名の UA を拒否するため、scripts/lib/userAgent.mjs の BROWSER_UA_HOSTS でブラウザの UA で取得）
+      - { url: "https://mptc.gov.kh/en/", type: scrape_hash } # MPTC既存(取りこぼし防止のバックアップ)（2026-11-16〜 ボット名の UA を拒否するため、BROWSER_UA_HOSTS でブラウザの UA で取得）
     watch_feeds:
       - { url: "https://opendevelopmentcambodia.net/tag/artificial-intelligence-ai/feed/", type: rss }  # Open Development Cambodia AIタグ限定フィード(政府機関ではない現地NGOの集約サイト)
     news_queries: ["Cambodia AI strategy regulation", "Cambodia artificial intelligence policy"]

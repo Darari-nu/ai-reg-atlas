@@ -24,6 +24,7 @@ import {
 } from './lib/pipeline.mjs';
 import { DEFAULT_CONTEXT_WINDOW, extractDatedLinks, extractDatedLinksMarkdown, isEmptyBody, normalizeUrl, stripHtml } from './lib/scrape.mjs';
 import { LAST_SEEN_MAX_LOOKBACK_DAYS, clampLookback, readState, writeState } from './lib/state.mjs';
+import { BOT_USER_AGENT, fetchWithUa, userAgentFor } from './lib/userAgent.mjs';
 import { SOURCE_DOWN_DAYS, pruneHealth, recordOutcome } from './lib/sourceHealth.mjs';
 
 const ROOT = process.cwd();
@@ -35,20 +36,19 @@ const ISSUES_FILE = '/tmp/pipeline_issues.json';
 const NOTIFY_FILE = '/tmp/pipeline_notifications.json'; // notify-discord.mjs が読む
 const HEALTH_NAME = 'source_health.json';
 const TIMEOUT_MS = 15_000;
-const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.com/atlas/about/)';
 const FIRST_RUN_WINDOW_DAYS = Number(process.env.FIRST_RUN_WINDOW_DAYS || 3); // 既定3日。バックフィル時は環境変数で拡大
 // scrape_hash は一覧ページの変化で全リンクを拾うため、数年前の記事まで候補になる。日付の分かる古いリンクはここで落とす
 const SCRAPE_HASH_MAX_AGE_DAYS = Number(process.env.SCRAPE_HASH_MAX_AGE_DAYS || 30);
 const MAX_LINKS_PER_PAGE = 20;
 const TODAY = process.env.SWEEP_DATE || new Date().toISOString().slice(0, 10); // SWEEP_DATE は検証用（triage/summarize と同じ）
 
-const parser = new Parser({ timeout: TIMEOUT_MS, headers: { 'User-Agent': USER_AGENT } });
+const parser = new Parser({ timeout: TIMEOUT_MS, headers: { 'User-Agent': BOT_USER_AGENT } });
 
 async function fetchWithTimeout(url, extraHeaders = {}) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
-    return await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': USER_AGENT, ...extraHeaders } });
+    return await fetchWithUa(url, { signal: ctrl.signal, headers: extraHeaders });
   } finally {
     clearTimeout(t);
   }
@@ -142,7 +142,7 @@ async function fetchTextWithTimeout(url) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
-    const res = await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': USER_AGENT } });
+    const res = await fetchWithUa(url, { signal: ctrl.signal });
     const text = await res.text();
     return { status: res.status, ok: res.ok, contentType: res.headers.get('content-type'), text };
   } finally {
@@ -161,8 +161,22 @@ function readBingFeed(url) {
   });
 }
 
+// 指定ホスト（ブラウザ UA が必要なもの）は自前で本文を取って parseString。それ以外は今まで通り parseURL
+async function readPlainFeed(url) {
+  if (userAgentFor(url) === BOT_USER_AGENT) return parser.parseURL(url);
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS); // 取得＋本文の受信まで 1 回の期限
+  try {
+    const res = await fetchWithUa(url, { signal: ctrl.signal, headers: { Accept: 'application/rss+xml' } }); // rss-parser と同じ Accept
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await parser.parseString(await decodeHtmlResponse(res));
+  } finally {
+    clearTimeout(t);
+  }
+}
+
 async function collectRss(url, countryHint, lastSeen, sourceType, sourceGroup) {
-  const feed = await (isBingNewsFeedUrl(url) ? readBingFeed(url) : parser.parseURL(url));
+  const feed = await (isBingNewsFeedUrl(url) ? readBingFeed(url) : readPlainFeed(url));
   const now = new Date();
   // 遡り上限つき: 状態が古くても now − LAST_SEEN_MAX_LOOKBACK_DAYS 日より前は再収集しない
   const prev = clampLookback(lastSeen[url], now);

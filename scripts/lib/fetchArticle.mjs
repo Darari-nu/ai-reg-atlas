@@ -1,16 +1,16 @@
 // 出典ページの本文取得（summarize と explain で共有）。挙動は summarize.mjs に置いていた頃から変えていない
 import { JINA_READER_PREFIX, readerBody } from './pipeline.mjs';
+import { fetchWithUa } from './userAgent.mjs';
 
 const TIMEOUT_MS = 15_000;
 const JINA_TIMEOUT_MS = 30_000; // 中継は本体取得＋変換で遅い
-const USER_AGENT = 'AIRegAtlasBot/1.0 (+https://darari-nu.com/atlas/about/)';
 export const DEFAULT_MAX_CHARS = 20_000;
 
 export async function fetchText(url, timeoutMs = TIMEOUT_MS) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
-    const res = await fetch(url, { signal: ctrl.signal, headers: { 'User-Agent': USER_AGENT } });
+    const res = await fetchWithUa(url, { signal: ctrl.signal });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.text();
   } finally {

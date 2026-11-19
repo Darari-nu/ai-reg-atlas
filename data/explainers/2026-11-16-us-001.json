@@ -1,0 +1,57 @@
+{
+  "id": "2026-11-16-us-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-19T03:05:05Z",
+  "record_id": "2026-11-16-us-001",
+  "source_kind": "official",
+  "published_at": "2026-11-19T03:05:05Z",
+  "headline": "カンボジアと米国、AI機会パートナーシップの共同声明に署名",
+  "lead": "カンボジア郵便・電気通信省のチア・バンデト大臣と米国のアンダーソン駐カンボジア大使が、2026年11月16日にAI機会パートナーシップに関する共同声明に署名しました。FrancoTech 2026の開催に合わせた二国間会談の後の署名です。資料からは、新たな法的義務や規制の変更は確認できません。",
+  "facts": [
+    {
+      "text": "2026年11月16日、FrancoTech 2026の場で、チア・バンデト郵便・電気通信大臣とクリストファー・アンダーソン駐カンボジア米国大使が二国間会談を行いました。",
+      "source_url": "https://mptc.gov.kh/en/2026/11/h-e-minister-chea-vandeth-and-h-e-christopher-anderson-u-s-ambassador-to-cambodia-hold-bilateral-meeting-and-sign-a-joint-statement-on-artificial-intelligence-opportunity-partnership/"
+    },
+    {
+      "text": "会談では、カンボジアと米国のデジタル協力の進み具合が話し合われました。",
+      "source_url": "https://mptc.gov.kh/en/2026/11/h-e-minister-chea-vandeth-and-h-e-christopher-anderson-u-s-ambassador-to-cambodia-hold-bilateral-meeting-and-sign-a-joint-statement-on-artificial-intelligence-opportunity-partnership/"
+    },
+    {
+      "text": "両者は会談後に「Joint Statement on AI Opportunity Partnership」に署名しました。",
+      "source_url": "https://mptc.gov.kh/en/2026/11/h-e-minister-chea-vandeth-and-h-e-christopher-anderson-u-s-ambassador-to-cambodia-hold-bilateral-meeting-and-sign-a-joint-statement-on-artificial-intelligence-opportunity-partnership/"
+    },
+    {
+      "text": "この共同声明は、カンボジアと米国のデジタル協力を強めることを目的としています。",
+      "source_url": "https://mptc.gov.kh/en/2026/11/h-e-minister-chea-vandeth-and-h-e-christopher-anderson-u-s-ambassador-to-cambodia-hold-bilateral-meeting-and-sign-a-joint-statement-on-artificial-intelligence-opportunity-partnership/"
+    },
+    {
+      "text": "同省は、この声明がすべてのパートナーと包摂的に協力を深めるカンボジアの姿勢を示すものだと説明しています。",
+      "source_url": "https://mptc.gov.kh/en/2026/11/h-e-minister-chea-vandeth-and-h-e-christopher-anderson-u-s-ambassador-to-cambodia-hold-bilateral-meeting-and-sign-a-joint-statement-on-artificial-intelligence-opportunity-partnership/"
+    }
+  ],
+  "who_is_affected": "資料に、企業やサービスに課される義務は書かれていません。直接の対象は両国政府の関係機関です。将来、両国間のAI協力事業が具体化した場合に、カンボジアで事業を行うIT企業が関わる場合があります。",
+  "japan_impact": "現時点で、日本の企業が対応すべき新たな義務は確認できません。カンボジアに拠点や取引先がある企業は、今後の協力内容を情報として把握しておくとよいでしょう。米国とカンボジアの協力が、現地のAI関連の調達や連携に影響する可能性もありますが、これは推測です。",
+  "next_steps": "資料には、今後の予定や具体的な実施計画は書かれていません。声明の全文や後続の取り組みが公表されるかどうかも分かりません。推測ですが、協力の具体策は今後、別途発表される場合があります。MPTCの発表を継続して確認するとよいでしょう。",
+  "unknowns": [
+    "共同声明の全文と、協力の具体的な分野や内容",
+    "法的拘束力の有無",
+    "実施の時期や期限",
+    "予算や支援の規模",
+    "民間企業が参加できる枠組みの有無"
+  ],
+  "glossary": [
+    {
+      "term": "MPTC",
+      "explanation": "カンボジアの郵便・電気通信省（Ministry of Post and Telecommunications）の略称です。通信やデジタル政策を担当する省庁です。"
+    },
+    {
+      "term": "共同声明",
+      "explanation": "二つ以上の当事者が、立場や協力の方向性を示すために共同で出す文書です。この資料からは、新たな義務を定めるものとは読み取れません。"
+    },
+    {
+      "term": "FrancoTech 2026",
+      "explanation": "今回の会談が行われた場となったイベントの名称です。資料に詳しい説明はありません。"
+    }
+  ]
+}

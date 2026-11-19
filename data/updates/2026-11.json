@@ -568,5 +568,35 @@
       "https://www.bernama.com/en/news.php?id=2635804"
     ],
     "country_anchor": "/country/my/#updates"
+  },
+  {
+    "id": "2026-11-16-us-001",
+    "date": "2026-11-16",
+    "country": "us",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "official",
+    "title": "カンボジア・郵電省、米国のカンボジア大使とAI機会パートナーシップに関する共同声明に署名",
+    "summary": {
+      "what": "カンボジアと米国がAI機会パートナーシップに関する共同声明に署名",
+      "who": "カンボジア郵便・電気通信省（MPTC）と在カンボジア米国大使館",
+      "when_impact": "2026年11月16日に公表・署名"
+    },
+    "detail": "2026年11月16日、FrancoTech 2026の開催に合わせて、カンボジアの郵便・電気通信省（MPTC）のチア・バンデト大臣と、クリストファー・アンダーソン駐カンボジア米国大使が二国間会談を実施した。会談後、両者はカンボジアと米国のデジタル協力を強化し、包括的なパートナーシップを進める姿勢を示す「人工知能（AI）機会パートナーシップに関する共同声明」に署名した。",
+    "so_what": "二国間のデジタル協力強化を目的とした政治的な共同声明であり、現時点で新たな法的義務や規制上の変更が生じるものではない。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Cambodia and United States sign Joint Statement on Artificial Intelligence Opportunity Partnership",
+    "publication_date": "2026-11-16",
+    "discovered_at": "2026-11-19",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://mptc.gov.kh/en/2026/11/h-e-minister-chea-vandeth-and-h-e-christopher-anderson-u-s-ambassador-to-cambodia-hold-bilateral-meeting-and-sign-a-joint-statement-on-artificial-intelligence-opportunity-partnership/"
+    ],
+    "country_anchor": "/country/us/#updates"
   }
 ]

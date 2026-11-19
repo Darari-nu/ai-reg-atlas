@@ -1,92 +1,4 @@
 {
-  "https://www.soumu.go.jp/main_sosiki/kenkyu/digital_shokadai/02ryutsu02_04000608.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/02kiban08_04000528.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/main_sosiki/singi/toukei/kaigi/02shingi05_02000837.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/apple-s-most-expensive-iphone-sells-out-within-5-minutes-of-preorders-opening-in-vietnam-5133516.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/southeast-asia-s-third-richest-country-offers-region-s-cheapest-iphone-duo-5133299.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/singapore-student-builds-website-comparing-haze-to-cigarettes-as-asia-s-richest-country-battles-longest-pollution-spell-in-11-years-5134061.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/apple-s-most-expensive-iphone-in-vietnam-requires-nearly-1-200-deposit-for-preorders-5133235.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu09_02000398.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban14_02000807.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu09_02000397.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01tsushin08_02000210.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01tsushin09_02000195.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01toukei09_01000108.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu14_02000179.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187875": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187874": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187873": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12586": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.mddi.gov.sg/newsroom/keynote-address-by-sms-tan-kiat-how-at-scs-techconnect-2026/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.mddi.gov.sg/newsroom/speech-by-minister-josephine-teo-at-the-6th-counter-ransomware-initiative-summit/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.nstc.gov.tw/folksonomy/detail/bf02dadc-00f4-44d0-a6b3-914a203be688?l=CH": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
-  "https://www.ey.gov.tw/Page/9277F759E41CCD91//9674c8d0-6953-4f0a-9748-b07ad2779e8b": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-19"
-  },
   "https://www.soumu.go.jp/main_sosiki/singi/toukei/jinkou/kaigi/02shingi05_02000838.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-20"
@@ -5158,5 +5070,265 @@
   "https://www.bloomberg.com/jp/news/articles/2026-11-18/TONTR8T9NJLS00": {
     "verdict": "gemini-unusable",
     "date": "2026-11-18"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/02kiban09_04000750.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/denpa_kanri/kaisai/02kiban01_04000334.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/shijokensho/02kiban02_04000906.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/digital_shokadai/02ryutsu02_04000612.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/toukei/jinkou/kaigi/02shingi05_02000846.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.federalregister.gov/documents/2026/11/18/2026-23506/agency-information-collection-activities-submission-for-omb-review-american-time-use-survey-atus": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.federalregister.gov/documents/2026/11/18/2026-23427/self-regulatory-organizations-nyse-arca-inc-notice-of-filing-and-immediate-effectiveness-of-proposed": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.federalregister.gov/documents/2026/11/18/2026-23425/self-regulatory-organizations-nyse-american-llc-notice-of-filing-and-immediate-effectiveness-of": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/hong-kong-billionaire-brothers-peter-and-martin-lee-back-plan-for-city-s-first-green-jet-fuel-facility-5146248.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/singapore-profit-surge-makes-two-indian-high-speed-trading-founders-billionaires-5145353.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/who-is-leo-koguan-the-singapore-based-billionaire-backing-jensen-huang-s-return-to-nvidia-5145762.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-innovation/vietnam-only-southeast-asian-market-with-smartphone-shipment-growth-in-q3-5145941.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.livemint.com/opinion/online-views/ai-governance-india-has-made-progress-on-strengthening-its-frameworks-11794897968168.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.ynetnews.com/business/article/bjdl2foame": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.jpost.com/opinion/article-915032": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.dostor.org/5781609": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban02_02000615.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban07_02000138.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban03_02001031.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001314.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zeimu02_02000478.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.nist.gov/news-events/news/2026/11/quantum-physics-can-verify-persons-location-nist-researchers-show": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187979": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12660": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.mddi.gov.sg/newsroom/remarks-by-minister-josephine-teo-at-semafor-silicon-valley-the-world-world-stage/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.mddi.gov.sg/newsroom/minister-josephine-teo-meetings-with-senior-u-s-government-officials-in-washington-dc-from-12-to-13-november-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "http://www.trai.gov.in/node/18949": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "http://www.trai.gov.in/node/18948": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//3e7c7db6-a035-459b-a8cc-2daf0b7bd698": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//8ad7d5dd-5797-429f-b3f8-dc009c7c5e90": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//e425f55c-4435-41cf-8e17-16412c780e51": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://mst.gov.vn/viet-nam-la-quoc-gia-duy-nhat-nhan-duoc-giai-thuong-lanh-dao-chinh-phu-2026-cua-gsma-197261028121415262.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://mst.gov.vn/tap-trung-7-nhiem-vu-trong-tam-thuc-day-chuyen-doi-so-quoc-gia-di-vao-thuc-chat-197261022182213903.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://mst.gov.vn/robot-va-tu-dong-hoa-nang-cao-nang-luc-san-xuat-da-nhan-tao-cao-cap-197261118012953239.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://mst.gov.vn/tu-chu-cong-nghe-vat-lieu-nang-cao-nang-luc-san-xuat-da-nhan-tao-cao-cap-tai-viet-nam-197261118005724148.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://mst.gov.vn/phenikaa-day-manh-tai-che-chat-thai-huong-toi-san-xuat-da-nhan-tao-xanh-197261118014921006.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://mst.gov.vn/lam-chu-cong-nghe-loi-nang-cao-gia-tri-san-pham-da-nhan-tao-cao-cap-197261118095228105.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://mst.gov.vn/phenikaa-lam-chu-cong-nghe-vat-lieu-thu-hon-9300-ty-dong-tu-thuong-mai-hoa-ket-qua-nghien-cuu-19726111810325003.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://mst.gov.vn/tu-cat-tho-trong-nuoc-den-da-nhan-tao-cao-cap-lam-chu-cong-nghe-vat-lieu-nang-gia-tri-tai-nguyen-viet-19726111801133749.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/d30d67f7-ac24-4095-a656-01a1e84e8f2a": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.admin.ch/de/newnsb/C4JjbQYF0XSP": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.admin.ch/de/newnsb/I2l1IoPi6qGj": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.senado.gob.ar/prensa/24635/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.senado.gob.ar/prensa/24633/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.senado.gob.ar/prensa/24631/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.senado.gob.ar/prensa/24630/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.senado.gob.ar/prensa/24628/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/saps-botswana-police-commit-strengthening-cooperation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/hlabisa-urges-municipalities-convene-councils-27-november": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/registration-ethekwinis-newly-elected-councillors-underway": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/inflation-rises-52-october": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/premier-pays-tribute-police-colonel-killed-greytown-shootout": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/south-africa-strengthens-regional-cooperation-ahead-global-child-protection-conference": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/law-enforcement-cracks-down-crime-and-gang-activity": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/dcs-hold-womens-dialogue-jhb-correctional-facility": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/deputy-president-address-business-leaders-awards": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.sanews.gov.za/south-africa/siu-secures-court-order-against-former-nlc-legal-representative": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://naltf.gov.ng/senate-grants-concurrence-to-national-sugar-development-council-act-amendment-bill-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://naltf.gov.ng/senate-concurs-federal-medical-centre-act-amendment-bill-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://naltf.gov.ng/senate-concurs-national-library-of-nigeria-bill-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://naltf.gov.ng/senate-passes-research-fund-postgraduate-medical-college-bills/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://naltf.gov.ng/senate-approves-state-police-bill-presidential-assent/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://naltf.gov.ng/senate-justice-37-miners-died-nscdc-custody/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-19"
+  },
+  "https://www.spa.gov.sa/en/N2252792": {
+    "verdict": "body-too-short",
+    "date": "2026-11-19"
+  },
+  "https://english.ahram.org.eg/NewsContentP/1/582820/Egypt/Cabinet-approves-draft-decree-to-establish-AIbacke.aspx": {
+    "verdict": "body-too-short",
+    "date": "2026-11-19"
   }
 }

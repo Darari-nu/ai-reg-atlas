@@ -1,0 +1,44 @@
+---
+// 週報の一覧。新しい週が先。各週は国旗3つと短い題・要約。
+import DarkLayout from '../../layouts/DarkLayout.astro';
+import { withBase } from '../../lib/data';
+import { loadDigests } from '../../lib/digests.mjs';
+
+const digests = loadDigests();
+const md = (ymd: string) => `${Number(ymd.slice(5, 7))}/${Number(ymd.slice(8, 10))}`;
+---
+
+<DarkLayout title="週報 — 今週のAI規制 | AI Reg Atlas" description="世界のAI規制の、その週の変化3つを図で。毎週月曜に更新。">
+  <main class="mx-auto max-w-4xl px-4 py-8 md:px-5">
+    <h1 class="font-display text-2xl font-semibold md:text-3xl">週報 — 今週のAI規制</h1>
+    <p class="mt-2 text-sm text-paper/70">その週に動いた国と、押さえておきたい変化3つ。毎週月曜に更新。</p>
+
+    {digests.length === 0 ? (
+      <p class="mt-8 text-paper/60">まだ週報はありません。</p>
+    ) : (
+      <ol class="mt-8 space-y-4">
+        {digests.map((d, i) => (
+          <li>
+            <a
+              href={withBase(`/digest/${d.week}/`)}
+              class={`group block no-underline dark-rule bg-navy-soft/60 p-5 hover:border-star-gold/60 ${i === 0 ? 'border-l-2 border-l-star-gold' : ''}`}
+            >
+              <span class="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs">
+                <span class="text-star-gold">{md(d.from)}〜{md(d.to)}</span>
+                <span class="text-paper/40">{d.week}</span>
+                {i === 0 && <span class="bg-star-gold px-1.5 py-0.5 text-[10px] text-navy-deep">最新</span>}
+              </span>
+              <span class="mt-2 flex items-start gap-3">
+                <span class="shrink-0 text-xl leading-tight" aria-hidden="true">{d.changes.map((c) => c.flag).join(' ')}</span>
+                <span class="min-w-0">
+                  <span class={`block font-medium leading-snug group-hover:text-star-gold ${i === 0 ? 'text-lg' : ''}`}>{d.shortTitle}</span>
+                  <span class="mt-1 block text-sm leading-relaxed text-paper/70">{d.summary}</span>
+                </span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    )}
+  </main>
+</DarkLayout>

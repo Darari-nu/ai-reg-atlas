@@ -4,6 +4,7 @@ import Globe from '../components/Globe.tsx';
 import UpdateCard from '../components/UpdateCard.astro';
 import StatusBar from '../components/StatusBar.astro';
 import DeadlineList from '../components/DeadlineList.astro';
+import { loadDigests } from '../lib/digests.mjs';
 import {
   getCountries,
   getRegulation,
@@ -36,6 +37,8 @@ const count7 = countWithin(allUpdates, today, 7);
 const count30 = countWithin(allUpdates, today, 30);
 const meta = getMeta();
 const latestByCc = getLatestByCountry();
+const latestDigest = loadDigests()[0] ?? null;
+const mdShort = (ymd: string) => `${Number(ymd.slice(5, 7))}/${Number(ymd.slice(8, 10))}`;
 ---
 
 <DarkLayout title="AI Reg Atlas — 世界のAI規制を、EU基準の「差分」で読む">
@@ -112,6 +115,29 @@ const latestByCc = getLatestByCountry();
         )}
       </span>
     </section>
+
+    <!-- 週報の最新号（data/digests の一番新しい週。無ければ出さない） -->
+    {latestDigest && (
+      <section aria-label="週報" class="mt-6">
+        <a
+          href={withBase(`/digest/${latestDigest.week}/`)}
+          class="group block border-l-2 border-l-star-gold bg-navy-soft/60 p-5 no-underline dark-rule hover:border-star-gold/60"
+        >
+          <span class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="bg-star-gold px-1.5 py-0.5 font-mono text-[11px] font-medium tracking-widest text-navy-deep">WEEKLY</span>
+            <span class="text-sm text-paper/60">週報 {mdShort(latestDigest.from)}〜{mdShort(latestDigest.to)} の週</span>
+          </span>
+          <span class="mt-3 flex items-start gap-3">
+            <span class="shrink-0 text-xl leading-tight" aria-hidden="true">{latestDigest.changes.map((c) => c.flag).join(' ')}</span>
+            <span class="min-w-0">
+              <span class="block text-lg font-medium leading-snug group-hover:text-star-gold">{latestDigest.shortTitle}</span>
+              <span class="mt-1 block text-sm leading-relaxed text-paper/70">{latestDigest.summary}</span>
+            </span>
+          </span>
+          <span class="mt-3 inline-block font-mono text-xs text-star-gold group-hover:underline">今週の変化3つを図で見る →</span>
+        </a>
+      </section>
+    )}
 
     <!-- 6カ国ステータスバー -->
     <section aria-label="監視対象国" class="border-t border-white/10 py-8">

@@ -1,0 +1,96 @@
+---
+// 週報の図2: 今週の変化3つのカード。国旗・種類・法的段階・差分変化／報道の印は data/updates のレコードから付ける。
+// 文面は原稿（data/digests/*.md）のまま。リンクは解説ページ（無ければ国別ページの該当カード）と元資料。
+import DiagramFrame from '../diagrams/DiagramFrame.astro';
+import { CHANGE_TYPE_LABELS, withBase, type UpdateRecord } from '../../lib/data';
+
+type Change = {
+  n: number;
+  title: string;
+  flag: string;
+  countryName: string;
+  what: string;
+  oneLiner: string;
+  recordId: string | null;
+  href: string | null;
+  sourceUrl: string;
+};
+interface Props {
+  changes: Change[];
+  records: Record<string, UpdateRecord & { legal_stage?: string; source_kind?: string }>;
+  n: number;
+}
+const { changes, records, n } = Astro.props;
+
+const STAGE: Record<string, { label: string; tone: string }> = {
+  in_force: { label: '施行', tone: 'looser' },
+  enacted: { label: '成立', tone: 'looser' },
+  final_guidance: { label: '確定した指針', tone: 'looser' },
+  bill: { label: '法案', tone: 'gold' },
+  draft_or_consultation: { label: '草案・意見募集', tone: 'gold' },
+  announcement: { label: '発表・方針', tone: 'absent' },
+  other: { label: 'その他', tone: 'absent' },
+};
+const alt = changes.map((c) => `${c.n}. ${c.countryName}：${c.title}`).join('。');
+---
+
+<DiagramFrame id="digest-changes" n={n} title="今週の変化3つ" lead="左の色は段階（緑＝成立・施行など確定、金＝法案・草案、灰＝発表・方針）。" alt={alt}>
+  <ol class="dgc-list">
+    {changes.map((c) => {
+      const r = c.recordId ? records[c.recordId] : undefined;
+      const st = STAGE[r?.legal_stage ?? ''];
+      return (
+        <li class={`dg-card dgc dgc-${st?.tone ?? 'absent'}`}>
+          <div class="dgc-head">
+            <span class="dgc-n">{c.n}</span>
+            <span class="dgc-flag" aria-hidden="true">{c.flag}</span>
+            <span class="dgc-country">{c.countryName}</span>
+            {r?.date && <time class="dgc-date">{r.date}</time>}
+          </div>
+          <h3 class="dgc-title">{c.title}</h3>
+          <p class="dgc-chips">
+            {st && <span class="dg-chip dgc-chip-stage">{st.label}</span>}
+            {r && <span class="dg-chip">{CHANGE_TYPE_LABELS[r.change_type] ?? r.change_type}</span>}
+            {r?.impact?.diff_changed && <span class="dgc-diff">EUとの差分が変化</span>}
+            {r?.source_kind === 'media' && <span class="dg-chip">報道</span>}
+          </p>
+          <p class="dgc-what">{c.what}</p>
+          {c.oneLiner && (
+            <p class="dgc-one"><span class="dgc-one-k">社内で聞かれたら</span>{c.oneLiner}</p>
+          )}
+          <p class="dgc-links">
+            {c.href && <a href={withBase(c.href)} class="dg-link dgc-go">{c.href.startsWith('/explain/') ? '解説を読む →' : '国別ページで見る →'}</a>}
+            {c.sourceUrl && <a href={c.sourceUrl} rel="noopener" target="_blank" class="dg-link">{r?.source_kind === 'media' ? '出典（報道）↗' : '元資料 ↗'}</a>}
+          </p>
+        </li>
+      );
+    })}
+  </ol>
+</DiagramFrame>
+
+<style is:global>
+  .dgc-list { display: grid; gap: 16px; }
+  @media (min-width: 1024px) { .dgc-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .dgc { display: flex; flex-direction: column; gap: 10px; }
+  .dgc-looser { --dg-bar: var(--diff-looser); --dg-chip: var(--diff-looser); }
+  .dgc-gold { --dg-bar: var(--star-gold); --dg-chip: var(--star-gold); }
+  .dgc-absent { --dg-bar: var(--diff-absent); --dg-chip: var(--diff-absent); }
+  .dgc .dg-chip:not(.dgc-chip-stage) { --dg-chip: var(--dg-line); }
+  .dgc-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .dgc-n {
+    width: 28px; height: 28px; border-radius: 14px; display: grid; place-items: center; flex: none;
+    background: var(--star-gold); color: var(--navy-deep); font-family: 'IBM Plex Mono', monospace; font-weight: 500;
+  }
+  .dgc-flag { font-size: 22px; line-height: 1; }
+  .dgc-country { font-weight: 700; }
+  .dgc-date { margin-left: auto; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--dg-sub); }
+  .dgc-title { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.45; }
+  .dgc-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .dgc-diff { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 13px; background: var(--diff-unique); color: #fff; }
+  .dgc-what { font-size: 15px; color: var(--dg-sub); }
+  .dgc-one { font-size: 15px; border-left: 2px solid var(--star-gold); padding-left: 12px; }
+  .dgc-one-k { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--dg-sub); letter-spacing: 0.04em; }
+  .dgc-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
+  .dgc-links a { display: inline-flex; align-items: center; min-height: 40px; }
+  .dgc-go { font-weight: 700; }
+</style>

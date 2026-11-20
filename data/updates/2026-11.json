@@ -598,5 +598,35 @@
       "https://mptc.gov.kh/en/2026/11/h-e-minister-chea-vandeth-and-h-e-christopher-anderson-u-s-ambassador-to-cambodia-hold-bilateral-meeting-and-sign-a-joint-statement-on-artificial-intelligence-opportunity-partnership/"
     ],
     "country_anchor": "/country/us/#updates"
+  },
+  {
+    "id": "2026-11-19-jp-001",
+    "date": "2026-11-19",
+    "country": "jp",
+    "axis": "enforcement_body",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "official",
+    "title": "韓国個人情報保護委員会（PIPC）、日本のPPCとデータ移転およびAIプライバシー協力MOCを締結",
+    "summary": {
+      "what": "日本の個人情報保護委員会（PPC）とデータ移転およびAIプライバシー協力に関する業務協定（MOC）を締結した",
+      "who": "韓国個人情報保護委員会（PIPC）",
+      "when_impact": "2026年11月18日より日韓両当局間のデータ移転・AIプライバシー保護の協力体制が強化される"
+    },
+    "detail": "韓国の個人情報保護委員会（PIPC）は2026年11月18日（現地時間）、ベルギー・ブリュッセルで開催された第48回グローバル・プライバシー・アセンブリ（GPA）総会において、日本の個人情報保護委員会（PPC）と個人情報保護分野における協力強化のための業務協定（MOC）を締結したと発表した。本協定には、信頼性の高い国境越えデータ移転メカニズムの構築・促進、法執行に関する情報交換、AI環境でのデータ保護経験の共有およびプライバシー・バイ・デザイン（PbD）や個人情報保護強化技術（PET）等の活用促進、共同研究や人財交流などが含まれている。",
+    "so_what": "日韓両国でデジタルサービスやAI事業を展開する企業は、両当局によるデータ移転枠組みの相互運用性向上やプライバシー強化技術（PET）推進の動向に留意する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea PIPC and Japan enhance cooperation on data transfer and AI privacy",
+    "publication_date": "2026-11-19",
+    "discovered_at": "2026-11-20",
+    "effective_date": "2026-11-18",
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12659"
+    ],
+    "country_anchor": "/country/jp/#axis-enforcement_body"
   }
 ]

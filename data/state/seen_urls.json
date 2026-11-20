@@ -1,60 +1,4 @@
 {
-  "https://www.soumu.go.jp/main_sosiki/singi/toukei/jinkou/kaigi/02shingi05_02000838.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://www.pm.gov.au/media/television-interview-abc-news-breakfast-43": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://www.pm.gov.au/media/television-interview-news24-0": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://www.pm.gov.au/media/television-interview-today-show-30": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://www.pm.gov.au/media/television-interview-sunrise-45": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://www.pm.gov.au/media/television-interview-abc-730-23": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://www.pm.gov.au/media/press-conference-sydney-40": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/2025-nobel-prize-in-chemistry-winner-joins-asia-s-third-ranked-university-in-singapore-as-visiting-professor-5134023.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/27-year-old-crypto-king-accused-of-spending-12m-of-investors-money-on-luxury-cars-private-jets-5134295.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/tycoons-in-world-s-largest-desalination-producing-country-build-9b-fortune-from-water-5133187.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-south-west-delhi-delhi-ro-delhi": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "http://www.trai.gov.in/node/18793": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://mst.gov.vn/peering-30-nen-tang-ket-noi-va-van-hanh-ha-tang-internet-quoc-gia-an-toan-hieu-qua-thong-minh-197261018231901086.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
-  "https://mst.gov.vn/khai-giang-lop-boi-duong-nhan-thuc-ve-dang-va-lop-boi-duong-ly-luan-chinh-tri-danh-cho-dang-vien-moi-197261019110402455.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-20"
-  },
   "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/housou_seisaku/02ryutsu07_04000599.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-21"
@@ -5330,5 +5274,249 @@
   "https://english.ahram.org.eg/NewsContentP/1/582820/Egypt/Cabinet-approves-draft-decree-to-establish-AIbacke.aspx": {
     "verdict": "body-too-short",
     "date": "2026-11-19"
+  },
+  "https://www.soumu.go.jp/menu_syokai/saiyou/setumeikai.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.federalregister.gov/documents/2026/11/19/2026-23555/executive-compensation-disclosure-reform": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.dataprivacybr.org/data-privacy-brasil-participa-da-terceira-conferencia-do-pall-mall-process-em-paris/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.pm.gov.au/media/33rd-apec-leaders-summit": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/comfortdelgro-to-launch-24-hour-taxi-service-between-singapore-and-malaysia-s-johor-bahru-5146695.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/jensen-huang-loses-over-30b-in-wealth-following-affairs-scandal-drops-to-world-s-14th-richest-5146616.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-innovation/electric-motorbike-sales-surge-90-5146480.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/stanford-dropout-carina-hong-shares-struggles-as-ceo-of-1-6b-ai-startup-at-25-5145089.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://sabq.org/article/qhazsud": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://astanatimes.com/2026/11/tokayev-sets-goal-of-turning-kazakhstan-into-central-asias-academic-hub/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.inform.kz/ru/kazllm-alemllm-iai-sana-prezident-rasskazal-orazvitii-iivkazahstane-93bff149": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.youm7.com/story/2026/11/19/%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84-%D8%A7%D8%B3%D8%AA%D8%B6%D8%A7%D9%81%D8%A9-%D9%85%D8%A4%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D9%88%D9%8A%D8%A8%D9%88-%D9%84%D8%A8%D8%AD%D8%AB-%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%AD%D9%82%D9%88%D9%82-%D8%A7%D9%84%D9%85%D8%A4%D9%84%D9%81-%D9%81%D9%89-%D8%B9%D8%B5%D8%B1/7624585": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/norwegian-dpa-fines-private-individual-for-credit-check-and-publication-of-personal-data_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-business-school-eur-8-000-for-unlawful-telemarketing-and-failure-to-handle_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-radiology-centre-and-it-provider-a-combined-eur-28-000-for-exposing-patient_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-meta-eur-805-million-for-unlawful-access-to-facebook-users-photo-galleries_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-a-company-eur-25-500-over-employee-access-rights-and-corporate-email_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/edpb-supports-use-of-other-models-of-contractual-clauses-for-onward-transfers-of-personal-data_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-clothing-company-for-failing-to-handle-erasure-request_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/italian-dpa-fines-wind-tre-eur-17-million-for-data-security-failures-affecting-over-365-000_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.edpb.europa.eu/news/edpb-helps-kids-stay-safe-online_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei08_01000357.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000306.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.nist.gov/news-events/news/2026/11/nist-project-aims-accelerate-mobile-drivers-license-adoption": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/canadian-council-of-tourism-ministers-meets-in-fredericton-new-brunswick-to-strengthen-innovation-competitiveness-and-resilience.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_gpa_261119/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.camara.leg.br/noticias/1321149-comissao-aprova-regras-de-prevencao-e-enfrentamento-ao-bullying-e-ao-cyberbullying": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "http://www.trai.gov.in/node/18951": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "http://www.trai.gov.in/node/18950": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://moda.gov.tw/press/press-releases/21474": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//b846bc30-a95b-44e2-ac42-25652271cd3c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//70d0010b-abaf-4873-b9af-493ac27ec737": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//719d0cf2-564f-4894-a0fd-31e12081cbe7": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//c1497754-0889-4ad8-a462-56196ad926dc": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://mptc.gov.kh/en/2026/11/francotech-innovation-competition-2026-announces-6-outstanding-innovator-winners-from-the-francophone-community/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://mst.gov.vn/bo-khoa-hoc-va-cong-nghe-ho-tro-quang-tri-chuyen-doi-so-cap-xa-nang-cao-nang-luc-so-cho-ho-kinh-doanh-197261119223626089.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://mst.gov.vn/kiem-tra-viec-thuc-hien-nghi-quyet-57-tai-khanh-hoa-19726111917480681.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://mst.gov.vn/pho-bien-chinh-sach-thuc-day-phat-trien-kinh-te-so-va-xa-hoi-so-tai-phu-tho-197261119095337315.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://mst.gov.vn/tu-chiec-dien-thoai-thong-minh-den-sinh-ke-so-cua-thanh-nien-vung-dong-bao-dan-toc-thieu-so-197261119094157497.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://mst.gov.vn/cong-nghe-viet-tao-ra-hai-loai-nhien-lieu-dac-chung-jet-a-1k-va-do-l-62-197261117162007232.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://mst.gov.vn/dau-an-cong-nghe-viet-trong-san-xuat-nhien-lieu-dac-chung-197261118145728754.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-67-2026-tt-bkhcn-470948.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://congbao.chinhphu.vn/cong-bao/584-47610.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/1bb8ac65-5397-4f70-aaaa-01a1ed8e2a5c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.gov.kz/org/maidd/press/news/details/1330879?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.gov.kz/org/maidd/press/news/details/1330677?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/minciencias-avanza-en-el-destrabe-recursos-regalias-258-proyectos-buscan-acceder-14": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/employment-and-labour-advertises-17-posts-requiring-matric-and-no-work-experience": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/mashatile-vows-strengthen-not-scrap-operation-prosper": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/interest-rate-stays-unchanged-725": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/pule-outlines-south-africas-progress-addressing-child-protection": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/government-intensifies-work-restore-reclaim-hijacked-buildings": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/chikunga-proposes-direct-employment-youth-municipalities": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/government-steps-immigration-enforcement-warns-against-vigilantism": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/skukuza-rest-camp-gate-reopen": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/imc-migration-welcomes-high-court-visit-lindela-backs-new-online-asylum-system": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.sanews.gov.za/south-africa/morolong-hands-over-radio-equipment-kouga-fm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://naltf.gov.ng/senate-urges-fg-to-implement-probe-report-on-37-miners-deaths/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://naltf.gov.ng/author/oscar/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-20"
+  },
+  "https://www.federalregister.gov/documents/2026/11/19/2026-23539/policies-on-the-use-of-generative-super-intelligence-in-agency-adjudication-request-for-comments": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-20"
+  },
+  "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-20"
   }
 }

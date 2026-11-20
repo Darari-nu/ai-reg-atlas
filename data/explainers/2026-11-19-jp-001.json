@@ -1,0 +1,65 @@
+{
+  "id": "2026-11-19-jp-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-20T02:29:19Z",
+  "record_id": "2026-11-19-jp-001",
+  "source_kind": "official",
+  "published_at": "2026-11-20T02:29:19Z",
+  "headline": "韓国PIPC、日本のPPCとデータ移転・AI協力のMOCを締結",
+  "lead": "韓国の個人情報保護委員会（PIPC）は2026年11月18日、日本の個人情報保護委員会（PPC）と業務協定（MOC）を結びました。内容は、国境を越えるデータ移転の仕組み作りや、AI時代の個人情報保護での協力です。企業に新たな義務を課す資料上の記載はありません。",
+  "facts": [
+    {
+      "text": "PIPCは2026年11月18日（現地時間）、ベルギーのブリュッセルでPPCと個人情報保護分野の協力強化に関する業務協定（MOC）を結びました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12659"
+    },
+    {
+      "text": "この協定は、第48回グローバル・プライバシー・アセンブリ（GPA）総会の期間中に結ばれました。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12659"
+    },
+    {
+      "text": "両機関は、信頼できる国境間データ移転を円滑にする仕組みの開発と促進で協力します。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12659"
+    },
+    {
+      "text": "協力分野には、法執行に関する情報交換、AI環境でのデータ保護の経験共有、新技術の活用促進も含まれます。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12659"
+    },
+    {
+      "text": "共同研究プロジェクト、プライバシー関連の教育、機関間の人的交流も協力分野に挙げられています。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12659"
+    },
+    {
+      "text": "PIPCは、プライバシー・バイ・デザイン（PbD）や個人情報保護強化技術（PET）の活用を促す協力も強まる見通しだと説明しています。",
+      "source_url": "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12659"
+    }
+  ],
+  "who_is_affected": "日韓の間で個人データを移す企業が、将来の影響を受ける場合があります。AIやデジタルサービスを両国で提供する企業も同様です。ただし、この協定は当局間の協力の枠組みです。企業への直接の義務は資料に書かれていません。",
+  "japan_impact": "日本企業は、韓国の利用者や拠点とのデータのやり取りを棚卸ししておくとよいでしょう。移転の仕組みが今後整う場合に備え、現在の移転根拠も確認するとよいでしょう。PbDやPETの導入状況も点検しておくと、当局の動きに対応しやすくなります。",
+  "next_steps": "資料には、協定に基づく具体的な実施時期や手続きの予定は書かれていません。PIPCは、制度面の協力や相互運用性の議論が速く進むと期待しています。推測ですが、PPCやPIPCの追加発表が出る可能性があるため、両機関の公表を確認するとよいでしょう。",
+  "unknowns": [
+    "データ移転の仕組みの具体的な内容と開始時期",
+    "協定が企業に直接の義務や手続きを生じさせるか",
+    "法執行に関する情報交換の範囲",
+    "日本側（PPC）の発表内容",
+    "協定の有効期間や見直しの条件"
+  ],
+  "glossary": [
+    {
+      "term": "MOC",
+      "explanation": "業務協定のことです。当局どうしが協力分野を定める文書で、資料には企業への義務は書かれていません。"
+    },
+    {
+      "term": "GPA",
+      "explanation": "グローバル・プライバシー・アセンブリの略です。各国の個人情報保護当局が参加する国際会議体です。"
+    },
+    {
+      "term": "PbD",
+      "explanation": "プライバシー・バイ・デザインの略です。製品やサービスの設計段階から個人情報保護を考える方法です。"
+    },
+    {
+      "term": "PET",
+      "explanation": "個人情報保護強化技術の略です。侵害リスクを減らしながら、安全にデータを使えるようにする技術です。"
+    }
+  ]
+}

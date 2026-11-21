@@ -14,7 +14,7 @@ name: cf-deploy
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["daily-pipeline"]
+    workflows: ["daily-pipeline", "weekly-digest"]
     types: [completed]
 
 permissions:

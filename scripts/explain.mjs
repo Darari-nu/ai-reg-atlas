@@ -19,6 +19,7 @@ import {
 } from './lib/explainer.mjs';
 import { fetchArticleText } from './lib/fetchArticle.mjs';
 import { readState, writeState } from './lib/state.mjs';
+import { siteUrl } from './lib/siteUrl.mjs';
 import { DRY_ROOT, loadJSON, pushIssue, readDataJSON, rootPath, writeDataJSON, writeJSON } from './lib/pipeline.mjs';
 
 export const NOTIFY_FILE = '/tmp/pipeline_notifications.json'; // notify-discord.mjs が読む
@@ -41,9 +42,15 @@ function defaultExistingIds() {
 }
 
 function defaultPushNotification(n) {
-  const list = loadJSON(NOTIFY_FILE, []);
-  list.push(n);
-  writeJSON(NOTIFY_FILE, list);
+  // 通知は付け足し。読み書きに失敗しても（中身が配列でなくても）例外を投げない
+  try {
+    const cur = loadJSON(NOTIFY_FILE, []);
+    const list = Array.isArray(cur) ? cur : [];
+    list.push(n);
+    writeJSON(NOTIFY_FILE, list);
+  } catch (e) {
+    console.warn(`[notify] notification skipped (${e?.name ?? 'Error'})`);
+  }
 }
 
 // 出典ページの本文。取れなければ null（その回はスキップして翌日再挑戦）。maxInput を超えたら切る
@@ -166,6 +173,10 @@ export async function run({
         type: 'explainer',
         label: autoPublish ? `解説を公開しました ${made.length} 本` : `解説の下書きが ${made.length} 本できました（確認待ち）`,
         count: made.length,
+        // 公開したときだけ解説ページへのリンク（下書きはサイトに出ないのでリンクなし）
+        ...(autoPublish
+          ? { links: made.map(({ stored }) => ({ title: stored.headline, url: siteUrl(`/explain/${stored.id}/`, env) })) }
+          : {}),
       });
     }
   } catch (e) {

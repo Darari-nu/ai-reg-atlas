@@ -59,6 +59,7 @@ jobs:
       - name: collect
         run: node scripts/collect.mjs
         env:
+          NODE_EXTRA_CA_CERTS: config/certs/globalsign-gcc-r46-ov-tls-ca-2025.pem # KVKK が送ってこない中間証明書を補う（検証は切らない）
           FIRST_RUN_WINDOW_DAYS: ${{ github.event.inputs.first_run_window_days || '3' }}
 
       - name: triage
@@ -74,6 +75,7 @@ jobs:
       - name: summarize
         run: node scripts/summarize.mjs
         env:
+          NODE_EXTRA_CA_CERTS: config/certs/globalsign-gcc-r46-ov-tls-ca-2025.pem # KVKK が送ってこない中間証明書を補う（検証は切らない）
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL_SUMMARIZE: ${{ vars.GEMINI_MODEL_SUMMARIZE }}
           GEMINI_FALLBACK_SUMMARIZE: ${{ vars.GEMINI_FALLBACK_SUMMARIZE }}
@@ -86,6 +88,7 @@ jobs:
         continue-on-error: true
         run: node scripts/explain.mjs
         env:
+          NODE_EXTRA_CA_CERTS: config/certs/globalsign-gcc-r46-ov-tls-ca-2025.pem # KVKK が送ってこない中間証明書を補う（検証は切らない）
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           # 以下は Repository Variables。未設定なら空文字→コードの既定値
           EXPLAINER_MODEL: ${{ vars.EXPLAINER_MODEL }}

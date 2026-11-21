@@ -436,13 +436,13 @@ countries:
     lng: 32.86
     # 2026-10-31 追加（AI下書き・人の確認前）。AI横断法はなく、AI法案4件（2/2234・2/3358・2/3404・2/3465）がTBMM（大国民議会）の委員会に係属中。政策の柱は大統領通達2026/9の「トルコAI行動計画（2026-2030）」（官報 2026-08-18 第33344号）。
     # official_sources は GitHub Actions 上で未実測。TBMM 着信文書一覧は日付が dd/mm/yyyy なので抽出できるが、リンク名が「19. GELEN KAĞIT」だけで中身が分からず triage で落ちやすい（新法案は本文を見ないと分からない）。
-    # KVKK 告知一覧は日付を「28 Ekim 2026」のようにトルコ語の月名で書くため、今の日付抽出（scrape.mjs の datePattern）に合わない。タイトルに 16/09/2026 の形を含む項目しか拾えず、no-dated-links で「止まった」通知が出るおそれ（トルコ語の月名に対応するまで様子見）。
+    # KVKK 告知一覧は日付を「28 Ekim 2026」のようにトルコ語の月名で書く。2026-11-21 にトルコ語の月名（Ocak〜Aralık）を日付抽出に足して読めるようにした。KVKK のサーバーは中間証明書（GlobalSign GCC R46 OV TLS CA 2025）を送らず、Linux の Node/curl（Actions）は証明書エラーになるため、config/certs/ の PEM を NODE_EXTRA_CA_CERTS で渡して補う（TLS の検証は切らない。KVKK が中間証明書を送るようになったら外してよい）。
     # TBMM の旧 RSS 案内（www5.tbmm.gov.tr/rss.htm）は新サイトのトップに転送され、フィードの URL を確認できなかった。官報（resmigazete.gov.tr/rss）は調査環境から取得できず入れていない。
     # .gov.tr は政府系 TLD 規則（OFFICIAL_TLD_RE）に無い。source_domains.yaml の official に gov.tr を足す前提。
     # 未確認: 行動計画本文（sanayi.gov.tr）、調査委員会報告書（S.Sayısı 260）本文、OVP 2027-2029 のAI法令整備の時期、刑法217/A条の刑の幅（CMSの解説のみ）、2026-10以降の新法案の有無。
     official_sources:
       - { url: "https://www.tbmm.gov.tr/Gundem/GelenKagitlarListe", type: scrape_hash }   # TBMM 着信文書（Gelen Kağıtlar）一覧。法案の受理を日付つきで載せる
-      - { url: "https://www.kvkk.gov.tr/Icerik/2015/Duyurular", type: scrape_hash }        # KVKK（個人データ保護機関）告知一覧。AI指針・AIシンポジウムの告知が載る。日付抽出に難あり（上記）
+      - { url: "https://www.kvkk.gov.tr/Icerik/2015/Duyurular", type: scrape_hash }        # KVKK（個人データ保護機関）告知一覧。AI指針・AIシンポジウムの告知が載る。トルコ語の月名・中間証明書の補いは上記
     watch_feeds: []
     news_queries: ["Turkey artificial intelligence law", "yapay zeka kanun teklifi"]
   - code: mx

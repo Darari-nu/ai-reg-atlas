@@ -38,8 +38,12 @@ function harness(notes, { env = { DISCORD_WEBHOOK_URL: SECRET }, fetchImpl } = {
 describe('formatNotification', () => {
   it('down と recovered の文面', () => {
     const [n] = makeNotes(1);
-    assert.equal(formatNotification(n), '🔴 🇯🇵 日本 scrape_hash example.com/0 が3日続けて読み取れません（10/01〜・理由: no-dated-links）');
-    assert.equal(formatNotification({ ...n, type: 'recovered' }), '🟢 🇯🇵 日本 scrape_hash example.com/0 が復旧しました');
+    // 1行目の文面は従来のまま（リンクは2行目以降）
+    assert.equal(formatNotification(n).split('\n')[0], '🔴 🇯🇵 日本 scrape_hash example.com/0 が3日続けて読み取れません（10/01〜・理由: no-dated-links）');
+    assert.equal(formatNotification({ ...n, type: 'recovered' }).split('\n')[0], '🟢 🇯🇵 日本 scrape_hash example.com/0 が復旧しました');
+    // key が無ければ従来どおり1行だけ
+    const { key, ...noKey } = n;
+    assert.equal(formatNotification({ ...noKey, type: 'recovered' }), '🟢 🇯🇵 日本 scrape_hash example.com/0 が復旧しました');
   });
 });
 
@@ -71,7 +75,7 @@ describe('run', () => {
     const h = harness(makeNotes(23));
     await h.exec();
     assert.equal(h.calls.length, 3);
-    assert.deepEqual(h.calls.map((c) => c.body.content.split('\n').length), [10, 10, 3]);
+    assert.deepEqual(h.calls.map((c) => c.body.content.split('\n').filter((l) => l.startsWith('🔴')).length), [10, 10, 3]);
     assert.ok(h.calls.every((c) => c.url === SECRET));
     assert.deepEqual(h.calls[0].body.allowed_mentions, { parse: [] });
   });

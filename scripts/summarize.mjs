@@ -2,6 +2,7 @@
 // 新着ゼロ・キー未設定でも meta.json は必ず更新する（60日無活動停止の防止 §15-3）
 import fs from 'node:fs';
 import path from 'node:path';
+import yaml from 'js-yaml';
 import { fetchArticleText } from './lib/fetchArticle.mjs';
 import { FALLBACK_SUMMARIZE, geminiJSONWithRetry, geminiStats, hasApiKey, isGeminiStop, MODEL_SUMMARIZE } from './lib/gemini.mjs';
 import {
@@ -23,10 +24,12 @@ import {
   mechanicalGate,
   publicationDateGate,
   pushIssue,
+  isDryRun,
   readDataJSON,
   shouldAutoApplyPatch,
   writeDataJSON,
 } from './lib/pipeline.mjs';
+import { pushUpdatesNotification } from './lib/updatesNotice.mjs';
 import {
   dequeueItems,
   enqueue,
@@ -41,6 +44,7 @@ import {
 
 const ROOT = process.cwd();
 const IN_FILE = '/tmp/triaged.json';
+const NOTIFY_FILE = '/tmp/pipeline_notifications.json'; // notify-discord.mjs が読む
 const SEEN_URLS_NAME = 'seen_urls.json';
 const QUEUE_NAME = 'queue.json';
 // 機械ゲート落ちのうち記憶する理由（blocked-or-js-only-page は一時的なので SKIP_VERDICTS には入れない）
@@ -50,6 +54,30 @@ const STATUS_ORDER = ['proposed', 'draft', 'consultation', 'enacted', 'in_force'
 
 const today = process.env.SWEEP_DATE || new Date().toISOString().slice(0, 10);
 const nowIso = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
+
+// その回に新しく保存した更新を Discord に知らせる（国旗・国名は config/countries.yaml から）。DRY_RUN では積まない。失敗しても何も変えない
+function pushUpdatesNote(records) {
+  try {
+    if (isDryRun() || records.length === 0) return;
+    let flags = {};
+    let names = {};
+    try {
+      const y = yaml.load(fs.readFileSync(path.join(ROOT, 'config', 'countries.yaml'), 'utf8'));
+      flags = Object.fromEntries((y?.countries ?? []).map((c) => [c.code, c.flag]));
+      names = Object.fromEntries((y?.countries ?? []).map((c) => [c.code, c.name_ja]));
+    } catch {
+      // 国旗が取れなくても通知は出す
+    }
+    pushUpdatesNotification(records, {
+      flagOf: (cc) => flags[cc],
+      nameOf: (cc) => names[cc],
+      read: () => fs.readFileSync(NOTIFY_FILE, 'utf8'),
+      write: (text) => fs.writeFileSync(NOTIFY_FILE, text),
+    });
+  } catch (e) {
+    console.warn(`[summarize] updates notification skipped (${e?.name ?? 'Error'})`);
+  }
+}
 
 function writeMeta(status) {
   writeDataJSON(['meta.json'], { last_sweep: nowIso, status });
@@ -214,6 +242,7 @@ async function main() {
 
   let okCount = 0;
   let failCount = 0;
+  const newRecords = []; // この回に保存した更新（Discord の「新しい更新」用）
 
   for (const [idx, item] of items.entries()) {
     const cc = item.countries[0];
@@ -324,6 +353,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
       const record = buildUpdateRecord({ updates, country: cc, item, rec, discoveredAt: today, sourceKind }); // sourcesはcollectがfetchしたURLのみ
       updates.push(record);
       writeDataJSON(['updates', `${month}.json`], updates);
+      newRecords.push(record);
 
       // regulation_patch: 矛盾チェック付き適用（§5-4）。報道由来（sourceKind==='media'）は自動適用せず、
       // needs-review Issue に回す（§追加指示 必須1）。official・未設定は従来どおり自動適用する
@@ -424,6 +454,7 @@ eu_baseline: ${JSON.stringify(euBaseline.axes)}
   console.log(`[summarize] queue in=${carried.length} out=${nextQueue.length}${queueDropped ? ` over_limit_dropped=${queueDropped}` : ''}`);
 
   writeMeta(failCount > 0 && okCount === 0 ? 'partial' : 'ok');
+  pushUpdatesNote(newRecords);
   // drop理由の内訳をログに出す（observability。/tmp/dropped.json は collect/triage/summarize 全段の累積）
   try {
     const drops = JSON.parse(fs.readFileSync('/tmp/dropped.json', 'utf8'));

@@ -214,6 +214,7 @@ describe('explain run', () => {
     assert.equal(h.issues[0].title, `needs-review: 解説の下書き ${rs[0].id}`);
     assert.ok(h.issues[0].body.includes('資料に書いてあること'));
     assert.equal(h.notes[0].count, 1);
+    assert.equal(h.notes[0].links, undefined); // 下書きはサイトに出ないのでリンクなし
     assert.ok(h.logs.some((l) => l.includes('usage=') && l.includes('cost~$')));
   });
   it('EXPLAINER_AUTO_PUBLISH=1 のときだけ published（Issue は積まない）', async () => {
@@ -222,6 +223,7 @@ describe('explain run', () => {
     await run(h.deps);
     assert.equal(h.saved[rs[0].id].status, 'published');
     assert.equal(h.issues.length, 0);
+    assert.deepEqual(h.notes[0].links, [{ title: h.saved[rs[0].id].headline, url: `https://darari-nu.com/atlas/explain/${rs[0].id}/` }]);
   });
   it('上限本数（EXPLAINER_MAX_PER_RUN、既定3）で止まる', async () => {
     // 全件で同じ source_url を許すため sources を共通にする

@@ -238,7 +238,12 @@ describe('run()（ダイジェスト生成）', () => {
     assert.equal(await run(d.opts), 0);
     assert.deepEqual(Object.keys(d.written), ['2026-W41.md']);
     assert.equal(checkDigestFile(d.written['2026-W41.md']).ok, true);
-    assert.equal(formatNotification(d.notes[0]), '📝 今週のダイジェスト原稿ができました');
+    const [head, link] = formatNotification(d.notes[0]).split('\n');
+    assert.equal(head, '📝 今週の週報ができました（数分後に公開されます）');
+    assert.equal(d.notes[0].links.length, 1);
+    assert.ok(d.notes[0].links[0].title.startsWith('今週のAI規制：'));
+    assert.equal(d.notes[0].links[0].url, 'https://darari-nu.com/atlas/digest/2026-W41/');
+    assert.ok(link.endsWith(' https://darari-nu.com/atlas/digest/2026-W41/'));
   });
   it('キーが無ければ API を呼ばず exit 0', async () => {
     let called = 0;

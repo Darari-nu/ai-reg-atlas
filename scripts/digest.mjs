@@ -20,6 +20,7 @@ import {
   selectWeekRecords,
   targetWeek,
 } from './lib/digest.mjs';
+import { siteUrl } from './lib/siteUrl.mjs';
 import { todayJst } from '../src/lib/upcomingDeadlines.mjs';
 import { DRY_ROOT, dataPath, isDryRun, loadJSON, rootPath, writeJSON } from './lib/pipeline.mjs';
 
@@ -47,9 +48,15 @@ function defaultWrite(file, text) {
   fs.writeFileSync(target, text, { flag: 'wx' }); // 既存は上書きしない（あれば例外）
 }
 function defaultPushNotification(n) {
-  const list = loadJSON(NOTIFY_FILE, []);
-  list.push(n);
-  writeJSON(NOTIFY_FILE, list);
+  // 通知は付け足し。読み書きに失敗しても（中身が配列でなくても）例外を投げない
+  try {
+    const cur = loadJSON(NOTIFY_FILE, []);
+    const list = Array.isArray(cur) ? cur : [];
+    list.push(n);
+    writeJSON(NOTIFY_FILE, list);
+  } catch (e) {
+    console.warn(`[notify] notification skipped (${e?.name ?? 'Error'})`);
+  }
 }
 
 /**
@@ -134,7 +141,14 @@ export async function run({
     }
     writeDigest(file, markdown);
     log.log(`[digest] ok ${file} "${title}"`);
-    if (!isDryRun()) pushNotification({ type: 'explainer', label: '今週のダイジェスト原稿ができました', count: 1 });
+    if (!isDryRun()) {
+      pushNotification({
+        type: 'explainer',
+        label: '今週の週報ができました（数分後に公開されます）',
+        count: 1,
+        links: [{ title, url: siteUrl(`/digest/${week.label}/`, env) }],
+      });
+    }
   } catch (e) {
     // どんな例外でもパイプラインは落とさない
     log.warn(`[digest] error: ${e?.name ?? 'Error'}: ${String(e?.message ?? '').slice(0, 200)}`);

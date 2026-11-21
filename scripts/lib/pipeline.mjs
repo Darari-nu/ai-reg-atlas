@@ -551,23 +551,26 @@ export function readerBody(raw) {
 
 // 一覧ページのリンクの日付（scrape_hash の古い記事を collect 段で落とすため）
 const MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
-// 欧州語（西・仏・独）の月名。フル綴りだけ（略称は英語の既存のみ）。アクセントあり／なし両方
+// 欧州語（西・仏・独）とトルコ語の月名。フル綴りだけ（略称は英語の既存のみ）。アクセントあり／なし両方
 const EU_MONTHS = {
-  1: ['enero', 'janvier', 'januar', 'jänner'],
-  2: ['febrero', 'février', 'fevrier', 'februar'],
-  3: ['marzo', 'mars', 'märz', 'maerz'],
-  4: ['abril', 'avril', 'april'],
-  5: ['mayo', 'mai'],
-  6: ['junio', 'juin', 'juni'],
-  7: ['julio', 'juillet', 'juli'],
-  8: ['agosto', 'août', 'aout', 'august'],
-  9: ['septiembre', 'setiembre', 'septembre', 'september'],
-  10: ['octubre', 'octobre', 'oktober'],
-  11: ['noviembre', 'novembre', 'november'],
-  12: ['diciembre', 'décembre', 'decembre', 'dezember'],
+  1: ['enero', 'janvier', 'januar', 'jänner', 'ocak'],
+  2: ['febrero', 'février', 'fevrier', 'februar', 'şubat', 'subat'],
+  3: ['marzo', 'mars', 'märz', 'maerz', 'mart'],
+  4: ['abril', 'avril', 'april', 'nisan'],
+  5: ['mayo', 'mai', 'mayıs', 'mayis'],
+  6: ['junio', 'juin', 'juni', 'haziran'],
+  7: ['julio', 'juillet', 'juli', 'temmuz'],
+  8: ['agosto', 'août', 'aout', 'august', 'ağustos', 'agustos'],
+  9: ['septiembre', 'setiembre', 'septembre', 'september', 'eylül', 'eylul'],
+  10: ['octubre', 'octobre', 'oktober', 'ekim'],
+  11: ['noviembre', 'novembre', 'november', 'kasım', 'kasim'],
+  12: ['diciembre', 'décembre', 'decembre', 'dezember', 'aralık', 'aralik'],
 };
-const EU_MONTH_NUM = Object.fromEntries(Object.entries(EU_MONTHS).flatMap(([n, names]) => names.map((w) => [w, +n])));
-const EU_MONTH_ALT = Object.keys(EU_MONTH_NUM).sort((a, b) => b.length - a.length).join('|');
+// トルコ語の İ/ı は toLowerCase で崩れる（İ→i̇）ので、表引きは ı→i・İ→i に寄せてから照合する
+const normMonth = (w) => String(w).replace(/[İı]/g, 'i').toLowerCase();
+const EU_MONTH_NUM = Object.fromEntries(Object.entries(EU_MONTHS).flatMap(([n, names]) => names.map((w) => [normMonth(w), +n])));
+// 正規表現は i フラグだが、İ（U+0130）・ı（U+0131）は i と大文字小文字が対応しないので、i の所を [iİı] にして KASİM / Kasım も通す
+const EU_MONTH_ALT = [...new Set(Object.values(EU_MONTHS).flat().map((w) => w.replace(/[iİı]/g, '[iİı]')))].sort((a, b) => b.length - a.length).join('|');
 const DATE_RE = new RegExp(
   [
     '(20\\d{2})[-/.年]\\s?(\\d{1,2})[-/.月]\\s?(\\d{1,2})', // 2026-08-20 / 2026-08/20（URL）/ 2026年8月20日
@@ -575,7 +578,7 @@ const DATE_RE = new RegExp(
     '(\\d{1,2})\\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\.?,?\\s+(20\\d{2})(?!\\d)', // 22 July 2026
     '(\\d{1,2})/(\\d{1,2})/(20\\d{2})(?!\\d)', // 22/07/2026（dd/mm。13以上なら入れ替え）
     // 欧州語: 03 de noviembre de 2026 / 1er novembre 2026 / 26 octobre 2026 / 12. Februar 2025（日・月・年が揃ったときだけ）
-    `(?<!\\d)(\\d{1,2})(?:er|\\.)?\\s+(?:de\\s+)?(${EU_MONTH_ALT})(?![a-zà-ÿ])\\s+(?:de\\s+)?(20\\d{2})(?!\\d)`,
+    `(?<!\\d)(\\d{1,2})(?:er|\\.)?\\s+(?:de\\s+)?(${EU_MONTH_ALT})(?![a-zà-ÿığşç])\\s+(?:de\\s+)?(20\\d{2})(?!\\d)`,
   ].join('|'),
   'gi',
 );
@@ -591,7 +594,7 @@ function matchToYmd(g) {
   if (g[4]) return toYmd(+g[6], MONTHS[g[4].slice(0, 3).toLowerCase()], +g[5]);
   if (g[7]) return toYmd(+g[9], MONTHS[g[8].slice(0, 3).toLowerCase()], +g[7]);
   if (g[10]) return toYmd(+g[12], +g[11], +g[10]);
-  if (g[13]) return toYmd(+g[15], EU_MONTH_NUM[g[14].toLowerCase()], +g[13]);
+  if (g[13]) return toYmd(+g[15], EU_MONTH_NUM[normMonth(g[14])], +g[13]);
   return null;
 }
 

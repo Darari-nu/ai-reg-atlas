@@ -1,20 +1,4 @@
 {
-  "https://www.dataprivacybr.org/conheca-a-keynote-speaker-da-dpgc-2026-mallory-knodel-traz-discussoes-sobre-deteccao-verificacao-e-agentes-de-inteligencia-artificial/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-22"
-  },
-  "https://www.pm.gov.au/media/we-need-only-look-helen-haines": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-22"
-  },
-  "https://www.camara.leg.br/noticias/1307688-projeto-atualiza-lei-do-crime-de-perseguicao-para-detalhar-condutas-digitais": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-22"
-  },
-  "http://www.trai.gov.in/node/18796": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-22"
-  },
   "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/denpa_kanri/kaisai/02kiban01_04000331.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-23"
@@ -5614,5 +5598,97 @@
   "https://www.tc260.org.cn/tc260/tzgg/202611/b713a5af222043d2afdeee8300078a11.shtml": {
     "verdict": "gemini-unusable",
     "date": "2026-11-21"
+  },
+  "https://www.federalregister.gov/documents/2026/11/23/2026-23777/employee-or-independent-contractor-status-under-the-fair-labor-standards-act-family-and-medical": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.federalregister.gov/documents/2026/11/23/2026-23748/self-regulatory-organizations-24x-national-exchange-llc-notice-of-filing-of-a-proposed-rule-change": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.pm.gov.au/media/statement-joint-outcomes-australia-china-annual-leaders-meeting-0": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.businesstimes.com.sg/singapore/singapore-unveils-green-shipping-ai-governance-initiatives-china-after-pm-wong-meets-premier-li": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.cac.gov.cn/index.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.cac.gov.cn/wxzw/A0937index_1.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//4ba5461c-c178-4bed-b7e2-5d9bd8c19b98": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://mst.gov.vn/ai-khong-the-thay-nguoi-thay-khoi-day-khat-vong-sang-tao-197261120142917857.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://spdv.mic.gov.vn/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.kvkk.gov.tr/Icerik/9102/kisisel-veri-ihlalinde-hukuka-uygunluk-sebepleri-konulu-carsamba-semineri-gerceklestirilecektir": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.kvkk.gov.tr/SharedFolderServer/CMSFiles/MTZhZjQ0YWI3YjFmMmY.pdf": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.kvkk.gov.tr/Icerik/9077/klinik-arastirmalarda-kisisel-verilerin-korunmasi-calistayi": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/city-johannesburg-implements-level-2-water-restrictions": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/south-africa-mourns-former-deputy-president-phumzile-mlambo-ngcuka": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/ethekwini-steps-inner-city-preparations-ahead-festive-season": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/mashatile-calls-collective-effort-end-gbvf": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/morolong-maps-out-digital-first-public-service": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/gbvf-policy-promises-must-turn-daily-safety-women-deputy-president": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/hawks-arrest-giyani-water-project-corruption-money-laundering-suspects": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/mpumalanga-opens-thuthuzela-care-centre-support-gbvf-survivors": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.sanews.gov.za/south-africa/saps-records-decline-most-violent-crime-categories-murder-remains-too-high": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-22"
+  },
+  "https://www.kvkk.gov.tr/Icerik/9061/bilisim-uzay-ve-hukuk-sempozyumlari-i-yapay-zeka-caginda-kisisel-veri-korunmasi-sempozyumu-gerceklestirilecektir": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-22"
   }
 }

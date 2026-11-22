@@ -628,5 +628,35 @@
       "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12659"
     ],
     "country_anchor": "/country/jp/#axis-enforcement_body"
+  },
+  {
+    "id": "2026-11-20-za-001",
+    "date": "2026-11-20",
+    "country": "za",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "ラマポーザ南アフリカ大統領、90日以内の国家AI行動計画策定を指示",
+    "summary": {
+      "what": "90日以内に具体的な国家AI行動計画を策定するよう政府へ指示",
+      "who": "シリル・ラマポーザ大統領（南アフリカ政府）",
+      "when_impact": "2026年11月20日公表、2027年2月に概要発表予定"
+    },
+    "detail": "シリル・ラマポーザ大統領はシリコンバレー訪問の総括会議において、政府に対し90日以内に具体的な「国家AI行動計画」を策定するよう指示した。大統領府が率いるチームが主導し、(1)AIによる公共サービスの変革、(2)AIインフラ投資の誘致、(3)国内のAI能力向上、(4)リスクや混乱への備え（サイバーセキュリティの強化や適切な規制上の保護措置など）の4つの優先事項を中心に計画がまとめられる。大統領は2027年2月の一般教書演説（SONA）で主要要素を発表する予定である。",
+    "so_what": "南アフリカにおけるAIインフラ投資や行政活用、規制上の保護策に関する具体的な国家戦略が近く策定される見込み。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Africa president directs government to develop national AI action plan",
+    "publication_date": "2026-11-20",
+    "discovered_at": "2026-11-22",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.sanews.gov.za/south-africa/president-gives-government-90-days-develop-national-ai-action-plan"
+    ],
+    "country_anchor": "/country/za/#updates"
   }
 ]

@@ -1,0 +1,61 @@
+{
+  "id": "2026-11-20-za-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-22T01:30:42Z",
+  "record_id": "2026-11-20-za-001",
+  "source_kind": "official",
+  "published_at": "2026-11-22T01:30:42Z",
+  "headline": "南アフリカ大統領、90日以内の国家AI行動計画を指示",
+  "lead": "南アフリカのラマポーザ大統領は2026年11月20日、政府に90日以内の国家AI行動計画の策定を指示しました。計画は公共サービス、投資誘致、国内の能力向上、リスクへの備えの4点が柱です。大統領は2027年2月の一般教書演説で主要な要素を発表する意向です。",
+  "facts": [
+    {
+      "text": "ラマポーザ大統領は、シリコンバレー訪問の総括会議で、政府に90日以内の具体的な国家AI行動計画の策定を指示しました。",
+      "source_url": "https://www.sanews.gov.za/south-africa/president-gives-government-90-days-develop-national-ai-action-plan"
+    },
+    {
+      "text": "計画の第1の優先事項は、教育、医療、農業、行政、サービス提供などでAIを使い、公共サービスを改善することです。",
+      "source_url": "https://www.sanews.gov.za/south-africa/president-gives-government-90-days-develop-national-ai-action-plan"
+    },
+    {
+      "text": "第2の優先事項は、再生可能エネルギーの発電力を生かし、データセンターやAI計算基盤への投資を呼び込むことです。",
+      "source_url": "https://www.sanews.gov.za/south-africa/president-gives-government-90-days-develop-national-ai-action-plan"
+    },
+    {
+      "text": "第3の優先事項は、大学、研究者、起業家などが高度なAIモデル、計算資源、データ、技能を使えるようにすることです。",
+      "source_url": "https://www.sanews.gov.za/south-africa/president-gives-government-90-days-develop-national-ai-action-plan"
+    },
+    {
+      "text": "第4の優先事項は、サイバーセキュリティ、重要インフラの保護、適切な規制上の保護措置、責任ある導入などでAIのリスクに備えることです。",
+      "source_url": "https://www.sanews.gov.za/south-africa/president-gives-government-90-days-develop-national-ai-action-plan"
+    },
+    {
+      "text": "大統領は、2027年2月の一般教書演説（SONA）で計画の主要な要素を説明する意向を示し、大統領府が率いる小規模なチームが策定を進めるとしています。",
+      "source_url": "https://www.sanews.gov.za/south-africa/president-gives-government-90-days-develop-national-ai-action-plan"
+    }
+  ],
+  "who_is_affected": "直接の対象は南アフリカ政府の関係省庁です。今後は、同国でデータセンターやAI関連サービスを展開する企業にも関わる場合があります。行政向けにAIを提供する事業者や、同国に拠点を持つ企業も影響を受ける場合があります。",
+  "japan_impact": "現時点で、日本企業に新たな義務は資料から読み取れません。ただし、同国でAI事業や投資を考える企業は、計画の内容に注目するとよいでしょう。規制上の保護措置の中身は未定です。同国への提供サービスや拠点があるなら、将来の規制の動きを確認しておくとよいでしょう。",
+  "next_steps": "資料によると、計画の策定期限は指示から90日以内です。大統領は2027年2月の一般教書演説で主要な要素を発表する意向です。計画が法的な義務を含むかどうかは資料にありません。発表後に具体的な内容が公表される見通しは推測です。",
+  "unknowns": [
+    "行動計画に法的拘束力のある規制が含まれるかどうか",
+    "規制上の保護措置の具体的な内容と対象範囲",
+    "罰則の有無",
+    "計画が正式に決定される日と施行の時期",
+    "外国企業に特別な要件が課されるかどうか"
+  ],
+  "glossary": [
+    {
+      "term": "国家AI行動計画",
+      "explanation": "国がAIの活用、投資、人材育成、リスク対応について進め方をまとめる計画です。この資料では法律ではなく、政府への策定指示として示されています。"
+    },
+    {
+      "term": "一般教書演説（SONA）",
+      "explanation": "State of the Nation Addressの略で、大統領が国の方針を示す年次の演説です。"
+    },
+    {
+      "term": "AIインフラ",
+      "explanation": "AIの開発や運用に使うデータセンターや計算資源などの基盤を指します。"
+    }
+  ]
+}

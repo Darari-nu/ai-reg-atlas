@@ -71,11 +71,13 @@ describe('run', () => {
     assert.equal(calls.length, 0);
   });
 
-  it('10件ずつにまとめて送る（23件→3回）', async () => {
+  it('1回10件・2000字以内にまとめて送り、23件すべて届く', async () => {
     const h = harness(makeNotes(23));
     await h.exec();
-    assert.equal(h.calls.length, 3);
-    assert.deepEqual(h.calls.map((c) => c.body.content.split('\n').filter((l) => l.startsWith('🔴')).length), [10, 10, 3]);
+    const counts = h.calls.map((c) => c.body.content.split('\n').filter((l) => l.startsWith('🔴')).length);
+    assert.equal(counts.reduce((a, b) => a + b, 0), 23);
+    assert.ok(counts.every((n) => n >= 1 && n <= 10));
+    assert.ok(h.calls.every((c) => c.body.content.length <= MAX_CONTENT_CHARS));
     assert.ok(h.calls.every((c) => c.url === SECRET));
     assert.deepEqual(h.calls[0].body.allowed_mentions, { parse: [] });
   });

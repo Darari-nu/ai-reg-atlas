@@ -50,7 +50,7 @@ export function formatNotification(n, env = process.env) {
   const keyLine = typeof n.key === 'string' && /^https?:\/\//.test(n.key) ? `\n  <${n.key}>` : '';
   if (n.type === 'recovered') return `🟢 ${flag}${n.label} が復旧しました${keyLine}`;
   const reason = String(n.reason ?? '不明').slice(0, MAX_REASON_CHARS);
-  return `🔴 ${flag}${n.label} が${n.days ?? 3}日続けて読み取れません（${mmdd(n.since)}〜・理由: ${reason}）${keyLine}\n  確認待ち一覧 <${issuesUrl(env)}>`;
+  return `🔴 ${flag}${n.label} が${n.days ?? 3}日続けて読み取れません（${mmdd(n.since)}〜・理由: ${reason}）${keyLine}\n  GitHub で人の確認が要るもの（Issue 一覧） <${issuesUrl(env)}>`;
 }
 
 /** 複数件を1つの content にまとめ、2000字に収める */

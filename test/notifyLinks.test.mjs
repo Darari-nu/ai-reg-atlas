@@ -79,7 +79,7 @@ describe('formatNotification（リンク）', () => {
     const d = formatNotification(down, {}).split('\n');
     assert.equal(d[0], '🔴 🇹🇷 ラベル が3日続けて読み取れません（11/19〜・理由: fetch failed）');
     assert.equal(d[1], '  <https://example.com/a>');
-    assert.equal(d[2], '  確認待ち一覧 <https://github.com/Darari-nu/ai-reg-atlas/issues?q=is%3Aopen+label%3Aneeds-review>');
+    assert.equal(d[2], '  GitHub で人の確認が要るもの（Issue 一覧） <https://github.com/Darari-nu/ai-reg-atlas/issues?q=is%3Aopen+label%3Aneeds-review>');
     assert.ok(formatNotification(down, { GITHUB_REPOSITORY: 'foo/bar' }).includes('https://github.com/foo/bar/issues?q='));
   });
   const up = (n) => ({

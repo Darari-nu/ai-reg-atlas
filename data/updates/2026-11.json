@@ -658,5 +658,95 @@
       "https://www.sanews.gov.za/south-africa/president-gives-government-90-days-develop-national-ai-action-plan"
     ],
     "country_anchor": "/country/za/#updates"
+  },
+  {
+    "id": "2026-11-20-cn-001",
+    "date": "2026-11-20",
+    "country": "cn",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "official",
+    "title": "中国CAC、2026年9〜10月の生成AIサービス届出・登録状況を公表",
+    "summary": {
+      "what": "生成AIサービスの届出133件およびAPI利用アプリ等の登録224件の完了状況と累計実績を公表",
+      "who": "国家インターネット情報弁公室（CAC）",
+      "when_impact": "2026年11月20日公表（2026年10月31日時点の状況）"
+    },
+    "detail": "国家インターネット情報弁公室（CAC）は2026年11月20日、『生成式人工智能サービス管理暫定弁法』に基づく2026年9月〜10月の届出・登録情報を公表した。同期間中に新たに133款の生成AIサービスが国家CACでの届出を完了し（スマホ端末側AI 3款、擬人化インタラクションAI 1款を含む）、1款の情報変更が行われた。また、既存モデルのAPI等を直接呼び出すアプリ・機能について地方CACが実施する登録手続きにおいて、新たに224款が登録された。2026年10月31日時点で、累計1,245款の生成AIサービスが届出を、955款のアプリ・機能が登録を完了している。",
+    "so_what": "中国で生成AIサービスやモデルAPIを活用した機能を展開する事業者は、最新の届出・登録状況と公示義務の履行状況を確認する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "China publishes generative artificial intelligence service algorithm filing information",
+    "publication_date": "2026-11-20",
+    "discovered_at": "2026-11-23",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.cac.gov.cn/2026-11/20/c_1796918603542950.htm"
+    ],
+    "country_anchor": "/country/cn/#updates"
+  },
+  {
+    "id": "2026-11-23-kr-001",
+    "date": "2026-11-23",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "legal_stage": "draft_or_consultation",
+    "source_kind": "official",
+    "title": "個人情報保護委員会（PIPC）、AI利用特例を定める個人情報保護法施行令改定案を公表",
+    "summary": {
+      "what": "AI開発時の個人情報活用における安全措置や事前リスク評価基準等を定めた施行令改定案の公表",
+      "who": "個人情報保護委員会（PIPC）",
+      "when_impact": "2027年1月4日まで意見募集を実施し2027年3月9日の法改正に合わせて施行予定"
+    },
+    "detail": "個人情報保護委員会（PIPC）は、AI開発目的での個人情報処理特例を定めた改正個人情報保護法（2026年9月8日公布、2027年3月9日施行）の具体的な実施基準を定める「個人情報保護法施行令」の一部改定案を公表し、2026年11月23日から2027年1月4日まで立法予告を実施する。改定案では、特例適用に必要となる責任者指定やアクセス制限などの強化された安全措置基準、敏感情報の利用や個人の権利利益に重大な影響を与えるAI開発に対する事前リスク評価の対象要件、専門委員会の設置および審議手続きの簡素化などが規定されている。",
+    "so_what": "韓国で個人情報を活用したAI開発を行う事業者は、施行令で定められる強化された安全措置や事前リスク評価への対応準備が必要となる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea proposes amendment to Personal Information Protection Act enforcement decree for AI special provisions",
+    "publication_date": "2026-11-23",
+    "discovered_at": "2026-11-23",
+    "effective_date": null,
+    "deadline_date": "2027-01-04",
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12663"
+    ],
+    "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-11-22-za-001",
+    "date": "2026-11-22",
+    "country": "za",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "南アフリカ大統領、AIスタートアップ支援に向け1億ランド規模のVCファンド設立方針を発表",
+    "summary": {
+      "what": "AIおよびITスタートアップを支援する1億ランド規模のVCファンドと信用保証ファンドの設立方針を発表。",
+      "who": "シリル・ラマポーザ大統領（南アフリカ政府）",
+      "when_impact": "2026年11月22日発表。90日以内に具体的な国家AI行動計画の提案を求める。"
+    },
+    "detail": "南アフリカのシリル・ラマポーザ大統領は、米国シリコンバレーへの訪問終了時に行った記者会見において、国内のAIおよびテクノロジー分野のスタートアップを支援するため、1億ランド規模のベンチャーキャピタルファンドと信用保証ファンドを設立する方針を発表した。政府からの資金投入に加えて民間企業にも参加を呼びかける。また、シリコンバレーでの協議の成果を実際の政策に反映させるため、90日以内に実行可能な国家AIアクションプラン（行動計画）の策定を担当チームに指示したことを明かした。",
+    "so_what": "南アフリカによるAI産業振興施策および今後90日以内に策定される国家AIアクションプランの動向に注目する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Africa explores venture capital and credit guarantee funds to support AI start-ups",
+    "publication_date": "2026-11-22",
+    "discovered_at": "2026-11-23",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.sanews.gov.za/south-africa/sa-eyes-r100m-venture-capital-fund-support-ai-start-ups"
+    ],
+    "country_anchor": "/country/za/#updates"
   }
 ]

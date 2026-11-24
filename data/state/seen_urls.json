@@ -1,136 +1,4 @@
 {
-  "https://www.federalregister.gov/documents/2026/10/26/2026-21723/cooperative-research-and-development-agreement-super-intelligence-si-situational-awareness-tools-for": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.federalregister.gov/documents/2026/10/23/2026-21710/notice-of-public-meetings-of-the-michigan-advisory-committee-to-the-us-commission-on-civil-rights": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.federalregister.gov/documents/2026/10/23/2026-21706/implementing-the-guiding-and-establishing-national-innovation-for-us-stablecoins-act-for-the": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.federalregister.gov/documents/2026/10/23/2026-21658/supplemental-nutrition-assistance-program-electronic-benefits-transfer-card-security-measures": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.dataprivacybr.org/um-novo-passo-na-protecao-de-criancas-e-adolescentes-no-ambiente-digital/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.dataprivacybr.org/os-dados-egocentricos-e-a-industria-da-robotica/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.pm.gov.au/media/future-brisbane": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.pm.gov.au/media/funding-world-class-gold-coast-sports-facility": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/how-college-dropout-alakh-pandey-turned-free-youtube-lessons-into-a-4b-business-and-became-india-s-second-youngest-self-made-billionaire-5134220.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/retired-university-of-pennsylvania-professor-arrested-for-blocking-delivery-robot-to-protest-job-losses-5135046.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/chinese-superstar-hacker-5-times-named-microsoft-s-top-security-researcher-joins-ai-giant-z-ai-5135193.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/singaporean-roboticist-behind-ai-model-that-outperformed-chatgpt-leaves-us-to-join-asia-s-top-university-5135533.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/world-s-largest-humanoid-robot-maker-unveils-robot-bodyguard-that-can-fight-attackers-lift-cars-5135875.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://e.vnexpress.net/news/tech/enterprises/award-winning-singapore-robot-maker-serving-world-s-best-airport-to-shut-down-after-6-years-5135927.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/chinese-teen-ai-prodigy-courted-by-silicon-valley-reportedly-joins-ex-google-researchers-startup-5135637.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.bbc.com/news/articles/ck7vp8g38y7vo": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://statescoop.com/openai-urges-newsom-to-strengthen-californias-ai-safety-law-with-additional-safeguards/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01tsushin03_02000475.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban09_02000604.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban09_02000603.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001284.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187884": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187883": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.mddi.gov.sg/newsroom/factsheet-singapore-teens-and-parents-agree-safer-social-media-not-no-social-media/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/secretary-of-state-belanger-highlights-new-measures-to-lower-home-energy-costs-and-improve-energy-efficiency.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/government-of-canada-invests-over-190-million-to-advance-canadas-critical-minerals-sector-and-strengthen-aluminum-processing.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-patan-gujarat-consumer-protection-association": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-thoubal-manipur-bharti-airtel-limited": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-alwar-rajasthan-pmry-club": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "http://www.trai.gov.in/node/18805": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "http://www.trai.gov.in/events/itu-workshop-tsq-sg-12rg-ap-meeting": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-24"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu02_02000497.html": {
-    "verdict": "gemini-unusable",
-    "date": "2026-10-24"
-  },
-  "https://www.federalregister.gov/documents/2026/10/26/2026-21786/outbound-investment-security-program-regulations": {
-    "verdict": "gemini-unusable",
-    "date": "2026-10-24"
-  },
   "https://www.pm.gov.au/media/first-passengers-lift-wsi": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-25"
@@ -5618,5 +5486,281 @@
   "https://www.dostor.org/5786543": {
     "verdict": "body-too-short",
     "date": "2026-11-23"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/kaisai/yusei/02kiban03_04001199.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/gyouji/02tsushin04_04000269.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001595.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.pm.gov.au/media/press-conference-parliament-house-canberra-57": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/nvidia-reinstates-jensen-huang-as-ceo-5148246.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/mathematician-who-solved-65-year-old-problem-named-to-time100-next-india-list-5147954.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/lao-tiktok-star-hands-out-free-iphones-ipads-to-strangers-in-vietnam-5147920.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/chinese-ev-brand-jmev-shuts-singapore-showroom-16-months-after-launch-5147841.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://biz.chosun.com/jp/jp-international/2026/11/23/4YN7FE4LOVDIZJPVALU5V46F3A/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://astanatimes.com/2026/11/gitex-global-2026-to-bring-together-6000-tech-companies-startups-and-government-entities-in-dubai/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.youm7.com/story/2026/11/23/%D9%87%D9%84-%D8%AA%D8%A8%D8%AF%D8%A3-%D9%85%D8%B5%D8%B1-%D9%85%D9%86-%D8%A7%D9%84%D8%B5%D9%81%D8%B1-%D9%81%D9%89-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%89-%D8%A3%D8%A8%D9%88-%D9%87%D8%B4%D9%8A%D9%85%D8%A9/7629268": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://gate.ahram.org.eg/News/5990518.aspx": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban18_01000307.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu09_02000403.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban16_02000393.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin08_02000216.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01tsushin08_02000215.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei05_01000349.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei05_01000350.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.tc260.org.cn/tc260/xwdt1/list.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.tc260.org.cn/tc260/xwdt1/202611/f0a7797e4e2944938b68f8082179b169.shtml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187995": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187991": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187993": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187990": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187997": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187989": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187994": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3187992": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12664": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-remarks-by-sms-tan-kiat-how-at-3rd-singapore-china-digital-policy-dialogue/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/singapore-and-china-advance-digital-cooperation-at-3rd-singapore-china-digital-policy-dialogue/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-remarks-by-minister-josephine-teo-at-the-reopening-of-ang-mo-kio-library/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/remarks-by-sms-tan-kiat-how-at-the-opening-of-mistral-singapore-office/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/minister-josephine-teo-speech-at-govtech-s-digital-services-awards-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/keynote-address-by-sms-tan-kiat-how-at-the-unveiling-of-stablex-agentic-network/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.mddi.gov.sg/newsroom/transcript-of-joint-media-interview--with-minister-josephine-teo-and-dbs-ceo-tan-su-shan--at-semafor-silicon-valley---the-world-on-16-november-2026--pst-/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://form.gov.sg/66695a32cf3daf735178a6f1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://go.gov.sg/report-vulnerability": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.camara.leg.br/noticias/1322029-comissao-aprova-apoio-prioritario-a-inovacao-em-regioes-com-baixo-indice-de-desenvolvimento-socioeconomico": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.camara.leg.br/noticias/1321757-comissoes-debatem-futuro-do-esporte-na-era-da-inteligencia-artificial": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "http://www.trai.gov.in/node/18961": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "http://www.trai.gov.in/node/18960": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://moda.gov.tw/press/press-releases/21514": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//d0fe0aab-499a-4477-8f19-2e00989d144d": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//a81bc456-233f-4a7a-8574-c4fece7ddd48": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//b7464da2-3787-4877-aaa6-25d10da114a1": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://mst.gov.vn/hon-2-trieu-luot-tham-gia-cuoc-thi-tim-hieu-ve-chuyen-doi-so-quoc-gia-sau-3-tuan-197261121172925496.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://mst.gov.vn/ra-soat-chan-chinh-viec-thuc-hien-quy-dinh-ve-kiem-dinh-hieu-chuan-thu-nghiem-phuong-tien-do-chuan-do-luong-197261123002942745.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://mst.gov.vn/techfest-phutho-2026-hao-khi-dat-to-khat-vong-cong-nghe-19726112313565014.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://mst.gov.vn/thong-bao-ve-viec-tiep-nhan-va-tra-ket-qua-giai-quyet-thu-tuc-hanh-chinh-tai-bo-phan-mot-cua-bo-khoa-hoc-va-cong-nghe-197261123105744779.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://mst.gov.vn/nafosted-phe-duyet-danh-sach-30-nha-khoa-hoc-tre-viet-nam-tham-du-dai-hoi-cac-nha-khoa-hoc-tre-lan-thu-vi-tai-lien-bang-nga-197261122144739813.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/1bb42641-377c-4b0a-bd50-01a1f91e729c": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/con-liderazgo-minciencias-el-conacti-sesiono-con-quorum-y-fortalece-el-dialogo-entre": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.senado.gob.ar/prensa/24651/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/public-invited-pay-tribute-former-deputy-president-mlambo-ngcuka": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/science-department-advertises-24-senior-management-vacancies": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/b-bbee-must-be-about-ownership-earns-real-control-dtic-minister-parks-tau": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/sa-hosts-inaugural-africa-science-diplomacy-conference": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/eskom-recovery-powers": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/more-18-000-suspects-week-long-festive-season-operations": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/north-west-steps-digital-transformation-drive-inaugural-summit": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/saws-warns-severe-thunderstorms-over-eastern-parts-sa": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/mashatile-calls-stronger-investment-strengthen-africas-water-security": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.sanews.gov.za/south-africa/transnet-and-dgt-clear-18-containers-urgently-needed-medication": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://naltf.gov.ng/speaker-abbas-tajudeen-welcomes-cospal-adoption-of-nigerias-legislative-mentorship-initiative/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "http://en.kremlin.ru/acts/news/81304": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/data_protection/02kiban18_02000522.html": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-24"
+  },
+  "https://economictimes.indiatimes.com/tech/artificial-intelligence/ai-consultation-paper-to-set-ground-for-sectoral-rules-officials/articleshow/136111515.cms": {
+    "verdict": "missing-publication-date",
+    "date": "2026-11-24"
   }
 }

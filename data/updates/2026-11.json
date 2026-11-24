@@ -748,5 +748,125 @@
       "https://www.sanews.gov.za/south-africa/sa-eyes-r100m-venture-capital-fund-support-ai-start-ups"
     ],
     "country_anchor": "/country/za/#updates"
+  },
+  {
+    "id": "2026-11-23-br-001",
+    "date": "2026-11-23",
+    "country": "br",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "bill",
+    "source_kind": "official",
+    "title": "ブラジル下院委員会、公共調達をAIで監査する法案を可決",
+    "summary": {
+      "what": "AIを活用して公共調達の契約や入札を自動監査・監視する観察所の設置に関する法案を可決",
+      "who": "ブラジル下院科学技術イノベーション委員会",
+      "when_impact": "今後、他委員会および上下両院での審議・可決を経て成立後に影響"
+    },
+    "detail": "ブラジル下院の科学技術イノベーション委員会は、行政機関の入札、契約、価格登録記録をAIで継続的かつ自動的に監査・監視する「観察所」を設置する法案（PL 5792/25）を可決した。本法案では、機械学習や意味解析を用いて価格吊り上げや異常パターンを特定しつつ、AIの出力結果は人間による検証を前提とした監視補助として扱うことや、アルゴリズムの透明性・人間による監督を義務付けている。本法案は今後、財務・課税委員会および憲法・司法・市民権委員会で審議される。",
+    "so_what": "ブラジルで公共機関との契約や調達手続きに参入する企業は、将来的にAIによる不整合検知や監査システムによる分析の対象となる可能性がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Brazil committee approves bill for automated auditing of public procurement using artificial intelligence",
+    "publication_date": "2026-11-23",
+    "discovered_at": "2026-11-24",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.camara.leg.br/noticias/1322046-comissao-aprova-auditoria-de-licitacoes-com-inteligencia-artificial"
+    ],
+    "country_anchor": "/country/br/#updates"
+  },
+  {
+    "id": "2026-11-24-sg-001",
+    "date": "2026-11-24",
+    "country": "sg",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "豪・シンガポール首脳、安全なAI利用とガバナンス協力深化の共同声明を発表",
+    "summary": {
+      "what": "AIのテスト・評価や人材育成、国際標準の策定に向けた両国の連携深化に合意",
+      "who": "オーストラリア首相およびシンガポール首相",
+      "when_impact": "2026年11月24日発表。両国間の連携およびASEAN等の国際枠組みでの協力を推進"
+    },
+    "detail": "2026年11月24日、第11回シンガポール・オーストラリア首脳会談において、両国首脳は安全で責任あるAIの開発および導入に関する共同声明を発表した。両国はAIのテスト、評価、保証、人材育成、越境データフローを含むデジタルインフラの相互運用性の模索において協力する。また、2027年のシンガポールのASEAN議長国年を見据え、ASEAN域内および国際的なAIガバナンス標準の策定に向けた連携を強化することで一致した。",
+    "so_what": "シンガポールと豪州間におけるAI評価基準やデータガバナンスの相互運用性向上に向けた共同の取り組みを注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Australia and Singapore leaders announce deepening cooperation on Artificial Intelligence",
+    "publication_date": "2026-11-24",
+    "discovered_at": "2026-11-24",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pm.gov.au/media/australia-singapore-cooperation-artificial-intelligence"
+    ],
+    "country_anchor": "/country/sg/#updates"
+  },
+  {
+    "id": "2026-11-23-ca-001",
+    "date": "2026-11-23",
+    "country": "ca",
+    "axis": "transparency",
+    "change_type": "guideline_draft",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "カナダプライバシーコミッショナー、AI価格設定の指針策定に向けた意見募集を発表",
+    "summary": {
+      "what": "アルゴリズム価格設定での個人情報活用に関する指針策定に向け、探索的コンサルテーションの開始を発表。",
+      "who": "カナダプライバシーコミッショナー事務局（OPC）",
+      "when_impact": "2026年11月23日発表。年明けより意見募集を実施予定。"
+    },
+    "detail": "カナダのフィリップ・デュフレーヌ・プライバシーコミッショナーは2026年11月23日、下院のアクセス・情報・プライバシー・倫理常任委員会における「アルゴリズム価格設定でのAI利用」に関する審議に出席した。同コミッショナーは、個人の情報を利用して提示価格を調整するパーソナライズド・アルゴリズム価格設定を取り上げ、カナダの民間部門プライバシー保護法（PIPEDA）の下では適切な目的での個人情報の収集・利用・開示、明確な同意の取得、透明性の確保が求められると強調した。また、OPCとして新年にガイドラインを策定することを目指し、パーソナライズド・アルゴリズム価格設定に関する探索的なコンサルテーションを立ち上げると発表した。",
+    "so_what": "カナダで個人データを活用したパーソナライズ価格設定を行う企業は、今後公表されるOPCのガイドラインを注視し、PIPEDAに基づく適切な同意取得等のガバナンス体制を確認する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Privacy Commissioner of Canada appears before parliamentary committee on algorithmic pricing AI",
+    "publication_date": "2026-11-23",
+    "discovered_at": "2026-11-24",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261123/"
+    ],
+    "country_anchor": "/country/ca/#axis-transparency"
+  },
+  {
+    "id": "2026-11-24-in-001",
+    "date": "2026-11-24",
+    "country": "in",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "インド電子情報技術省（MeitY）、セクター別AI規制の基礎となる諮問文書を計画",
+    "summary": {
+      "what": "共通AIガバナンス枠組みに向けた安全性やリスク軽減を盛り込む諮問文書の策定計画",
+      "who": "インド電子情報技術省（MeitY）",
+      "when_impact": "今後の諮問文書公表およびセクター別AI規制の策定時"
+    },
+    "detail": "インド電子情報技術省（MeitY）が、各セクターの規制機関が独自の要求に応じてカスタマイズ可能な分散型のAI技術・法的枠組みの構築を計画していることが当局者の話で明らかになった。同省が準備中のAIに関する諮問文書（コンサルテーションペーパー）では、安全性、人間性、スキル向上、包摂性、リスク軽減を中心原則として設定する見込み。MeitYはAI普及と産業成熟に伴い、一部のベースライン措置を義務的要件に移行させ、セクター規制機関を通じて執行させる方針を示している。",
+    "so_what": "インド展開企業は今後提示される共通ガバナンス指針とセクター別規制の義務化に向けた動きを注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "India MeitY plans common AI governance framework",
+    "publication_date": "2026-11-24",
+    "discovered_at": "2026-11-24",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://economictimes.indiatimes.com/tech/newsletters/morning-dispatch/indias-ai-rules-take-shape-euler-motors-eyes-fresh-funding/articleshow/136117195.cms"
+    ],
+    "country_anchor": "/country/in/#updates"
   }
 ]

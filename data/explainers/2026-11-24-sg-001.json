@@ -1,0 +1,64 @@
+{
+  "id": "2026-11-24-sg-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-24T05:28:21Z",
+  "record_id": "2026-11-24-sg-001",
+  "source_kind": "official",
+  "published_at": "2026-11-24T05:28:21Z",
+  "headline": "豪・星の首脳、AI安全利用と標準づくりの協力を声明",
+  "lead": "オーストラリアとシンガポールの首相は、2026年11月24日にAI協力の共同声明を出しました。AIのテスト・評価や人材育成、データ連携の相互運用性などで協力を深めるとしています。法的な義務を定めた文書ではなく、政治的な方針表明です。",
+  "facts": [
+    {
+      "text": "両国の首相は、第11回シンガポール・オーストラリア首脳会談に合わせ、2026年11月24日にAI協力の共同声明を発表しました。",
+      "source_url": "https://www.pm.gov.au/media/australia-singapore-cooperation-artificial-intelligence"
+    },
+    {
+      "text": "両国首脳は、AIのテスト・評価・保証や人材育成に関する交流を通じて、二国間協力を深めることで一致しました。",
+      "source_url": "https://www.pm.gov.au/media/australia-singapore-cooperation-artificial-intelligence"
+    },
+    {
+      "text": "首脳は、デジタルインフラや越境データフローを含む相互運用性を探ることを約束しました。",
+      "source_url": "https://www.pm.gov.au/media/australia-singapore-cooperation-artificial-intelligence"
+    },
+    {
+      "text": "両国は、国際AI測定・評価・科学ネットワーク(International Network for Advanced AI Measurement, Evaluation and Science)などを通じ、AIガバナンスや国際標準づくりで協力するとしています。",
+      "source_url": "https://www.pm.gov.au/media/australia-singapore-cooperation-artificial-intelligence"
+    },
+    {
+      "text": "首脳は、2027年のシンガポールのASEAN議長国年を、AIテスト標準や手法を含む実務協力を進める機会と位置づけました。",
+      "source_url": "https://www.pm.gov.au/media/australia-singapore-cooperation-artificial-intelligence"
+    },
+    {
+      "text": "声明は、2024年のAI協力に関する覚書と、2026年に更新されたサイバーセキュリティ協力の覚書に基づく協力を再確認しています。",
+      "source_url": "https://www.pm.gov.au/media/australia-singapore-cooperation-artificial-intelligence"
+    }
+  ],
+  "who_is_affected": "直接の義務を負う企業は、本文からは読み取れません。両国でAIを開発・提供する企業や、両国の政府・研究機関と取引する企業は、今後の評価基準やデータ運用の議論に関わる場合があります。",
+  "japan_impact": "日本企業への直接の規制は、この声明からは確認できません。ただしシンガポールや豪州でAIサービスを提供する企業は、両国が進めるテスト・評価の考え方を把握しておくとよいでしょう。現地拠点がある企業は、越境データの扱いに関する今後の動きも見ておくとよいでしょう。",
+  "next_steps": "資料に書いてある予定は、2027年のシンガポールのASEAN議長国年にAIガバナンスの実務協力を進めることです。具体的な日程や成果物は書かれていません。基準や制度として形になるかどうかは、現時点では分かりません。",
+  "unknowns": [
+    "AIのテストや評価の基準が、いつ、どのような形で作られるのか",
+    "企業に新しい義務や罰則が生じるのか",
+    "越境データフローの相互運用性が、具体的にどの制度や仕組みを指すのか",
+    "ASEAN域内の標準が、各国の法令にどう反映されるのか"
+  ],
+  "glossary": [
+    {
+      "term": "相互運用性",
+      "explanation": "異なる国や組織の制度・システムが、互いに連携して使える状態のことです。"
+    },
+    {
+      "term": "越境データフロー",
+      "explanation": "データが国境を越えて移転・利用されることです。"
+    },
+    {
+      "term": "ASEAN",
+      "explanation": "東南アジア諸国連合のことです。2027年はシンガポールが議長国を務めると、資料に書かれています。"
+    },
+    {
+      "term": "AIの保証(assurance)",
+      "explanation": "AIが安全で意図どおりに動くことを、検証によって示す取り組みを指します。"
+    }
+  ]
+}

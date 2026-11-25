@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-24-uk-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-25T04:25:28Z",
+  "record_id": "2026-11-24-uk-001",
+  "source_kind": "media",
+  "published_at": "2026-11-25T04:25:28Z",
+  "headline": "英FCA、自律型AI開発者向けの規制期待値を示す方針",
+  "lead": "英国の金融規制当局FCAは、2026年11月24日に自律型AIへの方針を示しました。安全な導入は支持しつつ、開発者に対する具体的な期待値を示すとしています。MetaのAIエージェント「Muse」の英国での提供開始が背景にあります。",
+  "facts": [
+    {
+      "text": "英国の金融サービス規制当局である金融行為規制機構（FCA）は、自律型AIの英国での安全な導入を支持すると述べました。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/uk-financial-regulator-seeks-to-set-expectations-for-agentic-ai/articleshow/136124958.cms"
+    },
+    {
+      "text": "FCAは、技術が業界を急速に変えていることから、開発者に向けた具体的な期待値を示すとしています。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/uk-financial-regulator-seeks-to-set-expectations-for-agentic-ai/articleshow/136124958.cms"
+    },
+    {
+      "text": "この発表は、Metaが個人向けAIエージェント「Muse」を英国で開始した後に出されました。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/uk-financial-regulator-seeks-to-set-expectations-for-agentic-ai/articleshow/136124958.cms"
+    },
+    {
+      "text": "FCAは、AIエージェントによるサービスに必要な規制要件を見極めるため、幅広い関係者に意見を求めています。",
+      "source_url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/uk-financial-regulator-seeks-to-set-expectations-for-agentic-ai/articleshow/136124958.cms"
+    }
+  ],
+  "who_is_affected": "英国の金融分野でAIエージェントを開発する事業者に関わる可能性があります。AIエージェントを金融サービスの中で提供する会社も、対象になる場合があります。ただし対象範囲は、資料からは分かりません。",
+  "japan_impact": "英国向けに金融系のAIエージェントを提供する日本企業は、今後の動きを確認するとよいでしょう。英国拠点や取引先が、同様のサービスを扱っていないかも点検するとよいでしょう。現時点で新たな義務は示されていないため、準備は情報収集が中心になると考えられます。",
+  "next_steps": "資料には、期待値を公表する時期や手続きの予定が書かれていません。FCAは関係者との対話を通じて要件を特定する段階にあります。今後、FCAから文書が出る可能性がありますが、これは推測です。FCAの公表内容を継続して確認するとよいでしょう。",
+  "unknowns": [
+    "期待値を示す具体的な時期",
+    "期待値が法的な義務なのか、指針なのか",
+    "対象となる開発者やサービスの範囲",
+    "意見募集の形式や期限",
+    "違反した場合の罰則の有無"
+  ],
+  "glossary": [
+    {
+      "term": "FCA（金融行為規制機構）",
+      "explanation": "英国の金融サービスを規制する当局です。金融市場での事業者の行動を監督します。"
+    },
+    {
+      "term": "自律型AI（agentic AI）",
+      "explanation": "人の細かな指示がなくても、目的に向けて自ら行動するAIを指します。AIエージェントと呼ばれることもあります。"
+    },
+    {
+      "term": "規制期待値",
+      "explanation": "規制当局が事業者に求める対応水準の考え方です。資料からは、法的な拘束力があるかは分かりません。"
+    }
+  ]
+}

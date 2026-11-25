@@ -868,5 +868,95 @@
       "https://economictimes.indiatimes.com/tech/newsletters/morning-dispatch/indias-ai-rules-take-shape-euler-motors-eyes-fresh-funding/articleshow/136117195.cms"
     ],
     "country_anchor": "/country/in/#updates"
+  },
+  {
+    "id": "2026-11-24-uk-001",
+    "date": "2026-11-24",
+    "country": "uk",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "英金融行為規制機構（FCA）、自律型AI開発者向けに規制期待値を設定する方針を表明",
+    "summary": {
+      "what": "自律型AIの安全な導入支援と開発者向け規制期待値の設定方針",
+      "who": "英国金融行為規制機構（FCA）",
+      "when_impact": "今後FCAが公表・検討する規制要求に注視が必要"
+    },
+    "detail": "英国の金融サービス規制当局である金融行為規制機構（FCA）は、2026年11月24日、同国における自律型AI（agentic AI）の安全な導入を支援すると同時に、開発者向けの具体的な規制期待値を設定する方針を表明した。Metaによる個人向けAIエージェント「Muse」の英国ローンチ等を受け、FCAはステークホルダーとの対話を通じて金融市場におけるAIエージェントサービスの規制要件の特定を進める。",
+    "so_what": "英国の金融分野でAIエージェントを開発・展開する事業者は、今後FCAが提示する規制期待値に留意する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "FCAによる方針表明段階であり、法的確定や指針の公表には至っていないため、diff_vs_euの変更はない。"
+    },
+    "canonical_event": "FCA UK sets expectations for agentic AI integration",
+    "publication_date": "2026-11-24",
+    "discovered_at": "2026-11-25",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://economictimes.indiatimes.com/tech/artificial-intelligence/uk-financial-regulator-seeks-to-set-expectations-for-agentic-ai/articleshow/136124958.cms"
+    ],
+    "country_anchor": "/country/uk/#updates"
+  },
+  {
+    "id": "2026-11-24-my-001",
+    "date": "2026-11-24",
+    "country": "my",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "マレーシアデジタル相、ハイリスクAIの対応メカニズム義務化と報告制度導入の検討を表明",
+    "summary": {
+      "what": "ハイリスクAIへの危機対応メカニズム義務化やAIインシデント報告制度導入の検討を表明",
+      "who": "マレーシア・デジタル部（ゴビン・シン・デオ大臣）",
+      "when_impact": "2026年11月24日の下院答弁で表明。今後のAIガバナンス法案に盛り込まれる見込み"
+    },
+    "detail": "マレーシアのゴビン・シン・デオ・デジタル大臣は2026年11月24日、下院の質疑応答において、ハイリスク分野におけるAI利用者の安全確保に向け、危機プロトコルや対応メカニズムの義務化を検討していると述べた。具体的には、子どもに対する対話型AIの感情的依存などのリスクに対処するため、起草中の「AIガバナンス法案」にAIインシデント報告メカニズムを組み込み、既存の省庁・専門窓口と連携してリスクパターンを分析する方針。また、有害なAI生成コンテンツの責任について開発者とプラットフォーム側の共同責任を問う可能性や、マレーシアAIセーフティ・インスティテュートを通じた評価基準・安全標準の開発を進めていることも明かした。",
+    "so_what": "マレーシアでAI事業を展開する企業は、将来のAIガバナンス法案によるインシデント報告義務やハイリスク分野での危機対応体制の構築要請に留意が必要である。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Malaysia government studies mandatory response mechanisms for high-risk AI",
+    "publication_date": "2026-11-24",
+    "discovered_at": "2026-11-25",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.bernama.com/en/region/news.php?id=2638671"
+    ],
+    "country_anchor": "/country/my/#updates"
+  },
+  {
+    "id": "2026-11-24-za-001",
+    "date": "2026-11-24",
+    "country": "za",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "南アフリカ議会、独自AI法の提言書を審議　政府の政策改訂は遅延",
+    "summary": {
+      "what": "議会委員会で独自のAI法制定に向けた提言が発表される一方、通信省のAI政策改訂報告は幹部不在により延期された。",
+      "who": "南アフリカ国民議会通信委員会、通信・デジタル技術省",
+      "when_impact": "改訂草案の大臣提出は2026年11月30日、閣議提出目標は2027年3月。"
+    },
+    "detail": "2026年11月17日に開催された南アフリカ国民議会の通信・デジタル技術委員会にて、省幹部の欠席により国家AI政策改訂に関する報告が延期された。同政策の改訂案は2026年11月30日までに大臣へ提出され、2027年3月に閣議へ提出される見込みである。同会議では委員会研究員から独自AI法の制定に向けたポジションペーパーが提示され、権利侵害AIの禁止、リスクベース規制、人の関与、決定過程の再現性・独立監査などを盛り込んだ5つの柱が提案・議論された。",
+    "so_what": "南アフリカでは国家AI政策の再起草とともに独自AI法制定の議論が始まっており、中長期的な規制化の動向を注視する必要がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Africa officials discuss AI policy and dedicated AI Act proposal with MPs",
+    "publication_date": "2026-11-24",
+    "discovered_at": "2026-11-25",
+    "effective_date": null,
+    "deadline_date": "2026-11-30",
+    "sources": [
+      "https://techcentral.co.za/officials-mps-dark-south-africa-ai-policy/288639/"
+    ],
+    "country_anchor": "/country/za/#updates"
   }
 ]

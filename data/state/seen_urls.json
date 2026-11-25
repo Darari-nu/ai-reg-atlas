@@ -1,56 +1,4 @@
 {
-  "https://www.pm.gov.au/media/first-passengers-lift-wsi": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://www.pm.gov.au/media/australias-first-major-new-airport-has-been-decades-making": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/from-college-at-9-to-phd-at-18-the-journey-of-us-prodigy-elliott-tanner-5136326.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/chinese-ai-genius-girl-reportedly-offered-1-5m-salary-rises-to-xiaomi-s-top-rank-in-10-months-5136088.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/meet-nathan-chen-the-17-year-old-chinese-ai-prodigy-turning-heads-in-silicon-valley-5134507.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://e.vnexpress.net/news/tech/tech-news/iphone-duo-listed-for-resale-in-singapore-at-nearly-triple-retail-price-on-launch-day-5136100.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://e.vnexpress.net/news/tech/personalities/retired-vietnamese-entrepreneur-turns-to-ai-to-manage-life-alone-in-the-countryside-5134498.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://www.cac.gov.cn/hdfw/A0938index_1.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://www.cac.gov.cn/gzzt/ztzl/A092001index_1.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://www.cac.gov.cn/2026-10/23/c_1794509028407372.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://www.cac.gov.cn/2026-10/23/c_1794509044378569.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://www.cac.gov.cn/2026-10/23/c_1794509044440601.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
-  "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700108": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-25"
-  },
   "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/shohishahogo/02kiban08_04000529.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-26"
@@ -5762,5 +5710,249 @@
   "https://economictimes.indiatimes.com/tech/artificial-intelligence/ai-consultation-paper-to-set-ground-for-sectoral-rules-officials/articleshow/136111515.cms": {
     "verdict": "missing-publication-date",
     "date": "2026-11-24"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/yusei/yusei_gyousei/02ryutsu01_04000527.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.soumu.go.jp/menu_kyotsuu/important/kinkyu02_000688.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.soumu.go.jp/main_sosiki/kenkyu/digital_shokadai/02ryutsu02_04000613.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/toukei/sangyou/kaigi/02shingi05_02000847.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.pm.gov.au/media/press-conference-parliament-house-canberra-58": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.pm.gov.au/media/signing-australia-solomon-islands-treaty": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.pm.gov.au/media/international-day-elimination-violence-against-women": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/deepseek-founder-liang-wenfeng-s-fortune-surges-to-55b-5148584.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/nvidia-s-huang-said-he-violated-code-of-conduct-source-says-5148565.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://e.vnexpress.net/news/tech/challenge-hub/which-southeast-asian-country-ranks-second-globally-in-solving-problems-with-computers-5148150.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/billionaire-daniela-amodei-s-path-from-studying-literature-to-co-founding-1-5-trillion-ai-giant-anthropic-5148128.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/nvidia-employees-cheer-jensen-huang-s-return-as-ceo-5148396.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/from-bakery-worker-to-tech-tycoon-how-malaysia-s-tan-eng-kee-built-a-global-factory-automation-empire-5147175.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/novembro/webinario-internacional-debate-desafios-do-uso-responsavel-da-inteligencia-artificial-no-brasil-e-na-holanda": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3188007": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12667": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/5302c3c4-e418-44eb-a352-9b329d0b8019?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://moda.gov.tw/press/press-releases/21524": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//44bb27e2-b925-4707-ae9a-8a4ef83f270b": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://mst.gov.vn/da-nang-ket-noi-nghien-cuu-khoa-hoc-voi-khoi-nghiep-doi-moi-sang-tao-197261123165736668.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://mst.gov.vn/ha-tinh-phan-dau-80-cong-dan-tich-hop-tai-khoan-an-sinh-xa-hoi-tren-vneid-truoc-ngay-15-12-197261123124048703.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://mst.gov.vn/lao-cai-xay-dung-mo-hinh-diem-ung-pho-an-ninh-phi-truyen-thong-197261122200707637.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://mst.gov.vn/nghe-an-dat-muc-tieu-phu-canh-bao-som-tai-100-dia-ban-cap-xa-trong-diem-197261122194907779.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://mst.gov.vn/ninh-binh-chu-trong-ky-nang-nhan-dien-ung-pho-voi-nguy-co-an-ninh-phi-truyen-thong-197261122194127366.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://mst.gov.vn/thuong-mai-hoa-ket-qua-nghien-cuu-thu-hut-dau-tu-cong-nghe-197261123204855315.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.gov.kz/memleket/entities/maidd/press/news/details/1335852?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.gov.kz/org/maidd/press/news/details/1335852?lang=en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.gov.kz/org/maidd/activities/7": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.gov.kz/org/maidd/activities/8": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/colombia-presento-ante-la-cepal-su-apuesta-para-incrementar-la-inversion-en-ciencia-y": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/colombia-llevara-la-cepal-una-propuesta-para-que-america-latina-pase-consumir": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://sedeelectronica.sic.gov.co/la-sic-niega-la-solicitud-de-registro-de-la-marca-carlos-enrique-lehder-rivas": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.senado.gob.ar/prensa/24657/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.senado.gob.ar/prensa/24656/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.senado.gob.ar/prensa/24654/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.senado.gob.ar/prensa/24653/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.privacy.org.nz/tuhono-connect/statements-media-releases/when-it-comes-to-privacy-new-zealand-needs-to-lift-its-game/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/soundwaves-nation-deputy-minister-morolong-marks-over-100-years-radio": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/mlambo-ngcuka-leaves-indelible-mark-sas-democratic-journey-deputy-president-mashatile": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/president-ramaphosa-updates-ncop-operation-vulindlela-implementation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/un-pays-tribute-dr-phumzile-mlambo-ngcuka-tireless-champion-womens-rights": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/accountability-action-strict-deadlines-set-gbvf-four-point-plan": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/government-backs-inclusive-reindustrialisation-boost-jobs-and-growth": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/kzn-adjustments-budget-prioritises-frontline-services": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/africa-urged-turn-water-commitments-action": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/sars-pays-tribute-former-deputy-president": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.sanews.gov.za/south-africa/steenhuisen-calls-closer-cooperation-ghana-boost-trade-and-investment": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://naltf.gov.ng/tinubu-forwards-21-year-review-of-nigerias-laws-to-senate/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://naltf.gov.ng/nass-approves-tinubus-20-5bn-e1-45bn-supplementary-external-borrowing-plan/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://naltf.gov.ng/senate-mourns-bayelsa-boat-accident-victims/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://naltf.gov.ng/president-tinubu-seeks-senate-approval-to-cut-2026-budget-spending-by-%e2%82%a63-14trn/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://naltf.gov.ng/senate-plenary-highlights-for-november-18-2026/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "http://en.kremlin.ru/acts/news/81333": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "http://en.kremlin.ru/acts/news/81332": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "http://en.kremlin.ru/acts/news/81284": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "http://en.kremlin.ru/acts/news/81283": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "http://en.kremlin.ru/acts/news/81281": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "http://en.kremlin.ru/acts/news/81282": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "http://en.kremlin.ru/acts/news/81279": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "http://en.kremlin.ru/events/president/news/81303": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-25"
+  },
+  "https://www.youm7.com/story/2026/11/24/%D9%85%D9%86-%D9%8A%D9%86%D8%B8%D9%85-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D9%85%D8%B7%D8%A7%D9%84%D8%A8-%D8%A8%D9%85%D8%AC%D9%84%D8%B3-%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%AE-%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9/7630562": {
+    "verdict": "no-ai-reg-keyword",
+    "date": "2026-11-25"
   }
 }

@@ -1,0 +1,70 @@
+{
+  "id": "2026-11-23-br-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-26T03:47:00Z",
+  "record_id": "2026-11-23-br-001",
+  "source_kind": "official",
+  "published_at": "2026-11-26T03:47:00Z",
+  "headline": "ブラジル下院委員会、AIで入札を監査する法案を可決",
+  "lead": "ブラジル下院の科学技術イノベーション委員会は、公共調達をAIで監査する「観察所」を設ける法案（PL 5792/25）を可決しました。観察所は入札、契約、価格登録記録を継続的に自動で監視します。法案はまだ成立しておらず、今後ほかの委員会と上下両院で審議されます。",
+  "facts": [
+    {
+      "text": "ブラジル下院の科学技術イノベーション委員会は、2026年11月23日付の報道時点で、マルコス・タヴァレス議員提出のPL 5792/25を可決しました。",
+      "source_url": "https://www.camara.leg.br/noticias/1322046-comissao-aprova-auditoria-de-licitacoes-com-inteligencia-artificial"
+    },
+    {
+      "text": "法案は、入札公告、契約、価格登録記録をAIで監査する観察所の設置を定め、観察所は連邦・州・市など全レベルの直接・間接の行政機関による調達を対象に監視します。",
+      "source_url": "https://www.camara.leg.br/noticias/1322046-comissao-aprova-auditoria-de-licitacoes-com-inteligencia-artificial"
+    },
+    {
+      "text": "各レベルの行政機関が観察所に参加するかどうかは任意です。",
+      "source_url": "https://www.camara.leg.br/noticias/1322046-comissao-aprova-auditoria-de-licitacoes-com-inteligencia-artificial"
+    },
+    {
+      "text": "観察所は全国公共調達ポータル（PNCP）と連携し、AIシステムの利用は会計検査院（TCU）が監督する仕組みです。",
+      "source_url": "https://www.camara.leg.br/noticias/1322046-comissao-aprova-auditoria-de-licitacoes-com-inteligencia-artificial"
+    },
+    {
+      "text": "システムは機械学習や意味解析を使えます。異常なパターン、入札公告の不整合、過大価格の兆候、供給業者間のつながりの発見に役立てる想定です。",
+      "source_url": "https://www.camara.leg.br/noticias/1322046-comissao-aprova-auditoria-de-licitacoes-com-inteligencia-artificial"
+    },
+    {
+      "text": "法案はアルゴリズムの透明性と継続的な人間の監督を定め、AIの結果は監視の補助として人間が確認するものとしています。",
+      "source_url": "https://www.camara.leg.br/noticias/1322046-comissao-aprova-auditoria-de-licitacoes-com-inteligencia-artificial"
+    },
+    {
+      "text": "法案は、監査した入札の適合性と効率に関する報告書を四半期ごとに公表するよう定めています。",
+      "source_url": "https://www.camara.leg.br/noticias/1322046-comissao-aprova-auditoria-de-licitacoes-com-inteligencia-artificial"
+    }
+  ],
+  "who_is_affected": "ブラジルの公共機関に物品やサービスを納める企業が主な対象になる場合があります。入札に参加する外国企業や、現地法人を通じて契約する日本企業も含まれる場合があります。ただし、行政機関の参加は任意のため、実際にどこまで広がるかは今後次第です。",
+  "japan_impact": "日本企業がブラジルの公共調達に関わる場合、入札書類や価格の整合性がAIで検査される場面が増える場合があります。現地拠点や代理店の入札書類、価格設定、関係会社の記録を点検しておくとよいでしょう。法案は成立前のため、現時点で新たな義務はありません。日本からAIサービスを提供する企業にとっては、公共部門の需要が生まれる可能性もあります（推測）。",
+  "next_steps": "資料によると、法案は財務・課税委員会と憲法・司法・市民権委員会が、結論を出す形式で審議します。成立には、下院と上院の承認が必要です。施行日は資料にありません。日本企業は審議の進み方を確認するとよいでしょう。",
+  "unknowns": [
+    "法案が成立する時期と、施行日",
+    "条文が今後の審議で修正されるかどうか",
+    "違反や不整合が見つかった場合に、供給業者がどんな扱いを受けるか",
+    "参加する行政機関の数や範囲",
+    "罰則の有無",
+    "外国企業への特別な扱いの有無"
+  ],
+  "glossary": [
+    {
+      "term": "観察所（observatório）",
+      "explanation": "法案が設ける組織で、AIを使って入札、契約、価格登録記録を監査し、調達の動きを継続的に監視します。"
+    },
+    {
+      "term": "PNCP（全国公共調達ポータル）",
+      "explanation": "ブラジルの公共調達に関する情報を集めたポータルです。法案は観察所をここに連携させるとしています。"
+    },
+    {
+      "term": "TCU（会計検査院）",
+      "explanation": "ブラジルの会計検査を担う機関です。法案では、観察所のAI利用を監督する役割を持ちます。"
+    },
+    {
+      "term": "結論を出す形式の審議（caráter conclusivo）",
+      "explanation": "本会議にかけず、委員会の議決で下院での審議を終える方式です。"
+    }
+  ]
+}

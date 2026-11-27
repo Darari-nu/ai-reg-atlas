@@ -1,64 +1,4 @@
 {
-  "https://www.dataprivacybr.org/vaga-para-analista-de-midia-e-crm/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/marco/esther-dweck-defende-desenvolvimento-da-inteligencia-artificial-com-regulacao-inclusao-e-soberania-digital": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-apresenta-atuacao-brasileira-em-ia-e-protecao-de-criancas-durante-reuniao-da-convencao-108": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "https://www.smh.com.au/politics/federal/ai-supercharges-cyberattacks-on-australia-with-superannuation-savings-in-the-firing-line-20261026-p618mz.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261026/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-provides-its-recommendations-unified-licensing-government": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-provides-recommendations-universal-service-obligations": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-issues-recommendations-spectrum-related-issues": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-recommends-wide-ranging-reform-measures-licensing-policy-access": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-submits-its-recommendations-dot-reference-made-spectrum-charging": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-releases-recommendations-allocation-and-pricing-23-24-ghz-25-269": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-releases-recommendations-spectrum-management-and-licensing": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-mahendragarh-haryana-rashtriya-samuddeshiya-vikas": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-bagalkot-karnataka-reliance-jio-infocomm-ltd": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
-  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-dumka-jharkhand-indian-institute-technology-entrepreneur": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-27"
-  },
   "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001586.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-28"
@@ -6054,5 +5994,261 @@
   "http://en.kremlin.ru/acts/news/81348": {
     "verdict": "triage-irrelevant",
     "date": "2026-11-26"
+  },
+  "https://www.soumu.go.jp/main_sosiki/singi/toukei/sangyou/kaigi/02shingi05_02000848.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/02kiban15_04000619.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.pm.gov.au/media/press-conference-canberra-33": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.pm.gov.au/media/radio-interview-4ca-cairns-3": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/spain-s-airport-wins-global-innovation-award-for-pioneering-drone-technology-5149015.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/cex-io-becomes-first-cryptocurrency-exchange-to-delist-pi-network-token-5149490.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/hong-kong-to-use-skidding-for-the-first-time-in-heavy-rail-to-build-station-on-active-line-5148846.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/binance-seeks-safety-review-by-vietnam-cybersecurity-firm-after-6-3b-hack-5149146.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-innovation/vietnam-beats-us-china-to-rank-8th-globally-in-mobile-internet-speed-5148790.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://e.vnexpress.net/news/tech/vietnam-innovation/construction-begins-on-first-vietnamese-led-undersea-internet-cable-5149275.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/shanghai-s-two-international-airports-named-among-world-s-most-innovative-5149023.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.asahi.com/and/pressrelease/17084748": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.manilatimes.net/2026/11/27/tmt-newswire/pr-newswire/four-in-five-developers-in-southeast-asia-and-india-now-work-under-ai-usage-limits-agoda-report-finds/2478859": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.medianama.com/2026/11/223-trai-telecom-ai-guidelines-iff/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.perfil.com/cordoba/massa-desembarco-en-cordoba-para-debatir-sobre-inteligencia-artificial-y-reclamo-por-el-presupuesto-universitario-aOC4f0V85Qml": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.edpb.europa.eu/news/hellenic-dpa-fines-teleperformance-greece-eur-100-000-for-gdpr-breaches_en": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01toukei08_01000358.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01ryutsu17_02000139.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3188018": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3188019": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.msit.go.kr/bbs/view.do?sCode=user&bbsSeqNo=94&nttSeqNo=3188016": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12672": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "http://www.trai.gov.in/photo-gallery/constitution-day-celebration-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-paschim-medinipur-west-bengal-bharti-airtel-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-outreach-program-palakkad-kerala-ro-bengaluru": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-education-workshop-nagapattinam-tamil-nadu-vodafone-idea-limited": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-north-west-delhi-delhi-alabhaya-foundation": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "http://www.trai.gov.in/consumer/events/consumer-awareness-program-dharmapuri-tamil-nadu-tamilnadu-consumer-protection-and": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "http://www.trai.gov.in/node/18971": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-assesses-mobile-network-quality-across-una-mandi-joginder-nagar": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.nstc.gov.tw/folksonomy/detail/f2c475a4-be1e-440c-86f8-bebbf61b8b97?l=CH": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//a9416b6d-8e62-4367-8ad3-af34edf07613": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//fd4c1a7c-7653-41be-8d47-7beb64acb730": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//6bd247b7-44ee-4345-9b9a-4a964b98f01f": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//f090e490-de25-4757-be93-079241f6d2f8": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//87f058c5-39cc-438f-81aa-2a5b3e4b31dc": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//3b33eac7-b7d8-4c68-b064-5897f7380c83": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.ey.gov.tw/Page/9277F759E41CCD91//fd54bc6e-763e-4faa-9142-07082cec9be4": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://mst.gov.vn/thuc-day-hop-tac-viet-nam-han-quoc-trong-nghien-cuu-va-phat-trien-cong-nghe-chien-luoc-197261126165918903.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://mst.gov.vn/viet-nam-an-do-thuc-day-hop-tac-cong-nghe-sinh-hoc-gan-voi-doi-moi-sang-tao-va-thuong-mai-hoa-197261126153858797.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://mst.gov.vn/khoi-cong-tuyen-cap-bien-vts-tao-buoc-tien-ve-tu-chu-ha-tang-so-quoc-gia-197261126150056926.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://mst.gov.vn/htx-tay-ninh-day-manh-ung-dung-khoa-hoc-cong-nghe-vao-chuoi-gia-tri-nong-nghiep-197261123131651839.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://mst.gov.vn/htx-son-la-tang-toc-so-hoa-san-xuat-mo-rong-thi-truong-nong-san-197261123142147018.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://mst.gov.vn/an-giang-dua-cong-nghe-vao-htx-tang-hieu-qua-tu-san-xuat-den-quan-tri-197261123220209526.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/2e96ce3e-427b-45c9-9cee-01a21176998f": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/8d5963ce-f09c-460d-a7a7-01a20c6e156a": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.gov.kz/org/maidd/activities/66796": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.gov.kz/org/maidd/activities/66802": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.gov.kz/org/maidd/activities/9": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://minciencias.gov.co/sala_de_prensa/colombia-explora-oportunidades-cooperacion-cientifica-con-brasil-para-el-desarrollo": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://sedeelectronica.sic.gov.co/international-relations/colombia-advances-consumer-protection-people-disabilities-across-pacific-alliance": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.senado.gob.ar/prensa/24668/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/government-considers-blacklisting-consultants-who-fail-municipalities": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/resolutions-adopted-advance-africas-water-security": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/court-order-against-anonymous-social-media-account-welcomed": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/entrepreneurs-seek-streamlined-government-support": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/vaal-dam-opens-sluice-gate-water-levels-rise": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/free-state-host-16-days-activism-campaign-programme": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/government-mobilises-billions-support-small-businesses-ndabeni": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/nyda-chinese-partners-explore-investment-opportunities-youth": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/over-36-000-arrests-gbvf-related-offences": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.sanews.gov.za/south-africa/small-businesses-critical-driving-job-creation-president-ramaphosa": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-27"
+  },
+  "https://www.digital.gov.my/en-GB/siaran/Belanjawan-2027-Pacu-Agenda-Negara-AI-2030:Kementerian-Digital-Perkukuh-Pembangunan-Bakat-Tempatan-Daripada-Pengguna-Kepada-Pencipta-Teknologi": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-27"
+  },
+  "https://www.federalregister.gov/documents/2026/11/27/2026-24107/american-si-exports-program-on-demand-consortia-for-specific-foreign-opportunities": {
+    "verdict": "gemini-unusable",
+    "date": "2026-11-27"
   }
 }

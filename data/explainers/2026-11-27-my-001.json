@@ -1,0 +1,61 @@
+{
+  "id": "2026-11-27-my-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-27T03:46:50Z",
+  "record_id": "2026-11-27-my-001",
+  "source_kind": "official",
+  "published_at": "2026-11-27T03:46:50Z",
+  "headline": "マレーシア・デジタル省、AI国家2030に向け幹部人事を発表",
+  "lead": "マレーシアのデジタル省は2026年11月27日、幹部人事を発表しました。2030年までに「AI国家」になる目標を進めるためです。AI MalaysiaのCEOにはアルズミー・ムド・ユソフ氏が就任します。これは規制や法律の発表ではなく、人事の発表です。",
+  "facts": [
+    {
+      "text": "マレーシアのデジタル省は2026年11月27日に、省と主要機関の幹部人事を発表しました。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Memperkukuh-Barisan-Kepimpinan-Bagi-Memacu-Aspirasi-Malaysia-Negara-AI-2030"
+    },
+    {
+      "text": "発表の目的は、2030年までにAI国家になるという目標を加速させることだと説明されています。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Memperkukuh-Barisan-Kepimpinan-Bagi-Memacu-Aspirasi-Malaysia-Negara-AI-2030"
+    },
+    {
+      "text": "アルズミー・ムド・ユソフ氏がAI MalaysiaのCEOに就きます。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Memperkukuh-Barisan-Kepimpinan-Bagi-Memacu-Aspirasi-Malaysia-Negara-AI-2030"
+    },
+    {
+      "text": "同氏の任務は、国家AIロードマップの実行、産業界でのAI導入の後押し、AIの革新と倫理的ガバナンスの地域拠点としての位置づけとされています。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Memperkukuh-Barisan-Kepimpinan-Bagi-Memacu-Aspirasi-Malaysia-Negara-AI-2030"
+    },
+    {
+      "text": "マレーシアデジタル経済公社（MDEC）のCEOにはエイドリアン・マルセラス氏が就きます。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Memperkukuh-Barisan-Kepimpinan-Bagi-Memacu-Aspirasi-Malaysia-Negara-AI-2030"
+    },
+    {
+      "text": "AI国家の構想には、自国の能力づくり、データの安全とデジタルへの信頼の確保、中小零細企業の支援、人材育成が含まれると述べられています。",
+      "source_url": "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Memperkukuh-Barisan-Kepimpinan-Bagi-Memacu-Aspirasi-Malaysia-Negara-AI-2030"
+    }
+  ],
+  "who_is_affected": "この発表自体は、企業に新しい義務を課すものではありません。マレーシアでAI事業や投資を考える企業は、政策の窓口が誰になるかを知る材料になります。AI Malaysiaが産業界の導入支援を担うため、現地で事業をする企業が接点を持つ場合があります。",
+  "japan_impact": "日本企業に直ちに必要な対応はありません。マレーシアに拠点や取引先がある企業は、AI Malaysiaの動きを把握しておくとよいでしょう。国家AIロードマップや倫理的ガバナンスの内容は、今後の発表で確認するとよいでしょう。MDECは投資誘致も担うため、進出や協業を考える場合は窓口の変化も見ておくとよいでしょう。",
+  "next_steps": "資料には、今後の予定や施行日の記載がありません。推測ですが、AI Malaysiaの新体制の下で、ロードマップや倫理的ガバナンスに関する発表が続く場合があります。デジタル省の公式発表を定期的に確認するとよいでしょう。",
+  "unknowns": [
+    "国家AIロードマップの具体的な内容と時期",
+    "倫理的ガバナンスの枠組みが法的な義務を伴うかどうか",
+    "AI Malaysiaの権限や組織の詳細",
+    "外国企業への適用や支援の有無",
+    "人事の発効日"
+  ],
+  "glossary": [
+    {
+      "term": "AI Malaysia",
+      "explanation": "マレーシアで国家AIロードマップの実行や産業界のAI導入促進を担うとされる機関です。資料ではCEOの就任が発表されています。"
+    },
+    {
+      "term": "MDEC",
+      "explanation": "マレーシアデジタル経済公社です。資料では、高付加価値のデジタル投資の誘致や、デジタル輸出の拡大に取り組むとされています。"
+    },
+    {
+      "term": "AI国家2030",
+      "explanation": "マレーシアが2030年までにAI国家になるという目標です。資料では、技術の導入にとどまらない構想だと説明されています。"
+    }
+  ]
+}

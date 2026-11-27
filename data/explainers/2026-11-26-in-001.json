@@ -1,0 +1,49 @@
+{
+  "id": "2026-11-26-in-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-27T03:46:50Z",
+  "record_id": "2026-11-26-in-001",
+  "source_kind": "official",
+  "published_at": "2026-11-27T03:46:50Z",
+  "headline": "インドのTRAI、AI利用指針草案の意見募集期限を延長",
+  "lead": "インド通信規制庁（TRAI）は、電気通信分野の責任あるAI利用に関する指針草案について、意見募集の期限を延長しました。プレスリリース（No. 162）で公表されています。延長後の期限は、確認できた本文には書かれていません。",
+  "facts": [
+    {
+      "text": "TRAIは、電気通信ネットワークと電気通信サービスの提供における人工知能（AI）の責任ある利用に関する指針草案を出しています。",
+      "source_url": "http://www.trai.gov.in/notifications/press-release/extension-last-date-receive-comments-trais-draft-guidelines-responsible"
+    },
+    {
+      "text": "TRAIは、この草案への意見を受け付ける最終日を延長するプレスリリースを出しました。",
+      "source_url": "http://www.trai.gov.in/notifications/press-release/extension-last-date-receive-comments-trais-draft-guidelines-responsible"
+    },
+    {
+      "text": "このプレスリリースの番号は No. 162 です。",
+      "source_url": "http://www.trai.gov.in/notifications/press-release/extension-last-date-receive-comments-trais-draft-guidelines-responsible"
+    },
+    {
+      "text": "ページの最終更新日は2026年11月26日と表示されています。",
+      "source_url": "http://www.trai.gov.in/notifications/press-release/extension-last-date-receive-comments-trais-draft-guidelines-responsible"
+    }
+  ],
+  "who_is_affected": "インドで電気通信事業を営む会社が主な関係者です。通信ネットワークやサービスにAIを組み込んで提供する会社も、対象になる場合があります。草案の適用範囲は本文から分からないため、断定はできません。",
+  "japan_impact": "日本の会社がインドで通信サービスやAI関連サービスを提供している場合、意見を出す時間が増える場合があります。まず自社のインド向け事業が草案の対象に入るか確認するとよいでしょう。現地の拠点や取引先とも、意見提出の方針を話しておくとよいでしょう。",
+  "next_steps": "資料には、延長後の期限や、指針の確定時期は書かれていません。まずTRAIのプレスリリース本体（PDF）で、新しい期限を確認するとよいでしょう。指針が確定する時期は推測できません。",
+  "unknowns": [
+    "延長後の意見提出の期限",
+    "延長前の元の期限",
+    "指針草案の具体的な内容と対象範囲",
+    "指針が確定する時期と、法的な拘束力や罰則の有無",
+    "日本企業が直接の対象になるかどうか"
+  ],
+  "glossary": [
+    {
+      "term": "TRAI（インド通信規制庁）",
+      "explanation": "インドの電気通信分野を規制する政府機関です。今回の草案への意見募集を行っています。"
+    },
+    {
+      "term": "パブリックコメント",
+      "explanation": "政府機関が草案を公表し、広く意見を受け付ける手続きです。"
+    }
+  ]
+}

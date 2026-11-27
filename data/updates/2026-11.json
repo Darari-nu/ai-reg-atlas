@@ -958,5 +958,125 @@
       "https://techcentral.co.za/officials-mps-dark-south-africa-ai-policy/288639/"
     ],
     "country_anchor": "/country/za/#updates"
+  },
+  {
+    "id": "2026-11-26-in-001",
+    "date": "2026-11-26",
+    "country": "in",
+    "axis": "general",
+    "change_type": "deadline_change",
+    "legal_stage": "draft_or_consultation",
+    "source_kind": "official",
+    "title": "インド通信規制庁（TRAI）、電気通信分野の責任あるAI利用指針草案の意見募集期限を延長",
+    "summary": {
+      "what": "電気通信分野における責任あるAI利用指針草案へのパブリックコメント募集期限を延長した。",
+      "who": "インド通信規制庁（TRAI）",
+      "when_impact": "意見募集期間中"
+    },
+    "detail": "インド通信規制庁（TRAI）は、「電気通信ネットワークおよび電気通信サービスの提供における人工知能（AI）の責任ある利用に関する指針草案」に関するパブリックコメントの受付期限を延長するプレスリリース（No. 162）を公表した。具体的な延期後の提出期限については本文中に明記されていない。",
+    "so_what": "インドで電気通信事業や関連AIサービスを展開する事業者は、指針草案に対するフィードバック提出の追加期間を得られる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "TRAI releases draft guidelines on responsible AI use in telecommunication networks and provision of telecommunication services",
+    "publication_date": "2026-11-26",
+    "discovered_at": "2026-11-27",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "http://www.trai.gov.in/notifications/press-release/extension-last-date-receive-comments-trais-draft-guidelines-responsible"
+    ],
+    "country_anchor": "/country/in/#updates"
+  },
+  {
+    "id": "2026-11-26-kr-001",
+    "date": "2026-11-26",
+    "country": "kr",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "韓国の個人情報保護委員会（PIPC）、AIボイスフィッシング検知支援で積極行政大賞を受賞",
+    "summary": {
+      "what": "PIPCが犯罪者音声データのAI学習利用を認めた規制サンドボックス支援等で積極行政コンテストの大賞を受賞した。",
+      "who": "個人情報保護委員会（PIPC）",
+      "when_impact": "2026年11月25日に受賞。通信3社やサムスン電子のAIボイスフィッシング検知サービスに活用されている。"
+    },
+    "detail": "韓国の個人情報保護委員会（PIPC）は2026年11月25日に開催された「2026積極行政優秀事例コンテスト」において、AIベースのリアルタイムボイスフィッシング検知サービスに対する規制サンドボックス支援事例により大賞（大統領賞）を受賞したと発表した。PIPCは科学技術情報通信部と協力し、犯罪者の声紋情報を端末内（オンデバイス）で復元不可能な特徴量のみ抽出し照合する構造を検証した上で、実証特例を付与した。これにより通信3社（KT、SKT、LG U+）およびサムスン電子の基本電話アプリにおいて、通話文脈と音声認識を組み合わせたAIボイスフィッシング検知機能の実装が実現した。",
+    "so_what": "韓国で個人データを活用したAIモデルの実証や開発を行う企業は、PIPCの規制サンドボックス等の特例制度の活用事例として参照できる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Korea PIPC wins award for AI-based voice phishing detection service",
+    "publication_date": "2026-11-26",
+    "discovered_at": "2026-11-27",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12671"
+    ],
+    "country_anchor": "/country/kr/#updates"
+  },
+  {
+    "id": "2026-11-26-ca-001",
+    "date": "2026-11-26",
+    "country": "ca",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "カナダ政府、中小企業向けAI計算資源支援ファンドを7億ドル増額",
+    "summary": {
+      "what": "AI計算資源アクセスファンドに7億ドルを追加投入し総額10億ドル規模へ拡張",
+      "who": "カナダ政府（イノベーション・科学・経済開発省）、カナダのAI中小企業",
+      "when_impact": "2026年11月26日発表。ヘルスケア分野等の公募を開始"
+    },
+    "detail": "カナダ政府は、国家AI戦略「AI for All」の一環として、「AIコンピュート・アクセス・ファンド（AI Compute Access Fund）」に7億ドルを追加拠出し、総額10億ドル規模に拡張したと発表した。本ファンドは中小企業（SMEs）の高性能計算資源調達コストを補助し、AI製品の開発・検証・商業化を支援することを目的とする。あわせて45社に対する計5,200万ドル超の助成決定と、ヘルスケア・ライフサイエンス分野に特化した新たな提案募集の開始を公表した。",
+    "so_what": "カナダでAI開発を行う事業者は、主権型計算資源の利用補助プログラムを活用して開発や検証コストを削減できる可能性がある。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Canada expands AI Compute Access Fund for SMEs",
+    "publication_date": "2026-11-26",
+    "discovered_at": "2026-11-27",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/government-of-canada-boosts-the-ai-compute-access-fund-with-700-million-expansion.html"
+    ],
+    "country_anchor": "/country/ca/#updates"
+  },
+  {
+    "id": "2026-11-27-my-001",
+    "date": "2026-11-27",
+    "country": "my",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "other",
+    "source_kind": "official",
+    "title": "マレーシア・デジタル省、「AI国家2030」に向けAI Malaysia CEO等幹部人事を発表",
+    "summary": {
+      "what": "2030年のAI国家化に向けデジタル省およびAI Malaysia等の主要機関の幹部人事を発表した。",
+      "who": "マレーシア・デジタル省",
+      "when_impact": "2026年11月27日発表"
+    },
+    "detail": "マレーシアのデジタル省は2026年11月27日、2030年までに「AI国家」となる目標を加速させるため、省内および関連機関の幹部人事を発表した。新設機関であるAI MalaysiaのCEOにアルズミー・ムド・ユソフ（Arzumy Md Yusof）氏が就任し、国家AIロードマップの推進や産業界でのAI導入促進、倫理的ガバナンスの推進等を担うほか、マレーシアデジタル経済公社（MDEC）などの主要幹部人事も刷新された。",
+    "so_what": "AI Malaysia等の新トップ就任に伴い、マレーシアにおける国家AIロードマップの運用や倫理的ガバナンス構築の動きを注視する必要があります。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "Malaysia Ministry of Digital strengthens leadership for AI Nation 2030 drive",
+    "publication_date": "2026-11-27",
+    "discovered_at": "2026-11-27",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Memperkukuh-Barisan-Kepimpinan-Bagi-Memacu-Aspirasi-Malaysia-Negara-AI-2030"
+    ],
+    "country_anchor": "/country/my/#updates"
   }
 ]

@@ -1,112 +1,4 @@
 {
-  "https://www.soumu.go.jp/menu_news/kaiken/01koho01_02001586.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.soumu.go.jp/main_sosiki/kenkyu/ICT_services/02kiban18_02000511.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/setsuzoku_seisaku/02kiban03_04001193.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.soumu.go.jp/main_sosiki/kenkyu/miraishakaiomisueta/07_siryou.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.federalregister.gov/documents/2026/10/27/2026-21884/critical-material-list-addition-of-helium": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.pm.gov.au/media/australian-workers-union-2026-national-conference": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.pm.gov.au/media/digital-duty-care": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://e.vnexpress.net/news/tech/challenge-hub/which-asian-institution-beats-stanford-harvard-to-rank-second-globally-for-computer-science-and-engineering-5137618.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://e.vnexpress.net/photo/vietnam-innovation/robots-play-chess-dance-in-downtown-ho-chi-minh-city-5137331.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://en.vietnamplus.vn/vietnam-china-explore-cooperation-potential-in-ai-digital-economy-post354398.vnp": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01cyber01_02000001_00308.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban03_02001027.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01kiban05_02000409.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001282.html": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.nist.gov/news-events/news/2026/10/nist-report-provides-guidelines-transition-post-quantum-cryptography": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_261027/": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "http://www.trai.gov.in/node/18830": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "http://www.trai.gov.in/notifications/press-release/trai-releases-telecom-subscription-data-september-2026": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://www.nstc.gov.tw/folksonomy/detail/18fd8bda-fe19-423a-8b60-fdb273d06e5c?l=CH": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://mst.gov.vn/bo-khoa-hoc-va-cong-nghe-nang-cao-nang-luc-quan-tri-va-doi-moi-sang-tao-trong-khu-vuc-cong-197261026155355058.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-29-2026-vbhn-tt-bkhcn-470867.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://congbao.chinhphu.vn/cong-bao/575-vbhn-47587.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-28-2026-vbhn-qd-bkhcn-470862.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-27-2026-vbhn-tt-bkhcn-470866.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-61-2026-tt-bkhcn-470839.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://congbao.chinhphu.vn/cong-bao/564-47574.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
-  "https://congbao.chinhphu.vn/van-ban/thong-tu-so-60-2026-tt-bkhcn-470838.htm": {
-    "verdict": "triage-irrelevant",
-    "date": "2026-10-28"
-  },
   "https://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/joho_tsusin/denpa_yukoriyo/musenjujisha/02kiban09_04000744.html": {
     "verdict": "triage-irrelevant",
     "date": "2026-10-29"
@@ -6250,5 +6142,181 @@
   "https://www.federalregister.gov/documents/2026/11/27/2026-24107/american-si-exports-program-on-demand-consortia-for-specific-foreign-opportunities": {
     "verdict": "gemini-unusable",
     "date": "2026-11-27"
+  },
+  "https://e.vnexpress.net/news/tech/tech-news/fields-medalist-ngo-bao-chau-initiates-asia-pacific-mathematical-research-network-5149477.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://e.vnexpress.net/news/tech/personalities/leading-brain-scientist-leaves-uc-berkeley-for-chinese-billionaire-zhong-shanshan-backed-university-yet-to-open-5149571.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://cio.economictimes.indiatimes.com/news/artificial-intelligence/four-in-five-developers-in-southeast-asia-and-india-now-work-under-ai-usage-limits/136213690": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://astanatimes.com/2026/11/tokayev-outlines-ai-ambitions-digital-transport-corridor-in-kazakhstan-russia-partnership/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei17_02000277.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01gyosei15_02000488.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zeimu02_02000481.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01kiban09_02000606.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000467.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000466.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000465.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001315.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000463.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.soumu.go.jp/menu_news/s-news/01zaisei07_02000462.html": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12674": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-the-launch-of-symbiosis/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-extends-use-1601-series-service-and-transactional-voice-calls": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "http://www.trai.gov.in/direction-regarding-mandatory-adoption-1601-numbering-series-eligible-entities-sectors-other-bfsi": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "http://www.trai.gov.in/notifications/press-release/trai-releases-telecommunication-interconnection-reference-interconnect": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "http://www.trai.gov.in/telecommunication-interconnection-reference-interconnect-offer-amendment-regulation-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "http://www.trai.gov.in/node/18979": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://mptc.gov.kh/en/2026/11/h-e-sam-sethserey-delivers-a-presentation-on-ai-governance-in-cambodia-at-the-10th-regional-symposium-in-the-republic-of-korea/": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://mst.gov.vn/dang-uy-bo-khoa-hoc-va-cong-nghe-to-chuc-hoi-nghi-tap-huan-nghiep-vu-cong-tac-dang-nam-2026-197261127122735538.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://mst.gov.vn/tang-cuong-nguon-luc-nghien-cuu-thuc-day-doi-moi-sang-tao-phuc-vu-phat-trien-dong-bang-song-cuu-long-197261127142922631.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://mst.gov.vn/mang-luoi-nghien-cuu-toan-hoc-chau-a-thai-binh-duong-ket-noi-12-vien-nghien-cuu-19726112720545286.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://mst.gov.vn/viet-nam-han-quoc-thuc-day-hop-tac-nghien-cuu-phat-trien-va-thuong-mai-hoa-cong-nghe-197261127190754541.htm": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.tbmm.gov.tr/Gundem/GelenKagitDetay/f1ed3489-b77c-451b-af11-01a217fde9c6": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/la-sic-invita-la-ciudadania-participar-en-la-audiencia-publica-de-rendicion-de-cuentas-2026": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://sedeelectronica.sic.gov.co/noticias/sic-anuncia-la-finalizacion-de-las-medidas-transitorias-de-verificacion-metrologica-adoptadas-por-el-terremoto-del-10-de-agosto": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://sedeelectronica.sic.gov.co/comunicado/sic-inspecciono-la-alcaldia-de-barrancabermeja-por-presunta-corrupcion-en-contratos-por-mas-de-119000-millones": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.argentina.gob.ar/noticias/la-aaip-aprobo-las-clausulas-contractuales-modelo-del-comite-del-convenio-108-del-consejo": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.senado.gob.ar/prensa/24672/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.senado.gob.ar/prensa/24670/noticias": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/pule-calls-collective-action-end-gbvf": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/sas-priorities-au-peace-and-security-council-tenure-approved": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/sa-us-trade-continues-despite-withdrawal-agoa-benefits": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/progress-clear-vessels-durban-terminal-noted": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/government-recovers-r172-billion-linked-state-capture": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/cabinet-calls-municipalities-ensure-communities-have-access-water": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/apply-internship-opportunities-dsbd-limpopo-education-department": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/cabinet-welcomes-decline-several-crime-categories": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "https://www.sanews.gov.za/south-africa/cabinet-adopts-reviewed-ddm-one-plans-six-provinces": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "http://en.kremlin.ru/acts/news/81360": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
+  },
+  "http://en.kremlin.ru/acts/news/81365": {
+    "verdict": "triage-irrelevant",
+    "date": "2026-11-28"
   }
 }

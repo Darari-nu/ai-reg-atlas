@@ -1,0 +1,65 @@
+{
+  "id": "2026-11-27-uk-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-28T03:25:13Z",
+  "record_id": "2026-11-27-uk-001",
+  "source_kind": "media",
+  "published_at": "2026-11-28T03:25:13Z",
+  "headline": "英CMA、AIエージェント事業者に利用者の制御と開示を要請",
+  "lead": "英国の競争・市場庁（CMA）は2026年11月24日、個人用AIエージェントの提供事業者に声明を出しました。リスクや権限について明確に説明し、利用者がデータアクセスと自律性を管理できるようにすることを求めています。既存の英国消費者保護法が適用されるとも示しました。",
+  "facts": [
+    {
+      "text": "CMAは2026年11月24日、MetaのAIエージェント「Muse」の英国での提供開始と同じ日に声明を出しました。",
+      "source_url": "https://www.medianama.com/2026/11/223-uk-cma-ai-agent-user-control-meta-muse-launch/"
+    },
+    {
+      "text": "CMAは、英国の消費者保護法が個人用AIエージェントを含むAI製品にも適用されると述べました。",
+      "source_url": "https://www.medianama.com/2026/11/223-uk-cma-ai-agent-user-control-meta-muse-launch/"
+    },
+    {
+      "text": "CMAは、事業者が購入や登録の時点で、エージェントの機能、リスク、制限を伝える必要があるとしました。",
+      "source_url": "https://www.medianama.com/2026/11/223-uk-cma-ai-agent-user-control-meta-muse-launch/"
+    },
+    {
+      "text": "CMAは、利用者がエージェントのアクセス範囲と自律の度合いを管理できる必要があるとし、承認が要る場面の説明も求めました。",
+      "source_url": "https://www.medianama.com/2026/11/223-uk-cma-ai-agent-user-control-meta-muse-launch/"
+    },
+    {
+      "text": "CMAは、契約に責任の所在について予想外の条項を入れてはならないとしました。",
+      "source_url": "https://www.medianama.com/2026/11/223-uk-cma-ai-agent-user-control-meta-muse-launch/"
+    },
+    {
+      "text": "CMAによると、Metaは協議を経て利用規約を利用者にとってより公正な内容に変更しましたが、協議は続いています。",
+      "source_url": "https://www.medianama.com/2026/11/223-uk-cma-ai-agent-user-control-meta-muse-launch/"
+    }
+  ],
+  "who_is_affected": "英国の消費者に個人用AIエージェントを提供する事業者が対象になる場合があります。日本から英国向けに提供する企業も含まれる場合があります。データ連携や自動実行の機能を持つサービスは、特に確認が必要です。",
+  "japan_impact": "英国で提供するAIエージェントがある日本企業は、説明の内容を点検するとよいでしょう。権限の設定画面や承認の仕組みも見直すとよいでしょう。利用規約やマーケティング表現が実際の動作と合っているかも確認するとよいでしょう。英国に拠点や取引先がある場合は、提供形態を共有しておくと安心です。",
+  "next_steps": "資料には、新たな規則の施行日や期限は書かれていません。CMAはMetaとの協議を続け、Museの見せ方と動作を注意深く確認するとしています。問題を見つければ対応する考えを示しています。今後、他の事業者にも同様の確認が広がるかは推測の域を出ません。",
+  "unknowns": [
+    "違反した場合の具体的な罰則や措置の内容",
+    "新しい法的義務が設けられるのか、既存法の解釈の明示にとどまるのか",
+    "対象となる「個人用AIエージェント」の正確な範囲",
+    "Meta以外の事業者への個別の働きかけの有無と時期",
+    "日本など英国外の事業者への適用の細目"
+  ],
+  "glossary": [
+    {
+      "term": "CMA（競争・市場庁）",
+      "explanation": "英国で競争政策と消費者保護を担う機関です。"
+    },
+    {
+      "term": "ICO（情報コミッショナーオフィス）",
+      "explanation": "英国でデータ保護を所管する機関です。CMAと共同で利用者向けの助言を出しました。"
+    },
+    {
+      "term": "DRCF（デジタル規制協力フォーラム）",
+      "explanation": "CMA、ICO、FCA、Ofcomが連携するための場です。"
+    },
+    {
+      "term": "AIエージェント",
+      "explanation": "利用者に代わってタスクを進めるAIです。本文では、個人用AIエージェントが対象とされています。"
+    }
+  ]
+}

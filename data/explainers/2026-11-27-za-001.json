@@ -1,0 +1,61 @@
+{
+  "id": "2026-11-27-za-001",
+  "status": "published",
+  "model": "claude-sonnet-5-5",
+  "created_at": "2026-11-28T03:25:13Z",
+  "record_id": "2026-11-27-za-001",
+  "source_kind": "official",
+  "published_at": "2026-11-28T03:25:13Z",
+  "headline": "南アフリカ閣議、AIアクションプランの策定方針を報告",
+  "lead": "南アフリカの閣議は2026年11月27日、ラマポーザ大統領の米国シリコンバレー訪問を評価しました。大統領は、実用的なAIの取り組みに絞った複数分野のアクションプランを、代表団の帰国後90日以内にまとめるよう指示しました。法規制ではなく、政府の方針の発表です。",
+  "facts": [
+    {
+      "text": "南アフリカの閣議は、大統領の米国カリフォルニア州シリコンバレーへの訪問が、AI導入による経済成長と公共サービス向上の面で重要だと評価しました。",
+      "source_url": "https://www.sanews.gov.za/south-africa/cabinet-backs-ai-drive-boost-economic-growth-and-service-delivery"
+    },
+    {
+      "text": "訪問団は政府、産業界、学術界、研究機関、技術分野の関係者や学生など約300人で構成されました。",
+      "source_url": "https://www.sanews.gov.za/south-africa/cabinet-backs-ai-drive-boost-economic-growth-and-service-delivery"
+    },
+    {
+      "text": "ラマポーザ大統領は、同国をAIの拠点にするため、実用的なAIの取り組みに絞った複数分野のAIアクションプランをまとめるよう指示しました。",
+      "source_url": "https://www.sanews.gov.za/south-africa/cabinet-backs-ai-drive-boost-economic-growth-and-service-delivery"
+    },
+    {
+      "text": "プランでは、機関ごとの責任、スタートアップへの資金提供の仕組み、インフラ整備や公共サービス改善に向けた投資パートナーシップの提案を明確にするとされています。",
+      "source_url": "https://www.sanews.gov.za/south-africa/cabinet-backs-ai-drive-boost-economic-growth-and-service-delivery"
+    },
+    {
+      "text": "期限は、代表団の帰国から90日以内です。",
+      "source_url": "https://www.sanews.gov.za/south-africa/cabinet-backs-ai-drive-boost-economic-growth-and-service-delivery"
+    },
+    {
+      "text": "大統領は、南アフリカの起業家が資金を出して立ち上げるベンチャーキャピタルファンドも発表しました。",
+      "source_url": "https://www.sanews.gov.za/south-africa/cabinet-backs-ai-drive-boost-economic-growth-and-service-delivery"
+    }
+  ],
+  "who_is_affected": "現時点で義務を負う民間企業は、資料からは確認できません。将来、南アフリカで公共分野のAI事業やスタートアップ連携を考える企業には、関係する場合があります。",
+  "japan_impact": "日本企業にすぐ必要になる対応は、資料からは見えません。南アフリカで実証実験や投資、現地パートナーとの協業を考える企業は、プランの内容を確認するとよいでしょう。医療、教育、行政分野に関心がある企業は、特に注目するとよいでしょう。",
+  "next_steps": "資料に書かれた予定は、代表団の帰国後90日以内にプランをまとめることです。公表の時期や形式は資料にないため、分かりません。推測ですが、プラン公表後に、資金枠や投資の募集条件が示される可能性があります。",
+  "unknowns": [
+    "代表団の帰国日と、90日の期限となる具体的な日付",
+    "アクションプランが公表されるかどうか、またその時期",
+    "外国企業が参加できる条件や、資金枠の規模",
+    "AIの利用を制限する規則や罰則が含まれるかどうか",
+    "ベンチャーキャピタルファンドの規模と運営の詳細"
+  ],
+  "glossary": [
+    {
+      "term": "AIアクションプラン",
+      "explanation": "AIの活用を進めるために、担当機関、資金、投資の進め方を整理する政府の計画です。法律ではありません。"
+    },
+    {
+      "term": "GAIN",
+      "explanation": "資料では、南アフリカの経済開発計画の通称として挙げられています。"
+    },
+    {
+      "term": "ベンチャーキャピタルファンド",
+      "explanation": "成長が見込まれる新興企業に出資するための資金の枠組みです。"
+    }
+  ]
+}

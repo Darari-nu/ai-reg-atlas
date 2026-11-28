@@ -1078,5 +1078,95 @@
       "https://www.digital.gov.my/en-GB/siaran/Kementerian-Digital-Memperkukuh-Barisan-Kepimpinan-Bagi-Memacu-Aspirasi-Malaysia-Negara-AI-2030"
     ],
     "country_anchor": "/country/my/#updates"
+  },
+  {
+    "id": "2026-11-27-za-001",
+    "date": "2026-11-27",
+    "country": "za",
+    "axis": "general",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "official",
+    "title": "南アフリカ閣議、90日以内のAIアクションプラン確定方針を表明",
+    "summary": {
+      "what": "代表団帰国後90日以内に制度的責任や投資枠組みを明確化する実用的なAIアクションプランの策定を大統領が指示",
+      "who": "南アフリカ大統領および閣議",
+      "when_impact": "米国代表団帰国から90日以内"
+    },
+    "detail": "2026年11月27日、南アフリカの閣議報告において、ラマポーザ大統領が米国シリコンバレー訪問を受け、同国の経済成長および公共サービス向上に向けたAI活用イニシアチブを推進することを発表した。大統領は、医療・教育・行政などのインフラ整備や公共サービス向上、スタートアップ支援資金調達などを明確化するマルチセクターの「AIアクションプラン」を代表団帰国後90日以内に確定するよう指示した。また、南アフリカの起業家によるベンチャーキャピタルファンドの設立も公表された。",
+    "so_what": "南アフリカにおけるインフラ整備や公共セクター等でのAI導入・投資枠組みが具体化するため、現地進出や実証実験を検討する企業は今後の動向注視が必要である。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "South Africa cabinet backs AI drive to boost economic growth and service delivery",
+    "publication_date": "2026-11-27",
+    "discovered_at": "2026-11-28",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.sanews.gov.za/south-africa/cabinet-backs-ai-drive-boost-economic-growth-and-service-delivery"
+    ],
+    "country_anchor": "/country/za/#updates"
+  },
+  {
+    "id": "2026-11-27-jp-001",
+    "date": "2026-11-27",
+    "country": "jp",
+    "axis": "general",
+    "change_type": "guideline_draft",
+    "legal_stage": "draft_or_consultation",
+    "source_kind": "media",
+    "title": "日本政府、AI推進法改正に向け事故報告義務や罰則を盛る取りまとめ案を公表",
+    "summary": {
+      "what": "高性能AI開発企業への事故報告義務や立ち入り検査、罰則を盛るAI推進法改正の取りまとめ案を提示",
+      "who": "日本政府、国内で一定規模の利用者がいるAIを開発する事業者",
+      "when_impact": "パブリックコメントを経て2027年通常国会への改正法案提出を目指す"
+    },
+    "detail": "日本政府は2026年11月27日、AI推進法（人工知能関連技術の研究開発及び活用の推進に関する法律）の改正に向けた取りまとめ案を示した。本案では、国内で一定規模の利用者がいる高性能AIを開発する企業に対し、安全確保措置の講じることや、重大な事故が発生した場合の国への報告を義務づける。政府による立ち入り検査や行政処分、要請に応じない場合の罰則も新設する方針。AIの性能評価や調査はAIセーフティ・インスティテュート（AISI）が担う。パブリックコメントを実施した上で、2027年の通常国会へ法改正案を提出することを目指している。",
+    "so_what": "日本国内で一定規模の利用者がいるAIを開発・提供する企業は、重大事故発生時の国への報告義務や安全確保措置、立ち入り検査への対応体制を将来的に整備する必要が生じる見込みです。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": "法的段階が草案・とりまとめ段階（draft_or_consultation）であるため、現行のdiff_vs_eu項目に変更はありません。"
+    },
+    "canonical_event": "Japan prepares amendment to AI promotion law introducing mandatory reporting and penalties",
+    "publication_date": "2026-11-27",
+    "discovered_at": "2026-11-28",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.nikkei.com/article/DGXZQOUA278X70X21C26A1000000/"
+    ],
+    "country_anchor": "/country/jp/#updates"
+  },
+  {
+    "id": "2026-11-27-uk-001",
+    "date": "2026-11-27",
+    "country": "uk",
+    "axis": "transparency",
+    "change_type": "other",
+    "legal_stage": "announcement",
+    "source_kind": "media",
+    "title": "英競争・市場庁（CMA）、AIエージェント提供企業にユーザー制御権と透明性の確保を要請",
+    "summary": {
+      "what": "AIエージェント提供企業に対しユーザーによる権限管理と透明性確保を要求し既存の消費者保護法が適用されると明示",
+      "who": "英競争・市場庁（CMA）、情報コミッショナーオフィス（ICO）、AIエージェント提供事業者",
+      "when_impact": "2026年11月24日より適用"
+    },
+    "detail": "英国の競争・市場庁（CMA）は2026年11月24日、MetaのAIエージェント「Muse」の英国におけるローンチを受け声明を発表した。CMAは、個人用AIエージェントを提供する事業者に対し、製品のリスク、機能の制限、付与される権限について明確な情報を提供するよう求めた。また、ユーザーがAIエージェントのデータアクセス範囲や自律的な行動レベルを直接制御・管理できる仕組みを導入すべきだと警告した。既存の英国消費者保護法がAIエージェント製品にもそのまま適用されるとし、CMAは情報コミッショナーオフィス（ICO）などの関係機関と連携してMetaを含む事業者へのエンゲージメントを継続している。",
+    "so_what": "英国市場でAIエージェントを展開する企業は、ユーザーがデータアクセス権限や自律性を細かく管理できる設計と明確なリスク開示が求められる。",
+    "impact": {
+      "diff_changed": false,
+      "diff_note": ""
+    },
+    "canonical_event": "UK CMA outlines consumer safeguards and data access rules for personal AI agents",
+    "publication_date": "2026-11-27",
+    "discovered_at": "2026-11-28",
+    "effective_date": null,
+    "deadline_date": null,
+    "sources": [
+      "https://www.medianama.com/2026/11/223-uk-cma-ai-agent-user-control-meta-muse-launch/"
+    ],
+    "country_anchor": "/country/uk/#axis-transparency"
   }
 ]
